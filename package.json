@@ -1,0 +1,9 @@
+{
+  "name": "presentation-skill",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:themes": "node tools/build-theme-previews.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}

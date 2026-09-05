@@ -1,0 +1,30 @@
+export const salesMomentum = {
+  id: 'sales-momentum',
+  name: 'Sales Momentum',
+  description: '以高對比節奏與轉換路徑推進商務對話。',
+  styles: `
+    :root { color: #fbf7e9; background: #1736d1; font-family: Arial, 'PingFang TC', 'Noto Sans TC', sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; width: 1600px; height: 900px; overflow: hidden; background: #1736d1; }
+    main { width: 100%; height: 100%; padding: 44px 54px 46px; display: grid; grid-template-rows: 58px 1fr 72px; position: relative; }
+    main::before { content: ''; position: absolute; width: 420px; height: 100%; right: 0; top: 0; background: #112797; }
+    header { z-index: 1; display: flex; align-items: start; justify-content: space-between; border-top: 2px solid #fbf7e9; padding-top: 13px; font-size: 14px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    header .theme { color: #dcff55; }
+    .hero { z-index: 1; display: grid; grid-template-columns: minmax(0, 8fr) minmax(360px, 4fr); gap: 62px; align-items: center; }
+    .copy { padding: 40px 0 28px; }
+    .kicker { margin: 0 0 28px; display: inline-block; background: #dcff55; color: #10206e; padding: 10px 13px 9px; font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { max-width: 970px; margin: 0; font-size: 86px; line-height: 1.01; letter-spacing: -.06em; font-weight: 850; text-wrap: balance; }
+    .subtitle { max-width: 760px; margin: 30px 0 0; color: #d7dcfa; font-size: 27px; line-height: 1.46; }
+    .momentum { align-self: stretch; padding: 90px 0 68px 38px; display: flex; flex-direction: column; justify-content: center; }
+    .momentum h2 { margin: 0 0 28px; color: #dcff55; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; }
+    .momentum ol { list-style: none; padding: 0; margin: 0; }
+    .momentum li { display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: center; min-height: 72px; border-top: 1px solid rgba(251,247,233,.22); font-size: 20px; font-weight: 750; }
+    .momentum li:last-child { border-bottom: 1px solid rgba(251,247,233,.22); }
+    .momentum b { color: #dcff55; font-size: 12px; font-variant-numeric: tabular-nums; }
+    footer { z-index: 1; display: grid; grid-template-columns: 8fr 4fr; gap: 62px; align-items: end; }
+    .promise { font-size: 16px; font-weight: 800; letter-spacing: .08em; }
+    .meter { height: 12px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; }
+    .meter i { background: #dcff55; }
+  `,
+  markup: (content) => `<main><header><span>${content.identity}</span><span class="theme">Sales Momentum</span></header><section class="hero"><div class="copy"><p class="kicker">MOVE THE ROOM</p><h1>${content.title}</h1><p class="subtitle">${content.subtitle}</p></div><aside class="momentum"><h2>From idea to delivery</h2><ol><li><b>01</b><span>釐清需求</span></li><li><b>02</b><span>確認架構</span></li><li><b>03</b><span>選定風格</span></li><li><b>04</b><span>交付 HTML</span></li></ol></aside></section><footer><span class="promise">ASK → STRUCTURE → DESIGN → DELIVER</span><div class="meter"><i></i><i></i><i></i><i></i></div></footer></main>`,
+};

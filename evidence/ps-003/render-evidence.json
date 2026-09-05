@@ -1,0 +1,20 @@
+{
+  "card": "PS-003",
+  "type": "headless render evidence",
+  "status": "pass",
+  "renderer": "local Google Chrome headless",
+  "viewport": "1600x900",
+  "inputs": [
+    "fixtures/theme-previews/executive-clear.html",
+    "fixtures/theme-previews/product-blueprint.html",
+    "fixtures/theme-previews/sales-momentum.html",
+    "fixtures/theme-previews/brand-story.html"
+  ],
+  "outputs": [
+    "evidence/ps-003/executive-clear.png",
+    "evidence/ps-003/product-blueprint.png",
+    "evidence/ps-003/sales-momentum.png",
+    "evidence/ps-003/brand-story.png"
+  ],
+  "limitations": "此證據只驗證四張封面渲染與尺寸，不構成完整簡報的 browser acceptance。"
+}

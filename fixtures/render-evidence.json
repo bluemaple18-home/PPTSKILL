@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "deck": "fixtures/deck.html",
+  "browserReceipt": "evidence/ps-001/browser-acceptance.json",
+  "capabilityProbe": {
+    "canRead": { "status": "true", "evidence": "fixtures/deck.html" },
+    "canRender": { "status": "true", "evidence": "evidence/ps-001/ps-001-1280x720.png" },
+    "canScreenshot": { "status": "true", "evidence": "evidence/ps-001/ps-001-1280x720.png" },
+    "canSave": { "status": "true", "evidence": "evidence/ps-001/saved-deck.html" }
+  },
+  "threeModeSmoke": {
+    "status": "pass",
+    "receipt": "evidence/ps-001/browser-acceptance.json"
+  },
+  "receipt": {
+    "status": "pass",
+    "repairAttempts": 0,
+    "lastSuccessfulEvidence": "fixtures/render-evidence.json"
+  }
+}

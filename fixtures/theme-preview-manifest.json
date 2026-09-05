@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "content": {
+    "title": "讓每個人用 AI 快速完成簡報",
+    "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+    "identity": "Presentation Skill · v0.1 Preview"
+  },
+  "previews": [
+    {
+      "id": "executive-clear",
+      "name": "Executive Clear",
+      "html": "fixtures/theme-previews/executive-clear.html",
+      "png": "evidence/ps-003/executive-clear.png",
+      "width": 1600,
+      "height": 900,
+      "content": {
+        "title": "讓每個人用 AI 快速完成簡報",
+        "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+        "identity": "Presentation Skill · v0.1 Preview"
+      }
+    },
+    {
+      "id": "product-blueprint",
+      "name": "Product Blueprint",
+      "html": "fixtures/theme-previews/product-blueprint.html",
+      "png": "evidence/ps-003/product-blueprint.png",
+      "width": 1600,
+      "height": 900,
+      "content": {
+        "title": "讓每個人用 AI 快速完成簡報",
+        "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+        "identity": "Presentation Skill · v0.1 Preview"
+      }
+    },
+    {
+      "id": "sales-momentum",
+      "name": "Sales Momentum",
+      "html": "fixtures/theme-previews/sales-momentum.html",
+      "png": "evidence/ps-003/sales-momentum.png",
+      "width": 1600,
+      "height": 900,
+      "content": {
+        "title": "讓每個人用 AI 快速完成簡報",
+        "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+        "identity": "Presentation Skill · v0.1 Preview"
+      }
+    },
+    {
+      "id": "brand-story",
+      "name": "Brand Story",
+      "html": "fixtures/theme-previews/brand-story.html",
+      "png": "evidence/ps-003/brand-story.png",
+      "width": 1600,
+      "height": 900,
+      "content": {
+        "title": "讓每個人用 AI 快速完成簡報",
+        "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+        "identity": "Presentation Skill · v0.1 Preview"
+      }
+    }
+  ],
+  "selection": {
+    "status": "pending",
+    "theme": null
+  }
+}
