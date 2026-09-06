@@ -36,7 +36,7 @@ test('motion runtime 使用 IntersectionObserver，不依賴外部 animation lib
 test('full deck 內建共用 motion root / runtime，而不是每頁手寫動畫 code', () => {
   const result = renderFullDeck(fullDeck);
   assert.equal(result.status, 'pass');
-  assert.match(result.html, /class="slide motion-root/);
+  assert.match(result.html, /class="slide [^"]*motion-root/);
   assert.match(result.html, /IntersectionObserver/);
   assert.match(result.html, /prefers-reduced-motion:reduce/);
 });
