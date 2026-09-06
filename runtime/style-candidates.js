@@ -1,4 +1,5 @@
 import { sanitizeDeckSpec } from './deck-spec.js';
+import { buildMotionCss, buildMotionRuntimeScript } from './motion-primitives.js';
 
 const allowedMoves = new Set(['asymmetric-grid', 'split-proof', 'editorial-rail', 'technical-map', 'full-bleed-type']);
 const allowedLanguages = new Set(['executive', 'technical', 'editorial', 'energetic', 'narrative']);
@@ -84,8 +85,8 @@ export function buildStyleCoverPreview(candidate) {
   const densityGap = { low: 80, medium: 56, high: 36 }[style.density];
   return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(style.name)}</title><style>
 *{box-sizing:border-box}body{margin:0;width:1600px;height:900px;overflow:hidden;background:${style.palette.canvas};color:${style.palette.text};font-family:${style.typography.body}}main{height:100%;padding:${style.spacing.slidePadding}px;display:grid;grid-template-columns:8fr 4fr;gap:${densityGap}px;position:relative;border:${style.geometry.borderWidth}px solid ${style.palette.muted}}.copy{align-self:center}.identity{font:800 14px/1 ${style.typography.mono || style.typography.body};letter-spacing:.14em;color:${style.palette.accent}}h1{max-width:940px;margin:32px 0;font-family:${style.typography.display};font-size:78px;line-height:1.06;letter-spacing:-.05em;text-wrap:balance}.subtitle{max-width:760px;color:${style.palette.muted};font-size:27px;line-height:1.45}.signal,.proof,.map{background:${style.palette.surface};padding:44px;border-radius:${style.geometry.radius}px;align-self:stretch;display:flex;flex-direction:column;justify-content:center;gap:28px}.signal span,.proof>b{font:900 92px/1 ${style.typography.display};color:${style.palette.accent}}.signal i,.map i{display:block;height:${Math.max(1, style.geometry.borderWidth)}px;background:${style.palette.accent}}.proof ol{display:grid;gap:12px;margin:0;padding-left:24px}.map b{font:800 16px/1 ${style.typography.mono || style.typography.body};letter-spacing:.12em}.rail{display:flex;align-items:center;justify-content:center;border-right:${style.geometry.borderWidth}px solid ${style.palette.muted}}.rail span{writing-mode:vertical-rl;transform:rotate(180deg);font-weight:800;letter-spacing:.14em}main:has(.rail){grid-template-columns:100px 1fr 320px;padding-left:0}main[data-route="split-proof"] h1{max-width:900px;font-size:70px}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style></head><body><main data-style-id="${escapeHtml(style.id)}" data-route="${escapeHtml(style.layout.primaryMove)}">${markup}</main></body></html>`;
+${buildMotionCss(style.motion)}
+</style></head><body><main class="motion-root" data-style-id="${escapeHtml(style.id)}" data-route="${escapeHtml(style.layout.primaryMove)}">${markup}</main>${buildMotionRuntimeScript()}</body></html>`;
 }
 
 export function selectStyleCandidate(compilation, styleId, approvedBy) {
