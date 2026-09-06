@@ -137,6 +137,7 @@ const runAtViewport = async ({ width, height }, offset) => {
     if (!page) throw new Error('Chrome DevTools target 未就緒。');
     const cdp = new CdpClient(page.webSocketDebuggerUrl);
     await cdp.open();
+    await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
     cdp.close();
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
