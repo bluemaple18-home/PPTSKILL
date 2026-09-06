@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "1.0",
+  "deckId": "pptskill-mvp",
+  "title": "讓每個人用 AI 快速完成簡報",
+  "language": "zh-Hant",
+  "style": {
+    "id": "route-technical-map",
+    "name": "Technical Map",
+    "layout": { "primaryMove": "technical-map", "compositionLanguage": "technical" },
+    "density": "high",
+    "typography": { "display": "Arial, sans-serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
+    "palette": { "canvas": "#0c1b19", "text": "#e8f0e9", "muted": "#9ab0a7", "accent": "#a9ffcb", "surface": "#122824" },
+    "spacing": { "unit": 6, "slidePadding": 52 },
+    "geometry": { "radius": 2, "borderWidth": 1 },
+    "motion": { "personality": "corporate", "durationMs": 180, "easing": "ease-out", "reducedMotion": true },
+    "assetTreatment": "diagram-first with labeled system nodes"
+  },
+  "slides": [
+    {
+      "id": "opening",
+      "content": {
+        "title": "讓每個人用 AI 快速完成簡報",
+        "subtitle": "從問題釐清到可離線分享的單檔 HTML",
+        "keyPoints": ["先問清楚，再開始做", "同內容比較四種風格", "交付一個可轉傳檔案"],
+        "components": []
+      },
+      "composition": { "primitive": "cover", "variant": "signal", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+    },
+    {
+      "id": "problem",
+      "content": {
+        "title": "現在的成本，不在畫投影片",
+        "subtitle": "真正浪費時間的是來回猜測、重做與工具不相容",
+        "keyPoints": ["需求未收斂就開始排版", "不同 AI 產物無法互相接手", "修改一頁卻重生整份簡報"],
+        "components": []
+      },
+      "composition": { "primitive": "title-points", "variant": "ruled", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "workflow",
+      "content": {
+        "title": "一條可預期的製作路徑",
+        "subtitle": "每一段都有明確輸入、輸出與人工確認點",
+        "keyPoints": ["讀素材", "Grill Me", "確認架構", "選擇風格", "輸出 HTML"],
+        "components": []
+      },
+      "composition": { "primitive": "process-flow", "variant": "numbered", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "guardrails",
+      "content": {
+        "title": "AI 有創作空間，但沒有失控空間",
+        "subtitle": "Style 控制共同視覺世界，Composition 控制單頁安排",
+        "keyPoints": ["最多 15 頁", "禁止 giant call", "只用核准版型", "碰撞即擋下"],
+        "components": []
+      },
+      "composition": { "primitive": "metric-grid", "variant": "cards", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "handoff",
+      "content": {
+        "title": "一個檔案，就能交給下一個人",
+        "subtitle": "DeckSpec 跟著 HTML 走，不依賴原作者的 ai-core",
+        "keyPoints": ["離線可開啟", "自由轉傳", "另一個相容 AI 可讀取"],
+        "components": [
+          { "id": "portable-quote", "type": "text", "text": "簡報不是鎖在某個 AI 裡，而是一份可攜、可驗證、可再編輯的成果。" }
+        ]
+      },
+      "composition": { "primitive": "component-focus", "variant": "quote", "slots": { "title": "content.title", "subtitle": "content.subtitle", "component": "content.components.portable-quote" } }
+    },
+    {
+      "id": "decision",
+      "content": {
+        "title": "先把 MVP 做到人人真的能用",
+        "subtitle": "下一步是完整 renderer、瀏覽器硬驗收與 ZIP 發佈",
+        "keyPoints": ["完成安全版型原語", "加入 geometry hard gate", "修復 editor 與 export", "包裝三種 AI 入口"],
+        "components": []
+      },
+      "composition": { "primitive": "split-proof", "variant": "closing", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    }
+  ]
+}

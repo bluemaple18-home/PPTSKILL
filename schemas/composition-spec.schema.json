@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pptskill.local/schemas/composition-spec.schema.json",
+  "$ref": "deck-spec.schema.json#/$defs/compositionSpec"
+}

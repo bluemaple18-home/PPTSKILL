@@ -1,6 +1,6 @@
 ---
 id: PRESENTATION-V0.1-PLAN
-status: ready-for-implementation
+status: historical-rebaselined
 type: implementation-plan
 spec: presentation-skill/working-spec.md
 jira: not-applicable
@@ -8,6 +8,23 @@ jira_reason: v0.1 僅建立本機實作切片；未授權建立外部追蹤項�
 ---
 
 # v0.1 垂直實作計畫
+
+> 2026-09-06：本文件保留舊 PS-001～PS-008 ID 與歷史切片證據，不再是 current execution queue。現行工作只依 `BACKLOG.md`；P0-R0 已完成規格重基準，下一個工程 frontier 是 **P0-R1**。下文若出現固定四 Theme、Presenter Mode 或直接續做 PS-004，皆視為已被 rebaseline mapping 取代，不得執行。
+
+## Rebaseline mapping
+
+| 舊切片 | 保留／修復方式 | 新卡 |
+|---|---|---|
+| PS-001 | 保留單檔播放、直接編輯、重排、複製、刪除、另存與既有 evidence；移除 Presenter，遷移為 DeckSpec | P0-R1、P0-R7 |
+| PS-002 | 保留 capability probe、fail-loud validator 與 receipt；擴充 schema、sanitizer、geometry、asset、size、token checks | P0-R1、P0-R4、P0-R6、P0-R7 |
+| PS-003 | 保留同內容 HTML/CSS render→screenshot→人工選款；既有四款降為 reference／fallback | P0-R3 |
+| PS-004 | 不直接執行；outline 改為 title、subtitle、3～5 key points、1～15 頁 | P0-R2 |
+| PS-005 | 拆成 bounded generation、safe primitives、geometry gate | P0-R4、P0-R5、P0-R6 |
+| PS-006 | 保留明示才記憶與 precedence，profile 移到 ZIP 安裝目錄外 | P1-R8 |
+| PS-007 | 保留三個 runtime 薄入口，改由單一 ZIP 共用 core | P1-R8 |
+| PS-008 | 改為 DeckSpec-safe editor/export 與完整 ZIP E2E | P0-R7、P0-R10 |
+
+目前 current frontier：`P0-R1 DeckSpec / StyleSpec / CompositionSpec contract split`。
 
 ## 目標、邊界與規劃規則
 
@@ -38,7 +55,7 @@ pnpm --dir presentation-skill exec node tools/validate-plan.mjs \
   --plan implementation-plan.md
 ```
 
-## 依賴圖與 current frontier
+## 歷史依賴圖（不得作 current frontier）
 
 ```text
 PS-001 → PS-002 → CP-01 → PS-003 → PS-004 → PS-005 → CP-02
@@ -48,7 +65,7 @@ PS-001 → PS-002 → CP-01 → PS-003 → PS-004 → PS-005 → CP-02
 
 | 目前 frontier | 可立即開始的原因 | 尚未解除的 blocking edge |
 |---|---|---|
-| **PS-001** | 僅需本機 fixture，不依賴 brief、Theme、profile 或外部 runtime | 無 |
+| **Historical only** | PS-001～PS-003 已有可保留證據 | current frontier 以 `BACKLOG.md` 的 P0-R1 為準 |
 
 其餘切片必須依上圖 forward-only 推進；不得跳過對應 checkpoint。`PS-006` 在 PS-005 後可開始，但 `PS-008` 必須等待 PS-006 與 PS-007 都完成。
 
@@ -201,7 +218,7 @@ git diff --check
 
 ## 執行順序與停止條件
 
-1. 僅從 current frontier 的 PS-001 開始；每完成一張卡才重算 frontier。
+1. 不再從 PS-001 或 PS-004 開始；只從 `BACKLOG.md` 的 P0-R1 開始，每完成一張卡才重算 frontier。
 2. 每 2–3 張卡必跑 CP-01、CP-02、CP-03；checkpoint fail 不得跳到下一群。
 3. 相同問題的第三次失敗，一律輸出 `blocked` receipt、保留最後成功 artifact，停止等待人類選擇；不得用 loop、背景重試或額外 runtime 迴避。
 4. 任何將 scope 擴大到 PPTX、公開發布、外部服務、資料庫或中央 renderer 的提案，均是新 frontier，不屬本計畫。

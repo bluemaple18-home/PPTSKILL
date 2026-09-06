@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pptskill.local/schemas/outline.schema.json",
+  "title": "PPTSKILL Lightweight Outline",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "deckTitle", "sourcePolicy", "slides", "approval"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "deckTitle": { "type": "string", "minLength": 1, "maxLength": 300 },
+    "sourcePolicy": { "enum": ["user-provided-only", "external-explicitly-authorized"] },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 15,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "title", "subtitle", "keyPoints"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$" },
+          "title": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "subtitle": { "type": "string", "minLength": 1, "maxLength": 500 },
+          "keyPoints": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 5,
+            "items": { "type": "string", "minLength": 1, "maxLength": 500 }
+          }
+        }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "approvedBy"],
+      "properties": {
+        "status": { "enum": ["pending", "confirmed"] },
+        "approvedBy": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

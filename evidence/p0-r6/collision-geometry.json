@@ -1,0 +1,166 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-06T09:56:44.235Z",
+  "artifact": "collision.html",
+  "status": "fail",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "slideCount": 1,
+      "slideWidths": [
+        1600
+      ],
+      "issues": [
+        {
+          "code": "OVERFLOW",
+          "slideId": "collision",
+          "target": "p.overflow",
+          "scroll": [
+            280,
+            28
+          ],
+          "client": [
+            120,
+            24
+          ]
+        },
+        {
+          "code": "OFF_CANVAS",
+          "slideId": "collision",
+          "target": "p.off",
+          "box": {
+            "left": 1580,
+            "top": 516,
+            "right": 1680,
+            "bottom": 538,
+            "width": 100,
+            "height": 22
+          }
+        },
+        {
+          "code": "FONT_TOO_SMALL",
+          "slideId": "collision",
+          "target": "p.tiny",
+          "fontSize": 9
+        },
+        {
+          "code": "TEXT_TEXT",
+          "slideId": "collision",
+          "targets": [
+            "p.a",
+            "p.b"
+          ]
+        },
+        {
+          "code": "TEXT_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "p.over-image",
+            "img.img-a"
+          ]
+        },
+        {
+          "code": "TEXT_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "p.over-image",
+            "img.img-b"
+          ]
+        },
+        {
+          "code": "IMAGE_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "img.img-a",
+            "img.img-b"
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "slideCount": 1,
+      "slideWidths": [
+        1600
+      ],
+      "issues": [
+        {
+          "code": "VIEWPORT_OVERFLOW",
+          "slideId": "collision",
+          "slideWidth": 1600,
+          "viewportWidth": 1280
+        },
+        {
+          "code": "OVERFLOW",
+          "slideId": "collision",
+          "target": "p.overflow",
+          "scroll": [
+            280,
+            28
+          ],
+          "client": [
+            120,
+            24
+          ]
+        },
+        {
+          "code": "OFF_CANVAS",
+          "slideId": "collision",
+          "target": "p.off",
+          "box": {
+            "left": 1580,
+            "top": 516,
+            "right": 1680,
+            "bottom": 538,
+            "width": 100,
+            "height": 22
+          }
+        },
+        {
+          "code": "FONT_TOO_SMALL",
+          "slideId": "collision",
+          "target": "p.tiny",
+          "fontSize": 9
+        },
+        {
+          "code": "TEXT_TEXT",
+          "slideId": "collision",
+          "targets": [
+            "p.a",
+            "p.b"
+          ]
+        },
+        {
+          "code": "TEXT_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "p.over-image",
+            "img.img-a"
+          ]
+        },
+        {
+          "code": "TEXT_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "p.over-image",
+            "img.img-b"
+          ]
+        },
+        {
+          "code": "IMAGE_IMAGE",
+          "slideId": "collision",
+          "targets": [
+            "img.img-a",
+            "img.img-b"
+          ]
+        }
+      ]
+    }
+  ]
+}

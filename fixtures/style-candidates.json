@@ -1,0 +1,48 @@
+{
+  "content": {
+    "title": "讓每個人用 AI 快速完成簡報",
+    "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
+    "identity": "PPTSKILL · Dynamic Preview"
+  },
+  "companyStylePack": {
+    "fixtureOnly": true,
+    "style": {
+      "id": "company-style-fixture",
+      "name": "Company Style · Fixture",
+      "layout": { "primaryMove": "asymmetric-grid", "compositionLanguage": "executive" },
+      "density": "medium",
+      "typography": { "display": "Arial, sans-serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
+      "palette": { "canvas": "#f4f1e8", "text": "#171917", "muted": "#60645e", "accent": "#d6402c", "surface": "#e5e0d4" },
+      "spacing": { "unit": 8, "slidePadding": 64 },
+      "geometry": { "radius": 0, "borderWidth": 2 },
+      "motion": { "personality": "corporate", "durationMs": 240, "easing": "ease-out", "reducedMotion": true },
+      "assetTreatment": "documentary crop with restrained rules"
+    }
+  },
+  "aiRoutes": [
+    {
+      "id": "route-technical-map", "name": "Technical Map",
+      "layout": { "primaryMove": "technical-map", "compositionLanguage": "technical" }, "density": "high",
+      "typography": { "display": "Arial, sans-serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
+      "palette": { "canvas": "#0c1b19", "text": "#e8f0e9", "muted": "#9ab0a7", "accent": "#a9ffcb", "surface": "#122824" },
+      "spacing": { "unit": 6, "slidePadding": 52 }, "geometry": { "radius": 2, "borderWidth": 1 },
+      "motion": { "personality": "corporate", "durationMs": 180, "easing": "ease-out", "reducedMotion": true }, "assetTreatment": "diagram-first with labeled system nodes"
+    },
+    {
+      "id": "route-editorial-rail", "name": "Editorial Rail",
+      "layout": { "primaryMove": "editorial-rail", "compositionLanguage": "narrative" }, "density": "low",
+      "typography": { "display": "Georgia, serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
+      "palette": { "canvas": "#481b2b", "text": "#f4eadc", "muted": "#d9c4ba", "accent": "#f1b8aa", "surface": "#713248" },
+      "spacing": { "unit": 10, "slidePadding": 72 }, "geometry": { "radius": 0, "borderWidth": 1 },
+      "motion": { "personality": "premium", "durationMs": 420, "easing": "cubic-bezier(.16,1,.3,1)", "reducedMotion": true }, "assetTreatment": "editorial chapter crops and quiet captions"
+    },
+    {
+      "id": "route-split-proof", "name": "Split Proof",
+      "layout": { "primaryMove": "split-proof", "compositionLanguage": "energetic" }, "density": "medium",
+      "typography": { "display": "Arial Black, sans-serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
+      "palette": { "canvas": "#1736d1", "text": "#fbf7e9", "muted": "#d7dcfa", "accent": "#dcff55", "surface": "#112797" },
+      "spacing": { "unit": 8, "slidePadding": 56 }, "geometry": { "radius": 18, "borderWidth": 0 },
+      "motion": { "personality": "energetic", "durationMs": 300, "easing": "ease-out", "reducedMotion": true }, "assetTreatment": "proof-led crops with conversion emphasis"
+    }
+  ]
+}

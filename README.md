@@ -17,12 +17,13 @@
 
 ## 目前狀態
 
-v0.1 正在進行 2026-09-06 MVP rebaseline：
+v0.1 已完成 2026-09-06 MVP rebaseline：
 
 - PS-001：三頁功能樣本與瀏覽器驗收完成；保留 runtime / 直接編輯能力，Presenter 從 MVP 移除。
 - PS-002：capability probe 與 validator 完成；後續延伸 DeckSpec、sanitizer、collision / overflow / size guard。
 - PS-003：真實 HTML/CSS Theme preview 機制保留；現有四 Theme 降為 reference / fallback，候選改為 Company Style + 3 dynamic AI routes。
-- **目前工程 frontier：先做 `BACKLOG.md` 的 `P0-R0 MVP architecture rebaseline`，不要直接續做舊 PS-004。**
+- P0-R1～P0-R6：DeckSpec、Grill Me／outline、dynamic style gate、bounded generation、full-deck renderer 與 browser geometry hard gate 均已完成。
+- **目前工程 frontier：`BACKLOG.md` 的 P0-R7 direct editor + portable export repair；不要直接續做舊 PS-004。**
 
 `evidence/ps-003/*.png` 是第一版退件畫面，只保留為開發紀錄；`fixtures/theme-previews/*.html` 與現有 Theme code 仍可作 reference evidence，但不再代表最終固定四選一產品契約。
 
@@ -30,6 +31,9 @@ v0.1 正在進行 2026-09-06 MVP rebaseline：
 
 ```bash
 pnpm run build:themes
+pnpm run build:styles
+pnpm run build:deck
+pnpm run qa:geometry
 pnpm test
 ```
 
@@ -37,12 +41,13 @@ pnpm test
 
 - `fixtures/deck.html`：三頁功能測試樣本。
 - `fixtures/theme-previews/*.html`：既有四款封面 reference preview。
+- `fixtures/style-candidate-previews/*.html`：Company Style fixture + 3 dynamic AI Visual Routes 的同內容 renderer preview。
+- `fixtures/full-deck.html`：同一 Style、六種 Composition 的完整 portable HTML fixture。
 
 ## 主要文件
 
 - `BACKLOG.md`：**目前唯一 execution queue / current frontier**；先看這份再派工。
-- `working-spec.md`：產品與行為規格 authority；P0-R0 要把 2026-09-06 owner decisions 正式 reconcile 回去。
+- `working-spec.md`：產品與行為規格 authority；已納入 2026-09-06 owner decisions。
 - `implementation-plan.md`：原 v0.1 垂直切片計畫，保留歷史證據；與新 backlog 衝突處先以 P0-R0 重基準，不直接執行舊後續切片。
 - `design/visual-route-contract.md`：既有四 Theme 視覺研究，現為 reference / fallback，待 P0-R3 轉成 dynamic visual-route materials。
 - `research/synthesis.md`：歷史簡報方法的研究整理。
-

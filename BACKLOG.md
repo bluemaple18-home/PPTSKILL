@@ -1,7 +1,7 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-06  
-**Status:** MVP architecture rebaseline required before PS-004  
+**Updated:** 2026-09-06
+**Status:** P0-R0～P0-R6 complete；current frontier = P0-R7
 **Authority:** This file is the execution queue only. `working-spec.md` remains the product / requirement authority. `implementation-plan.md` is the previous vertical-slice plan and remains historical evidence; where it conflicts with this backlog, stop and complete `P0-R0` before continuing.
 
 ---
@@ -227,9 +227,9 @@ MVP does **not** build a general PPTX template importer. Convert this one compan
 
 # 2. Current frontier
 
-**STOP before old PS-004 implementation.**
+**Current implementation frontier: P0-R7 Direct editor + portable export repair.**
 
-The next authorized engineering work is **P0-R0 MVP REBASELINE**. Old PS-004 and later cards may be reused only after they are reconciled against the cards below.
+P0-R0 through P0-R4 are complete. Old PS-004 and later cards may be reused only after they are reconciled against the cards below.
 
 ```text
 PS-001 complete ─┐
@@ -263,6 +263,7 @@ PS-003 partial ──┘
 ## P0-R0 — MVP architecture rebaseline
 
 **Priority:** P0 / BLOCKS ALL POST-PS-003 WORK  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r0/rebaseline-receipt.md`）
 **Goal:** reconcile `working-spec.md`, old `implementation-plan.md`, tests and slice expectations with the 2026-09-06 owner decisions above.
 
 ### Required outputs
@@ -286,6 +287,7 @@ PS-003 partial ──┘
 ## P0-R1 — DeckSpec / StyleSpec / CompositionSpec contract split
 
 **Priority:** P0  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r1/contract-receipt.md`）
 **Goal:** establish the semantic contract before Grill / full generation continues.
 
 ### Required contract
@@ -314,6 +316,7 @@ PS-003 partial ──┘
 ## P0-R2 — Grill Me + outline gate rebase
 
 **Priority:** P0  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r2/grill-outline-receipt.md`）
 **Goal:** replace old PS-004 outline assumptions with the owner-approved lightweight outline.
 
 ### Requirements
@@ -340,6 +343,7 @@ PS-003 partial ──┘
 ## P0-R3 — Dynamic visual-route compiler + style gate
 
 **Priority:** P0  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r3/style-gate-receipt.md`）
 **Goal:** preserve real HTML/CSS preview while changing candidate generation.
 
 ### Requirements
@@ -364,6 +368,7 @@ PS-003 partial ──┘
 ## P0-R4 — Token-safety / bounded-generation contract
 
 **Priority:** P0  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r4/generation-safety-receipt.md`）
 **Goal:** guarantee a normal ≤15-slide deck cannot be generated through one quota-destroying giant call.
 
 ### Requirements
@@ -389,6 +394,7 @@ PS-003 partial ──┘
 ## P0-R5 — Full-deck renderer + safe composition primitives
 
 **Priority:** P0  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r5/full-deck-renderer-receipt.md`）
 **Goal:** generate varied slides within one Style without degenerating into a fixed template or arbitrary unsafe absolute HTML.
 
 ### Requirements
@@ -413,6 +419,7 @@ PS-003 partial ──┘
 ## P0-R6 — Collision / overflow hard gate
 
 **Priority:** P0 / RELEASE BLOCKER  
+**Status:** COMPLETE（2026-09-06；evidence: `evidence/p0-r6/geometry-gate-receipt.md`）
 **Goal:** make “no accidental overlap” mechanically enforceable.
 
 ### Detect
@@ -610,11 +617,13 @@ For MVP, do not open cards for:
 
 # 6. Next action
 
-**NEXT = P0-R0.**
+**NEXT = P0-R7.**
 
-Do not continue old PS-004 implementation until the rebaseline patch has:
+P0-R0 已完成以下 rebaseline acceptance：
 
 1. reconciled `working-spec.md` and `implementation-plan.md`;
 2. preserved PS-001～PS-003 evidence and IDs;
 3. made P0-R1 the next implementation frontier;
-4. added no product feature implementation beyond the documentation / contract rebaseline.
+4. 未新增 documentation／contract rebaseline 以外的產品功能。
+
+P0-R1～P0-R6 已完成從契約到 full-deck renderer 與 browser geometry hard gate。下一步是 P0-R7，將既有 direct editor / export 能力修接到 DeckSpec，並移除 Presenter MVP 殘留。
