@@ -17,15 +17,16 @@
 
 ## 目前狀態
 
-v0.1 已完成 2026-09-06 MVP rebaseline：
+v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-deck renderer 的**視覺品質已被 owner 退回修復**：
 
 - PS-001：三頁功能樣本與瀏覽器驗收完成；保留 runtime / 直接編輯能力，Presenter 從 MVP 移除。
-- PS-002：capability probe 與 validator 完成；後續延伸 DeckSpec、sanitizer、collision / overflow / size guard。
-- PS-003：真實 HTML/CSS Theme preview 機制保留；現有四 Theme 降為 reference / fallback，候選改為 Company Style + 3 dynamic AI routes。
-- P0-R1～P0-R6：DeckSpec、Grill Me／outline、dynamic style gate、bounded generation、full-deck renderer 與 browser geometry hard gate 均已完成。
-- **目前工程 frontier：`BACKLOG.md` 的 P0-R7 direct editor + portable export repair；不要直接續做舊 PS-004。**
+- PS-002：capability probe 與 validator 保留。
+- P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
+- P0-R3：functional contract 已完成，但 owner visual acceptance 重新打開。
+- P0-R5：semantic renderer 架構保留，但 visual vocabulary 必須修復，不重寫 DeckSpec / CompositionSpec。
+- **目前工程 frontier：先執行 `BACKLOG.md` 的 `P0-VQ1 → P0-VQ2 → P0-VQ3`，P0-R7 暫停。**
 
-`evidence/ps-003/*.png` 是第一版退件畫面，只保留為開發紀錄；`fixtures/theme-previews/*.html` 與現有 Theme code 仍可作 reference evidence，但不再代表最終固定四選一產品契約。
+`evidence/ps-003/*.png` 與目前 `fixtures/style-candidate-previews/*.html` 可作開發 / 退件 evidence，不代表最終視覺品質已被 owner 接受。
 
 ## 本機使用
 
@@ -41,13 +42,13 @@ pnpm test
 
 - `fixtures/deck.html`：三頁功能測試樣本。
 - `fixtures/theme-previews/*.html`：既有四款封面 reference preview。
-- `fixtures/style-candidate-previews/*.html`：Company Style fixture + 3 dynamic AI Visual Routes 的同內容 renderer preview。
-- `fixtures/full-deck.html`：同一 Style、六種 Composition 的完整 portable HTML fixture。
+- `fixtures/style-candidate-previews/*.html`：Company Style fixture + 3 dynamic AI Visual Routes 的目前開發 preview；**尚未通過 owner visual acceptance**。
+- `fixtures/full-deck.html`：目前 semantic renderer fixture；架構 evidence 可用，視覺品質仍待 P0-VQ3 repair。
 
 ## 主要文件
 
 - `BACKLOG.md`：**目前唯一 execution queue / current frontier**；先看這份再派工。
 - `working-spec.md`：產品與行為規格 authority；已納入 2026-09-06 owner decisions。
-- `implementation-plan.md`：原 v0.1 垂直切片計畫，保留歷史證據；與新 backlog 衝突處先以 P0-R0 重基準，不直接執行舊後續切片。
-- `design/visual-route-contract.md`：既有四 Theme 視覺研究，現為 reference / fallback，待 P0-R3 轉成 dynamic visual-route materials。
+- `implementation-plan.md`：原 v0.1 垂直切片計畫，保留歷史證據；不得跳過目前 visual-quality repair lane。
+- `design/visual-route-contract.md`：既有四 Theme 視覺研究，現為 reference / fallback；P0-VQ1 會把 AI Core frontend-design 材料正式收斂成 portable PPTSKILL design-material layer。
 - `research/synthesis.md`：歷史簡報方法的研究整理。
