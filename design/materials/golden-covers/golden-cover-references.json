@@ -1,0 +1,870 @@
+{
+  "schema_version": "1.0",
+  "owner_calibration_date": "2026-09-08",
+  "status": "reference_evidence_partial",
+  "golden_design_grammar_complete": false,
+  "source_inputs": [
+    "/Users/matt/Downloads/MOMO 客製化 模板/PPTSKILL-Golden-Covers.zip",
+    "/Users/matt/Downloads/封存.zip"
+  ],
+  "constraints": {
+    "network_search_used": false,
+    "images_downloaded": false,
+    "source_images_modified": false,
+    "ai_generated_substitutes": false,
+    "unresolved_ids_guessed": false
+  },
+  "counts": {
+    "image_files": 33,
+    "accepted": 7,
+    "rejected": 1,
+    "provisional_keep": 10,
+    "unresolved": 15
+  },
+  "missing_reference_ids": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20",
+    "21",
+    "22",
+    "23",
+    "24",
+    "25",
+    "26",
+    "27",
+    "28",
+    "29",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "36",
+    "37",
+    "38",
+    "43",
+    "49",
+    "50",
+    "52",
+    "53",
+    "54",
+    "55"
+  ],
+  "records": [
+    {
+      "id": "56",
+      "filename": "56_vw-v_cb-pfkuccQ9ITKNd6HTwIDnteONTe94TUEl-yd2I28tL7XvU1k0h37Inr5YwFxqCtmRhqDzJVbUad-RFcYiNv2an_5Sbd3_UMwqiVmCDrPi3MNiGCPziRVGTDVRT0TCVf2lEFReX5L4m-r2Kh3Y82y8sBqChxponuyeVer554vDJ1lCAHbqJNHmJmYY.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "vw-v_cb-pfkuccQ9ITKNd6HTwIDnteONTe94TUEl-yd2I28tL7XvU1k0h37Inr5YwFxqCtmRhqDzJVbUad-RFcYiNv2an_5Sbd3_UMwqiVmCDrPi3MNiGCPziRVGTDVRT0TCVf2lEFReX5L4m-r2Kh3Y82y8sBqChxponuyeVer554vDJ1lCAHbqJNHmJmYY.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "minimal-institutional",
+        "architectural-negative-space"
+      ],
+      "visual_anchor": "horizontal architecture image window",
+      "title_placement": "upper-left",
+      "image_treatment": "wide horizontal monochrome crop",
+      "type_personality": "neutral grotesk",
+      "negative_space_strategy": "generous pale outer frame",
+      "graphic_language": "thin waveform overlay",
+      "surface_language": "light institutional field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "57",
+      "filename": "57_automotive-industry-project-proposal1709721837.jpg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "automotive-industry-project-proposal1709721837.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "object-product-hero"
+      ],
+      "visual_anchor": "automotive production photograph",
+      "title_placement": "upper-left",
+      "image_treatment": "large right-aligned vertical crop",
+      "type_personality": "heavy condensed sans-serif",
+      "negative_space_strategy": "open left title field",
+      "graphic_language": "thin vertical accent rails",
+      "surface_language": "light flat field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "58",
+      "filename": "58_AdxyHIB5A3awixgz_F3mhsPecrQKfvgg9K91BJwLCYEAn3NqXG1BbfMJe3f5QkTOp5tGy8jy13HoCdB-rZVXd7AWdl_jEak8NwFuFzuXsjAe5Q8CH44-VPv-gV__gsISZ0N0EkHtjvB4Z60p6qH6CUyotzy9AZnfYYSKl5kpBLH4SDFy9gRp07-NGLSmSC40.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "AdxyHIB5A3awixgz_F3mhsPecrQKfvgg9K91BJwLCYEAn3NqXG1BbfMJe3f5QkTOp5tGy8jy13HoCdB-rZVXd7AWdl_jEak8NwFuFzuXsjAe5Q8CH44-VPv-gV__gsISZ0N0EkHtjvB4Z60p6qH6CUyotzy9AZnfYYSKl5kpBLH4SDFy9gRp07-NGLSmSC40.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "dark-premium-editorial",
+        "typography-hero"
+      ],
+      "visual_anchor": "centered title over office photograph",
+      "title_placement": "centered",
+      "image_treatment": "dark full-bleed workplace crop",
+      "type_personality": "heavy sans-serif",
+      "negative_space_strategy": "darkened central title zone",
+      "graphic_language": "short linear accents",
+      "surface_language": "dark photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "59",
+      "filename": "59_CfcUzUE28R4QTr_XUpxJX4_u5oqOa7Tnm56qYK0nwVcP0zMOkCmysJ2KQ1W-vmYajHJAq8noSDZhMjraYMZbQKqB9wh-Smze1WvEyBRhoYcSFtlJK7I6_uzgLRQ_Xs0Ax-l4ImmMGoq2CUca-aKNIi22X-o5N2rI-wP_H1tzx9IOHxQ2ZO2rYyFTdDnN1Kmj.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "CfcUzUE28R4QTr_XUpxJX4_u5oqOa7Tnm56qYK0nwVcP0zMOkCmysJ2KQ1W-vmYajHJAq8noSDZhMjraYMZbQKqB9wh-Smze1WvEyBRhoYcSFtlJK7I6_uzgLRQ_Xs0Ax-l4ImmMGoq2CUca-aKNIi22X-o5N2rI-wP_H1tzx9IOHxQ2ZO2rYyFTdDnN1Kmj.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "manufacturing photograph",
+      "title_placement": "center-right",
+      "image_treatment": "left photo window integrated with color panel",
+      "type_personality": "condensed sans-serif",
+      "negative_space_strategy": "broad dark margins",
+      "graphic_language": "rectangular panel and thin rules",
+      "surface_language": "dark hard-panel field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "60",
+      "filename": "60_AHbKJOzlZpbrg8RHu6tbYXIKUXKZIGGRKMSlA15L0mWp3UACHRmTxYwtgUHY6druzs7PCDRoQnHbuNvre_b7kKMnCiJ_C8ehwGc9YlA_RDeKn0n-IXQDDEyMdcjrqd1zZhTQwQ7fZYkG-viLKcelG99v0yQOv5x2aCDSvQUkabDnknVxQtcMv8WRMH1Pslmy.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "AHbKJOzlZpbrg8RHu6tbYXIKUXKZIGGRKMSlA15L0mWp3UACHRmTxYwtgUHY6druzs7PCDRoQnHbuNvre_b7kKMnCiJ_C8ehwGc9YlA_RDeKn0n-IXQDDEyMdcjrqd1zZhTQwQ7fZYkG-viLKcelG99v0yQOv5x2aCDSvQUkabDnknVxQtcMv8WRMH1Pslmy.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "graphic-brand-field"
+      ],
+      "visual_anchor": "oval meeting photograph",
+      "title_placement": "center-left",
+      "image_treatment": "large asymmetric oval crop",
+      "type_personality": "rounded display sans-serif",
+      "negative_space_strategy": "solid left title field",
+      "graphic_language": "oversized circular brand shapes",
+      "surface_language": "flat brand-color field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "61",
+      "filename": "61_lWHosZTPBIQaczMgudCVvjY2goE_tkLs8ek_TJ4MZ_7bidGkwQ0CUzg6ZjvSWh8mmxC16cGPb78CnJNQy8UkdFEwnKIumiE9bydqA9jzrLunXgiAhMl0M5zpUCfuuZBZgc7r5NO1Bj-gO7Rj5YNHGzGVbrk0UNxVE1DvkTKh0D-N6mplFgZYW39169iozo5R.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "lWHosZTPBIQaczMgudCVvjY2goE_tkLs8ek_TJ4MZ_7bidGkwQ0CUzg6ZjvSWh8mmxC16cGPb78CnJNQy8UkdFEwnKIumiE9bydqA9jzrLunXgiAhMl0M5zpUCfuuZBZgc7r5NO1Bj-gO7Rj5YNHGzGVbrk0UNxVE1DvkTKh0D-N6mplFgZYW39169iozo5R.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "graphic-brand-field"
+      ],
+      "visual_anchor": "architectural photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-side architectural crop behind angular mask",
+      "type_personality": "bold sans-serif",
+      "negative_space_strategy": "white upper-left wedge",
+      "graphic_language": "angular brand field",
+      "surface_language": "flat geometric field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "62",
+      "filename": "62_YpotNWGJk4_uMh5PATjkpl5DAP4373uhWhWczo3pR5Z1w2dNbxAj0ca5C7FJtZSa66K2JByKGDktxU5HTAo048JR3IHg6B35rRHp66mDbog0LaoF1aJu3C4g8s_6iOOPI1KcbS3nSM1ywEB-o-OTRX7R7TxBwROKm0HW9CdLOee9J4BejHI_Z3eaaMOVTSQ2.jpeg",
+      "decision": "accept",
+      "source_status": "local_owner_supplied",
+      "original_filename": "YpotNWGJk4_uMh5PATjkpl5DAP4373uhWhWczo3pR5Z1w2dNbxAj0ca5C7FJtZSa66K2JByKGDktxU5HTAo048JR3IHg6B35rRHp66mDbog0LaoF1aJu3C4g8s_6iOOPI1KcbS3nSM1ywEB-o-OTRX7R7TxBwROKm0HW9CdLOee9J4BejHI_Z3eaaMOVTSQ2.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "dark-premium-editorial"
+      ],
+      "visual_anchor": "technology-wall photograph",
+      "title_placement": "upper-right",
+      "image_treatment": "full-bleed dark photographic crop",
+      "type_personality": "light sans-serif",
+      "negative_space_strategy": "dark right-side title zone",
+      "graphic_language": null,
+      "surface_language": "dark photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "39",
+      "filename": "39_canva-blue-white-orange-and-yellow-geometric-global-logistics-services-presentation-EZW0Klk_a78.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "canva-blue-white-orange-and-yellow-geometric-global-logistics-services-presentation-EZW0Klk_a78.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "transport photo montage",
+      "title_placement": "lower-left",
+      "image_treatment": "wide photo collage with angular lower crop",
+      "type_personality": "heavy condensed sans-serif",
+      "negative_space_strategy": "low negative space",
+      "graphic_language": "angular color bands",
+      "surface_language": "flat geometric overlay",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "40",
+      "filename": "40_0-modern-architecture-thumb.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "0-modern-architecture-thumb.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "cropped-type-image"
+      ],
+      "visual_anchor": "architectural photograph",
+      "title_placement": "lower-left over image",
+      "image_treatment": "full-bleed architectural crop",
+      "type_personality": "bold condensed sans-serif",
+      "negative_space_strategy": "photographic courtyard and sky",
+      "graphic_language": null,
+      "surface_language": "photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "41",
+      "filename": "41_retail-theme-slide1.png",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "retail-theme-slide1.png",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "dark-premium-editorial"
+      ],
+      "visual_anchor": "shopping-cart photograph",
+      "title_placement": "center-left",
+      "image_treatment": "darkened photo integrated behind split field",
+      "type_personality": "wide uppercase sans-serif",
+      "negative_space_strategy": "dark right-side field",
+      "graphic_language": "faceted color field with small circles",
+      "surface_language": "dark photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "42",
+      "filename": "42_energy_conservation_ppt_graphics_acp_slide01.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "energy_conservation_ppt_graphics_acp_slide01.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "object-product-hero"
+      ],
+      "visual_anchor": "oversized circular landscape crop",
+      "title_placement": "center-right",
+      "image_treatment": "large circular crop with white rim",
+      "type_personality": "neutral sans-serif",
+      "negative_space_strategy": "open right title field",
+      "graphic_language": "rounded color bands",
+      "surface_language": "light flat field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "44",
+      "filename": "44_1600w-aQwYYQ-GmWE.webp",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "1600w-aQwYYQ-GmWE.webp",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "dark-premium-editorial"
+      ],
+      "visual_anchor": "architectural photograph",
+      "title_placement": "centered over image",
+      "image_treatment": "dark full-bleed crop inside thin frame",
+      "type_personality": "high-tracking light sans-serif",
+      "negative_space_strategy": "dark photographic depth",
+      "graphic_language": "thin rectangular rule",
+      "surface_language": "dark photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "45",
+      "filename": "45_canva-black-and-white-lines-architecture-presentation-9QF1LWYTf4E.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "canva-black-and-white-lines-architecture-presentation-9QF1LWYTf4E.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "architectural-negative-space",
+        "image-type-asymmetry",
+        "minimal-institutional"
+      ],
+      "visual_anchor": "architectural photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-side architectural crop",
+      "type_personality": "neutral grotesk",
+      "negative_space_strategy": "large white editorial field",
+      "graphic_language": "thin vertical rules",
+      "surface_language": "white institutional field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "46",
+      "filename": "46_canva-blue-white-modern-minimalist-real-estate-presentation-6mC3anfdI64.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "canva-blue-white-modern-minimalist-real-estate-presentation-6mC3anfdI64.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "typography-hero"
+      ],
+      "visual_anchor": "centered title over architecture photograph",
+      "title_placement": "centered",
+      "image_treatment": "full-bleed blue-tinted crop",
+      "type_personality": "heavy geometric sans-serif",
+      "negative_space_strategy": "title frame creates central clear zone",
+      "graphic_language": "rectangular frame with corner circles",
+      "surface_language": "tinted photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "47",
+      "filename": "47_introduction_to_modern_manufacturing_processes_ppt_structure_at_slide01.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "introduction_to_modern_manufacturing_processes_ppt_structure_at_slide01.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "manufacturing photograph",
+      "title_placement": "center-right",
+      "image_treatment": "left photo window integrated with color panel",
+      "type_personality": "condensed sans-serif",
+      "negative_space_strategy": "broad dark margins",
+      "graphic_language": "rectangular panel and thin rules",
+      "surface_language": "dark hard-panel field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "48",
+      "filename": "48_canva-blue-and-white-modern-multimedia-studio-pitch-deck-presentation-7a4ah5i0oiI.jpg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "canva-blue-and-white-modern-multimedia-studio-pitch-deck-presentation-7a4ah5i0oiI.jpg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "full-bleed-editorial",
+        "typography-hero",
+        "dark-premium-editorial"
+      ],
+      "visual_anchor": "large title over studio photograph",
+      "title_placement": "center-left",
+      "image_treatment": "dark full-bleed photo with blue overlay",
+      "type_personality": "heavy sans-serif",
+      "negative_space_strategy": "darkened image behind title",
+      "graphic_language": "rectangular bars and dot grid",
+      "surface_language": "dark photographic field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "51",
+      "filename": "51_n-qgwX3cLi5AZaDV4tkSoxfaqvzdvY39ilbtY1PG6syfm4Z5CAFw8Ga1BujzJ4Ie9nid9i8p2Kq8qLsmEPyPARbEAWB8Sq2v1LKEhrT8t24Hs_8HHwnrNza7UIkJH7uQUbl732jIVuWOoq9LtGNNoIz5KWndywbzi_ArsmbqhmOujv5pWr9XsZi8v5ZDGNzQ.jpeg",
+      "decision": "provisional_keep",
+      "source_status": "local_owner_supplied",
+      "original_filename": "n-qgwX3cLi5AZaDV4tkSoxfaqvzdvY39ilbtY1PG6syfm4Z5CAFw8Ga1BujzJ4Ie9nid9i8p2Kq8qLsmEPyPARbEAWB8Sq2v1LKEhrT8t24Hs_8HHwnrNza7UIkJH7uQUbl732jIVuWOoq9LtGNNoIz5KWndywbzi_ArsmbqhmOujv5pWr9XsZi8v5ZDGNzQ.jpeg",
+      "mapping_basis": "local_manifest_url_basename_match",
+      "industry": null,
+      "cover_archetype": [
+        "dark-premium-editorial",
+        "object-product-hero"
+      ],
+      "visual_anchor": "circular mobile-banking photograph",
+      "title_placement": "left-center",
+      "image_treatment": "large circular product crop",
+      "type_personality": "heavy geometric sans-serif",
+      "negative_space_strategy": "asymmetric right focal opening",
+      "graphic_language": "translucent rounded panels",
+      "surface_language": "dark layered field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": "38A",
+      "filename": "38A_nova_strategy_reject.png",
+      "decision": "reject",
+      "source_status": "local_owner_supplied",
+    "original_filename": "38A_nova_strategy_reject.png",
+      "mapping_basis": "filename_prefix",
+      "industry": null,
+      "cover_archetype": [
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "framed meeting photograph",
+      "title_placement": "center-right",
+      "image_treatment": "left framed crop",
+      "type_personality": "sans-serif with display-serif accent",
+      "negative_space_strategy": "split-field gutter",
+      "graphic_language": "rounded split color field",
+      "surface_language": "flat color field",
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
+        "標註僅記錄肉眼明確可判斷的靜態構圖。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-01_1c85d8233823621.68b722080cf3f.jpg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "1c85d8233823621.68b722080cf3f.jpg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-02_5fwxr-09VyO4D_OkCzXHIJXnE8fpqSrXVaozQZUFAF53NhhFAqSL_WETPZEenB2LgIIVtq10f2RN1FJ6ios1VgaierkxQpNQ2RbfZ001ayZCs1iat8lvjjJExHsVskkbZ_xoj8txqlQLNn-iTSP8PkfiqvfFzmuvCz3Vvf6t4NKOixxNBpmVLnBHori4qtpF.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "5fwxr-09VyO4D_OkCzXHIJXnE8fpqSrXVaozQZUFAF53NhhFAqSL_WETPZEenB2LgIIVtq10f2RN1FJ6ios1VgaierkxQpNQ2RbfZ001ayZCs1iat8lvjjJExHsVskkbZ_xoj8txqlQLNn-iTSP8PkfiqvfFzmuvCz3Vvf6t4NKOixxNBpmVLnBHori4qtpF.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-03_7wtYZWEPuQkS6lZ9OWKtCWBlvjrdE3A_i_cN4CZH7U2fnplbh090_z1bPJ1xGwHcyc7vL9UYb5VszyCdLnxvos4uCJQmUjxW1oTMCEXlb2o48fiw_LQbfMo2ag4NQD6bDkHOSVmWSVuoxcN3CL__2z6BQZxpmgeFjnCdwO-s_rgLwefdtYFbkMU6756hmeC_.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "7wtYZWEPuQkS6lZ9OWKtCWBlvjrdE3A_i_cN4CZH7U2fnplbh090_z1bPJ1xGwHcyc7vL9UYb5VszyCdLnxvos4uCJQmUjxW1oTMCEXlb2o48fiw_LQbfMo2ag4NQD6bDkHOSVmWSVuoxcN3CL__2z6BQZxpmgeFjnCdwO-s_rgLwefdtYFbkMU6756hmeC_.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-04_ISp3EMuJiWj2_Mw4_dt_WbKmdW9bYv6xXRbdTkTpCKYmUmZJcX_vuPU8Jd6xbF8cE6vyi8Om_3itoDDan8g-HgQj0oMfNs6udctfYw758_invc3by91MGKutoIids6VJXDxeamsHiIy3npcW6-b5Sm-STHSPNU69fu6vKZZNRTTcwivZ0EVdo6T736kFHyev.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "ISp3EMuJiWj2_Mw4_dt_WbKmdW9bYv6xXRbdTkTpCKYmUmZJcX_vuPU8Jd6xbF8cE6vyi8Om_3itoDDan8g-HgQj0oMfNs6udctfYw758_invc3by91MGKutoIids6VJXDxeamsHiIy3npcW6-b5Sm-STHSPNU69fu6vKZZNRTTcwivZ0EVdo6T736kFHyev.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-05_ZniH9Jg861I7NFJGq3WV8uVM8JuZYPnjxTg98_P9pzecxm7ljE66dkWn6P86_KKHQ-lUgl2ie3oC_8X66JHT3kkV_-RECJVW7tJLGnMXvrqZVI4NZsYPnLQRydvw1ItlbI_BszB6mJyKR4Ll7qOBZ7aKEv1kGYIYMZ6S4_vav2g6hL6qFnmDyj03DzjC5PT-.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "ZniH9Jg861I7NFJGq3WV8uVM8JuZYPnjxTg98_P9pzecxm7ljE66dkWn6P86_KKHQ-lUgl2ie3oC_8X66JHT3kkV_-RECJVW7tJLGnMXvrqZVI4NZsYPnLQRydvw1ItlbI_BszB6mJyKR4Ll7qOBZ7aKEv1kGYIYMZ6S4_vav2g6hL6qFnmDyj03DzjC5PT-.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-06__sYvJ-fzJ8IDdFk3bWcDjZpqZqKsjBAfpNIHsisYzKv9Rcbw_ECNj8PB0K3CkGvS7jMNc4i3Zvxm-vUGy9oo1s41msrnFIb3MBsNMCBpguboefVBlL9gIHP7_kG0U_REueKHCJ6e0qyVhJ9PVgdF1KmIztVNQhY24qPeF-7h4iiJFJIsc6kSBkef0L0qnSwx.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "_sYvJ-fzJ8IDdFk3bWcDjZpqZqKsjBAfpNIHsisYzKv9Rcbw_ECNj8PB0K3CkGvS7jMNc4i3Zvxm-vUGy9oo1s41msrnFIb3MBsNMCBpguboefVBlL9gIHP7_kG0U_REueKHCJ6e0qyVhJ9PVgdF1KmIztVNQhY24qPeF-7h4iiJFJIsc6kSBkef0L0qnSwx.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-07_automating_manufacturing_procedures_for_increased_productivity_powerpoint_presentation_slides_slide01.jpg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "automating_manufacturing_procedures_for_increased_productivity_powerpoint_presentation_slides_slide01.jpg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-08_automotive-industry-pitch-deck1720775839.jpg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "automotive-industry-pitch-deck1720775839.jpg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-09_corporate-strategy-consulting1705504893.jpg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "corporate-strategy-consulting1705504893.jpg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-10_d43b63217085855.678a868a582d8.jpg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "d43b63217085855.678a868a582d8.jpg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-11_dFm0-_EtCzGkL4Bxd98R1FKDAM9zcWPsn_WVmapfx918ZIHTnY5MmC6ulu-OUlpbRxGwZbQ1jFdRgFtd99qLgB__mS1q7H6Az1EDXsKBly1Qogqi61lx9isoXZTZDUBA5ilxxWh4N1Cg0ZAhqRumTgLCj03QRSRQtyKiF1iF3wtYI52Q8IQKUdG6bZ7homIl.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "dFm0-_EtCzGkL4Bxd98R1FKDAM9zcWPsn_WVmapfx918ZIHTnY5MmC6ulu-OUlpbRxGwZbQ1jFdRgFtd99qLgB__mS1q7H6Az1EDXsKBly1Qogqi61lx9isoXZTZDUBA5ilxxWh4N1Cg0ZAhqRumTgLCj03QRSRQtyKiF1iF3wtYI52Q8IQKUdG6bZ7homIl.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-12_dMcEY32JaB2-QYK2p6ArxquS41Put5EJjv3VP1hwim_x_eBI8zaKs2Q_xcj4q9ZPxTIQilWPz6fxi8aZjaqI4RtfZwgIEPjt4ih0od3-ajBGalRGwUuJ3KG_R6BMXWP8w6_kyrPLCgXEB8gHDu3_BekG1PTpAZQIRJbBSTA9y0cTwcctVOFOmI1pqMeEmgB5.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "dMcEY32JaB2-QYK2p6ArxquS41Put5EJjv3VP1hwim_x_eBI8zaKs2Q_xcj4q9ZPxTIQilWPz6fxi8aZjaqI4RtfZwgIEPjt4ih0od3-ajBGalRGwUuJ3KG_R6BMXWP8w6_kyrPLCgXEB8gHDu3_BekG1PTpAZQIRJbBSTA9y0cTwcctVOFOmI1pqMeEmgB5.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-13_lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl (1).jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl (1).jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-14_lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    },
+    {
+      "id": null,
+      "filename": "unresolved-15_n2aRPJPy2tWj5qZe4FspSclVTalfdsUbktq9teMBdqEj4ZQSSKZ37jB_aL18J1wRs54eRjGtziVqSBH3dIOb3vZ5SZH_9L-Pro1EjmqM_Ft3WVoRCS7qbjiZCRgXGtXzOFf-b8yn4GVYoQ6MHgCifdVPCXJTn9xsk5iEWiUx6lwThTEBBBoIwCCUFrLAYg-e.jpeg",
+      "decision": "unresolved",
+      "source_status": "local_owner_supplied",
+      "original_filename": "n2aRPJPy2tWj5qZe4FspSclVTalfdsUbktq9teMBdqEj4ZQSSKZ37jB_aL18J1wRs54eRjGtziVqSBH3dIOb3vZ5SZH_9L-Pro1EjmqM_Ft3WVoRCS7qbjiZCRgXGtXzOFf-b8yn4GVYoQ6MHgCifdVPCXJTn9xsk5iEWiUx6lwThTEBBBoIwCCUFrLAYg-e.jpeg",
+      "mapping_basis": null,
+      "industry": null,
+      "cover_archetype": [],
+      "visual_anchor": null,
+      "title_placement": null,
+      "image_treatment": null,
+      "type_personality": null,
+      "negative_space_strategy": null,
+      "graphic_language": null,
+      "surface_language": null,
+      "effect_language": null,
+      "motion_personality": null,
+      "notes": [
+        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
+      ]
+    }
+  ]
+}
