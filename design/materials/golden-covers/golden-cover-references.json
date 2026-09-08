@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "owner_calibration_date": "2026-09-08",
-  "status": "reference_evidence_partial",
+  "status": "owner_calibrated_reference_evidence",
   "golden_design_grammar_complete": false,
   "source_inputs": [
     "/Users/matt/Downloads/MOMO 客製化 模板/PPTSKILL-Golden-Covers.zip",
@@ -16,10 +16,10 @@
   },
   "counts": {
     "image_files": 33,
-    "accepted": 7,
-    "rejected": 1,
-    "provisional_keep": 10,
-    "unresolved": 15
+    "owner_accepted": 32,
+    "owner_rejected": 1,
+    "provisional_keep": 0,
+    "unresolved_reference_id": 15
   },
   "missing_reference_ids": [
     "01",
@@ -91,9 +91,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "57",
@@ -117,9 +119,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "58",
@@ -144,9 +148,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "59",
@@ -169,9 +175,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "60",
@@ -195,9 +203,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "61",
@@ -221,9 +231,11 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "62",
@@ -247,14 +259,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "39",
       "filename": "39_canva-blue-white-orange-and-yellow-geometric-global-logistics-services-presentation-EZW0Klk_a78.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "canva-blue-white-orange-and-yellow-geometric-global-logistics-services-presentation-EZW0Klk_a78.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -272,14 +286,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "40",
       "filename": "40_0-modern-architecture-thumb.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "0-modern-architecture-thumb.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -298,14 +314,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "41",
       "filename": "41_retail-theme-slide1.png",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "retail-theme-slide1.png",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -324,14 +342,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "42",
       "filename": "42_energy_conservation_ppt_graphics_acp_slide01.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "energy_conservation_ppt_graphics_acp_slide01.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -350,14 +370,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "44",
       "filename": "44_1600w-aQwYYQ-GmWE.webp",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "1600w-aQwYYQ-GmWE.webp",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -376,14 +398,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "45",
       "filename": "45_canva-black-and-white-lines-architecture-presentation-9QF1LWYTf4E.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "canva-black-and-white-lines-architecture-presentation-9QF1LWYTf4E.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -403,14 +427,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "46",
       "filename": "46_canva-blue-white-modern-minimalist-real-estate-presentation-6mC3anfdI64.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "canva-blue-white-modern-minimalist-real-estate-presentation-6mC3anfdI64.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -429,14 +455,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "47",
       "filename": "47_introduction_to_modern_manufacturing_processes_ppt_structure_at_slide01.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "introduction_to_modern_manufacturing_processes_ppt_structure_at_slide01.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -454,14 +482,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "48",
       "filename": "48_canva-blue-and-white-modern-multimedia-studio-pitch-deck-presentation-7a4ah5i0oiI.jpg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "canva-blue-and-white-modern-multimedia-studio-pitch-deck-presentation-7a4ah5i0oiI.jpg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -481,14 +511,16 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "51",
       "filename": "51_n-qgwX3cLi5AZaDV4tkSoxfaqvzdvY39ilbtY1PG6syfm4Z5CAFw8Ga1BujzJ4Ie9nid9i8p2Kq8qLsmEPyPARbEAWB8Sq2v1LKEhrT8t24Hs_8HHwnrNza7UIkJH7uQUbl732jIVuWOoq9LtGNNoIz5KWndywbzi_ArsmbqhmOujv5pWr9XsZi8v5ZDGNzQ.jpeg",
-      "decision": "provisional_keep",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "n-qgwX3cLi5AZaDV4tkSoxfaqvzdvY39ilbtY1PG6syfm4Z5CAFw8Ga1BujzJ4Ie9nid9i8p2Kq8qLsmEPyPARbEAWB8Sq2v1LKEhrT8t24Hs_8HHwnrNza7UIkJH7uQUbl732jIVuWOoq9LtGNNoIz5KWndywbzi_ArsmbqhmOujv5pWr9XsZi8v5ZDGNzQ.jpeg",
       "mapping_basis": "local_manifest_url_basename_match",
@@ -507,16 +539,18 @@
       "effect_language": null,
       "motion_personality": null,
       "notes": [
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": "38A",
       "filename": "38A_nova_strategy_reject.png",
       "decision": "reject",
       "source_status": "local_owner_supplied",
-    "original_filename": "38A_nova_strategy_reject.png",
+      "original_filename": "38A_nova_strategy_reject.png",
       "mapping_basis": "filename_prefix",
       "industry": null,
       "cover_archetype": [
@@ -534,337 +568,438 @@
       "notes": [
         "編號由本機檔名或本機 manifest 的 URL basename 對應；未依圖片內容猜號。",
         "標註僅記錄肉眼明確可判斷的靜態構圖。"
-      ]
+      ],
+      "reference_id_status": "resolved"
     },
     {
       "id": null,
       "filename": "unresolved-01_1c85d8233823621.68b722080cf3f.jpg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "1c85d8233823621.68b722080cf3f.jpg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "minimal-institutional",
+        "full-bleed-editorial"
+      ],
+      "visual_anchor": "landscape technology image window",
+      "title_placement": "lower-left inside image",
+      "image_treatment": "wide image window inside portrait editorial wrapper",
+      "type_personality": "neutral sans-serif",
+      "negative_space_strategy": "large pale upper field",
+      "graphic_language": "thin capsule metadata",
+      "surface_language": "light editorial field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。",
+        "原檔是直式 editorial wrapper；只吸收其中 16:9 cover 構圖。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-02_5fwxr-09VyO4D_OkCzXHIJXnE8fpqSrXVaozQZUFAF53NhhFAqSL_WETPZEenB2LgIIVtq10f2RN1FJ6ios1VgaierkxQpNQ2RbfZ001ayZCs1iat8lvjjJExHsVskkbZ_xoj8txqlQLNn-iTSP8PkfiqvfFzmuvCz3Vvf6t4NKOixxNBpmVLnBHori4qtpF.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "5fwxr-09VyO4D_OkCzXHIJXnE8fpqSrXVaozQZUFAF53NhhFAqSL_WETPZEenB2LgIIVtq10f2RN1FJ6ios1VgaierkxQpNQ2RbfZ001ayZCs1iat8lvjjJExHsVskkbZ_xoj8txqlQLNn-iTSP8PkfiqvfFzmuvCz3Vvf6t4NKOixxNBpmVLnBHori4qtpF.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "logistics photo composite",
+      "title_placement": "center-left",
+      "image_treatment": "full-stage transport composite behind translucent copy field",
+      "type_personality": "heavy sans-serif",
+      "negative_space_strategy": "bright translucent copy zone",
+      "graphic_language": "rounded translucent panel and dotted ribbons",
+      "surface_language": "photographic field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-03_7wtYZWEPuQkS6lZ9OWKtCWBlvjrdE3A_i_cN4CZH7U2fnplbh090_z1bPJ1xGwHcyc7vL9UYb5VszyCdLnxvos4uCJQmUjxW1oTMCEXlb2o48fiw_LQbfMo2ag4NQD6bDkHOSVmWSVuoxcN3CL__2z6BQZxpmgeFjnCdwO-s_rgLwefdtYFbkMU6756hmeC_.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "7wtYZWEPuQkS6lZ9OWKtCWBlvjrdE3A_i_cN4CZH7U2fnplbh090_z1bPJ1xGwHcyc7vL9UYb5VszyCdLnxvos4uCJQmUjxW1oTMCEXlb2o48fiw_LQbfMo2ag4NQD6bDkHOSVmWSVuoxcN3CL__2z6BQZxpmgeFjnCdwO-s_rgLwefdtYFbkMU6756hmeC_.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "graphic-brand-field"
+      ],
+      "visual_anchor": "rounded manufacturing photo window",
+      "title_placement": "center-right",
+      "image_treatment": "large rounded portrait crop",
+      "type_personality": "heavy geometric sans-serif",
+      "negative_space_strategy": "open cream perimeter",
+      "graphic_language": "oversized concentric line motifs",
+      "surface_language": "soft flat color field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-04_ISp3EMuJiWj2_Mw4_dt_WbKmdW9bYv6xXRbdTkTpCKYmUmZJcX_vuPU8Jd6xbF8cE6vyi8Om_3itoDDan8g-HgQj0oMfNs6udctfYw758_invc3by91MGKutoIids6VJXDxeamsHiIy3npcW6-b5Sm-STHSPNU69fu6vKZZNRTTcwivZ0EVdo6T736kFHyev.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "ISp3EMuJiWj2_Mw4_dt_WbKmdW9bYv6xXRbdTkTpCKYmUmZJcX_vuPU8Jd6xbF8cE6vyi8Om_3itoDDan8g-HgQj0oMfNs6udctfYw758_invc3by91MGKutoIids6VJXDxeamsHiIy3npcW6-b5Sm-STHSPNU69fu6vKZZNRTTcwivZ0EVdo6T736kFHyev.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "architectural-negative-space",
+        "image-type-asymmetry",
+        "minimal-institutional"
+      ],
+      "visual_anchor": "monochrome consulting photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-offset rectangular crop",
+      "type_personality": "neutral grotesk",
+      "negative_space_strategy": "large white upper and left field",
+      "graphic_language": "single offset color block",
+      "surface_language": "white institutional field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-05_ZniH9Jg861I7NFJGq3WV8uVM8JuZYPnjxTg98_P9pzecxm7ljE66dkWn6P86_KKHQ-lUgl2ie3oC_8X66JHT3kkV_-RECJVW7tJLGnMXvrqZVI4NZsYPnLQRydvw1ItlbI_BszB6mJyKR4Ll7qOBZ7aKEv1kGYIYMZ6S4_vav2g6hL6qFnmDyj03DzjC5PT-.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "ZniH9Jg861I7NFJGq3WV8uVM8JuZYPnjxTg98_P9pzecxm7ljE66dkWn6P86_KKHQ-lUgl2ie3oC_8X66JHT3kkV_-RECJVW7tJLGnMXvrqZVI4NZsYPnLQRydvw1ItlbI_BszB6mJyKR4Ll7qOBZ7aKEv1kGYIYMZ6S4_vav2g6hL6qFnmDyj03DzjC5PT-.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "graphic-brand-field"
+      ],
+      "visual_anchor": "diamond-shaped media image window",
+      "title_placement": "center-right",
+      "image_treatment": "geometric diamond crop",
+      "type_personality": "light sans-serif",
+      "negative_space_strategy": "large white title field",
+      "graphic_language": "cropped rounded-square mosaic",
+      "surface_language": "white flat field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-06__sYvJ-fzJ8IDdFk3bWcDjZpqZqKsjBAfpNIHsisYzKv9Rcbw_ECNj8PB0K3CkGvS7jMNc4i3Zvxm-vUGy9oo1s41msrnFIb3MBsNMCBpguboefVBlL9gIHP7_kG0U_REueKHCJ6e0qyVhJ9PVgdF1KmIztVNQhY24qPeF-7h4iiJFJIsc6kSBkef0L0qnSwx.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "_sYvJ-fzJ8IDdFk3bWcDjZpqZqKsjBAfpNIHsisYzKv9Rcbw_ECNj8PB0K3CkGvS7jMNc4i3Zvxm-vUGy9oo1s41msrnFIb3MBsNMCBpguboefVBlL9gIHP7_kG0U_REueKHCJ6e0qyVhJ9PVgdF1KmIztVNQhY24qPeF-7h4iiJFJIsc6kSBkef0L0qnSwx.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "dark-premium-editorial",
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "rounded monochrome finance photograph",
+      "title_placement": "center-right",
+      "image_treatment": "large rounded monochrome image window",
+      "type_personality": "heavy geometric sans-serif",
+      "negative_space_strategy": "dark right title field",
+      "graphic_language": "thin capsule rails and dot matrices",
+      "surface_language": "dark flat field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-07_automating_manufacturing_procedures_for_increased_productivity_powerpoint_presentation_slides_slide01.jpg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "automating_manufacturing_procedures_for_increased_productivity_powerpoint_presentation_slides_slide01.jpg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "object-product-hero",
+        "cropped-type-image"
+      ],
+      "visual_anchor": "large circular worker photograph",
+      "title_placement": "center-right",
+      "image_treatment": "oversized circular crop crossing light and dark fields",
+      "type_personality": "heavy outlined sans-serif",
+      "negative_space_strategy": "hard black-white split",
+      "graphic_language": "linear technical marks",
+      "surface_language": "hard split field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-08_automotive-industry-pitch-deck1720775839.jpg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "automotive-industry-pitch-deck1720775839.jpg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "object-product-hero",
+        "typography-hero"
+      ],
+      "visual_anchor": "automotive production photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-side full-height crop",
+      "type_personality": "heavy grotesk",
+      "negative_space_strategy": "large light left copy field",
+      "graphic_language": "thin target rings and accent lines",
+      "surface_language": "light flat field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-09_corporate-strategy-consulting1705504893.jpg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "corporate-strategy-consulting1705504893.jpg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "minimal-institutional"
+      ],
+      "visual_anchor": "rounded consulting-team photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-side rounded photo window",
+      "type_personality": "neutral grotesk",
+      "negative_space_strategy": "broad white copy field",
+      "graphic_language": "layered corner bands",
+      "surface_language": "white corporate field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-10_d43b63217085855.678a868a582d8.jpg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "d43b63217085855.678a868a582d8.jpg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "full-bleed-editorial"
+      ],
+      "visual_anchor": "central biotech image field",
+      "title_placement": "right-center inside central field",
+      "image_treatment": "layered translucent image field inside editorial wrapper",
+      "type_personality": "neutral sans-serif",
+      "negative_space_strategy": "soft pale perimeter",
+      "graphic_language": "rounded inner field",
+      "surface_language": "soft photographic gradient field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。",
+        "原檔含展示 wrapper；只吸收內部 cover 構圖，不吸收軟體圖示。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-11_dFm0-_EtCzGkL4Bxd98R1FKDAM9zcWPsn_WVmapfx918ZIHTnY5MmC6ulu-OUlpbRxGwZbQ1jFdRgFtd99qLgB__mS1q7H6Az1EDXsKBly1Qogqi61lx9isoXZTZDUBA5ilxxWh4N1Cg0ZAhqRumTgLCj03QRSRQtyKiF1iF3wtYI52Q8IQKUdG6bZ7homIl.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "dFm0-_EtCzGkL4Bxd98R1FKDAM9zcWPsn_WVmapfx918ZIHTnY5MmC6ulu-OUlpbRxGwZbQ1jFdRgFtd99qLgB__mS1q7H6Az1EDXsKBly1Qogqi61lx9isoXZTZDUBA5ilxxWh4N1Cg0ZAhqRumTgLCj03QRSRQtyKiF1iF3wtYI52Q8IQKUdG6bZ7homIl.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "image-type-asymmetry",
+        "architectural-negative-space"
+      ],
+      "visual_anchor": "monochrome architecture photograph",
+      "title_placement": "center-right",
+      "image_treatment": "left full-height monochrome crop",
+      "type_personality": "bold sans-serif",
+      "negative_space_strategy": "narrow white title column",
+      "graphic_language": "small brand tab",
+      "surface_language": "white institutional field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-12_dMcEY32JaB2-QYK2p6ArxquS41Put5EJjv3VP1hwim_x_eBI8zaKs2Q_xcj4q9ZPxTIQilWPz6fxi8aZjaqI4RtfZwgIEPjt4ih0od3-ajBGalRGwUuJ3KG_R6BMXWP8w6_kyrPLCgXEB8gHDu3_BekG1PTpAZQIRJbBSTA9y0cTwcctVOFOmI1pqMeEmgB5.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "dMcEY32JaB2-QYK2p6ArxquS41Put5EJjv3VP1hwim_x_eBI8zaKs2Q_xcj4q9ZPxTIQilWPz6fxi8aZjaqI4RtfZwgIEPjt4ih0od3-ajBGalRGwUuJ3KG_R6BMXWP8w6_kyrPLCgXEB8gHDu3_BekG1PTpAZQIRJbBSTA9y0cTwcctVOFOmI1pqMeEmgB5.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "information-led-cover",
+        "graphic-brand-field"
+      ],
+      "visual_anchor": "diagonal filmstrip",
+      "title_placement": "upper-left",
+      "image_treatment": "multiple images contained in diagonal filmstrip",
+      "type_personality": "condensed sans-serif",
+      "negative_space_strategy": "large white title field",
+      "graphic_language": "diagonal filmstrip and wedge",
+      "surface_language": "light flat field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-13_lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl (1).jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl (1).jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "typography-hero",
+        "minimal-institutional"
+      ],
+      "visual_anchor": "oversized title with panoramic architecture band",
+      "title_placement": "upper-left",
+      "image_treatment": "wide lower panoramic crop",
+      "type_personality": "heavy wide sans-serif",
+      "negative_space_strategy": "generous cream field around title",
+      "graphic_language": "small square accents",
+      "surface_language": "warm institutional field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-14_lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "lAR3z137NJCi92zh7v5Prg_sZGjQQf92Zd0R5B1kpfDYG8LGjgECBcfYzZdk8XAI1m6Hrrjd8hg0i96O1Vs20C8N9v8FpqBBI6xuspKEAHGqwYhKokC9pqRT8ic5F22h2WCJGHW6T0HORtPxzPhyp0PX_64XT13uWVJ-7A70en_l-PlW8X0jrqh5qyzDYzfl.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "typography-hero",
+        "minimal-institutional"
+      ],
+      "visual_anchor": "oversized title with panoramic architecture band",
+      "title_placement": "upper-left",
+      "image_treatment": "wide lower panoramic crop",
+      "type_personality": "heavy wide sans-serif",
+      "negative_space_strategy": "generous cream field around title",
+      "graphic_language": "small square accents",
+      "surface_language": "warm institutional field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。",
+        "與 unresolved-13 位元組相同，保留兩個來源檔紀錄但不重複計算設計文法權重。"
+      ],
+      "reference_id_status": "unresolved"
     },
     {
       "id": null,
       "filename": "unresolved-15_n2aRPJPy2tWj5qZe4FspSclVTalfdsUbktq9teMBdqEj4ZQSSKZ37jB_aL18J1wRs54eRjGtziVqSBH3dIOb3vZ5SZH_9L-Pro1EjmqM_Ft3WVoRCS7qbjiZCRgXGtXzOFf-b8yn4GVYoQ6MHgCifdVPCXJTn9xsk5iEWiUx6lwThTEBBBoIwCCUFrLAYg-e.jpeg",
-      "decision": "unresolved",
+      "decision": "accept",
       "source_status": "local_owner_supplied",
       "original_filename": "n2aRPJPy2tWj5qZe4FspSclVTalfdsUbktq9teMBdqEj4ZQSSKZ37jB_aL18J1wRs54eRjGtziVqSBH3dIOb3vZ5SZH_9L-Pro1EjmqM_Ft3WVoRCS7qbjiZCRgXGtXzOFf-b8yn4GVYoQ6MHgCifdVPCXJTn9xsk5iEWiUx6lwThTEBBBoIwCCUFrLAYg-e.jpeg",
       "mapping_basis": null,
       "industry": null,
-      "cover_archetype": [],
-      "visual_anchor": null,
-      "title_placement": null,
-      "image_treatment": null,
-      "type_personality": null,
-      "negative_space_strategy": null,
-      "graphic_language": null,
-      "surface_language": null,
+      "cover_archetype": [
+        "dark-premium-editorial",
+        "image-type-asymmetry"
+      ],
+      "visual_anchor": "automotive interior photograph",
+      "title_placement": "center-left",
+      "image_treatment": "right-side angular crop",
+      "type_personality": "neutral grotesk",
+      "negative_space_strategy": "dark left title field",
+      "graphic_language": "thin circuit-like rules and angular frame",
+      "surface_language": "dark hard-panel field",
       "effect_language": null,
       "motion_personality": null,
       "notes": [
-        "檔名沒有可驗證的 reference id；未依圖片內容或壓縮順序猜號。"
-      ]
+        "Owner 於 2026-09-08 明確說明：封存.zip 內圖片均為可接受參考。",
+        "reference id 無法由檔名或本機 manifest 驗證，因此保留 unresolved，不猜號。"
+      ],
+      "reference_id_status": "unresolved"
     }
-  ]
+  ],
+  "owner_decisions": {
+    "clarified_at": "2026-09-08",
+    "accepted_source_scope": "封存.zip 內全部 32 張圖片",
+    "rejected_reference_ids": [
+      "05",
+      "06",
+      "07",
+      "12",
+      "15",
+      "19",
+      "22",
+      "25",
+      "30",
+      "34",
+      "36",
+      "38A",
+      "49",
+      "53",
+      "54"
+    ]
+  }
 }
