@@ -2,7 +2,7 @@
 
 Owner calibration date: 2026-09-08
 
-狀態：`REFERENCE INTAKE COMPLETE / GRAMMAR SYNTHESIS READY`。Owner 已確認本次 `封存.zip` 內全部 32 張圖片都是可接受參考；歷史編號缺口不再阻擋這批素材參與文法歸納。Golden Design Grammar v1 尚未形成正式 runtime contract，因此本文件本身不宣告該卡 COMPLETE。
+狀態：`REFERENCE INTAKE COMPLETE / GRAMMAR CONTRACT IMPLEMENTED / PROVENANCE PARTIAL`。Owner 已確認本次 `封存.zip` 內全部 32 張圖片都是可接受參考；歷史編號缺口不再阻擋這批素材參與文法歸納。正式 runtime contract 已建立於 `../golden-design-grammar.v1.json`，但依 Owner 原始限制，完整歷史 provenance 補齊前不宣告整體 Golden Design Grammar v1 `COMPLETE`。
 
 ## Owner 決策
 
@@ -68,4 +68,4 @@ Owner calibration date: 2026-09-08
 
 ## 後續邊界
 
-這批 Owner-approved corpus 已足夠進入 `VQ1-GRAMMAR-001` 的正式資料契約整理，不需 Owner 再逐張標註。歷史缺號只列為 provenance debt；除非未來要恢復完整 01–62 對照，否則不阻擋文法工作。本次仍不開始 P0-VQ2 重畫封面。
+這批 Owner-approved corpus 已完成 `VQ1-GRAMMAR-001` 的正式資料契約整理，不需 Owner 再逐張標註。歷史缺號只列為 provenance debt；除非未來要恢復完整 01–62 對照，否則不阻擋文法 contract 使用。本次仍不開始 P0-VQ2 重畫封面。

@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "1.0",
+  "version": "1.0",
+  "status": "portable-owner-calibrated",
+  "provenance": {
+    "ownerCalibrationDate": "2026-09-08",
+    "inputs": [
+      "design/materials/golden-covers/golden-cover-references.json",
+      "design/materials/golden-covers/golden-cover-calibration.md",
+      "design/materials/motion-baseline.md"
+    ],
+    "runtimeDependencies": [],
+    "constraints": [
+      "derive reusable grammar; never pixel-copy references",
+      "do not classify routes by industry",
+      "static composition must remain complete without motion"
+    ]
+  },
+  "catalogs": {
+    "titlePlacements": {
+      "left-field": { "description": "左側主標場，副標與識別沿同一垂直軸收束" },
+      "lower-left-overlay": { "description": "文字進入影像下方安全區，靠對比而非卡片分隔" },
+      "offset-corner": { "description": "標題偏置於角落，與主留白形成張力" },
+      "split-depth": { "description": "標題跨越前後景交界，不形成等寬左右欄" },
+      "center-stage": { "description": "標題居中但以尺度、裁切或場域建立主導性" },
+      "edge-crop": { "description": "超大標題貼邊或出血裁切，保留核心字形可讀性" }
+    },
+    "visualAnchors": {
+      "display-type": { "description": "字體本身是第一視覺" },
+      "scene-photograph": { "description": "一張全幅情境照片建立舞台" },
+      "spatial-void": { "description": "建築、景觀或色域中的空間留白成為焦點" },
+      "masked-image": { "description": "單一刻意裁切的影像窗口" },
+      "brand-geometry": { "description": "硬邊幾何或規則系統建立品牌場" },
+      "hero-object": { "description": "單一產品、物件、人物或建築主體" },
+      "information-form": { "description": "真實資料、流程或關係形狀承擔焦點" }
+    },
+    "imageTreatments": {
+      "quiet-band": { "description": "窄幅或全景 image window，避免隨手塞圖" },
+      "full-bleed-integrated": { "description": "影像全幅入場，文字直接參與構圖" },
+      "negative-space-crop": { "description": "依影像內天然留白安排文字" },
+      "asymmetric-mask": { "description": "非對稱硬邊、圓形或橢圓 mask" },
+      "monochrome-field": { "description": "單色或雙色影像處理，保留主體辨識" },
+      "object-isolation": { "description": "主物件清楚、背景退讓，不生成替代素材" },
+      "deliberate-offstage-crop": { "description": "刻意裁掉局部影像或文字建立出血張力" },
+      "none": { "description": "無圖片時由字體、比例、grid 與留白成立" }
+    },
+    "typePersonalities": {
+      "editorial-display": { "displayRole": "高對比 display", "bodyRole": "安靜 sans", "pairing": "editorial-display / neutral-body" },
+      "modern-grotesk": { "displayRole": "粗體 grotesk", "bodyRole": "中性 sans", "pairing": "grotesk-display / neutral-body" },
+      "architectural-sans": { "displayRole": "克制幾何 sans", "bodyRole": "窄行距 metadata", "pairing": "architectural-display / compact-meta" },
+      "institutional-serif": { "displayRole": "穩健 serif", "bodyRole": "可讀 sans", "pairing": "institutional-serif / neutral-body" },
+      "technical-condensed": { "displayRole": "緊縮 display", "bodyRole": "等寬或窄體 metadata", "pairing": "condensed-display / technical-meta" }
+    },
+    "negativeSpaceStrategies": {
+      "active-majority": { "description": "主要留白大於內容群，但以比例與軸線承擔張力" },
+      "image-breathing-zone": { "description": "利用照片內低資訊區放置文字" },
+      "asymmetric-counterweight": { "description": "空白與圖像採不均等配重" },
+      "edge-pressure": { "description": "中心保留呼吸，邊緣裁切製造壓力" },
+      "controlled-dense-field": { "description": "資訊較密，但仍保留單一清楚安全區" }
+    },
+    "graphicLanguages": {
+      "quiet-grid": { "description": "隱性 grid 與少量規則線" },
+      "editorial-frame": { "description": "版面框線、folio 與章節標記" },
+      "hard-cut-field": { "description": "硬邊色域與非對稱分區" },
+      "brand-device": { "description": "可重複的單一幾何裝置" },
+      "information-trace": { "description": "真實節點、流程線或資料形狀" },
+      "type-as-graphic": { "description": "字形尺度、描邊或裁切成為圖形" }
+    },
+    "surfaceLanguages": {
+      "paper-flat": { "description": "無多餘陰影的紙面平場" },
+      "photo-field": { "description": "影像是表面，不另包裝成浮卡" },
+      "hard-edge-plane": { "description": "硬邊平面與受控 border" },
+      "dark-matte": { "description": "低反光深色面，禁止 HUD 與重 glow" },
+      "outlined-structure": { "description": "細線框定關係，不使用假玻璃" }
+    },
+    "densities": {
+      "low": { "description": "標題、短副標與單一 anchor" },
+      "medium": { "description": "標題、副標、identity 與一個 supporting device" },
+      "high": { "description": "允許資訊 anchor，但仍維持封面層級" }
+    },
+    "effectLanguages": {
+      "static-precision": {
+        "primaryFamilies": ["hard-rule", "outlined-surface"],
+        "roleTreatments": { "title": "hard-rule", "visualAnchor": "outlined-surface", "image": "masked-crop", "diagram": "rule-draw", "metric": "folio-emphasis", "process": "progressive-reveal", "supportingCopy": "none" }
+      },
+      "editorial-reveal": {
+        "primaryFamilies": ["mask-reveal", "editorial-frame"],
+        "roleTreatments": { "title": "mask-reveal", "visualAnchor": "editorial-frame", "image": "image-zoom-settle", "diagram": "rule-draw", "metric": "folio-emphasis", "process": "staggered-sequence", "supportingCopy": "restrained-fade-rise" }
+      },
+      "hard-field-accent": {
+        "primaryFamilies": ["hard-cut-field", "brand-device-accent"],
+        "roleTreatments": { "title": "hard-cut-field", "visualAnchor": "brand-device-accent", "image": "masked-crop", "diagram": "rule-draw", "metric": "folio-emphasis", "process": "staggered-sequence", "supportingCopy": "none" }
+      },
+      "quiet-depth": {
+        "primaryFamilies": ["controlled-soft-depth"],
+        "roleTreatments": { "title": "restrained-fade-rise", "visualAnchor": "controlled-soft-depth", "image": "image-zoom-settle", "diagram": "svg-diagram-trace", "metric": "folio-emphasis", "process": "progressive-reveal", "supportingCopy": "restrained-fade-rise" }
+      }
+    },
+    "motionPersonalities": {
+      "none": { "entrance": "none", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
+      "corporate": { "entrance": "restrained-fade-rise", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
+      "premium": { "entrance": "mask-reveal", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
+      "energetic": { "entrance": "staggered-sequence", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
+      "playful": { "entrance": "focal-image-settle", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true }
+    }
+  },
+  "globalAntiPatterns": [
+    "generic Canva or AI-template look",
+    "mechanical 50/50 image-and-copy containers",
+    "gradient, glow, shadow or radius used as the main premium signal",
+    "random per-node effects or unbounded CSS",
+    "motion used to rescue weak static composition",
+    "industry-template taxonomy",
+    "pixel-copy of reference slides"
+  ],
+  "coverArchetypes": {
+    "typography-hero": { "titlePlacement": "center-stage", "visualAnchor": "display-type", "imageTreatment": "none", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "type 70–85%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "hard-field-accent", "motionPersonality": "none", "evidenceRefs": ["58", "46", "48", "unresolved-13"] },
+    "full-bleed-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "full-bleed-integrated", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "image 75–100%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "evidenceRefs": ["40", "44", "58", "62"] },
+    "architectural-negative-space": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "negative-space-crop", "typePersonality": "architectural-sans", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "evidenceRefs": ["45", "56", "unresolved-04", "unresolved-11"] },
+    "image-type-asymmetry": { "titlePlacement": "left-field", "visualAnchor": "masked-image", "imageTreatment": "asymmetric-mask", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "dominant side 60–78%", "graphicLanguage": "hard-cut-field", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "corporate", "evidenceRefs": ["39", "57", "59", "60", "61"] },
+    "graphic-brand-field": { "titlePlacement": "offset-corner", "visualAnchor": "brand-geometry", "imageTreatment": "monochrome-field", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "brand field 60–80%", "graphicLanguage": "brand-device", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "energetic", "evidenceRefs": ["60", "61", "unresolved-03", "unresolved-05"] },
+    "object-product-hero": { "titlePlacement": "left-field", "visualAnchor": "hero-object", "imageTreatment": "object-isolation", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "object 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "medium", "effectLanguage": "quiet-depth", "motionPersonality": "corporate", "evidenceRefs": ["42", "51", "57", "unresolved-07"] },
+    "dark-premium-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "monochrome-field", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "dark field 70–90%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "dark-matte", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "evidenceRefs": ["41", "44", "48", "51", "58", "62"] },
+    "information-led-cover": { "titlePlacement": "left-field", "visualAnchor": "information-form", "imageTreatment": "none", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "controlled-dense-field", "dominantRegionRatio": "information anchor 55–70%", "graphicLanguage": "information-trace", "surfaceLanguage": "outlined-structure", "density": "high", "effectLanguage": "static-precision", "motionPersonality": "corporate", "evidenceRefs": ["unresolved-12"] },
+    "cropped-type-image": { "titlePlacement": "edge-crop", "visualAnchor": "display-type", "imageTreatment": "deliberate-offstage-crop", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "cropped field 70–90%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "energetic", "evidenceRefs": ["40", "unresolved-07"] },
+    "minimal-institutional": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "quiet-band", "typePersonality": "institutional-serif", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 65–85%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "evidenceRefs": ["45", "56", "unresolved-01", "unresolved-09", "unresolved-13"] }
+  }
+}
