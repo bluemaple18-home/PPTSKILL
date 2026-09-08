@@ -1,6 +1,6 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-06  
+**Updated:** 2026-09-08  
 **Status:** visual-quality repair lane opened；current frontier = `P0-VQ1`  
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
@@ -9,6 +9,8 @@
 # 0. Current owner verdict
 
 The 2026-09-06 implementation commit `cc7185620c4c0b979d1461c445bac03f8aed3708` completed the contract / runtime path through geometry QA, but the owner rejected the current rendered style candidates as visually too primitive.
+
+The 2026-09-08 owner calibration also screened a broad cross-industry set of **real presentation cover/title slides**. The accepted and rejected examples show that the target is **not** an industry-template catalog. The reusable asset is a presentation design grammar: composition, hierarchy, typography, negative space, image integration, visual anchors, graphic language, component treatment and restrained motion/effects. PPTSKILL should learn the design logic behind accepted references rather than copy a small set of templates.
 
 This is **not** authorization to rewrite the working architecture.
 
@@ -85,13 +87,17 @@ User-provided materials
 - PPTSKILL must not degrade into “same layout + different colors”.
 - No Canva / PowerPoint free x/y dragging in MVP.
 
-## Images / tables / motion
+## Images / tables / motion / component effects
 
 - Do not proactively generate images or tables just to decorate a slide.
 - User-provided materials first.
 - Generate image / table only when the user explicitly asks.
-- Motion may follow Style automatically and must remain coherent across the deck.
+- Motion and component effects may follow Style automatically and must remain coherent across the deck.
+- Effects are part of the visual grammar, not a separate random decoration pass. They must be selected from reviewed, bounded treatments based on Style + semantic role.
+- A slide must remain visually acceptable in its static/resting state. Motion must never be required to rescue a weak composition.
 - Prefer deterministic CSS / Web Animations / reviewed animation helper; support reduced motion.
+- Motion/effects must not introduce layout shift, clipping, overlap, off-canvas content or hidden information in the final/resting or reduced-motion state.
+- Avoid continuous ambient loops, particles, gratuitous parallax, bouncing, heavy glow/HUD treatments or per-element random animation.
 
 ## Layout safety
 
@@ -187,7 +193,7 @@ Current implementation facts:
 
 **Architecture evidence exists:** `evidence/p0-r5/full-deck-renderer-receipt.md`
 
-Keep the seven semantic primitives and DeckSpec-safe rendering path, but the current renderer uses a narrow engineering visual vocabulary: generic cards, lists, split panels, grids, and shared type scales. The repair must expand validated visual variants without replacing semantic primitives with arbitrary HTML.
+Keep the seven semantic primitives and DeckSpec-safe rendering path, but the current renderer uses a narrow engineering visual vocabulary: generic cards, lists, split panels, grids and shared type scales. The current `runtime/motion-primitives.js` is also largely a generic entrance system applied by CSS selectors. The repair must expand validated visual variants and style-coupled effect vocabulary without replacing semantic primitives with arbitrary HTML or random per-element animation.
 
 ---
 
@@ -202,11 +208,11 @@ P0-R0/R1/R2/R4/R6 complete
         ↓
 P0-R3 functional complete but visually rejected
         ↓
-P0-VQ1 Portable frontend-design material intake
+P0-VQ1 Portable design materials + Golden Design Grammar
         ↓
-P0-VQ2 Style candidate renderer + diversity repair
+P0-VQ2 Style candidate renderer + diversity/effect repair
         ↓
-P0-VQ3 Full-deck visual vocabulary repair
+P0-VQ3 Full-deck visual + component-effect vocabulary repair
         ↓
 P0-R7 Direct editor + portable export
         ↓
@@ -225,10 +231,10 @@ Do not continue P0-R7 until the owner has approved the repaired P0-VQ2 style-can
 
 # 4. Visual-quality repair lane
 
-## P0-VQ1 — Portable frontend-design material intake
+## P0-VQ1 — Portable design materials + Golden Design Grammar
 
 **Priority:** P0 / BLOCKS P0-VQ2  
-**Goal:** make the existing AI Core frontend-design knowledge materially available to PPTSKILL without making AI Core a runtime dependency.
+**Goal:** make the existing AI Core frontend-design knowledge plus owner-screened presentation references materially available to PPTSKILL without making AI Core or any external template library a runtime dependency.
 
 ### Source scope
 
@@ -236,23 +242,91 @@ Review / adapt from the current AI Core sources already identified by this proje
 
 - `skills/frontend-design-gate/SKILL.md`
 - `skills/sgds-frontend-materials/SKILL.md`
-- relevant reviewed references for visual route, typography, layout rhythm, visual polish, component geometry, motion personality and anti-patterns.
+- relevant reviewed references for visual route, typography, layout rhythm, visual polish, component geometry, motion personality and anti-patterns;
+- the 2026-09-08 owner-screened cross-industry **Golden Cover Library** calibration from real presentation cover/title-slide references.
+
+### Golden reference intake rules
+
+The Golden Cover Library is design evidence, not a runtime template pack.
+
+- only use real presentation cover / title-slide references for cover calibration; reject brand photos, generic hero images, template mosaics, slide-collage previews and mockups that do not prove a usable cover composition;
+- deliberately sample across industries so the grammar does not collapse into “finance template / medical template / automotive template” taxonomy;
+- owner acceptance/rejection is the visual-quality signal; do not replace it with an automated aesthetic score;
+- preserve source URL / creator / license provenance for external references when recorded;
+- do not package third-party imagery or template assets into PPTSKILL unless separately licensed; derive composition rules, not copied artwork;
+- references may seed archetypes, but archetypes must remain reusable across topics and industries.
+
+### Golden Design Grammar v1
+
+Create a portable grammar derived from accepted references. Initial cover-archetype seeds include, but are not limited to:
+
+- `typography-hero` — title / type is the dominant visual anchor;
+- `full-bleed-editorial` — image and text form one full-stage composition;
+- `architectural-negative-space` — strong spatial/photographic negative space with restrained information;
+- `image-type-asymmetry` — image and type use an intentionally unequal spatial relationship rather than a default 50/50 split;
+- `graphic-brand-field` — geometry, rule system or brand device creates the main field;
+- `object-product-hero` — one object/product/building/device is the visual anchor;
+- `dark-premium-editorial` — dark high-contrast world without generic tech-gradient/HUD treatment;
+- `information-led-cover` — diagram/data-shaped graphic is the anchor while the page still reads as a cover, not a dashboard;
+- `cropped-type-image` — deliberate oversized crop / off-stage tension while preserving legibility and safe geometry;
+- `minimal-institutional` — very few elements carried by grid, typography, proportion and spacing.
+
+This list is a seed vocabulary, **not ten fixed templates**. Implementers may merge / split / rename archetypes when owner evidence supports it.
+
+The grammar / route registry should represent at least:
+
+- `coverArchetype`;
+- `titlePlacement` / hero-copy placement model;
+- `visualAnchor`;
+- `imageTreatment` / asset treatment;
+- `typePersonality` and role pairing;
+- `negativeSpaceStrategy`;
+- `dominantRegionRatio`;
+- `graphicLanguage`;
+- `surfaceLanguage` / line / shape language;
+- `density`;
+- `effectLanguage` / component treatment;
+- `motionPersonality`;
+- explicit anti-patterns.
+
+### Component-effect + motion grammar
+
+Motion/effects must be authored as a small reusable vocabulary tied to the selected Style and component role, not assigned randomly to individual DOM nodes.
+
+The portable material layer should define reviewed treatments such as, or equivalent to:
+
+- static/component treatments: masked crop, hard rule, outlined surface, controlled soft depth, hard-cut field, editorial frame, brand-device accent, monochrome/duotone image treatment;
+- entrance/reveal treatments: restrained fade-rise, mask reveal, rule draw, image zoom-settle, staggered sequence, SVG/diagram trace;
+- emphasis treatments: metric/folio emphasis, progressive process reveal, focal image settle;
+- a `none` / static personality must remain first-class.
+
+Rules:
+
+- effect choice is derived from Style + semantic role (`title`, `visualAnchor`, `metric`, `process`, `image`, `diagram`, `supportingCopy`, etc.);
+- use at most a small bounded set of primary effect families per slide; one hero treatment plus one supporting treatment is usually enough;
+- effect differences do **not** count as structural diversity by themselves;
+- final/resting geometry must equal the geometry-validated composition; transforms/reveals must not move layout boxes;
+- reduced-motion mode must immediately expose all content and preserve the same final hierarchy;
+- avoid infinite loops, particles, bouncing, gratuitous 3D, parallax, heavy blur/glow, sci-fi HUD, or animation whose only purpose is to look “AI fancy”;
+- effects must never add claim-bearing text or hide information needed to understand the slide.
 
 ### Required output
 
-Create a small portable PPTSKILL design-material layer containing only the pieces needed for presentation design, such as:
+Create a small portable PPTSKILL design-material layer containing only the pieces needed for presentation design, including:
 
-- cover archetype catalog;
+- Golden Design Grammar v1 / cover archetype catalog;
 - typography personalities / role pairings;
 - information-density patterns;
 - graphic-language families;
 - visual-anchor types;
 - surface / line / shape language;
 - image-treatment rules;
-- motion personalities;
+- component-effect / effect-language families;
+- motion personalities and semantic role mappings;
+- negative-space / dominant-region patterns;
 - anti-patterns and “AI-template look” rejection rules.
 
-Suggested locations may include `design/materials/` and a compact runtime-readable registry. Exact filenames are implementation detail.
+Suggested locations may include `design/materials/`, a small human-readable Golden Reference index, and a compact runtime-readable registry. Exact filenames are implementation detail.
 
 ### Boundaries
 
@@ -260,32 +334,37 @@ Suggested locations may include `design/materials/` and a compact runtime-readab
 - do not import entire SGDS / vendor repos;
 - do not copy unreviewed third-party raw assets or toolchains;
 - preserve source / license provenance for any external material actually copied;
-- do not expand this card into a generic design system.
+- do not expand this card into a generic design system;
+- do not turn accepted reference slides into pixel-copied templates.
 
 ### Acceptance
 
 - PPTSKILL can compile a visual-route candidate from its own portable material snapshot;
-- the route contract contains more than palette/font/radius: it must include at least `coverArchetype`, `graphicLanguage`, `visualAnchor`, `typePersonality`, `density`, `surfaceLanguage`, `assetTreatment`, and `motionPersonality` or equivalent fields;
+- the route contract contains more than palette/font/radius: it must include at least `coverArchetype`, `graphicLanguage`, `visualAnchor`, `typePersonality`, `density`, `surfaceLanguage`, `assetTreatment`, `effectLanguage`, and `motionPersonality` or equivalent fields;
+- at least the seed archetype families are represented by reusable grammar rather than a single shared grid skeleton;
+- an effect/motion registry can resolve treatments by Style + semantic role without arbitrary LLM-authored CSS;
+- static / reduced-motion rendering remains complete and visually intentional;
 - existing token-safety behavior is unchanged;
 - no full HTML is generated by the LLM as the style contract.
 
 ---
 
-## P0-VQ2 — Style-candidate renderer + rendered-diversity repair
+## P0-VQ2 — Style-candidate renderer + rendered-diversity/effect repair
 
 **Priority:** P0 / OWNER VISUAL GATE / BLOCKS P0-VQ3 AND P0-R7  
-**Goal:** make the four-cover selection feel like genuinely different design directions rather than one skeleton with cosmetic variations.
+**Goal:** make the four-cover selection feel like genuinely different design directions rather than one skeleton with cosmetic variations, while giving each route a coherent restrained effect treatment.
 
 ### Code targets
 
 Primary existing surfaces:
 
 - `runtime/style-candidates.js`
+- `runtime/motion-primitives.js`
 - `fixtures/style-candidates.json`
 - `tests/p0-r3-style-candidates.test.mjs`
 - `evidence/p0-r3/`
 
-New small modules are allowed where they reduce monolithic hard-coded markup, e.g. cover archetype registry / title-fit helper / structural signature helper.
+New small modules are allowed where they reduce monolithic hard-coded markup, e.g. cover archetype registry / title-fit helper / structural signature helper / effect-role registry.
 
 ### Required repair
 
@@ -298,6 +377,9 @@ New small modules are allowed where they reduce monolithic hard-coded markup, e.
 7. Add Chinese title-fit / orphan protection. Avoid 1–2 Chinese characters stranded on a final line when a safe layout / width / type-size adjustment can prevent it.
 8. Preview must render as a 16:9 stage that scales to the browser viewport without clipping while preserving the 1600×900 design coordinate system.
 9. Company Style remains explicitly `fixtureOnly` until P1-R9. Do not pretend the synthetic company fixture is a real brand-quality result.
+10. Replace the current generic selector-driven “everything fades/rises similarly” behavior with route-aware effect resolution from `effectLanguage` / `motionPersonality` + semantic roles.
+11. Cover effects may animate type, rules, masks, images, diagrams or brand devices, but must preserve the approved static composition and final geometry.
+12. Each route must still look intentionally designed with motion disabled; motion is enhancement, not the differentiator that makes the route acceptable.
 
 ### Rendered structural diversity gate
 
@@ -314,7 +396,7 @@ Add a structural signature / validator using fields such as:
 - type personality
 - surface system
 
-A candidate pair must fail if it produces the same primary skeleton with only palette, font, radius, or density changes.
+A candidate pair must fail if it produces the same primary skeleton with only palette, font, radius, density, motion or effect changes. **Effect/motion differences must never satisfy the structural-diversity gate.**
 
 ### Human quality gate
 
@@ -323,10 +405,12 @@ Geometry PASS is not visual-quality PASS.
 Before this card can be COMPLETE:
 
 - render the same approved title/subtitle/identity through Company fixture + 3 AI routes;
-- capture a four-cover montage / individual screenshots;
-- geometry / clipping checks must pass;
+- capture a four-cover montage / individual static screenshots;
+- geometry / clipping checks must pass in the final/resting state;
+- verify motion-on and `prefers-reduced-motion` behavior on representative routes;
 - **owner human approval of the three AI route screenshots is required**;
-- receipt must separately record `functional_gate`, `geometry_gate`, and `owner_visual_gate`.
+- motion/effects must be judged separately from the static cover; a rejected static cover cannot pass because its animation looks good;
+- receipt must separately record `functional_gate`, `geometry_gate`, `owner_visual_gate`, and representative `effect_motion_gate` evidence.
 
 Do not mark the card complete merely because automated tests pass.
 
@@ -338,14 +422,16 @@ Do not mark the card complete merely because automated tests pass.
 - no extra full-deck generation is performed;
 - Chinese sample title `讓每個人用 AI 快速完成簡報` renders without an avoidable orphan line;
 - viewport-fit proof exists at a normal laptop browser viewport;
+- final/resting geometry is identical whether motion is enabled or reduced;
+- all content is visible and legible under reduced motion;
 - `pnpm test` and geometry checks remain green.
 
 ---
 
-## P0-VQ3 — Full-deck visual vocabulary repair
+## P0-VQ3 — Full-deck visual + component-effect vocabulary repair
 
 **Priority:** P0 / BLOCKS P0-R7  
-**Goal:** preserve the semantic primitive architecture while giving slides enough validated composition variants to avoid a repetitive engineering-template look.
+**Goal:** preserve the semantic primitive architecture while giving slides enough validated composition and component-effect variants to avoid a repetitive engineering-template look.
 
 ### Preserve
 
@@ -361,10 +447,15 @@ Do not mark the card complete merely because automated tests pass.
 - keep the existing seven semantic primitives; do not replace them with arbitrary HTML;
 - allow multiple validated visual variants for important primitives rather than one renderer per primitive;
 - variants must meaningfully change hierarchy / spatial composition, not only colors;
-- make StyleSpec influence more than palette: typography hierarchy, surface/line/shape language, visual anchor treatment, rhythm, image treatment and motion;
+- make StyleSpec influence more than palette: typography hierarchy, surface/line/shape language, visual anchor treatment, rhythm, image treatment, component effects and motion;
+- add role-aware effect variants for common elements such as title/eyebrow, rules, metric emphasis, process sequence, image/asset reveal, diagram trace and supporting-copy stagger;
+- effect mappings must remain coherent with the deck Style; do not independently randomize effects per slide or element;
+- prefer one dominant effect treatment plus at most one supporting family per slide unless a reviewed archetype explicitly requires more;
 - avoid making cards / boxes the default answer to every content shape;
 - keep image/table generation opt-in as already locked;
-- support “換一個排版” as variant / CompositionSpec change with unchanged content hash.
+- support “換一個排版” as variant / CompositionSpec change with unchanged content hash;
+- composition-only changes must not silently mutate the underlying content or route into arbitrary custom CSS;
+- tables/charts/data must remain readable immediately in reduced-motion/static mode; do not require staged animation to decode values.
 
 ### MVP variant coverage
 
@@ -377,14 +468,25 @@ At minimum, the acceptance fixture must prove multiple variants across these hig
 - process / sequence;
 - component / image focus.
 
-The exact total number of variants is not authority; visible composition diversity and maintainability are.
+For representative variants, prove matching component-effect behavior for at least:
+
+- title / heading hierarchy;
+- one metric / evidence treatment;
+- one process / sequence treatment;
+- one image / component-focus treatment;
+- one diagram / rule / graphic-anchor treatment where present.
+
+The exact total number of variants is not authority; visible composition diversity, effect coherence and maintainability are.
 
 ### Acceptance
 
 - one Style rendered across a multi-slide deck still feels like one visual world but does not repeat the same geometry every page;
-- a second contrasting Style produces a genuinely different visual language without changing slide content;
+- a second contrasting Style produces a genuinely different visual language and effect language without changing slide content;
 - content hash remains stable for composition-only changes;
-- all tested variants pass P0-R6 geometry QA;
+- all tested variants pass P0-R6 geometry QA in final/resting state;
+- motion-on does not create layout shift or geometry failure, and reduced-motion reveals the complete final slide immediately;
+- a representative full-deck motion/effect pass shows consistent timing and role treatment rather than every component doing the same entrance;
+- the static montage remains owner-acceptable with all motion disabled;
 - no free x/y drag or unbounded arbitrary HTML is introduced;
 - owner reviews a representative full-deck montage before this card is marked complete.
 
@@ -447,7 +549,7 @@ ZIP:
 **Priority:** P1 / OWNER ASSET REQUIRED  
 **Blocker:** real company PPTX not yet supplied to this project.
 
-Convert the one company PPTX into a reviewed Company Style Pack covering palette roles, fonts/fallbacks, identity placement, spacing/geometry, representative cover/content compositions, chart/table/shape language where present, and compatible HTML motion language.
+Convert the one company PPTX into a reviewed Company Style Pack covering palette roles, fonts/fallbacks, identity placement, spacing/geometry, representative cover/content compositions, chart/table/shape language where present, and compatible HTML component-effect / motion language.
 
 Do not build a generic PPTX importer. Presenton Template V2 remains an architectural donor only.
 
@@ -491,6 +593,8 @@ E2E must prove:
 16. file-size guard reports status;
 17. optional profile reminder appears at most once;
 18. **visual-quality receipt includes owner-approved cover and representative full-deck screenshots, separate from geometry PASS.**
+19. representative component effects / motion remain coherent with the selected Style and semantic roles, without layout shift or content mutation;
+20. `prefers-reduced-motion` / static mode reveals the complete final composition and remains visually acceptable.
 
 ---
 
@@ -499,14 +603,15 @@ E2E must prove:
 | Source | Classification | Reuse | Do not absorb |
 |---|---|---|---|
 | AI Core `frontend-design-gate` | ADAPT | Visual Route Contract, visual-first direction, typography / density / asset / anti-pattern decisions | AI Core runtime dependency |
-| AI Core `sgds-frontend-materials` | ADAPT | reviewed visual materials, component / layout / motion guidance | full vendor tree / installer / unrelated UI runtime |
+| AI Core `sgds-frontend-materials` | ADAPT | reviewed visual materials, component / layout / effect / motion guidance | full vendor tree / installer / unrelated UI runtime |
+| Owner-screened Golden Cover Library | ADAPT | composition archetypes, hierarchy, typography, negative space, image integration, visual anchors, anti-template evidence | copied third-party templates / raw assets / industry-template taxonomy |
 | AI Core `ppt-authoring` | ABSORB | semantic spec separation, approval-gate and QA lessons | PPTX renderer as canonical output |
 | AI Core token-efficiency | ABSORB | progressive disclosure, bounded context, local patch | AI Core global workflow dependency |
 | AI Core browser acceptance | ADAPT | real browser evidence, geometry / viewport proof | unrelated forensics preload |
 | AI Core `grill-me` | ADAPT | one-question loop, suggested answer, do-not-reask-known-info | project-state ownership outside PPTSKILL |
 | Presenton / Template V2 | ABSORB | outline/template split, schema hydration, compact slide retrieval, one-time template certification | full backend / DB / cloud proxy / installer |
 | Current PPTSKILL P0-R1/R2/R4/R6 | DIRECT REUSE | contracts, outline, token guard, geometry QA | rewrite without evidence |
-| Current PPTSKILL P0-R3/R5 | REPAIR | keep contracts / primitives, repair rendered visual quality | claiming old screenshots are visually accepted |
+| Current PPTSKILL P0-R3/R5 | REPAIR | keep contracts / primitives, repair rendered visual + effect quality | claiming old screenshots are visually accepted |
 
 ---
 
@@ -527,7 +632,11 @@ Do not open MVP cards for:
 - fixed-layout-only slide system;
 - arbitrary unbounded per-slide HTML/CSS;
 - a second renderer architecture that bypasses DeckSpec / CompositionSpec;
-- weakening collision/overflow QA to gain visual freedom.
+- weakening collision/overflow QA to gain visual freedom;
+- random per-element animation generation;
+- motion/effect systems that only change palette/glow/blur without improving hierarchy;
+- particles, infinite ambient loops, gratuitous parallax/3D/HUD effects or other presentation gimmicks as default visual vocabulary;
+- using animation to hide a weak static composition.
 
 ---
 
@@ -537,9 +646,9 @@ Do not open MVP cards for:
 
 Implementation order is fixed until owner visual acceptance:
 
-1. `P0-VQ1` — adapt the existing AI Core frontend-design / material knowledge into a small portable PPTSKILL design-material layer.
-2. `P0-VQ2` — repair style candidates so the three AI covers are structurally distinct, laptop-safe, Chinese-title-safe, and owner-approved.
-3. `P0-VQ3` — expand full-deck visual variants without changing semantic contracts or weakening geometry QA.
+1. `P0-VQ1` — turn owner-screened Golden Cover references + adapted AI Core frontend-design material into a small portable **Golden Design Grammar v1**, including component-effect / motion role mappings.
+2. `P0-VQ2` — repair style candidates so the three AI covers are structurally distinct, laptop-safe, Chinese-title-safe, owner-approved, and have coherent route-aware effects that do not substitute for static design quality.
+3. `P0-VQ3` — expand full-deck visual and component-effect variants without changing semantic contracts or weakening geometry QA.
 4. Only then resume `P0-R7`.
 
-Do not spend the next iteration polishing the current four screenshots with only palette, padding, shadows, or radius tweaks. The accepted repair must change the rendered design vocabulary while preserving the completed architecture.
+Do not spend the next iteration polishing the current four screenshots with only palette, padding, shadows, radius, generic fade-rise animation or glow tweaks. The accepted repair must change the rendered design vocabulary while preserving the completed architecture.
