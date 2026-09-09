@@ -12,10 +12,12 @@ const screenshotIndex = args.indexOf('--screenshot');
 const screenshotPath = screenshotIndex >= 0 ? args[screenshotIndex + 1] : null;
 const montageIndex = args.indexOf('--montage');
 const montagePath = montageIndex >= 0 ? args[montageIndex + 1] : null;
+const motionFramesIndex = args.indexOf('--motion-frames');
+const motionFramesPrefix = motionFramesIndex >= 0 ? args[motionFramesIndex + 1] : null;
 const motionIndex = args.indexOf('--motion');
 const motionMode = motionIndex >= 0 ? args[motionIndex + 1] : 'reduce';
 if (!['reduce', 'normal'].includes(motionMode)) throw new Error('--motion 只接受 reduce 或 normal。');
-if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal]');
+if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal] [--motion-frames path-prefix]');
 
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
@@ -203,6 +205,48 @@ const geometryExpression = String.raw`(async () => {
   return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, issues, visibleTraceback };
 })()`;
 
+const motionTraceExpression = String.raw`(async () => {
+  await document.fonts.ready;
+  const roots = [...document.querySelectorAll('.motion-root')];
+  const roleElements = new Map();
+  for (const element of document.querySelectorAll('[data-effect-role]')) {
+    const role = element.dataset.effectRole;
+    if (!roleElements.has(role)) roleElements.set(role, element);
+  }
+  const component = document.querySelector('.primitive-component-focus .asset');
+  if (component) roleElements.set('componentFocus', component);
+  const probeFor = (element) => {
+    if (element.dataset.effectRole === 'metric') return element.querySelector('.metric-value') || element;
+    if (element.dataset.effectRole === 'process') return element.querySelector('article') || element;
+    if (element.classList.contains('chart-asset')) return element.querySelector('.bar-row i') || element;
+    return element;
+  };
+  const snapshot = () => Object.fromEntries([...roleElements].map(([role, element]) => {
+    const probe = probeFor(element);
+    const style = getComputedStyle(probe);
+    return [role, {
+      treatment: element.dataset.effectTreatment,
+      opacity: style.opacity,
+      transform: style.transform,
+      clipPath: style.clipPath,
+      transitionDuration: style.transitionDuration,
+      layoutBox: { left: probe.offsetLeft, top: probe.offsetTop, width: probe.offsetWidth, height: probe.offsetHeight },
+    }];
+  }));
+  if (${JSON.stringify(motionMode)} === 'normal') {
+    roots.forEach((root) => root.classList.remove('is-visible'));
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  }
+  const initial = snapshot();
+  roots.forEach((root) => root.classList.add('is-visible'));
+  await new Promise((resolve) => setTimeout(resolve, ${motionMode === 'normal' ? 1300 : 20}));
+  const resting = snapshot();
+  const changedRoles = Object.keys(initial).filter((role) => ['opacity', 'transform', 'clipPath'].some((field) => initial[role][field] !== resting[role][field]));
+  const layoutStable = Object.keys(initial).every((role) => JSON.stringify(initial[role].layoutBox) === JSON.stringify(resting[role].layoutBox));
+  const restingVisible = Object.values(resting).every(({ opacity, clipPath }) => Number(opacity) > 0 && !/100%/.test(clipPath));
+  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible };
+})()`;
+
 const runAtViewport = async ({ width, height }) => {
   const profileDir = await mkdtemp(`${tmpdir()}/pptskill-geometry-`);
   const browser = spawn(chromeBin, [
@@ -258,6 +302,19 @@ const runAtViewport = async ({ width, height }) => {
     const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
     await cdp.send('Page.navigate', { url: htmlUrl });
     await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
+    if (motionFramesPrefix && motionMode === 'normal' && width === 1280 && height === 720) {
+      await cdp.send('Runtime.evaluate', { expression: `(() => { document.querySelectorAll('.motion-root').forEach((root) => root.classList.remove('is-visible')); return document.body.offsetWidth; })()` });
+      await new Promise((resolveFrame) => setTimeout(resolveFrame, 40));
+      const frameDelays = [0, 80, 100, 140, 180, 260];
+      for (let index = 0; index < frameDelays.length; index += 1) {
+        if (index === 1) await cdp.send('Runtime.evaluate', { expression: `(() => document.querySelectorAll('.motion-root').forEach((root) => root.classList.add('is-visible')))()` });
+        if (frameDelays[index]) await new Promise((resolveFrame) => setTimeout(resolveFrame, frameDelays[index]));
+        const frame = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+        await writeFile(resolve(`${motionFramesPrefix}-${String(index).padStart(2, '0')}.png`), Buffer.from(frame.data, 'base64'));
+      }
+    }
+    const motionTraceResult = await cdp.send('Runtime.evaluate', { expression: motionTraceExpression, awaitPromise: true, returnByValue: true });
+    if (motionTraceResult.exceptionDetails) throw new Error(motionTraceResult.exceptionDetails.text);
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
     if (screenshotPath && width === 1280 && height === 720) {
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
@@ -291,6 +348,7 @@ const runAtViewport = async ({ width, height }) => {
       pageErrors,
       networkFailures,
       httpErrors,
+      motionTrace: motionTraceResult.result.value,
       ...result.result.value,
     };
   } finally {
@@ -313,8 +371,10 @@ const receipt = {
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
   motionMode,
-  status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors }) => (
+  status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors, motionTrace }) => (
     slideCount > 0 && issues.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
+    && motionTrace.layoutStable && motionTrace.restingVisible
+    && (motionMode === 'reduce' || motionTrace.changedRoles.length >= 4)
   )) ? 'pass' : 'fail',
   runs,
 };

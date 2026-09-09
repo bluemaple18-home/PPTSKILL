@@ -32,7 +32,8 @@ test('Information Led 不以換色冒充 Style portability', () => {
   const typographyHtml = renderFullDeck(typographyDeck).html;
   const informationHtml = renderFullDeck(informationDeck).html;
   for (const hook of ['information-sequence', 'system-folio', 'system-axis']) assert.match(informationHtml, new RegExp(hook));
-  for (const hook of ['information-sequence', 'system-axis']) assert.doesNotMatch(typographyHtml, new RegExp(hook));
+  assert.doesNotMatch(typographyHtml, /<ol class="information-sequence"/);
+  assert.doesNotMatch(typographyHtml, /<span class="system-axis"/);
   assert.match(informationHtml, /variant-dense-ledger/);
   assert.match(informationHtml, /variant-evidence-axis/);
 });

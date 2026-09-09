@@ -451,7 +451,7 @@ Do not mark the card complete merely because automated tests pass.
 ## P0-VQ3 — Full-deck visual + component-effect vocabulary repair
 
 **Priority:** P0 / BLOCKS P0-R7  
-**Status:** READY / CURRENT FRONTIER
+**Status:** S1 PASS / S2 PASS / S3 IMPLEMENTED — OWNER MOTION GATE PENDING
 **Goal:** preserve the semantic primitive architecture while giving slides enough validated composition and component-effect variants to avoid a repetitive engineering-template look.
 
 ### Art-direction guidance
@@ -492,7 +492,7 @@ Automated tests and geometry checks may prevent regressions but cannot issue a v
 
 #### VQ3-S1 — One-style visual-world extension
 
-- **status:** S1 OWNER VISUAL FAIL RECORDED / S1-R1 IMPLEMENTED / AUTOMATED GATES PASS / OWNER R1 GATE PENDING
+- **status:** COMPLETE / OWNER VISUAL GATE PASS
 - **selected_style:** Typography Hero / `route-editorial-rail`
 - **evidence:** `evidence/p0-vq3/s1/typography-world-receipt.md`, `evidence/p0-vq3/s1/typography-world-montage-1280x720.png`, `evidence/p0-vq3/s1/geometry.json`
 - **repair_scope:** preserve 01/04/05/06/08；art-direction repair only for 02/03/07/09/10；keep warm-white / near-black / vermilion palette；do not start S2/S3.
@@ -508,6 +508,8 @@ Automated tests and geometry checks may prevent regressions but cannot issue a v
 
 #### VQ3-S2 — Contrasting-style portability
 
+- **status:** COMPLETE / OWNER VISUAL GATE PASS
+- **evidence:** `evidence/p0-vq3/s2/information-led-receipt.md`, `evidence/p0-vq3/s2/paired-style-comparison.png`
 - **traces_to:** US-001, US-003; FR-001, FR-002, FR-003; SC-001, SC-002
 - **depends_on:** VQ3-S1 PASS.
 - **blocking_edges:** do not start until S1 establishes a coherent first visual world.
@@ -519,6 +521,8 @@ Automated tests and geometry checks may prevent regressions but cannot issue a v
 
 #### VQ3-S3 — Bounded effect and Golden Visual Regression proof
 
+- **status:** IMPLEMENTED / AUTOMATED + BROWSER GATES PASS / OWNER MOTION GATE PENDING
+- **evidence:** `evidence/p0-vq3/s3/motion-effect-receipt.md`, `evidence/p0-vq3/s3/golden-visual-regression-review.md`
 - **traces_to:** US-002, US-003; FR-002, FR-003; SC-001, SC-002
 - **depends_on:** VQ3-S1 PASS; may run after or together with S2 only if it edits no shared renderer surface.
 - **blocking_edges:** static S1 composition must pass before motion/effects are evaluated.
@@ -739,17 +743,17 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-VQ3-S2 OWNER VISUAL GATE.**
+**NEXT = P0-VQ3-S3 OWNER MOTION GATE.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
 1. `P0-VQ1` — COMPLETE.
 2. `P0-VQ2 / R1` — COMPLETE; Owner Visual Gate PASS, ideal-quality ceiling not yet reached.
 3. `P0-VQ3-S1 / R1` — COMPLETE；Typography Hero 10-page visual world 已通過 Owner Visual Gate。07 giant numeral 與 10 content-derived edge word 為非阻擋 refinement notes。
-4. `P0-VQ3-S2` — IMPLEMENTED；同一 DeckSpec 內容已切換為 Information Led visual world，content hash、頁序與 CompositionSpec 不變；自動化 gate 通過，等待 Owner montage 裁決。
-5. `P0-VQ3-S3` — validate bounded role-aware effects and create the first Golden Visual Regression review artifact.
+4. `P0-VQ3-S2` — COMPLETE；Information Led 已通過 Style Portability 與 Owner Visual Gate。technical rail、matrix、transition variants 為非阻擋 refinement notes。
+5. `P0-VQ3-S3` — IMPLEMENTED；bounded role-aware effects、normal/reduced browser receipts 與首份 Golden Visual Regression review artifact 已產生，等待 Owner motion verdict。
 6. Only after CP-VQ3 passes, resume `P0-R7`.
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 
-S2 必須驗證 Style portability，不得把 Typography Hero 換色冒充另一個 Style。S2 已選用與 S1 差異最大的 Information Led；Graphic Brand Field 的 weak-pass 品質不得混入本卡判斷。S2 Owner PASS 前不得開始 S3。
+S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充另一個 Style。S3 Owner PASS 與 CP-VQ3 通過前不得恢復 P0-R7。
