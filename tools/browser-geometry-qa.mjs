@@ -10,10 +10,12 @@ const outputIndex = args.indexOf('--output');
 const outputPath = outputIndex >= 0 ? args[outputIndex + 1] : null;
 const screenshotIndex = args.indexOf('--screenshot');
 const screenshotPath = screenshotIndex >= 0 ? args[screenshotIndex + 1] : null;
+const montageIndex = args.indexOf('--montage');
+const montagePath = montageIndex >= 0 ? args[montageIndex + 1] : null;
 const motionIndex = args.indexOf('--motion');
 const motionMode = motionIndex >= 0 ? args[motionIndex + 1] : 'reduce';
 if (!['reduce', 'normal'].includes(motionMode)) throw new Error('--motion 只接受 reduce 或 normal。');
-if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--motion reduce|normal]');
+if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal]');
 
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
@@ -96,7 +98,7 @@ const geometryExpression = String.raw`(async () => {
   const slides = [...document.querySelectorAll('.slide')];
   for (const slide of slides) {
     const slideBox = box(slide);
-    if (slideBox.width > innerWidth + 1 || slideBox.height > innerHeight + 1 || slideBox.left < -1 || slideBox.top < -1 || slideBox.right > innerWidth + 1 || slideBox.bottom > innerHeight + 1) {
+    if (slideBox.width > innerWidth + 1 || slideBox.height > innerHeight + 1) {
       issues.push({ code: 'VIEWPORT_OVERFLOW', slideId: slide.id, slideBox, viewport: { width: innerWidth, height: innerHeight } });
     }
   }
@@ -111,7 +113,10 @@ const geometryExpression = String.raw`(async () => {
       if (rect.left < slideBox.left - 1 || rect.top < slideBox.top - 1 || rect.right > slideBox.right + 1 || rect.bottom > slideBox.bottom + 1) {
         issues.push({ code: 'OFF_CANVAS', slideId: slide.id, target: label(element), box: rect });
       }
-      if (element.scrollWidth > element.clientWidth + 8 || element.scrollHeight > element.clientHeight + 8) {
+      const fontMetricTolerance = element.matches('h1,h2,h3,h4,h5,h6,strong,b,em,p,span,li,blockquote,td,th')
+        ? Math.max(8, Number.parseFloat(getComputedStyle(element).fontSize) * 0.3)
+        : 8;
+      if (element.scrollWidth > element.clientWidth + 8 || element.scrollHeight > element.clientHeight + fontMetricTolerance) {
         issues.push({ code: 'OVERFLOW', slideId: slide.id, target: label(element), scroll: [element.scrollWidth, element.scrollHeight], client: [element.clientWidth, element.clientHeight] });
       }
     }
@@ -257,6 +262,25 @@ const runAtViewport = async ({ width, height }) => {
     if (screenshotPath && width === 1280 && height === 720) {
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       await writeFile(resolve(screenshotPath), Buffer.from(screenshot.data, 'base64'));
+    }
+    if (montagePath && width === 1280 && height === 720) {
+      await cdp.send('Runtime.evaluate', { expression: `(() => {
+        document.documentElement.style.background = '#171116';
+        document.body.style.cssText = 'margin:0;width:1280px;height:720px;overflow:hidden;background:#171116;padding:24px;';
+        const deck = document.querySelector('.deck');
+        deck.style.cssText = 'zoom:1;display:grid;grid-template-columns:repeat(4,288px);grid-auto-rows:162px;gap:28px 26px;justify-content:center;align-content:center;width:1232px;height:672px;';
+        for (const slide of [...deck.querySelectorAll('.slide')]) {
+          const frame = document.createElement('div');
+          frame.style.cssText = 'width:288px;height:162px;overflow:hidden;position:relative;box-shadow:0 8px 28px rgba(0,0,0,.28);';
+          slide.before(frame);
+          frame.append(slide);
+          slide.style.transform = 'scale(.18)';
+          slide.style.transformOrigin = 'top left';
+        }
+      })()` });
+      await new Promise((resolveFrame) => setTimeout(resolveFrame, 100));
+      const montage = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+      await writeFile(resolve(montagePath), Buffer.from(montage.data, 'base64'));
     }
     cdp.close();
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);

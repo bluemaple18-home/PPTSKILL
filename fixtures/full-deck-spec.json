@@ -1,82 +1,134 @@
 {
   "schemaVersion": "1.0",
-  "deckId": "pptskill-mvp",
+  "deckId": "pptskill-typography-world",
   "title": "讓每個人用 AI 快速完成簡報",
   "language": "zh-Hant",
   "style": {
-    "id": "route-technical-map",
-    "name": "Technical Map",
-    "layout": { "primaryMove": "technical-map", "compositionLanguage": "technical" },
-    "density": "high",
-    "typography": { "display": "Arial, sans-serif", "body": "Arial, sans-serif", "mono": "Menlo, monospace" },
-    "palette": { "canvas": "#0c1b19", "text": "#e8f0e9", "muted": "#9ab0a7", "accent": "#a9ffcb", "surface": "#122824" },
-    "spacing": { "unit": 6, "slidePadding": 52 },
-    "geometry": { "radius": 2, "borderWidth": 1 },
-    "motion": { "personality": "corporate", "durationMs": 180, "easing": "ease-out", "reducedMotion": true },
-    "assetTreatment": "diagram-first with labeled system nodes"
+    "id": "route-editorial-rail",
+    "name": "Editorial Monument",
+    "layout": { "primaryMove": "editorial-rail", "compositionLanguage": "narrative" },
+    "density": "low",
+    "typography": {
+      "display": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif",
+      "body": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif",
+      "mono": "Menlo, monospace"
+    },
+    "palette": { "canvas": "#481b2b", "text": "#f4eadc", "muted": "#d9c4ba", "accent": "#f1b8aa", "surface": "#713248" },
+    "spacing": { "unit": 10, "slidePadding": 72 },
+    "geometry": { "radius": 0, "borderWidth": 1 },
+    "motion": { "personality": "premium", "durationMs": 420, "easing": "cubic-bezier(.16,1,.3,1)", "reducedMotion": true },
+    "assetTreatment": "editorial chapter crops and quiet captions"
   },
   "slides": [
     {
       "id": "opening",
       "content": {
         "title": "讓每個人用 AI 快速完成簡報",
-        "subtitle": "從問題釐清到可離線分享的單檔 HTML",
+        "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
         "keyPoints": ["先問清楚，再開始做", "同內容比較四種風格", "交付一個可轉傳檔案"],
         "components": []
       },
-      "composition": { "primitive": "cover", "variant": "signal", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+      "composition": { "primitive": "cover", "variant": "monument", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
     },
     {
       "id": "problem",
       "content": {
-        "title": "現在的成本，不在畫投影片",
-        "subtitle": "真正浪費時間的是來回猜測、重做與工具不相容",
-        "keyPoints": ["需求未收斂就開始排版", "不同 AI 產物無法互相接手", "修改一頁卻重生整份簡報"],
+        "title": "成本不在畫投影片",
+        "subtitle": "真正拖慢團隊的，是三個看不見的來回",
+        "keyPoints": ["需求未收斂，就開始排版", "不同 AI 的產物，無法互相接手", "只想修改一頁，卻被迫重生整份簡報"],
         "components": []
       },
-      "composition": { "primitive": "title-points", "variant": "ruled", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+      "composition": { "primitive": "title-points", "variant": "editorial-index", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "proof",
+      "content": {
+        "title": "把猜測換成證據",
+        "subtitle": "每一個交付節點，都能回答「為什麼是這一版」",
+        "keyPoints": ["輸入與主張保留來源", "版面選擇留下規則與差異", "瀏覽器驗證留下可重播證據"],
+        "components": []
+      },
+      "composition": { "primitive": "split-proof", "variant": "proof-ledger", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "metrics",
+      "content": {
+        "title": "少一點重做，多一點確定",
+        "subtitle": "用可驗證的節點壓縮不必要的往返",
+        "keyPoints": ["1 份｜可攜、可再編輯的 HTML 成果", "4 條｜真正不同的視覺路線", "2 種｜固定驗證尺寸 1600×900 與 1280×720"],
+        "components": []
+      },
+      "composition": { "primitive": "metric-grid", "variant": "metric-contrast", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
     },
     {
       "id": "workflow",
       "content": {
         "title": "一條可預期的製作路徑",
-        "subtitle": "每一段都有明確輸入、輸出與人工確認點",
-        "keyPoints": ["讀素材", "Grill Me", "確認架構", "選擇風格", "輸出 HTML"],
+        "subtitle": "五個 bounded steps，讓每次選擇都有清楚的前後關係",
+        "keyPoints": ["讀取素材", "釐清核心問題", "確認敘事架構", "比較視覺路線", "輸出與驗收"],
         "components": []
       },
-      "composition": { "primitive": "process-flow", "variant": "numbered", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+      "composition": { "primitive": "process-flow", "variant": "vertical-sequence", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "portable",
+      "content": {
+        "title": "成果，不鎖在工具裡",
+        "subtitle": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+        "keyPoints": ["離線可開啟", "自由轉傳", "相容 AI 可接手"],
+        "components": [
+          { "id": "portable-quote", "type": "text", "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。" }
+        ]
+      },
+      "composition": { "primitive": "component-focus", "variant": "quote-monument", "slots": { "title": "content.title", "subtitle": "content.subtitle", "component": "content.components.portable-quote" } }
     },
     {
       "id": "guardrails",
       "content": {
-        "title": "AI 有創作空間，但沒有失控空間",
-        "subtitle": "Style 控制共同視覺世界，Composition 控制單頁安排",
-        "keyPoints": ["最多 15 頁", "禁止 giant call", "只用核准版型", "碰撞即擋下"],
+        "title": "自由，必須有邊界",
+        "subtitle": "高密度頁也不等於把資訊塞進等寬卡片",
+        "keyPoints": ["StyleSpec 統一整份 deck 的視覺世界", "CompositionSpec 只控制單頁結構，不偷渡內容", "最多 15 頁，長任務拆成可重試的小單位", "碰撞、爆版與 off-canvas 一律 fail-loud", "Owner 審美裁決與自動化驗證分開記錄"],
         "components": []
       },
-      "composition": { "primitive": "metric-grid", "variant": "cards", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+      "composition": { "primitive": "title-points", "variant": "dense-ledger", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
     },
     {
-      "id": "handoff",
+      "id": "transition",
       "content": {
-        "title": "一個檔案，就能交給下一個人",
-        "subtitle": "DeckSpec 跟著 HTML 走，不依賴原作者的 ai-core",
-        "keyPoints": ["離線可開啟", "自由轉傳", "另一個相容 AI 可讀取"],
+        "title": "從做完，到做對",
+        "subtitle": "技術安全只是底線，真正的交付還需要視覺判斷",
+        "keyPoints": ["靜態構圖先成立", "動畫不能救醜版面", "Golden 是證據，不是模板"],
+        "components": []
+      },
+      "composition": { "primitive": "section-break", "variant": "quiet-transition", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+    },
+    {
+      "id": "evidence",
+      "content": {
+        "title": "品質由多層證據共同成立",
+        "subtitle": "自動化負責守底線，Owner 負責最後的視覺裁決",
+        "keyPoints": ["契約驗證", "雙尺寸 geometry", "Owner visual gate"],
         "components": [
-          { "id": "portable-quote", "type": "text", "text": "簡報不是鎖在某個 AI 裡，而是一份可攜、可驗證、可再編輯的成果。" }
+          {
+            "id": "quality-bars",
+            "type": "chart",
+            "chartType": "bar",
+            "labels": ["內容契約", "幾何安全", "視覺一致"],
+            "series": [{ "name": "Acceptance coverage", "values": [100, 100, 92] }]
+          }
         ]
       },
-      "composition": { "primitive": "component-focus", "variant": "quote", "slots": { "title": "content.title", "subtitle": "content.subtitle", "component": "content.components.portable-quote" } }
+      "composition": { "primitive": "component-focus", "variant": "evidence-axis", "slots": { "title": "content.title", "subtitle": "content.subtitle", "component": "content.components.quality-bars" } }
     },
     {
       "id": "decision",
       "content": {
-        "title": "先把 MVP 做到人人真的能用",
-        "subtitle": "下一步是完整 renderer、瀏覽器硬驗收與 ZIP 發佈",
-        "keyPoints": ["完成安全版型原語", "加入 geometry hard gate", "修復 editor 與 export", "包裝三種 AI 入口"],
+        "title": "一套 deck，一個清楚的世界",
+        "subtitle": "下一步不是再做一張漂亮海報，而是讓整份簡報維持同一種判斷",
+        "keyPoints": ["共用同一套 typography hierarchy", "每頁構圖不同，但視覺人格一致", "交由 Owner montage 決定是否通過"],
         "components": []
       },
-      "composition": { "primitive": "split-proof", "variant": "closing", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+      "composition": { "primitive": "split-proof", "variant": "closing-manifesto", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
     }
   ]
 }

@@ -1,5 +1,17 @@
 # 四款封面 Visual Route Contract
 
+## P0-VQ3-S1 Typography Hero visual world（2026-09-09）
+
+- `change_mode`: new_surface；沿用已核准的 Typography Hero 世界，不建立新 Style。
+- `surface_mode`: experience。
+- `THESIS`: 大字不是封面特效，而是整份 deck 的資訊結構；拒絕把每種內容自動塞回等寬卡片。
+- `OWN_WORLD`: 深酒紅 canvas、暖白正文、淡粉單一訊號色、Microsoft JhengHei fallback chain、細線與 edge-cropped type mass；無照片。
+- `STORY`: 從成本、證據、流程、可攜性、邊界到決策，10 頁形成一條可驗證的產品敘事。
+- `FIRST_VIEWPORT`: 以 Q2 Typography Hero 的滿版字形裁切與不對稱 copy placement 作封面，不回到 8:4 panel skeleton。
+- `FORM`: 七種指定頁型共用 typography hierarchy、folio、規則線與 palette-area ratio；透過錯位比例、留白與文字尺度產生頁面差異。
+- `ANTI_PATTERNS`: 三等分 KPI 卡、五個箭頭盒、每頁同一 split、照片裝飾、glow、陰影與圓角假高級。
+- `SCOPE_BOUNDARY`: 僅 S1；不做 contrasting Style、motion/effect proof 或 Golden Visual Regression 收編。
+
 ## P0-VQ2 replacement intent（2026-09-09）
 
 - `change_mode`: redesign

@@ -19,7 +19,7 @@ test('完整 renderer 以同一 StyleSpec 輸出多版型單檔 HTML', () => {
   const result = renderFullDeck(fixture);
   assert.equal(result.status, 'pass');
   assert.equal((result.html.match(/class="slide primitive-/g) ?? []).length, fixture.slides.length);
-  assert.equal((result.html.match(/data-style-id="route-technical-map"/g) ?? []).length, 1);
+  assert.equal((result.html.match(new RegExp(`data-style-id="${fixture.style.id}"`, 'g')) ?? []).length, 1);
   assert.doesNotMatch(result.html, /<script\s+src=|<link\s+[^>]*href=/i);
   assert.deepEqual(extractDeckSpec(result.html), result.spec);
 });
@@ -62,7 +62,7 @@ test('alternate composition 只換 CompositionSpec，不改內容 hash', () => {
 
 test('motion 僅由 StyleSpec 注入，並尊重 reduced-motion', () => {
   const result = renderFullDeck(fixture);
-  assert.match(result.html, /--motion:180ms;--ease:ease-out/);
+  assert.match(result.html, new RegExp(`--motion:${fixture.style.motion.durationMs}ms;--ease:${fixture.style.motion.easing.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
   assert.match(result.html, /@media\(prefers-reduced-motion:reduce\)/);
   assert.equal((result.html.match(/--motion:/g) ?? []).length, 1);
 });
