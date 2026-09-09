@@ -13,7 +13,7 @@
       "body": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif",
       "mono": "Menlo, monospace"
     },
-    "palette": { "canvas": "#481b2b", "text": "#f4eadc", "muted": "#d9c4ba", "accent": "#f1b8aa", "surface": "#713248" },
+    "palette": { "canvas": "#f1eee6", "text": "#171515", "muted": "#68615c", "accent": "#d7472f", "surface": "#ded8cc" },
     "spacing": { "unit": 10, "slidePadding": 72 },
     "geometry": { "radius": 0, "borderWidth": 1 },
     "motion": { "personality": "premium", "durationMs": 420, "easing": "cubic-bezier(.16,1,.3,1)", "reducedMotion": true },

@@ -8,7 +8,7 @@
 ## Visual Route
 
 - `change_mode`: new_surface；繼承 Q2 已核准的 Typography Hero。
-- `visual_world`: 深酒紅 canvas、暖白文字、淡粉訊號色、Microsoft JhengHei fallback chain、細線、folio 與 edge-cropped typography。
+- `visual_world`: 暖白紙張 canvas、近黑文字、朱紅訊號色、Microsoft JhengHei fallback chain、細線、folio 與 edge-cropped typography。
 - `primary_layout_move`: 大字尺度與不對稱文字區域建立視覺節奏；頁面不依賴照片、等寬卡片或固定 50/50 split。
 - `anti_patterns`: 三等分 KPI cards、五個箭頭 boxes、glow、陰影、圓角與每頁重複骨架。
 
