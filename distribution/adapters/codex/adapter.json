@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0",
+  "id": "codex",
+  "displayName": "Codex",
+  "command": "codex",
+  "versionArgs": ["--version"],
+  "coreRelativePath": "../../core"
+}

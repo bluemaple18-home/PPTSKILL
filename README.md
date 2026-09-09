@@ -24,7 +24,7 @@ v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-dec
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3：functional contract 已完成，但 owner visual acceptance 重新打開。
 - P0-R5：semantic renderer 架構保留，但 visual vocabulary 必須修復，不重寫 DeckSpec / CompositionSpec。
-- **目前工程 frontier：`P1-R8-A` 已完成，下一張為 `P1-R8-B — ZIP Distribution Lifecycle`。**
+- **目前工程 frontier：`P1-R8-A` 已完成；`P1-R8-B` 實作與 lifecycle gates 已通過，等待兩名獨立 blind reviewer verdict。`P1-R9` 等待 Owner company PPTX；`P1-R10` 排在 R8-B review 之後。**
 
 ## Portable HTML editor
 
@@ -35,6 +35,12 @@ v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-dec
 ## Local profile
 
 個人偏好預設不存在也可正常使用。只有明確執行 `pnpm profile save --input <profile.json> --remember` 才會寫入 user home 下的 `.pptskill/profile.json`；不加 `--remember` 不會建立檔案。可用 `pnpm profile show` 檢視，允許欄位限於語言、Style 傾向、density、sample-first、motion、字體人格與色彩傾向。profile 不會進入輸出的 `deck.html`。
+
+## ZIP distribution
+
+可發送的候選包位於 `dist/PPTSKILL-0.1.0.zip`。解壓後直接執行 `node install.mjs`，再執行 `node smoke.mjs`；不需要 clone repo、branch、Git 或 GitHub token。更新使用新版 ZIP 內的 `node update.mjs`，移除 runtime 使用 `node uninstall.mjs`。uninstall 預設保留 profile；只有明確加上 `--purge-profile` 才刪除個人偏好。
+
+ZIP 只有一份 `core/`；Codex、Claude Code、Gemini adapter 只保存 capability probe 與 shared-core 相對路徑。installer 不會自動修改 `.codex`、`.claude`、`.gemini`，不登入、不下載，也不寫 token。
 
 `evidence/ps-003/*.png` 與目前 `fixtures/style-candidate-previews/*.html` 可作開發 / 退件 evidence，不代表最終視覺品質已被 owner 接受。
 

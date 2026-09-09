@@ -1,8 +1,8 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-09
+**Updated:** 2026-09-10
 
-**Status:** `P1-R8-A COMPLETE`；current frontier = `P1-R8-B`
+**Status:** `P1-R8-A COMPLETE / P1-R8-B IMPLEMENTED — INDEPENDENT REVIEW BLOCKED`；current frontier = `P1-R8-B independent review`（P1-R9 等待 Owner asset）
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -638,7 +638,13 @@ Evidence：`evidence/p0-r7/direct-editor-portable-export-receipt.md`、`evidence
 
 ### R8-B — ZIP Distribution Lifecycle
 
-**Status:** NEXT
+**Status:** IMPLEMENTED / AUTOMATED + ZIP LIFECYCLE GATES PASS / INDEPENDENT REVIEW BLOCKED
+
+- one shared core + Codex／Claude Code／Gemini thin adapters。
+- ZIP fresh install、atomic update／rollback、profile-preserving uninstall、explicit profile purge 與 capability smoke PASS。
+- 不依賴 Git／GitHub token；不自動修改 harness dotdir、不下載或登入。
+- Evidence：`evidence/p1-r8/b/zip-distribution-receipt.md`、`evidence/p1-r8/b/host-capability-probe.json`。
+- 兩名 blind reviewer 於 2026-09-10 均因 reviewer runtime 用量限制在讀取變更前中止，沒有 verdict；不得以自審取代正式 reviewer gate。
 
 Profile:
 
@@ -757,7 +763,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P1-R8-B — ZIP Distribution Lifecycle.**
+**NEXT = P1-R8-B — complete two independent blind reviews.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -769,7 +775,9 @@ Implementation order is fixed until full-deck owner visual acceptance:
 6. `CP-VQ3` — COMPLETE；解除 `P0-R7` blocker。
 7. `P0-R7` — COMPLETE；direct edit、supported component edit、image replacement、slide management、bounded local AI patch、sanitized save/reopen 與 dual-viewport geometry 全部通過。
 8. `P1-R8-A` — COMPLETE；local optional profile isolation 與 export integration PASS。
-9. `P1-R8-B` — NEXT；one shared core + three thin adapters + ZIP lifecycle。
+9. `P1-R8-B` — IMPLEMENTED / REVIEW BLOCKED；one shared core + three thin adapters + ZIP lifecycle PASS，待兩名 blind reviewer verdict。
+10. `P1-R9` — BLOCKED；等待 Owner 提供 real company PPTX。
+11. `P1-R10` — QUEUED AFTER R8-B REVIEW；asset optimizer / single-file size guard。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

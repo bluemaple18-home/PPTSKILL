@@ -1,11 +1,14 @@
 {
   "name": "presentation-skill",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build:themes": "node tools/build-theme-previews.mjs",
     "build:styles": "node tools/build-style-candidates.mjs",
     "build:deck": "node tools/build-full-deck.mjs",
+    "build:dist": "node tools/build-distribution.mjs",
+    "probe:dist": "node tools/distribution-host-probe.mjs",
     "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
     "test": "node --test tests/*.test.mjs"
