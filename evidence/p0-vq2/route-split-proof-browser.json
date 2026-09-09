@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T03:44:34.197Z",
+  "artifact": "route-split-proof.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 72,
+          "top": 233,
+          "right": 762,
+          "bottom": 443,
+          "width": 690,
+          "height": 210
+        },
+        "visualAnchor": {
+          "left": 740,
+          "top": -40,
+          "right": 1640,
+          "bottom": 940,
+          "width": 900,
+          "height": 980
+        },
+        "supportingCopy": {
+          "left": 72,
+          "top": 491,
+          "right": 602,
+          "bottom": 566.375,
+          "width": 530,
+          "height": 75.375
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 57.60000228881836,
+          "top": 186.40000915527344,
+          "right": 609.6000633239746,
+          "bottom": 354.3999938964844,
+          "width": 552.0000610351562,
+          "height": 167.99998474121094
+        },
+        "visualAnchor": {
+          "left": 592,
+          "top": -32,
+          "right": 1312,
+          "bottom": 752,
+          "width": 720,
+          "height": 784
+        },
+        "supportingCopy": {
+          "left": 57.60000228881836,
+          "top": 392.8000183105469,
+          "right": 481.60000228881836,
+          "bottom": 453.1000061035156,
+          "width": 424,
+          "height": 60.29998779296875
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

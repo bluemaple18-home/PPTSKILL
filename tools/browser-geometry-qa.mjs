@@ -1,4 +1,4 @@
-import { access, mkdtemp, rm, writeFile } from 'node:fs/promises';
+import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { basename, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -8,7 +8,12 @@ const args = process.argv.slice(2);
 const input = args.find((arg) => !arg.startsWith('--'));
 const outputIndex = args.indexOf('--output');
 const outputPath = outputIndex >= 0 ? args[outputIndex + 1] : null;
-if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json]');
+const screenshotIndex = args.indexOf('--screenshot');
+const screenshotPath = screenshotIndex >= 0 ? args[screenshotIndex + 1] : null;
+const motionIndex = args.indexOf('--motion');
+const motionMode = motionIndex >= 0 ? args[motionIndex + 1] : 'reduce';
+if (!['reduce', 'normal'].includes(motionMode)) throw new Error('--motion 只接受 reduce 或 normal。');
+if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--motion reduce|normal]');
 
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
@@ -37,6 +42,7 @@ class CdpClient {
     this.socket = new WebSocket(url);
     this.nextId = 1;
     this.pending = new Map();
+    this.listeners = new Map();
   }
   async open() {
     await new Promise((resolveOpen, reject) => {
@@ -45,6 +51,10 @@ class CdpClient {
     });
     this.socket.addEventListener('message', ({ data }) => {
       const message = JSON.parse(data);
+      if (message.method) {
+        for (const listener of this.listeners.get(message.method) || []) listener(message.params || {});
+        return;
+      }
       if (!message.id || !this.pending.has(message.id)) return;
       const { resolveMessage, rejectMessage } = this.pending.get(message.id);
       this.pending.delete(message.id);
@@ -59,11 +69,17 @@ class CdpClient {
       this.socket.send(JSON.stringify({ id, method, params }));
     });
   }
+  on(method, listener) {
+    const listeners = this.listeners.get(method) || [];
+    listeners.push(listener);
+    this.listeners.set(method, listeners);
+  }
   close() { this.socket.close(); }
 }
 
 const geometryExpression = String.raw`(async () => {
   await document.fonts.ready;
+  await new Promise((resolve) => setTimeout(resolve, 1300));
   await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   const issues = [];
   const visible = (element) => {
@@ -79,7 +95,10 @@ const geometryExpression = String.raw`(async () => {
   const intersects = (a, b) => Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
   const slides = [...document.querySelectorAll('.slide')];
   for (const slide of slides) {
-    if (box(slide).width > innerWidth + 1) issues.push({ code: 'VIEWPORT_OVERFLOW', slideId: slide.id, slideWidth: box(slide).width, viewportWidth: innerWidth });
+    const slideBox = box(slide);
+    if (slideBox.width > innerWidth + 1 || slideBox.height > innerHeight + 1 || slideBox.left < -1 || slideBox.top < -1 || slideBox.right > innerWidth + 1 || slideBox.bottom > innerHeight + 1) {
+      issues.push({ code: 'VIEWPORT_OVERFLOW', slideId: slide.id, slideBox, viewport: { width: innerWidth, height: innerHeight } });
+    }
   }
   for (const slide of slides) {
     const slideBox = box(slide);
@@ -114,17 +133,35 @@ const geometryExpression = String.raw`(async () => {
       }
     }
   }
-  return { slideCount: slides.length, slideWidths: slides.map((slide) => box(slide).width), issues };
+  const bodyText = document.body?.innerText || '';
+  const visibleTraceback = /Traceback|Unhandled|Exception/.test(bodyText)
+    ? bodyText.split('\n').filter((line) => /Traceback|Unhandled|Exception/.test(line)).slice(0, 5)
+    : null;
+  const semanticBoxes = Object.fromEntries([
+    ['title', '[data-effect-title]'],
+    ['visualAnchor', '[data-effect-visual-anchor]'],
+    ['supportingCopy', '.subtitle'],
+  ].map(([role, selector]) => [role, document.querySelector(selector) ? box(document.querySelector(selector)) : null]));
+  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, issues, visibleTraceback };
 })()`;
 
-const runAtViewport = async ({ width, height }, offset) => {
+const runAtViewport = async ({ width, height }) => {
   const profileDir = await mkdtemp(`${tmpdir()}/pptskill-geometry-`);
-  const port = 9430 + offset + Math.floor(Math.random() * 100);
   const browser = spawn(chromeBin, [
     '--headless=new', '--hide-scrollbars', '--disable-gpu', '--no-first-run', '--no-default-browser-check',
-    `--remote-debugging-port=${port}`, `--user-data-dir=${profileDir}`, `--window-size=${width},${height}`, htmlUrl,
+    '--remote-debugging-port=0', `--user-data-dir=${profileDir}`, `--window-size=${width},${height}`, 'about:blank',
   ], { stdio: 'ignore' });
   try {
+    let port;
+    for (let attempt = 0; attempt < 40; attempt += 1) {
+      try {
+        const [activePort] = (await readFile(`${profileDir}/DevToolsActivePort`, 'utf8')).trim().split('\n');
+        port = Number(activePort);
+        if (Number.isInteger(port) && port > 0) break;
+      } catch {}
+      await new Promise((resolveWait) => setTimeout(resolveWait, 100));
+    }
+    if (!port) throw new Error('Chrome DevTools port 未就緒。');
     let pages;
     for (let attempt = 0; attempt < 40; attempt += 1) {
       try {
@@ -137,11 +174,48 @@ const runAtViewport = async ({ width, height }, offset) => {
     if (!page) throw new Error('Chrome DevTools target 未就緒。');
     const cdp = new CdpClient(page.webSocketDebuggerUrl);
     await cdp.open();
-    await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
+    const consoleMessages = [];
+    const pageErrors = [];
+    const networkFailures = [];
+    const httpErrors = [];
+    cdp.on('Runtime.consoleAPICalled', ({ type, args: values = [] }) => consoleMessages.push({
+      type,
+      text: values.map(({ value, description }) => value ?? description ?? '').join(' '),
+    }));
+    cdp.on('Runtime.exceptionThrown', ({ exceptionDetails }) => pageErrors.push({
+      text: exceptionDetails?.text,
+      description: exceptionDetails?.exception?.description,
+    }));
+    cdp.on('Network.loadingFailed', ({ requestId, errorText, canceled }) => networkFailures.push({ requestId, errorText, canceled }));
+    cdp.on('Network.responseReceived', ({ response }) => {
+      if (response?.status >= 400) httpErrors.push({ url: response.url, status: response.status, statusText: response.statusText });
+    });
+    await Promise.all([
+      cdp.send('Page.enable'),
+      cdp.send('Runtime.enable'),
+      cdp.send('Network.enable'),
+    ]);
+    await cdp.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
+    await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: motionMode === 'reduce' ? 'reduce' : 'no-preference' }] });
+    const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
+    await cdp.send('Page.navigate', { url: htmlUrl });
+    await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
+    if (screenshotPath && width === 1280 && height === 720) {
+      const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
+      await writeFile(resolve(screenshotPath), Buffer.from(screenshot.data, 'base64'));
+    }
     cdp.close();
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
-    return { viewport: { width, height }, ...result.result.value };
+    return {
+      viewport: { width, height },
+      traceback: result.result.value.visibleTraceback || null,
+      console: consoleMessages,
+      pageErrors,
+      networkFailures,
+      httpErrors,
+      ...result.result.value,
+    };
   } finally {
     browser.kill('SIGTERM');
     if (browser.exitCode === null) {
@@ -156,12 +230,15 @@ const runAtViewport = async ({ width, height }, offset) => {
 
 const viewports = [{ width: 1600, height: 900 }, { width: 1280, height: 720 }];
 const runs = [];
-for (let index = 0; index < viewports.length; index += 1) runs.push(await runAtViewport(viewports[index], index * 100));
+for (const viewport of viewports) runs.push(await runAtViewport(viewport));
 const receipt = {
   schemaVersion: '1.0',
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
-  status: runs.every(({ issues, slideCount }) => slideCount > 0 && issues.length === 0) ? 'pass' : 'fail',
+  motionMode,
+  status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors }) => (
+    slideCount > 0 && issues.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
+  )) ? 'pass' : 'fail',
   runs,
 };
 if (outputPath) await writeFile(resolve(outputPath), `${JSON.stringify(receipt, null, 2)}\n`);

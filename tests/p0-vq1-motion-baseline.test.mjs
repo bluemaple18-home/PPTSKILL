@@ -46,7 +46,7 @@ test('style cover preview 也沿用 StyleSpec motion personality', () => {
   assert.equal(compilation.status, 'pass');
   for (const candidate of compilation.candidates) {
     const html = buildStyleCoverPreview(candidate);
-    assert.match(html, /class="motion-root"/);
+    assert.match(html, /class="[^"]*motion-root/);
     assert.match(html, /IntersectionObserver/);
     assert.match(html, /--motion-duration:/);
   }

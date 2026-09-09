@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>P0-VQ2 Style Candidate Montage</title>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#111;color:#fff;font-family:Arial,sans-serif}body{position:relative}
+    .slide{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--stage-scale,1));transform-origin:center;width:1600px;height:900px;padding:34px;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:28px;background:#111}
+    figure{margin:0;overflow:hidden;border:1px solid #4a4a4a;background:#222;display:grid;grid-template-rows:32px 1fr}
+    img{grid-row:2;display:block;width:100%;height:100%;min-height:0;object-fit:cover}
+    figcaption{grid-row:1;padding:9px 12px;background:#191919;font:700 14px/1 Arial,sans-serif;letter-spacing:.05em}
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <figure><img src="screenshots/company-style-fixture-1280x720.png" alt="Company fixture"><figcaption>COMPANY FIXTURE</figcaption></figure>
+    <figure><img src="screenshots/route-technical-map-1280x720.png" alt="Information-led cover"><figcaption>AI · INFORMATION LED</figcaption></figure>
+    <figure><img src="screenshots/route-editorial-rail-1280x720.png" alt="Typography hero"><figcaption>AI · TYPOGRAPHY HERO</figcaption></figure>
+    <figure><img src="screenshots/route-split-proof-1280x720.png" alt="Graphic brand field"><figcaption>AI · GRAPHIC BRAND FIELD</figcaption></figure>
+  </main>
+  <script>(()=>{const fit=()=>document.documentElement.style.setProperty('--stage-scale',Math.min(innerWidth/1600,innerHeight/900));addEventListener('resize',fit);fit();})();</script>
+</body>
+</html>

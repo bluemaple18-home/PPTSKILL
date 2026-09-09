@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T03:44:10.539Z",
+  "artifact": "route-technical-map.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 69,
+          "top": 152,
+          "right": 859,
+          "bottom": 347,
+          "width": 790,
+          "height": 195
+        },
+        "visualAnchor": {
+          "left": 901,
+          "top": 241,
+          "right": 1551,
+          "bottom": 851,
+          "width": 650,
+          "height": 610
+        },
+        "supportingCopy": {
+          "left": 69,
+          "top": 381,
+          "right": 739,
+          "bottom": 418.6875,
+          "width": 670,
+          "height": 37.6875
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 55.20000076293945,
+          "top": 121.5999984741211,
+          "right": 687.2000007629395,
+          "bottom": 277.5999984741211,
+          "width": 632,
+          "height": 156
+        },
+        "visualAnchor": {
+          "left": 720.7999877929688,
+          "top": 192.8000030517578,
+          "right": 1240.800048828125,
+          "bottom": 680.8000030517578,
+          "width": 520.0000610351562,
+          "height": 488
+        },
+        "supportingCopy": {
+          "left": 55.20000076293945,
+          "top": 304.8000183105469,
+          "right": 591.2000007629395,
+          "bottom": 334.95001220703125,
+          "width": 536,
+          "height": 30.149993896484375
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

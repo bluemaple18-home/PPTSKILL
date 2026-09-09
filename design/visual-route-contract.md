@@ -1,5 +1,17 @@
 # 四款封面 Visual Route Contract
 
+## P0-VQ2 replacement intent（2026-09-09）
+
+- `change_mode`: redesign
+- `surface_mode`: experience
+- `THESIS`: 同一內容必須靠不同 composition grammar 被一眼區分，拒絕共用左右 8:4 骨架後只換色。
+- `OWN_WORLD`: Company fixture 為 minimal institutional；三個 AI routes 分別為 information-led cover、typography hero、graphic brand field。
+- `STORY`: 使用者比較的是資訊層級、主視覺、留白與構圖方式，不是 palette 選單。
+- `FIRST_VIEWPORT`: 固定 1600×900 設計座標，完整縮放至 1280×720；中文標題固定兩個安全行，不留 1–2 字孤行。
+- `FORM`: 使用 Golden Design Grammar 的 bounded archetype、graphic anchor 與 role-aware effect；不新增圖片、不使用假主張文案、不生成任意 CSS。
+
+以下舊名稱只保留為 fixture id 相容層；實際 renderer 已由上述 archetype contract 決定。
+
 共同產品型態是「簡報風格選擇器」，受眾為 PM、RD、業務與行銷。四款預覽共用同一標題、副標與識別文字，只以版面、字體、色彩、密度與資訊圖形表達差異。
 
 ## Executive Clear
@@ -41,4 +53,3 @@
 - `palette_strategy`: 墨梅紅、紙張米色、柔粉與小面積青綠
 - `asset_strategy`: 用章節結構與文字裁切建立敘事，不放無意義插畫
 - `anti_patterns_to_avoid`: 隨機圓形、裝飾相框、柔和品牌模板、無主題拼貼
-

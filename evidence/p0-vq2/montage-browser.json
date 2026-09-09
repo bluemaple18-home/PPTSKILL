@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T03:46:29.008Z",
+  "artifact": "montage.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": null,
+        "visualAnchor": null,
+        "supportingCopy": null
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": null,
+        "visualAnchor": null,
+        "supportingCopy": null
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}
