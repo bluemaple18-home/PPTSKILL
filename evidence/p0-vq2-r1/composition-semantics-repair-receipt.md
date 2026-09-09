@@ -13,6 +13,7 @@
 3. Graphic Brand Field 移除 hard-coded orbit，改為由 title 內容決定尺度與位移的 bounded modular cadence。
 4. Typography Hero 移除 fixed `01 + bar`，改為內容字形導出的 `edge / stack / outline` bounded variants。
 5. diversity validator 改比 renderer-level title/anchor region、overlap、dominant axis、quadrant map、copy relation 與 silhouette；不再靠 DOM class 名稱過關。
+6. 依 Owner 指定，四張封面的 display/body 皆改為 `Microsoft JhengHei` / `Microsoft JhengHei UI` 優先，macOS 無此字體時才 fallback 至 `PingFang TC`。
 
 ## 驗證
 

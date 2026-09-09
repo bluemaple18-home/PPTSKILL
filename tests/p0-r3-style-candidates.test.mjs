@@ -23,6 +23,10 @@ test('候選固定為 Company Style＋三個 dynamic AI routes 且共用相同�
   for (const candidate of result.candidates) assert.deepEqual(candidate.content, fixture.content);
   assert.equal(result.candidates[0].fixtureOnly, true);
   assert.equal(new Set(result.candidates.slice(1).map(({ visualRoute }) => visualRoute.coverArchetype)).size, 3);
+  for (const candidate of result.candidates) {
+    assert.match(candidate.style.typography.display, /Microsoft JhengHei/);
+    assert.match(candidate.style.typography.body, /Microsoft JhengHei/);
+  }
 });
 
 test('route diversity validator 拒絕同版面只換色', () => {
