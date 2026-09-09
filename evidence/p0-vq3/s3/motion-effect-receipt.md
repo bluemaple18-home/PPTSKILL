@@ -1,7 +1,7 @@
 # P0-VQ3-S3 Bounded Motion / Effect Receipt
 
 - 日期：2026-09-09
-- 狀態：`IMPLEMENTED / AUTOMATED GATES PASS / BROWSER MOTION GATES PASS / OWNER MOTION GATE PENDING`
+- 狀態：`COMPLETE / AUTOMATED + BROWSER + REDUCED MOTION + OWNER MOTION GATES PASS`
 - 範圍：S1／S2 已核准靜態 composition 上的 Style + semantic-role effect routing。
 - 不包含：版面重設、schema 擴充、S1／S2 art-direction repair、P0-R7。
 
@@ -31,6 +31,10 @@
 - S3 reduced-motion montage 對 Owner-approved static baseline：Information Led pixel-identical；Typography Hero 僅 0.0564% channels 有 rasterization 差異、mean delta 0.0089，構圖與 layout boxes 不變。
 - GIF preview 只作 Owner motion review；JSON trace 才是狀態與幾何證據。
 
-## Remaining authority
+## Owner verdict
 
-Owner 尚未裁決 motion personality、節奏與角色 treatment 的視覺品質。自動化 PASS 不等於 Owner motion PASS；S3 與 CP-VQ3 均維持 pending。
+- `P0-VQ3-S3 — OWNER MOTION GATE: PASS`（2026-09-09）。
+- Information Led 的短促 sequence／rail 建立與 Typography Hero 的較慢 hard-cut／anchor reveal，已形成可辨識的兩套 motion personality，而非同一組 fade-in 換皮。
+- supporting copy 立即可讀；motion 不承載必要內容；normal／reduced resting layout 一致。
+- 非阻擋 refinement：Typography Hero 的 `hard-cut-field` 必須維持快速、克制；不得拉長到讓中文 clipping 看似 rendering glitch。
+- `CP-VQ3: PASS`；解除 `P0-R7 BLOCKED BY VQ3`。

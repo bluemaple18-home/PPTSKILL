@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-09
 
-**Status:** `P0-VQ2-R1 COMPLETE`；current frontier = `P0-VQ3`
+**Status:** `CP-VQ3 COMPLETE`；current frontier = `P0-R7`
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -40,7 +40,7 @@ Reopen only the visual-quality surfaces that failed owner acceptance.
 - `P0-R4`: COMPLETE — keep.
 - `P0-R5`: **ARCHITECTURE COMPLETE / VISUAL VOCABULARY REPAIR REQUIRED**.
 - `P0-R6`: COMPLETE — keep geometry gate.
-- `P0-R7`: **PAUSED until P0-VQ3 complete**.
+- `P0-R7`: **IN PROGRESS — VQ3 blocker removed**.
 
 The previous P0-R3 receipt remains valid evidence for schema / same-content / no-color-swap-only / human-selection behavior. It is **not** sufficient evidence that the visual quality is acceptable.
 
@@ -451,7 +451,7 @@ Do not mark the card complete merely because automated tests pass.
 ## P0-VQ3 — Full-deck visual + component-effect vocabulary repair
 
 **Priority:** P0 / BLOCKS P0-R7  
-**Status:** S1 PASS / S2 PASS / S3 IMPLEMENTED — OWNER MOTION GATE PENDING
+**Status:** COMPLETE — S1 / S2 / S3 / CP-VQ3 PASS
 **Goal:** preserve the semantic primitive architecture while giving slides enough validated composition and component-effect variants to avoid a repetitive engineering-template look.
 
 ### Art-direction guidance
@@ -521,7 +521,7 @@ Automated tests and geometry checks may prevent regressions but cannot issue a v
 
 #### VQ3-S3 — Bounded effect and Golden Visual Regression proof
 
-- **status:** IMPLEMENTED / AUTOMATED + BROWSER GATES PASS / OWNER MOTION GATE PENDING
+- **status:** COMPLETE / AUTOMATED + BROWSER + REDUCED MOTION + OWNER MOTION GATES PASS
 - **evidence:** `evidence/p0-vq3/s3/motion-effect-receipt.md`, `evidence/p0-vq3/s3/golden-visual-regression-review.md`
 - **traces_to:** US-002, US-003; FR-002, FR-003; SC-001, SC-002
 - **depends_on:** VQ3-S1 PASS; may run after or together with S2 only if it edits no shared renderer surface.
@@ -598,7 +598,7 @@ The exact total number of variants is not authority; visible composition diversi
 ## P0-R7 — Direct editor + portable export repair
 
 **Priority:** P0  
-**Status:** BLOCKED BY P0-VQ3
+**Status:** IN PROGRESS
 **Goal:** keep the existing HTML editor while making edits DeckSpec-safe and export share-safe.
 
 Requirements:
@@ -743,7 +743,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-VQ3-S3 OWNER MOTION GATE.**
+**NEXT = P0-R7 — Direct editor + portable export repair.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -751,9 +751,10 @@ Implementation order is fixed until full-deck owner visual acceptance:
 2. `P0-VQ2 / R1` — COMPLETE; Owner Visual Gate PASS, ideal-quality ceiling not yet reached.
 3. `P0-VQ3-S1 / R1` — COMPLETE；Typography Hero 10-page visual world 已通過 Owner Visual Gate。07 giant numeral 與 10 content-derived edge word 為非阻擋 refinement notes。
 4. `P0-VQ3-S2` — COMPLETE；Information Led 已通過 Style Portability 與 Owner Visual Gate。technical rail、matrix、transition variants 為非阻擋 refinement notes。
-5. `P0-VQ3-S3` — IMPLEMENTED；bounded role-aware effects、normal/reduced browser receipts 與首份 Golden Visual Regression review artifact 已產生，等待 Owner motion verdict。
-6. Only after CP-VQ3 passes, resume `P0-R7`.
+5. `P0-VQ3-S3` — COMPLETE；Automated、Browser、Reduced Motion、Owner Motion Gates PASS。`hard-cut-field` 快速、克制為非阻擋 refinement guardrail。
+6. `CP-VQ3` — COMPLETE；解除 `P0-R7` blocker。
+7. `P0-R7` — CURRENT；只修 direct editor 與 portable export，不回頭重開 VQ3 視覺。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 
-S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充另一個 Style。S3 Owner PASS 與 CP-VQ3 通過前不得恢復 P0-R7。
+S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充另一個 Style。VQ3 後續美術提升只走 Golden Visual Regression，不阻塞 MVP。

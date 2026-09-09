@@ -11,7 +11,11 @@
       "styleId": "route-editorial-rail",
       "visualWorld": "typography-hero",
       "artifact": "evidence/p0-vq3/s1/typography-world-montage-1280x720.png",
-      "receipt": "evidence/p0-vq3/s1/typography-world-receipt.md"
+      "receipt": "evidence/p0-vq3/s1/typography-world-receipt.md",
+      "motionOwnerDecision": "pass",
+      "motionAcceptedAt": "2026-09-09",
+      "motionArtifact": "evidence/p0-vq3/s3/typography-motion-preview.gif",
+      "motionNote": "hard-cut-field 必須維持快速、克制，避免中文 clipping 看似 rendering glitch。"
     },
     {
       "id": "p0-vq3-s2-information-led",
@@ -21,7 +25,10 @@
       "styleId": "route-technical-map",
       "visualWorld": "information-led",
       "artifact": "evidence/p0-vq3/s2/information-led-montage-1280x720.png",
-      "receipt": "evidence/p0-vq3/s2/information-led-receipt.md"
+      "receipt": "evidence/p0-vq3/s2/information-led-receipt.md",
+      "motionOwnerDecision": "pass",
+      "motionAcceptedAt": "2026-09-09",
+      "motionArtifact": "evidence/p0-vq3/s3/information-motion-preview.gif"
     }
   ]
 }

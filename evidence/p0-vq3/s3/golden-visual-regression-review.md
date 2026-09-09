@@ -2,7 +2,7 @@
 
 - 日期：2026-09-09
 - Static baseline：S1 Typography Hero、S2 Information Led，皆為 Owner PASS。
-- Motion candidate：S3 role-aware effects，Owner gate pending。
+- Motion baseline：S3 role-aware effects，Owner Motion Gate PASS。
 
 ## Owner-approved static baselines
 
@@ -19,7 +19,7 @@
 | Template smell | Owner PASS | Owner PASS；rail／matrix 固化風險列為非阻擋 note |
 | Overall maturity | Owner Visual Gate PASS | Owner Visual Gate PASS |
 
-## S3 motion candidate
+## S3 owner-approved motion baseline
 
 | Semantic role | Typography Hero | Information Led |
 |---|---|---|
@@ -44,6 +44,6 @@
 
 ## Owner decision
 
-`P0-VQ3-S3 OWNER MOTION GATE: PENDING`
+`P0-VQ3-S3 OWNER MOTION GATE: PASS`（2026-09-09）
 
-S3 通過前不將 motion candidate 收入 Golden manifest，也不宣告 CP-VQ3 complete。
+`CP-VQ3: PASS`。Typography Hero／Information Led 已證明同一 DeckSpec 可形成兩套 coherent static visual world 與 role-aware motion。非阻擋限制：`hard-cut-field` 保持快速、克制，避免中文字 clipping 被讀成 rendering glitch。

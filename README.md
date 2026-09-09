@@ -24,7 +24,13 @@ v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-dec
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3：functional contract 已完成，但 owner visual acceptance 重新打開。
 - P0-R5：semantic renderer 架構保留，但 visual vocabulary 必須修復，不重寫 DeckSpec / CompositionSpec。
-- **目前工程 frontier：先執行 `BACKLOG.md` 的 `P0-VQ1 → P0-VQ2 → P0-VQ3`，P0-R7 暫停。**
+- **目前工程 frontier：`CP-VQ3` 已通過，執行 `P0-R7 — Direct editor + portable export repair`。**
+
+## Portable HTML editor
+
+完整 deck 右下角提供低干擾的「編輯文字」入口。進入編輯後可直接修改標題／副標／支援的文字區域，並可編輯 allowlist 元件、替換目前頁面的內嵌圖片、調整順序、複製、刪除與另存新 HTML。`window.PPTSKILLEditor.applyLocalPatch(...)` 只接受目前投影片的單一 `content.*` region，供本機 AI 做 bounded patch；沒有自由 x/y 拖拉，也沒有 Presenter Mode。
+
+另存時會重新建立 allowlist DeckSpec，移除編輯狀態並保留單檔離線 runtime。收件者只需要新 HTML，即可重新開啟編輯器或從 `script#deck-spec` 讀回 DeckSpec。
 
 `evidence/ps-003/*.png` 與目前 `fixtures/style-candidate-previews/*.html` 可作開發 / 退件 evidence，不代表最終視覺品質已被 owner 接受。
 
