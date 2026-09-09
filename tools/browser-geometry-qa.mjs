@@ -142,7 +142,60 @@ const geometryExpression = String.raw`(async () => {
     ['visualAnchor', '[data-effect-visual-anchor]'],
     ['supportingCopy', '.subtitle'],
   ].map(([role, selector]) => [role, document.querySelector(selector) ? box(document.querySelector(selector)) : null]));
-  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, issues, visibleTraceback };
+  const primarySlide = slides[0];
+  const relativeBox = (element) => {
+    if (!primarySlide || !element) return null;
+    const stage = box(primarySlide);
+    const rect = box(element);
+    return {
+      x: Number(((rect.left - stage.left) / stage.width).toFixed(4)),
+      y: Number(((rect.top - stage.top) / stage.height).toFixed(4)),
+      width: Number((rect.width / stage.width).toFixed(4)),
+      height: Number((rect.height / stage.height).toFixed(4)),
+    };
+  };
+  const titleElement = document.querySelector('[data-effect-title]');
+  const anchorElement = document.querySelector('[data-effect-visual-anchor]');
+  const titleBox = titleElement ? box(titleElement) : null;
+  const anchorBox = anchorElement ? box(anchorElement) : null;
+  const overlap = titleBox && anchorBox ? intersects(titleBox, anchorBox) : false;
+  const quadrantMap = (rect) => {
+    if (!rect || !primarySlide) return [];
+    const stage = box(primarySlide);
+    const middleX = stage.left + stage.width / 2;
+    const middleY = stage.top + stage.height / 2;
+    return [
+      rect.left < middleX && rect.top < middleY ? 'q1' : null,
+      rect.right > middleX && rect.top < middleY ? 'q2' : null,
+      rect.left < middleX && rect.bottom > middleY ? 'q3' : null,
+      rect.right > middleX && rect.bottom > middleY ? 'q4' : null,
+    ].filter(Boolean);
+  };
+  const dominantAxis = (() => {
+    if (!titleBox || !anchorBox) return null;
+    const dx = Math.abs((titleBox.left + titleBox.right) / 2 - (anchorBox.left + anchorBox.right) / 2);
+    const dy = Math.abs((titleBox.top + titleBox.bottom) / 2 - (anchorBox.top + anchorBox.bottom) / 2);
+    if (dx > dy * 1.35) return 'horizontal';
+    if (dy > dx * 1.35) return 'vertical';
+    return 'diagonal';
+  })();
+  const compositionContract = primarySlide ? {
+    titleRegion: primarySlide.dataset.titleRegion || null,
+    anchorRegion: primarySlide.dataset.anchorRegion || null,
+    overlap: primarySlide.dataset.overlap || null,
+    dominantAxis: primarySlide.dataset.dominantAxis || null,
+    occupiedQuadrants: primarySlide.dataset.occupiedQuadrants || null,
+    anchorCopyRelation: primarySlide.dataset.anchorCopyRelation || null,
+    silhouette: primarySlide.dataset.silhouette || null,
+  } : null;
+  const computedStructure = {
+    titleRegion: relativeBox(titleElement),
+    anchorRegion: relativeBox(anchorElement),
+    overlap,
+    dominantAxis,
+    occupiedQuadrants: [...new Set([...quadrantMap(titleBox), ...quadrantMap(anchorBox)])],
+  };
+  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, issues, visibleTraceback };
 })()`;
 
 const runAtViewport = async ({ width, height }) => {

@@ -10,6 +10,15 @@
 - `FIRST_VIEWPORT`: 固定 1600×900 設計座標，完整縮放至 1280×720；中文標題固定兩個安全行，不留 1–2 字孤行。
 - `FORM`: 使用 Golden Design Grammar 的 bounded archetype、graphic anchor 與 role-aware effect；不新增圖片、不使用假主張文案、不生成任意 CSS。
 
+## P0-VQ2-R1 composition semantics repair（2026-09-09）
+
+- `change_mode`: refinement
+- `THESIS`: archetype 必須改變 copy 與 anchor 的空間關係，不能只把 grammar token 映射成一個裝飾圖案。
+- `FIRST_VIEWPORT`: Information Led 以內容中真實三段流程跨左上至下方；Typography Hero 以內容字形本身建立 edge pressure；Brand Field 以跨全寬的 modular cadence 場域包覆文案。
+- `FORM`: grammar 新增 anchor relationship、visual flow、overlap、edge behavior、copy/anchor relation、focal point 與 silhouette；renderer 側寫可用 title/anchor region、quadrant map 與 dominant axis 驗證。
+- `ANTI_PATTERNS`: fake information network、fixed `01`、fixed orbit、只比 token/DOM vocabulary 就宣告 structural diversity。
+- `DEFERRED`: treatment-specific motion behavior 不屬於本次靜態 composition repair；Company Fixture 仍只需 geometry pass。
+
 以下舊名稱只保留為 fixture id 相容層；實際 renderer 已由上述 archetype contract 決定。
 
 共同產品型態是「簡報風格選擇器」，受眾為 PM、RD、業務與行銷。四款預覽共用同一標題、副標與識別文字，只以版面、字體、色彩、密度與資訊圖形表達差異。

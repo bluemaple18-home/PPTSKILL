@@ -17,28 +17,53 @@ const normalizeStyle = (style) => sanitizeDeckSpec({
   deckId: 'style-preview', title: 'Style preview', language: 'zh-Hant', style, slides: [],
 }).style;
 
-const structuralFields = [
-  'coverArchetype', 'titlePlacement', 'visualAnchor', 'dominantRegionRatio',
-  'negativeSpaceStrategy', 'graphicLanguage', 'typePersonality', 'surfaceLanguage',
+const rendererStructuralFields = [
+  'titleRegion', 'anchorRegion', 'overlap', 'dominantAxis',
+  'occupiedQuadrants', 'anchorCopyRelation', 'silhouette',
 ];
 
-const routeSignature = ({ visualRoute }) => Object.fromEntries(
-  structuralFields.map((field) => [field, visualRoute?.[field]]),
-);
+const rendererStructures = {
+  'minimal-institutional': {
+    titleRegion: 'lower-left', anchorRegion: 'upper-right', overlap: 'none',
+    dominantAxis: 'corner-diagonal', occupiedQuadrants: 'q2+q3+q4',
+    anchorCopyRelation: 'detached', silhouette: 'quiet-offset-frame',
+  },
+  'typography-hero': {
+    titleRegion: 'center-edge-span', anchorRegion: 'full-width-type-crop', overlap: 'fused',
+    dominantAxis: 'vertical-drop', occupiedQuadrants: 'q1+q2+q3+q4',
+    anchorCopyRelation: 'self-anchored-type', silhouette: 'edge-type-mass',
+  },
+  'graphic-brand-field': {
+    titleRegion: 'upper-left-to-center', anchorRegion: 'lower-full-width-bleed', overlap: 'controlled',
+    dominantAxis: 'field-to-copy', occupiedQuadrants: 'q1+q2+q3+q4',
+    anchorCopyRelation: 'field-enclosure', silhouette: 'offstage-brand-field',
+  },
+  'information-led-cover': {
+    titleRegion: 'upper-right', anchorRegion: 'stepped-left-to-lower-center', overlap: 'controlled',
+    dominantAxis: 'evidence-sequence', occupiedQuadrants: 'q1+q2+q3+q4',
+    anchorCopyRelation: 'semantic-evidence', silhouette: 'stepped-information-band',
+  },
+};
 
-const signatureText = (candidate) => structuralFields
-  .map((field) => routeSignature(candidate)[field])
+const rendererSignatureText = (profile) => rendererStructuralFields
+  .map((field) => profile?.[field])
   .join('|');
+
+export function getRendererStructuralSignature(coverArchetype) {
+  const profile = rendererStructures[coverArchetype];
+  if (!profile) throw new Error(`尚無 renderer structure：${coverArchetype}`);
+  return structuredClone(profile);
+}
 
 export function validateRouteDiversity(candidates) {
   const errors = [];
   for (let left = 0; left < candidates.length; left += 1) {
     for (let right = left + 1; right < candidates.length; right += 1) {
-      const a = routeSignature(candidates[left]);
-      const b = routeSignature(candidates[right]);
-      const different = structuralFields.filter((field) => a[field] !== b[field]);
-      if (!a.coverArchetype || !b.coverArchetype || a.coverArchetype === b.coverArchetype || different.length < 3) {
-        errors.push(`${candidates[left].style.id} 與 ${candidates[right].style.id} 使用相同骨架或不足三項結構差異。`);
+      const a = candidates[left].rendererStructure;
+      const b = candidates[right].rendererStructure;
+      const different = rendererStructuralFields.filter((field) => a?.[field] !== b?.[field]);
+      if (!a || !b || a.silhouette === b.silhouette || different.length < 4) {
+        errors.push(`${candidates[left].style.id} 與 ${candidates[right].style.id} 的 renderer 構圖側寫不足四項差異，或 silhouette 重複。`);
       }
     }
   }
@@ -59,8 +84,9 @@ const compileCandidate = ({ kind, source, fixtureOnly = false }) => {
     ...(source.effectLanguage ? { effectLanguage: source.effectLanguage } : {}),
     motionPersonality: style.motion.personality,
   });
-  const candidate = { kind, fixtureOnly, style, visualRoute };
-  return { ...candidate, structuralSignature: signatureText(candidate) };
+  const rendererStructure = getRendererStructuralSignature(visualRoute.coverArchetype);
+  const candidate = { kind, fixtureOnly, style, visualRoute, rendererStructure };
+  return { ...candidate, structuralSignature: rendererSignatureText(rendererStructure) };
 };
 
 export function compileStyleCandidates({ content, companyStylePack, aiRoutes }) {
@@ -117,18 +143,57 @@ const titleMarkup = (content) => splitTitleLines(content.title)
 
 const copyMarkup = (content, copyClass) => `<section class="${copyClass}"><p class="identity">${escapeHtml(content.identity)}</p><h1 data-effect-title aria-label="${escapeHtml(content.title)}">${titleMarkup(content)}</h1><p class="subtitle">${escapeHtml(content.subtitle)}</p></section>`;
 
+const stableVariant = (value, count) => [...String(value)].reduce((sum, character) => sum + character.codePointAt(0), 0) % count;
+
+const typographyAnchorMarkup = (content) => {
+  const variants = ['edge', 'stack', 'outline'];
+  const variant = variants[stableVariant(content.title, variants.length)];
+  const compactTitle = [...String(content.title).replace(/\s+/g, '')];
+  const glyphs = variant === 'stack'
+    ? compactTitle.slice(-2).join('')
+    : compactTitle.slice(0, 4).join('');
+  return `<div class="type-monument type-monument--${variant}" data-glyphs="${escapeHtml(glyphs)}" data-anchor-variant="${variant}" data-effect-visual-anchor aria-hidden="true"></div>`;
+};
+
+const subtitleSegments = (subtitle) => String(subtitle)
+  .replace(/^從/u, '')
+  .split(/[、，；;|。]+|到(?=[^\s])/u)
+  .map((segment) => segment.trim())
+  .filter(Boolean)
+  .slice(0, 4);
+
+const informationAnchorMarkup = (content) => {
+  const segments = subtitleSegments(content.subtitle);
+  if (segments.length < 2) {
+    return `<div class="information-fallback" data-anchor-mode="neutral-fallback" data-semantic-source="none" data-effect-visual-anchor aria-hidden="true"><span></span><b>${escapeHtml(content.identity)}</b></div>`;
+  }
+  return `<ol class="information-sequence" data-anchor-mode="semantic-sequence" data-semantic-source="subtitle" data-effect-visual-anchor>${segments.map((segment, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><b>${escapeHtml(segment)}</b></li>`).join('')}</ol>`;
+};
+
+const brandAnchorMarkup = (content) => {
+  const characters = [...String(content.title).replace(/\s+/g, '')].slice(0, 7);
+  const modules = characters.map((character, index) => {
+    const width = 38 + ((character.codePointAt(0) + index * 17) % 55);
+    const shift = ((character.codePointAt(0) + index * 11) % 5) * 34;
+    return `<span style="--module:${width}%;--shift:${shift}px"></span>`;
+  }).join('');
+  const variants = ['rising', 'falling', 'alternating'];
+  const variant = variants[stableVariant(content.title, variants.length)];
+  return `<div class="brand-field brand-field--${variant}" data-geometry-family="modular-cadence" data-anchor-variant="${variant}" data-effect-visual-anchor aria-hidden="true"><div class="brand-rhythm">${modules}</div></div>`;
+};
+
 const archetypeMarkup = {
   'minimal-institutional': (content) => `<div class="institutional-rule" aria-hidden="true"></div>${copyMarkup(content, 'institutional-copy')}<div class="quiet-band" data-effect-visual-anchor aria-hidden="true"><span></span><span></span><span></span></div><p class="folio">01 / 04</p>`,
-  'typography-hero': (content) => `<div class="type-monument" data-effect-visual-anchor aria-hidden="true"></div>${copyMarkup(content, 'type-copy')}<div class="type-rule" aria-hidden="true"></div>`,
-  'graphic-brand-field': (content) => `<div class="brand-field" data-effect-visual-anchor aria-hidden="true"><div class="brand-orbit"><span></span><span></span><span></span></div></div>${copyMarkup(content, 'brand-copy')}<p class="brand-folio">01 / 04</p>`,
-  'information-led-cover': (content) => `${copyMarkup(content, 'information-copy')}<div class="information-network" data-effect-visual-anchor aria-hidden="true"><i class="network-line line-a"></i><i class="network-line line-b"></i><i class="network-line line-c"></i><span class="node node-a"></span><span class="node node-b"></span><span class="node node-c"></span><span class="node node-d"></span><b>01</b></div>`,
+  'typography-hero': (content) => `${typographyAnchorMarkup(content)}${copyMarkup(content, 'type-copy')}`,
+  'graphic-brand-field': (content) => `${brandAnchorMarkup(content)}${copyMarkup(content, 'brand-copy')}<p class="brand-folio">PPTSKILL / COVER</p>`,
+  'information-led-cover': (content) => `${copyMarkup(content, 'information-copy')}${informationAnchorMarkup(content)}`,
 };
 
 const archetypeCss = {
   'minimal-institutional': `.stage{padding:72px 86px}.institutional-rule{position:absolute;left:86px;right:86px;top:72px;height:2px;background:var(--muted)}.institutional-copy{position:absolute;left:86px;bottom:104px;width:770px}.institutional-copy h1{font-size:76px}.quiet-band{position:absolute;right:86px;top:154px;width:500px;height:500px;border:2px solid var(--muted);display:grid;grid-template-columns:2fr 1fr 1fr;align-items:end;padding:34px;gap:16px}.quiet-band span{display:block;background:var(--accent)}.quiet-band span:nth-child(1){height:34%}.quiet-band span:nth-child(2){height:68%}.quiet-band span:nth-child(3){height:100%}.folio{position:absolute;right:86px;bottom:72px;margin:0;font:700 18px/1 var(--mono);letter-spacing:.12em}`,
-  'typography-hero': `.stage{padding:58px 70px}.type-copy{position:absolute;left:70px;top:58px;width:1230px;z-index:2}.type-copy h1{margin-top:92px;font-size:108px;letter-spacing:-.07em}.type-copy .subtitle{position:absolute;left:0;top:610px;width:670px}.type-monument{position:absolute;right:58px;bottom:38px;width:430px;height:390px;opacity:.72}.type-monument::before{content:"01";position:absolute;inset:0;font:900 500px/.78 var(--display);letter-spacing:-.12em;color:transparent;-webkit-text-stroke:3px var(--accent)}.type-rule{position:absolute;left:70px;bottom:78px;width:650px;height:16px;background:var(--accent)}`,
-  'graphic-brand-field': `.stage{padding:66px 72px}.brand-field{position:absolute;right:-40px;top:-40px;width:900px;height:980px;background:var(--surface);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);overflow:hidden}.brand-field::after{content:"01";position:absolute;right:82px;bottom:44px;font:900 250px/.8 var(--display);color:var(--canvas)}.brand-orbit{position:absolute;right:120px;top:92px;width:560px;height:560px;border:5px solid var(--accent);border-radius:50%}.brand-orbit span{position:absolute;border:2px solid var(--muted);border-radius:50%;inset:58px}.brand-orbit span:nth-child(2){inset:128px}.brand-orbit span:nth-child(3){inset:204px;background:var(--accent);border:0}.brand-copy{position:absolute;left:72px;top:102px;width:690px;z-index:2}.brand-copy h1{font-size:84px;margin-top:116px}.brand-copy .subtitle{width:530px;margin-top:48px}.brand-folio{position:absolute;left:72px;bottom:58px;margin:0;font:800 16px/1 var(--mono);letter-spacing:.18em}`,
-  'information-led-cover': `.stage{padding:60px 68px}.information-copy{position:absolute;left:68px;top:64px;width:790px}.information-copy h1{font-size:78px;margin-top:72px}.information-copy .subtitle{width:670px}.information-network{position:absolute;right:48px;bottom:48px;width:650px;height:610px;border-left:2px solid var(--muted);border-bottom:2px solid var(--muted)}.information-network b{position:absolute;right:20px;top:-72px;font:900 120px/1 var(--display);color:var(--accent)}.node{position:absolute;width:56px;height:56px;border:8px solid var(--canvas);outline:2px solid var(--accent);background:var(--surface);border-radius:50%;z-index:2}.node-a{left:40px;bottom:82px}.node-b{left:238px;bottom:260px}.node-c{right:72px;bottom:168px}.node-d{right:184px;top:70px;background:var(--accent)}.network-line{position:absolute;height:3px;background:var(--muted);transform-origin:left center}.line-a{left:82px;bottom:124px;width:260px;transform:rotate(-42deg)}.line-b{left:278px;bottom:292px;width:284px;transform:rotate(19deg)}.line-c{right:112px;bottom:214px;width:270px;transform:rotate(-64deg)}`,
+  'typography-hero': `.stage{padding:58px 70px}.type-copy{position:absolute;left:70px;top:58px;width:1420px;z-index:2}.type-copy h1{margin-top:118px;font-size:116px;line-height:.94;letter-spacing:-.075em}.type-copy .subtitle{position:absolute;right:10px;top:670px;width:610px;margin:0;text-align:right}.type-monument{position:absolute;inset:0;overflow:hidden;color:transparent;opacity:.58;-webkit-text-stroke:3px var(--accent)}.type-monument::before{content:attr(data-glyphs);position:absolute;display:block;overflow:hidden;font:900 520px/.72 var(--display);letter-spacing:-.14em}.type-monument--edge::before{left:0;bottom:0;width:1600px;height:390px;white-space:nowrap}.type-monument--stack::before{right:70px;top:82px;width:330px;height:680px;white-space:normal;overflow-wrap:anywhere;font-size:300px;line-height:.92;letter-spacing:-.05em}.type-monument--outline::before{left:200px;bottom:0;width:1400px;height:440px;font-size:590px;white-space:nowrap}`,
+  'graphic-brand-field': `.stage{padding:66px 72px}.brand-field{position:absolute;left:-80px;right:-80px;top:330px;height:650px;background:var(--surface);clip-path:polygon(0 24%,44% 0,100% 14%,100% 100%,0 100%);overflow:hidden}.brand-rhythm{position:absolute;left:560px;right:-80px;top:80px;bottom:28px;display:flex;flex-direction:column;gap:18px;transform:rotate(-7deg)}.brand-rhythm span{display:block;height:48px;width:var(--module);margin-left:var(--shift);background:var(--accent)}.brand-field--falling .brand-rhythm{transform:rotate(7deg);align-items:flex-end}.brand-field--alternating .brand-rhythm span:nth-child(even){margin-left:calc(var(--shift) + 150px);background:var(--canvas)}.brand-copy{position:absolute;left:72px;top:70px;width:1250px;z-index:2}.brand-copy h1{font-size:98px;line-height:.98;margin-top:78px}.brand-copy .subtitle{width:640px;margin-top:42px}.brand-folio{position:absolute;right:72px;bottom:42px;margin:0;font:800 16px/1 var(--mono);letter-spacing:.18em;z-index:3}`,
+  'information-led-cover': `.stage{padding:60px 68px}.information-copy{position:absolute;right:68px;top:58px;width:760px;z-index:3}.information-copy h1{font-size:76px;line-height:1;margin-top:54px}.information-copy .subtitle{position:absolute;right:0;top:650px;width:560px;margin:0;text-align:right;font-size:22px}.information-sequence{position:absolute;left:0;top:0;width:1120px;height:850px;margin:0;padding:0;list-style:none}.information-sequence li{position:absolute;width:600px;min-height:116px;border-top:3px solid var(--accent);padding:18px 18px 14px 112px;background:var(--canvas);color:var(--text)}.information-sequence li::after{content:"";position:absolute;left:54px;top:100%;width:2px;height:104px;background:var(--muted);transform:rotate(-42deg);transform-origin:top}.information-sequence li:last-child::after{display:none}.information-sequence li:nth-child(1){left:68px;top:180px}.information-sequence li:nth-child(2){left:250px;top:398px}.information-sequence li:nth-child(3){left:432px;top:616px;width:660px}.information-sequence li:nth-child(4){left:720px;top:690px;width:580px}.information-sequence span{position:absolute;left:18px;top:16px;font:800 20px/1 var(--mono);color:var(--accent)}.information-sequence b{display:block;font:800 28px/1.25 var(--display)}.information-fallback{position:absolute;left:68px;right:68px;bottom:88px;height:190px;border-top:3px solid var(--accent);display:flex;align-items:flex-end;justify-content:space-between;padding:0 0 24px}.information-fallback span{width:68%;height:26px;background:var(--surface)}.information-fallback b{font:700 16px/1 var(--mono);color:var(--muted)}`,
 };
 
 const buildRouteEffectCss = (style, treatments) => {
@@ -145,18 +210,21 @@ html.motion-ready .motion-root.is-visible [data-effect-visual-anchor]{opacity:1;
 const buildStageFitScript = () => `<script>(()=>{const fit=()=>document.documentElement.style.setProperty('--stage-scale',Math.min(innerWidth/1600,innerHeight/900));addEventListener('resize',fit);fit();})();</script>`;
 
 export function buildStyleCoverPreview(candidate) {
-  const { style, content, visualRoute } = candidate;
+  const { style, content, visualRoute, rendererStructure = getRendererStructuralSignature(candidate.visualRoute.coverArchetype) } = candidate;
   const render = archetypeMarkup[visualRoute.coverArchetype];
   if (!render) throw new Error(`尚無 cover renderer：${visualRoute.coverArchetype}`);
   const treatments = resolveRoleTreatments(visualRoute, ['title', 'visualAnchor', 'supportingCopy']);
-  const markup = render(content)
+  const markup = render(content, style, visualRoute)
     .replace('data-effect-title', `data-effect-title="${escapeHtml(treatments.byRole.title)}"`)
     .replace('data-effect-visual-anchor', `data-effect-visual-anchor="${escapeHtml(treatments.byRole.visualAnchor)}"`);
+  const structureAttributes = rendererStructuralFields
+    .map((field) => `data-${field.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}="${escapeHtml(rendererStructure[field])}"`)
+    .join(' ');
   return `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(style.name)}</title><style>
 *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden}body{position:relative;background:${style.palette.canvas};color:${style.palette.text};font-family:${style.typography.body}}.stage{--canvas:${style.palette.canvas};--text:${style.palette.text};--muted:${style.palette.muted};--accent:${style.palette.accent};--surface:${style.palette.surface};--display:${style.typography.display};--body:${style.typography.body};--mono:${style.typography.mono || style.typography.body};position:absolute;left:50%;top:50%;width:1600px;height:900px;overflow:hidden;transform:translate(-50%,-50%) scale(var(--stage-scale,1));background:var(--canvas);color:var(--text);font-family:var(--body);transform-origin:center;border:${style.geometry.borderWidth}px solid var(--muted)}.identity{margin:0;font:800 15px/1 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}h1{margin:30px 0 0;font-family:var(--display);font-weight:800;letter-spacing:-.055em}.title-line{display:block;white-space:nowrap;line-height:1.25}.subtitle{margin:34px 0 0;color:var(--muted);font-size:26px;line-height:1.45}
 ${archetypeCss[visualRoute.coverArchetype]}
 ${buildRouteEffectCss(style, treatments)}
-</style></head><body><main class="slide stage motion-root" data-style-id="${escapeHtml(style.id)}" data-cover-archetype="${escapeHtml(visualRoute.coverArchetype)}" data-static-contract="content-visible-without-motion">${markup}</main>${buildStageFitScript()}${buildMotionRuntimeScript()}</body></html>`;
+</style></head><body><main class="slide stage motion-root" data-style-id="${escapeHtml(style.id)}" data-cover-archetype="${escapeHtml(visualRoute.coverArchetype)}" data-composition-signature="${escapeHtml(rendererSignatureText(rendererStructure))}" ${structureAttributes} data-static-contract="content-visible-without-motion">${markup}</main>${buildStageFitScript()}${buildMotionRuntimeScript()}</body></html>`;
 }
 
 export function selectStyleCandidate(compilation, styleId, approvedBy) {

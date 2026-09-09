@@ -39,6 +39,8 @@ test('每個 seed archetype 可編譯成超過色票與字體的 portable route 
     'coverArchetype', 'titlePlacement', 'visualAnchor', 'typePersonality', 'density',
     'graphicLanguage', 'surfaceLanguage', 'assetTreatment', 'effectLanguage',
     'motionPersonality', 'negativeSpaceStrategy', 'dominantRegionRatio',
+    'anchorRelationship', 'visualFlow', 'overlapPolicy', 'edgeBehavior',
+    'copyAnchorRelationship', 'focalPoint', 'silhouette',
   ];
   const structuralSignatures = new Set();
 

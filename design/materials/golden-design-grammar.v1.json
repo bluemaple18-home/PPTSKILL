@@ -102,6 +102,64 @@
       "premium": { "entrance": "mask-reveal", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
       "energetic": { "entrance": "staggered-sequence", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true },
       "playful": { "entrance": "focal-image-settle", "restingGeometry": "validated-composition", "contentVisibleWithoutMotion": true }
+    },
+    "anchorRelationships": {
+      "self-anchored-type": { "description": "字體本身同時承擔文案與主視覺" },
+      "background-stage": { "description": "anchor 是背景舞台，文案直接進入其中" },
+      "negative-space-partner": { "description": "anchor 與留白互為配重" },
+      "crossing-peer": { "description": "anchor 與文案是同級並在單一受控區域交錯" },
+      "field-enclosure": { "description": "色域或幾何場域包覆並切入文案節奏" },
+      "foreground-object": { "description": "真實物件在前景成為最大視覺質量" },
+      "semantic-evidence": { "description": "anchor 必須由內容中實際資料、流程或關係生成" }
+    },
+    "visualFlows": {
+      "vertical-drop": { "description": "視線由上至下掃描" },
+      "lower-left-rise": { "description": "由影像或文字下緣向左上收束" },
+      "corner-diagonal": { "description": "對角配重建立單一斜向視線" },
+      "crossing-diagonal": { "description": "文案與 anchor 在對角路徑上交錯" },
+      "field-to-copy": { "description": "視線從場域邊界導向文案焦點" },
+      "object-to-copy": { "description": "視線從單一物件導向標題" },
+      "evidence-sequence": { "description": "以真實內容順序形成分段視線" },
+      "perimeter-loop": { "description": "編輯框線沿畫面週邊導覽" }
+    },
+    "overlapPolicies": {
+      "no-overlap": { "description": "文案與 anchor 保持完整安全距離" },
+      "controlled-interlock": { "description": "只在一個預定區域交錯，不破壞可讀性" },
+      "text-over-anchor": { "description": "文字置於 anchor 之上且對比必須成立" },
+      "anchor-behind-copy": { "description": "anchor 只可在文案後方切入，不得遮蔽字形" }
+    },
+    "edgeBehaviors": {
+      "contained": { "description": "主要元素收在安全邊界內" },
+      "single-edge-bleed": { "description": "只允許一側出血" },
+      "multi-edge-bleed": { "description": "場域可跨複數邊緣，但文案保持安全" },
+      "offstage-crop": { "description": "主視覺或字形刻意移出畫布" }
+    },
+    "copyAnchorRelationships": {
+      "fused": { "description": "copy 就是 anchor" },
+      "attached": { "description": "copy 與 anchor 共用同一軸線或邊界" },
+      "detached": { "description": "copy 與 anchor 分離，由留白連接" },
+      "counterweighted": { "description": "copy 與 anchor 以不對稱視覺重量平衡" },
+      "overlay": { "description": "copy 進入 anchor 的低訊息安全區" }
+    },
+    "focalPoints": {
+      "title": { "description": "標題是第一焦點" },
+      "image": { "description": "影像是第一焦點" },
+      "spatial-void": { "description": "留白形狀是第一焦點" },
+      "brand-field": { "description": "品牌幾何場是第一焦點" },
+      "object": { "description": "真實物件是第一焦點" },
+      "semantic-sequence": { "description": "與內容對應的序列是第一焦點" }
+    },
+    "silhouettes": {
+      "edge-type-mass": { "description": "大尺度字形壓迫畫面邊緣" },
+      "full-bleed-field": { "description": "影像場覆蓋畫面主體" },
+      "corner-void": { "description": "對角實體與大面積空白" },
+      "diagonal-interlock": { "description": "兩個主體沿斜向交錯" },
+      "offstage-brand-field": { "description": "品牌場跨邊出血並包覆文案" },
+      "isolated-object": { "description": "單一前景物件對比安靜背景" },
+      "lower-third-photo-mass": { "description": "影像重量集中於下方或一側" },
+      "stepped-information-band": { "description": "內容序列以階梯形跨越畫面" },
+      "crop-collision": { "description": "字形與影像以受控裁切相遇" },
+      "quiet-offset-frame": { "description": "小幅框體偏置於大留白中" }
     }
   },
   "globalAntiPatterns": [
@@ -114,15 +172,15 @@
     "pixel-copy of reference slides"
   ],
   "coverArchetypes": {
-    "typography-hero": { "titlePlacement": "center-stage", "visualAnchor": "display-type", "imageTreatment": "none", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "type 70–85%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "hard-field-accent", "motionPersonality": "none", "evidenceRefs": ["58", "46", "48", "unresolved-13"] },
-    "full-bleed-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "full-bleed-integrated", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "image 75–100%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "evidenceRefs": ["40", "44", "58", "62"] },
-    "architectural-negative-space": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "negative-space-crop", "typePersonality": "architectural-sans", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "evidenceRefs": ["45", "56", "unresolved-04", "unresolved-11"] },
-    "image-type-asymmetry": { "titlePlacement": "left-field", "visualAnchor": "masked-image", "imageTreatment": "asymmetric-mask", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "dominant side 60–78%", "graphicLanguage": "hard-cut-field", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "corporate", "evidenceRefs": ["39", "57", "59", "60", "61"] },
-    "graphic-brand-field": { "titlePlacement": "offset-corner", "visualAnchor": "brand-geometry", "imageTreatment": "monochrome-field", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "brand field 60–80%", "graphicLanguage": "brand-device", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "energetic", "evidenceRefs": ["60", "61", "unresolved-03", "unresolved-05"] },
-    "object-product-hero": { "titlePlacement": "left-field", "visualAnchor": "hero-object", "imageTreatment": "object-isolation", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "object 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "medium", "effectLanguage": "quiet-depth", "motionPersonality": "corporate", "evidenceRefs": ["42", "51", "57", "unresolved-07"] },
-    "dark-premium-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "monochrome-field", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "dark field 70–90%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "dark-matte", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "evidenceRefs": ["41", "44", "48", "51", "58", "62"] },
-    "information-led-cover": { "titlePlacement": "left-field", "visualAnchor": "information-form", "imageTreatment": "none", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "controlled-dense-field", "dominantRegionRatio": "information anchor 55–70%", "graphicLanguage": "information-trace", "surfaceLanguage": "outlined-structure", "density": "high", "effectLanguage": "static-precision", "motionPersonality": "corporate", "evidenceRefs": ["unresolved-12"] },
-    "cropped-type-image": { "titlePlacement": "edge-crop", "visualAnchor": "display-type", "imageTreatment": "deliberate-offstage-crop", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "cropped field 70–90%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "energetic", "evidenceRefs": ["40", "unresolved-07"] },
-    "minimal-institutional": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "quiet-band", "typePersonality": "institutional-serif", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 65–85%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "evidenceRefs": ["45", "56", "unresolved-01", "unresolved-09", "unresolved-13"] }
+    "typography-hero": { "titlePlacement": "center-stage", "visualAnchor": "display-type", "imageTreatment": "none", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "type 70–85%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "hard-field-accent", "motionPersonality": "none", "anchorRelationship": "self-anchored-type", "visualFlow": "vertical-drop", "overlapPolicy": "controlled-interlock", "edgeBehavior": "offstage-crop", "copyAnchorRelationship": "fused", "focalPoint": "title", "silhouette": "edge-type-mass", "evidenceRefs": ["58", "46", "48", "unresolved-13"] },
+    "full-bleed-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "full-bleed-integrated", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "image 75–100%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "anchorRelationship": "background-stage", "visualFlow": "lower-left-rise", "overlapPolicy": "text-over-anchor", "edgeBehavior": "multi-edge-bleed", "copyAnchorRelationship": "overlay", "focalPoint": "image", "silhouette": "full-bleed-field", "evidenceRefs": ["40", "44", "58", "62"] },
+    "architectural-negative-space": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "negative-space-crop", "typePersonality": "architectural-sans", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "anchorRelationship": "negative-space-partner", "visualFlow": "corner-diagonal", "overlapPolicy": "no-overlap", "edgeBehavior": "single-edge-bleed", "copyAnchorRelationship": "counterweighted", "focalPoint": "spatial-void", "silhouette": "corner-void", "evidenceRefs": ["45", "56", "unresolved-04", "unresolved-11"] },
+    "image-type-asymmetry": { "titlePlacement": "left-field", "visualAnchor": "masked-image", "imageTreatment": "asymmetric-mask", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "dominant side 60–78%", "graphicLanguage": "hard-cut-field", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "corporate", "anchorRelationship": "crossing-peer", "visualFlow": "crossing-diagonal", "overlapPolicy": "controlled-interlock", "edgeBehavior": "single-edge-bleed", "copyAnchorRelationship": "counterweighted", "focalPoint": "image", "silhouette": "diagonal-interlock", "evidenceRefs": ["39", "57", "59", "60", "61"] },
+    "graphic-brand-field": { "titlePlacement": "offset-corner", "visualAnchor": "brand-geometry", "imageTreatment": "monochrome-field", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "brand field 60–80%", "graphicLanguage": "brand-device", "surfaceLanguage": "hard-edge-plane", "density": "medium", "effectLanguage": "hard-field-accent", "motionPersonality": "energetic", "anchorRelationship": "field-enclosure", "visualFlow": "field-to-copy", "overlapPolicy": "anchor-behind-copy", "edgeBehavior": "multi-edge-bleed", "copyAnchorRelationship": "attached", "focalPoint": "brand-field", "silhouette": "offstage-brand-field", "evidenceRefs": ["60", "61", "unresolved-03", "unresolved-05"] },
+    "object-product-hero": { "titlePlacement": "left-field", "visualAnchor": "hero-object", "imageTreatment": "object-isolation", "typePersonality": "modern-grotesk", "negativeSpaceStrategy": "asymmetric-counterweight", "dominantRegionRatio": "object 55–75%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "photo-field", "density": "medium", "effectLanguage": "quiet-depth", "motionPersonality": "corporate", "anchorRelationship": "foreground-object", "visualFlow": "object-to-copy", "overlapPolicy": "controlled-interlock", "edgeBehavior": "single-edge-bleed", "copyAnchorRelationship": "counterweighted", "focalPoint": "object", "silhouette": "isolated-object", "evidenceRefs": ["42", "51", "57", "unresolved-07"] },
+    "dark-premium-editorial": { "titlePlacement": "lower-left-overlay", "visualAnchor": "scene-photograph", "imageTreatment": "monochrome-field", "typePersonality": "editorial-display", "negativeSpaceStrategy": "image-breathing-zone", "dominantRegionRatio": "dark field 70–90%", "graphicLanguage": "editorial-frame", "surfaceLanguage": "dark-matte", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "premium", "anchorRelationship": "background-stage", "visualFlow": "lower-left-rise", "overlapPolicy": "text-over-anchor", "edgeBehavior": "multi-edge-bleed", "copyAnchorRelationship": "overlay", "focalPoint": "image", "silhouette": "lower-third-photo-mass", "evidenceRefs": ["41", "44", "48", "51", "58", "62"] },
+    "information-led-cover": { "titlePlacement": "left-field", "visualAnchor": "information-form", "imageTreatment": "none", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "controlled-dense-field", "dominantRegionRatio": "information anchor 55–70%", "graphicLanguage": "information-trace", "surfaceLanguage": "outlined-structure", "density": "high", "effectLanguage": "static-precision", "motionPersonality": "corporate", "anchorRelationship": "semantic-evidence", "visualFlow": "evidence-sequence", "overlapPolicy": "controlled-interlock", "edgeBehavior": "contained", "copyAnchorRelationship": "attached", "focalPoint": "semantic-sequence", "silhouette": "stepped-information-band", "evidenceRefs": ["unresolved-12"] },
+    "cropped-type-image": { "titlePlacement": "edge-crop", "visualAnchor": "display-type", "imageTreatment": "deliberate-offstage-crop", "typePersonality": "technical-condensed", "negativeSpaceStrategy": "edge-pressure", "dominantRegionRatio": "cropped field 70–90%", "graphicLanguage": "type-as-graphic", "surfaceLanguage": "photo-field", "density": "low", "effectLanguage": "editorial-reveal", "motionPersonality": "energetic", "anchorRelationship": "crossing-peer", "visualFlow": "crossing-diagonal", "overlapPolicy": "controlled-interlock", "edgeBehavior": "offstage-crop", "copyAnchorRelationship": "attached", "focalPoint": "title", "silhouette": "crop-collision", "evidenceRefs": ["40", "unresolved-07"] },
+    "minimal-institutional": { "titlePlacement": "offset-corner", "visualAnchor": "spatial-void", "imageTreatment": "quiet-band", "typePersonality": "institutional-serif", "negativeSpaceStrategy": "active-majority", "dominantRegionRatio": "negative space 65–85%", "graphicLanguage": "quiet-grid", "surfaceLanguage": "paper-flat", "density": "low", "effectLanguage": "static-precision", "motionPersonality": "none", "anchorRelationship": "negative-space-partner", "visualFlow": "corner-diagonal", "overlapPolicy": "no-overlap", "edgeBehavior": "contained", "copyAnchorRelationship": "detached", "focalPoint": "spatial-void", "silhouette": "quiet-offset-frame", "evidenceRefs": ["45", "56", "unresolved-01", "unresolved-09", "unresolved-13"] }
   }
 }

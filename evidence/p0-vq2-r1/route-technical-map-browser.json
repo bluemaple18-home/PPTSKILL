@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T06:32:13.344Z",
+  "artifact": "route-technical-map.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 771,
+          "top": 128,
+          "right": 1531,
+          "bottom": 318,
+          "width": 760,
+          "height": 190
+        },
+        "visualAnchor": {
+          "left": 1,
+          "top": 1,
+          "right": 1121,
+          "bottom": 851,
+          "width": 1120,
+          "height": 850
+        },
+        "supportingCopy": {
+          "left": 971,
+          "top": 709,
+          "right": 1531,
+          "bottom": 740.890625,
+          "width": 560,
+          "height": 31.890625
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "upper-right",
+        "anchorRegion": "stepped-left-to-lower-center",
+        "overlap": "controlled",
+        "dominantAxis": "evidence-sequence",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "semantic-evidence",
+        "silhouette": "stepped-information-band"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.4819,
+          "y": 0.1422,
+          "width": 0.475,
+          "height": 0.2111
+        },
+        "anchorRegion": {
+          "x": 0.0006,
+          "y": 0.0011,
+          "width": 0.7,
+          "height": 0.9444
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 616.7999877929688,
+          "top": 102.4000015258789,
+          "right": 1224.800048828125,
+          "bottom": 254.4000015258789,
+          "width": 608.0000610351562,
+          "height": 152
+        },
+        "visualAnchor": {
+          "left": 0.800000011920929,
+          "top": 0.800000011920929,
+          "right": 896.8000000119209,
+          "bottom": 680.8000000119209,
+          "width": 896,
+          "height": 680
+        },
+        "supportingCopy": {
+          "left": 776.7999877929688,
+          "top": 567.2000122070312,
+          "right": 1224.800048828125,
+          "bottom": 592.7125244140625,
+          "width": 448.00006103515625,
+          "height": 25.51251220703125
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "upper-right",
+        "anchorRegion": "stepped-left-to-lower-center",
+        "overlap": "controlled",
+        "dominantAxis": "evidence-sequence",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "semantic-evidence",
+        "silhouette": "stepped-information-band"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.4819,
+          "y": 0.1422,
+          "width": 0.475,
+          "height": 0.2111
+        },
+        "anchorRegion": {
+          "x": 0.0006,
+          "y": 0.0011,
+          "width": 0.7,
+          "height": 0.9444
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

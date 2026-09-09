@@ -12,6 +12,8 @@ const requiredRouteFields = [
   'titlePlacement', 'visualAnchor', 'imageTreatment', 'typePersonality',
   'negativeSpaceStrategy', 'dominantRegionRatio', 'graphicLanguage',
   'surfaceLanguage', 'density', 'effectLanguage', 'motionPersonality',
+  'anchorRelationship', 'visualFlow', 'overlapPolicy', 'edgeBehavior',
+  'copyAnchorRelationship', 'focalPoint', 'silhouette',
 ];
 
 const catalogForField = {
@@ -25,6 +27,13 @@ const catalogForField = {
   density: 'densities',
   effectLanguage: 'effectLanguages',
   motionPersonality: 'motionPersonalities',
+  anchorRelationship: 'anchorRelationships',
+  visualFlow: 'visualFlows',
+  overlapPolicy: 'overlapPolicies',
+  edgeBehavior: 'edgeBehaviors',
+  copyAnchorRelationship: 'copyAnchorRelationships',
+  focalPoint: 'focalPoints',
+  silhouette: 'silhouettes',
 };
 
 export function getGoldenDesignGrammar() {
