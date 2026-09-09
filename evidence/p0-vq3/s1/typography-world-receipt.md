@@ -1,7 +1,7 @@
 # P0-VQ3-S1 Typography Hero Visual World Receipt
 
 - 日期：2026-09-09
-- 狀態：`S1 OWNER VISUAL FAIL RECORDED / S1-R1 IMPLEMENTED / AUTOMATED GATES PASS / OWNER R1 GATE PENDING`
+- 狀態：`S1-R1 COMPLETE / AUTOMATED GATES PASS / OWNER VISUAL GATE PASS`
 - 範圍：只完成 Typography Hero 對應 visual world 的 10 頁靜態 full-deck 延伸。
 - 不包含：P0-VQ3-S2 contrasting Style、P0-VQ3-S3 motion/effect proof、Golden Visual Regression 收編。
 
@@ -69,4 +69,11 @@
 
 ## Remaining Authority
 
-自動化與 self-critique 不能替代 Owner Visual Gate。Owner 檢視 R1 montage 前，不得將 P0-VQ3-S1 標記 COMPLETE，也不得開始 S2 或 S3。
+Owner 於 2026-09-09 正式判定 `P0-VQ3-S1-R1 — PASS / OWNER VISUAL GATE PASS`。Typography Hero 已證明可從 cover 延伸成 10-page coherent visual world；同一 Style 內具備可辨識的 composition diversity，未退化成 card-grid、fixed split 或 repeated editorial template。
+
+非阻擋 refinement notes：
+
+- 07 的 giant numeral 只應在內容語義或 composition 需要時使用，不得固化為固定 recipe。
+- 10 的 content-derived edge word 應優先選擇有概念意義的詞，不應只依字形適合裁切。
+
+`NEXT = P0-VQ3-S2`；S3 尚未開始。

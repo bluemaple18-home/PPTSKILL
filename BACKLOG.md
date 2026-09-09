@@ -739,15 +739,17 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-VQ3-S1.**
+**NEXT = P0-VQ3-S2 OWNER VISUAL GATE.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
 1. `P0-VQ1` — COMPLETE.
 2. `P0-VQ2 / R1` — COMPLETE; Owner Visual Gate PASS, ideal-quality ceiling not yet reached.
-3. `P0-VQ3-S1` — extend one accepted Style across an 8–12-slide representative deck and prove static visual-world coherence.
-4. `P0-VQ3-S2` — render the same content through one contrasting Style without changing content hash.
+3. `P0-VQ3-S1 / R1` — COMPLETE；Typography Hero 10-page visual world 已通過 Owner Visual Gate。07 giant numeral 與 10 content-derived edge word 為非阻擋 refinement notes。
+4. `P0-VQ3-S2` — IMPLEMENTED；同一 DeckSpec 內容已切換為 Information Led visual world，content hash、頁序與 CompositionSpec 不變；自動化 gate 通過，等待 Owner montage 裁決。
 5. `P0-VQ3-S3` — validate bounded role-aware effects and create the first Golden Visual Regression review artifact.
 6. Only after CP-VQ3 passes, resume `P0-R7`.
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
+
+S2 必須驗證 Style portability，不得把 Typography Hero 換色冒充另一個 Style。S2 已選用與 S1 差異最大的 Information Led；Graphic Brand Field 的 weak-pass 品質不得混入本卡判斷。S2 Owner PASS 前不得開始 S3。
