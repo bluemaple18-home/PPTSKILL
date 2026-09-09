@@ -6,6 +6,7 @@
     "build:themes": "node tools/build-theme-previews.mjs",
     "build:styles": "node tools/build-style-candidates.mjs",
     "build:deck": "node tools/build-full-deck.mjs",
+    "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
     "test": "node --test tests/*.test.mjs"
   }

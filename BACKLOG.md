@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-09
 
-**Status:** `P0-R7 COMPLETE`；current frontier = `P1-R8`
+**Status:** `P1-R8-A COMPLETE`；current frontier = `P1-R8-B`
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -628,6 +628,18 @@ Evidence：`evidence/p0-r7/direct-editor-portable-export-receipt.md`、`evidence
 
 **Priority:** P1 before distribution
 
+### R8-A — Local Profile Isolation
+
+**Status:** COMPLETE
+
+- strict allowlist preferences；missing is normal；explicit remember only；one reminder per deck session；profile stays outside versioned install directory。
+- export integration proves zero profile fields／path／content in `deck.html`。
+- Evidence：`evidence/p1-r8/a/local-profile-isolation-receipt.md`。
+
+### R8-B — ZIP Distribution Lifecycle
+
+**Status:** NEXT
+
 Profile:
 
 - local optional config outside versioned install dir;
@@ -745,7 +757,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P1-R8 — Local personal profile + ZIP distribution.**
+**NEXT = P1-R8-B — ZIP Distribution Lifecycle.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -756,7 +768,8 @@ Implementation order is fixed until full-deck owner visual acceptance:
 5. `P0-VQ3-S3` — COMPLETE；Automated、Browser、Reduced Motion、Owner Motion Gates PASS。`hard-cut-field` 快速、克制為非阻擋 refinement guardrail。
 6. `CP-VQ3` — COMPLETE；解除 `P0-R7` blocker。
 7. `P0-R7` — COMPLETE；direct edit、supported component edit、image replacement、slide management、bounded local AI patch、sanitized save/reopen 與 dual-viewport geometry 全部通過。
-8. `P1-R8` — NEXT；local optional profile + ZIP distribution。
+8. `P1-R8-A` — COMPLETE；local optional profile isolation 與 export integration PASS。
+9. `P1-R8-B` — NEXT；one shared core + three thin adapters + ZIP lifecycle。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 
