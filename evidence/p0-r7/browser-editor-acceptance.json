@@ -1,0 +1,30 @@
+{
+  "status": "pass",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "directTextEdit": "瀏覽器直接編輯成功",
+  "localPatch": "本機 AI 單區 patch 成功",
+  "imageReplacement": true,
+  "slideManagement": {
+    "afterDuplicate": 11,
+    "afterDelete": 10
+  },
+  "reopen": {
+    "editorReady": true,
+    "slideCount": 10,
+    "title": "瀏覽器直接編輯成功",
+    "imageType": "data:image/webp;"
+  },
+  "sanitizerLeak": false,
+  "presenterModePresent": false,
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "artifacts": {
+    "sourceDeck": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/p0-r7/editor-acceptance-source.html",
+    "exportedDeck": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/p0-r7/portable-edited-deck.html"
+  }
+}

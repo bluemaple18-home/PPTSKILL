@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-09
 
-**Status:** `CP-VQ3 COMPLETE`；current frontier = `P0-R7`
+**Status:** `P0-R7 COMPLETE`；current frontier = `P1-R8`
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -40,7 +40,7 @@ Reopen only the visual-quality surfaces that failed owner acceptance.
 - `P0-R4`: COMPLETE — keep.
 - `P0-R5`: **ARCHITECTURE COMPLETE / VISUAL VOCABULARY REPAIR REQUIRED**.
 - `P0-R6`: COMPLETE — keep geometry gate.
-- `P0-R7`: **IN PROGRESS — VQ3 blocker removed**.
+- `P0-R7`: **COMPLETE — direct editor / portable export gates pass**.
 
 The previous P0-R3 receipt remains valid evidence for schema / same-content / no-color-swap-only / human-selection behavior. It is **not** sufficient evidence that the visual quality is acceptable.
 
@@ -598,7 +598,7 @@ The exact total number of variants is not authority; visible composition diversi
 ## P0-R7 — Direct editor + portable export repair
 
 **Priority:** P0  
-**Status:** IN PROGRESS
+**Status:** COMPLETE
 **Goal:** keep the existing HTML editor while making edits DeckSpec-safe and export share-safe.
 
 Requirements:
@@ -619,6 +619,8 @@ Acceptance:
 - edit/save/reopen preserves changes;
 - recipient AI can parse DeckSpec from only `deck.html`;
 - negative sanitizer fixtures prove profile/path/source-document/prompt data does not leak.
+
+Evidence：`evidence/p0-r7/direct-editor-portable-export-receipt.md`、`evidence/p0-r7/browser-editor-acceptance.json`、`evidence/p0-r7/portable-edited-geometry.json`。
 
 ---
 
@@ -743,7 +745,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-R7 — Direct editor + portable export repair.**
+**NEXT = P1-R8 — Local personal profile + ZIP distribution.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -753,7 +755,8 @@ Implementation order is fixed until full-deck owner visual acceptance:
 4. `P0-VQ3-S2` — COMPLETE；Information Led 已通過 Style Portability 與 Owner Visual Gate。technical rail、matrix、transition variants 為非阻擋 refinement notes。
 5. `P0-VQ3-S3` — COMPLETE；Automated、Browser、Reduced Motion、Owner Motion Gates PASS。`hard-cut-field` 快速、克制為非阻擋 refinement guardrail。
 6. `CP-VQ3` — COMPLETE；解除 `P0-R7` blocker。
-7. `P0-R7` — CURRENT；只修 direct editor 與 portable export，不回頭重開 VQ3 視覺。
+7. `P0-R7` — COMPLETE；direct edit、supported component edit、image replacement、slide management、bounded local AI patch、sanitized save/reopen 與 dual-viewport geometry 全部通過。
+8. `P1-R8` — NEXT；local optional profile + ZIP distribution。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

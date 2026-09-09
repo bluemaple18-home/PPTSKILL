@@ -6,19 +6,12 @@ import { buildDeckHtml, createDeckState } from '../runtime/deck.js';
 const fixturePath = new URL('../fixtures/functional-test-sample.json', import.meta.url);
 const deckPath = new URL('../fixtures/deck.html', import.meta.url);
 
-test('三頁樣本可播放、顯示講者資訊並管理投影片', async () => {
+test('三頁樣本可播放並管理投影片，不包含 Presenter Mode', async () => {
   const fixture = JSON.parse(await readFile(fixturePath, 'utf8'));
   const deck = createDeckState(fixture);
 
   assert.equal(deck.slides.length, 3);
   assert.equal(deck.current().id, 'sample-01');
-  assert.deepEqual(deck.presenter(), {
-    notes: '先說明目前的阻塞，再邀請團隊確認下一步。',
-    nextHint: '接著用三個行動降低風險。',
-    source: '內部功能測試用合成資料',
-    progress: '1 / 3',
-  });
-
   deck.next();
   deck.previous();
   assert.equal(deck.current().id, 'sample-01');
@@ -34,7 +27,7 @@ test('三頁樣本可播放、顯示講者資訊並管理投影片', async () =>
   const html = buildDeckHtml(fixture);
   assert.equal((await readFile(deckPath, 'utf8')).trimEnd(), html);
   assert.match(html, /data-mode="play"/);
-  assert.match(html, /id="presenter" hidden/);
+  assert.doesNotMatch(html, /Presenter|講者模式|data-action="presenter"/);
   assert.match(html, /data-action="save"/);
   assert.doesNotMatch(html, /https?:\/\//);
 });

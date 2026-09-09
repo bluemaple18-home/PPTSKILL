@@ -15,8 +15,6 @@
     .body { max-width: 52ch; font-size: clamp(1.15rem, 2vw, 1.7rem); line-height: 1.6; }
     #controls, #editor { display: flex; gap: .6rem; flex-wrap: wrap; padding: 1rem; background: #0b1020; }
     button { border: 1px solid #4b638a; border-radius: .4rem; background: #1f3355; color: inherit; padding: .55rem .8rem; cursor: pointer; }
-    #presenter { position: fixed; right: 1rem; top: 1rem; max-width: 24rem; padding: 1rem; border-radius: .6rem; background: #fff; color: #15213a; box-shadow: 0 8px 28px #0008; }
-    #presenter p { margin: .4rem 0; }
     body[data-mode="edit"] h1, body[data-mode="edit"] .body { outline: 1px dashed #93c5fd; outline-offset: .25rem; }
     body[data-mode="edit"] #editor { display: flex; }
     body[data-mode="play"] #editor { display: none; }
@@ -40,13 +38,9 @@
         <p class="body" contenteditable="false">請選擇優先順序，讓工作可以往前推進。</p>
       </article>
   </main>
-  <aside id="presenter" hidden aria-live="polite">
-    <strong>Presenter</strong>
-    <p id="notes"></p><p id="next-hint"></p><p id="source"></p><p id="progress"></p>
-  </aside>
   <nav id="controls" aria-label="播放控制">
     <button data-action="previous">上一頁</button><button data-action="next">下一頁</button>
-    <button data-action="presenter">講者模式</button><button data-action="edit">編輯模式</button>
+    <button data-action="edit">編輯模式</button>
   </nav>
   <section id="editor" aria-label="投影片管理">
     <button data-action="move-up">上移</button><button data-action="move-down">下移</button>
@@ -59,23 +53,15 @@
       const fixture = JSON.parse(document.querySelector('#deck-data').textContent);
       const slides = fixture.slides;
       let current = 0;
-      let presenterVisible = false;
       let copyCount = 0;
       const root = document.body;
       const view = document.querySelector('#slides');
-      const presenter = document.querySelector('#presenter');
       const render = () => {
         view.innerHTML = slides.map((slide, index) => '<article class="slide' + (index === current ? ' active' : '') + '" data-slide-id="' + slide.id + '"><p class="eyebrow">' + String(index + 1).padStart(2, '0') + ' / ' + slides.length + '</p><h1 contenteditable="' + (root.dataset.mode === 'edit') + '"></h1><p class="body" contenteditable="' + (root.dataset.mode === 'edit') + '"></p></article>').join('');
         view.querySelectorAll('.slide').forEach((element, index) => {
           element.querySelector('h1').textContent = slides[index].title;
           element.querySelector('.body').textContent = slides[index].body;
         });
-        const slide = slides[current];
-        document.querySelector('#notes').textContent = '講稿：' + slide.notes;
-        document.querySelector('#next-hint').textContent = '下一頁提示：' + slide.nextHint;
-        document.querySelector('#source').textContent = '來源：' + slide.source;
-        document.querySelector('#progress').textContent = '進度：' + (current + 1) + ' / ' + slides.length;
-        presenter.hidden = !presenterVisible;
       };
       const saveEdits = () => {
         view.querySelectorAll('.slide').forEach((element, index) => {
@@ -98,7 +84,6 @@
         saveEdits();
         if (action === 'next') current = Math.min(current + 1, slides.length - 1);
         if (action === 'previous') current = Math.max(current - 1, 0);
-        if (action === 'presenter') presenterVisible = !presenterVisible;
         if (action === 'edit') root.dataset.mode = root.dataset.mode === 'edit' ? 'play' : 'edit';
         if (action === 'move-up' && current > 0) { [slides[current - 1], slides[current]] = [slides[current], slides[current - 1]]; current -= 1; }
         if (action === 'move-down' && current < slides.length - 1) { [slides[current], slides[current + 1]] = [slides[current + 1], slides[current]]; current += 1; }

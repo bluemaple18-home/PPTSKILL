@@ -24,7 +24,7 @@ v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-dec
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3：functional contract 已完成，但 owner visual acceptance 重新打開。
 - P0-R5：semantic renderer 架構保留，但 visual vocabulary 必須修復，不重寫 DeckSpec / CompositionSpec。
-- **目前工程 frontier：`CP-VQ3` 已通過，執行 `P0-R7 — Direct editor + portable export repair`。**
+- **目前工程 frontier：`P0-R7` 已完成，下一張為 `P1-R8 — Local personal profile + ZIP distribution`。**
 
 ## Portable HTML editor
 
