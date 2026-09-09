@@ -1,7 +1,8 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-08  
-**Status:** visual-quality repair lane opened；current frontier = `P0-VQ1`  
+**Updated:** 2026-09-09
+
+**Status:** `P0-VQ2-R1 COMPLETE`；current frontier = `P0-VQ3`
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -11,6 +12,8 @@
 The 2026-09-06 implementation commit `cc7185620c4c0b979d1461c445bac03f8aed3708` completed the contract / runtime path through geometry QA, but the owner rejected the current rendered style candidates as visually too primitive.
 
 The 2026-09-08 owner calibration also screened a broad cross-industry set of **real presentation cover/title slides**. The accepted and rejected examples show that the target is **not** an industry-template catalog. The reusable asset is a presentation design grammar: composition, hierarchy, typography, negative space, image integration, visual anchors, graphic language, component treatment and restrained motion/effects. PPTSKILL should learn the design logic behind accepted references rather than copy a small set of templates.
+
+The 2026-09-09 Owner Visual Review accepted `P0-VQ2-R1` at commit `26859a6ad5435334aa6b63f7e64615579404af18`. This closes the Q2 blocker: the covers have crossed the engineering-demo / fake-anchor / same-layout-different-color failure state. It does **not** claim the owner ideal-quality ceiling has been reached. `graphic-brand-field / modular-brand-rhythm` remains a non-blocking weak-pass refinement target.
 
 This is **not** authorization to rewrite the working architecture.
 
@@ -33,11 +36,11 @@ Reopen only the visual-quality surfaces that failed owner acceptance.
 - `P0-R0`: COMPLETE — keep.
 - `P0-R1`: COMPLETE — keep.
 - `P0-R2`: COMPLETE — keep.
-- `P0-R3`: **FUNCTIONAL CONTRACT COMPLETE / VISUAL ACCEPTANCE REOPENED**.
+- `P0-R3`: **FUNCTIONAL CONTRACT COMPLETE / VISUAL ACCEPTANCE PASS VIA P0-VQ2-R1**.
 - `P0-R4`: COMPLETE — keep.
 - `P0-R5`: **ARCHITECTURE COMPLETE / VISUAL VOCABULARY REPAIR REQUIRED**.
 - `P0-R6`: COMPLETE — keep geometry gate.
-- `P0-R7`: **PAUSED until P0-VQ1～P0-VQ3 complete**.
+- `P0-R7`: **PAUSED until P0-VQ3 complete**.
 
 The previous P0-R3 receipt remains valid evidence for schema / same-content / no-color-swap-only / human-selection behavior. It is **not** sufficient evidence that the visual quality is acceptable.
 
@@ -136,7 +139,7 @@ MVP does not build a generic PPTX importer. Convert that one PPTX once into a re
 
 # 2. Existing implementation inventory
 
-Latest implementation basis: `cc7185620c4c0b979d1461c445bac03f8aed3708`.
+Latest owner-reviewed implementation basis: `26859a6ad5435334aa6b63f7e64615579404af18`.
 
 ## Reuse without rewrite
 
@@ -174,20 +177,26 @@ Keep model-agnostic bounded generation, compact anchors, slide-local patching, a
 
 Keep browser geometry detection and fail-loud overlap / overflow / off-canvas behavior. Visual-quality repair must not weaken this gate.
 
-## Reopened surfaces
+## Resolved cover P0-R3 visual surface
 
-### P0-R3 — current problem
+### P0-R3 / P0-VQ2 — completion state
 
 **Functional evidence exists:** `evidence/p0-r3/style-gate-receipt.md`
 
-Current implementation facts:
+Completion facts:
 
-- `runtime/style-candidates.js` exposes only five `primaryMove` values;
-- most cover routes still inherit a common `8fr / 4fr` left-copy / right-panel skeleton;
-- `technical-map` / `split-proof` / `editorial-rail` are structurally shallow hand-written cover patterns;
-- current route-diversity validation counts StyleSpec field differences but does not prove rendered structural diversity;
-- `fixtures/style-candidates.json` contains hand-authored fixture routes; the portable PPTSKILL package does not yet contain an actual adapted frontend-design material layer;
-- current receipt proves no clipping and no trivial color-swap-only pair, but does not prove owner-acceptable design quality.
+- independent archetype renderers replace the shared cover skeleton;
+- Information Led uses real subtitle semantics rather than a fake network;
+- Typography Hero uses content-derived type anchors rather than a fixed `01 + bar` recipe;
+- Graphic Brand Field uses bounded modular cadence rather than a fixed orbit;
+- structural diversity uses renderer-level spatial profiles rather than StyleSpec token counts or DOM vocabulary;
+- functional, structural-diversity, geometry and Owner Visual gates pass;
+- Owner ideal-quality ceiling remains explicitly unreached;
+- `graphic-brand-field / modular-brand-rhythm` is `WEAK PASS / FUTURE REFINEMENT TARGET`, nonblocking for P0-VQ3.
+
+**Evidence:** `evidence/p0-vq2-r1/composition-semantics-repair-receipt.md`
+
+## Current visual repair surface
 
 ### P0-R5 — current problem
 
@@ -206,13 +215,13 @@ Current execution order:
 ```text
 P0-R0/R1/R2/R4/R6 complete
         ↓
-P0-R3 functional complete but visually rejected
+P0-R3 functional + cover visual acceptance complete
         ↓
-P0-VQ1 Portable design materials + Golden Design Grammar
+P0-VQ1 Portable design materials + Golden Design Grammar ✓
         ↓
-P0-VQ2 Style candidate renderer + diversity/effect repair
+P0-VQ2 Style candidate renderer + diversity/effect repair ✓
         ↓
-P0-VQ3 Full-deck visual + component-effect vocabulary repair
+P0-VQ3 Full-deck visual + component-effect vocabulary repair ← CURRENT FRONTIER
         ↓
 P0-R7 Direct editor + portable export
         ↓
@@ -225,7 +234,7 @@ P1-R10 Asset optimizer
 P0-R11 End-to-end release
 ```
 
-Do not continue P0-R7 until the owner has approved the repaired P0-VQ2 style-candidate screenshots and P0-VQ3 has preserved geometry safety.
+P0-VQ2 owner approval is complete. Do not continue P0-R7 until P0-VQ3 proves full-deck visual-world extension while preserving geometry safety.
 
 ---
 
@@ -234,6 +243,9 @@ Do not continue P0-R7 until the owner has approved the repaired P0-VQ2 style-can
 ## P0-VQ1 — Portable design materials + Golden Design Grammar
 
 **Priority:** P0 / BLOCKS P0-VQ2  
+**Status:** COMPLETE
+
+**Evidence:** `evidence/p0-vq1/design-grammar-receipt.md`, `evidence/p0-vq1/motion-baseline-receipt.md`
 **Goal:** make the existing AI Core frontend-design knowledge plus owner-screened presentation references materially available to PPTSKILL without making AI Core or any external template library a runtime dependency.
 
 ### Source scope
@@ -351,8 +363,16 @@ Suggested locations may include `design/materials/`, a small human-readable Gold
 
 ## P0-VQ2 — Style-candidate renderer + rendered-diversity/effect repair
 
-**Priority:** P0 / OWNER VISUAL GATE / BLOCKS P0-VQ3 AND P0-R7  
+**Priority:** P0
+
+**Status:** COMPLETE VIA P0-VQ2-R1
+
+**Owner verdict:** Visual Gate PASS / ideal-quality ceiling not yet reached
+
+**Evidence:** `evidence/p0-vq2-r1/composition-semantics-repair-receipt.md`
 **Goal:** make the four-cover selection feel like genuinely different design directions rather than one skeleton with cosmetic variations, while giving each route a coherent restrained effect treatment.
+
+`graphic-brand-field / modular-brand-rhythm` is a `WEAK PASS / FUTURE REFINEMENT TARGET`. Do not reopen a blocking Q2 polish card. Reassess it only after VQ3 provides full-deck visual-world evidence.
 
 ### Code targets
 
@@ -431,7 +451,80 @@ Do not mark the card complete merely because automated tests pass.
 ## P0-VQ3 — Full-deck visual + component-effect vocabulary repair
 
 **Priority:** P0 / BLOCKS P0-R7  
+**Status:** READY / CURRENT FRONTIER
 **Goal:** preserve the semantic primitive architecture while giving slides enough validated composition and component-effect variants to avoid a repetitive engineering-template look.
+
+### Art-direction guidance
+
+Do not add schema fields as a proxy for visual quality. Mature the path in this order:
+
+```text
+Golden References
+→ Art Direction Rules
+→ Bounded Variants
+→ Owner Visual Regression
+```
+
+Reviewed variants may control title-scale relationship, Chinese text occupancy, line-break aesthetics, optical alignment, asymmetric proportion, visual weight, focal-point strength, edge-crop intensity, negative-space tension, title/subtitle/identity relationship, line rhythm, repetition density, graphic-device maturity, palette-area ratio, foreground/background relationship and anchor semantic strength. These remain bounded design decisions, not freeform LLM CSS.
+
+A bounded art-direction intent such as `high-tension + title-dominant + single-edge-bleed + low-density` may be explored only where VQ3 evidence proves a need. Do not design a large new schema before the variants are validated on full-deck content.
+
+### Visual-vocabulary guardrails
+
+1. Generic cards are not the default answer.
+2. Three bullets do not automatically become three cards.
+3. A process does not automatically become five arrow boxes.
+4. Metrics do not automatically become three KPI columns.
+5. Every visual anchor must be supported by content semantics or the selected Style grammar.
+6. Typography may carry a visual role.
+7. One Style may use multiple composition geometries.
+8. Different slides must remain recognizably inside one visual world.
+9. Motion cannot rescue weak static composition.
+10. Reduced-motion and static screenshots must remain complete.
+
+### Golden Visual Regression policy
+
+Maintain a long-term human-reviewed set sourced only from Owner-accepted Golden Covers and later Owner-approved PPTSKILL outputs. It is a comparison set, not a pixel-matching snapshot suite. Each review records at least hierarchy, composition tension, negative space, typography maturity, visual-anchor quality, semantic relevance, visual weight, palette-area balance, template smell and overall presentation-slide maturity.
+
+Automated tests and geometry checks may prevent regressions but cannot issue a visual-quality PASS. Owner visual verdict remains the final authority. Add outputs to this set only after explicit Owner approval; do not treat every generated slide as Golden evidence.
+
+### Minimum verifiable execution plan
+
+#### VQ3-S1 — One-style visual-world extension
+
+- **traces_to:** US-001, US-003; FR-001, FR-003; SC-001, SC-004
+- **depends_on:** P0-VQ2-R1 COMPLETE
+- **blocking_edges:** none; this is the current frontier.
+- **input → output:** one accepted Q2 Style + one representative 8–12-slide DeckSpec → a static full-deck HTML, slide-contact-sheet screenshot and geometry receipt.
+- **scope:** reuse the seven semantic primitives; add only the smallest reviewed composition variants needed to prevent repeated geometry and card-grid defaults.
+- **acceptance:** cover and content pages form one visual world; at least title+points, split/proof, metric/evidence, process/sequence and component focus demonstrate nonrepetitive geometry; no arbitrary HTML/CSS.
+- **verification:** content hash, static render, 1600×900 + 1280×720 geometry, console/network/pageerror and owner contact-sheet review.
+- **likely_files:** `runtime/composition-primitives.js`, `runtime/full-deck-renderer.js`, focused fixtures/tests, `evidence/p0-vq3/`.
+- **TDD:** renderer/contract behavior yes; visual tuning uses screenshot evidence.
+
+#### VQ3-S2 — Contrasting-style portability
+
+- **traces_to:** US-001, US-003; FR-001, FR-002, FR-003; SC-001, SC-002
+- **depends_on:** VQ3-S1 PASS.
+- **blocking_edges:** do not start until S1 establishes a coherent first visual world.
+- **input → output:** the exact same DeckSpec content + a contrasting accepted Q2 Style → second full-deck render and paired comparison sheet.
+- **acceptance:** content hash and slide IDs remain unchanged; typography, surface/line/shape, anchor and palette-area behavior differ materially without creating another brand per slide.
+- **verification:** deterministic content-hash test, paired static screenshots, dual-viewport geometry and owner comparison verdict.
+- **likely_files:** same renderer seam as S1; no second renderer architecture.
+- **TDD:** contract/hash behavior yes; visual tuning uses screenshot evidence.
+
+#### VQ3-S3 — Bounded effect and Golden Visual Regression proof
+
+- **traces_to:** US-002, US-003; FR-002, FR-003; SC-001, SC-002
+- **depends_on:** VQ3-S1 PASS; may run after or together with S2 only if it edits no shared renderer surface.
+- **blocking_edges:** static S1 composition must pass before motion/effects are evaluated.
+- **input → output:** accepted static variants + existing effect/motion grammar → representative motion-on/reduced-motion receipts and a Golden Visual Regression review sheet.
+- **acceptance:** one title, metric/evidence, process/sequence, component/image-focus and diagram/rule role show coherent bounded treatments; resting geometry is identical; owner review records hierarchy, composition tension, negative space, typography maturity, anchor quality, semantic relevance, visual weight, palette-area balance, template smell and overall slide maturity.
+- **verification:** browser receipts with pre-navigation listeners, static/reduced/motion comparison, `pnpm test`, `git diff --check`, Owner Visual Gate.
+- **likely_files:** `runtime/motion-primitives.js`, `runtime/full-deck-renderer.js`, focused tests, `evidence/p0-vq3/`.
+- **TDD:** effect routing and resting geometry yes; visual verdict remains human authority.
+
+**Checkpoint CP-VQ3:** after S1–S3, rebuild both styles from the same DeckSpec, rerun all deterministic/browser gates and present one static comparison artifact to Owner. P0-VQ3 remains incomplete until this checkpoint passes.
 
 ### Preserve
 
@@ -497,7 +590,7 @@ The exact total number of variants is not authority; visible composition diversi
 ## P0-R7 — Direct editor + portable export repair
 
 **Priority:** P0  
-**Status:** BLOCKED BY P0-VQ1～P0-VQ3  
+**Status:** BLOCKED BY P0-VQ3
 **Goal:** keep the existing HTML editor while making edits DeckSpec-safe and export share-safe.
 
 Requirements:
@@ -642,13 +735,15 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-VQ1.**
+**NEXT = P0-VQ3-S1.**
 
-Implementation order is fixed until owner visual acceptance:
+Implementation order is fixed until full-deck owner visual acceptance:
 
-1. `P0-VQ1` — turn owner-screened Golden Cover references + adapted AI Core frontend-design material into a small portable **Golden Design Grammar v1**, including component-effect / motion role mappings.
-2. `P0-VQ2` — repair style candidates so the three AI covers are structurally distinct, laptop-safe, Chinese-title-safe, owner-approved, and have coherent route-aware effects that do not substitute for static design quality.
-3. `P0-VQ3` — expand full-deck visual and component-effect variants without changing semantic contracts or weakening geometry QA.
-4. Only then resume `P0-R7`.
+1. `P0-VQ1` — COMPLETE.
+2. `P0-VQ2 / R1` — COMPLETE; Owner Visual Gate PASS, ideal-quality ceiling not yet reached.
+3. `P0-VQ3-S1` — extend one accepted Style across an 8–12-slide representative deck and prove static visual-world coherence.
+4. `P0-VQ3-S2` — render the same content through one contrasting Style without changing content hash.
+5. `P0-VQ3-S3` — validate bounded role-aware effects and create the first Golden Visual Regression review artifact.
+6. Only after CP-VQ3 passes, resume `P0-R7`.
 
-Do not spend the next iteration polishing the current four screenshots with only palette, padding, shadows, radius, generic fade-rise animation or glow tweaks. The accepted repair must change the rendered design vocabulary while preserving the completed architecture.
+Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.

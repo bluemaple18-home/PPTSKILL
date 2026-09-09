@@ -1,7 +1,8 @@
 # P0-VQ2-R1 Composition Grammar / Anchor Semantics Repair Receipt
 
 - 日期：2026-09-09
-- 狀態：`AUTOMATED GATES PASS / OWNER VISUAL GATE PENDING`
+- 狀態：`COMPLETE / OWNER VISUAL GATE PASS`
+- 基準 commit：`26859a6ad5435334aa6b63f7e64615579404af18`
 - 根因：semantic visual anchor 被降級成 decorative primitive；token 差異被誤當成 perceptual composition 差異。
 - 範圍：既有三個 AI archetype 的 grammar → renderer 轉譯與 structural diversity gate。
 - 不包含：新 archetype、Company Fixture 美化、P0-VQ3、full-deck generation、treatment-specific motion repair。
@@ -24,11 +25,19 @@
 
 ## Visual critique
 
-- Information Led：`pass`。主視覺是與真實 subtitle 對應的三段流程，不再是 fake network。
-- Typography Hero：`pass`。主標與內容字形共同承擔焦點，沒有固定 folio recipe。
-- Graphic Brand Field：`weak`。repetition / crop / rhythm 已有明確規則，仍需 Owner taste verdict 判斷品牌張力。
+- Information Led：`PASS`。真實 subtitle 內容已成為 semantic visual anchor，可作為 `information-led-cover` 有效 baseline。
+- Typography Hero：`PASS`。目前三個 AI route 中完成度最高；typography 本身已成為 visual anchor，可作為 `typography-hero` baseline。
+- Graphic Brand Field：`WEAK PASS / FUTURE REFINEMENT TARGET`。已移除 orbit 並建立 repetition / crop / rhythm / modular cadence，但仍偏 generator-like，與內容語義的關係及 graphic-device maturity 仍可提高。不阻擋 P0-VQ3。
 - Company Fixture：`not-scored`，僅驗證 geometry 並標示 fixture-only。
 
-## Remaining authority
+## Gate verdict
 
-Automated gate 只防 regression，不代替 Owner 審美裁決。P0-VQ2-R1 在 Owner 檢視 montage 前不得標記 COMPLETE。
+- `functional_gate`: PASS
+- `structural_diversity_gate`: PASS
+- `geometry_gate`: PASS
+- `owner_visual_gate`: PASS
+- `owner_ideal_quality_ceiling`: NOT YET REACHED
+
+Owner Visual Gate PASS 只代表本版已跨過 engineering demo、fake visual anchor 與 same-layout-different-color 的失敗狀態，架構與 visual grammar 足以進入下一階段。這不代表封面已達最終精品品質、不允許後續改善，或 Golden Design Grammar 已達設計上限。
+
+Automated tests 只能防 regression，Owner visual verdict 仍是視覺品質的最終 authority。
