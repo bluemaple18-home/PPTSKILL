@@ -12,6 +12,14 @@
 - `ANTI_PATTERNS`: 三等分 KPI 卡、五個箭頭盒、每頁同一 split、照片裝飾、glow、陰影與圓角假高級。
 - `SCOPE_BOUNDARY`: 僅 S1；不做 contrasting Style、motion/effect proof 或 Golden Visual Regression 收編。
 
+### P0-VQ3-S1-R1 Art-direction repair
+
+- `OWNER_VERDICT`: S1 `NO_GO`；architecture keep，automated / geometry pass。
+- `KEEP`: 01、04、05、06、08。
+- `REPAIR`: 02 用 bottom-heavy edge word；03 用 inverse center/diagonal mass；07 用 giant numeral 切分高密度內容；09 讓 evidence numeral 主導 chart；10 用 bottom-edge word mass 收尾。
+- `PALETTE`: 保留 Owner 指定的暖白／近黑／朱紅，不恢復酒紅。
+- `GATE`: contact sheet 中每頁 silhouette 可辨識，但仍明顯屬於同一套 deck。
+
 ## P0-VQ2 replacement intent（2026-09-09）
 
 - `change_mode`: redesign

@@ -1,7 +1,7 @@
 # P0-VQ3-S1 Typography Hero Visual World Receipt
 
 - 日期：2026-09-09
-- 狀態：`IMPLEMENTED / AUTOMATED GATES PASS / OWNER VISUAL GATE PENDING`
+- 狀態：`S1 OWNER VISUAL FAIL RECORDED / S1-R1 IMPLEMENTED / AUTOMATED GATES PASS / OWNER R1 GATE PENDING`
 - 範圍：只完成 Typography Hero 對應 visual world 的 10 頁靜態 full-deck 延伸。
 - 不包含：P0-VQ3-S2 contrasting Style、P0-VQ3-S3 motion/effect proof、Golden Visual Regression 收編。
 
@@ -29,13 +29,30 @@
 
 ## Automated Evidence
 
-- `pnpm test`: 60 / 60 pass。
+- `pnpm test`: 61 / 61 pass。
 - `fixtures/full-deck.html`: 10 頁 self-contained HTML；DeckSpec 可回讀且 content hash 不變。
 - `geometry.json`: 1600×900 與 1280×720 皆為 `pass`。
 - 兩種 viewport 的 traceback、console、pageerror、network failure、HTTP error 與 geometry issues 均為空。
-- `typography-world-montage-1280x720.png`: 10 頁 Owner review contact sheet。
+- `typography-world-montage-1280x720.png`: S1-R1 的 10 頁 Owner review contact sheet。
 
-## Visual Self-Critique
+## Owner Review History
+
+- 原始 S1 verdict：`NO_GO / OWNER VISUAL GATE FAIL`。
+- 保留：01、04、05、06、08。
+- 弱頁：02、03、07、09、10。
+- 根因：Typography Hero signature 在內頁衰減；弱頁的 focal placement、type-as-visual 與 contact-sheet silhouette 不足。
+- 配色不是失敗原因；暖白／近黑／朱紅是 Owner 指定的新方向。
+
+## S1-R1 Repair
+
+- 02：bottom-heavy 巨型「成本」edge crop；標題與三項問題移到右側。
+- 03：近黑 inverse field；outline「證據」形成 center mass，三項 proof 形成 diagonal weight。
+- 07：巨型 `05` 作高密度頁的分區 anchor。
+- 09：`92` 成為 evidence focal point，bar chart 降為比較尺度。
+- 10：bottom-edge「一套」outline mass，標題與結論形成不同於 02／03 的 closing silhouette。
+- 未修改 StyleSpec／CompositionSpec schema、primitive registry 或 renderer architecture。
+
+## S1-R1 Visual Self-Critique
 
 | 項目 | 判定 | 證據摘要 |
 |---|---|---|
@@ -52,4 +69,4 @@
 
 ## Remaining Authority
 
-自動化與 self-critique 不能替代 Owner Visual Gate。Owner 檢視 montage 前，不得將 P0-VQ3-S1 標記 COMPLETE，也不得開始 S2 或 S3。
+自動化與 self-critique 不能替代 Owner Visual Gate。Owner 檢視 R1 montage 前，不得將 P0-VQ3-S1 標記 COMPLETE，也不得開始 S2 或 S3。

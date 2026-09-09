@@ -46,3 +46,14 @@ test('S1 涵蓋指定的七種判讀頁型', () => {
   assert.ok(fixture.slides.some(({ composition }) => composition.variant === 'dense-ledger'));
   assert.ok(fixture.slides.some(({ composition }) => composition.variant === 'quiet-transition'));
 });
+
+test('S1-R1 只替五張弱頁加入 bounded type-as-visual anchor', () => {
+  const result = renderFullDeck(fixture);
+  assert.equal(result.status, 'pass');
+  assert.equal((result.html.match(/data-type-visual/g) ?? []).length, 5);
+  for (const token of ['成本', '證據', '05', '92', '一套']) {
+    assert.match(result.html, new RegExp(`data-word="${token}"`));
+  }
+  assert.match(result.html, /variant-proof-ledger[^>]*>[\s\S]*?page-word--proof-ledger/);
+  assert.match(result.html, /variant-evidence-axis[^>]*>[\s\S]*?data-word="92"/);
+});

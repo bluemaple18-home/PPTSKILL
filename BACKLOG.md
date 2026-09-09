@@ -492,9 +492,10 @@ Automated tests and geometry checks may prevent regressions but cannot issue a v
 
 #### VQ3-S1 — One-style visual-world extension
 
-- **status:** IMPLEMENTED / AUTOMATED GATES PASS / OWNER VISUAL GATE PENDING
+- **status:** S1 OWNER VISUAL FAIL RECORDED / S1-R1 IMPLEMENTED / AUTOMATED GATES PASS / OWNER R1 GATE PENDING
 - **selected_style:** Typography Hero / `route-editorial-rail`
 - **evidence:** `evidence/p0-vq3/s1/typography-world-receipt.md`, `evidence/p0-vq3/s1/typography-world-montage-1280x720.png`, `evidence/p0-vq3/s1/geometry.json`
+- **repair_scope:** preserve 01/04/05/06/08；art-direction repair only for 02/03/07/09/10；keep warm-white / near-black / vermilion palette；do not start S2/S3.
 - **traces_to:** US-001, US-003; FR-001, FR-003; SC-001, SC-004
 - **depends_on:** P0-VQ2-R1 COMPLETE
 - **blocking_edges:** none; this is the current frontier.
