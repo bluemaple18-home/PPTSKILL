@@ -1,14 +1,20 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-09T16:49:19.059Z",
+  "generatedAt": "2026-09-10T04:10:23.404Z",
   "lifecycleStatus": "pass",
   "archive": {
     "version": "0.1.0",
-    "sha256": "7da76f5bedb4061d012e239ce9849a715fe8c43b41c6d1084651fee21dcd12da"
+    "sha256": "b202751963209764e5b79f4f6efc206bb74419ee6cc9b794953dd0adf18f481b"
   },
   "sharedCore": {
     "ready": true,
     "single": true
+  },
+  "packageSmokeStatus": "pass",
+  "profile": {
+    "absentIsNormal": true,
+    "saveStatus": "pass",
+    "preservedAfterUninstall": true
   },
   "hostCapabilityStatus": "partial",
   "adapters": [
@@ -22,7 +28,7 @@
       "id": "claude-code",
       "status": "recognized",
       "message": "已辨識 Claude Code。",
-      "version": "2.1.266 (Claude Code)"
+      "version": "2.1.267 (Claude Code)"
     },
     {
       "id": "gemini",

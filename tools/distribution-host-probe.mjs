@@ -1,6 +1,6 @@
 import { execFile } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { access, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { dirname, resolve } from 'node:path';
 import { promisify } from 'node:util';
@@ -21,14 +21,34 @@ try {
   const packageManifest = JSON.parse(await readFile(resolve(extractRoot, 'PPTSKILL', 'package-manifest.json'), 'utf8'));
   const installRoot = resolve(temporary, 'user', '.pptskill', 'runtime');
   const install = await installDistribution({ sourceRoot: resolve(extractRoot, 'PPTSKILL'), installRoot });
-  const capabilities = await smokeDistribution({ installRoot });
-  const uninstall = await uninstallDistribution({ installRoot, profilePath: resolve(temporary, 'user', '.pptskill', 'profile.json') });
+  const packageSmoke = await smokeDistribution({ installRoot });
+  const capabilities = await smokeDistribution({ installRoot, all: true });
+  const userHome = resolve(temporary, 'user');
+  const profilePath = resolve(userHome, '.pptskill', 'profile.json');
+  const profileInput = resolve(temporary, 'profile-input.json');
+  const profileEnv = { ...process.env, HOME: userHome };
+  const absentProfile = await run(process.execPath, [resolve(installRoot, 'profile.mjs'), 'show'], { env: profileEnv });
+  await writeFile(profileInput, JSON.stringify({ language: 'zh-Hant', density: 'medium' }));
+  await run(process.execPath, [resolve(installRoot, 'profile.mjs'), 'save', '--input', profileInput, '--remember'], { env: profileEnv });
+  const savedProfile = JSON.parse(await readFile(profilePath, 'utf8'));
+  const uninstall = await uninstallDistribution({ installRoot, profilePath });
+  const profilePreserved = await access(profilePath).then(() => true, () => false);
+  const profileStatus = absentProfile.stdout.includes('這是正常狀態')
+    && savedProfile.language === 'zh-Hant'
+    && savedProfile.density === 'medium'
+    && profilePreserved;
   const receipt = {
     schemaVersion: '1.0',
     generatedAt: new Date().toISOString(),
-    lifecycleStatus: install.status === 'installed' && uninstall.status === 'uninstalled' ? 'pass' : 'fail',
+    lifecycleStatus: install.status === 'installed' && packageSmoke.status === 'pass' && profileStatus && uninstall.status === 'uninstalled' ? 'pass' : 'fail',
     archive: { version: packageManifest.version, sha256: archiveSha256 },
     sharedCore: { ready: capabilities.coreReady, single: capabilities.oneSharedCore },
+    packageSmokeStatus: packageSmoke.status,
+    profile: {
+      absentIsNormal: absentProfile.stdout.includes('這是正常狀態'),
+      saveStatus: savedProfile.language === 'zh-Hant' && savedProfile.density === 'medium' ? 'pass' : 'fail',
+      preservedAfterUninstall: profilePreserved,
+    },
     hostCapabilityStatus: capabilities.status,
     adapters: capabilities.adapters,
     note: 'Host capability 只反映目前機器 PATH；缺少某個 CLI 不代表 ZIP lifecycle 失敗。',

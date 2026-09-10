@@ -1,7 +1,7 @@
 # Feature Specification: 跨 AI 共用簡報工作流
 
 **Created**: 2026-09-04
-**Status**: MVP rebaselined 2026-09-06；P0-R1～P0-R6 完成，目前 frontier 為 P0-R7
+**Status**: v0.1 product contract；repo execution status 與 frontier 刻意不進入 distributable core
 **Input**: 建立一套可供多人、跨 AI runtime 使用的簡報工作流，並納入 MD · HTML Viewer 的相關能力；Skill 只是其中一種入口。
 
 ## 問題與目標
@@ -63,9 +63,9 @@ MD · HTML Viewer 目前提供：
 - 工作流採 outline、style、sample、full 的薄 gate；每關同時檢查結構與實際渲染畫面，避免 gate 發展為另一套流程引擎。
 - full gate 必須在 fresh state 檢查實際畫面，至少涵蓋目標投影尺寸與一個較窄尺寸，以驗證文字溢位、層級、資產與可讀性。
 
-## Unresolved Frontier
+## Resolved Follow-up
 
-- **TF-002 / Technical Follow-up / Non-blocking**：在不同 AI runtime 中，如何發現選配的 presentation profile；不得以 ai-core 作必要依賴。此項不阻塞 v0.1，無法發現時改用無記憶模式。
+- **TF-002 / Resolved by ZIP distribution lifecycle**：三個 AI-facing thin entry 均先讀 canonical optional profile；profile 不存在時明確使用無記憶模式，且不依賴 ai-core。
 
 ## Decision Log
 

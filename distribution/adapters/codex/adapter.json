@@ -4,5 +4,8 @@
   "displayName": "Codex",
   "command": "codex",
   "versionArgs": ["--version"],
-  "coreRelativePath": "../../core"
+  "minimumVersion": "0.1.0",
+  "coreRelativePath": "../../core",
+  "profileRelativePath": "../../profile.mjs",
+  "entryPath": "entry.md"
 }

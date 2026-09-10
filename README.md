@@ -17,14 +17,13 @@
 
 ## 目前狀態
 
-v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-deck renderer 的**視覺品質已被 owner 退回修復**：
+v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portable export 與 ZIP distribution contract 均已完成對應 gate：
 
 - PS-001：三頁功能樣本與瀏覽器驗收完成；保留 runtime / 直接編輯能力，Presenter 從 MVP 移除。
 - PS-002：capability probe 與 validator 保留。
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
-- P0-R3：functional contract 已完成，但 owner visual acceptance 重新打開。
-- P0-R5：semantic renderer 架構保留，但 visual vocabulary 必須修復，不重寫 DeckSpec / CompositionSpec。
-- **目前工程 frontier：`P1-R8-A` 已完成；`P1-R8-B` 實作與 lifecycle gates 已通過，等待兩名獨立 blind reviewer verdict。`P1-R9` 等待 Owner company PPTX；`P1-R10` 排在 R8-B review 之後。**
+- P0-R3／R5 與 VQ2／VQ3：功能、visual-world portability 與 Owner visual/motion gates 已通過。
+- **目前工程 frontier：`P1-R10 — Asset optimizer / single-file size guard`。`P1-R8` 已完成；`P1-R9` 等待 Owner company PPTX。**
 
 ## Portable HTML editor
 
@@ -34,15 +33,15 @@ v0.1 已完成核心契約到 geometry QA，但目前 style candidate / full-dec
 
 ## Local profile
 
-個人偏好預設不存在也可正常使用。只有明確執行 `pnpm profile save --input <profile.json> --remember` 才會寫入 user home 下的 `.pptskill/profile.json`；不加 `--remember` 不會建立檔案。可用 `pnpm profile show` 檢視，允許欄位限於語言、Style 傾向、density、sample-first、motion、字體人格與色彩傾向。profile 不會進入輸出的 `deck.html`。
+個人偏好預設不存在也可正常使用。repo 開發環境可執行 `pnpm profile save --input <profile.json> --remember`；ZIP 使用者直接執行 `node profile.mjs save --input <profile.json> --remember`。不加 `--remember` 不會建立檔案。profile 位於 user home 下的 `.pptskill/profile.json`，且不會進入輸出的 `deck.html`。
 
 ## ZIP distribution
 
-可發送的候選包位於 `dist/PPTSKILL-0.1.0.zip`。解壓後直接執行 `node install.mjs`，再執行 `node smoke.mjs`；不需要 clone repo、branch、Git 或 GitHub token。更新使用新版 ZIP 內的 `node update.mjs`，移除 runtime 使用 `node uninstall.mjs`。uninstall 預設保留 profile；只有明確加上 `--purge-profile` 才刪除個人偏好。
+可發送的候選包位於 `dist/PPTSKILL-0.1.0.zip`。解壓後直接執行 `node install.mjs`，再執行 package-level `node smoke.mjs`；自己的 AI 入口以 `node smoke.mjs --adapter <codex|claude-code|gemini>` 驗證，release matrix 才使用 `--all`。不需要 clone repo、pnpm、branch、Git 或 GitHub token。更新使用新版 ZIP 內的 `node update.mjs`，移除 runtime 使用 `node uninstall.mjs`。uninstall 預設保留 profile；只有明確加上 `--purge-profile` 才刪除 canonical 個人偏好。
 
-ZIP 只有一份 `core/`；Codex、Claude Code、Gemini adapter 只保存 capability probe 與 shared-core 相對路徑。installer 不會自動修改 `.codex`、`.claude`、`.gemini`，不登入、不下載，也不寫 token。
+ZIP 只有一份 `core/`；Codex、Claude Code、Gemini adapter 只保存 AI-facing `entry.md`、capability probe 與 shared-core 相對路徑。installer 不會自動修改 `.codex`、`.claude`、`.gemini`，不登入、不下載，也不寫 token。
 
-`evidence/ps-003/*.png` 與目前 `fixtures/style-candidate-previews/*.html` 可作開發 / 退件 evidence，不代表最終視覺品質已被 owner 接受。
+`evidence/ps-003/*.png` 與 `fixtures/style-candidate-previews/*.html` 是歷史開發 evidence；目前 Owner gate 狀態以本頁與 `BACKLOG.md` 為準，不得據此重開 VQ2／VQ3。
 
 ## 本機使用
 
@@ -58,7 +57,7 @@ pnpm test
 
 - `fixtures/deck.html`：三頁功能測試樣本。
 - `fixtures/theme-previews/*.html`：既有四款封面 reference preview。
-- `fixtures/style-candidate-previews/*.html`：Company Style fixture + 3 dynamic AI Visual Routes 的目前開發 preview；**尚未通過 owner visual acceptance**。
+- `fixtures/style-candidate-previews/*.html`：Company Style fixture + 3 dynamic AI Visual Routes 的歷史開發 preview；正式 Owner gate 結果以 VQ2／VQ3 evidence 為準。
 - `fixtures/full-deck.html`：目前 semantic renderer fixture；架構 evidence 可用，視覺品質仍待 P0-VQ3 repair。
 
 ## 主要文件

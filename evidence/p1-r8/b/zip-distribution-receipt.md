@@ -1,7 +1,7 @@
 # P1-R8-B ZIP Distribution Lifecycle Receipt
 
 - 日期：2026-09-10
-- 狀態：`IMPLEMENTED / AUTOMATED + ZIP LIFECYCLE GATES PASS / INDEPENDENT REVIEW BLOCKED`
+- 狀態：`SUPERSEDED BY P1-R8-B-R1 / REQUEST CHANGES`
 - 版本：`0.1.0`
 - Artifact：`dist/PPTSKILL-0.1.0.zip`
 - SHA-256：`7da76f5bedb4061d012e239ce9849a715fe8c43b41c6d1084651fee21dcd12da`
@@ -60,4 +60,4 @@ PPTSKILL/
 
 2026-09-10 曾啟動 lifecycle 與 distribution 兩條獨立 review，但兩個 reviewer runtime 都在讀取變更前因用量限制中止，未產生 verdict。這不是產品測試失敗，但也不能冒充獨立審查通過。
 
-因此目前正式狀態為：`P1-R8-B IMPLEMENTED / REVIEW BLOCKED`；`P1-R8` 尚未 COMPLETE。候選 ZIP 不受此狀態影響，可交由 Owner 指定的 GPT／Claude／Gemini 做外部可重現 review；仍需 P1-R10 size guard 與 P0-R11 E2E 才能宣告 MVP release。
+Owner technical review 已對此 artifact 找到 deterministic distribution contract 缺口，詳見 `r1-distribution-contract-closure-receipt.md`。因此 `41bfc39` 與本 receipt 不得再送最終 blind review；修復後必須以新 ZIP SHA 與新 receipt 重新驗收。
