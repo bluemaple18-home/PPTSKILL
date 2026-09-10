@@ -1,0 +1,2333 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<title>Slide Editor</title>
+<style>
+  /* 「製圖桌」：整個介面只有灰階 + 一個鈷藍，而且鈷藍只用在「選取」上。
+     畫面上唯一有顏色的東西是投影片本身 —— 工具不跟作品搶眼睛。
+     底色刻意偏冷，投影片是暖紙色（#f3ebde），冷暖對比讓它自己浮出來。
+     不載入網路字體：這個工具必須能離線用，理由跟 build_deck.py 內嵌字體一樣。*/
+  *{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --bg:#e7eaee;          /* 工作區 */
+    --panel:#f6f8fa;       /* 左右側欄 */
+    --field:#fff;          /* 輸入框 */
+    --line:#d0d7df;        /* 分隔線 */
+    --line-soft:#e2e7ec;
+    --ink:#151a20;
+    --ink-2:#3b4550;
+    --dim:#7b8794;
+    --accent:#1b62d6;      /* 只用於選取 */
+    --accent-wash:rgba(27,98,214,.09);
+    --ok:#1c7a4a;
+    --err:#bd3b30;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang TC','Noto Sans TC',sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+  body{background:var(--bg);color:var(--ink);height:100vh;display:flex;
+    font:13px/1.5 var(--sans);overflow:hidden;-webkit-font-smoothing:antialiased;}
+
+  button{font:inherit;color:var(--ink-2);background:var(--field);
+    border:1px solid var(--line);border-radius:4px;padding:4px 9px;cursor:pointer;}
+  button:hover:not(:disabled){border-color:var(--dim);color:var(--ink);}
+  button:active:not(:disabled){background:#eef1f4;}
+  button:disabled{opacity:.4;cursor:default;}
+  input{font:12px/1.4 var(--mono);color:var(--ink);background:var(--field);
+    border:1px solid var(--line);border-radius:3px;padding:3px 6px;width:100%;}
+  input:focus{outline:none;border-color:var(--accent);
+    box-shadow:0 0 0 2px var(--accent-wash);}
+
+  /* ---- left: slide list ---- */
+  #list{width:184px;border-right:1px solid var(--line);overflow-y:auto;flex:0 0 auto;
+    background:var(--panel);}
+  #list h2,#props h2{font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--dim);padding:13px 12px 8px;font-weight:600;}
+  .item{padding:7px 12px;cursor:pointer;border-left:2px solid transparent;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink-2);}
+  .item:hover{background:#eef1f4;}
+  .item.on{color:var(--ink);border-left-color:var(--accent);background:var(--accent-wash);}
+  .item .dot{color:var(--accent);}
+  /* 刪除鈕只在滑過時出現，才不會在點選頁面時誤觸。用 --err 不用 --accent ——
+     accent 只代表「選取狀態」，拿來當刪除色會讓那件事變得模稜兩可。 */
+  .item{position:relative;padding-right:42px;}
+  .item .del{position:absolute;right:6px;top:50%;transform:translateY(-50%);
+    width:15px;height:15px;line-height:14px;text-align:center;border-radius:2px;
+    color:var(--dim);font-size:13px;opacity:0;transition:opacity .12s;}
+  .item:hover .del{opacity:1;}
+  .item .del:hover{color:var(--err);background:#fff;}
+  /* ＋ 用中性墨色，不搶 --accent（選取）也不用 --err（刪除）——
+     這一欄裡三種意思要分得開：選中、會刪掉、只是新增。 */
+  .item .ins{position:absolute;right:23px;top:50%;transform:translateY(-50%);
+    width:15px;height:15px;line-height:14px;text-align:center;border-radius:2px;
+    color:var(--dim);font-size:14px;opacity:0;transition:opacity .12s;}
+  .item:hover .ins{opacity:1;}
+  .item .ins:hover{color:var(--ink);background:#fff;}
+  /* 前綴決定排序，改名時不給碰；只有標題那一段可以編輯 */
+  .item .pfx{color:var(--dim);}
+  .item .nm{outline:none;border-radius:2px;}
+  .item .nm[contenteditable="true"]{background:var(--field);
+    box-shadow:0 0 0 1px var(--line);padding:0 3px;margin:0 -3px;cursor:text;}
+  .item.dragging{opacity:.4;}
+  /* 拖曳落點線用中性墨色 —— accent 只代表選取，err 代表刪除，都不能借用 */
+  .item.dropBefore{box-shadow:inset 0 2px 0 var(--ink-2);}
+  .item.dropAfter{box-shadow:inset 0 -2px 0 var(--ink-2);}
+  /* 第一頁之前也要插得進去，所以清單最上面留一條細細的插入列 */
+  .addTop{height:14px;margin:0 12px;position:relative;cursor:pointer;opacity:0;
+    transition:opacity .12s;}
+  #items:hover .addTop,.addTop:hover{opacity:1;}
+  .addTop::before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;
+    background:var(--line);}
+  .addTop::after{content:"＋";position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);background:var(--panel);color:var(--dim);
+    font-size:11px;line-height:1;padding:0 5px;}
+  .addTop:hover::after{color:var(--ink);}
+  /* 訊息列裡的「復原」是可按的 —— 刪除本身可逆，這比跳一個確認框好 */
+  #msg .act{color:var(--accent);cursor:pointer;text-decoration:underline;
+    text-underline-offset:2px;margin-left:6px;}
+
+  /* ---- centre: stage ---- */
+  #main{flex:1;display:flex;flex-direction:column;min-width:0;}
+  #bar{height:42px;flex:0 0 auto;border-bottom:1px solid var(--line);display:flex;
+    align-items:center;gap:7px;padding:0 12px;background:var(--panel);}
+  #bar .sp{flex:1;}
+  #bar .div{width:1px;height:18px;background:var(--line);margin:0 2px;}
+  /* 存檔狀態：一直在，不是閃一下就消失的訊息。寫進磁碟的東西要看得到狀態。*/
+  #save{font:11px/1 var(--mono);color:var(--dim);display:flex;align-items:center;gap:5px;
+    white-space:nowrap;}
+  #save::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--dim);}
+  #save.saved::before{background:var(--ok);}
+  #save.saving::before{background:var(--dim);}
+  #save.dirty::before{background:var(--ink-2);}
+  #save.error{color:var(--err);} #save.error::before{background:var(--err);}
+  #msg{font-size:11px;color:var(--dim);max-width:38%;overflow:hidden;
+    text-overflow:ellipsis;white-space:nowrap;}
+  #msg.err{color:var(--err);}
+  #msg.ok{color:var(--ok);}
+  #wrap{flex:1;display:flex;align-items:center;justify-content:center;overflow:auto;padding:22px;}
+  /* 冷灰底 + 明確邊界，暖紙色的投影片才不會糊進介面裡 */
+  #stage{position:relative;flex:0 0 auto;background:#fff;
+    box-shadow:0 0 0 1px rgba(21,26,32,.13), 0 1px 2px rgba(21,26,32,.06),
+               0 14px 34px rgba(21,26,32,.13);}
+  #frame{width:1280px;height:720px;border:0;display:block;transform-origin:top left;}
+  #ov{position:absolute;inset:0;}
+  #ov.text-mode{pointer-events:none;}
+
+  /* ---- selection chrome ---- */
+  #box{position:absolute;border:1px solid var(--accent);pointer-events:none;display:none;}
+  #box .h{position:absolute;width:9px;height:9px;background:#fff;
+    border:1px solid var(--accent);border-radius:1px;pointer-events:auto;}
+  #box .h.nw{left:-5px;top:-5px;cursor:nwse-resize;}
+  #box .h.ne{right:-5px;top:-5px;cursor:nesw-resize;}
+  #box .h.sw{left:-5px;bottom:-5px;cursor:nesw-resize;}
+  #box .h.se{right:-5px;bottom:-5px;cursor:nwse-resize;}
+  #box .rot{position:absolute;left:50%;top:-26px;width:11px;height:11px;margin-left:-5.5px;
+    border:1px solid var(--accent);border-radius:50%;background:#fff;
+    pointer-events:auto;cursor:grab;}
+  #box .stem{position:absolute;left:50%;top:-16px;width:1px;height:16px;background:var(--accent);}
+  #hover{position:absolute;border:1px dashed rgba(27,98,214,.45);pointer-events:none;display:none;}
+  /* 多選：每個元素一個細框，整組再一個虛線聯集框 */
+  #marks{position:absolute;inset:0;pointer-events:none;}
+  .mark{position:absolute;border:1px solid rgba(27,98,214,.55);}
+  #box.multi{border-style:dashed;}
+  #box.multi .h,#box.multi .rot,#box.multi .stem{display:none;}
+  /* 對齊格線：只是參考線，疊在投影片上，不會進到檔案裡 */
+  #grid{position:absolute;inset:0;pointer-events:none;display:none;}
+  #grid.on{display:block;}
+
+  /* ---- right: properties ---- */
+  #props{width:216px;flex:0 0 auto;border-left:1px solid var(--line);background:var(--panel);
+    overflow-y:auto;}
+  .row{display:flex;gap:7px;padding:0 12px 8px;}
+  .f{flex:1;}
+  .f label{display:block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);margin-bottom:3px;font-weight:600;}
+  #sel{padding:0 12px 10px;font:11px/1.55 var(--mono);color:var(--dim);word-break:break-all;}
+  /* 對齊控制：每個圖示就是那個動作的示意圖 —— 鈷藍是基準線，灰條是元素。
+     在 20px 也看得懂，不必記圖示的意思。*/
+  #align{display:none;padding:0 12px 10px;}
+  #align .lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--dim);margin:2px 0 6px;font-weight:600;}
+  .agrid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
+  .abtn{padding:4px 0;display:flex;align-items:center;justify-content:center;
+    color:var(--ink-2);}
+  .abtn svg{display:block;}
+  #props hr{border:0;border-top:1px solid var(--line-soft);margin:10px 0;}
+
+  /* ---- 區塊標題（右欄）---- */
+  .sec{padding:0 12px 10px;}
+  .sec .lbl{font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--dim);margin:2px 0 7px;font-weight:600;}
+  #type{display:none;}
+  /* 字體「角色」而不是字體名稱 —— 見下方註解，這是為了讓匯出時字體真的被內嵌 */
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:7px;}
+  .roles button{padding:5px 0;font-size:11px;}
+  .roles button.on{border-color:var(--accent);color:var(--accent);}
+  .roles button:disabled{color:var(--dim);border-color:var(--line-soft);cursor:not-allowed;}
+  /* 說明句子，不是數值 —— 跟 #msg 一樣用 sans；var(--mono) 沒有 CJK，
+     一整句中文會掉到 fallback 而且在 10px 下更難讀 */
+  #roleNote{font-size:11px;line-height:1.5;color:var(--dim);margin:-2px 0 7px;}
+  #roleNote:empty{display:none;}
+  .cpstyle{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:8px;}
+  .cpstyle button{padding:5px 0;font-size:11px;}
+  #clipInfo{font:10px/1.5 var(--mono);color:var(--dim);margin-top:5px;
+    word-break:break-all;min-height:15px;}
+  .swatches{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px;}
+  .sw{width:18px;height:18px;border-radius:3px;border:1px solid rgba(21,26,32,.22);
+    cursor:pointer;padding:0;}
+  .sw:hover{outline:2px solid var(--accent-wash);}
+
+  /* ---- Vanta 背景動畫：窄欄裡最多要塞 11 個參數，所以一行一個、
+         標籤在左、控制項靠右，數值用等寬字才對得齊 ---- */
+  #vanta select{font:11px/1.4 var(--sans);color:var(--ink);background:var(--field);
+    border:1px solid var(--line);border-radius:3px;padding:3px 5px;width:100%;}
+  #vLayerRow{display:none;gap:4px;margin-top:7px;}
+  #vLayerRow button{flex:1;padding:5px 0;font-size:11px;}
+  #vLayerRow button.on{border-color:var(--accent);color:var(--accent);}
+  #vOpts{margin-top:9px;}
+  .vrow{display:flex;align-items:center;gap:6px;padding:3px 0;
+    border-top:1px solid var(--line-soft);}
+  .vrow:first-child{border-top:0;}
+  .vrow label{flex:1;font-size:10px;color:var(--dim);overflow:hidden;
+    text-overflow:ellipsis;white-space:nowrap;}
+  .vrow input[type=range]{width:74px;accent-color:var(--accent);}
+  .vrow input[type=color]{width:26px;height:18px;padding:0;border:1px solid var(--line);
+    border-radius:3px;background:none;cursor:pointer;}
+  .vrow input[type=checkbox]{width:auto;accent-color:var(--accent);}
+  .vrow select{width:96px;font-size:10px;}
+  .vnum{font:10px/1 var(--mono);color:var(--ink-2);width:30px;text-align:right;}
+
+  /* ---- 文字動畫：控制項沿用 Vanta 那套 .vrow，只多一個面板內預覽。
+         預覽故意放在面板裡而不是投影片上 —— 動畫會改 textContent，在編輯中
+         的投影片上跑，存檔就把數到一半的值寫進檔案。面板不會被序列化。---- */
+  #anim select{font:11px/1.4 var(--sans);color:var(--ink);background:var(--field);
+    border:1px solid var(--line);border-radius:3px;padding:3px 5px;width:100%;}
+  #aOpts{display:none;margin-top:9px;}
+  #aOpts.on{display:block;}
+  /* tabular-nums：數字滾動時字寬不能跳，否則整行會抖 */
+  #aPrev{flex:1;font:14px/1 var(--mono);color:var(--ink);text-align:right;
+    font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+  /* 順序徽章畫在 #ov 疊層上（編輯器 chrome，不會被序列化），像簡報軟體那樣
+     標出進場次序。**預設不用 --accent** —— 那個顏色只留給「選取狀態」，
+     拿去標順序的話「哪個被選中」就分不出來了。只有同時被選到才轉成 accent。*/
+  #animOrder{position:absolute;inset:0;pointer-events:none;z-index:3;}
+  .ordBadge{position:absolute;min-width:14px;height:14px;padding:0 3px;
+    display:flex;align-items:center;justify-content:center;
+    font:9px/1 var(--mono);color:var(--ink-2);background:var(--panel);
+    border:1px solid var(--line);border-radius:2px;
+    transform:translate(-50%,-50%);}
+  .ordBadge.sel{border-color:var(--accent);color:var(--accent);}
+  #aNote{font-size:11px;line-height:1.5;color:var(--dim);margin-top:7px;}
+  #aNote:empty{display:none;}
+
+  /* ---- 匯出 ---- */
+  #export select{font:11px/1.4 var(--sans);color:var(--ink);background:var(--field);
+    border:1px solid var(--line);border-radius:3px;padding:3px 5px;width:100%;}
+  #expOut{font:10px/1.5 var(--mono);color:var(--dim);margin-top:7px;word-break:break-all;}
+  #expOut.err{color:var(--err);}
+  #expOut.ok{color:var(--ok);}
+
+  /* ---- 檔案挑選器 ---- */
+  #picker{position:fixed;inset:0;background:rgba(21,26,32,.34);display:none;
+    align-items:center;justify-content:center;z-index:50;}
+  #picker.on{display:flex;}
+  .sheet{width:560px;max-height:74vh;background:var(--field);border:1px solid var(--line);
+    border-radius:6px;box-shadow:0 18px 50px rgba(21,26,32,.24);display:flex;
+    flex-direction:column;overflow:hidden;}
+  .sheet h3{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);
+    padding:13px 16px 9px;font-weight:600;}
+  #pkPath{padding:0 16px 11px;font:11px/1.5 var(--mono);color:var(--ink-2);
+    word-break:break-all;border-bottom:1px solid var(--line-soft);}
+  #pkList{overflow-y:auto;flex:1;padding:6px 0;}
+  .pkrow{display:flex;align-items:center;gap:9px;padding:7px 16px;cursor:pointer;
+    font-size:13px;color:var(--ink-2);}
+  .pkrow:hover{background:#eef1f4;color:var(--ink);}
+  .pkrow .n{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .pkrow .c{font:11px/1 var(--mono);color:var(--dim);}
+  .pkrow.deck .c{color:var(--accent);}
+  .sheet .foot{display:flex;gap:7px;justify-content:flex-end;padding:11px 16px;
+    border-top:1px solid var(--line-soft);}
+
+  /* ---- 播放模式：深色底讓暖紙投影片浮出來，這裡是「看」不是「做」---- */
+  #present{position:fixed;inset:0;background:#14171b;display:none;z-index:60;
+    align-items:center;justify-content:center;}
+  #present.on{display:flex;}
+  #prFrame{border:0;display:block;transform-origin:center center;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);background:#fff;}
+  #prBar{position:fixed;left:0;right:0;bottom:0;height:34px;display:flex;
+    align-items:center;justify-content:center;gap:14px;
+    font:11px/1 var(--mono);color:rgba(255,255,255,.42);}
+</style>
+</head>
+<body>
+
+<div id="list"><h2>Slides</h2><div id="items"></div></div>
+
+<div id="main">
+  <div id="bar">
+    <button id="btnOpen" title="開啟另一份 deck">開啟</button>
+    <div class="div"></div>
+    <button id="btnUndo" title="還原 (⌘Z)">↩</button>
+    <button id="btnRedo" title="重做 (⇧⌘Z)">↪</button>
+    <div class="div"></div>
+    <button id="btnImg">插入圖片</button>
+    <button id="btnVid">插入影片</button>
+    <button id="btnDel">刪除</button>
+    <button id="btnReset">還原位置</button>
+    <button id="btnText">插入文字</button>
+    <button id="btnGrid" title="對齊格線 8px">格線</button>
+    <button id="btnInteract" title="讓滑鼠直接操作投影片裡的互動示範">互動</button>
+    <button id="btnPlay" title="播放（Esc 離開）">播放</button>
+    <span class="sp"></span>
+    <span id="msg"></span>
+    <span id="save">尚未變更</span>
+    <div class="div"></div>
+    <button id="btnZoomOut">−</button><span id="zoomLbl" style="color:var(--dim);font:11px/1 var(--mono)">75%</span>
+    <button id="btnZoomIn">+</button>
+  </div>
+  <div id="wrap"><div id="stage">
+    <iframe id="frame" src="about:blank"></iframe>
+    <div id="grid"></div>
+    <div id="ov">
+      <div id="animOrder"></div>
+      <div id="marks"></div>
+      <div id="hover"></div>
+      <div id="box">
+        <div class="stem"></div><div class="rot"></div>
+        <div class="h nw"></div><div class="h ne"></div><div class="h sw"></div><div class="h se"></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+
+<div id="props">
+  <h2>Element</h2>
+  <div id="sel">未選取</div>
+  <div class="row"><div class="f"><label>X 位移</label><input id="fdx" type="number" step="1"></div>
+    <div class="f"><label>Y 位移</label><input id="fdy" type="number" step="1"></div></div>
+  <div class="row"><div class="f"><label>寬</label><input id="fw" type="number" step="1"></div>
+    <div class="f"><label>高</label><input id="fh" type="number" step="1"></div></div>
+  <div class="row"><div class="f"><label>旋轉°</label><input id="frot" type="number" step="1"></div>
+    <div class="f"><label>縮放</label><input id="fscale" type="number" step="0.01"></div></div>
+  <div id="align">
+    <div class="lbl">Align</div>
+    <div class="agrid"><button class="abtn" data-align="left" title="靠左對齊"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M3.5 3v14"/><rect x="5.5" y="5" width="10" height="3.6"/><rect x="5.5" y="11.4" width="6" height="3.6"/></svg></button><button class="abtn" data-align="hcenter" title="水平置中"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v14"/><rect x="5" y="5" width="10" height="3.6"/><rect x="7" y="11.4" width="6" height="3.6"/></svg></button><button class="abtn" data-align="right" title="靠右對齊"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M16.5 3v14"/><rect x="4.5" y="5" width="10" height="3.6"/><rect x="8.5" y="11.4" width="6" height="3.6"/></svg></button><button class="abtn dist" data-dist="h" title="水平均分（需選 3 個以上）"><svg width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="5" width="3" height="10" fill="currentColor" fill-opacity=".5"/><rect x="8.5" y="5" width="3" height="10" fill="var(--accent)"/><rect x="15" y="5" width="3" height="10" fill="currentColor" fill-opacity=".5"/></svg></button></div>
+    <div class="agrid" style="margin-top:5px"><button class="abtn" data-align="top" title="靠上對齊"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M3 3.5h14"/><rect x="5" y="5.5" width="3.6" height="10"/><rect x="11.4" y="5.5" width="3.6" height="6"/></svg></button><button class="abtn" data-align="vcenter" title="垂直置中"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M3 10h14"/><rect x="5" y="5" width="3.6" height="10"/><rect x="11.4" y="7" width="3.6" height="6"/></svg></button><button class="abtn" data-align="bottom" title="靠下對齊"><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" fill-opacity=".5" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M3 16.5h14"/><rect x="5" y="4.5" width="3.6" height="10"/><rect x="11.4" y="8.5" width="3.6" height="6"/></svg></button><button class="abtn dist" data-dist="v" title="垂直均分（需選 3 個以上）"><svg width="20" height="20" viewBox="0 0 20 20"><rect x="5" y="2" width="10" height="3" fill="currentColor" fill-opacity=".5"/><rect x="5" y="8.5" width="10" height="3" fill="var(--accent)"/><rect x="5" y="15" width="10" height="3" fill="currentColor" fill-opacity=".5"/></svg></button></div>
+  </div>
+  <div id="type" class="sec">
+    <div class="lbl">Type</div>
+    <div class="roles">
+      <button data-role="--display-font">標題字</button>
+      <button data-role="--body-font">內文字</button>
+      <button data-role="--label-font">標籤字</button>
+    </div>
+    <div id="roleNote"></div>
+    <div class="row" style="padding:0">
+      <div class="f"><label>字級 px</label><input id="ffs" type="number" step="1" min="6"></div>
+      <div class="f"><label>行高</label><input id="flh" type="number" step="0.05" min="0.8"></div>
+    </div>
+    <div class="swatches" id="sw"></div>
+    <div class="cpstyle">
+      <button id="btnCopyStyle" title="複製這個元素的文字樣式">複製樣式</button>
+      <button id="btnPasteStyle" title="套用到選取的元素" disabled>貼上樣式</button>
+    </div>
+    <div id="clipInfo"></div>
+  </div>
+  <hr>
+  <div id="anim" class="sec">
+    <div class="lbl">文字動畫</div>
+    <select id="aEffect">
+      <option value="">無</option>
+      <option value="count">數字滾動</option>
+      <option value="reveal">進場滑入</option>
+    </select>
+    <div id="aOpts">
+      <div class="vrow arev">
+        <label>方向</label>
+        <select id="aDir">
+          <option value="right">從右</option>
+          <option value="left">從左</option>
+          <option value="up">從上</option>
+          <option value="down">從下</option>
+        </select>
+      </div>
+      <div class="vrow arev">
+        <label>順序</label>
+        <input id="aOrder" type="number" min="1" step="1" style="width:52px">
+        <span class="vnum" id="aOrderN"></span>
+      </div>
+      <div class="vrow arev">
+        <label>間隔 ms</label>
+        <input id="aStagger" type="range" min="0" max="600" step="20">
+        <span class="vnum" id="aStagN"></span>
+      </div>
+      <div class="vrow">
+        <label>曲線</label>
+        <select id="aEase">
+          <option value="expo">快進慢停</option>
+          <option value="quart">中等</option>
+          <option value="cubic">平順</option>
+        </select>
+      </div>
+      <div class="vrow">
+        <label>時間 ms</label>
+        <input id="aDur" type="range" min="300" max="3000" step="100">
+        <span class="vnum" id="aDurN"></span>
+      </div>
+      <div class="vrow">
+        <span id="aPrev">—</span>
+        <button id="aPlay" title="在這裡放一次；投影片上要按「播放」才會動">試看</button>
+      </div>
+    </div>
+    <div id="aNote"></div>
+  </div>
+  <hr>
+  <div id="vanta" class="sec">
+    <div class="lbl">背景動畫</div>
+    <select id="vEffect">
+      <option value="">無</option>
+      <option value="waves">WAVES 波浪</option>
+      <option value="birds">BIRDS 鳥群</option>
+      <option value="net">NET 網格</option>
+      <option value="globe">GLOBE 球體</option>
+      <option value="dots">DOTS 點陣</option>
+      <option value="fog">FOG 霧</option>
+      <option value="clouds">CLOUDS 雲</option>
+      <option value="clouds2">CLOUDS2 雲 2</option>
+      <option value="cells">CELLS 細胞</option>
+      <option value="ripple">RIPPLE 漣漪</option>
+      <option value="rings">RINGS 環</option>
+      <option value="halo">HALO 光暈</option>
+      <option value="topology">TOPOLOGY 地形 · p5</option>
+      <option value="trunk">TRUNK 樹枝 · p5</option>
+    </select>
+    <div id="vLayerRow">
+      <button data-vlayer="bg" title="效果在文字與圖片後面">背景</button>
+      <button data-vlayer="fg" title="效果蓋在文字與圖片前面，底色自動透明">前景</button>
+    </div>
+    <button id="vInherit" style="width:100%;margin-top:7px;font-size:11px"
+      title="把這個效果的底色設回這張投影片原本的背景色">沿用投影片底色</button>
+    <div id="vOpts"></div>
+  </div>
+  <hr>
+  <div id="export" class="sec">
+    <div class="lbl">Export</div>
+    <div class="row" style="padding:0 0 7px">
+      <div class="f"><label>字體</label><select id="expFont">
+        <option value="serif">思源宋體</option>
+        <option value="wenkai">霞鶩文楷</option>
+        <option value="none">不內嵌</option>
+      </select></div>
+      <div class="f"><label>導覽</label><select id="expNav">
+        <option value="scroll">滾動翻頁</option>
+        <option value="buttons">按鈕翻頁</option>
+      </select></div>
+    </div>
+    <button id="btnExport" style="width:100%">打包成單一檔案</button>
+    <div id="expOut"></div>
+  </div>
+</div>
+
+<div id="picker">
+  <div class="sheet">
+    <h3>開啟 deck</h3>
+    <div id="pkPath"></div>
+    <div id="pkList"></div>
+    <div class="foot">
+      <button id="pkCancel">取消</button>
+    </div>
+  </div>
+</div>
+
+<div id="present">
+  <iframe id="prFrame" src="about:blank" scrolling="no"></iframe>
+  <div id="prBar"><span id="prNum"></span><span>← → 翻頁　Esc 離開</span></div>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const frame = $('#frame'), stage = $('#stage'), ov = $('#ov'), box = $('#box'), hov = $('#hover');
+let S = {slides:[], edited:[], slide:null, zoom:.75, stamp:0};
+let sels = [];             // [{el, m}]  多選；m 是編輯模型，同時存在 data-ed 屬性裡
+const primary = () => sels.length ? sels[sels.length - 1] : null;
+const GRID = {on:false, size:8};
+let drag = null;
+let textMode = false, composing = false, textOrig = null, textEl = null;
+let textUndoSnap = null;
+
+// ------------------------------------------------------------------- undo
+// 快照式：每個動作前把整份 document 存起來。因為存檔本來就是「序列化整份
+// document」，undo 只是把某個舊快照放回去再存一次 —— 不需要為每種操作各寫
+// 一組反向動作，插入、刪除、改文字、拖曳全部走同一條路。
+// 一頁一組堆疊，換頁不會混在一起。decks/ 沒有進版控，這是唯一的後悔藥。
+const UNDO_MAX = 60;
+const undoStacks = {}, redoStacks = {};
+let undoToken = null, undoTokenAt = 0;
+// 還沒開任何 deck 時回傳一個丟棄用的空陣列，不要在 undoStacks 裡留下 "null" 這個 key
+const U = () => S.slide ? (undoStacks[S.slide] || (undoStacks[S.slide] = [])) : [];
+const R = () => S.slide ? (redoStacks[S.slide] || (redoStacks[S.slide] = [])) : [];
+
+// token 相同且間隔短的連續操作合併成一步，否則按十下方向鍵要 undo 十次。
+function pushUndo(token, snap){
+  const now = Date.now();
+  lastPushAt = now;
+  if(token && token === undoToken && now - undoTokenAt < 800){ undoTokenAt = now; return; }
+  undoToken = token || null; undoTokenAt = now;
+  const st = U();
+  st.push(snap !== undefined ? snap : serializeDoc());
+  if(st.length > UNDO_MAX) st.shift();
+  R().length = 0;
+  updateUndoUI(); scheduleHistory();
+}
+function updateUndoUI(){
+  $('#btnUndo').disabled = !U().length && !deckOps.length;
+  $('#btnRedo').disabled = !R().length;
+}
+function restoreDoc(html){
+  const d = doc();
+  d.open(); d.write(html); d.close();
+  // document.write 之後 load 不一定會再觸發，載入後的設定手動做一次
+  setZoom(S.zoom); deselect();
+}
+function doUndo(){
+  // 刪頁比最後一次元素編輯還新的話，⌘Z 先把那一頁救回來
+  const top = deckOps[deckOps.length-1];
+  if(top && top.at >= lastPushAt){ undoDeckOp(); return; }
+  const st = U(); if(!st.length){ msg('沒有可還原的動作'); return; }
+  R().push(serializeDoc());
+  restoreDoc(st.pop());
+  undoToken = null; updateUndoUI(); persist(); scheduleHistory();
+}
+function doRedo(){
+  const st = R(); if(!st.length){ msg('沒有可重做的動作'); return; }
+  U().push(serializeDoc());
+  restoreDoc(st.pop());
+  undoToken = null; updateUndoUI(); persist(); scheduleHistory();
+}
+
+// ------------------------------------------- 還原紀錄跨重新載入保留
+// 歷史原本只活在分頁記憶體裡，重新載入就整組不見 —— 這已經害人白做過一次工。
+// 用 sessionStorage 而不是 localStorage：這份歷史屬於「這一次編輯」，分頁關掉
+// 就該跟著消失，留到下次只會還原出過期的內容。
+//
+// 有效性依據是**這一頁的 mtime**，不是 S.stamp。S.stamp 取的是整個 deck 最新
+// 的 mtime，改第 7 頁會讓第 3 頁的 stamp 也跟著跳，拿它比對等於一改別頁就把
+// 這頁的歷史丟掉。slideMtime 才是「這份歷史是對著哪一版檔案長出來的」。
+// 對不上就丟：寧可沒有歷史，也不能把舊內容還原到別人改過的檔案上 —— 那正是
+// /api/save 的 409 衝突檢查在防的事。
+const UNDO_PERSIST_MAX = 12;    // 記憶體留 UNDO_MAX 筆，寫進 storage 只留最近 12
+const UNDO_SLOT_MAX = 320000;   // 單頁字元上限。一份快照約 13KB，11 頁各留 60 筆
+                                // 會到 8.4MB，遠超瀏覽器大約 5MB 的配額
+let storeOK = true, histTimer = null;
+const histKey = name => `undo:${S.deckPath||''}:${name}`;
+
+function writeHistory(){
+  if(!storeOK || !S.slide || slideMtime == null) return;
+  let u = U().slice(-UNDO_PERSIST_MAX), r = R().slice(-UNDO_PERSIST_MAX);
+  const pack = () => JSON.stringify({m: slideMtime, u, r});
+  let blob = pack();
+  while(blob.length > UNDO_SLOT_MAX && u.length > 1){ u.shift(); blob = pack(); }
+  try{ sessionStorage.setItem(histKey(S.slide), blob); }
+  catch(e){
+    // 配額滿了：先清掉別頁的歷史再試一次。還是不行就停用並說清楚 ——
+    // 存檔本身沒有出問題，所以絕對不能去動存檔狀態燈。
+    dropHistory(S.slide);
+    try{ sessionStorage.setItem(histKey(S.slide), blob); }
+    catch(e2){ storeOK = false;
+      msg('瀏覽器儲存空間不足，重新載入後不會保留還原紀錄','err'); }
+  }
+}
+const scheduleHistory = () => {
+  clearTimeout(histTimer); histTimer = setTimeout(writeHistory, 800);
+};
+
+function readHistory(name){
+  if(!storeOK || slideMtime == null) return;
+  try{
+    const raw = sessionStorage.getItem(histKey(name)); if(!raw) return;
+    const o = JSON.parse(raw);
+    if(o.m !== slideMtime){
+      // 檔案在編輯器外被改過。這份歷史是對著舊版長出來的 —— 記憶體裡那份同樣
+      // 過期，只是它剛好還在。還原任何一邊都等於把別人的修改蓋掉，正是
+      // /api/save 那個 409 檢查在防的事，所以兩邊一起丟，並且說出來。
+      sessionStorage.removeItem(histKey(name));
+      delete undoStacks[name]; delete redoStacks[name];
+      updateUndoUI();
+      msg('這一頁在編輯器外被改過，先前的還原紀錄已失效','err');
+      return;
+    }
+    undoStacks[name] = o.u || []; redoStacks[name] = o.r || [];
+    updateUndoUI();
+    if(undoStacks[name].length) msg(`已接回 ${undoStacks[name].length} 步還原紀錄`);
+  }catch(e){}
+}
+
+// keep 給 null 就是全部清掉（換 deck 時）
+function dropHistory(keep){
+  try{
+    const spare = keep ? histKey(keep) : null;
+    for(let i = sessionStorage.length - 1; i >= 0; i--){
+      const k = sessionStorage.key(i);
+      if(k && k.startsWith('undo:') && k !== spare) sessionStorage.removeItem(k);
+    }
+  }catch(e){}
+}
+
+const msg = (t, cls='', act=null) => {
+  const m=$('#msg'); m.textContent=t; m.className=cls;
+  if(act){
+    const a=document.createElement('span');
+    a.className='act'; a.textContent=act.label; a.onclick=act.fn;
+    m.appendChild(a);
+  }
+  // 帶動作的訊息留久一點，四秒按不完
+  if(t) setTimeout(()=>{ if(m.textContent.startsWith(t)){m.textContent='';m.className='';} },
+                   act ? 12000 : 4000);
+};
+
+function setZoom(z){
+  S.zoom = Math.min(1.5, Math.max(.25, z));
+  frame.style.transform = `scale(${S.zoom})`;
+  stage.style.width = (1280*S.zoom)+'px';
+  stage.style.height = (720*S.zoom)+'px';
+  $('#zoomLbl').textContent = Math.round(S.zoom*100)+'%';
+  drawGrid();
+  drawBox();
+}
+
+function drawGrid(){
+  const g = $('#grid'), px = GRID.size * S.zoom;
+  g.classList.toggle('on', GRID.on);
+  if(!GRID.on) return;
+  g.style.backgroundSize = `${px}px ${px}px`;
+  g.style.backgroundImage =
+    'linear-gradient(to right, rgba(27,98,214,.13) 1px, transparent 1px),'
+  + 'linear-gradient(to bottom, rgba(27,98,214,.13) 1px, transparent 1px)';
+}
+
+// ------------------------------------------------------------- 對齊／分佈
+// 位移模型是**相對**的（dx 疊在 theme 自己的 transform 上），但對齊要的是絕對
+// 位置。解法是從 iframe 讀元素當下的 rect 算出「還差多少」，再把差值加進 dx。
+// 只選一個元素時基準是整張投影片（1280×720），多選時基準是這組的外框。
+function deltaTo(s, axis, d){
+  // 保留兩位小數，不要四捨五入到整數 px：元素高度有奇有偶，置中的差值常是 .5，
+  // 取整會讓「置中」差 1px —— 對齊工具差 1px 就失去意義了。
+  const m = s.m, k = Math.round(d * 100) / 100;
+  if(m.kind==='patch'){ if(axis==='x') m.dx += k; else m.dy += k; }
+  else { if(axis==='x') m.x += k; else m.y += k; }
+}
+function selBounds(rects){
+  return {left:Math.min(...rects.map(r=>r.left)), right:Math.max(...rects.map(r=>r.right)),
+          top:Math.min(...rects.map(r=>r.top)),  bottom:Math.max(...rects.map(r=>r.bottom))};
+}
+function alignSel(edge){
+  if(!sels.length) return;
+  const rects = sels.map(s=>s.el.getBoundingClientRect());
+  const b = sels.length === 1 ? {left:0, top:0, right:1280, bottom:720} : selBounds(rects);
+  pushUndo();
+  sels.forEach((s,i)=>{
+    const r = rects[i];
+    switch(edge){
+      case 'left':    deltaTo(s,'x', b.left  - r.left); break;
+      case 'right':   deltaTo(s,'x', b.right - r.right); break;
+      case 'hcenter': deltaTo(s,'x', (b.left+b.right)/2 - (r.left+r.right)/2); break;
+      case 'top':     deltaTo(s,'y', b.top   - r.top); break;
+      case 'bottom':  deltaTo(s,'y', b.bottom- r.bottom); break;
+      case 'vcenter': deltaTo(s,'y', (b.top+b.bottom)/2 - (r.top+r.bottom)/2); break;
+    }
+  });
+  applyAll(); syncFields(); drawBox(); persist();
+  msg(sels.length === 1 ? '已對齊到投影片' : `已對齊 ${sels.length} 個元素`,'ok');
+}
+function distributeSel(axis){
+  if(sels.length < 3){ msg('均分需要選 3 個以上','err'); return; }
+  // 頭尾不動，中間的等距排開 —— 用中心點排序與定位
+  const key = axis === 'h' ? 'left' : 'top', size = axis === 'h' ? 'width' : 'height';
+  const items = sels.map(s=>{ const r = s.el.getBoundingClientRect();
+    return {s, c: r[key] + r[size]/2}; }).sort((a,b)=>a.c-b.c);
+  const first = items[0].c, last = items[items.length-1].c;
+  const step = (last - first) / (items.length - 1);
+  pushUndo();
+  items.forEach((it,i)=>{ if(i===0 || i===items.length-1) return;
+    deltaTo(it.s, axis==='h'?'x':'y', (first + step*i) - it.c); });
+  applyAll(); syncFields(); drawBox(); persist();
+  msg(`已均分 ${items.length} 個元素`,'ok');
+}
+
+// ---------------------------------------------------------------- selectors
+// 只拿來顯示在右欄，讓你知道選到哪個元素。**不再用於存檔定位** ——
+// 編輯結果就寫在元素自己身上，所以 theme 改版導致選擇器失聯的問題不存在了。
+function selectorFor(el){
+  const doc = el.ownerDocument;
+  const cls = [...el.classList].filter(c=>c!=='ovr-ins').map(c=>'.'+CSS.escape(c)).join('');
+  if(cls){
+    for(const cand of [cls, el.tagName.toLowerCase()+cls]){
+      try{ if(doc.querySelectorAll(cand).length===1) return cand; }catch(e){}
+    }
+  }
+  const parts = [];
+  let n = el;
+  while(n && n.nodeType===1 && n.tagName!=='BODY'){
+    let p = n.tagName.toLowerCase();
+    p += [...n.classList].map(c=>'.'+CSS.escape(c)).join('');
+    const par = n.parentElement;
+    if(par){
+      const sib = [...par.children].filter(c=>c.tagName===n.tagName);
+      if(sib.length>1) p += `:nth-of-type(${sib.indexOf(n)+1})`;
+    }
+    parts.unshift(p);
+    n = par;
+  }
+  for(let i=parts.length-1;i>=0;i--){
+    const cand = parts.slice(i).join(' ');
+    try{ if(doc.querySelectorAll(cand).length===1) return cand; }catch(e){}
+  }
+  return parts.join(' > ');
+}
+
+// ------------------------------------------------------------------- state
+async function load(){
+  const st = await (await fetch('/api/state')).json();
+  S.slides = st.slides; S.stamp = st.stamp; S.edited = st.edited || [];
+  S.deckPath = st.deckPath; S.root = st.root;
+  renderList();
+  if(!S.slide && S.slides.length) open(S.slides[0]);
+  updateUndoUI();
+  if(!S.slides.length){ $('#picker').classList.add('on'); browse(st.root); }
+}
+function renderList(){
+  $('#items').innerHTML =
+    '<div class="addTop" data-ins-first title="在最前面插入一頁"></div>' +
+    S.slides.map(n=>{
+    const m = n.match(/^(\d+[a-z]*-)?(.*)\.html$/) || [null,'',n];
+    return `<div class="item ${n===S.slide?'on':''}" data-n="${n}">${
+      S.edited.includes(n)?'<span class="dot">•</span> ':''}`
+    + `<span class="pfx">${m[1]||''}</span><span class="nm" title="按兩下改名">${m[2]}</span>`
+    + `<span class="ins" data-ins="${n}" title="在這一頁後面插入一頁（複製）">＋</span>`
+    + `<span class="del" data-del="${n}" title="刪除這一頁">×</span></div>`;
+  }).join('');
+  $('#items').querySelectorAll('.item').forEach(d=>
+    d.onclick=()=>open(d.dataset.n));
+  $('#items').querySelectorAll('[data-del]').forEach(b=>
+    b.onclick=(e)=>{ e.stopPropagation(); deletePage(b.dataset.del); });
+  $('#items').querySelectorAll('[data-ins]').forEach(b=>
+    b.onclick=(e)=>{ e.stopPropagation(); insertPage(b.dataset.ins); });
+  const first=$('#items').querySelector('[data-ins-first]');
+  if(first) first.onclick=(e)=>{ e.stopPropagation(); insertPage(null); };
+
+  // 按兩下標題就地改名。Enter 或失焦送出，Esc 取消；編輯中先關掉 draggable，
+  // 否則選字會被拖曳搶走。
+  $('#items').querySelectorAll('.nm').forEach(nm=>{
+    const row = nm.closest('.item'), name = row.dataset.n;
+    nm.ondblclick = (e)=>{
+      e.stopPropagation();
+      const was = nm.textContent;
+      nm.contentEditable = 'true'; row.draggable = false; nm.focus();
+      const r = document.createRange(); r.selectNodeContents(nm);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      const done = (commit)=>{
+        nm.contentEditable = 'false'; row.draggable = false;
+        const v = nm.textContent;
+        nm.onblur = nm.onkeydown = null;
+        if(commit) renamePage(name, v); else { nm.textContent = was; }
+      };
+      nm.onkeydown = (ev)=>{
+        if(ev.key === 'Enter'){ ev.preventDefault(); done(true); }
+        else if(ev.key === 'Escape'){ ev.preventDefault(); done(false); }
+      };
+      nm.onblur = ()=> done(true);
+    };
+  });
+
+  // 拖曳換順序。只搬被拖的那一頁（伺服器算出落在空隙裡的前綴），其他檔名不動。
+  let dragName = null;
+  $('#items').querySelectorAll('.item').forEach(row=>{
+    // 起點落在名字上就不要進入拖曳 —— 那一下是要選字／改名的
+    row.onmousedown = (e)=>{ row.draggable = !e.target.closest('.nm'); };
+    row.ondragstart = (e)=>{
+      dragName = row.dataset.n; row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      try{ e.dataTransfer.setData('text/plain', dragName); }catch(x){}
+    };
+    row.ondragend = ()=>{
+      dragName = null; row.draggable = false;
+      $('#items').querySelectorAll('.item').forEach(r=>
+        r.classList.remove('dragging','dropBefore','dropAfter'));
+    };
+    row.ondragover = (e)=>{
+      if(!dragName || row.dataset.n === dragName) return;
+      e.preventDefault();
+      const b = row.getBoundingClientRect();
+      const before = e.clientY < b.top + b.height/2;
+      row.classList.toggle('dropBefore', before);
+      row.classList.toggle('dropAfter', !before);
+    };
+    row.ondragleave = ()=> row.classList.remove('dropBefore','dropAfter');
+    row.ondrop = (e)=>{
+      e.preventDefault();
+      if(!dragName || row.dataset.n === dragName) return;
+      const before = row.classList.contains('dropBefore');
+      row.classList.remove('dropBefore','dropAfter');
+      // 放在這一列之前 = 插到「這一列前一頁」的後面；第一列之前就是 null
+      const list = S.slides.filter(s=> s !== dragName);
+      const idx = list.indexOf(row.dataset.n);
+      const after = before ? (idx > 0 ? list[idx-1] : null) : row.dataset.n;
+      movePage(dragName, after);
+    };
+  });
+}
+function markActive(){
+  document.querySelectorAll('#items .item').forEach(d=>
+    d.classList.toggle('on', d.dataset.n === S.slide));
+}
+function open(name){
+  // 這裡刻意不呼叫 renderList()：整份重畫會在雙擊的兩下之間把 .nm 換成新節點，
+  // 就地改名就永遠觸發不了。清單內容有變時才 renderList()。
+  S.slide = name; deselect(); markActive();
+  snapshotLive(name);         // 先抓作者版，存檔時要用來還原 data-live
+  frame.src = '/slide/' + encodeURIComponent(name) + '?t=' + Date.now();
+}
+const doc = () => frame.contentDocument;
+
+// ---------------------------------------------------- 互動示範容器 data-live
+// 存檔＝序列化整份 live DOM，所以只要投影片裡有腳本在跑（Three.js 的 canvas、
+// 終端機輸出、LLM 對話…），那些執行期長出來的節點就會被寫進原始檔，而且每存一次
+// 就多一批。實測：一個每 0.3 秒 append 一行的腳本，開著兩秒再存檔，檔案就從
+// 706 bytes 變成 923 bytes 並永久多出三行。
+//
+// 對策：把示範內容放進 <div data-live>，序列化時一律換回「作者版」內容。
+// 作者版必須從**檔案原文**取得，不能從 DOM 取 —— 腳本在 parse 階段就跑了，
+// 等我們拿到 load 事件時 DOM 早就被改過了。
+// 用穩定的 data-live-id 當索引鍵，不用出現順序。順序會變 —— 背景層是插在
+// body 最前面的，一插進去就把所有索引往後推一格，之前用陣列索引比對會對錯人。
+let liveSnaps = {};
+let slideMtime = null;      // 這一頁載入當下的檔案 mtime，存檔時當衝突檢查基準
+async function snapshotLive(name){
+  liveSnaps = {};
+  try{
+    const res = await fetch('/slide/' + encodeURIComponent(name) + '?t=' + Date.now());
+    slideMtime = parseFloat(res.headers.get('X-Slide-Mtime')) || null;
+    const raw = await res.text();
+    const parsed = new DOMParser().parseFromString(raw, 'text/html');
+    [...parsed.querySelectorAll('[data-live]')].forEach((e,i)=>{
+      liveSnaps[e.getAttribute('data-live-id') || ('L'+i)] = e.innerHTML;
+    });
+    readHistory(name);      // slideMtime 到手，才能判斷歷史還對不對得上
+  }catch(e){ liveSnaps = {}; }
+}
+// iframe 載入後補上 id：此時 DOM 還跟檔案一致，所以順序對得起來
+function tagLive(){
+  const d = doc(); if(!d) return;
+  [...d.querySelectorAll('[data-live]')].forEach((e,i)=>{
+    if(!e.hasAttribute('data-live-id')) e.setAttribute('data-live-id', 'L'+i);
+  });
+}
+function restoreLive(root){
+  const live = root.querySelectorAll('[data-live]');
+  live.forEach(el=>{
+    const id = el.getAttribute('data-live-id');
+    // 沒有快照 = 這個容器是這次工作階段才新增的（例如剛開啟的 Vanta 圖層），
+    // 它的「作者版」內容本來就是空的，執行期生出來的 canvas 一律不留。
+    el.innerHTML = (id && id in liveSnaps) ? liveSnaps[id] : '';
+  });
+  return live.length;
+}
+
+frame.addEventListener('load', ()=>{
+  setZoom(S.zoom); tagLive(); deselect(); updateUndoUI(); syncVanta();
+  if(migrateLegacy()){ msg('已把舊 overrides 併入這一頁','ok'); saveNow(); }
+});
+
+// -------------------------------------------------------- 舊 overrides 遷移
+// 舊架構把幾何調整放在 overrides.json，預覽時注入成 <style data-ovr>。
+// 現在 HTML 才是真相，所以第一次開啟舊 deck 時把那些規則就地內聯到元素上、
+// 移除整塊 style，然後存檔。在瀏覽器裡做是因為只有這裡有選擇器引擎。
+// 只解析 overrides.py patch_css() 產生的固定格式，不是通用 CSS parser。
+function migrateLegacy(){
+  const d = doc(); if(!d) return false;
+  let n = 0;
+  d.querySelectorAll('style[data-ovr]').forEach(b=>{
+    b.textContent.split('}').forEach(chunk=>{
+      const i = chunk.indexOf('{'); if(i<0) return;
+      const selector = chunk.slice(0,i).trim(), decls = chunk.slice(i+1).trim();
+      if(!selector || !decls) return;
+      let el; try{ el = d.querySelector(selector); }catch(e){ return; }
+      if(!el) return;
+      decls.split(';').forEach(dec=>{
+        const j = dec.indexOf(':'); if(j<0) return;
+        const prop = dec.slice(0,j).trim();
+        let val = dec.slice(j+1).trim();
+        const imp = /!important$/i.test(val);
+        val = val.replace(/!important$/i,'').trim();
+        if(prop && val) el.style.setProperty(prop, val, imp?'important':'');
+      });
+      const tf = el.style.transform || '';
+      const m = /translate\(([-\d.]+)px,\s*([-\d.]+)px\)\s*rotate\(([-\d.]+)deg\)\s*scale\(([\d.]+)\)/.exec(tf);
+      el.dataset.ed = JSON.stringify({kind:'patch',
+        base: m ? tf.slice(0, m.index).trim() : tf,
+        dx: m?parseFloat(m[1]):0, dy: m?parseFloat(m[2]):0,
+        rot: m?parseFloat(m[3]):0, scale: m?parseFloat(m[4]):1,
+        w: parseFloat(el.style.width)||null, h: parseFloat(el.style.height)||null});
+      n++;
+    });
+    b.remove();
+  });
+  d.querySelectorAll('.ovr-ins').forEach(el=>{
+    if(el.dataset.ed) return;
+    el.dataset.ed = JSON.stringify(readModel(el));
+    n++;
+  });
+  return n > 0;
+}
+
+// ------------------------------------------------------------------- model
+// 每個被編輯過的元素身上都帶一份 data-ed，存的就是右欄那些數值。
+// 存檔 = 把整份 document 寫回檔案，所以重新載入後這些值原封不動讀得回來。
+function isInsert(el){ return el.classList && el.classList.contains('ovr-ins'); }
+function readModel(el){
+  if(el.dataset && el.dataset.ed){
+    try{ return JSON.parse(el.dataset.ed); }catch(e){}
+  }
+  if(isInsert(el)){
+    return {kind:'insert', x:parseFloat(el.style.left)||0, y:parseFloat(el.style.top)||0,
+      w:parseFloat(el.style.width)||el.offsetWidth, h:parseFloat(el.style.height)||el.offsetHeight,
+      rot: parseFloat((/rotate\(([-\d.]+)deg\)/.exec(el.style.transform)||[])[1]) || 0,
+      z: parseInt(el.style.zIndex)||60};
+  }
+  // 第一次選到 theme 元素：記下它當下的 computed transform 當 base，
+  // 之後輸出 base + 位移，否則 theme 的 translateY(-50%) 會被蓋掉而跳位。
+  const base = frame.contentWindow.getComputedStyle(el).transform;
+  return {kind:'patch', base: base==='none'?'':base,
+    dx:0, dy:0, rot:0, scale:1, w:null, h:null};
+}
+
+// --------------------------------------------------------------- selection
+function select(el, add){
+  if(!el){ deselect(); return; }
+  const i = sels.findIndex(s => s.el === el);
+  if(add){
+    // Shift 點第二次 = 取消選這一個，跟一般繪圖軟體一致
+    if(i >= 0){ sels.splice(i, 1); }
+    else sels.push({el, m: readModel(el)});
+  }else{
+    if(i >= 0 && sels.length > 1){ /* 已在多選裡，保持整組不變，才拖得動整組 */ }
+    else sels = [{el, m: readModel(el)}];
+  }
+  afterSelChange();
+}
+function deselect(){ sels = []; afterSelChange(); }
+function afterSelChange(){
+  const p = primary();
+  $('#sel').textContent = !p ? '未選取'
+    : (sels.length > 1 ? `已選 ${sels.length} 個元素` : selectorFor(p.el));
+  $('#align').style.display = sels.length ? 'block' : 'none';
+  $('#type').style.display  = sels.length ? 'block' : 'none';
+  $('#anim').style.display  = sels.length ? 'block' : 'none';
+  syncType(); syncAnim();
+  document.querySelectorAll('.dist').forEach(b => b.disabled = sels.length < 3);
+  syncFields(); drawBox();
+}
+
+function syncFields(){
+  const set=(id,val)=>{ $(id).value = (val===null||val===undefined)?'':val; };
+  const p = primary();
+  if(!p){ ['#fdx','#fdy','#fw','#fh','#frot','#fscale'].forEach(i=>set(i,'')); return; }
+  // 多選時欄位顯示「主要元素」（最後點到的那個）的值，輸入則套用到全部
+  const m = p.m;
+  if(m.kind==='patch'){
+    set('#fdx',m.dx); set('#fdy',m.dy); set('#fw',m.w); set('#fh',m.h);
+    set('#frot',m.rot); set('#fscale',m.scale);
+  }else{
+    set('#fdx',m.x); set('#fdy',m.y); set('#fw',m.w); set('#fh',m.h);
+    set('#frot',m.rot); set('#fscale',1);
+  }
+}
+function drawBox(){
+  const z = S.zoom;
+  const live = sels.filter(s => s.el && s.el.isConnected);
+  // 每個被選到的元素畫一個細框，整組再畫一個聯集框（有 handle 的那個）
+  const marks = $('#marks');
+  marks.innerHTML = live.length > 1 ? live.map(s=>{
+    const r = s.el.getBoundingClientRect();
+    return `<div class="mark" style="left:${r.left*z}px;top:${r.top*z}px;`
+         + `width:${r.width*z}px;height:${r.height*z}px"></div>`;
+  }).join('') : '';
+  drawAnimOrder();   // 早於下面的 return：沒有選取時也要看得到整頁順序
+  if(!live.length){ box.style.display='none'; return; }
+  const L = Math.min(...live.map(s=>s.el.getBoundingClientRect().left));
+  const T = Math.min(...live.map(s=>s.el.getBoundingClientRect().top));
+  const Rr= Math.max(...live.map(s=>s.el.getBoundingClientRect().right));
+  const B = Math.max(...live.map(s=>s.el.getBoundingClientRect().bottom));
+  box.style.display='block';
+  box.classList.toggle('multi', live.length > 1);
+  box.style.left=(L*z)+'px'; box.style.top=(T*z)+'px';
+  box.style.width=((Rr-L)*z)+'px'; box.style.height=((B-T)*z)+'px';
+}
+
+
+// ------------------------------------------------------------- 刪除頁面
+// 刪除是「搬到 <deck>/.trash/」，不是真的刪掉：decks/ 沒有版控，而
+// .editor-backup/ 存的是第一次編輯之前的版本，拿它復原會把這一頁的編輯全丟掉。
+// 因為可逆，所以不跳確認框（這個專案也禁止 alert/confirm，會鎖住自動化測試）——
+// 「× 只在滑過時出現」＋「訊息列上的復原」＋「⌘Z」三層就夠了。
+const deckOps = [];     // 頁面層級的操作，跟每一頁的快照堆疊分開
+let lastPushAt = 0;     // 最後一次 pushUndo 的時間，用來決定 ⌘Z 該還原哪一種
+
+async function deletePage(name){
+  if(S.slides.length <= 1){ msg('這是最後一頁，不能刪','err'); return; }
+  const j = await post('/api/delete', {slide: name});
+  if(!j.ok){ msg(j.error || '刪除失敗','err'); return; }
+  deckOps.push({type:'delete', name, trash: j.trash, at: Date.now()});
+  delete undoStacks[name]; delete redoStacks[name];   // 這一頁的歷史沒有意義了
+  adoptDeck(j);
+  if(S.slide === name) open(S.slides[0]); else renderList();
+  updateUndoUI();
+  const stale = await stalePageNumbers();
+  msg(`已刪除 ${name.replace(/\.html$/,'')}`
+      + (stale ? ` · ${stale} 頁的頁碼要更新` : ''),
+      stale ? 'err' : 'ok',
+      stale ? {label:'修正頁碼', fn: ()=> renumberPages()} : {label:'復原', fn: ()=> undoDeckOp()});
+}
+
+
+// ------------------------------------------------- 改名與換順序
+// 兩件事都會動到檔名，而檔名同時是 .editor-backup/ 和 sessionStorage 還原紀錄的
+// 鍵。伺服器負責搬備份，這裡負責搬還原紀錄；少搬一邊，那一頁的歷史就會斷在原地。
+function moveHistoryKey(from, to){
+  try{
+    const a = histKey(from), b = histKey(to);
+    const v = sessionStorage.getItem(a);
+    if(v !== null){ sessionStorage.setItem(b, v); sessionStorage.removeItem(a); }
+  }catch(e){}
+  if(undoStacks[from]){ undoStacks[to] = undoStacks[from]; delete undoStacks[from]; }
+  if(redoStacks[from]){ redoStacks[to] = redoStacks[from]; delete redoStacks[from]; }
+}
+
+async function renamePage(name, title){
+  const m = name.match(/^(\d+[a-z]*-)?(.*)\.html$/) || [null,'',name];
+  title = (title||'').trim().replace(/[\\/]/g,'').slice(0,60);
+  if(!title || title === m[2]) return;                 // 沒改就什麼都不做
+  const to = (m[1]||'') + title + '.html';
+  const j = await post('/api/rename', {from:name, to});
+  if(!j.ok){ msg(j.error || '改名失敗','err'); renderList(); return; }
+  moveHistoryKey(name, j.slide);
+  deckOps.push({type:'rename', from:name, to:j.slide, at:Date.now()});
+  if(S.slide === name) S.slide = j.slide;
+  adoptDeck(j); updateUndoUI();
+  msg(`已改名為 ${j.slide.replace(/\.html$/,'')}`,'ok',
+      {label:'復原', fn: ()=> undoDeckOp()});
+}
+
+async function movePage(name, after){
+  const j = await post('/api/move', {slide:name, after});
+  if(!j.ok){ msg(j.error || '搬移失敗','err'); return; }
+  if(!j.moved){ renderList(); return; }               // 位置沒變
+  moveHistoryKey(name, j.slide);
+  deckOps.push({type:'rename', from:name, to:j.slide, at:Date.now()});
+  if(S.slide === name) S.slide = j.slide;
+  adoptDeck(j); updateUndoUI();
+  const stale = await stalePageNumbers();
+  msg(`已搬到新位置${stale ? ` · ${stale} 頁的頁碼要更新` : ''}`, stale?'err':'ok',
+      stale ? {label:'修正頁碼', fn: ()=> renumberPages()}
+            : {label:'復原', fn: ()=> undoDeckOp()});
+}
+
+async function insertPage(after){
+  // 新頁是複製來的：主題 CSS 內嵌在每一個檔案裡，憑空生一頁空白的沒有主題可用。
+  const j = await post('/api/insert', {after});
+  if(!j.ok){ msg(j.error || '插入失敗','err'); return; }
+  deckOps.push({type:'insert', name:j.slide, at:Date.now()});
+  adoptDeck(j);
+  open(j.slide);
+  updateUndoUI();
+  const stale = await stalePageNumbers();
+  msg(`已插入 ${j.slide.replace(/\.html$/,'')}（複製自 ${j.from.replace(/\.html$/,'')}）`
+      + (stale ? ` · ${stale} 頁的頁碼要更新` : ''),
+      stale ? 'err' : 'ok',
+      stale ? {label:'修正頁碼', fn: ()=> renumberPages()} : {label:'復原', fn: ()=> undoDeckOp()});
+}
+
+// 頁碼寫死在每一頁的 footer 裡，插入／刪除之後就對不上。這裡讓那句警告可以直接按。
+async function renumberPages(){
+  const j = await post('/api/renumber', {});
+  if(!j.ok){ msg(j.error || '更新頁碼失敗','err'); return; }
+  adoptDeck(j);
+  if(S.slide) open(S.slide);
+  msg(j.changed ? `已更新 ${j.changed} 頁的頁碼（共 ${j.total} 頁）` : '頁碼本來就是對的','ok');
+}
+
+async function undoDeckOp(){
+  const op = deckOps[deckOps.length-1];
+  if(!op) return;
+  if(op.type === 'rename'){
+    const j = await post('/api/rename', {from: op.to, to: op.from});
+    if(!j.ok){ msg(j.error || '復原失敗','err'); return; }
+    moveHistoryKey(op.to, op.from);
+    deckOps.pop();
+    if(S.slide === op.to) S.slide = op.from;
+    adoptDeck(j); updateUndoUI();
+    msg(`已復原為 ${op.from.replace(/\.html$/,'')}`,'ok');
+    return;
+  }
+  if(op.type === 'insert'){
+    // 復原插入 = 把那一頁刪掉。走同一支 /api/delete，所以檔案還是進 .trash/，
+    // 不是真的消失 —— 誤按復原也還救得回來。
+    const j = await post('/api/delete', {slide: op.name});
+    if(!j.ok){ msg(j.error || '復原失敗','err'); return; }
+    deckOps.pop();
+    adoptDeck(j);
+    if(S.slide === op.name) open(S.slides[0]); else renderList();
+    updateUndoUI();
+    msg(`已復原：移除 ${op.name.replace(/\.html$/,'')}`,'ok');
+    return;
+  }
+  if(op.type === 'delete'){
+    const j = await post('/api/restore', {trash: op.trash});
+    if(!j.ok){ msg(j.error || '復原失敗','err'); return; }
+    deckOps.pop();
+    adoptDeck(j); open(j.slide); updateUndoUI();
+    const stale = await stalePageNumbers();
+    msg(`已復原 ${j.slide.replace(/\.html$/,'')}`
+        + (stale ? ` · ${stale} 頁的頁碼仍與總頁數不符` : ''), stale ? 'err' : 'ok');
+  }
+}
+
+function adoptDeck(j){
+  S.slides = j.slides; S.edited = j.edited; S.stamp = j.stamp;
+  renderList(); markActive();
+}
+
+// 頁碼是寫死在每一頁 HTML 裡的（footer 的「03 / 11」），刪頁之後就對不上。
+// 只回報，不動檔案 —— 修正會一次改到很多頁，那該是你按下去的決定。
+async function stalePageNumbers(){
+  try{
+    const total = S.slides.length;
+    let stale = 0;
+    for(const n of S.slides){
+      const html = await (await fetch('/slide/' + encodeURIComponent(n) + '?t=' + Date.now())).text();
+      const m = html.match(/(\d+)\s*\/\s*(\d+)/);
+      if(m && +m[2] !== total) stale++;
+    }
+    return stale;
+  }catch(e){ return 0; }
+}
+
+// ------------------------------------------------------------------ pointer
+const toSlide = ev => {
+  const r = stage.getBoundingClientRect();
+  return {x:(ev.clientX-r.left)/S.zoom, y:(ev.clientY-r.top)/S.zoom};
+};
+function pick(ev){
+  const p = toSlide(ev), d = doc(); if(!d) return null;
+  let el = d.elementFromPoint(p.x, p.y);
+  if(!el || el===d.body || el===d.documentElement) return null;
+  const ins = el.closest('.ovr-ins');
+  if(ins) return ins;
+  // 跳過純裝飾的滿版底圖，否則永遠只選得到背景
+  const r = el.getBoundingClientRect();
+  if(r.width>=1270 && r.height>=710){
+    const alt = [...d.body.children].reverse().find(c=>{
+      const b=c.getBoundingClientRect();
+      return b.width<1270 && p.x>=b.left && p.x<=b.right && p.y>=b.top && p.y<=b.bottom;
+    });
+    if(alt) return alt;
+  }
+  return el;
+}
+
+ov.addEventListener('mousemove', ev=>{
+  if(drag || textMode) return;
+  const el = pick(ev);
+  if(!el){ hov.style.display='none'; return; }
+  const r = el.getBoundingClientRect(), z=S.zoom;
+  hov.style.display='block';
+  hov.style.left=(r.left*z)+'px'; hov.style.top=(r.top*z)+'px';
+  hov.style.width=(r.width*z)+'px'; hov.style.height=(r.height*z)+'px';
+});
+ov.addEventListener('mouseleave', ()=> hov.style.display='none');
+
+ov.addEventListener('mousedown', ev=>{
+  if(textMode){ commitText(); return; }
+  const el = pick(ev);
+  if(!el){ deselect(); return; }
+  select(el, ev.shiftKey);
+  if(!ev.shiftKey) startDrag(ev,'move');
+});
+ov.addEventListener('dblclick', ev=>{
+  const el = pick(ev); if(!el) return;
+  // 插入的圖片影片不能編文字，但插入的「文字框」可以
+  if(isInsert(el) && !(readModel(el).type === 'text')) return;
+  enterText(el);
+});
+box.querySelectorAll('.h').forEach(h=>h.addEventListener('mousedown', ev=>{
+  ev.stopPropagation(); startDrag(ev,'resize',[...h.classList].find(c=>c.length===2));
+}));
+box.querySelector('.rot').addEventListener('mousedown', ev=>{
+  ev.stopPropagation(); startDrag(ev,'rotate');
+});
+
+function startDrag(ev, mode, corner){
+  const p = primary(); if(!p) return;
+  const r = p.el.getBoundingClientRect(), m = p.m;
+  drag = {mode, corner, x0:ev.clientX, y0:ev.clientY,
+    dx0:(m.kind==='patch'?m.dx:m.x), dy0:(m.kind==='patch'?m.dy:m.y),
+    moved:false,                                // 真的動了才算一步、才存檔
+    w0:(m.w||r.width), h0:(m.h||r.height), rot0:m.rot||0,
+    cx:r.left+r.width/2, cy:r.top+r.height/2,
+    left0:r.left, top0:r.top,
+    // 每個被選到的元素各自的起始位移，移動時整組套同一個位移量
+    starts: sels.map(s => ({s, x:(s.m.kind==='patch'?s.m.dx:s.m.x),
+                               y:(s.m.kind==='patch'?s.m.dy:s.m.y)}))};
+  ev.preventDefault();
+}
+window.addEventListener('mousemove', ev=>{
+  if(!drag || !primary()) return;
+  // 第一次真的移動時才拍快照 —— 此時 DOM 還是移動前的狀態，正好是要還原的目標
+  if(!drag.moved){ drag.moved = true; pushUndo(); }
+  const z=S.zoom, mdx=(ev.clientX-drag.x0)/z, mdy=(ev.clientY-drag.y0)/z, m=primary().m;
+  if(drag.mode==='move'){
+    let ddx = mdx, ddy = mdy;
+    if(GRID.on){
+      // 吸附的是元素的**絕對位置**，不是位移量 —— 位移量對齊格線沒有意義，
+      // 因為每個元素的起點本來就不在格線上。用拖曳開始時量到的 rect 換算。
+      const g = GRID.size;
+      ddx = Math.round((drag.left0 + mdx) / g) * g - drag.left0;
+      ddy = Math.round((drag.top0  + mdy) / g) * g - drag.top0;
+    }
+    // 開格線時不能把位移取整：元素的原始位置常常是小數（例如 left 538.15），
+    // 位移取整會把剛吸附好的絕對位置又推離格線。關格線時維持整數，輸出比較乾淨。
+    const rnd = v => GRID.on ? Math.round(v * 100) / 100 : Math.round(v);
+    drag.starts.forEach(({s, x, y})=>{
+      const nx = rnd(x + ddx), ny = rnd(y + ddy);
+      if(s.m.kind==='patch'){ s.m.dx=nx; s.m.dy=ny; } else { s.m.x=nx; s.m.y=ny; }
+    });
+  }else if(drag.mode==='resize'){
+    const sx = drag.corner.includes('e')?1:-1, sy = drag.corner.includes('s')?1:-1;
+    m.w = Math.max(12, Math.round(drag.w0 + mdx*sx));
+    m.h = Math.max(12, Math.round(drag.h0 + mdy*sy));
+  }else if(drag.mode==='rotate'){
+    const r = stage.getBoundingClientRect();
+    const px=(ev.clientX-r.left)/z, py=(ev.clientY-r.top)/z;
+    let a = Math.atan2(py-drag.cy, px-drag.cx)*180/Math.PI + 90;
+    if(ev.shiftKey) a = Math.round(a/15)*15;
+    m.rot = Math.round(a);
+  }
+  applyAll(); syncFields(); drawBox();
+});
+window.addEventListener('mouseup', ()=>{
+  if(!drag) return;
+  const moved = drag.moved; drag = null;
+  if(moved) persist();                          // 純點選不留下無意義的存檔與 undo
+});
+
+// 把模型套到元素上：inline style 是渲染結果，data-ed 是讓下次讀得回來的數值。
+function applyAll(){ sels.forEach(applyOne); }
+function applyOne(s){
+  const el = s.el, m = s.m;
+  if(m.kind==='patch'){
+    el.style.setProperty('transform',
+      `${m.base||''} translate(${m.dx}px,${m.dy}px) rotate(${m.rot}deg) scale(${m.scale})`, 'important');
+    el.style.setProperty('transform-origin','center center','important');
+    if(m.w) el.style.setProperty('width', m.w+'px','important');
+    if(m.h) el.style.setProperty('height', m.h+'px','important');
+  }else{
+    el.style.left=m.x+'px'; el.style.top=m.y+'px';
+    el.style.width=m.w+'px'; el.style.height=m.h+'px';
+    el.style.transform=`rotate(${m.rot}deg)`;
+  }
+  el.dataset.ed = JSON.stringify(m);
+}
+
+// -------------------------------------------------------------- 存檔（自動）
+// 存檔 = 把整份 document 序列化寫回這一頁的 .html。
+// 不做重新排版：瀏覽器的序列化只會正規化屬性引號與空元素寫法，文字節點與縮排
+// 原樣保留。所以第一次存檔會有一筆一次性的正規化 diff，之後就穩定了。
+let saveTimer=null, dirty=false, saving=false;
+
+const SAVE_LABEL = {saved:'已存檔', saving:'儲存中…', dirty:'未存檔', error:'存檔失敗'};
+function setSaveState(k){ const e=$('#save'); e.className=k; e.textContent=SAVE_LABEL[k]; }
+
+function serializeDoc(){
+  const d = doc();
+  const root = d.documentElement.cloneNode(true);
+  // 編輯中的暫時狀態不能進檔案
+  root.querySelectorAll('[contenteditable]').forEach(e=>e.removeAttribute('contenteditable'));
+  root.querySelectorAll('[data-ed-editing]').forEach(e=>{
+    e.style.removeProperty('outline');
+    e.removeAttribute('data-ed-editing');
+    if(!e.getAttribute('style')) e.removeAttribute('style');
+  });
+  restoreLive(root);          // 執行期產生的節點不進檔案
+  // 函式庫掛在 data-live 外面的殘留物（p5 的 <main>）連元素本身都不要留
+  root.querySelectorAll('[data-vanta-junk]').forEach(e=>e.remove());
+  // 舊檔案裡已經被寫進去的空 <main>：theme 從不產生它，清掉是安全的
+  root.querySelectorAll('main').forEach(e=>{
+    if(!e.attributes.length && !e.textContent.trim() && !e.children.length) e.remove();
+  });
+  // </html> 之後的換行會被解析器塞進 <body> 尾端。不處理的話，undo 用
+  // document.write 重新解析一次就多一個空行，檔案會愈存愈長。
+  // 先把尾端的純空白節點清掉再補一個換行 —— 序列化→解析→再序列化會拿到
+  // 完全一樣的字串，而且輸出跟 theme_*.py 產生的原檔逐位元組相同。
+  const body = root.querySelector('body');
+  if(body){
+    while(body.lastChild && body.lastChild.nodeType === 3
+          && !body.lastChild.nodeValue.trim()) body.lastChild.remove();
+    body.appendChild(root.ownerDocument.createTextNode('\n'));   // </body> 前留一個換行，diff 好讀
+  }
+  return '<!DOCTYPE html>\n' + root.outerHTML + '\n';
+}
+
+function persist(){
+  dirty = true; setSaveState('dirty');
+  clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 400);
+}
+
+async function saveNow(){
+  clearTimeout(saveTimer);
+  if(!S.slide || saving) return;
+  saving = true; setSaveState('saving');
+  const j = await post('/api/save', {slide:S.slide, html:serializeDoc(), base:slideMtime});
+  saving = false;
+  if(j.ok){
+    dirty = false;
+    S.stamp = j.stamp;              // 採用伺服器回報的 stamp，否則輪詢會把自己的存檔當成外部改動
+    slideMtime = j.mtime;           // 下一次存檔的基準
+    writeHistory();                 // 這一刻歷史與檔案版本的配對才是精確的
+    if(!S.edited.includes(S.slide)){ S.edited.push(S.slide); renderList(); markActive(); }
+    setSaveState('saved');
+  }else if(j.conflict){
+    // 檔案在外面被改過。不要蓋掉別人的修改，也不要假裝存好了。
+    setSaveState('error');
+    msg('這一頁在編輯器外被修改過，已停止存檔以免蓋掉。重新載入頁面後再編輯。','err');
+  }else{
+    setSaveState('error');          // 失敗就一直顯示，不要讓人以為存好了
+  }
+}
+// 關掉分頁前把還沒寫出去的改動補存
+window.addEventListener('beforeunload', ()=>{
+  if(!dirty || !S.slide) return;
+  navigator.sendBeacon('/api/save',
+    new Blob([JSON.stringify({slide:S.slide, html:serializeDoc()})], {type:'application/json'}));
+});
+
+async function post(url, body){
+  const r = await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(body)});
+  const j = await r.json().catch(()=>({}));
+  if(!r.ok || j.ok===false) msg(j.error||('寫入失敗 '+r.status),'err');
+  return j;
+}
+
+// 數值欄位
+['#fdx','#fdy','#fw','#fh','#frot','#fscale'].forEach(id=>{
+  $(id).addEventListener('change', ()=>{
+    const p = primary(); if(!p) return;
+    pushUndo('field');
+    const m = p.m, num = x => x===''?null:parseFloat(x);
+    const oldX = m.kind==='patch'?m.dx:m.x, oldY = m.kind==='patch'?m.dy:m.y;
+    if(m.kind==='patch'){
+      m.dx=num($('#fdx').value)||0; m.dy=num($('#fdy').value)||0;
+      m.w=num($('#fw').value); m.h=num($('#fh').value);
+      m.rot=num($('#frot').value)||0; m.scale=num($('#fscale').value)||1;
+    }else{
+      m.x=num($('#fdx').value)||0; m.y=num($('#fdy').value)||0;
+      m.w=num($('#fw').value)||100; m.h=num($('#fh').value)||100;
+      m.rot=num($('#frot').value)||0;
+    }
+    // 多選時，位移欄位是「一起移動這麼多」，不是把所有元素疊到同一點
+    const ddx = (m.kind==='patch'?m.dx:m.x) - oldX, ddy = (m.kind==='patch'?m.dy:m.y) - oldY;
+    if(sels.length > 1 && (ddx || ddy)) sels.forEach(t=>{
+      if(t === p) return;
+      if(t.m.kind==='patch'){ t.m.dx+=ddx; t.m.dy+=ddy; } else { t.m.x+=ddx; t.m.y+=ddy; }
+    });
+    applyAll(); drawBox(); persist();
+  });
+});
+
+// ------------------------------------------------------------ 文字編輯
+// contenteditable 會塞 <b>、外部貼上會帶 style="..."。只留白名單標籤與 class，
+// 否則檔案幾次編輯之後就爛掉。（原本在 Python 端做，現在文字直接進 HTML，
+// 所以改在寫入前的來源端做。）
+const OK_TAGS = new Set(['BR','SPAN','B','STRONG','EM','I']);
+// 瀏覽器在 contenteditable 裡按 Enter 是包一層 <div>（或 <p>）來分行的。
+// 這些標籤不在白名單裡，直接拆掉的話連換行都一起沒了 —— 編輯時看得到分行，
+// 一離開就併回同一行。拆之前先補一個 <br>，換行才留得住。
+const BLOCK_TAGS = new Set(['DIV','P','SECTION','ARTICLE','H1','H2','H3','H4','H5','H6',
+                            'LI','UL','OL','BLOCKQUOTE','PRE','TR','FIGURE']);
+function sanitizeInto(el){
+  const walk = node => {
+    [...node.childNodes].forEach(c=>{
+      if(c.nodeType===3) return;                       // 文字節點原樣留下
+      if(c.nodeType!==1){ c.remove(); return; }        // 註解等等一律丟掉
+      walk(c);
+      if(!OK_TAGS.has(c.tagName)){
+        // 區塊標籤代表一次分行。不是第一個節點才補 <br>，否則開頭會多一行空白。
+        if(BLOCK_TAGS.has(c.tagName) && c.previousSibling
+           && !(c.previousSibling.nodeType === 1 && c.previousSibling.tagName === 'BR')){
+          c.parentNode.insertBefore(c.ownerDocument.createElement('br'), c);
+        }
+        c.replaceWith(...c.childNodes);
+        return;
+      }
+      [...c.attributes].forEach(a=>{ if(a.name!=='class') c.removeAttribute(a.name); });
+    });
+  };
+  walk(el);
+}
+
+function enterText(el){
+  textMode = true; textEl = el; sels = []; box.style.display='none'; $('#marks').innerHTML='';
+  hov.style.display='none'; ov.classList.add('text-mode');
+  textOrig = el.innerHTML;
+  textUndoSnap = serializeDoc();               // 先拍照；真的改了才推進堆疊
+  el.setAttribute('contenteditable','true');
+  el.setAttribute('data-ed-editing','1');
+  // 讓 Enter 直接插入 <br>，而不是用 <div> 包一層。這樣產出的結構本來就在
+  // 白名單裡，不必倚賴上面的補救；貼上外部內容時才會走到那條路。
+  try{ doc().execCommand('defaultParagraphSeparator', false, 'br'); }catch(e){}
+  el.style.outline = '1px dashed #d97a87';
+  el.focus();
+  const d = doc(), r = d.createRange();
+  r.selectNodeContents(el); d.getSelection().removeAllRanges(); d.getSelection().addRange(r);
+  // 注音／倉頡輸入中不能讀值，否則會抓到還沒組完的字
+  el.addEventListener('compositionstart', onCompStart);
+  el.addEventListener('compositionend', onCompEnd);
+  el.addEventListener('keydown', onTextKey);
+  el.addEventListener('blur', onTextBlur);
+  // 文字模式下 overlay 是 pointer-events:none，點擊會直接落進 iframe，
+  // 所以「點空白處存檔」必須同時監聽 iframe 內與父層的 mousedown。
+  setTimeout(()=>{
+    doc().addEventListener('mousedown', onDocDown, true);
+    window.addEventListener('mousedown', onDocDown, true);
+  }, 0);
+  msg('編輯文字中 — 點空白處存檔，Esc 取消');
+}
+function onDocDown(ev){ if(textEl && !textEl.contains(ev.target)) commitText(); }
+function onTextBlur(){ setTimeout(()=>{ if(textMode) commitText(); }, 60); }
+const onCompStart = ()=>{ composing = true; };
+const onCompEnd = ()=>{ composing = false; };
+function onTextKey(ev){
+  if(composing) return;                    // IME 組字中，Esc/Enter 交給輸入法
+  if(ev.key==='Escape'){ ev.preventDefault(); cancelText(); }
+}
+function exitText(){
+  if(!textEl) return;
+  textEl.removeAttribute('contenteditable');
+  textEl.removeAttribute('data-ed-editing');
+  textEl.style.removeProperty('outline');
+  if(!textEl.getAttribute('style')) textEl.removeAttribute('style');
+  textEl.removeEventListener('compositionstart', onCompStart);
+  textEl.removeEventListener('compositionend', onCompEnd);
+  textEl.removeEventListener('keydown', onTextKey);
+  textEl.removeEventListener('blur', onTextBlur);
+  try{ doc().removeEventListener('mousedown', onDocDown, true); }catch(e){}
+  window.removeEventListener('mousedown', onDocDown, true);
+  textMode=false; ov.classList.remove('text-mode');
+}
+function cancelText(){ if(textEl) textEl.innerHTML = textOrig; exitText(); msg('已取消'); }
+function commitText(){
+  if(!textEl) return;
+  if(composing) return;                    // 還在組字，先不要送出
+  const el = textEl, oldHTML = textOrig;
+  exitText();
+  sanitizeInto(el);
+  if(el.innerHTML === oldHTML){ textUndoSnap = null; return; }
+  pushUndo(null, textUndoSnap); textUndoSnap = null;
+  persist();
+}
+
+// -------------------------------------------------------------- 插入圖片影片
+// 直接建 DOM 元素放進這一頁，不必重新載入。src 寫成相對路徑 ../assets/，
+// 預覽時 /slide/x.html 解析成 /assets/x，存到檔案後也剛好指向 <deck>/assets/。
+function makeInsert(type, src){
+  const d = doc();
+  const m = {kind:'insert', type, src, x:320, y:200, w:400, h:260, rot:0, z:60,
+             fit: type==='video'?'cover':'contain'};
+  const el = d.createElement('div');
+  el.className = 'ovr-ins';
+  el.style.cssText = `position:absolute;left:${m.x}px;top:${m.y}px;width:${m.w}px;`
+    + `height:${m.h}px;transform:rotate(0deg);transform-origin:center center;`
+    + `z-index:${m.z};overflow:hidden;`;
+  const url = '../assets/' + src;
+  const inner = `width:100%;height:100%;object-fit:${m.fit};display:block;`;
+  el.innerHTML = type==='image'
+    ? `<img src="${url}" alt="" style="${inner}">`
+    : `<video src="${url}" autoplay muted loop playsinline style="${inner}"></video>`;
+  el.dataset.ed = JSON.stringify(m);
+  d.body.appendChild(el);
+  return el;
+}
+function pickFile(accept, type){
+  const inp = document.createElement('input');
+  inp.type='file'; inp.accept=accept;
+  inp.onchange = async ()=>{
+    const f = inp.files[0]; if(!f) return;
+    if(f.size > 40*1024*1024){ msg('檔案超過 40MB','err'); return; }
+    const b64 = await new Promise(res=>{ const r=new FileReader();
+      r.onload=()=>res(r.result); r.readAsDataURL(f); });
+    const up = await post('/api/upload', {name:f.name, data:b64});
+    if(!up.ok) return;
+    pushUndo();
+    select(makeInsert(type, up.src));
+    persist();
+    msg('已插入','ok');
+  };
+  inp.click();
+}
+$('#btnImg').onclick = ()=> pickFile('image/*','image');
+$('#btnVid').onclick = ()=> pickFile('video/*','video');
+$('#btnDel').onclick = ()=>{
+  if(!sels.length){ msg('先選一個元素','err'); return; }
+  // theme 的元素也可以刪。以前擋著是舊架構的殘留 —— 那時 slides-*/ 是 theme 的
+  // 產生物，刪了下次重跑就回來，擋掉才不會讓人誤會。現在 HTML 就是真相，刪掉
+  // 就是從檔案移掉一個節點，而且 ⌘Z 是整頁快照，救得回來。
+  const targets = sels.filter(s => !s.el.classList.contains('vanta-layer'));
+  if(!targets.length){
+    msg('背景動畫圖層請用右欄的「背景動畫」選「無」來關掉','err'); return;
+  }
+  pushUndo();
+  targets.forEach(s=>s.el.remove());
+  deselect(); persist();
+  msg(`已刪除 ${targets.length} 個元素，⌘Z 可還原`,'ok');
+};
+$('#btnReset').onclick = ()=>{
+  const targets = sels.filter(s=>s.m.kind==='patch');
+  if(!targets.length){ msg('先選一個 theme 元素','err'); return; }
+  // 只還原位置尺寸。文字改動現在直接寫在 HTML 裡，沒有可回溯的原稿 ——
+  // 要救文字請看 .editor-backup/。
+  pushUndo();
+  targets.forEach(s=>{
+    const el = s.el;
+    el.removeAttribute('data-ed');
+    ['transform','transform-origin','width','height'].forEach(k=>el.style.removeProperty(k));
+    if(!el.getAttribute('style')) el.removeAttribute('style');
+  });
+  deselect(); persist(); msg(`已還原 ${targets.length} 個元素的位置`,'ok');
+};
+document.querySelectorAll('[data-align]').forEach(b=>
+  b.onclick = ()=> alignSel(b.dataset.align));
+document.querySelectorAll('[data-dist]').forEach(b=>
+  b.onclick = ()=> distributeSel(b.dataset.dist));
+$('#btnGrid').onclick = ()=>{
+  GRID.on = !GRID.on;
+  $('#btnGrid').style.borderColor = GRID.on ? 'var(--accent)' : '';
+  $('#btnGrid').style.color = GRID.on ? 'var(--accent)' : '';
+  drawGrid();
+  msg(GRID.on ? `對齊格線開啟（${GRID.size}px）` : '對齊格線關閉');
+};
+$('#btnUndo').onclick = doUndo;
+$('#btnRedo').onclick = doRedo;
+$('#btnZoomIn').onclick=()=>setZoom(S.zoom+.1);
+$('#btnZoomOut').onclick=()=>setZoom(S.zoom-.1);
+
+// --------------------------------------------------------------- keyboard
+window.addEventListener('keydown', ev=>{
+  if($('#present').classList.contains('on')){
+    ev.preventDefault();
+    if(ev.key === 'Escape'){ present(false); return; }
+    if(ev.key === 'ArrowRight' || ev.key === 'ArrowDown' || ev.key === ' '){
+      if(prIdx < S.slides.length-1){ prIdx++; showPr(); } return;
+    }
+    if(ev.key === 'ArrowLeft' || ev.key === 'ArrowUp'){
+      if(prIdx > 0){ prIdx--; showPr(); } return;
+    }
+    return;
+  }
+  if($('#picker').classList.contains('on')){
+    if(ev.key === 'Escape') $('#picker').classList.remove('on');
+    return;
+  }
+  if(textMode) return;
+  if(/^(INPUT|SELECT|TEXTAREA)$/.test(ev.target.tagName)) return;
+  if((ev.metaKey||ev.ctrlKey) && ev.altKey && ev.key.toLowerCase()==='c'){
+    ev.preventDefault(); copyStyle(); return;
+  }
+  if((ev.metaKey||ev.ctrlKey) && ev.altKey && ev.key.toLowerCase()==='v'){
+    ev.preventDefault(); pasteStyle(); return;
+  }
+  if((ev.metaKey||ev.ctrlKey) && ev.key.toLowerCase()==='z'){
+    ev.preventDefault();
+    ev.shiftKey ? doRedo() : doUndo();
+    return;
+  }
+  if(ev.key==='Escape'){ deselect(); return; }
+  if(!sels.length) return;
+  if(ev.key === 'Delete' || ev.key === 'Backspace'){
+    ev.preventDefault();          // Backspace 在部分設定下會被瀏覽器當成「上一頁」
+    $('#btnDel').onclick();       // 走同一條路：pushUndo、擋 vanta 圖層、存檔
+    return;
+  }
+  const step = ev.shiftKey ? 10 : (GRID.on ? GRID.size : 1);
+  const map={ArrowLeft:[-step,0],ArrowRight:[step,0],ArrowUp:[0,-step],ArrowDown:[0,step]};
+  if(map[ev.key]){
+    ev.preventDefault();
+    pushUndo('nudge');
+    sels.forEach(s=>{
+      const m = s.m;
+      if(m.kind==='patch'){ m.dx+=map[ev.key][0]; m.dy+=map[ev.key][1]; }
+      else { m.x+=map[ev.key][0]; m.y+=map[ev.key][1]; }
+    });
+    applyAll(); syncFields(); drawBox(); persist();
+  }
+});
+
+
+// ------------------------------------------------------- Vanta 背景動畫
+// 參數與預設值是從各效果的 dist 檔裡的 defaultOptions 抽出來的，不是我猜的。
+// c=顏色(hex 數字) n=數字 b=布林 s=下拉。[min,max,step] 只影響 UI 範圍。
+const VANTA_SCHEMA = {
+  waves:   {lib:'three', o:[['color','c',0x005588],['shininess','n',30,[0,150,1]],
+            ['waveHeight','n',15,[0,40,1]],['waveSpeed','n',1,[0,2,0.05]],['zoom','n',1,[0.5,2,0.05]]]},
+  birds:   {lib:'three', o:[['backgroundColor','c',0x07192f],['color1','c',0xff0000],['color2','c',0x00d1ff],
+            ['colorMode','s','varianceGradient',['lerp','variance','varianceGradient','lerpGradient']],
+            ['birdSize','n',1,[0.5,4,0.1]],['wingSpan','n',30,[10,40,1]],['speedLimit','n',5,[1,10,0.5]],
+            ['separation','n',20,[1,100,1]],['alignment','n',20,[1,100,1]],['cohesion','n',20,[1,100,1]],
+            ['quantity','n',5,[1,5,0.5]]]},
+  net:     {lib:'three', o:[['color','c',0xff3f81],['backgroundColor','c',0x23153c],
+            ['points','n',10,[1,20,1]],['maxDistance','n',20,[10,40,1]],['spacing','n',15,[10,20,1]],
+            ['showDots','b',true]]},
+  globe:   {lib:'three', o:[['color','c',0xff3f81],['color2','c',0xffffff],['backgroundColor','c',0x23153c],
+            ['size','n',1,[0.5,2,0.05]],['points','n',10,[1,20,1]],['maxDistance','n',20,[10,40,1]],
+            ['spacing','n',15,[10,20,1]],['showDots','b',true]]},
+  dots:    {lib:'three', o:[['color','c',0xff8820],['color2','c',0xff8820],['backgroundColor','c',0x222222],
+            ['size','n',3,[1,10,0.5]],['spacing','n',35,[10,60,1]],['showLines','b',true]]},
+  fog:     {lib:'three', o:[['highlightColor','c',0xffc300],['midtoneColor','c',0xff1f00],
+            ['lowlightColor','c',0x2d00ff],['baseColor','c',0xffebeb],
+            ['blurFactor','n',0.6,[0.1,0.9,0.05]],['speed','n',1,[0,5,0.1]],['zoom','n',1,[0.1,3,0.1]]]},
+  clouds:  {lib:'three', o:[['backgroundColor','c',0xffffff],['skyColor','c',0x68b8d7],
+            ['cloudColor','c',0xadc1de],['cloudShadowColor','c',0x183550],['sunColor','c',0xff9919],
+            ['sunGlareColor','c',0xff6633],['sunlightColor','c',0xff9933],['speed','n',1,[0,5,0.1]]]},
+  clouds2: {lib:'three', o:[['backgroundColor','c',0x000000],['skyColor','c',0x5ca6ca],
+            ['cloudColor','c',0x334d80],['lightColor','c',0xffffff],['speed','n',1,[0,5,0.1]]]},
+  cells:   {lib:'three', o:[['color1','c',0x008c8c],['color2','c',0xf2e735],['backgroundColor','c',0xd7ff8f],
+            ['size','n',1.5,[0.5,3,0.1]],['speed','n',1,[0,5,0.1]]]},
+  ripple:  {lib:'three', o:[['color1','c',0x060b25],['color2','c',0xffffff],['backgroundColor','c',0xf6f6f6],
+            ['amplitudeFactor','n',1,[0,3,0.1]],['ringFactor','n',4,[0,10,0.5]],
+            ['rotationFactor','n',0.1,[0,2,0.05]],['speed','n',1,[0,5,0.1]]]},
+  rings:   {lib:'three', o:[['color','c',0x88ff00],['backgroundColor','c',0x202428]]},
+  halo:    {lib:'three', o:[['baseColor','c',0x001a59],['backgroundColor','c',0x131a43],
+            ['amplitudeFactor','n',1,[0,3,0.1]],['size','n',1,[0.5,2,0.05]],
+            ['xOffset','n',0,[-1,1,0.05]],['yOffset','n',0,[-1,1,0.05]]]},
+  topology:{lib:'p5',    o:[['color','c',0x89964e],['backgroundColor','c',0x002222]]},
+  trunk:   {lib:'p5',    o:[['color','c',0x98465f],['backgroundColor','c',0x222426],
+            ['spacing','n',0,[0,10,0.5]],['chaos','n',1,[0,10,0.5]]]},
+};
+// 每個效果「底色」是哪一個參數，以及沿用投影片底色時要先乘上的係數。
+// WAVES 沒有 backgroundColor —— 它整面就是那張波浪網格，所以底色要接到 color；
+// 而且 Vanta 的打光會把顏色提亮，直接餵紙色會變成一片死白，實測乘 0.85 最接近。
+// 其餘效果的 backgroundColor 是真正的底，不需要補償。
+// 每個效果的「底色」對應到哪些參數，以及各自要乘的係數。是陣列不是單一鍵：
+// CLOUDS 的天空是 skyColor（backgroundColor 在它身上看不出效果），WAVES 沒有底色
+// 參數、整面就是那張網格所以接 color，FOG 則是 baseColor。
+const VANTA_INHERIT = {
+  waves:    [['color', 0.85]],            // 打光會提亮，先壓暗才接近紙色
+  fog:      [['baseColor', 1]],
+  clouds:   [['skyColor', 1], ['backgroundColor', 1]],
+  clouds2:  [['skyColor', 1], ['backgroundColor', 1]],
+  birds:    [['backgroundColor', 1]], net:      [['backgroundColor', 1]],
+  globe:    [['backgroundColor', 1]], dots:     [['backgroundColor', 1]],
+  // CELLS 的 backgroundColor 完全看不到（實測與預設逐格相同）；看得到的是
+  // color1 / color2 兩色漸變。兩個都接底色，第二個壓暗才有細胞輪廓的對比。
+  cells:    [['color1', 1], ['color2', 0.80], ['backgroundColor', 1]],
+  ripple:   [['backgroundColor', 1]],
+  rings:    [['backgroundColor', 1]], halo:     [['backgroundColor', 1]],
+  topology: [['backgroundColor', 1]], trunk:    [['backgroundColor', 1]],
+};
+const inheritKeys = eff => (VANTA_INHERIT[eff] || []).map(r => r[0]);
+function inheritBg(eff, opts){
+  const rules = VANTA_INHERIT[eff], bg = slideBgHex();
+  if(!rules || bg === null) return false;
+  let hit = false;
+  rules.forEach(([key, f])=>{
+    if(!(key in opts)) return;
+    opts[key] = (Math.round(((bg>>16)&255)*f)<<16)
+              + (Math.round(((bg>>8)&255)*f)<<8)
+              +  Math.round((bg&255)*f);
+    hit = true;
+  });
+  return hit;
+}
+const VANTA_NAMES = Object.keys(VANTA_SCHEMA);
+
+
+// Vanta 的設定就存在圖層元素的 data-vanta 屬性裡，跟 data-ed 同樣的做法：
+// 投影片 HTML 是唯一真相，重新開啟時面板直接從那裡讀回來。
+const VANTA_LAYER = '.vanta-layer';
+const hex = n => '#' + (n>>>0 & 0xffffff).toString(16).padStart(6,'0');
+const unhex = h => parseInt(h.replace('#',''), 16);
+
+function vantaEl(){ return doc() && doc().querySelector(VANTA_LAYER); }
+
+// 開啟效果時，backgroundColor 預設沿用這張投影片自己的底色。
+// 不這樣做的話，NET 的預設深紫會直接蓋掉 theme 的紙色，文字變成深色壓深色 ——
+// 「加一個背景動畫」不該把整張投影片的配色換掉。
+function slideBgHex(){
+  const d = doc(); if(!d) return null;
+  for(const el of [d.body, d.documentElement]){
+    const c = d.defaultView.getComputedStyle(el).backgroundColor;
+    const m = /rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/.exec(c || '');
+    if(m && (m[4] === undefined || parseFloat(m[4]) > 0.01))
+      return (+m[1] << 16) + (+m[2] << 8) + (+m[3]);
+  }
+  return null;
+}
+function vantaCfg(){
+  const el = vantaEl(); if(!el) return null;
+  try{ return JSON.parse(el.dataset.vanta); }catch(e){ return null; }
+}
+
+// 背景層壓在所有內容之下；前景層蓋在最上面，並且一定要 pointer-events:none，
+// 否則整張投影片都點不到。前景還會強制 backgroundAlpha:0 —— 效果自己的底色
+// 不透明的話，蓋上去就等於把整頁塗掉了。
+function vantaLayerCss(layer){
+  return layer === 'fg'
+    ? 'position:absolute;inset:0;z-index:80;pointer-events:none;'
+    : 'position:absolute;inset:0;z-index:0;';
+}
+
+function vantaInitCode(cfg){
+  const opts = Object.entries(cfg.opts).map(([k,v])=>
+    typeof v === 'string' ? `${k}: ${JSON.stringify(v)}`
+    : typeof v === 'boolean' ? `${k}: ${v}`
+    : (/olor|Color$/.test(k) ? `${k}: 0x${(v>>>0 & 0xffffff).toString(16).padStart(6,'0')}` : `${k}: ${v}`)
+  );
+  if(cfg.layer === 'fg') opts.push('backgroundAlpha: 0');
+  if(cfg.effect === 'clouds2') opts.push('texturePath: "lib/noise.png"');
+  return `VANTA.${cfg.effect.toUpperCase()}({ el: ".vanta-layer", mouseControls: true,\n`
+       + `  touchControls: true, gyroControls: false, minHeight: 200, minWidth: 200,\n`
+       + `  scale: 1, scaleMobile: 1,\n  ${opts.join(', ')} });`;
+}
+
+// 重建這一頁的 Vanta：先清乾淨舊的圖層與 script，再照設定重新插入。
+// 之所以整組重來而不是就地改，是因為切換效果會換掉要載入的檔案。
+async function vantaApply(cfg){
+  const d = doc(); if(!d) return;
+  pushUndo();
+  // 先清除
+  try{ if(d.defaultView.__vanta && d.defaultView.__vanta.destroy) d.defaultView.__vanta.destroy(); }catch(e){}
+  d.querySelectorAll(VANTA_LAYER + ',[data-vanta-src],[data-vanta-junk]').forEach(e=>e.remove());
+  if(!cfg || !cfg.effect){ persist(); syncVanta(); return; }
+
+  const r = await post('/api/vanta', {effect: cfg.effect});
+  if(!r.ok) return;
+
+  const layer = d.createElement('div');
+  layer.className = 'vanta-layer';
+  layer.setAttribute('data-live','');            // 執行期的 canvas 不進檔案
+  layer.setAttribute('data-live-id','vanta');   // 穩定索引鍵，重開才對得回來
+  layer.dataset.vanta = JSON.stringify(cfg);
+  layer.style.cssText = vantaLayerCss(cfg.layer);
+  d.body.insertBefore(layer, cfg.layer === 'fg' ? null : d.body.firstChild);
+
+  const known = new Set([...d.body.children]);
+  const mk = (src, code) => {
+    const t = d.createElement('script');
+    t.setAttribute('data-vanta-src','');
+    if(src) t.src = src; else t.textContent = code;
+    d.body.appendChild(t);
+    return t;
+  };
+  // 依序載入：函式庫 → 效果檔 → 初始化。用 onload 串接，不能一次全丟。
+  await new Promise(res=>{ const t = mk('lib/' + r.base); t.onload = res; t.onerror = res; });
+  await new Promise(res=>{ const t = mk('lib/' + r.effectFile); t.onload = res; t.onerror = res; });
+  mk(null, 'window.__vanta = ' + vantaInitCode(cfg));
+  // p5.js 會自己在 body 上掛一個 <main>（TOPOLOGY / TRUNK 用 p5）。那東西在
+  // data-live 容器外面，不標記的話會被序列化寫進原始檔，而且每試一次就多一個。
+  // 這裡不猜是哪個標籤，直接比對「啟動後多出來的 body 直接子元素」。
+  await new Promise(r=>setTimeout(r, 300));
+  [...d.body.children].forEach(e=>{
+    if(known.has(e) || e.classList.contains('vanta-layer')
+       || e.hasAttribute('data-vanta-src')) return;
+    e.setAttribute('data-vanta-junk','');
+  });
+  persist(); syncVanta();
+  msg(r.downloaded.length ? `已下載 ${r.downloaded.join('、')}` : `已套用 ${cfg.effect.toUpperCase()}`, 'ok');
+}
+
+function syncVanta(){
+  const cfg = vantaCfg();
+  const eff = cfg ? cfg.effect : '';
+  $('#vEffect').value = eff;
+  $('#vLayerRow').style.display = eff ? 'flex' : 'none';
+  document.querySelectorAll('[data-vlayer]').forEach(b=>
+    b.classList.toggle('on', cfg && cfg.layer === b.dataset.vlayer));
+  const box = $('#vOpts');
+  if(!eff){ box.innerHTML = ''; return; }
+  const sch = VANTA_SCHEMA[eff];
+  box.innerHTML = sch.o.map(([k,type,def,extra])=>{
+    const v = cfg.opts[k] !== undefined ? cfg.opts[k] : def;
+    // 前景模式下底色沒有作用（backgroundAlpha 被設成 0），直接不顯示以免誤導
+    // 前景模式下底色參數沒有作用（backgroundAlpha 被設成 0），藏起來以免誤導。
+    // WAVES 的 color 例外 —— 那是波浪本身的顏色，不是底。
+    if(cfg.layer === 'fg' && k !== 'color'
+       && (k === 'backgroundColor' || inheritKeys(eff).includes(k))) return '';
+    if(type === 'c') return `<div class="vrow"><label>${k}</label>`
+      + `<input type="color" data-vk="${k}" value="${hex(v)}"></div>`;
+    if(type === 'b') return `<div class="vrow"><label>${k}</label>`
+      + `<input type="checkbox" data-vk="${k}" ${v?'checked':''}></div>`;
+    if(type === 's') return `<div class="vrow"><label>${k}</label><select data-vk="${k}">`
+      + extra.map(o=>`<option ${o===v?'selected':''}>${o}</option>`).join('') + '</select></div>';
+    const [mn,mx,st] = extra;
+    return `<div class="vrow"><label>${k}</label>`
+      + `<input type="range" data-vk="${k}" min="${mn}" max="${mx}" step="${st}" value="${v}">`
+      + `<span class="vnum">${v}</span></div>`;
+  }).join('');
+  box.querySelectorAll('[data-vk]').forEach(inp=>{
+    const commit = ()=>{
+      const c = vantaCfg(); if(!c) return;
+      c.opts[inp.dataset.vk] = inp.type==='checkbox' ? inp.checked
+        : inp.type==='color' ? unhex(inp.value)
+        : inp.type==='range' ? parseFloat(inp.value) : inp.value;
+      vantaApply(c);
+    };
+    // 拖 slider 時只更新數字，放開才重建 —— 每動一格就重建效果會卡死
+    if(inp.type === 'range'){
+      inp.oninput = ()=>{ inp.nextElementSibling.textContent = inp.value; };
+      inp.onchange = commit;
+    } else inp.onchange = commit;
+  });
+}
+
+$('#vEffect').onchange = ()=>{
+  const eff = $('#vEffect').value;
+  if(!eff) return vantaApply(null);
+  const old = vantaCfg();
+  const sch = VANTA_SCHEMA[eff];
+  const opts = {};
+  sch.o.forEach(([k,,def])=>{ opts[k] = def; });
+  inheritBg(eff, opts);
+  vantaApply({effect: eff, layer: (old && old.layer) || 'bg', opts});
+};
+$('#vInherit').onclick = ()=>{
+  const c = vantaCfg(); if(!c) return;
+  if(inheritBg(c.effect, c.opts)) vantaApply(c);
+  else msg('這個效果沒有可以沿用底色的參數','err');
+};
+document.querySelectorAll('[data-vlayer]').forEach(b=> b.onclick = ()=>{
+  const c = vantaCfg(); if(!c) return;
+  c.layer = b.dataset.vlayer;
+  vantaApply(c);
+});
+
+// --------------------------------------------------------------- 文字樣式
+// **字體只提供 theme 的三個「角色」，不提供字體名稱。**
+// build_deck.py 打包時是改寫 --display-font / --body-font / --label-font 這三個
+// 變數（把 CJK 換成內嵌的子集字體），它不會去動元素上的 font-family。所以如果
+// 這裡寫死一個字體名稱，那段字在你機器上看起來對，匯出後在別台機器就會掉字。
+// 用 var(--…) 就永遠跟著 deck 內嵌的字體走。
+const ROLES = ['--display-font','--body-font','--label-font'];
+function themeVars(){
+  const d = doc(); const out = new Map();
+  if(!d) return out;
+  for(const sheet of d.styleSheets){
+    let rules; try{ rules = sheet.cssRules; }catch(e){ continue; }
+    for(const r of rules){
+      if(!r.selectorText || !/:root/.test(r.selectorText)) continue;
+      for(const name of r.style){
+        if(!name.startsWith('--')) continue;
+        out.set(name, r.style.getPropertyValue(name).trim());
+      }
+    }
+  }
+  return out;
+}
+function syncType(){
+  const p = primary(); if(!p) return;
+  const cs = frame.contentWindow.getComputedStyle(p.el);
+  $('#ffs').value = Math.round(parseFloat(cs.fontSize)) || '';
+  const lh = parseFloat(cs.lineHeight);
+  $('#flh').value = lh ? +(lh / (parseFloat(cs.fontSize)||1)).toFixed(2) : '';
+  const inline = p.el.style.fontFamily || '';
+  document.querySelectorAll('[data-role]').forEach(b=>
+    b.classList.toggle('on', inline.includes(b.dataset.role)));
+  // 這一頁若沒有 theme 的字體變數，按下去會寫入一個解不開的 var()，畫面毫無
+  // 反應。原本是靜靜地什麼都沒發生，看起來像壞掉；現在停用並講原因。
+  // 逐一檢查而不是「有沒有任何一個」：deck 可能只定義了其中一兩個角色。
+  const rootCs = frame.contentWindow.getComputedStyle(doc().documentElement);
+  const missing = [];
+  document.querySelectorAll('[data-role]').forEach(b=>{
+    const ok = !!rootCs.getPropertyValue(b.dataset.role).trim();
+    b.disabled = !ok;
+    b.title = ok ? '' : `這一頁沒有定義 ${b.dataset.role}`;
+    if(!ok) missing.push(b.dataset.role);
+  });
+  $('#roleNote').textContent = !missing.length ? ''
+    : missing.length === ROLES.length
+      ? '這一頁沒有 theme 字體變數，字體角色無法套用'
+      : `這一頁缺少 ${missing.join('、')}`;
+  // 色票直接從這份 deck 的 :root 變數來，改色就不會跑出設計系統之外
+  const vars = themeVars();
+  $('#sw').innerHTML = [...vars.entries()]
+    .filter(([,v]) => /^(#|rgb|hsl)/i.test(v))
+    .map(([k,v]) => `<button class="sw" data-var="${k}" title="${k}" style="background:${v}"></button>`)
+    .join('');
+  $('#sw').querySelectorAll('.sw').forEach(b=>
+    b.onclick = ()=> applyStyle('color', `var(${b.dataset.var})`));
+}
+// ------------------------------------------------------- 複製 / 貼上文字樣式
+// 只搬「看得到的文字外觀」，不碰位置與尺寸 —— 那是 data-ed 那一層的事。
+const STYLE_PROPS = ['font-family','font-size','font-weight','font-style','line-height',
+  'letter-spacing','word-spacing','color','text-transform','text-align',
+  'text-decoration-line','font-variant-numeric'];
+let styleClip = null;
+
+const normFam = v => (v||'').replace(/["']/g,'').replace(/\s*,\s*/g,',').trim().toLowerCase();
+
+// 把解析後的字體堆疊換回 theme 的角色變數。**這一步不能省**：computed 的
+// font-family 是展開後的字體名稱，而 build_deck.py 打包時只改寫
+// --display-font / --body-font / --label-font 這三個變數，不會動元素上的
+// font-family。寫死名稱的話，這段字在你機器上對、換一台就掉字。
+function familyAsRole(resolved){
+  const d = doc(); if(!d) return null;
+  const rootCs = d.defaultView.getComputedStyle(d.documentElement);
+  for(const r of ROLES){
+    const v = rootCs.getPropertyValue(r);
+    if(v && normFam(v) === normFam(resolved)) return r;
+  }
+  return null;
+}
+
+function copyStyle(){
+  const p = primary(); if(!p){ msg('先選一個元素','err'); return; }
+  const cs = frame.contentWindow.getComputedStyle(p.el);
+  const out = {};
+  STYLE_PROPS.forEach(k=>{
+    const v = cs.getPropertyValue(k);
+    if(v && v !== 'normal' && v !== 'none' && v !== 'auto') out[k] = v;
+  });
+  const role = familyAsRole(cs.fontFamily);
+  if(role) out['font-family'] = `var(${role})`;
+  styleClip = out;
+  $('#btnPasteStyle').disabled = false;
+  const roleName = role ? ({'--display-font':'標題字','--body-font':'內文字','--label-font':'標籤字'})[role] : '自訂字體';
+  $('#clipInfo').textContent = `${roleName} · ${out['font-size']||''} · `
+    + `${out['font-style']==='italic'?'斜體 · ':''}${out['font-weight']||''}`;
+  msg('已複製文字樣式','ok');
+}
+
+function pasteStyle(){
+  if(!styleClip){ msg('還沒有複製任何樣式','err'); return; }
+  if(!sels.length){ msg('先選一個元素','err'); return; }
+  pushUndo();
+  sels.forEach(s=> Object.entries(styleClip).forEach(([k,v])=> s.el.style.setProperty(k,v)));
+  drawBox(); persist(); syncType();
+  msg(`已套用到 ${sels.length} 個元素`,'ok');
+}
+$('#btnCopyStyle').onclick = copyStyle;
+$('#btnPasteStyle').onclick = pasteStyle;
+
+function applyStyle(prop, val, token){
+  if(!sels.length) return;
+  pushUndo(token);
+  sels.forEach(s=>{
+    if(val === '') s.el.style.removeProperty(prop);
+    else s.el.style.setProperty(prop, val);
+    if(!s.el.getAttribute('style')) s.el.removeAttribute('style');
+  });
+  drawBox(); persist();
+}
+document.querySelectorAll('[data-role]').forEach(b=> b.onclick = ()=>{
+  const on = b.classList.contains('on');
+  applyStyle('font-family', on ? '' : `var(${b.dataset.role})`);
+  syncType();
+});
+$('#ffs').addEventListener('change', ()=>{
+  const v = parseFloat($('#ffs').value);
+  applyStyle('font-size', v ? v+'px' : '', 'fsize'); syncType();
+});
+$('#flh').addEventListener('change', ()=>{
+  const v = parseFloat($('#flh').value);
+  applyStyle('line-height', v ? String(v) : '', 'flh'); syncType();
+});
+
+// 插入文字框：跟圖片一樣是 .ovr-ins，但預設吃 theme 的內文字，才不會像外來物
+$('#btnText').onclick = ()=>{
+  const d = doc(); if(!d) return;
+  pushUndo();
+  const m = {kind:'insert', type:'text', x:420, y:300, w:440, h:90, rot:0, z:60};
+  const el = d.createElement('div');
+  el.className = 'ovr-ins';
+  el.style.cssText = `position:absolute;left:${m.x}px;top:${m.y}px;width:${m.w}px;`
+    + `height:${m.h}px;transform:rotate(0deg);transform-origin:center center;`
+    + `z-index:${m.z};font-family:var(--body-font);font-size:24px;line-height:1.6;`;
+  el.textContent = '雙擊編輯文字';
+  el.dataset.ed = JSON.stringify(m);
+  d.body.appendChild(el);
+  select(el, false); persist(); msg('已插入文字框，雙擊即可編輯','ok');
+};
+
+// ------------------------------------------------------------- 檔案挑選器
+async function browse(path){
+  const r = await fetch('/api/browse' + (path ? '?path='+encodeURIComponent(path) : ''));
+  const j = await r.json();
+  $('#pkPath').textContent = j.path;
+  const rows = [];
+  if(j.parent) rows.push(`<div class="pkrow" data-go="${j.parent}"><span class="n">‹ 上一層</span></div>`);
+  j.entries.forEach(e=> rows.push(
+    `<div class="pkrow ${e.isDeck?'deck':''}" data-go="${e.path}" data-deck="${e.isDeck?1:0}">`
+    + `<span class="n">${e.name}</span>`
+    + `<span class="c">${e.slides ? e.slides+' 頁' : ''}</span></div>`));
+  $('#pkList').innerHTML = rows.join('') || '<div class="pkrow"><span class="n">（空的）</span></div>';
+  $('#pkList').querySelectorAll('[data-go]').forEach(d=> d.onclick = async ()=>{
+    if(d.dataset.deck === '1'){
+      const j2 = await post('/api/open', {path: d.dataset.go});
+      if(!j2.ok) return;
+      S.slides = j2.slides; S.edited = j2.edited; S.stamp = j2.stamp; S.slide = null;
+      S.deckPath = j2.deckPath;          // 下次開挑選器要從新的 deck 開始瀏覽
+      Object.keys(undoStacks).forEach(k=>delete undoStacks[k]);
+      Object.keys(redoStacks).forEach(k=>delete redoStacks[k]);
+      dropHistory(null);                 // 換 deck，舊 deck 的歷史留著沒有意義
+      $('#picker').classList.remove('on');
+      renderList(); if(S.slides.length) open(S.slides[0]);
+      setSaveState('saved'); msg(`已開啟 ${j2.deck}`,'ok');
+    }else browse(d.dataset.go);
+  });
+}
+$('#btnOpen').onclick = ()=>{ $('#picker').classList.add('on'); browse(S.deckPath || ''); };
+$('#pkCancel').onclick = ()=> $('#picker').classList.remove('on');
+$('#picker').onclick = ev=>{ if(ev.target === $('#picker')) $('#picker').classList.remove('on'); };
+
+
+// --------------------------------------------------------------- 文字動畫
+// 設定寫在元素的 data-anim（JSON），跟 Vanta 的 data-vanta 同一套做法：投影片
+// HTML 是唯一真相來源，面板重開時直接讀回來，不另外存一份側車。
+//
+// 執行期腳本是「第一次用到才注入這一頁」，跟 /api/vanta 下載效果檔同樣的
+// 用到才拿的模式。必須內嵌（不能外連），打包後才離線可用。
+const ANIM_EASES = {
+  expo:  't>=1?1:1-Math.pow(2,-10*t)',
+  quart: '1-Math.pow(1-t,4)',
+  cubic: '1-Math.pow(1-t,3)',
+};
+const ANIM_EASE_FN = {
+  expo:  t => t >= 1 ? 1 : 1 - Math.pow(2, -10 * t),
+  quart: t => 1 - Math.pow(1 - t, 4),
+  cubic: t => 1 - Math.pow(1 - t, 3),
+};
+const ANIM_DEFAULT = { effect: 'count', ease: 'expo', dur: 1400,
+                       dir: 'right', stagger: 120, order: 1 };
+
+// 注入到投影片裡的執行期。三件事非做不可，改之前先讀 CLAUDE.md 的說明：
+//  1. 編輯 iframe（frameElement.id === 'frame'）裡完全不跑 —— 存檔是序列化整份
+//     live DOM，數到一半存檔就把「3×」永久寫進原始檔。
+//  2. 歸零只在第一個 frame 真的跑起來之後做，另外掛 setTimeout 保險強制收尾。
+//     requestAnimationFrame 在背景分頁不會跑，少了這道保險，數字會停在 0。
+//  3. 捲離畫面就 reset，翻回這一頁才會重播。
+const ANIM_RUNTIME = `(function(){
+  var fe=null; try{fe=window.frameElement;}catch(e){}
+  if(fe && fe.id==='frame') return;
+  var E={${Object.entries(ANIM_EASES).map(([k,v])=>`${k}:function(t){return ${v};}`).join(',')}};
+  [].forEach.call(document.querySelectorAll('[data-anim]'),function(el){
+    var cfg; try{cfg=JSON.parse(el.getAttribute('data-anim'));}catch(e){return;}
+    if(!cfg||cfg.effect!=='count') return;
+    var raw=el.textContent, m=raw.match(/^(\\D*?)([\\d,]+(?:\\.\\d+)?)(.*)$/);
+    if(!m) return;
+    var n=parseFloat(m[2].replace(/,/g,'')); if(!isFinite(n)) return;
+    var dot=m[2].indexOf('.'), dp=dot<0?0:m[2].length-dot-1;
+    var pre=m[1], suf=m[3], DUR=cfg.dur||1400, ease=E[cfg.ease]||E.expo;
+    var t0=null,guard=null,done=false,started=false;
+    function restore(){ el.textContent=raw; }
+    function finish(){ if(done)return; done=true; clearTimeout(guard); restore(); }
+    function frame(ts){
+      if(done) return;
+      if(t0===null){ t0=ts; el.textContent=pre+(0).toFixed(dp)+suf; }
+      var t=Math.min(1,(ts-t0)/DUR);
+      if(t>=1) return finish();
+      el.textContent=pre+(n*ease(t)).toFixed(dp)+suf;
+      requestAnimationFrame(frame);
+    }
+    function start(){ if(started||done)return; started=true;
+      requestAnimationFrame(frame); guard=setTimeout(finish,DUR+1200); }
+    function reset(){ clearTimeout(guard); started=false; done=false; t0=null; restore(); }
+    var PIO=null; try{ if(fe&&window.parent!==window) PIO=window.parent.IntersectionObserver; }catch(e){}
+    if(PIO && fe.className.indexOf('slide-frame')>=0){
+      new PIO(function(es){ for(var i=0;i<es.length;i++) es[i].isIntersecting?start():reset(); },
+              {threshold:0.4}).observe(fe);
+    } else start();
+  });
+
+  // ---- 進場滑入 ----
+  var revs=[];
+  [].forEach.call(document.querySelectorAll('[data-anim]'),function(el){
+    var cfg; try{cfg=JSON.parse(el.getAttribute('data-anim'));}catch(e){return;}
+    if(!cfg||cfg.effect!=='reveal') return;
+    revs.push({el:el,cfg:cfg,ord:+cfg.order||0});
+  });
+  if(revs.length){
+    revs.sort(function(a,b){ return a.ord-b.ord; });
+    var OFF={right:'translateX(%dpx)',left:'translateX(-%dpx)',
+             up:'translateY(-%dpx)',down:'translateY(%dpx)'};
+    var CB={expo:'cubic-bezier(.16,1,.3,1)',quart:'cubic-bezier(.25,1,.5,1)',
+            cubic:'cubic-bezier(.33,1,.68,1)'};
+    // **一定要疊在既有 transform 之上，不能覆蓋。** 主題自己會用 transform 定位
+    // （translateY(-50%) 之類），而 data-ed 的位移也寫在同一個屬性上；直接指派
+    // 會把元素挪到別的地方去。所以先記下原本的 inline 值，結束時原樣寫回。
+    revs.forEach(function(r){
+      r.tf0=r.el.style.transform||''; r.op0=r.el.style.opacity||'';
+    });
+    var rDone=false,rGuard=null,rStarted=false;
+    function rShow(){                       // 一律回到「看得見而且位置正確」
+      if(rDone) return; rDone=true; clearTimeout(rGuard);
+      revs.forEach(function(r){
+        r.el.style.transition='';
+        r.el.style.transform=r.tf0; r.el.style.opacity=r.op0;
+        if(!r.tf0) r.el.style.removeProperty('transform');
+        if(!r.op0) r.el.style.removeProperty('opacity');
+      });
+    }
+    function rHide(){
+      revs.forEach(function(r){
+        var d=r.cfg.dist||28;
+        r.el.style.transition='none';
+        r.el.style.opacity='0';
+        r.el.style.transform=(r.tf0?r.tf0+' ':'')+
+          (OFF[r.cfg.dir]||OFF.right).replace('%d',d);
+      });
+    }
+    function rStart(){
+      if(rStarted||rDone) return; rStarted=true; clearTimeout(rGuard);
+      var stag=revs[0].cfg.stagger==null?120:+revs[0].cfg.stagger;
+      var dur=revs[0].cfg.dur||600, cb=CB[revs[0].cfg.ease]||CB.expo;
+      revs.forEach(function(r,i){
+        setTimeout(function(){
+          if(rDone) return;
+          r.el.style.transition='transform '+dur+'ms '+cb+', opacity '+dur+'ms '+cb;
+          r.el.style.transform=r.tf0; r.el.style.opacity=r.op0||'1';
+        }, i*stag+16);
+      });
+      // 同一道保險：轉場在背景分頁不一定跑得完，文字絕對不能留在隱形狀態
+      rGuard=setTimeout(rShow, revs.length*stag+dur+1200);
+    }
+    function rReset(){ clearTimeout(rGuard); rStarted=false; rDone=false; rHide(); }
+    rHide();
+    // **保險必須在「隱藏」的當下就上，不能等 rStart。** 數字滾動可以等，因為它
+    // 不先動文字；進場滑入一定要先藏起來，否則會閃一下。但 IntersectionObserver
+    // 在背景分頁完全不會觸發（跟 rAF 一樣），所以 rStart 可能永遠不會被呼叫 ——
+    // 實測就是這樣：8 個項目全部停在 opacity:0，整頁文字消失。沒人來啟動就自己現形。
+    rGuard=setTimeout(rShow,3000);
+    var PIO2=null; try{ if(fe&&window.parent!==window) PIO2=window.parent.IntersectionObserver; }catch(e){}
+    if(PIO2 && fe.className.indexOf('slide-frame')>=0){
+      new PIO2(function(es){ for(var i=0;i<es.length;i++) es[i].isIntersecting?rStart():rReset(); },
+               {threshold:0.4}).observe(fe);
+    } else rStart();
+  }
+})();`;
+
+function animCfg(el){
+  try{ return JSON.parse(el.dataset.anim); }catch(e){ return null; }
+}
+
+// 這一頁還有沒有人在用動畫？沒有就把執行期一起收掉，別留在檔案裡。
+function syncAnimRuntime(){
+  const d = doc(); if(!d) return;
+  const used = d.querySelectorAll('[data-anim]').length;
+  const tag = d.querySelector('script[data-anim-runtime]');
+  if(used && !tag){
+    // 用 createElement 而不是寫字串，這樣 editor.html 裡就不會出現一個
+    // 會把自己這個 script 提前結束掉的結束標籤
+    const s = d.createElement('script');
+    s.setAttribute('data-anim-runtime','');
+    s.textContent = ANIM_RUNTIME;
+    d.body.appendChild(s);
+  }else if(!used && tag){
+    tag.remove();
+  }
+}
+
+function applyAnim(){
+  if(!sels.length) return;
+  const effect = $('#aEffect').value;
+  pushUndo();
+  sels.forEach((s, i)=>{
+    if(!effect) s.el.removeAttribute('data-anim');
+    else if(effect === 'reveal'){
+      // 多選＝你正在「定義這一組的順序」，所以一律照點選先後重編 1..N，
+      // 不要沿用面板上的數字。面板顯示的是 primary() 的值，而 primary() 是
+      // **最後**選到的那一個 —— 拿它當起點，重套一次就會把 1..8 變成 8..15。
+      // 單選才用面板的值，那是「把這一個插到第幾個」的用法。
+      const order = sels.length > 1 ? i + 1 : (+$('#aOrder').value || 1);
+      s.el.dataset.anim = JSON.stringify({
+        effect, dir: $('#aDir').value, order,
+        stagger: +$('#aStagger').value, ease: $('#aEase').value,
+        dur: +$('#aDur').value });
+    }
+    else s.el.dataset.anim = JSON.stringify({
+      effect, ease: $('#aEase').value, dur: +$('#aDur').value });
+  });
+  syncAnimRuntime();
+  persist(); syncAnim();
+}
+
+// 面板內預覽。刻意不在投影片上跑：那會改 textContent，正是存檔會寫進檔案的東西。
+let aPrevTimer = null;
+function animPreview(){
+  clearTimeout(aPrevTimer);
+  const p = primary();
+  const raw = p ? p.el.textContent.trim() : '';
+  const m = raw.match(/^(\D*?)([\d,]+(?:\.\d+)?)(.*)$/);
+  const src = m ? raw : '7×';
+  const mm = m || src.match(/^(\D*?)([\d,]+(?:\.\d+)?)(.*)$/);
+  const to = parseFloat(mm[2].replace(/,/g,''));
+  const dot = mm[2].indexOf('.'), dp = dot<0?0:mm[2].length-dot-1;
+  const dur = +$('#aDur').value, ease = ANIM_EASE_FN[$('#aEase').value] || ANIM_EASE_FN.expo;
+  const out = $('#aPrev'), t0 = performance.now();
+  (function step(){
+    const t = Math.min(1, (performance.now()-t0)/dur);
+    out.textContent = t>=1 ? src : mm[1] + (to*ease(t)).toFixed(dp) + mm[3];
+    if(t<1) aPrevTimer = setTimeout(step, 16);
+  })();
+}
+
+function syncAnim(){
+  const p = primary(); if(!p) return;
+  const cfg = animCfg(p.el) || {};
+  const isRev = cfg.effect === 'reveal';
+  $('#aEffect').value = cfg.effect || '';
+  $('#aEase').value   = cfg.ease || ANIM_DEFAULT.ease;
+  $('#aDur').value    = cfg.dur  || (isRev ? 600 : ANIM_DEFAULT.dur);
+  $('#aDurN').textContent = $('#aDur').value;
+  $('#aDir').value    = cfg.dir || ANIM_DEFAULT.dir;
+  $('#aOrder').value  = cfg.order || nextAnimOrder();
+  $('#aStagger').value = cfg.stagger == null ? ANIM_DEFAULT.stagger : cfg.stagger;
+  $('#aStagN').textContent = $('#aStagger').value;
+  $('#aOrderN').textContent = '/ ' + revealCount();
+  document.querySelectorAll('.arev').forEach(r=> r.style.display = isRev ? 'flex' : 'none');
+  $('#aOpts').classList.toggle('on', !!cfg.effect);
+  // 沒有數字就沒有東西可以滾。與其讓人設定完發現沒反應，先講清楚。
+  // 「沒有數字」只擋數字滾動；進場滑入任何文字都能套
+  const hasNum = /[\d]/.test(p.el.textContent || '');
+  $('#aEffect').querySelector('[value=count]').disabled = !hasNum;
+  $('#aEffect').disabled = false;
+  $('#aNote').textContent = (!hasNum && cfg.effect === 'count')
+    ? '這個元素裡沒有數字，數字滾動沒有東西可以套用。'
+    : (cfg.effect ? '編輯時不播放，按「播放」看效果' : '');
+  // 完整理由放 title，面板上只留一行 —— 這段說明會一直掛在那，三行灰字太吵
+  $('#aNote').title = cfg.effect
+    ? '動畫會改文字內容，而存檔是序列化整份 live DOM。在編輯中的投影片上播放，'
+      + '數到一半存檔就會把「3×」永久寫進檔案。' : '';
+  if(cfg.effect === 'count') animPreview(); else $('#aPrev').textContent = '—';
+  $('#aPlay').disabled = cfg.effect !== 'count';
+  drawAnimOrder();
+}
+
+// 這一頁已經有幾個進場元素；新加的預設排在最後
+function revealEls(){
+  const d = doc(); if(!d) return [];
+  return [...d.querySelectorAll('[data-anim]')]
+    .map(el=>({el, cfg: animCfg(el) || {}}))
+    .filter(x=> x.cfg.effect === 'reveal')
+    .sort((a,b)=> (+a.cfg.order||0) - (+b.cfg.order||0));
+}
+const revealCount = () => revealEls().length;
+
+// 單選改順序＝把這一個搬到第 N 位，其他人讓位 —— 跟拖曳排序一樣的直覺。
+// 只改自己的號碼會留下重號和空號（把第 5 個改成 1，就會有兩個 1、沒有 5）。
+function reorderReveal(el, pos){
+  const rest = revealEls().filter(x=> x.el !== el);
+  const at = Math.max(0, Math.min(rest.length, (pos|0) - 1));
+  rest.splice(at, 0, {el, cfg: animCfg(el) || {}});
+  rest.forEach((x, i)=>{
+    const c = animCfg(x.el) || {};
+    c.order = i + 1;
+    x.el.dataset.anim = JSON.stringify(c);
+  });
+}
+const nextAnimOrder = () => revealCount() + 1;
+
+// 順序徽章畫在疊層上，不碰投影片 DOM
+function drawAnimOrder(){
+  const host = $('#animOrder'); if(!host) return;
+  const list = revealEls(), z = S.zoom;
+  host.innerHTML = list.map((x, i)=>{
+    if(!x.el.isConnected) return '';
+    const r = x.el.getBoundingClientRect();
+    const on = sels.some(s=> s.el === x.el) ? ' sel' : '';
+    return `<div class="ordBadge${on}" style="left:${r.left*z}px;top:${r.top*z}px">`
+         + `${x.cfg.order || i+1}</div>`;
+  }).join('');
+}
+
+$('#aEffect').onchange = ()=>{
+  const e = $('#aEffect').value;
+  if(e === 'reveal' && +$('#aDur').value > 900) $('#aDur').value = 600;
+  if(e === 'count'  && +$('#aDur').value < 900) $('#aDur').value = 1400;
+  $('#aDurN').textContent = $('#aDur').value;
+  applyAnim();
+};
+$('#aEase').onchange   = applyAnim;
+$('#aDur').oninput     = ()=>{ $('#aDurN').textContent = $('#aDur').value; };
+$('#aDur').onchange    = applyAnim;
+$('#aDir').onchange     = applyAnim;
+$('#aOrder').onchange   = ()=>{
+  const p = primary(); if(!p) return;
+  pushUndo();
+  reorderReveal(p.el, +$('#aOrder').value || 1);
+  persist(); syncAnim();
+};
+$('#aStagger').oninput  = ()=>{ $('#aStagN').textContent = $('#aStagger').value; };
+$('#aStagger').onchange = applyAnim;
+$('#aPlay').onclick    = animPreview;
+
+// ----------------------------------------------------------------- 播放
+let prIdx = 0;
+function present(on){
+  $('#present').classList.toggle('on', on);
+  if(on){ prIdx = Math.max(0, S.slides.indexOf(S.slide)); showPr(); }
+  else $('#prFrame').src = 'about:blank';
+}
+function showPr(){
+  const name = S.slides[prIdx]; if(!name) return;
+  $('#prFrame').src = '/slide/' + encodeURIComponent(name) + '?t=' + Date.now();
+  $('#prNum').textContent = `${prIdx+1} / ${S.slides.length}`;
+  fitPr();
+}
+function fitPr(){
+  // 等比縮放到視窗內，底部留 34px 給狀態列
+  const z = Math.min(window.innerWidth / 1280, (window.innerHeight - 34) / 720);
+  const f = $('#prFrame');
+  f.style.width = '1280px'; f.style.height = '720px';
+  f.style.transform = `scale(${z})`;
+}
+window.addEventListener('resize', ()=>{ if($('#present').classList.contains('on')) fitPr(); });
+$('#btnPlay').onclick = ()=> present(true);
+
+// 編輯時 #ov 蓋在投影片上（才選得到元素），互動示範因此點不到。
+// 這個開關暫時把 overlay 讓開，讓你直接操作 demo；再按一次回到編輯。
+let interact = false;
+$('#btnInteract').onclick = ()=>{
+  interact = !interact;
+  ov.style.pointerEvents = interact ? 'none' : '';
+  deselect();
+  $('#btnInteract').style.borderColor = interact ? 'var(--accent)' : '';
+  $('#btnInteract').style.color = interact ? 'var(--accent)' : '';
+  msg(interact ? '互動模式：可直接操作投影片裡的示範，選取暫停'
+               : '回到編輯模式');
+};
+
+// ----------------------------------------------------------------- 匯出
+$('#btnExport').onclick = async ()=>{
+  const out = $('#expOut');
+  out.className = ''; out.textContent = '打包中…（字體子集化要幾秒）';
+  $('#btnExport').disabled = true;
+  const j = await post('/api/export', {font:$('#expFont').value, nav:$('#expNav').value});
+  $('#btnExport').disabled = false;
+  if(j.ok){ out.className = 'ok'; out.textContent = `${j.output}（${j.kb} KB）`; }
+  else { out.className = 'err'; out.textContent = j.error || '打包失敗'; }
+};
+
+// ------------------------------------------------ 外部改動時重新載入
+// 只有別人（例如重跑 theme_*.py）動了檔案才會觸發。自己的存檔會從
+// /api/save 的回應更新 S.stamp，所以不會誤判。
+setInterval(async ()=>{
+  if(textMode || drag || dirty || saving) return;
+  try{
+    const s = (await (await fetch('/api/stamp')).json()).stamp;
+    if(S.stamp && s !== S.stamp){ S.stamp = s; msg('檔案被外部改動，重新載入','ok'); open(S.slide); }
+    S.stamp = s;
+  }catch(e){}
+}, 1200);
+
+setZoom(.75); load();
+</script>
+</body>
+</html>

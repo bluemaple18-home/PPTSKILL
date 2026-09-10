@@ -1,0 +1,26 @@
+# ---- 你的簡報內容，不進版控 ----------------------------------------
+# 編輯器透過檔案挑選器用絕對路徑開啟，不需要在 repo 裡
+decks/
+out/
+debug/
+
+# ---- 字體 -----------------------------------------------------------
+# LXGW WenKai TC 12MB，build_deck.py 的 ensure_font() 會自動下載
+fonts/LXGWWenKaiTC-Regular.ttf
+# NotoSerifTC-CJKcommon.otf 沒有下載來源，必須進版控（見 fonts/README.md）
+
+# ---- 外部 skill（各有自己的 upstream 與授權，見 README）-------------
+ppt-agent-skill/
+writing-skills/
+
+# 這幾個檔案的原始下載處，內容與 references/ 及 examples/ 重複
+Claude outputs/
+
+# ---- 金鑰：絕對不進版控，也絕對不會出現在打包後的 HTML ----
+.anthropic-key
+*.key
+
+# ---- 雜物 -----------------------------------------------------------
+__pycache__/
+*.pyc
+.DS_Store
