@@ -37,6 +37,7 @@ export async function buildDistribution({ archivePath, projectRoot = repoRoot } 
     await mkdir(resolve(bundle, 'core', 'design', 'materials'), { recursive: true });
     for (const file of ['golden-design-grammar.v1.json', 'golden-design-grammar.md', 'motion-baseline.md']) await cp(resolve(projectRoot, 'design', 'materials', file), resolve(bundle, 'core', 'design', 'materials', file));
     await cp(resolve(projectRoot, 'design', 'visual-route-contract.md'), resolve(bundle, 'core', 'design', 'visual-route-contract.md'));
+    await cp(resolve(projectRoot, 'design', 'company-style'), resolve(bundle, 'core', 'design', 'company-style'), { recursive: true });
     await cp(resolve(projectRoot, 'working-spec.md'), resolve(bundle, 'core', 'working-spec.md'));
     await writeFile(resolve(bundle, 'core', 'package.json'), `${JSON.stringify({ name: 'pptskill-core', version, private: true, type: 'module' }, null, 2)}\n`);
     await cp(resolve(projectRoot, 'distribution', 'adapters'), resolve(bundle, 'adapters'), { recursive: true });

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "id": "clickforce-dark",
+  "name": "Clickforce Dark",
+  "status": "owner_review_pending",
+  "sourceFingerprint": {
+    "sha256": "128fc9c0d8bdac9717bd540e8b6ec28ea812b79eb28ad7f352d040af6413a415",
+    "slideCount": 7,
+    "slideSize": "1280x720"
+  },
+  "style": {
+    "id": "clickforce-dark",
+    "name": "Clickforce Dark",
+    "coverArchetype": "full-bleed-editorial",
+    "layout": { "primaryMove": "full-bleed-type", "compositionLanguage": "executive" },
+    "density": "low",
+    "typography": {
+      "display": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', Arial, sans-serif",
+      "body": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', Arial, sans-serif",
+      "mono": "Arial, sans-serif"
+    },
+    "palette": { "canvas": "#191919", "text": "#ffffff", "muted": "#b8b8b8", "accent": "#ff122f", "surface": "#32070d" },
+    "spacing": { "unit": 8, "slidePadding": 55 },
+    "geometry": { "radius": 0, "borderWidth": 0 },
+    "motion": { "personality": "premium", "durationMs": 260, "easing": "ease-out", "reducedMotion": true },
+    "assetTreatment": "owner-supplied full-bleed brand fields; preserve source crops"
+  },
+  "assetFiles": {
+    "coverField": "assets/cover-field.png",
+    "agendaField": "assets/agenda-field.png",
+    "chapterField": "assets/chapter-field.png",
+    "contentGradient": "assets/content-gradient.png",
+    "contentObject": "assets/content-object.png",
+    "contentDark": "assets/content-dark.png",
+    "logoWhite": "assets/logo-white.png",
+    "logoColor": "assets/logo-color.png"
+  },
+  "measuredLayout": {
+    "targetSize": "1600x900",
+    "logoTopRight": { "x": 1322, "y": 40, "width": 247, "height": 57 },
+    "contentTitle": { "x": 55, "y": 45, "fontSize": 53 },
+    "coverTitle": { "x": 97, "y": 306, "fontSize": 100 },
+    "coverSubtitleFontSize": 40,
+    "coverRule": { "x": 110, "y": 461, "width": 401, "height": 6 }
+  },
+  "sourceCoverage": {
+    "cover": "present",
+    "agenda": "present",
+    "chapter": "present",
+    "darkContent": "present",
+    "lightContent": "present",
+    "chartLanguage": "source_not_present",
+    "tableLanguage": "source_not_present"
+  }
+}

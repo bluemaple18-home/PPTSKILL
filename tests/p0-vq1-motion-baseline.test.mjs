@@ -4,9 +4,11 @@ import test from 'node:test';
 import { buildMotionCss, buildMotionRuntimeScript, resolveMotionPreset } from '../runtime/motion-primitives.js';
 import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 import { buildStyleCoverPreview, compileStyleCandidates } from '../runtime/style-candidates.js';
+import { loadCompanyStylePack } from '../runtime/company-style-pack.js';
 
 const fullDeck = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
-const styleFixture = JSON.parse(await readFile(new URL('../fixtures/style-candidates.json', import.meta.url), 'utf8'));
+const styleFixtureSource = JSON.parse(await readFile(new URL('../fixtures/style-candidates.json', import.meta.url), 'utf8'));
+const styleFixture = { ...styleFixtureSource, companyStylePack: loadCompanyStylePack() };
 
 test('motion personality 只解析成 bounded portable preset', () => {
   const corporate = resolveMotionPreset({ personality: 'corporate', durationMs: 240, easing: 'ease-out' });

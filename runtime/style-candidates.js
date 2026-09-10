@@ -43,6 +43,11 @@ const rendererStructures = {
     dominantAxis: 'evidence-sequence', occupiedQuadrants: 'q1+q2+q3+q4',
     anchorCopyRelation: 'semantic-evidence', silhouette: 'stepped-information-band',
   },
+  'full-bleed-editorial': {
+    titleRegion: 'lower-left-overlay', anchorRegion: 'full-bleed-image-field', overlap: 'text-over-anchor',
+    dominantAxis: 'lower-left-rise', occupiedQuadrants: 'q1+q2+q3+q4',
+    anchorCopyRelation: 'overlay', silhouette: 'full-bleed-field',
+  },
 };
 
 const rendererSignatureText = (profile) => rendererStructuralFields
@@ -77,7 +82,7 @@ const validateStyleMaterial = (style) => {
   return null;
 };
 
-const compileCandidate = ({ kind, source, fixtureOnly = false }) => {
+const compileCandidate = ({ kind, source, fixtureOnly = false, brandAssets = null }) => {
   const style = normalizeStyle(source);
   const visualRoute = compileVisualRouteCandidate({
     coverArchetype: source.coverArchetype,
@@ -85,7 +90,7 @@ const compileCandidate = ({ kind, source, fixtureOnly = false }) => {
     motionPersonality: style.motion.personality,
   });
   const rendererStructure = getRendererStructuralSignature(visualRoute.coverArchetype);
-  const candidate = { kind, fixtureOnly, style, visualRoute, rendererStructure };
+  const candidate = { kind, fixtureOnly, style, visualRoute, rendererStructure, ...(brandAssets ? { brandAssets } : {}) };
   return { ...candidate, structuralSignature: rendererSignatureText(rendererStructure) };
 };
 
@@ -97,7 +102,7 @@ export function compileStyleCandidates({ content, companyStylePack, aiRoutes }) 
   let candidates;
   try {
     candidates = [
-      compileCandidate({ kind: 'company', source: companyStylePack.style, fixtureOnly: companyStylePack.fixtureOnly === true }),
+      compileCandidate({ kind: 'company', source: companyStylePack.style, fixtureOnly: companyStylePack.fixtureOnly === true, brandAssets: companyStylePack.assets }),
       ...aiRoutes.map((route) => compileCandidate({ kind: 'ai', source: route })),
     ];
   } catch (error) {
@@ -187,6 +192,10 @@ const archetypeMarkup = {
   'typography-hero': (content) => `${typographyAnchorMarkup(content)}${copyMarkup(content, 'type-copy')}`,
   'graphic-brand-field': (content) => `${brandAnchorMarkup(content)}${copyMarkup(content, 'brand-copy')}<p class="brand-folio">PPTSKILL / COVER</p>`,
   'information-led-cover': (content) => `${copyMarkup(content, 'information-copy')}${informationAnchorMarkup(content)}`,
+  'full-bleed-editorial': (content, style, route, assets) => {
+    if (!assets?.coverField || !assets?.logoWhite) throw new Error('Company cover 缺少可攜品牌素材。');
+    return `<div class="company-cover-field" style="background-image:url(&quot;${escapeHtml(assets.coverField)}&quot;)" aria-hidden="true"></div><img class="company-logo" src="${escapeHtml(assets.logoWhite)}" alt="Company logo">${copyMarkup(content, 'company-cover-copy')}<span class="company-cover-rule" data-effect-visual-anchor aria-hidden="true"></span>`;
+  },
 };
 
 const archetypeCss = {
@@ -194,6 +203,7 @@ const archetypeCss = {
   'typography-hero': `.stage{padding:58px 70px}.type-copy{position:absolute;left:70px;top:58px;width:1420px;z-index:2}.type-copy h1{margin-top:118px;font-size:116px;line-height:.94;letter-spacing:-.075em}.type-copy .subtitle{position:absolute;right:10px;top:670px;width:610px;margin:0;text-align:right}.type-monument{position:absolute;inset:0;overflow:hidden;color:transparent;opacity:.58;-webkit-text-stroke:3px var(--accent)}.type-monument::before{content:attr(data-glyphs);position:absolute;display:block;overflow:hidden;font:900 520px/.72 var(--display);letter-spacing:-.14em}.type-monument--edge::before{left:0;bottom:0;width:1600px;height:390px;white-space:nowrap}.type-monument--stack::before{right:70px;top:82px;width:330px;height:680px;white-space:normal;overflow-wrap:anywhere;font-size:300px;line-height:.92;letter-spacing:-.05em}.type-monument--outline::before{left:200px;bottom:0;width:1400px;height:440px;font-size:590px;white-space:nowrap}`,
   'graphic-brand-field': `.stage{padding:66px 72px}.brand-field{position:absolute;left:-80px;right:-80px;top:330px;height:650px;background:var(--surface);clip-path:polygon(0 24%,44% 0,100% 14%,100% 100%,0 100%);overflow:hidden}.brand-rhythm{position:absolute;left:560px;right:-80px;top:80px;bottom:28px;display:flex;flex-direction:column;gap:18px;transform:rotate(-7deg)}.brand-rhythm span{display:block;height:48px;width:var(--module);margin-left:var(--shift);background:var(--accent)}.brand-field--falling .brand-rhythm{transform:rotate(7deg);align-items:flex-end}.brand-field--alternating .brand-rhythm span:nth-child(even){margin-left:calc(var(--shift) + 150px);background:var(--canvas)}.brand-copy{position:absolute;left:72px;top:70px;width:1250px;z-index:2}.brand-copy h1{font-size:98px;line-height:.98;margin-top:78px}.brand-copy .subtitle{width:640px;margin-top:42px}.brand-folio{position:absolute;right:72px;bottom:42px;margin:0;font:800 16px/1 var(--mono);letter-spacing:.18em;z-index:3}`,
   'information-led-cover': `.stage{padding:60px 68px}.information-copy{position:absolute;right:68px;top:58px;width:760px;z-index:3}.information-copy h1{font-size:76px;line-height:1;margin-top:54px}.information-copy .subtitle{position:absolute;right:0;top:650px;width:560px;margin:0;text-align:right;font-size:22px}.information-sequence{position:absolute;left:0;top:0;width:1120px;height:850px;margin:0;padding:0;list-style:none}.information-sequence li{position:absolute;width:600px;min-height:116px;border-top:3px solid var(--accent);padding:18px 18px 14px 112px;background:var(--canvas);color:var(--text)}.information-sequence li::after{content:"";position:absolute;left:54px;top:100%;width:2px;height:104px;background:var(--muted);transform:rotate(-42deg);transform-origin:top}.information-sequence li:last-child::after{display:none}.information-sequence li:nth-child(1){left:68px;top:180px}.information-sequence li:nth-child(2){left:250px;top:398px}.information-sequence li:nth-child(3){left:432px;top:616px;width:660px}.information-sequence li:nth-child(4){left:720px;top:690px;width:580px}.information-sequence span{position:absolute;left:18px;top:16px;font:800 20px/1 var(--mono);color:var(--accent)}.information-sequence b{display:block;font:800 28px/1.25 var(--display)}.information-fallback{position:absolute;left:68px;right:68px;bottom:88px;height:190px;border-top:3px solid var(--accent);display:flex;align-items:flex-end;justify-content:space-between;padding:0 0 24px}.information-fallback span{width:68%;height:26px;background:var(--surface)}.information-fallback b{font:700 16px/1 var(--mono);color:var(--muted)}`,
+  'full-bleed-editorial': `.stage{padding:0;background:#191919;border:0}.company-cover-field{position:absolute;inset:0;background-position:center;background-size:cover}.company-logo{position:absolute;right:31px;top:40px;width:247px;height:auto;z-index:3}.company-cover-copy{position:absolute;left:97px;top:286px;width:1290px;z-index:2}.company-cover-copy .identity{display:none}.company-cover-copy h1{margin:0;font-size:100px;line-height:1.08;letter-spacing:-.055em}.company-cover-copy .subtitle{width:1060px;margin-top:88px;color:#fff;font-size:40px;line-height:1.35}.company-cover-rule{position:absolute;left:110px;top:568px;width:401px;height:6px;background:var(--accent);z-index:2}`,
 };
 
 const buildRouteEffectCss = (style, treatments) => {
@@ -214,7 +224,7 @@ export function buildStyleCoverPreview(candidate) {
   const render = archetypeMarkup[visualRoute.coverArchetype];
   if (!render) throw new Error(`尚無 cover renderer：${visualRoute.coverArchetype}`);
   const treatments = resolveRoleTreatments(visualRoute, ['title', 'visualAnchor', 'supportingCopy']);
-  const markup = render(content, style, visualRoute)
+  const markup = render(content, style, visualRoute, candidate.brandAssets)
     .replace('data-effect-title', `data-effect-title="${escapeHtml(treatments.byRole.title)}"`)
     .replace('data-effect-visual-anchor', `data-effect-visual-anchor="${escapeHtml(treatments.byRole.visualAnchor)}"`);
   const structureAttributes = rendererStructuralFields

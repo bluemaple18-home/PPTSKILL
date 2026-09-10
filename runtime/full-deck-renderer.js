@@ -5,6 +5,7 @@ import { buildMotionCss, buildMotionRuntimeScript } from './motion-primitives.js
 import { buildDeckEditorCss, buildDeckEditorMarkup, buildDeckEditorRuntimeScript } from './deck-editor.js';
 import { buildBrowserAssetOptimizerRuntimeScript } from './browser-asset-optimizer.js';
 import { buildPortableSizeGuardRuntimeScript } from './portable-size-guard.js';
+import { getCompanyStylePackByStyleId } from './company-style-pack.js';
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -64,9 +65,13 @@ const renderTypeVisual = (slide) => {
 
 const renderInformationSequence = (slide) => `<ol class="information-sequence" data-information-anchor data-semantic-source="content.keyPoints" data-effect-visual-anchor data-effect-role="visualAnchor">${slide.content.keyPoints.slice(0, 4).map((point, index) => `<li><span>${String(index + 1).padStart(2, '0')}</span><b>${escapeHtml(point)}</b></li>`).join('')}</ol>`;
 
-const renderWorldChrome = (slide, index, total, visualWorld) => {
+const renderWorldChrome = (slide, index, total, visualWorld, companyPack) => {
   if (visualWorld === 'typography-hero') return `<p class="slide-folio" data-editor-folio="plain">${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</p>${renderTypeVisual(slide)}<span class="effect-rule" data-effect-role="diagram" aria-hidden="true"></span>`;
   if (visualWorld === 'information-led') return `<p class="system-folio" data-editor-folio="system">SYS.${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</p><span class="system-axis" data-effect-role="diagram" aria-hidden="true"></span>`;
+  if (visualWorld === 'company-dark') {
+    const logo = slide.composition.variant === 'company-closing-light' ? companyPack?.assets.logoColor : companyPack?.assets.logoWhite;
+    return `<img class="company-logo" src="${attr(logo)}" alt="Company logo" data-effect-role="image"><p class="company-folio">${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</p>`;
+  }
   return '';
 };
 
@@ -82,8 +87,8 @@ const primitiveRenderers = {
 
 const applyEffectTreatments = (markup, treatments) => markup.replace(/data-effect-role="([^"]+)"/g, (match, role) => `${match} data-effect-treatment="${attr(treatments.byRole[role] || 'none')}"`);
 
-const renderSlide = (slide, index, total, visualWorld, treatments) => {
-  const markup = `${renderWorldChrome(slide, index, total, visualWorld)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
+const renderSlide = (slide, index, total, visualWorld, treatments, companyPack) => {
+  const markup = `${renderWorldChrome(slide, index, total, visualWorld, companyPack)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
   return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}">${applyEffectTreatments(markup, treatments)}</section>`;
 };
 
@@ -128,14 +133,30 @@ const informationLedCss = `
 const resolveVisualWorld = (style) => ({
   'editorial-rail': 'typography-hero',
   'technical-map': 'information-led',
+  'full-bleed-type': 'company-dark',
 }[style.layout.primaryMove] || 'default');
-const buildVisualWorldCss = (visualWorld) => ({
-  'typography-hero': typographyHeroCss,
-  'information-led': informationLedCss,
-}[visualWorld] || '');
+const companyAssetUrl = (dataUri) => `url("${dataUri}")`;
+const buildCompanyDarkCss = (pack) => {
+  if (!pack) throw new Error('Company Style renderer 找不到 reviewed Style Pack。');
+  const { assets } = pack;
+  return `
+.deck[data-visual-world="company-dark"] .slide{border:0;padding:55px;background-color:#191919;background-position:center;background-size:cover;color:#fff}.deck[data-visual-world="company-dark"] .company-logo{position:absolute;right:31px;top:40px;width:247px;height:auto;z-index:5}.deck[data-visual-world="company-dark"] .company-folio{position:absolute;right:44px;bottom:28px;margin:0;color:rgba(255,255,255,.58);font:700 16px/1 Arial,sans-serif;letter-spacing:.1em}.deck[data-visual-world="company-dark"] h1,.deck[data-visual-world="company-dark"] h2{font-weight:800;letter-spacing:-.035em}.deck[data-visual-world="company-dark"] .subtitle{color:#fff}.deck[data-visual-world="company-dark"] .eyebrow{display:none}
+.deck[data-visual-world="company-dark"] .variant-company-cover{display:block;background-image:${companyAssetUrl(assets.coverField)}}.deck[data-visual-world="company-dark"] .variant-company-cover .cover-copy{position:absolute;left:97px;top:232px;width:1270px}.deck[data-visual-world="company-dark"] .variant-company-cover h1{width:1240px;font-size:82px;line-height:1.12}.deck[data-visual-world="company-dark"] .variant-company-cover h1::after{content:"";display:block;width:401px;height:6px;margin:30px 0 0 13px;background:var(--accent)}.deck[data-visual-world="company-dark"] .variant-company-cover .subtitle{width:1080px;margin-top:42px;font-size:32px}.deck[data-visual-world="company-dark"] .variant-company-cover .cover-signal{display:none}
+.deck[data-visual-world="company-dark"] .variant-company-agenda{display:block;background-image:${companyAssetUrl(assets.agendaField)}}.deck[data-visual-world="company-dark"] .variant-company-agenda header{position:absolute;left:96px;top:100px;width:980px}.deck[data-visual-world="company-dark"] .variant-company-agenda h2{font-size:74px}.deck[data-visual-world="company-dark"] .variant-company-agenda header::after{content:"";display:block;width:322px;height:5px;margin-top:36px;background:var(--accent)}.deck[data-visual-world="company-dark"] .variant-company-agenda .subtitle{font-size:28px}.deck[data-visual-world="company-dark"] .variant-company-agenda .point-list{position:absolute;left:96px;top:465px;width:1050px;display:grid;grid-template-columns:repeat(3,1fr);gap:38px}.deck[data-visual-world="company-dark"] .variant-company-agenda .point-list li{display:block;padding:18px 0;border-top:2px solid var(--accent)}.deck[data-visual-world="company-dark"] .variant-company-agenda .point-list span{display:block;margin-bottom:20px}.deck[data-visual-world="company-dark"] .variant-company-agenda .point-list p{font-size:23px}
+.deck[data-visual-world="company-dark"] .variant-company-chapter{display:block;background-image:${companyAssetUrl(assets.chapterField)}}.deck[data-visual-world="company-dark"] .variant-company-chapter .chapter-number{position:absolute;left:110px;top:330px;margin:0;color:var(--accent);font:900 74px/1 'Noto Sans',Arial,sans-serif}.deck[data-visual-world="company-dark"] .variant-company-chapter .section-copy{position:absolute;left:375px;top:273px;width:930px;padding:0;border:0}.deck[data-visual-world="company-dark"] .variant-company-chapter .section-copy::after{content:"";display:block;width:401px;height:6px;margin-top:36px;background:var(--accent)}.deck[data-visual-world="company-dark"] .variant-company-chapter h2{font-size:78px;line-height:1.15}.deck[data-visual-world="company-dark"] .variant-company-chapter .subtitle{font-size:30px}
+.deck[data-visual-world="company-dark"] .variant-company-content-gradient{display:block;background-image:${companyAssetUrl(assets.contentGradient)}}.deck[data-visual-world="company-dark"] .variant-company-content-gradient header,.deck[data-visual-world="company-dark"] .variant-company-content-object .split-copy,.deck[data-visual-world="company-dark"] .variant-company-content-dark header{position:absolute;left:55px;top:45px;width:1020px}.deck[data-visual-world="company-dark"] .variant-company-content-gradient h2,.deck[data-visual-world="company-dark"] .variant-company-content-object h2,.deck[data-visual-world="company-dark"] .variant-company-content-dark h2{font-size:53px}.deck[data-visual-world="company-dark"] .variant-company-content-gradient .subtitle,.deck[data-visual-world="company-dark"] .variant-company-content-object .subtitle,.deck[data-visual-world="company-dark"] .variant-company-content-dark .subtitle{font-size:22px}.deck[data-visual-world="company-dark"] .variant-company-content-gradient .point-list{position:absolute;left:55px;top:280px;width:920px}.deck[data-visual-world="company-dark"] .variant-company-content-gradient .point-list li{grid-template-columns:56px 1fr;padding:25px 0;border-color:rgba(255,255,255,.38)}.deck[data-visual-world="company-dark"] .variant-company-content-gradient .point-list p{font-size:27px}
+.deck[data-visual-world="company-dark"] .variant-company-content-object{display:block;background-image:linear-gradient(90deg,rgba(0,0,0,.62),rgba(0,0,0,.08)),${companyAssetUrl(assets.contentObject)}}.deck[data-visual-world="company-dark"] .variant-company-content-object .proof-panel{position:absolute;left:55px;bottom:80px;width:820px;padding:0;background:transparent}.deck[data-visual-world="company-dark"] .variant-company-content-object .proof-list{grid-template-columns:repeat(3,1fr);gap:28px}.deck[data-visual-world="company-dark"] .variant-company-content-object .proof-list li{display:block;padding:20px 0;border-top:3px solid var(--accent)}.deck[data-visual-world="company-dark"] .variant-company-content-object .proof-list span{display:block;margin-bottom:22px}.deck[data-visual-world="company-dark"] .variant-company-content-object .proof-list p{font-size:22px}
+.deck[data-visual-world="company-dark"] .variant-company-content-dark{display:block;background-image:${companyAssetUrl(assets.contentDark)}}.deck[data-visual-world="company-dark"] .variant-company-content-dark .process-steps{position:absolute;left:55px;right:55px;bottom:120px;display:grid;grid-template-columns:repeat(4,1fr);gap:34px}.deck[data-visual-world="company-dark"] .variant-company-content-dark .process-steps article{min-height:230px;padding:26px 0;background:transparent;border:0;border-top:4px solid var(--accent);border-radius:0}.deck[data-visual-world="company-dark"] .variant-company-content-dark .process-steps article::after{display:none}.deck[data-visual-world="company-dark"] .variant-company-content-dark .process-steps b{font-size:52px}.deck[data-visual-world="company-dark"] .variant-company-content-dark .process-steps p{font-size:22px}
+.deck[data-visual-world="company-dark"] .variant-company-closing-light{display:block;background:#f0f0f0;color:#161616}.deck[data-visual-world="company-dark"] .variant-company-closing-light .company-logo{width:247px}.deck[data-visual-world="company-dark"] .variant-company-closing-light .company-folio{color:#666}.deck[data-visual-world="company-dark"] .variant-company-closing-light .chapter-number{display:none}.deck[data-visual-world="company-dark"] .variant-company-closing-light .section-copy{position:absolute;left:100px;top:275px;width:1120px;padding:0;border:0}.deck[data-visual-world="company-dark"] .variant-company-closing-light h2{font-size:86px;line-height:1.12}.deck[data-visual-world="company-dark"] .variant-company-closing-light .subtitle{color:#333;font-size:30px}.deck[data-visual-world="company-dark"] .variant-company-closing-light .section-copy::after{content:"";display:block;width:401px;height:6px;margin-top:42px;background:var(--accent)}
+`;
+};
+const buildVisualWorldCss = (visualWorld, companyPack) => {
+  if (visualWorld === 'company-dark') return buildCompanyDarkCss(companyPack);
+  return ({ 'typography-hero': typographyHeroCss, 'information-led': informationLedCss })[visualWorld] || '';
+};
 
 const effectProfileFor = (visualWorld, style) => {
-  const coverArchetype = visualWorld === 'typography-hero' ? 'typography-hero' : 'information-led-cover';
+  const coverArchetype = visualWorld === 'typography-hero' ? 'typography-hero' : visualWorld === 'company-dark' ? 'full-bleed-editorial' : 'information-led-cover';
   const route = compileVisualRouteCandidate({ coverArchetype, motionPersonality: style.motion.personality });
   const treatments = resolveRoleTreatments(route, ['title', 'visualAnchor', 'image', 'diagram', 'metric', 'process', 'supportingCopy']);
   return { route, treatments };
@@ -148,8 +169,9 @@ export function renderFullDeck(input) {
   const errors = [...deckValidation.errors, ...compositionValidation.errors];
   if (errors.length) return { status: 'fail', errors };
   const visualWorld = resolveVisualWorld(spec.style);
+  const companyPack = visualWorld === 'company-dark' ? getCompanyStylePackByStyleId(spec.style.id) : null;
   const { route, treatments } = effectProfileFor(visualWorld, spec.style);
-  const slides = spec.slides.map((slide, index) => renderSlide(slide, index, spec.slides.length, visualWorld, treatments)).join('');
-  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
+  const slides = spec.slides.map((slide, index) => renderSlide(slide, index, spec.slides.length, visualWorld, treatments, companyPack)).join('');
+  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
   return { status: 'pass', html: embedDeckSpec(shell, spec), spec };
 }

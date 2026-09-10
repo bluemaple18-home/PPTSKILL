@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0",
+  "deckId": "clickforce-company-style-review",
+  "title": "公司風格代表頁",
+  "language": "zh-Hant",
+  "style": {
+    "id": "clickforce-dark",
+    "name": "Clickforce Dark",
+    "layout": { "primaryMove": "full-bleed-type", "compositionLanguage": "executive" },
+    "density": "low",
+    "typography": { "display": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', Arial, sans-serif", "body": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', Arial, sans-serif", "mono": "Arial, sans-serif" },
+    "palette": { "canvas": "#191919", "text": "#ffffff", "muted": "#b8b8b8", "accent": "#ff122f", "surface": "#32070d" },
+    "spacing": { "unit": 8, "slidePadding": 55 },
+    "geometry": { "radius": 0, "borderWidth": 0 },
+    "motion": { "personality": "premium", "durationMs": 260, "easing": "ease-out", "reducedMotion": true },
+    "assetTreatment": "owner-supplied full-bleed brand fields; preserve source crops"
+  },
+  "slides": [
+    {
+      "id": "company-cover",
+      "content": { "title": "讓策略轉化為可執行的成長路徑", "subtitle": "以一致的品牌語言，讓決策、證據與下一步清楚被看見", "keyPoints": ["策略對齊", "證據驗證", "行動落地"], "components": [] },
+      "composition": { "primitive": "cover", "variant": "company-cover", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+    },
+    {
+      "id": "company-agenda",
+      "content": { "title": "今日議程", "subtitle": "從現況、判斷到行動方案", "keyPoints": ["看見市場與使用者的真實訊號", "確認優先處理的核心問題", "建立可衡量的下一步"], "components": [] },
+      "composition": { "primitive": "title-points", "variant": "company-agenda", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "company-chapter",
+      "content": { "title": "從訊號找到成長機會", "subtitle": "先確認問題，再決定投入方式", "keyPoints": ["市場訊號", "使用者需求", "商業影響"], "components": [] },
+      "composition": { "primitive": "section-break", "variant": "company-chapter", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+    },
+    {
+      "id": "company-content-gradient",
+      "content": { "title": "核心判斷", "subtitle": "把分散觀察收斂成三個可行動的結論", "keyPoints": ["需求正在從單點工具轉向完整工作流", "可信任的驗證會直接影響採用速度", "下一階段應優先減少交付摩擦"], "components": [] },
+      "composition": { "primitive": "title-points", "variant": "company-content-gradient", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "company-content-object",
+      "content": { "title": "讓證據成為決策中心", "subtitle": "每個主張都能回到來源、影響與責任人", "keyPoints": ["來源可追溯", "影響可比較", "責任可交接"], "components": [] },
+      "composition": { "primitive": "split-proof", "variant": "company-content-object", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "company-content-dark",
+      "content": { "title": "下一步行動", "subtitle": "用清楚順序把策略落成可驗證的執行節點", "keyPoints": ["對齊成功條件", "建立最小方案", "完成代表驗證", "確認交付邊界"], "components": [] },
+      "composition": { "primitive": "process-flow", "variant": "company-content-dark", "slots": { "title": "content.title", "subtitle": "content.subtitle", "points": "content.keyPoints" } }
+    },
+    {
+      "id": "company-closing-light",
+      "content": { "title": "讓下一步清楚發生", "subtitle": "同一套品牌語言，從提案延伸到交付", "keyPoints": ["一致", "清楚", "可執行"], "components": [] },
+      "composition": { "primitive": "section-break", "variant": "company-closing-light", "slots": { "title": "content.title", "subtitle": "content.subtitle" } }
+    }
+  ]
+}

@@ -9,8 +9,10 @@ import {
   splitTitleLines,
   validateRouteDiversity,
 } from '../runtime/style-candidates.js';
+import { loadCompanyStylePack } from '../runtime/company-style-pack.js';
 
-const fixture = JSON.parse(await readFile(new URL('../fixtures/style-candidates.json', import.meta.url), 'utf8'));
+const fixtureSource = JSON.parse(await readFile(new URL('../fixtures/style-candidates.json', import.meta.url), 'utf8'));
+const fixture = { ...fixtureSource, companyStylePack: loadCompanyStylePack() };
 
 test('缺少 Company Style Pack 時明確 blocked，不捏造公司風格', () => {
   assert.equal(compileStyleCandidates({ ...fixture, companyStylePack: null }).status, 'blocked');
@@ -21,7 +23,8 @@ test('候選固定為 Company Style＋三個 dynamic AI routes 且共用相同�
   assert.equal(result.status, 'pass');
   assert.deepEqual(result.candidates.map(({ kind }) => kind), ['company', 'ai', 'ai', 'ai']);
   for (const candidate of result.candidates) assert.deepEqual(candidate.content, fixture.content);
-  assert.equal(result.candidates[0].fixtureOnly, true);
+  assert.equal(result.candidates[0].fixtureOnly, false);
+  assert.equal(result.candidates[0].style.id, 'clickforce-dark');
   assert.equal(new Set(result.candidates.slice(1).map(({ visualRoute }) => visualRoute.coverArchetype)).size, 3);
   for (const candidate of result.candidates) {
     assert.match(candidate.style.typography.display, /Microsoft JhengHei/);

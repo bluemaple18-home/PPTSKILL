@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "checks": {
+    "packValidated": true,
+    "sourceBoundary": true,
+    "noInventedChartOrTableLanguage": true,
+    "fourCoverContract": true,
+    "companyCoverPortable": true,
+    "sharedRenderer": true,
+    "deckSpecReopen": true,
+    "editorAndSizeGuard": true,
+    "portableSizePass": true,
+    "geometryBothViewports": true,
+    "motionRestingGeometry": true,
+    "companyCoverGeometry": true
+  },
+  "source": {
+    "sha256": "128fc9c0d8bdac9717bd540e8b6ec28ea812b79eb28ad7f352d040af6413a415",
+    "slideCount": 7,
+    "committedRawPptx": false
+  },
+  "companyStyle": {
+    "id": "clickforce-dark",
+    "status": "owner_review_pending",
+    "chartLanguage": "source_not_present",
+    "tableLanguage": "source_not_present"
+  },
+  "portableSize": {
+    "status": "pass",
+    "totalHtmlBytes": 2660697,
+    "embeddedAssetCount": 0,
+    "bytesByMime": {},
+    "largestAsset": null,
+    "warnings": [],
+    "limits": {
+      "warningBytes": 12582912,
+      "hardLimitBytes": 20971520
+    }
+  },
+  "geometry": {
+    "reduced": "pass",
+    "normal": "pass",
+    "companyCover": "pass",
+    "viewports": [
+      {
+        "width": 1600,
+        "height": 900
+      },
+      {
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "ownerVisualGate": "pending"
+}

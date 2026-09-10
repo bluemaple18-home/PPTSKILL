@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 WAITING FOR OWNER PPTX`；`P0-R11` blocked by R9
+**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 OWNER VISUAL GATE PENDING`；`P0-R11` blocked by R9
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -223,7 +223,7 @@ Current execution order:
 ```text
 P1-R10 Asset optimizer + portable size guard ✓
         ↓
-P1-R9 Company Style Pack ← WAITING FOR OWNER PPTX
+P1-R9 Company Style Pack ← AUTOMATED PASS / OWNER VISUAL GATE PENDING
         ↓
 P0-R11 End-to-end release gate
 ```
@@ -388,7 +388,7 @@ New small modules are allowed where they reduce monolithic hard-coded markup, e.
 6. Do not insert claim-bearing hard-coded demo copy such as `DECISION`, `DELIVERY`, `STORY`, `INPUT / STRUCTURE / STYLE / HTML` unless that copy is actually part of the approved deck content. Decorative folio / neutral non-semantic tokens are allowed.
 7. Add Chinese title-fit / orphan protection. Avoid 1–2 Chinese characters stranded on a final line when a safe layout / width / type-size adjustment can prevent it.
 8. Preview must render as a 16:9 stage that scales to the browser viewport without clipping while preserving the 1600×900 design coordinate system.
-9. Company Style remains explicitly `fixtureOnly` until P1-R9. Do not pretend the synthetic company fixture is a real brand-quality result.
+9. Company Style 已由 Owner 提供的 PPTX 建立 reviewed candidate；Owner Visual Gate 通過前仍不得標示 Company Style Pack COMPLETE。
 10. Replace the current generic selector-driven “everything fades/rises similarly” behavior with route-aware effect resolution from `effectLanguage` / `motionPersonality` + semantic roles.
 11. Cover effects may animate type, rules, masks, images, diagrams or brand devices, but must preserve the approved static composition and final geometry.
 12. Each route must still look intentionally designed with motion disabled; motion is enhancement, not the differentiator that makes the route acceptable.
@@ -661,8 +661,8 @@ ZIP:
 
 ## P1-R9 — Company PPTX → Company Style Pack
 
-**Priority:** P1 / OWNER ASSET REQUIRED  
-**Blocker:** real company PPTX not yet supplied to this project.
+**Priority:** P1 / OWNER REVIEW REQUIRED
+**Status:** AUTOMATED PASS；OWNER VISUAL GATE PENDING。
 
 Convert the one company PPTX into a reviewed Company Style Pack covering palette roles, fonts/fallbacks, identity placement, spacing/geometry, representative cover/content compositions, chart/table/shape language where present, and compatible HTML component-effect / motion language.
 
@@ -758,7 +758,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P1-R9 — Company Style Pack（WAITING FOR OWNER PPTX）.**
+**NEXT = P1-R9 — Company Style Pack（OWNER VISUAL GATE PENDING）.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -771,7 +771,7 @@ Implementation order is fixed until full-deck owner visual acceptance:
 7. `P0-R7` — COMPLETE；direct edit、supported component edit、image replacement、slide management、bounded local AI patch、sanitized save/reopen 與 dual-viewport geometry 全部通過。
 8. `P1-R8-A` — COMPLETE；local optional profile isolation 與 export integration PASS。
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
-10. `P1-R9` — BLOCKED；等待 Owner 提供 real company PPTX。
+10. `P1-R9` — AUTOMATED PASS；等待 Owner 針對中性代表頁 montage 裁決是否確實像公司簡報。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
 12. `P0-R11` — BLOCKED BY P1-R9；R9 與 R10 完成後執行 end-to-end release gate。
 

@@ -4,22 +4,8 @@
     "subtitle": "從需求釐清、風格選擇到可離線分享的單檔 HTML",
     "identity": "PPTSKILL · Dynamic Preview"
   },
-  "companyStylePack": {
-    "fixtureOnly": true,
-    "style": {
-      "id": "company-style-fixture",
-      "name": "Company Style · Fixture",
-      "coverArchetype": "minimal-institutional",
-      "layout": { "primaryMove": "asymmetric-grid", "compositionLanguage": "executive" },
-      "density": "medium",
-      "typography": { "display": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif", "body": "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif", "mono": "Menlo, monospace" },
-      "palette": { "canvas": "#f4f1e8", "text": "#171917", "muted": "#60645e", "accent": "#d6402c", "surface": "#e5e0d4" },
-      "spacing": { "unit": 8, "slidePadding": 64 },
-      "geometry": { "radius": 0, "borderWidth": 2 },
-      "motion": { "personality": "corporate", "durationMs": 240, "easing": "ease-out", "reducedMotion": true },
-      "assetTreatment": "documentary crop with restrained rules"
-    }
-  },
+  "companyStylePack": null,
+  "companyStylePackRef": "design/company-style/clickforce-dark/company-style-pack.json",
   "aiRoutes": [
     {
       "id": "route-technical-map", "name": "Technical Map",

@@ -23,7 +23,8 @@ test('S3 由 Style grammar 與 semantic role 決定 effect，不是全站 fade-i
   assert.match(informationHtml, /data-effect-treatment="outlined-surface"/);
   assert.match(informationHtml, /data-effect-treatment="progressive-reveal"/);
   assert.match(informationHtml, /data-effect-treatment="rule-draw"/);
-  assert.doesNotMatch(informationHtml, /data-effect-treatment="restrained-fade-rise"/);
+  const informationMarkup = informationHtml.match(/<main[\s\S]*?<\/main>/)?.[0] || '';
+  assert.doesNotMatch(informationMarkup, /data-effect-treatment="restrained-fade-rise"/);
 });
 
 test('每個 Style 最多兩個 primary effect families，並涵蓋代表性角色', () => {

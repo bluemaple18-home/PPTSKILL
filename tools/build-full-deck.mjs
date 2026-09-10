@@ -10,10 +10,12 @@ const route = routeIndex >= 0 ? process.argv[routeIndex + 1] : 'typography-hero'
 const outputIndex = process.argv.indexOf('--output');
 const output = outputIndex >= 0 ? process.argv[outputIndex + 1] : 'fixtures/full-deck.html';
 const baseSpec = JSON.parse(await readFile(resolve(root, 'fixtures/full-deck-spec.json'), 'utf8'));
-const spec = route === 'information-led'
+const spec = route === 'company'
+  ? JSON.parse(await readFile(resolve(root, 'fixtures/company-style-deck-spec.json'), 'utf8'))
+  : route === 'information-led'
   ? createInformationLedDeck(baseSpec, JSON.parse(await readFile(resolve(root, 'fixtures/style-candidates.json'), 'utf8')))
   : baseSpec;
-if (!['typography-hero', 'information-led'].includes(route)) throw new Error('--route 只接受 typography-hero 或 information-led。');
+if (!['typography-hero', 'information-led', 'company'].includes(route)) throw new Error('--route 只接受 typography-hero、information-led 或 company。');
 const result = renderFullDeck(spec);
 if (result.status !== 'pass') throw new Error(result.errors.join(' '));
 await writeFile(resolve(root, output), result.html);
