@@ -1,0 +1,5 @@
+你是收到 PPTSKILL 可攜式單檔簡報的第二個相容 AI。此目錄只有 deck.html；不得尋找或使用任何其他素材、原始簡報、repo 文件或對話紀錄。
+
+請讀取 deck.html 內的 script#deck-spec，確認 company-content-gradient 這一頁目前的 subtitle，然後只提出一個 bounded patch：把該 subtitle 改成更明確、可執行的繁體中文句子。不得改 slide id、其他欄位、其他頁、Style 或 Composition。
+
+只回傳符合指定 schema 的 JSON；expectedCurrent 必須逐字等於 HTML 中現值。

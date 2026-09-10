@@ -23,7 +23,8 @@ v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portab
 - PS-002：capability probe 與 validator 保留。
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3／R5 與 VQ2／VQ3：功能、visual-world portability 與 Owner visual/motion gates 已通過。
-- **`P1-R9 Company Style Pack` 與 `P1-R10 Asset optimizer / size guard` 已完成；當前 frontier 為 `P0-R11 End-to-end MVP Release Acceptance`。**
+- **`P0-R11 End-to-end MVP Release Acceptance` 已完成：18/18 release gates 與 110/110 regression tests PASS。**
+- 固定 release ZIP 為 `dist/PPTSKILL-0.1.0.zip`；SHA-256：`71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6`。
 
 ## Portable HTML editor
 

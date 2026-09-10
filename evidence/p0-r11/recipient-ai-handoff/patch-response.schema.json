@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["slideId", "field", "expectedCurrent", "replacement", "reason"],
+  "properties": {
+    "slideId": { "type": "string", "const": "company-content-gradient" },
+    "field": { "type": "string", "const": "subtitle" },
+    "expectedCurrent": { "type": "string", "const": "把分散觀察收斂成三個可行動的結論" },
+    "replacement": { "type": "string", "minLength": 8, "maxLength": 40 },
+    "reason": { "type": "string", "minLength": 4, "maxLength": 80 }
+  }
+}

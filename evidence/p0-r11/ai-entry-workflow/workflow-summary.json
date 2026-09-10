@@ -1,0 +1,71 @@
+{
+  "finalZipSha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
+  "finalZipCompanyPackSha256": "e92922773405d60eeb7f1864dcf722bcfd280b0bcddab909a2741bb3953b39a2",
+  "entryEvidence": {
+    "adapter": "codex",
+    "entryHash": "afedd65f713a64bba9ac6176a21a9c062805feb4b059f2ab7c89c3d5383ed558",
+    "readBeforeWorkflow": true,
+    "sharedCoreInstruction": true,
+    "grillInstruction": true,
+    "rendererInstruction": true,
+    "exportInstruction": true
+  },
+  "outlineValidation": {
+    "status": "pass",
+    "slideCount": 7
+  },
+  "coverCandidateIds": [
+    {
+      "id": "clickforce-dark",
+      "kind": "company"
+    },
+    {
+      "id": "route-technical-map",
+      "kind": "ai"
+    },
+    {
+      "id": "route-editorial-rail",
+      "kind": "ai"
+    },
+    {
+      "id": "route-split-proof",
+      "kind": "ai"
+    }
+  ],
+  "selectedStyle": "clickforce-dark",
+  "boundedUnits": [
+    {
+      "id": "unit-01",
+      "slideIds": [
+        "company-cover",
+        "company-agenda",
+        "company-chapter"
+      ]
+    },
+    {
+      "id": "unit-02",
+      "slideIds": [
+        "company-content-gradient",
+        "company-content-object",
+        "company-content-dark"
+      ]
+    },
+    {
+      "id": "unit-03",
+      "slideIds": [
+        "company-closing-light"
+      ]
+    }
+  ],
+  "canonicalDeckSpecHash": "512716a74dddf301e23079e67dd217f9d8897486aa5444cc9971476c08013ec9",
+  "slideContentHashes": {
+    "company-cover": "732e91ac213345bd0b857f648942c0d55d5f9da44ab0bf5dcce50f8dfb4e49db",
+    "company-agenda": "51925d3fe025754e21a04923005858e6b63d69470cc0e7f6ebef385ef87ce13b",
+    "company-chapter": "0ba90af9092c61513eb93cfd141231b406b11479ede4c51ab61ac639c2dc5a2e",
+    "company-content-gradient": "de41b4bddcfae806eb65070623a299fe08b2e1c08c8f352e30380f770fc00ea8",
+    "company-content-object": "7e4b6f62e0a3ed2377e22e7bd5828cd38d9d7a31cc01b2b5ddc1462fe3f5b299",
+    "company-content-dark": "4e13cad2d941b675c5931a04b9fb30a1a38f5d82b62f9ff04c5e4ce0bffab6ed",
+    "company-closing-light": "a06d7575a740040bb6f5fc40de975d171f67a2fca9744b8882229910b4ebb55a"
+  },
+  "sourcePolicy": "user-provided-only"
+}

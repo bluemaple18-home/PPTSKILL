@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-10T08:18:33.887Z",
+  "artifact": "route-split-proof.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 72,
+          "top": 163,
+          "right": 1322,
+          "bottom": 408,
+          "width": 1250,
+          "height": 245
+        },
+        "visualAnchor": {
+          "left": -80,
+          "top": 330,
+          "right": 1680,
+          "bottom": 980,
+          "width": 1760,
+          "height": 650
+        },
+        "supportingCopy": {
+          "left": 72,
+          "top": 450,
+          "right": 712,
+          "bottom": 487.6875,
+          "width": 640,
+          "height": 37.6875
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "upper-left-to-center",
+        "anchorRegion": "lower-full-width-bleed",
+        "overlap": "controlled",
+        "dominantAxis": "field-to-copy",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "field-enclosure",
+        "silhouette": "offstage-brand-field"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.045,
+          "y": 0.1811,
+          "width": 0.7813,
+          "height": 0.2722
+        },
+        "anchorRegion": {
+          "x": -0.05,
+          "y": 0.3667,
+          "width": 1.1,
+          "height": 0.7222
+        },
+        "overlap": true,
+        "dominantAxis": "vertical",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 57.60000228881836,
+          "top": 130.40000915527344,
+          "right": 1057.6000022888184,
+          "bottom": 326.3999938964844,
+          "width": 1000,
+          "height": 195.99998474121094
+        },
+        "visualAnchor": {
+          "left": -64,
+          "top": 264,
+          "right": 1344,
+          "bottom": 784,
+          "width": 1408,
+          "height": 520
+        },
+        "supportingCopy": {
+          "left": 57.60000228881836,
+          "top": 360,
+          "right": 569.6000633239746,
+          "bottom": 390.1499938964844,
+          "width": 512.0000610351562,
+          "height": 30.149993896484375
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "upper-left-to-center",
+        "anchorRegion": "lower-full-width-bleed",
+        "overlap": "controlled",
+        "dominantAxis": "field-to-copy",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "field-enclosure",
+        "silhouette": "offstage-brand-field"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.045,
+          "y": 0.1811,
+          "width": 0.7813,
+          "height": 0.2722
+        },
+        "anchorRegion": {
+          "x": -0.05,
+          "y": 0.3667,
+          "width": 1.1,
+          "height": 0.7222
+        },
+        "overlap": true,
+        "dominantAxis": "vertical",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "artifact": "dist/PPTSKILL-0.1.0.zip",
+  "declaredSha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
+  "independentSha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
+  "timezoneRebuilds": {
+    "America/Los_Angeles": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
+    "Asia/Tokyo": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6"
+  },
+  "deterministic": true
+}

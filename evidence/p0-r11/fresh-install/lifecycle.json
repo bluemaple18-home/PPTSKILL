@@ -1,0 +1,89 @@
+{
+  "preconditions": {
+    "isolatedHome": true,
+    "runtimeAbsentBeforeInstall": true,
+    "noGitDirectory": true,
+    "noNodeModules": true,
+    "requiresGit": false
+  },
+  "install": {
+    "status": "installed",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "version": "0.1.0"
+  },
+  "packageSmoke": {
+    "status": "pass",
+    "mode": "package",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "coreReady": true,
+    "oneSharedCore": true,
+    "manifestsReady": true,
+    "adapters": []
+  },
+  "codexSmoke": {
+    "status": "pass",
+    "mode": "adapter",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "coreReady": true,
+    "oneSharedCore": true,
+    "manifestsReady": true,
+    "adapters": [
+      {
+        "id": "codex",
+        "status": "recognized",
+        "message": "已辨識 Codex。",
+        "version": "codex-cli 0.148.0-alpha.9"
+      }
+    ]
+  },
+  "allSmoke": {
+    "status": "partial",
+    "mode": "all",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "coreReady": true,
+    "oneSharedCore": true,
+    "manifestsReady": true,
+    "adapters": [
+      {
+        "id": "codex",
+        "status": "recognized",
+        "message": "已辨識 Codex。",
+        "version": "codex-cli 0.148.0-alpha.9"
+      },
+      {
+        "id": "claude-code",
+        "status": "recognized",
+        "message": "已辨識 Claude Code。",
+        "version": "2.1.267 (Claude Code)"
+      },
+      {
+        "id": "gemini",
+        "status": "missing",
+        "message": "找不到 Gemini CLI；請確認 CLI 已安裝並位於 PATH。"
+      }
+    ]
+  },
+  "profile": {
+    "hashBeforeUpdate": "4a5f9f6a1707cdd1e327e028aa294322ee9018c69a985f68664693fe7867a049",
+    "hashAfterUpdate": "4a5f9f6a1707cdd1e327e028aa294322ee9018c69a985f68664693fe7867a049",
+    "hashAfterUninstall": "4a5f9f6a1707cdd1e327e028aa294322ee9018c69a985f68664693fe7867a049",
+    "mode": 384,
+    "preservedByUpdate": true,
+    "preservedByDefaultUninstall": true
+  },
+  "update": {
+    "status": "updated",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "version": "0.1.0"
+  },
+  "uninstall": {
+    "status": "uninstalled",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "profilePreserved": true
+  },
+  "reinstall": {
+    "status": "installed",
+    "installRoot": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime",
+    "version": "0.1.0"
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "entry": "<zip-root>/install.mjs",
+    "args": [],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"installed\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"version\": \"0.1.0\"\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/smoke.mjs",
+    "args": [],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"mode\": \"package\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"coreReady\": true,\n  \"oneSharedCore\": true,\n  \"manifestsReady\": true,\n  \"adapters\": []\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/smoke.mjs",
+    "args": [
+      "--adapter",
+      "codex"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"pass\",\n  \"mode\": \"adapter\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"coreReady\": true,\n  \"oneSharedCore\": true,\n  \"manifestsReady\": true,\n  \"adapters\": [\n    {\n      \"id\": \"codex\",\n      \"status\": \"recognized\",\n      \"message\": \"已辨識 Codex。\",\n      \"version\": \"codex-cli 0.148.0-alpha.9\"\n    }\n  ]\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/smoke.mjs",
+    "args": [
+      "--all"
+    ],
+    "exitCode": 2,
+    "stdout": "{\n  \"status\": \"partial\",\n  \"mode\": \"all\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"coreReady\": true,\n  \"oneSharedCore\": true,\n  \"manifestsReady\": true,\n  \"adapters\": [\n    {\n      \"id\": \"codex\",\n      \"status\": \"recognized\",\n      \"message\": \"已辨識 Codex。\",\n      \"version\": \"codex-cli 0.148.0-alpha.9\"\n    },\n    {\n      \"id\": \"claude-code\",\n      \"status\": \"recognized\",\n      \"message\": \"已辨識 Claude Code。\",\n      \"version\": \"2.1.267 (Claude Code)\"\n    },\n    {\n      \"id\": \"gemini\",\n      \"status\": \"missing\",\n      \"message\": \"找不到 Gemini CLI；請確認 CLI 已安裝並位於 PATH。\"\n    }\n  ]\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/profile.mjs",
+    "args": [
+      "show"
+    ],
+    "exitCode": 0,
+    "stdout": "尚未儲存個人偏好；這是正常狀態。",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/profile.mjs",
+    "args": [
+      "save",
+      "--input",
+      "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/profile.json",
+      "--remember"
+    ],
+    "exitCode": 0,
+    "stdout": "已儲存個人偏好：/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/profile.json",
+    "stderr": ""
+  },
+  {
+    "entry": "<zip-root>/update.mjs",
+    "args": [],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"updated\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"version\": \"0.1.0\"\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime/uninstall.mjs",
+    "args": [],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"uninstalled\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"profilePreserved\": true\n}",
+    "stderr": ""
+  },
+  {
+    "entry": "<zip-root>/install.mjs",
+    "args": [],
+    "exitCode": 0,
+    "stdout": "{\n  \"status\": \"installed\",\n  \"installRoot\": \"/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-r11-vjBZ5d/home/.pptskill/runtime\",\n  \"version\": \"0.1.0\"\n}",
+    "stderr": ""
+  }
+]

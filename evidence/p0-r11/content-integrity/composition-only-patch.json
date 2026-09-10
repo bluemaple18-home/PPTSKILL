@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "source": "editor-export/final-exported-deck.html",
+  "targetSlideId": "company-content-gradient",
+  "compositionBefore": {
+    "primitive": "title-points",
+    "variant": "company-content-gradient",
+    "slots": {
+      "title": "content.title",
+      "subtitle": "content.subtitle",
+      "points": "content.keyPoints"
+    }
+  },
+  "compositionAfter": {
+    "primitive": "title-points",
+    "variant": "company-content-dark",
+    "slots": {
+      "title": "content.title",
+      "subtitle": "content.subtitle",
+      "points": "content.keyPoints"
+    }
+  },
+  "compositionChanged": true,
+  "beforeContentHashes": {
+    "company-agenda": "51925d3fe025754e21a04923005858e6b63d69470cc0e7f6ebef385ef87ce13b",
+    "company-cover": "7f44a3f627969540d03415b93a42bec1b2fea55a7ed23c06e4a976f0427c5316",
+    "company-chapter": "0ba90af9092c61513eb93cfd141231b406b11479ede4c51ab61ac639c2dc5a2e",
+    "company-content-gradient": "de41b4bddcfae806eb65070623a299fe08b2e1c08c8f352e30380f770fc00ea8",
+    "company-content-object": "7e4b6f62e0a3ed2377e22e7bd5828cd38d9d7a31cc01b2b5ddc1462fe3f5b299",
+    "company-content-dark": "4e13cad2d941b675c5931a04b9fb30a1a38f5d82b62f9ff04c5e4ce0bffab6ed",
+    "company-closing-light": "a06d7575a740040bb6f5fc40de975d171f67a2fca9744b8882229910b4ebb55a",
+    "editor-text": "c0ff2046b65c688f6814aba90a2be41b34bdc76264ef5b8d149f478720e19be8",
+    "editor-image": "51c13773cb3d06cc9051ecc8d4c2217455c840e8e91887cc40aff61f7ddac7d2"
+  },
+  "afterContentHashes": {
+    "company-agenda": "51925d3fe025754e21a04923005858e6b63d69470cc0e7f6ebef385ef87ce13b",
+    "company-cover": "7f44a3f627969540d03415b93a42bec1b2fea55a7ed23c06e4a976f0427c5316",
+    "company-chapter": "0ba90af9092c61513eb93cfd141231b406b11479ede4c51ab61ac639c2dc5a2e",
+    "company-content-gradient": "de41b4bddcfae806eb65070623a299fe08b2e1c08c8f352e30380f770fc00ea8",
+    "company-content-object": "7e4b6f62e0a3ed2377e22e7bd5828cd38d9d7a31cc01b2b5ddc1462fe3f5b299",
+    "company-content-dark": "4e13cad2d941b675c5931a04b9fb30a1a38f5d82b62f9ff04c5e4ce0bffab6ed",
+    "company-closing-light": "a06d7575a740040bb6f5fc40de975d171f67a2fca9744b8882229910b4ebb55a",
+    "editor-text": "c0ff2046b65c688f6814aba90a2be41b34bdc76264ef5b8d149f478720e19be8",
+    "editor-image": "51c13773cb3d06cc9051ecc8d4c2217455c840e8e91887cc40aff61f7ddac7d2"
+  },
+  "changedContentSlides": [],
+  "renderedHtmlSha256": "ca58ef1c7dd29e394eb73c173dafcf90bbe9989e5c8db8181080afca82d93fd0"
+}

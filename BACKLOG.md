@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** `P1-R9`、`P1-R10` COMPLETE；current frontier = `P0-R11 END-TO-END RELEASE ACCEPTANCE`
+**Status:** MVP RELEASE ACCEPTANCE COMPLETE；`P0-R11` 18/18 PASS
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -225,7 +225,7 @@ P1-R10 Asset optimizer + portable size guard ✓
         ↓
 P1-R9 Company Style Pack ✓
         ↓
-P0-R11 End-to-end release gate ← CURRENT FRONTIER
+P0-R11 End-to-end release gate ✓
 ```
 
 ---
@@ -688,6 +688,7 @@ Do not build a generic PPTX importer. Presenton Template V2 remains an architect
 
 **Priority:** P0 RELEASE GATE  
 **Depends on:** P0-VQ1～VQ3, P0-R1～R7, P1-R8, P1-R10; P1-R9 required for the real Company Style slot.
+**Status:** COMPLETE — 18/18 release acceptance PASS；110/110 regression PASS；final ZIP SHA-256 `71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6`。
 
 E2E must prove:
 
@@ -758,7 +759,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-R11 — End-to-end MVP Release Acceptance.**
+**NEXT = MVP v0.1 release handoff；不得自行重開已封存架構與視覺卡。**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -773,7 +774,7 @@ Implementation order is fixed until full-deck owner visual acceptance:
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
 10. `P1-R9` — COMPLETE；Company Style Pack Owner Visual Gate PASS，兩項 variation guardrail 為非阻擋 note。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
-12. `P0-R11` — CURRENT FRONTIER；以固定最終 ZIP 跑 18 項 end-to-end release acceptance。
+12. `P0-R11` — COMPLETE；固定最終 ZIP 的 18 項 end-to-end release acceptance 全數 PASS。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

@@ -1,0 +1,9 @@
+{
+  "adapter": "codex",
+  "entryHash": "afedd65f713a64bba9ac6176a21a9c062805feb4b059f2ab7c89c3d5383ed558",
+  "readBeforeWorkflow": true,
+  "sharedCoreInstruction": true,
+  "grillInstruction": true,
+  "rendererInstruction": true,
+  "exportInstruction": true
+}

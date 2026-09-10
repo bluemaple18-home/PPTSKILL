@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "release": "PPTSKILL 0.1.0",
+  "gate": "P0-R11",
+  "status": "pass",
+  "completedAt": "2026-09-10",
+  "finalZip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "sha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6"
+  },
+  "summary": {
+    "pass": 18,
+    "fail": 0,
+    "pending": 0,
+    "regressionTests": "110/110 PASS"
+  },
+  "rows": [
+    {
+      "id": "R11-01",
+      "status": "pass",
+      "evidence": ["dist/PPTSKILL-0.1.0.zip", "dist/PPTSKILL-0.1.0.zip.sha256", "evidence/p0-r11/final-zip-sha256.txt", "evidence/p0-r11/checksum-verification.json"]
+    },
+    {
+      "id": "R11-02",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/fresh-install/command-trace.json"]
+    },
+    {
+      "id": "R11-03",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/entry-transcript.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json"]
+    },
+    {
+      "id": "R11-04",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/sanitized-material.json", "evidence/p0-r11/ai-entry-workflow/grill-trace.json"]
+    },
+    {
+      "id": "R11-05",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/outline-approved.json"]
+    },
+    {
+      "id": "R11-06",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/owner-visual/four-cover-montage.png", "evidence/p0-r11/browser-geometry/four-cover-montage.json", "evidence/p0-r11/browser-geometry/cover-clickforce-dark.json", "evidence/p0-r11/browser-geometry/cover-route-technical-map.json", "evidence/p0-r11/browser-geometry/cover-route-editorial-rail.json", "evidence/p0-r11/browser-geometry/cover-route-split-proof.json"]
+    },
+    {
+      "id": "R11-07",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/style-selection.json"]
+    },
+    {
+      "id": "R11-08",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/generation-plan.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json"]
+    },
+    {
+      "id": "R11-09",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/owner-visual/r9-owner-approved-montage.png", "evidence/p0-r11/owner-visual/release-company-montage.png", "evidence/p1-r9/company-style-pack-receipt.md"]
+    },
+    {
+      "id": "R11-10",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/browser-geometry/release-deck-normal.json", "evidence/p0-r11/browser-geometry/release-deck-reduced.json"]
+    },
+    {
+      "id": "R11-11",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/browser-geometry/release-deck-normal.json", "evidence/p0-r11/browser-geometry/release-deck-reduced.json"]
+    },
+    {
+      "id": "R11-12",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/editor-export/browser-journey.json", "evidence/p0-r11/editor-export/final-exported-deck.png"]
+    },
+    {
+      "id": "R11-13",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/editor-export/browser-journey.json", "evidence/p0-r11/editor-export/final-exported-deck.html"]
+    },
+    {
+      "id": "R11-14",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/editor-export/browser-journey.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json"]
+    },
+    {
+      "id": "R11-15",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/editor-export/browser-journey.json"]
+    },
+    {
+      "id": "R11-16",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/recipient-ai-handoff/recipient-prompt.txt", "evidence/p0-r11/recipient-ai-handoff/recipient-response.json", "evidence/p0-r11/recipient-ai-handoff/recipient-handoff.json", "evidence/p0-r11/recipient-ai-handoff/browser-reopen.json", "evidence/p0-r11/recipient-ai-handoff/recipient-patched-deck.html"]
+    },
+    {
+      "id": "R11-17",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/content-integrity/composition-only-patch.json", "evidence/p0-r11/editor-export/browser-journey.json", "evidence/p0-r11/recipient-ai-handoff/recipient-handoff.json"]
+    },
+    {
+      "id": "R11-18",
+      "status": "pass",
+      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/editor-export/browser-journey.json"]
+    }
+  ]
+}
