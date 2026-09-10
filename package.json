@@ -9,6 +9,7 @@
     "build:deck": "node tools/build-full-deck.mjs",
     "build:dist": "node tools/build-distribution.mjs",
     "probe:dist": "node tools/distribution-host-probe.mjs",
+    "qa:assets": "node tools/p1-r10-browser-acceptance.mjs",
     "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
     "test": "node --test tests/*.test.mjs"

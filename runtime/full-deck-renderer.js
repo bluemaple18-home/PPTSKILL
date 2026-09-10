@@ -3,6 +3,8 @@ import { validateDeckCompositions } from './composition-primitives.js';
 import { compileVisualRouteCandidate, resolveRoleTreatments } from './design-grammar.js';
 import { buildMotionCss, buildMotionRuntimeScript } from './motion-primitives.js';
 import { buildDeckEditorCss, buildDeckEditorMarkup, buildDeckEditorRuntimeScript } from './deck-editor.js';
+import { buildBrowserAssetOptimizerRuntimeScript } from './browser-asset-optimizer.js';
+import { buildPortableSizeGuardRuntimeScript } from './portable-size-guard.js';
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -148,6 +150,6 @@ export function renderFullDeck(input) {
   const visualWorld = resolveVisualWorld(spec.style);
   const { route, treatments } = effectProfileFor(visualWorld, spec.style);
   const slides = spec.slides.map((slide, index) => renderSlide(slide, index, spec.slides.length, visualWorld, treatments)).join('');
-  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${buildMotionRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
+  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
   return { status: 'pass', html: embedDeckSpec(shell, spec), spec };
 }

@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** `P1-R8 COMPLETE`；current frontier = `P1-R10`（P1-R9 等待 Owner asset）
+**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 WAITING FOR OWNER PPTX`；`P1-R11` blocked by R9
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -208,33 +208,25 @@ Keep the seven semantic primitives and DeckSpec-safe rendering path, but the cur
 
 # 3. Current frontier
 
-**STOP P0-R7.**
+## `P1-R10` — Asset optimization + portable size guard
+
+**Status:** `COMPLETE`（105/105 regression；browser acceptance 15/15）
+
+- Normalize embedded JPEG / PNG / WebP before committing replacement into canonical DeckSpec.
+- Preserve SVG vectors and GIF animation semantics.
+- Verify final `deck.html` with actual UTF-8 byte size and PASS / WARN / FAIL reporting.
+- Keep direct edit, image replacement and save/export on one guarded path.
+- Do not reopen VQ2, VQ3, R7 or R8.
 
 Current execution order:
 
 ```text
-P0-R0/R1/R2/R4/R6 complete
+P1-R10 Asset optimizer + portable size guard ✓
         ↓
-P0-R3 functional + cover visual acceptance complete
+P1-R9 Company Style Pack ← WAITING FOR OWNER PPTX
         ↓
-P0-VQ1 Portable design materials + Golden Design Grammar ✓
-        ↓
-P0-VQ2 Style candidate renderer + diversity/effect repair ✓
-        ↓
-P0-VQ3 Full-deck visual + component-effect vocabulary repair ← CURRENT FRONTIER
-        ↓
-P0-R7 Direct editor + portable export
-        ↓
-P1-R8 Profile + ZIP
-        ↓
-P1-R9 Company Style Pack (owner PPTX required)
-        ↓
-P1-R10 Asset optimizer
-        ↓
-P0-R11 End-to-end release
+P1-R11 End-to-end release gate
 ```
-
-P0-VQ2 owner approval is complete. Do not continue P0-R7 until P0-VQ3 proves full-deck visual-world extension while preserving geometry safety.
 
 ---
 
@@ -681,6 +673,7 @@ Do not build a generic PPTX importer. Presenton Template V2 remains an architect
 ## P1-R10 — Asset optimizer / single-file size guard
 
 **Priority:** P1 before release
+**Status:** COMPLETE — browser-native asset normalization and final UTF-8 size guard share the existing editor/export path.
 
 - downscale/compress raster images for actual presentation use;
 - preserve SVG/vector where practical;
@@ -765,7 +758,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P1-R10 — Asset optimizer / single-file size guard.**
+**NEXT = P1-R9 — Company Style Pack（WAITING FOR OWNER PPTX）.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -779,7 +772,8 @@ Implementation order is fixed until full-deck owner visual acceptance:
 8. `P1-R8-A` — COMPLETE；local optional profile isolation 與 export integration PASS。
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
 10. `P1-R9` — BLOCKED；等待 Owner 提供 real company PPTX。
-11. `P1-R10` — NEXT；asset optimizer / single-file size guard。
+11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
+12. `P1-R11` — BLOCKED BY P1-R9；R9 與 R10 完成後執行 end-to-end release gate。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

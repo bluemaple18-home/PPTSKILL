@@ -1,0 +1,143 @@
+{
+  "status": "pass",
+  "checks": {
+    "largeJpegReduced": true,
+    "pngTransparency": true,
+    "webpOptimized": true,
+    "svgPreserved": true,
+    "gifPreservedWithWarning": true,
+    "smallImageUnchanged": true,
+    "noUpscale": true,
+    "replacementExportReopen": true,
+    "recipientDeckSpec": true,
+    "sanitizer": true,
+    "geometry1600And1280": true,
+    "actualUtf8Bytes": true,
+    "largestAttribution": true,
+    "hardLimitNoArtifact": true,
+    "runtimeClean": true
+  },
+  "policy": {
+    "warningBytes": 12582912,
+    "hardLimitBytes": 20971520
+  },
+  "optimization": {
+    "jpeg": {
+      "mime": "image/jpeg",
+      "originalBytes": 200685,
+      "outputBytes": 96303,
+      "optimized": true,
+      "warnings": [],
+      "width": 2560,
+      "height": 1440,
+      "policyAction": "resize_and_recompress"
+    },
+    "png": {
+      "mime": "image/png",
+      "originalBytes": 112086,
+      "outputBytes": 116042,
+      "optimized": true,
+      "warnings": [],
+      "width": 2560,
+      "height": 1365,
+      "policyAction": "resize_and_recompress",
+      "alphaPreserved": true
+    },
+    "webp": {
+      "mime": "image/webp",
+      "originalBytes": 44902,
+      "outputBytes": 103010,
+      "optimized": true,
+      "warnings": [],
+      "width": 2560,
+      "height": 1404,
+      "policyAction": "resize_and_recompress"
+    },
+    "small": {
+      "mime": "image/jpeg",
+      "originalBytes": 999,
+      "outputBytes": 999,
+      "optimized": false,
+      "warnings": [],
+      "width": 80,
+      "height": 60,
+      "policyAction": "preserve_small",
+      "dataUriEqual": true
+    },
+    "svg": {
+      "mime": "image/svg+xml",
+      "originalBytes": 106,
+      "outputBytes": 106,
+      "optimized": false,
+      "warnings": [],
+      "policyAction": "preserve_vector",
+      "decodedEqual": true
+    },
+    "gif": {
+      "mime": "image/gif",
+      "originalBytes": 4194338,
+      "outputBytes": 4194338,
+      "optimized": false,
+      "warnings": [
+        "oversized_gif_preserved"
+      ],
+      "policyAction": "preserve_animation",
+      "preservedPrefix": true
+    }
+  },
+  "exportReport": {
+    "status": "pass",
+    "totalHtmlBytes": 324702,
+    "embeddedAssetCount": 1,
+    "bytesByMime": {
+      "image/jpeg": 96303
+    },
+    "largestAsset": {
+      "slideId": "portable",
+      "componentId": "portable-image",
+      "mime": "image/jpeg",
+      "bytes": 96303
+    },
+    "warnings": [],
+    "limits": {
+      "warningBytes": 12582912,
+      "hardLimitBytes": 20971520
+    }
+  },
+  "reopened": {
+    "ready": true,
+    "image": "data:image/jpeg;base64,",
+    "leak": false,
+    "size": {
+      "status": "pass",
+      "totalHtmlBytes": 324702,
+      "embeddedAssetCount": 1,
+      "bytesByMime": {
+        "image/jpeg": 96303
+      },
+      "largestAsset": {
+        "slideId": "portable",
+        "componentId": "portable-image",
+        "mime": "image/jpeg",
+        "bytes": 96303
+      },
+      "warnings": [],
+      "limits": {
+        "warningBytes": 12582912,
+        "hardLimitBytes": 20971520
+      }
+    }
+  },
+  "geometry": {
+    "sameAtBothViewports": true
+  },
+  "diagnostics": {
+    "pageErrors": [],
+    "networkFailures": [],
+    "httpErrors": []
+  },
+  "artifacts": {
+    "sourceDeck": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/p1-r10/asset-acceptance-source.html",
+    "exportedDeck": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/p1-r10/optimized-portable-deck.html"
+  }
+}

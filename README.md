@@ -23,13 +23,13 @@ v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portab
 - PS-002：capability probe 與 validator 保留。
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3／R5 與 VQ2／VQ3：功能、visual-world portability 與 Owner visual/motion gates 已通過。
-- **目前工程 frontier：`P1-R10 — Asset optimizer / single-file size guard`。`P1-R8` 已完成；`P1-R9` 等待 Owner company PPTX。**
+- **`P1-R10 — Asset optimizer / single-file size guard` 已完成。當前 frontier 是等待 Owner company PPTX 的 `P1-R9`；之後才進 `P1-R11` release gate。**
 
 ## Portable HTML editor
 
 完整 deck 右下角提供低干擾的「編輯文字」入口。進入編輯後可直接修改標題／副標／支援的文字區域，並可編輯 allowlist 元件、替換目前頁面的內嵌圖片、調整順序、複製、刪除與另存新 HTML。`window.PPTSKILLEditor.applyLocalPatch(...)` 只接受目前投影片的單一 `content.*` region，供本機 AI 做 bounded patch；沒有自由 x/y 拖拉，也沒有 Presenter Mode。
 
-另存時會重新建立 allowlist DeckSpec，移除編輯狀態並保留單檔離線 runtime。收件者只需要新 HTML，即可重新開啟編輯器或從 `script#deck-spec` 讀回 DeckSpec。
+圖片替換會先以 browser-native decode/canvas 最佳化 JPEG、PNG、WebP；SVG 保留 vector，GIF 保留動畫。另存時會重新建立 allowlist DeckSpec、移除編輯狀態，並以 UTF-8 實際 bytes 執行 12 MiB warning／20 MiB hard fail。收件者只需要新 HTML，即可重新開啟編輯器或從 `script#deck-spec` 讀回 DeckSpec。
 
 ## Local profile
 
