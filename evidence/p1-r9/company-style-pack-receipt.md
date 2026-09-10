@@ -2,9 +2,9 @@
 
 ## Status
 
-`AUTOMATED GATES: PASS / OWNER VISUAL GATE: PENDING`
+`P1-R9: COMPLETE / AUTOMATED GATES: PASS / OWNER VISUAL GATE: PASS`
 
-R9 在 Owner 確認代表頁確實像公司簡報之前，不得標示 COMPLETE，也不得進入 P0-R11 最終 release gate。
+Owner 於 2026-09-10 確認 Company Style 具清楚、可辨識的 Clickforce 公司簡報語言；R9 已封存，可進入 P0-R11。
 
 ## Source boundary
 
@@ -23,7 +23,13 @@ R9 在 Owner 確認代表頁確實像公司簡報之前，不得標示 COMPLETE�
 - 四封面 contract：Company Style＋三個 AI route PASS；公司封面使用既有 `full-bleed-editorial` grammar 與 shared renderer。
 - Company cover preview geometry：1600×900／1280×720 PASS；full-bleed background 依 renderer contract 視為構圖場，不誤報為內容碰撞。
 - Distribution candidate：Company Style rule、8 個必要品牌素材與 loader 均已進 ZIP；候選 ZIP SHA-256 `644335fed11699cb1b2b54c0c5cbb958408e062ee12993b2b9180c48f0a226aa`。此 SHA 只作 R9 packaging evidence，不是 P0-R11 final release SHA。
-- Owner evidence：`company-style-montage-1280x720.png` 已產生，等待裁決。
+- Owner evidence：`company-style-montage-1280x720.png`；正式 verdict = PASS。
+
+## Owner non-blocking notes
+
+- `company-content-gradient` 不得固化成所有低內容量頁的三 bullet 左排 recipe。
+- `company-content-dark` 四階段 sequence 不得成為所有 process slide 的固定公司模板。
+- 兩行大標 cover 為偏好版本；一行長標仍在 Company Style 合理範圍。
 
 ## Known source limits
 

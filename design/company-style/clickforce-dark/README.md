@@ -6,4 +6,4 @@
 - `company-style-calibration.md`：量測規則、已知限制與未提供項目。
 - `assets/`：由來源投影片取得、未由 AI 生成的 reviewed candidate 素材。
 
-目前狀態為 `OWNER VISUAL GATE PENDING`；Owner 通過代表頁前，不得標示 R9 COMPLETE。
+目前狀態為 `REVIEWED / OWNER VISUAL GATE PASS`；2026-09-10 已封存為 R11 的 Company Style dependency。

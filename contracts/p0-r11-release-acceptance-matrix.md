@@ -1,7 +1,7 @@
 # P0-R11 — End-to-end MVP Release Acceptance Matrix
 
-**Status:** PREPARED / BLOCKED BY P1-R9  
-**Purpose:** Define the replayable final-release evidence before the Company Style Pack exists. This document adds no product feature and is not release evidence by itself.
+**Status:** ACTIVE / ENTRY CONDITIONS SATISFIED
+**Purpose:** Define the replayable final-release evidence for the reviewed Company Style Pack. This document adds no product feature and is not release evidence by itself.
 
 ## Fixed release subject
 

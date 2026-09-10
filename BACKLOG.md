@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 OWNER VISUAL GATE PENDING`；`P0-R11` blocked by R9
+**Status:** `P1-R9`、`P1-R10` COMPLETE；current frontier = `P0-R11 END-TO-END RELEASE ACCEPTANCE`
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -223,9 +223,9 @@ Current execution order:
 ```text
 P1-R10 Asset optimizer + portable size guard ✓
         ↓
-P1-R9 Company Style Pack ← AUTOMATED PASS / OWNER VISUAL GATE PENDING
+P1-R9 Company Style Pack ✓
         ↓
-P0-R11 End-to-end release gate
+P0-R11 End-to-end release gate ← CURRENT FRONTIER
 ```
 
 ---
@@ -661,8 +661,8 @@ ZIP:
 
 ## P1-R9 — Company PPTX → Company Style Pack
 
-**Priority:** P1 / OWNER REVIEW REQUIRED
-**Status:** AUTOMATED PASS；OWNER VISUAL GATE PENDING。
+**Priority:** P1
+**Status:** COMPLETE；OWNER VISUAL GATE PASS（2026-09-10）。
 
 Convert the one company PPTX into a reviewed Company Style Pack covering palette roles, fonts/fallbacks, identity placement, spacing/geometry, representative cover/content compositions, chart/table/shape language where present, and compatible HTML component-effect / motion language.
 
@@ -758,7 +758,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P1-R9 — Company Style Pack（OWNER VISUAL GATE PENDING）.**
+**NEXT = P0-R11 — End-to-end MVP Release Acceptance.**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -771,9 +771,9 @@ Implementation order is fixed until full-deck owner visual acceptance:
 7. `P0-R7` — COMPLETE；direct edit、supported component edit、image replacement、slide management、bounded local AI patch、sanitized save/reopen 與 dual-viewport geometry 全部通過。
 8. `P1-R8-A` — COMPLETE；local optional profile isolation 與 export integration PASS。
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
-10. `P1-R9` — AUTOMATED PASS；等待 Owner 針對中性代表頁 montage 裁決是否確實像公司簡報。
+10. `P1-R9` — COMPLETE；Company Style Pack Owner Visual Gate PASS，兩項 variation guardrail 為非阻擋 note。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
-12. `P0-R11` — BLOCKED BY P1-R9；R9 與 R10 完成後執行 end-to-end release gate。
+12. `P0-R11` — CURRENT FRONTIER；以固定最終 ZIP 跑 18 項 end-to-end release acceptance。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

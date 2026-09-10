@@ -2,7 +2,8 @@
   "schemaVersion": "1.0",
   "id": "clickforce-dark",
   "name": "Clickforce Dark",
-  "status": "owner_review_pending",
+  "status": "reviewed",
+  "ownerReview": { "date": "2026-09-10", "verdict": "pass" },
   "sourceFingerprint": {
     "sha256": "128fc9c0d8bdac9717bd540e8b6ec28ea812b79eb28ad7f352d040af6413a415",
     "slideCount": 7,

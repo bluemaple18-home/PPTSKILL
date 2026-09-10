@@ -12,7 +12,8 @@ const styleSource = JSON.parse(await readFile(new URL('../fixtures/style-candida
 
 test('Company Style Pack 只保留來源指紋與 reviewed 規則，不保留本機來源路徑', () => {
   const pack = loadCompanyStylePack();
-  assert.equal(pack.status, 'owner_review_pending');
+  assert.equal(pack.status, 'reviewed');
+  assert.deepEqual(pack.ownerReview, { date: '2026-09-10', verdict: 'pass' });
   assert.equal(pack.sourceFingerprint.slideCount, 7);
   assert.equal(pack.sourceCoverage.chartLanguage, 'source_not_present');
   assert.equal(pack.sourceCoverage.tableLanguage, 'source_not_present');
