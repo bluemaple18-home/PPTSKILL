@@ -42,6 +42,7 @@ The machine-readable result will be written to `portable-size-acceptance.json`. 
 - Large JPEG: `3200×1800 / 200,685 bytes` → `2560×1440 / 96,303 bytes`.
 - Transparent PNG: normalized to `2560×1365`; alpha preserved.
 - WebP: normalized to `2560×1404` and reopened successfully.
+- `optimized` means policy-compliant dimension normalization, not a guarantee that every encoded asset becomes smaller. The PNG fixture changed `112,086 → 116,042 bytes`; the WebP fixture changed `44,902 → 103,010 bytes`. Final HTML bytes and visual quality remain the release criteria.
 - Geometry: unchanged at both `1600×900` and `1280×720` before/after replacement.
 - Exported HTML: `324,702` UTF-8 bytes; DeckSpec reopened from the single file; sanitizer leak = false.
 - Hard-limit download: blocked with zero release-artifact click.
@@ -51,4 +52,4 @@ The machine-readable result will be written to `portable-size-acceptance.json`. 
 
 ## Decision
 
-`P1-R10` is complete. Do not reopen visual grammar, renderer composition, motion, R7, or R8. Next is `P1-R9`, waiting for the Owner company PPTX; `P1-R11` remains blocked until R9 is complete.
+`P1-R10` is complete. Do not reopen visual grammar, renderer composition, motion, R7, or R8. Next is `P1-R9`, waiting for the Owner company PPTX; `P0-R11` remains blocked until R9 is complete.

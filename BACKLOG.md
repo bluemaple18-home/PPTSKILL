@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 WAITING FOR OWNER PPTX`；`P1-R11` blocked by R9
+**Status:** `P1-R10 COMPLETE`；current frontier = `P1-R9 WAITING FOR OWNER PPTX`；`P0-R11` blocked by R9
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -225,7 +225,7 @@ P1-R10 Asset optimizer + portable size guard ✓
         ↓
 P1-R9 Company Style Pack ← WAITING FOR OWNER PPTX
         ↓
-P1-R11 End-to-end release gate
+P0-R11 End-to-end release gate
 ```
 
 ---
@@ -773,7 +773,7 @@ Implementation order is fixed until full-deck owner visual acceptance:
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
 10. `P1-R9` — BLOCKED；等待 Owner 提供 real company PPTX。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
-12. `P1-R11` — BLOCKED BY P1-R9；R9 與 R10 完成後執行 end-to-end release gate。
+12. `P0-R11` — BLOCKED BY P1-R9；R9 與 R10 完成後執行 end-to-end release gate。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 
