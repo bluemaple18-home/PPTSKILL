@@ -124,7 +124,19 @@ const measureTitleToken = (token) => [...token].reduce(
 );
 
 export function splitTitleLines(title, maxUnits = 9) {
-  const tokens = String(title).trim().split(/\s+/).filter(Boolean);
+  const tokens = String(title).trim().split(/\s+/).filter(Boolean).flatMap((token) => {
+    if (measureTitleToken(token) <= maxUnits) return [token];
+    const chunks = [];
+    let chunk = '';
+    for (const character of token) {
+      if (chunk && measureTitleToken(`${chunk}${character}`) > maxUnits) {
+        chunks.push(chunk);
+        chunk = character;
+      } else chunk += character;
+    }
+    if (chunk) chunks.push(chunk);
+    return chunks;
+  });
   const lines = [];
   let current = '';
   for (const token of tokens) {
@@ -139,6 +151,17 @@ export function splitTitleLines(title, maxUnits = 9) {
   if (lines.length > 1 && finalHanCount <= 2) {
     const previousTokens = lines.at(-2).split(/\s+/);
     if (previousTokens.length > 1) lines.splice(-2, 2, previousTokens.slice(0, -1).join(' '), `${previousTokens.at(-1)} ${lines.at(-1)}`);
+    else {
+      const previousCharacters = [...lines.at(-2)];
+      const finalCharacters = [...lines.at(-1)];
+      let needed = 3 - finalHanCount;
+      while (needed > 0 && previousCharacters.length > 3) {
+        const moved = previousCharacters.pop();
+        finalCharacters.unshift(moved);
+        if (/\p{Script=Han}/u.test(moved)) needed -= 1;
+      }
+      lines.splice(-2, 2, previousCharacters.join(''), finalCharacters.join(''));
+    }
   }
   return lines;
 }

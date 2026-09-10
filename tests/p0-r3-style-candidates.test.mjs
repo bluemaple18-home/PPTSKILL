@@ -125,6 +125,13 @@ test('中文 title-fit 不留下 1–2 個中文字的孤行', () => {
   }
 });
 
+test('無空格長中文標題也依 unit 切行且不產生孤行', () => {
+  const lines = splitTitleLines('讓策略轉化為可執行的成長路徑', 9);
+  assert.ok(lines.length >= 2);
+  assert.ok(lines.every((line) => [...line].reduce((units, character) => units + (/\p{Script=Han}/u.test(character) ? 1 : 0.56), 0) <= 9));
+  assert.ok((lines.at(-1).match(/[\p{Script=Han}]/gu) || []).length >= 3);
+});
+
 test('route-aware effect 綁定 semantic role，reduced motion 顯示完整內容', () => {
   const result = compileStyleCandidates(fixture);
   for (const candidate of result.candidates.slice(1)) {
