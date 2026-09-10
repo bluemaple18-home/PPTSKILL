@@ -23,8 +23,7 @@ v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portab
 - PS-002：capability probe 與 validator 保留。
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3／R5 與 VQ2／VQ3：功能、visual-world portability 與 Owner visual/motion gates 已通過。
-- **`P0-R11 End-to-end MVP Release Acceptance` 已完成：18/18 release gates 與 110/110 regression tests PASS。**
-- 固定 release ZIP 為 `dist/PPTSKILL-0.1.0.zip`；SHA-256：`71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6`。
+- **`P0-R11-R1 Real AI Entry Enforcement` 為目前 release blocker。** 2026-09-10 真實 Claude Code 使用揭露舊版 adapter 只提供說明文件、沒有註冊為可發現 Skill，也沒有既有 HTML preservation gate；先前 R11 release claim 已暫停。
 
 ## Portable HTML editor
 
@@ -40,7 +39,7 @@ v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portab
 
 可發送的候選包位於 `dist/PPTSKILL-0.1.0.zip`。解壓後直接執行 `node install.mjs`，再執行 package-level `node smoke.mjs`；自己的 AI 入口以 `node smoke.mjs --adapter <codex|claude-code|gemini>` 驗證，release matrix 才使用 `--all`。不需要 clone repo、pnpm、branch、Git 或 GitHub token。更新使用新版 ZIP 內的 `node update.mjs`，移除 runtime 使用 `node uninstall.mjs`。uninstall 預設保留 profile；只有明確加上 `--purge-profile` 才刪除 canonical 個人偏好。
 
-ZIP 只有一份 `core/`；Codex、Claude Code、Gemini adapter 只保存 AI-facing `entry.md`、capability probe 與 shared-core 相對路徑。installer 不會自動修改 `.codex`、`.claude`、`.gemini`，不登入、不下載，也不寫 token。
+ZIP 只有一份 `core/`；Codex、Claude Code、Gemini adapter 共用同一份 `pptskill` Skill 與 deterministic workflow gate。明確執行 installer 時，會以 ownership marker 將 Skill 註冊到 user-scope skills 目錄；同名但非 PPTSKILL 擁有的 Skill 一律拒絕覆寫。installer 不登入、不下載，也不寫 token。
 
 `evidence/ps-003/*.png` 與 `fixtures/style-candidate-previews/*.html` 是歷史開發 evidence；目前 Owner gate 狀態以本頁與 `BACKLOG.md` 為準，不得據此重開 VQ2／VQ3。
 

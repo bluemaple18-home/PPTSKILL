@@ -41,6 +41,7 @@ export async function buildDistribution({ archivePath, projectRoot = repoRoot } 
     await cp(resolve(projectRoot, 'working-spec.md'), resolve(bundle, 'core', 'working-spec.md'));
     await writeFile(resolve(bundle, 'core', 'package.json'), `${JSON.stringify({ name: 'pptskill-core', version, private: true, type: 'module' }, null, 2)}\n`);
     await cp(resolve(projectRoot, 'distribution', 'adapters'), resolve(bundle, 'adapters'), { recursive: true });
+    await cp(resolve(projectRoot, 'distribution', 'skill'), resolve(bundle, 'skill'), { recursive: true });
     await cp(resolve(projectRoot, 'distribution', 'lib'), resolve(bundle, 'lib'), { recursive: true });
     for (const file of ['README.md', 'install.mjs', 'update.mjs', 'uninstall.mjs', 'smoke.mjs', 'profile.mjs']) await cp(resolve(projectRoot, 'distribution', file), resolve(bundle, file));
     const manifest = {
@@ -51,6 +52,7 @@ export async function buildDistribution({ archivePath, projectRoot = repoRoot } 
       adapters: ['codex', 'claude-code', 'gemini'],
       requiresGit: false,
       profilePath: '~/.pptskill/profile.json',
+      skillPath: 'skill/pptskill/SKILL.md',
     };
     await writeFile(resolve(bundle, 'package-manifest.json'), `${JSON.stringify(manifest, null, 2)}\n`);
     await mkdir(dirname(archive), { recursive: true });

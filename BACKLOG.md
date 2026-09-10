@@ -2,7 +2,7 @@
 
 **Updated:** 2026-09-10
 
-**Status:** MVP RELEASE ACCEPTANCE COMPLETE；`P0-R11` 18/18 PASS
+**Status:** `P0-R11-R1 REAL AI ENTRY ENFORCEMENT` ACTIVE；MVP release status suspended after real Claude Code entry failure
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -208,24 +208,24 @@ Keep the seven semantic primitives and DeckSpec-safe rendering path, but the cur
 
 # 3. Current frontier
 
-## `P1-R10` — Asset optimization + portable size guard
+## `P0-R11-R1` — Real AI Entry Enforcement
 
-**Status:** `COMPLETE`（105/105 regression；browser acceptance 15/15）
+**Status:** `ACTIVE / RELEASE BLOCKER`（S1/S2 COMPLETE；S3 PARTIAL）
 
-- Normalize embedded JPEG / PNG / WebP before committing replacement into canonical DeckSpec.
-- Preserve SVG vectors and GIF animation semantics.
-- Verify final `deck.html` with actual UTF-8 byte size and PASS / WARN / FAIL reporting.
-- Keep direct edit, image replacement and save/export on one guarded path.
-- Do not reopen VQ2, VQ3, R7 or R8.
+- Existing HTML defaults to `restyle-existing` and preserves slide IDs, order and content.
+- Content/order mutation requires an exact bounded change set plus explicit human approval.
+- ZIP installs one real, discoverable `pptskill` skill for Codex, Claude Code and Gemini CLI.
+- S1 deterministic gate and S2 portable lifecycle pass; S3 real CLI replay remains partial because of local CLI execution blockers.
+- Previous R11 release claim remains suspended until S3 passes.
 
 Current execution order:
 
 ```text
-P1-R10 Asset optimizer + portable size guard ✓
-        ↓
-P1-R9 Company Style Pack ✓
-        ↓
-P0-R11 End-to-end release gate ✓
+P0-R11-R1 S1 preservation gate ✓
+          ↓
+P0-R11-R1 S2 skill packaging/lifecycle ✓
+          ↓
+P0-R11-R1 S3 real installed-CLI replay ◐
 ```
 
 ---
@@ -759,7 +759,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = MVP v0.1 release handoff；不得自行重開已封存架構與視覺卡。**
+**NEXT = P0-R11-R1 — Real AI Entry Enforcement；修復真實 CLI skill 載入與既有 HTML preservation gate，不重開 renderer／視覺卡。**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -774,7 +774,8 @@ Implementation order is fixed until full-deck owner visual acceptance:
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
 10. `P1-R9` — COMPLETE；Company Style Pack Owner Visual Gate PASS，兩項 variation guardrail 為非阻擋 note。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
-12. `P0-R11` — COMPLETE；固定最終 ZIP 的 18 項 end-to-end release acceptance 全數 PASS。
+12. `P0-R11` — SUPERSEDED；真實 Claude Code 入口揭露 `R11-03` acceptance gap，release claim 暫停。
+13. `P0-R11-R1` — ACTIVE；S1 preservation gate 與 S2 real-skill lifecycle COMPLETE，S3 real installed-CLI replay PARTIAL。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

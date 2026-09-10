@@ -1,6 +1,6 @@
 # P0-R11 — End-to-end MVP Release Acceptance Matrix
 
-**Status:** COMPLETE / 18 OF 18 PASS
+**Status:** SUSPENDED / R11-03 INVALIDATED BY REAL CLAUDE CODE ENTRY FAILURE / REPAIR IN P0-R11-R1
 **Purpose:** Define the replayable final-release evidence for the reviewed Company Style Pack. This document adds no product feature and is not release evidence by itself.
 
 ## Fixed release subject

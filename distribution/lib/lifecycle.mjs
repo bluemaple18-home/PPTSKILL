@@ -22,7 +22,7 @@ const assertInstallRoot = (path) => {
 const readManifest = async (root) => {
   const manifest = JSON.parse(await readFile(resolve(root, 'package-manifest.json'), 'utf8'));
   if (manifest?.schemaVersion !== '1.0' || manifest?.name !== 'PPTSKILL' || !versionPattern.test(manifest?.version)) throw new Error('distribution manifest 無效。');
-  for (const required of ['core', 'adapters']) if (!await exists(resolve(root, required))) throw new Error(`distribution 缺少 ${required}。`);
+  for (const required of ['core', 'adapters', 'skill/pptskill/SKILL.md']) if (!await exists(resolve(root, required))) throw new Error(`distribution 缺少 ${required}。`);
   return manifest;
 };
 
@@ -43,6 +43,7 @@ const stagePayload = async ({ sourceRoot, stageRoot }) => {
   await mkdir(stageRoot, { recursive: true });
   await cp(resolve(sourceRoot, 'core'), resolve(stageRoot, 'core'), { recursive: true });
   await cp(resolve(sourceRoot, 'adapters'), resolve(stageRoot, 'adapters'), { recursive: true });
+  await cp(resolve(sourceRoot, 'skill'), resolve(stageRoot, 'skill'), { recursive: true });
   await cp(resolve(sourceRoot, 'lib'), resolve(stageRoot, 'lib'), { recursive: true });
   for (const entry of ['install.mjs', 'update.mjs', 'uninstall.mjs', 'smoke.mjs', 'profile.mjs', 'package-manifest.json']) await cp(resolve(sourceRoot, entry), resolve(stageRoot, entry));
   await writeFile(resolve(stageRoot, markerName), `${JSON.stringify({ schemaVersion: '1.0', name: 'PPTSKILL', version: manifest.version }, null, 2)}\n`);

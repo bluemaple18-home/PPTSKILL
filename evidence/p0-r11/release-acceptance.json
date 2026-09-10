@@ -2,15 +2,17 @@
   "schemaVersion": "1.0",
   "release": "PPTSKILL 0.1.0",
   "gate": "P0-R11",
-  "status": "pass",
+  "status": "superseded",
   "completedAt": "2026-09-10",
+  "invalidatedAt": "2026-09-10",
+  "invalidatedBy": "A real Claude Code user path skipped the packaged entry instructions, Grill and outline approval, then changed content and slide order. R11-03 used a controlled trace rather than real CLI discovery.",
   "finalZip": {
     "path": "dist/PPTSKILL-0.1.0.zip",
     "sha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6"
   },
   "summary": {
-    "pass": 18,
-    "fail": 0,
+    "pass": 17,
+    "fail": 1,
     "pending": 0,
     "regressionTests": "110/110 PASS"
   },
@@ -27,8 +29,8 @@
     },
     {
       "id": "R11-03",
-      "status": "pass",
-      "evidence": ["evidence/p0-r11/ai-entry-workflow/entry-transcript.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json"]
+      "status": "fail",
+      "evidence": ["evidence/p0-r11/ai-entry-workflow/entry-transcript.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json", "evidence/p0-r11-r1/repair-receipt.md"]
     },
     {
       "id": "R11-04",

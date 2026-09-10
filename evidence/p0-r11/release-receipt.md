@@ -1,6 +1,6 @@
 # P0-R11 — End-to-end MVP Release Acceptance Receipt
 
-**Status:** COMPLETE / 18 OF 18 PASS  
+**Status:** SUPERSEDED — real Claude Code entry failure invalidated R11-03; see `evidence/p0-r11-r1/repair-receipt.md`
 **Date:** 2026-09-10  
 **Release artifact:** `dist/PPTSKILL-0.1.0.zip`  
 **SHA-256:** `71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6`
