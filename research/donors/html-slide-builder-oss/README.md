@@ -1,7 +1,7 @@
 # html-slide-builder-oss donor intake
 
 **Status:** RESEARCH ONLY / NOT INSTALLED / NOT ADOPTED
-**Intake date:** 2026-09-10
+**Intake date:** 2026-09-10；完整能力目錄補充於 2026-09-11
 **Owner-supplied archive:** `html-slide-builder-oss.zip`
 **Archive SHA-256:** `809f38d8ee12f477f274c0283a61dc8f426a1d20e79adbaee58ec132af08104d`
 
@@ -10,6 +10,7 @@
 ## 內容
 
 - `intake-report.md`：PPTSKILL 對此 donor 的初步吸收判斷、風險與 architecture mapping。
+- `capability-catalog.md`：不經 PPTSKILL 篩選的 donor 完整體介紹，包含作者宣稱、程式可見能力、依賴、限制與未驗證項目。
 - `web-discussion-brief.md`：可以直接交給 Web reviewer 的問題清單。
 - `source/`：為方便 Git review 保存的文字原始碼與文件快照。
 

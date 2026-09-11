@@ -1,5 +1,7 @@
 # html-slide-builder-oss — PPTSKILL Intake Report
 
+Donor 自己介紹與原始碼可見的完整能力，另見 `capability-catalog.md`。本文件只負責 PPTSKILL 的吸收裁決，不能代替完整產品介紹。
+
 ## 結論
 
 **Decision: `REFERENCE + SELECTIVE ADAPT`; `DO_NOT_INSTALL`; 不整包吸收。**
