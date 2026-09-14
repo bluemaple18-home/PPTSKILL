@@ -4,6 +4,8 @@
 **Status:** OWNER-APPROVED DIRECTION / IMPLEMENTATION NOT STARTED  
 **Scope:** 後期直接編輯的 8 項 Owner 決策，Prior-Art-First 對照；不是 library lockfile，也不是 runtime receipt。
 
+> Source verification note：本輪已以 GitHub repository metadata / LICENSE / project docs 重新核對核心候選：Moveable、Selecto、Cropper.js、browser-fs-access、idb-keyval、Immer、NumberFlow、Motion、Floating UI、Vanta、p5.js、Lexical、Excalidraw。活躍度只代表截至 2026-09-14 repo 未封存與有近期更新／push evidence；不等於維護品質保證。`Pinned Version` 與實際 bundle size 必須在 implementation spike 時另外量測，不得以 `main` / `latest` 直接進正式包。
+
 ## 0. 核心規則
 
 後期 Editor 不允許「看到功能就自己手刻」。每張實作卡在進 code 前必須填：Prior Art、Classification、License、Pinned Version、Bundle / Portable Cost、Why Custom、Acceptance。沒有證據說明 OSS 不適用，就不能以 `CUSTOM_DELTA` 重造 drag/resize/selection/crop/history/persistence/motion/odometer/floating-toolbar 等通用 primitive。
@@ -33,7 +35,7 @@
 | `floating-ui/floating-ui` | MIT；repo 定義 floating element positioning/interactions | **DIRECT_REUSE candidate** | contextual toolbar / inspector 的 anchor、flip、shift、viewport collision | 不把它當 editor state；只解浮動 UI 定位 |
 | `fengyuanchen/cropperjs` | MIT；活躍 JS image cropper | **ADAPT / P0 candidate** | crop/move/zoom/fit UI，接現有 browser asset optimizer | Evidence 圖需 PPTSKILL policy：裁切不得抹掉 claim context；不把 crop result 當原始 Evidence |
 | `GoogleChromeLabs/browser-fs-access` | Apache-2.0；repo 明示 File System Access API + legacy fallback | **ADAPT / P1 candidate** | open/save capability、FileSystemFileHandle 存在時的 external-change/fingerprint seam、fallback save-as | 沒有 handle 時不得宣稱可檢查 mtime；portable 基本能力不能依賴它 |
-| `jakearchibald/idb-keyval` | repo LICENSE 明示 Apache-2.0；IndexedDB promise key/value helper | **DIRECT_REUSE candidate** | local draft / edit-start recovery 的小型 durable storage | 先 probe `file://`/browser persistence；失敗時 UI 不得顯示「已自動儲存」；不升級成 app DB |
+| `jakearchibald/idb-keyval` | repo `LICENCE` 明示 Apache-2.0；IndexedDB promise key/value helper | **DIRECT_REUSE candidate** | local draft / edit-start recovery 的小型 durable storage | 先 probe `file://`/browser persistence；失敗時 UI 不得顯示「已自動儲存」；不升級成 app DB |
 | `immerjs/immer` | MIT；官方 patches 文件有 `produceWithPatches` / inverse patches，並列 undo 用途 | **ADAPT / P0 candidate** | operation 後的 patches/inverse patches、Undo/Redo、replay；可把一個 pointer gesture coalesce 成一筆 history | 不用 Immer patch 取代 PPTSKILL Operation Registry；不把 undo stack export 到 deck.html |
 | `barvian/number-flow` | MIT；repo 定義 animated number for TS/JS/React/Vue/Svelte；source 有 `trend`、`respectMotionPreference`、prefix/suffix | **DIRECT_REUSE / ADAPT P0 candidate** | Owner B odometer 的 digit rolling、方向、format/prefix/suffix/reduced motion；PPTSKILL 補 slide-enter/replay、old/new evidence mapping | 不讓 NumberFlow 成數值真相；canonical 數值仍在 content；先驗負值、小數、百分比、pp、locale 與 portable bytes |
 | `motiondivision/motion` | MIT；2026 repo 仍活躍，JS/React animation library | **ADAPT candidate** | 若 native WAAPI/CSS 不足，用於 sequence/easing/transform composition/replay | 和 Anime.js 最多選一個；先 benchmark native path、bundle 與 single-file cost，不預設引入 |
