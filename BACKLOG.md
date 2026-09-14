@@ -5,6 +5,8 @@
 **Status:** MVP CLOSED / RELEASE ARTIFACT RESEALED；`P0-R11-R1` remains COMPLETE；Gemini CLI is trigger-only `UNVERIFIED` until available
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
+**Owner-approved planning:** [PGQ-20260914 前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md) 將 16 項決策去重為 7 個責任區／4 個增量工作包，見第 9 節。全部 NOT STARTED；不代表已安裝能力，不取代本檔 frontier，也不重開以下歷史完成卡。
+
 ---
 
 # 0. Current owner verdict
@@ -783,3 +785,26 @@ Implementation order is fixed until full-deck owner visual acceptance:
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 
 S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充另一個 Style。VQ3 後續美術提升只走 Golden Visual Regression，不阻塞 MVP。
+
+---
+
+# 9. Owner-approved pre-generation upgrade — PGQ-20260914
+
+**Status:** PLANNED / NOT STARTED / PRODUCT VERIFICATION NOT RUN  
+**Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
+**Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
+
+本節只補既有主幹的缺口，不新開 16 張 subsystem 卡，不取代以上完成卡或收據。原規格與本次 Owner 目標的衝突詳列在整合文件第 9 節，不能靠改 prompt 靜默放寬。後期直接拖曳／插入／Undo 等 UX 仍保留待後續整合，不混入本節一次重做。
+
+| 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
+|---|---|---|---|
+| **PGQ-WP1 Preflight / Brief Upgrade** | `grill-outline.js`、`layout-repair-policy.js`、`workflow-entry.js`；R1/R2/R6/R10 | 素材歧義、文案校對、事實／衍生值、來源衝突與 linkage、時間／自讀、Main/Appendix/Drop；合併 D01/07/09/10/12/13/14/15/16 | release closure 後；核心來源衝突會問、無害未知不多問、不補造事實、主線＋附錄總計 ≤15；核准後縮文權限先契約化 |
+| **PGQ-WP2 Generation Planner Upgrade** | `generation-plan.js`、`composition-primitives.js`、`full-deck-variants.js`、`design-grammar.js`、既有 renderer / Golden；R3/R4/R5 | 語意到呈現、真實選例、跨頁節奏、實際能力視圖與 candidate；合併 D02/03/06/08 | WP1 核准輸入／共用契約；content hash 不漂移、3～5 點完整可见、chart 不支援時不偷換、候選驗證後才用 |
+| **PGQ-WP3 Motion Vocabulary Upgrade** | `motion-primitives.js`、既有 renderer/editor/export、StyleSpec、ZIP；VQ3/R7/R8/R10 | B odometer、E Sweep、14 類 donor 背景選單、Style 色彩映射、參數／重播／靜態狀態；D04 | WP2 能力視圖＋共用契約；逐 effect 真 runtime 驗證、所有 offered 選項離線可切、正常／reduced／fallback、20 MiB、編輯另存 round-trip |
+| **PGQ-WP4 Representative QA Loop** | sample plan、既有 browser/geometry tools/tests、layout repair、Golden；R4/R6/R11 | Typical/Stress、自動修復、scope-aware 回饋、樣張保留、三層 readability；D05/11＋D09 | 隨 WP1/2 增量串驗，再加入 WP3；不必最後才寫 QA；sample 不替代完整逐頁驗收、同一問題最多兩次修復、skip sample 不新增人工等待 |
+
+**Shared contract work，不另開第五套系統：** 僅為本次行為補必要的 sanitized source/derivation refs、結構化數字、motion 設定與 outline 的 main/appendix 標記；欄位與版本先做小 diff 和相容測試。schema、sanitizer、renderer、browser editor/export、recipient reparse 必須一起閉環；原件、路徑、prompt、Grill、profile 與工作理由不出檔。Source refs 不代表收件者拿到了來源全文。
+
+**Motion decision correction：** B/E 是 Owner 對原型方向的接受，整合後仍需正式 runtime evidence；背景先前所有低保真示意不作 donor PASS/FAIL。完整 14 種效果是已核准的產品範圍，不是已驗證可用。none 永遠存在；一個效果失敗應明示 unavailable，不冒充全部支援。PGQ-D04 是對舊版「預設不採環境／3D 效果」的規劃例外，不放寬 arbitrary HTML、隨機逐元素動畫或 static readability。
+
+**No extra machinery：** 沿用一份 core、一個 Grill、一份 outline、一個 renderer/export；不新增 Evidence DB、workflow engine、中央服務、逐層 Agent、逐頁選例或新的使用者審批步驟。這 4 包不得以「前期品質」為由阻塞尚未完成的原 release closure。
