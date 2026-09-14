@@ -271,3 +271,43 @@ AI 先讀完使用者提供的全部素材，能自行判斷的內容不得重�
 
 個人資料不得寫進公版 Skill 套件，避免分享或更新 Skill 時夾帶、覆蓋個人偏好。
 只有使用者明確說「以後都這樣」，或確認 AI 提出的偏好更新時，才更新 profile；單次修改不得自動變成長期偏好。
+
+---
+
+## PGQ-20260914 — 前期品質強化的核准產品目標
+
+**狀態：OWNER-APPROVED PLANNING / NOT AN IMPLEMENTED RUNTIME CONTRACT。**
+
+本節記錄後續版本的方向，不要求目前 ZIP 或 AI 入口執行尚不存在的能力。研究文件是 repo-only 設計追溯，可能不隨員工 ZIP 發布；缺少研究文件不阻擋現有工作流，也不得改為連網取回。當對應程式／schema／驗收與版本遷移完成後，才更新實際 runtime contract。
+
+[前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md) 保留 PGQ-D01～D16 的逐項核准、來源分類、現況缺口、驗收與衝突登錄。本文件仍為產品規格主入口；排程只由 repo 的 BACKLOG 管理。
+
+### 已核准的責任合併
+
+| 區 | 目標 | 原決策 |
+|---|---|---|
+| G1 素材與事實前處理 | 素材歧義、來源衝突、事實／推論、數值衍生與可分享來源關聯；重要風險才追加提問 | PGQ-D07/10/13/14/16 |
+| G2 敘事與使用情境 | 文案生成與校對、受眾／口頭或自讀／時間、Main/Appendix/Drop | PGQ-D01/12/15 |
+| G3 內容承載 | 禁止靠縮字硬塞；先構圖與冗文處理，再確認必要的拆頁 | PGQ-D09 |
+| G4 視覺規劃 | 依內容關係選構圖、使用已審核參考、安排整份視覺節奏 | PGQ-D02/03/08 |
+| G5 能力範圍內創作 | 既有能力優先；有具體缺口才產生可驗證候選；不以 schema enum 冒充 renderer 能力 | PGQ-D06 |
+| G6 初版動畫 | 數字 B 逐位滾輪、小標 E 底線 Sweep、完整 donor 背景選單及 Style 配色、可調整與靜態狀態 | PGQ-D04 |
+| G7 代表頁驗證修復 | Typical/Stress、先 QA 再交人、scope-aware 回饋、核准樣張保留、三層可讀性；全份仍驗收 | PGQ-D05/11 |
+
+### 保留的產品邊界
+
+一頁一主題＋3～5 小標／重點、title/subtitle/keyPoints 分層、必要 Grill、人工 outline、Company＋三個 AI 封面、可選樣張、bounded generation、單檔 HTML、geometry hard gate、source/privacy sanitizer 與單 core 不變。主線＋附錄合計仍受 15 頁上限；備用資料不構成另加頁數的授權，也不是刪掉來源檔。
+
+一般使用者不新增問卷、設定表、逐頁选例或 7 次審批。G1～G7 是內部責任，不是服務、Agent 或固定 7 次模型呼叫。高影響未知才追加問題；不確定時的保守用語仍必須有依據，不能把無根據因果加上「可能」就當成事實安全。
+
+### 背景動畫的明確新增範圍
+
+產品目標包括 `none / WAVES / BIRDS / NET / GLOBE / DOTS / FOG / CLOUDS / CLOUDS2 / CELLS / RIPPLE / RINGS / HALO / TOPOLOGY / TRUNK` 的可選背景；由 StyleSpec 映射顏色，AI 可先選、使用者可改。這是對舊版保守背景限制的後續擴充，不是把 14 類未測程式立即開放，也不是每頁預設執行全部效果。
+
+真正啟用需先驗證固定版本／checksum／授權、各效果顏色參數、離線依賴、性能與静態 fallback。最終 HTML 所有顯示可用的效果都須可離線切換，20 MiB hard limit 不放寬。B/E 是 Owner 對原型方向的核准；背景模擬預覽不是 donor runtime 的正式 PASS/FAIL。
+
+### 待契約化事項，不可靜默改規格
+
+核准後 wording-only 自動縮文的權限與現有精確 change-set／human approval 邊界，需要先做契約 diff；在此之前不移除現有 gate。既有資料可表達的新構圖與需要新增 executable renderer 的候選，也須分層驗證，不讓一般 deck 自行改寫安裝核心。
+
+可交付的 compact source/derivation refs 與本機原件／私密路徑分離；新增欄位須在 schema、sanitizer、renderer、editor/export 與 recipient reparse 一起保存並驗證，不能新增第二個資料正本。樣張通過只對相同輸入有效；未受影響頁重用，受影響頁局部重驗；sample 不取代 full-deck checks。
