@@ -4,7 +4,7 @@
 **Status:** OWNER-APPROVED DIRECTION / IMPLEMENTATION NOT STARTED  
 **Scope:** 後期直接編輯的 8 項 Owner 決策，Prior-Art-First 對照；不是 library lockfile，也不是 runtime receipt。
 
-> Source verification note：本輪已以 GitHub repository metadata / LICENSE / project docs 重新核對核心候選：Moveable、Selecto、Cropper.js、browser-fs-access、idb-keyval、Immer、NumberFlow、Motion、Floating UI、Vanta、p5.js、Lexical、Excalidraw。活躍度只代表截至 2026-09-14 repo 未封存與有近期更新／push evidence；不等於維護品質保證。`Pinned Version` 與實際 bundle size 必須在 implementation spike 時另外量測，不得以 `main` / `latest` 直接進正式包。
+> Source verification note：本輪已以 GitHub repository metadata / LICENSE / project docs 重新核對核心候選：Moveable、Selecto、Cropper.js、browser-fs-access、idb-keyval、Immer、NumberFlow、Motion、Floating UI、Vanta、p5.js、Lexical、Excalidraw。活躍度只代表截至 2026-09-14 repo 未封存與有近期 repository activity evidence；不等於維護品質保證。`Pinned Version` 與實際 bundle size 必須在 implementation spike 時另外量測，不得以 `main` / `latest` 直接進正式包。
 
 ## 0. 核心規則
 
@@ -107,7 +107,7 @@ PPTSKILL 的改造點：canonical DeckSpec 不等於 animated DOM，正式 previ
 
 1. **EDX-WP1 Editor Core:** stable identity + Operation Registry + Moveable/Selecto/Floating UI + contextual selection + manual override round-trip。
 2. **EDX-WP2 Content/Asset Editing:** text role/IME/style copy + replace/insert + Cropper + group/lock/alignment + sanitizer/export round-trip。
-3. **EDX-WP3 History/Motion:** Immer/idb/browser-fs capability + Undo/Redo/recovery；NumberFlow + motion inspector；與 PGQ-WP3 background work 共用 Vanta adapter，禁止第二套 motion runtime。
+3. **EDX-WP3 History/Motion:** Immer/idb/browser-fs capability + Undo/Redo/recovery；NumberFlow + motion inspector；與 PGQ-WP3 background work共用 Vanta adapter，禁止第二套 motion runtime。
 4. **EDX-WP4 Human Intent / Compatibility:** scoped patch precedence、destructive confirmation、old/new DeckSpec migration、recipient AI replay、optional AI bridge contract、full browser/geometry/size/security regression。
 
 順序在 BACKLOG 決定；本文不插隊目前 `P0-R11-R1`，也不宣稱以上 dependency 已選定或 package 已加入。每個 candidate 仍需 spike + bundle/license/browser evidence 後才能從 ADAPT/CANDIDATE 轉為 DIRECT_REUSE/INSTALLED。
