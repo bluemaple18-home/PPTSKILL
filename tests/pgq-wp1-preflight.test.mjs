@@ -74,7 +74,7 @@ test('fact / derived / inference 分類與三種數值重算由 code 決定', ()
   });
   assert.equal(recalculateValue({ operation: 'absolute-delta', baseline: 80, current: 100 }), 20);
   assert.equal(recalculateValue({ operation: 'percent-change', baseline: 80, current: 100 }), 25);
-  assert.equal(recalculateValue({ operation: 'percentage-point-change', baseline: 0.2, current: 0.35 }), 0.15);
+  assert.equal(recalculateValue({ operation: 'percentage-point-change', baseline: 0.2, current: 0.35, scale: 'ratio' }), 15);
 });
 
 test('percent change 的 baseline 為零時 fail loud', () => {
@@ -111,7 +111,7 @@ test('shareable refs 僅保留 compact allowlist，不洩漏原文與本機路�
     id: 'source-1', label: '公開報告', url: 'https://example.com/report', shareable: true,
     localPath: '/Users/example/private.xlsx', rawBody: 'private', prompt: 'secret', grillTranscript: ['private'], contents: 'private',
   }]);
-  assert.deepEqual(refs, [{ id: 'source-1', label: '公開報告', url: 'https://example.com/report', public: true }]);
+  assert.deepEqual(refs, [{ id: 'source-1', label: '公開報告', url: 'https://example.com/report', public: true, sourceAvailableToRecipient: false }]);
 });
 
 test('圖片與圖表生成預設關閉，只有個別明確授權才開啟', () => {
@@ -185,8 +185,9 @@ test('installed Skill 的唯一 preflight seam 執行 conflict、causal 與 deri
         relation: 'causal', evidenceRelation: 'correlation',
       },
       {
-        id: 'growth-rate', value: 30, kind: 'derived', metric: 'growth-rate', period: '2026-Q2', population: 'all-users', unit: 'percent',
+        id: 'growth-rate', value: 30, kind: 'derived', summary: '成長率為 30%', slideIds: ['main'], metric: 'growth-rate', period: '2026-Q2', population: 'all-users', unit: 'percent',
         derivation: { operation: 'percent-change', baseline: 100, current: 120 },
+        sourceRefs: [{ id: 'public-report', label: '公開報告', url: 'https://example.com/report', shareable: true, sourceAvailableToRecipient: false, localPath: '/private/report.xlsx' }],
       },
     ],
   }));
@@ -199,6 +200,7 @@ test('installed Skill 的唯一 preflight seam 執行 conflict、causal 與 deri
     claimId: 'growth-rate', operation: 'percent-change', baseline: 100, current: 120,
     computedValue: 20, providedValue: 30, status: 'mismatch',
   }]);
+  assert.deepEqual(result.portableClaims[0].sourceRefs, [{ id: 'public-report', label: '公開報告', url: 'https://example.com/report', public: true, sourceAvailableToRecipient: false }]);
   assert.deepEqual(result.generationPermissions, { image: true, chart: false });
   assert.equal(result.outlinePlan.slides[0].section, 'main');
   assert.deepEqual(result.outlinePlan.dropped, [{ sourceId: 'source-drop', retainedInSource: true }]);

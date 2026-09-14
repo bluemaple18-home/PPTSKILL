@@ -62,10 +62,14 @@ export function findUnsupportedCausalInferences(claims = []) {
     .map((item) => ({ claimId: item.id, evidenceRelation: item.evidenceRelation || 'unknown', reason: '現有證據不足以支持因果關係。' }));
 }
 
-export function recalculateValue({ operation, baseline, current } = {}) {
+export function recalculateValue({ operation, baseline, current, scale } = {}) {
   if (!Number.isFinite(baseline) || !Number.isFinite(current)) throw new Error('baseline 與 current 必須是有限數字。');
   if (operation === 'absolute-delta') return compactNumber(current - baseline);
-  if (operation === 'percentage-point-change') return compactNumber(current - baseline);
+  if (operation === 'percentage-point-change') {
+    if (scale === 'ratio') return compactNumber((current - baseline) * 100);
+    if (scale === 'percent') return compactNumber(current - baseline);
+    throw new Error('percentage-point change 必須明示 scale: ratio | percent。');
+  }
   if (operation === 'percent-change') {
     if (baseline === 0) throw new Error('percent change 的 baseline 不可為零。');
     return compactNumber(((current - baseline) / baseline) * 100);
@@ -122,7 +126,26 @@ export function sanitizeShareableSourceRefs(sources = []) {
     const label = nonEmptyText(source.label) ? source.label.trim() : '';
     if (!id && !label) return [];
     const url = nonEmptyText(source.url) && /^https?:\/\//.test(source.url.trim()) ? source.url.trim() : '';
-    return [{ ...(id ? { id } : {}), ...(label ? { label } : {}), ...(url ? { url } : {}), public: true }];
+    return [{ ...(id ? { id } : {}), ...(label ? { label } : {}), ...(url ? { url } : {}), public: true, sourceAvailableToRecipient: source.sourceAvailableToRecipient === true }];
+  });
+}
+
+export function preparePortableClaims(claims = []) {
+  return claims.flatMap((claim) => {
+    if (!nonEmptyText(claim?.id) || !claimKinds.includes(claim.kind) || !nonEmptyText(claim.summary) || !Array.isArray(claim.slideIds) || claim.slideIds.length < 1) return [];
+    return [{
+      id: claim.id.trim(),
+      kind: claim.kind,
+      summary: claim.summary.trim(),
+      slideIds: claim.slideIds.filter(nonEmptyText).map((id) => id.trim()),
+      ...(Number.isFinite(claim.value) ? { value: claim.value } : {}),
+      ...Object.fromEntries(['metric', 'period', 'population', 'unit', 'currency']
+        .flatMap((field) => nonEmptyText(claim[field]) ? [[field, claim[field].trim()]] : [])),
+      ...(['causal', 'correlation', 'descriptive'].includes(claim.relation) ? { relation: claim.relation } : {}),
+      ...(['causal', 'correlation', 'descriptive', 'unknown'].includes(claim.evidenceRelation) ? { evidenceRelation: claim.evidenceRelation } : {}),
+      ...(claim.kind === 'derived' && claim.derivation ? { derivation: { ...claim.derivation } } : {}),
+      sourceRefs: sanitizeShareableSourceRefs(claim.sourceRefs),
+    }];
   });
 }
 
@@ -147,6 +170,7 @@ export function preparePreflightBrief({ materials = [], known = {}, claims = [],
   const incompleteNumericClaims = findIncompleteNumericClaims(claims);
   const causalWarnings = findUnsupportedCausalInferences(claims);
   const derivedRecalculations = recalculateDerivedClaims(claims);
+  const portableClaims = preparePortableClaims(claims);
   const conflictUnknowns = conflicts.filter(({ status }) => status === 'unresolved').map(({ claimIds }) => ({
     id: `numeric-conflict:${claimIds.join(':')}`,
     impact: 'high',
@@ -184,6 +208,7 @@ export function preparePreflightBrief({ materials = [], known = {}, claims = [],
     incompleteNumericClaims,
     causalWarnings,
     derivedRecalculations,
+    portableClaims,
     generationPermissions: resolveGenerationPermissions(generationAuthorization),
     ...(outlinePlan ? { outlinePlan } : {}),
     grillState,

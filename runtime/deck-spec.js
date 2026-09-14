@@ -13,6 +13,7 @@ const safeColor = (value, fallback) => safeCssText(value, fallback, /^(#[0-9a-fA
 const safeFont = (value, fallback) => safeCssText(value, fallback, /^[a-zA-Z0-9 ,.\-'"]{1,200}$/);
 const safeEasing = (value, fallback) => safeCssText(value, fallback, /^(linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier\([0-9., -]+\))$/);
 const clampInteger = (value, fallback, minimum, maximum) => Number.isInteger(value) ? Math.max(minimum, Math.min(maximum, value)) : fallback;
+const idPattern = /^[a-z0-9][a-z0-9._-]{0,79}$/;
 
 const defaultStyle = {
   id: 'portable-default',
@@ -68,6 +69,51 @@ const sanitizeComposition = (composition = {}) => ({
   ...(Array.isArray(composition.order) ? { order: copyStringArray(composition.order) } : {}),
 });
 
+const sanitizeSourceRef = (source) => {
+  if (source?.public !== true || !idPattern.test(copyText(source.id)) || !copyText(source.label)) return null;
+  const url = /^https?:\/\//.test(copyText(source.url)) ? source.url : '';
+  return {
+    id: source.id,
+    label: source.label,
+    ...(url ? { url } : {}),
+    public: true,
+    sourceAvailableToRecipient: source.sourceAvailableToRecipient === true,
+  };
+};
+
+const sanitizeDerivation = (derivation) => {
+  if (!derivation || typeof derivation !== 'object') return null;
+  const operation = copyText(derivation.operation);
+  if (!['absolute-delta', 'percent-change', 'percentage-point-change'].includes(operation)) return null;
+  if (!Number.isFinite(derivation.baseline) || !Number.isFinite(derivation.current)) return null;
+  if (operation === 'percentage-point-change' && !['ratio', 'percent'].includes(derivation.scale)) {
+    throw new Error('percentage-point derivation 必須明示 scale: ratio | percent。');
+  }
+  return {
+    operation,
+    baseline: derivation.baseline,
+    current: derivation.current,
+    ...(operation === 'percentage-point-change' ? { scale: derivation.scale } : {}),
+  };
+};
+
+const sanitizeClaim = (claim) => {
+  if (!idPattern.test(copyText(claim?.id)) || !['fact', 'derived', 'inference'].includes(claim?.kind) || !copyText(claim?.summary)) return null;
+  return {
+    id: claim.id,
+    kind: claim.kind,
+    summary: claim.summary,
+    slideIds: copyStringArray(claim.slideIds, 1, 15).filter((id) => idPattern.test(id)),
+    ...(Number.isFinite(claim.value) ? { value: claim.value } : {}),
+    ...Object.fromEntries(['metric', 'period', 'population', 'unit', 'currency']
+      .flatMap((field) => copyText(claim[field]) ? [[field, claim[field]]] : [])),
+    ...(['causal', 'correlation', 'descriptive'].includes(claim.relation) ? { relation: claim.relation } : {}),
+    ...(['causal', 'correlation', 'descriptive', 'unknown'].includes(claim.evidenceRelation) ? { evidenceRelation: claim.evidenceRelation } : {}),
+    ...(claim.kind === 'derived' ? { derivation: sanitizeDerivation(claim.derivation) } : {}),
+    sourceRefs: Array.isArray(claim.sourceRefs) ? claim.sourceRefs.slice(0, 8).map(sanitizeSourceRef).filter(Boolean) : [],
+  };
+};
+
 export function sanitizeDeckSpec(input) {
   return {
     schemaVersion: '1.0',
@@ -75,6 +121,7 @@ export function sanitizeDeckSpec(input) {
     title: copyText(input?.title, 'Untitled deck'),
     language: copyText(input?.language, 'zh-Hant'),
     style: sanitizeStyle(input?.style),
+    ...(Array.isArray(input?.claims) ? { claims: input.claims.slice(0, 100).map(sanitizeClaim).filter(Boolean) } : {}),
     slides: Array.isArray(input?.slides) ? input.slides.slice(0, 15).map((slide, index) => ({
       id: copyText(slide?.id, `slide-${String(index + 1).padStart(2, '0')}`),
       content: {
@@ -116,6 +163,14 @@ export function validateDeckSpec(spec) {
   for (const slide of spec?.slides ?? []) {
     if (!slide.content?.title || !slide.content?.subtitle || !Array.isArray(slide.content?.keyPoints) || slide.content.keyPoints.length < 3 || slide.content.keyPoints.length > 5) errors.push(`${slide.id || 'unknown'} 缺少 title／subtitle／3～5 keyPoints。`);
     if (JSON.stringify(slide.composition ?? {}).match(/"(title|subtitle|keyPoints|text)"\s*:\s*"(?!content\.)/)) errors.push(`${slide.id || 'unknown'} 的 CompositionSpec 內嵌內容。`);
+  }
+  if (spec?.claims !== undefined && !Array.isArray(spec.claims)) errors.push('claims 必須是陣列。');
+  const claimIds = spec?.claims?.map((claim) => claim.id) ?? [];
+  if (new Set(claimIds).size !== claimIds.length) errors.push('claim ID 不可重複。');
+  for (const claim of spec?.claims ?? []) {
+    if (!claim.id || !claim.kind || !claim.summary || !Array.isArray(claim.slideIds) || claim.slideIds.length < 1) errors.push('claim 必須有 id／kind／summary／slideIds。');
+    if (claim.slideIds?.some((id) => !ids.includes(id))) errors.push(`${claim.id || 'unknown'} 引用了不存在的 slide。`);
+    if (claim.kind === 'derived' && !claim.derivation) errors.push(`${claim.id || 'unknown'} 缺少 derivation。`);
   }
   return { status: errors.length ? 'fail' : 'pass', errors };
 }
