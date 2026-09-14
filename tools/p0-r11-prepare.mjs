@@ -90,6 +90,7 @@ const profileMode = (await stat(profilePath)).mode & 0o777;
 
 const runtimeModule = (name) => pathToFileURL(resolve(runtimeRoot, 'core/runtime', name)).href;
 const grill = await import(runtimeModule('grill-outline.js'));
+const preflight = await import(runtimeModule('preflight-brief.js'));
 const generation = await import(runtimeModule('generation-plan.js'));
 const styles = await import(runtimeModule('style-candidates.js'));
 const company = await import(runtimeModule('company-style-pack.js'));
@@ -97,7 +98,7 @@ const renderer = await import(runtimeModule('full-deck-renderer.js'));
 const deckModule = await import(runtimeModule('deck-spec.js'));
 const material = JSON.parse(await readFile(materialPath, 'utf8'));
 
-let grillState = grill.createGrillState({ materials: [{ id: 'sanitized-material', reviewed: true }], known: material.known });
+let grillState = preflight.preparePreflightBrief({ materials: [{ id: 'sanitized-material', reviewed: true }], known: material.known }).grillState;
 const questionStep = grill.askQuestion(grillState);
 if (questionStep.result.status !== 'ask' || questionStep.result.question.dimension !== 'pressureTest') throw new Error('Grill 沒有跳過已知問題或未執行必要壓力測試。');
 grillState = grill.answerQuestion(questionStep.state, '如果品牌一致性無法跨頁與跨 AI 保持，整套工作流就不值得採用。');

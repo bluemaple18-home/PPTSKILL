@@ -790,11 +790,13 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** PLANNED / NOT STARTED / PRODUCT VERIFICATION NOT RUN  
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 Slice 1 COMPLETE；WP1 DeckSpec source-ref round-trip DEFERRED；WP2–WP4 NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
 本節只補既有主幹的缺口，不新開 16 張 subsystem 卡，不取代以上完成卡或收據。原規格與本次 Owner 目標的衝突詳列在整合文件第 9 節，不能靠改 prompt 靜默放寬。後期直接拖曳／插入／Undo 等 UX 仍保留待後續整合，不混入本節一次重做。
+
+**PGQ-WP1 Slice 1 receipt：** `evidence/pgq-wp1/slice-1-receipt.md`。Pure preflight、既有 Grill 整合、Main/Appendix/Drop allocation 與 optional outline `section` 已完成；portable DeckSpec source/derivation refs 仍依原邊界延後，不視為本 slice 已交付。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

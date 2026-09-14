@@ -53,6 +53,7 @@ test('ZIP 可在無 Git 流程 fresh install，三個 adapter 共用單一 core'
     assert.match(entry, /所有相對路徑都必須從本 `adapter\.json` 所在目錄解析/);
     assert.match(entry, /<pptskill-runtime>\/core\/working-spec\.md/);
     assert.match(entry, /runtime\/grill-outline\.js/);
+    assert.match(entry, /workflow-cli\.mjs preflight-new/);
     assert.match(entry, /renderFullDeck\(\)/);
     assert.match(entry, /export-sanitizer-allowlist\.md/);
   }

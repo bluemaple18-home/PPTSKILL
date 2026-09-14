@@ -46,6 +46,6 @@ node profile.mjs save --input profile.json --remember
 
 明確執行 installer 時，會把同一份 `pptskill` Skill 註冊到 `~/.codex/skills/pptskill`、`~/.claude/skills/pptskill` 與 `~/.gemini/skills/pptskill`。每個註冊都有 ownership marker；若目的地已有同名非 PPTSKILL Skill，安裝會拒絕覆寫。update 只更新 owned Skill，uninstall 只移除內容未被使用者修改的 owned Skill。installer 不下載、不登入，也不寫 token。
 
-Codex 使用 `$pptskill`，Claude Code 使用 `/pptskill`；Gemini CLI 啟用 `pptskill` Skill。拿既有 `deck.html` 重做時會自動走 `restyle-existing`：先問一次 pressure test、等待 outline 核准與選款，內容、頁序及 slide ID 預設鎖定。final HTML 只能由 shared core 的 `workflow-cli.mjs` 產生。
+Codex 使用 `$pptskill`，Claude Code 使用 `/pptskill`；Gemini CLI 啟用 `pptskill` Skill。新簡報會先透過 `workflow-cli.mjs preflight-new` 進入唯一的素材／數值 preflight，再沿用原本的單題 Grill 與 outline gate。拿既有 `deck.html` 重做時會自動走 `restyle-existing`：先問一次 pressure test、等待 outline 核准與選款，內容、頁序及 slide ID 預設鎖定。final HTML 只能由 shared core 的 `workflow-cli.mjs` 產生。
 
 AI 從任何專案目錄啟動時，由已註冊 Skill 定位 `~/.pptskill/runtime`；adapter manifest 的相對路徑仍必須從 manifest 所在目錄解析，不得套在目前專案目錄。
