@@ -5,7 +5,7 @@
 **Status:** MVP CLOSED / RELEASE ARTIFACT RESEALED；`P0-R11-R1` remains COMPLETE；Gemini CLI is trigger-only `UNVERIFIED` until available
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
-**Owner-approved planning:** [PGQ-20260914 前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md) 將 16 項決策去重為 7 個責任區／4 個增量工作包，見第 9 節。全部 NOT STARTED；不代表已安裝能力，不取代本檔 frontier，也不重開以下歷史完成卡。
+**Owner-approved planning:** [PGQ-20260914 前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md) 將 16 項前期決策去重為 7 個責任區／4 個增量工作包，見第 9 節；[EDX-20260914 Editor Prior Art](research/editor-prior-art.md) 將 8 項後期直接編輯決策收斂為 4 個增量工作包並強制 Prior-Art-First，見第 10 節。全部 NOT STARTED；不代表已安裝能力，不取代本檔 frontier，也不重開以下歷史完成卡。
 
 ---
 
@@ -808,3 +808,94 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **Motion decision correction：** B/E 是 Owner 對原型方向的接受，整合後仍需正式 runtime evidence；背景先前所有低保真示意不作 donor PASS/FAIL。完整 14 種效果是已核准的產品範圍，不是已驗證可用。none 永遠存在；一個效果失敗應明示 unavailable，不冒充全部支援。PGQ-D04 是對舊版「預設不採環境／3D 效果」的規劃例外，不放寬 arbitrary HTML、隨機逐元素動畫或 static readability。
 
 **No extra machinery：** 沿用一份 core、一個 Grill、一份 outline、一個 renderer/export；不新增 Evidence DB、workflow engine、中央服務、逐層 Agent、逐頁選例或新的使用者審批步驟。這 4 包不得以「前期品質」為由阻塞尚未完成的原 release closure。
+
+---
+
+# 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
+
+**Status:** PLANNED / NOT STARTED / DEPENDENCY SPIKES NOT RUN  
+**Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
+**Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
+
+本節是 P0-R7 後續能力擴充，不把舊 P0-R7 receipt 改寫成「以前就有拖拉」。目前 MVP 的 `no free x/y dragging` 歷史決策繼續描述舊版；EDX 的新 Owner 方向是 **No ungoverned freeform canvas; support guided direct manipulation**。只有 EDX 完成實作、schema migration、sanitizer/export/browser evidence 後才更新現行 runtime contract。
+
+## 10.1 八項 Owner 決策
+
+1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。
+2. **Direct Text Editing**：單擊選物件、雙擊文字編輯；Role-based Typography、manual override、Copy/Paste Style；IME 必須正常。
+3. **Replace-first + Safe Insert**：文字／圖片／影片；圖片拖入與 clipboard paste；替換預設保留原位置／大小／crop；Evidence 圖裁切有正確性 guard。
+4. **Multi-select / Alignment / Group / Lock**：框選、Shift 多選、align/distribute/equal-gap、invisible snap grid、lightweight group/lock。
+5. **Safe Editing History**：operation-level Undo/Redo、local draft、edit-start recovery；只有真 file handle／等價能力存在時才做 external-change detection，否則 Save As New。
+6. **Role-aware Motion Inspector**：效果／速度／強度／順序／replay；背景 animation 獨立控制；不做專業 timeline；動畫中間狀態不得污染 canonical content。
+7. **Human Intent Preservation**：content patch 不洗 manual geometry/typography/motion；visual patch 不改內容；`recompose-slide` 才能明確取代相關 overrides；可直接操作元素要 stable identity。
+8. **Progressive Contextual Editor + Unified Operation Registry + Optional AI Bridge**：點什麼顯示什麼；toolbar/keyboard/AI 都走同一 mutation registry；portable HTML 本身不依賴 AI，bridge 只屬 optional host capability。
+
+## 10.2 Prior-Art-First mandatory gate
+
+任何 EDX 實作卡在進 code 前必須列：`Prior Art / Classification / License / Pinned Version / Bundle+Portable Cost / Why Custom / Acceptance`。沒有證據證明 OSS 不適用，不得手刻通用 editor primitive。
+
+| OSS / donor | Verified license / status | Classification | EDX 用途 | Gate / 不吸收 |
+|---|---|---|---|---|
+| `daybrush/moveable` | MIT；repo 描述含 draggable/resizable/groupable/snappable | **ADAPT / P0 candidate** | drag/resize/group transform/snap guides | DOM state 不作 canonical；warp/任意 rotate 不作一般預設；先做 scaling + bundle spike |
+| `daybrush/selecto` | MIT；mouse/touch drag-area selection | **ADAPT / P0 candidate** | marquee、多選 | selection/editor chrome 不 export |
+| donor `html-slide-builder-oss` editor | repo snapshot / research-only | **ADAPT** | 8px grid、align/distribute、arrow nudge、IME、style copy/paste、undo/redo、first-edit backup、animation editor guardrails | 不吸收 HTML-as-only-truth、Python server、任意 HTML、runtime `@latest`、mtime 假設 |
+| `floating-ui/floating-ui` | MIT；活躍 | **DIRECT_REUSE candidate** | contextual toolbar/inspector positioning/viewport collision | 只解 UI positioning，不擁有 editor state |
+| `fengyuanchen/cropperjs` | MIT；2026 活躍 | **ADAPT / P0 candidate** | crop/move/zoom/fit | Evidence 圖由 PPTSKILL policy 保護；crop 不取代原 Evidence |
+| `GoogleChromeLabs/browser-fs-access` | Apache-2.0；2026 活躍 | **ADAPT / P1 candidate** | file open/save + handle capability seam | 無 handle 不宣稱 mtime/conflict detection；portable editor 不依賴此 lib 才能基本運作 |
+| `jakearchibald/idb-keyval` | LICENSE 明示 Apache-2.0；2026 活躍 | **DIRECT_REUSE candidate** | local draft/recovery IndexedDB | 先 probe file:// persistence；失敗不得顯示「已自動儲存」；不升級成 app DB |
+| `immerjs/immer` | MIT；2026 活躍；官方 patches docs 有 inverse patches / undo use | **ADAPT / P0 candidate** | Undo/Redo patch/inversePatch + replay | Operation Registry 仍是 mutation authority；history 不 export |
+| `barvian/number-flow` | MIT；animated number for TS/JS；source 有 trend / respectMotionPreference / prefix/suffix | **DIRECT_REUSE / ADAPT P0 candidate** | Owner B odometer | canonical 數值仍在 DeckSpec content；必測負值、小數、百分比/pp、locale、reduced motion、portable bytes |
+| `motiondivision/motion` | MIT；2026 活躍 | **ADAPT candidate** | native WAAPI/CSS 不足時的 sequence/easing/replay/transform composition | Anime.js 最多二選一；先 benchmark native + bundle，不預設引入 |
+| `tengbao/vanta` | MIT；donor 同一 effect vocabulary；repo 未封存 | **ADAPT** | 背景 effects 真 runtime family / options / lifecycle | pin/checksum/offline；不採 CDN / `@latest`；逐 effect capability |
+| `processing/p5.js` | LGPL-2.1；2026 活躍 | **LICENSE GATE / REFERENCE UNTIL CLEARED** | donor TOPOLOGY/TRUNK 類 backend | 未完成 legal/bundle review 前不得打包進商用 ZIP/single HTML；可單獨標 unavailable / 找 permissive backend |
+| `facebook/lexical` | MIT；2026 活躍 | **REFERENCE_ONLY initially** | IME/selection/accessibility/editor-state prior art | 不先導入第二套 rich-text document model；只有 contenteditable 證明不足才升級 |
+| `excalidraw/excalidraw` | MIT；2026 活躍 | **REFERENCE_ONLY** | selection/group/history/keyboard/contextual UX/recovery prior art | 不嵌 whiteboard/collaboration/canvas canonical model |
+
+**Alternatives only:** `interact.js` 只和 Moveable benchmark、二選一；Anime.js 只和 Motion benchmark、二選一；GrapesJS / Theatre.js Studio / tldraw 目前只作架構／UX 研究，禁止未經 license/bundle/domain-fit review 直接變 dependency。
+
+## 10.3 四個 EDX 工作包，不開 8 套 subsystem
+
+| Work package | Prior art first | PPTSKILL custom delta | Primary existing surfaces | Acceptance summary |
+|---|---|---|---|---|
+| **EDX-WP1 Editor Core** | Moveable + Selecto + Floating UI；donor grid/nudge | stable element identity、Operation Registry、guided overrides、safe-area/QA、contextual selection | `runtime/deck-editor.js`、DeckSpec/CompositionSpec、geometry gate | drag/resize/multi-select/snap 可用；一個 gesture 一筆 history；不產生任意 CSS/DOM truth；save/reopen geometry 一致 |
+| **EDX-WP2 Content / Asset Editing** | donor IME/style copy；Cropper.js；browser clipboard/file primitives | role typography、text/style overrides、replace/insert component IDs、Evidence crop policy、portable video limits、group/lock relationship | `deck-editor.js`、asset optimizer/policy、StyleSpec、sanitizer/export | 雙擊中文輸入、style copy/paste、image replace/crop/insert/group/lock；overflow/geometry recheck；另存不丟 overrides |
+| **EDX-WP3 History / Motion** | Immer + idb-keyval + browser-fs-access；NumberFlow；existing motion + donor rules + Vanta；Motion only if needed | operation coalescing、draft capability probe、recovery/source fingerprint semantics、role/motion metadata、slide lifecycle、Style color adapter | editor/history seam、`motion-primitives.js`、renderer、PGQ-WP3、size guard | Undo/Redo/recovery/降級 truthful；B odometer/E sweep/背景可 replay；reduced motion 終態正確；history/draft/chrome 不出檔；20 MiB 不放寬 |
+| **EDX-WP4 Human Intent / Compatibility** | Excalidraw/成熟 editor UX 只作 reference | scoped patch precedence、destructive confirmation、stable ID migration、manual override preservation、recipient reparse、optional AI bridge bounded operation contract | DeckSpec/CompositionSpec/schema/sanitizer/editor/export/CLI adapters | content edit 不洗人工版面；recompose 明示 destructive scope；舊 deck 可讀；新 deck save/reopen/recipient AI 不丟 identity/overrides；無 bridge 仍完整人工可編輯 |
+
+## 10.4 Unified Operation Registry — shared contract
+
+Toolbar、keyboard、future AI bridge **不得各寫一套 mutation code**。至少規劃：
+
+`move-element / resize-element / edit-text / set-typography / copy-style / paste-style / replace-asset / insert-element / delete-element / align-selection / distribute-selection / group / ungroup / lock / unlock / set-motion / reorder-slide / duplicate-slide / delete-slide / reset-slide / recompose-slide`。
+
+每個 operation descriptor 必須定義：input schema、allowed target roles、mutates scopes、preserve scopes、destructive flag、confirmation rule、undoable、QA invalidation、portable serialization、fallback/unsupported reason。AI bridge 有也只能回 bounded operation payload；不接受任意 HTML/JS/CSS patch。
+
+## 10.5 Shared schema / portability rules
+
+- Components 已有 ID；keyPoints 目前以 array index 定位，不足以承載 point reorder/drag/typography/motion。EDX-WP1 先做 backward-compatible stable element identity proposal；舊 deck 可讀，新版另存不丟 identity。
+- Manual override 不建立第二套 layout DB；有效 presentation state 仍由 CompositionSpec + bounded overrides 表達。
+- `current request > explicit manual override > deck setting > generated Composition/Style > default`；content-only patch 不重置人工 geometry/typography/motion。
+- 新欄位必須同時閉環：schema → sanitizer → renderer → editor → export → reopen → recipient AI parse。Browser 當下看得到但另存被 sanitizer 丟掉 = hard fail。
+- Undo stack、selection、editor chrome、autosave draft、backup/recovery history 全部是 local work state，不進 portable HTML。
+- Local autosave 是 capability，不是保證；storage probe fail 時降級 session history + leave warning。External-change detection 只有持續 file handle/等價能力時啟用。
+- `Reset this slide`、`Restore edit-start deck`、`AI recompose` 是不同操作，不合併成含糊的 Reset。
+
+## 10.6 Motion/editor donor guardrails
+
+吸收 donor 實跑 lessons：動畫不能把 live 中間值序列化成 canonical；background-tab / frozen rAF 必須 force final value；離頁 reset 才能 replay；animation transform compose 既有 transform；reveal failsafe 在 hide 時就 armed；multi-select animation order 重新編連續序；order badge 是 editor chrome 不出檔。
+
+PPTSKILL 可比 donor 更乾淨：canonical DeckSpec 與 live animation layer 分離，因此正式 slide preview 可在 presentation layer 執行；但任何 animation 中間的 text/opacity/transform 不得回寫 canonical。Reduced motion 直接顯示完整終態。
+
+## 10.7 Dependency / license / bundle hard gate
+
+- dependency 進 repo 前必須固定版本與 integrity/checksum，保存 repo/license/NOTICE；禁止 runtime `latest`。
+- 量測實際 minified/gzip 與 **inline 到最終 deck.html 後的 bytes**，不可拿 repo size 猜；12 MiB warning / 20 MiB hard fail 保持。
+- MIT / Apache-2.0 仍要正確保留 license/NOTICE。LGPL-2.1 p5.js 單獨 legal review；未通過時只使相關 p5-backed effect unavailable，不阻塞其他 Vanta effect。
+- 新 dependency 必須 prove：offline、fresh browser、save/reopen、recipient parse、reduced motion / static fallback、no external CDN、no second canonical state。
+- 每個 `CUSTOM_DELTA` 必須在卡上回答「為什麼現有 prior art 不能解」；答案若只是「自己寫比較快」不接受。
+
+## 10.8 Product simplicity hard stop
+
+功能增加不能把 UI 變 PowerPoint ribbon。Editor 以 selection-driven contextual toolbar 為主：未選取時只保留低干擾編輯入口；文字／圖片／多選／slide background 各只顯示相關常用操作；exact geometry、letter-spacing、raw motion params 等進 advanced。完整 WYSIWYG desktop-first；手機只做合理的輕量修改，不為手機強做精密 freeform editing。
+
+EDX 不能建立第二 editor architecture、第二 renderer、第二 export、中央 backend、雲端 collaboration、專業 timeline 或 AI API 直塞 deck.html。Optional AI bridge 之後若做，必須可缺席且不能拿 token/key 寫進 HTML。
