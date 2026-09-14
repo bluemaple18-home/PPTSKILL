@@ -27,10 +27,15 @@ const pressureQuestion = {
   suggestion: '建議答案：用一句主張回答，並同時指出它最薄弱的假設。',
 };
 
-export function createGrillState({ materials = [], known = {} } = {}) {
+export function createGrillState({ materials = [], known = {}, preflightQuestions = [] } = {}) {
   return {
     materials: materials.map((material) => ({ id: material.id, reviewed: material.reviewed === true })),
     resolved: Object.fromEntries(Object.entries(known).filter(([, value]) => typeof value === 'string' && value.trim())),
+    preflightQuestions: preflightQuestions.filter((item) => item && typeof item.dimension === 'string' && item.dimension.trim() && typeof item.question === 'string' && item.question.trim()).map((item) => ({
+      dimension: item.dimension.trim(),
+      question: item.question.trim(),
+      suggestion: typeof item.suggestion === 'string' && item.suggestion.trim() ? item.suggestion.trim() : '建議答案：只補足會影響內容、證據或決策的必要資訊。',
+    })),
     asked: [],
     activeQuestion: null,
   };
@@ -41,9 +46,12 @@ export function nextQuestion(state) {
     return { status: 'blocked', reason: '必須先讀完所有使用者提供的素材。' };
   }
   if (state.activeQuestion) return { status: 'waiting', question: state.activeQuestion };
+  const preflight = state.preflightQuestions?.find((item) => !state.resolved[item.dimension]);
+  if (preflight) return { status: 'ask', question: { ...preflight } };
   const unresolved = questions.find((item) => !state.resolved[item.dimension]);
   if (unresolved) return { status: 'ask', question: { ...unresolved } };
-  if (state.asked.length === 0) return { status: 'ask', question: { ...pressureQuestion } };
+  const grillDimensions = new Set([...questions.map((item) => item.dimension), pressureQuestion.dimension]);
+  if (!state.asked.some((dimension) => grillDimensions.has(dimension))) return { status: 'ask', question: { ...pressureQuestion } };
   return { status: 'complete' };
 }
 
@@ -67,8 +75,10 @@ export function answerQuestion(state, answer) {
 
 export function canDraftOutline(state) {
   const required = questions.map((item) => item.dimension);
+  const grillDimensions = new Set([...required, pressureQuestion.dimension]);
   return state.materials.every((material) => material.reviewed)
-    && state.asked.length >= 1
+    && (state.preflightQuestions ?? []).every((item) => Boolean(state.resolved[item.dimension]))
+    && state.asked.some((dimension) => grillDimensions.has(dimension))
     && required.every((dimension) => Boolean(state.resolved[dimension]));
 }
 
@@ -78,7 +88,7 @@ export function buildOutline({ state, deckTitle, slides, externalSourceAuthorize
     schemaVersion: '1.0',
     deckTitle,
     sourcePolicy: externalSourceAuthorized ? 'external-explicitly-authorized' : 'user-provided-only',
-    slides: slides.map((slide) => ({ id: slide.id, title: slide.title, subtitle: slide.subtitle, keyPoints: [...slide.keyPoints] })),
+    slides: slides.map((slide) => ({ id: slide.id, title: slide.title, subtitle: slide.subtitle, keyPoints: [...slide.keyPoints], ...(slide.section !== undefined ? { section: slide.section } : {}) })),
     approval: { status: 'pending', approvedBy: null },
   };
 }
@@ -100,6 +110,7 @@ export function validateOutline(outline) {
   for (const slide of outline?.slides ?? []) {
     if (!slide.title?.trim() || !slide.subtitle?.trim()) errors.push(`${slide.id || 'unknown'} 缺少 title 或 subtitle。`);
     if (!Array.isArray(slide.keyPoints) || slide.keyPoints.length < 3 || slide.keyPoints.length > 5 || slide.keyPoints.some((point) => typeof point !== 'string' || !point.trim())) errors.push(`${slide.id || 'unknown'} 必須有 3～5 個非空 keyPoints。`);
+    if (slide.section !== undefined && !['main', 'appendix'].includes(slide.section)) errors.push(`${slide.id || 'unknown'} 的 section 必須是 main 或 appendix。`);
   }
   if (errors.length) return { status: 'fail', errors };
   if (outline.approval?.status !== 'confirmed' || outline.approval?.approvedBy !== 'human') return { status: 'blocked', reason: 'Outline 尚未經人類確認。', errors: [] };

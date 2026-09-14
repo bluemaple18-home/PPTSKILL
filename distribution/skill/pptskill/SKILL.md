@@ -24,6 +24,6 @@ If any workflow command returns `blocked`, report the reason, ask only the next 
 
 ## New deck
 
-Read all supplied materials before asking questions. Do not re-ask facts already present. Complete at least one pressure test, obtain explicit human outline approval, present four cover candidates, and obtain human Style selection. Create the final HTML only through `workflow-cli.mjs render-new` with the approved Grill, outline, Style selection and DeckSpec artifacts.
+Read all supplied materials, write the structured brief to a temporary JSON file, then run `node <runtime-root>/core/runtime/workflow-cli.mjs preflight-new --brief <brief.json>` before asking questions. Use its `grillState`, ask its `nextQuestion`, and keep calling the existing `grill-outline.js` one-question-at-a-time functions; do not re-ask known facts. The preflight report is the only orchestration seam for numeric conflicts, high-impact unknowns, explicit generation permissions and Main/Appendix/Drop allocation. Complete at least one pressure test, obtain explicit human outline approval, present four cover candidates, and obtain human Style selection. Create the final HTML only through `workflow-cli.mjs render-new` with the approved Grill, outline, Style selection and DeckSpec artifacts.
 
 Do not search externally unless the user explicitly authorizes it. Do not create a second renderer or bypass DeckSpec, StyleSpec, CompositionSpec, sanitizer, geometry or size gates.
