@@ -1,8 +1,8 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-10
+**Updated:** 2026-09-14
 
-**Status:** `P0-R11-R1 REAL AI ENTRY ENFORCEMENT` ACTIVE；MVP release status suspended after real Claude Code entry failure
+**Status:** MVP CLOSED / RELEASE ARTIFACT RESEALED；`P0-R11-R1` remains COMPLETE；Gemini CLI is trigger-only `UNVERIFIED` until available
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
 
 ---
@@ -210,13 +210,14 @@ Keep the seven semantic primitives and DeckSpec-safe rendering path, but the cur
 
 ## `P0-R11-R1` — Real AI Entry Enforcement
 
-**Status:** `ACTIVE / RELEASE BLOCKER`（S1/S2 COMPLETE；S3 PARTIAL）
+**Status:** `COMPLETE / RELEASE BLOCKER CLOSED`（S1/S2/S3 COMPLETE；Codex and Claude Code real installed-CLI replay PASS；Gemini UNVERIFIED because CLI unavailable）
 
 - Existing HTML defaults to `restyle-existing` and preserves slide IDs, order and content.
 - Content/order mutation requires an exact bounded change set plus explicit human approval.
 - ZIP installs one real, discoverable `pptskill` skill for Codex, Claude Code and Gemini CLI.
-- S1 deterministic gate and S2 portable lifecycle pass; S3 real CLI replay remains partial because of local CLI execution blockers.
-- Previous R11 release claim remains suspended until S3 passes.
+- S1 deterministic gate, S2 portable lifecycle and S3 real CLI replay pass for every available supported CLI.
+- Gemini CLI is unavailable in the acceptance environment and remains explicitly unverified under the deferred-on-availability acceptance rule.
+- The R11-R1 blocker is closed and MVP release status is restored; no renderer or visual-quality card is reopened.
 
 Current execution order:
 
@@ -225,7 +226,9 @@ P0-R11-R1 S1 preservation gate ✓
           ↓
 P0-R11-R1 S2 skill packaging/lifecycle ✓
           ↓
-P0-R11-R1 S3 real installed-CLI replay ◐
+P0-R11-R1 S3 real installed-CLI replay ✓
+          ↓
+Current MVP execution queue complete; Gemini replay deferred until supported CLI availability
 ```
 
 ---
@@ -688,7 +691,7 @@ Do not build a generic PPTX importer. Presenton Template V2 remains an architect
 
 **Priority:** P0 RELEASE GATE  
 **Depends on:** P0-VQ1～VQ3, P0-R1～R7, P1-R8, P1-R10; P1-R9 required for the real Company Style slot.
-**Status:** COMPLETE — 18/18 release acceptance PASS；110/110 regression PASS；final ZIP SHA-256 `71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6`。
+**Status:** COMPLETE / RESEALED — 18/18 release acceptance PASS；117/117 regression PASS；final ZIP SHA-256 `824471ae05ec5ee045f796fbde3da993f4115e5b01c7639bb7c1b44e1b1337fd`。
 
 E2E must prove:
 
@@ -759,7 +762,7 @@ Do not open MVP cards for:
 
 # 8. Next action
 
-**NEXT = P0-R11-R1 — Real AI Entry Enforcement；修復真實 CLI skill 載入與既有 HTML preservation gate，不重開 renderer／視覺卡。**
+**NEXT = none in the current MVP queue；P0-R11-R1 已關閉 release blocker。Gemini real CLI replay 僅在 supported CLI 可用時補驗，維持 UNVERIFIED，不重開 renderer／視覺卡。**
 
 Implementation order is fixed until full-deck owner visual acceptance:
 
@@ -774,8 +777,8 @@ Implementation order is fixed until full-deck owner visual acceptance:
 9. `P1-R8-B-R1` — COMPLETE；ZIP profile、AI-facing adapter、marker safety、smoke semantics、deterministic build 與 update failure states 已關閉，兩名 blind reviewers PASS。
 10. `P1-R9` — COMPLETE；Company Style Pack Owner Visual Gate PASS，兩項 variation guardrail 為非阻擋 note。
 11. `P1-R10` — COMPLETE；asset optimizer / single-file size guard，105/105 regression 與 15/15 browser acceptance PASS。
-12. `P0-R11` — SUPERSEDED；真實 Claude Code 入口揭露 `R11-03` acceptance gap，release claim 暫停。
-13. `P0-R11-R1` — ACTIVE；S1 preservation gate 與 S2 real-skill lifecycle COMPLETE，S3 real installed-CLI replay PARTIAL。
+12. `P0-R11` — SUPERSEDED；真實 Claude Code 入口曾揭露 `R11-03` acceptance gap，現由 `P0-R11-R1` closure 補齊。
+13. `P0-R11-R1` — COMPLETE；S1 preservation gate、S2 real-skill lifecycle 與 available-CLI S3 replay PASS；Gemini CLI unavailable，維持 UNVERIFIED。
 
 Do not reopen Q2 for cosmetic polish. VQ3 may feed evidence-backed refinements back into Q2 grammar, but must not restart the Q2 architecture rewrite or add a blocking Q2 polish card.
 

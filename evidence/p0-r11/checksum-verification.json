@@ -1,12 +1,14 @@
 {
   "schemaVersion": "1.0",
-  "status": "pass",
-  "artifact": "dist/PPTSKILL-0.1.0.zip",
+  "status": "superseded",
+  "artifact": "historical P0-R11 ZIP built before P0-R11-R1 repair",
   "declaredSha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
   "independentSha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
   "timezoneRebuilds": {
     "America/Los_Angeles": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6",
     "Asia/Tokyo": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6"
   },
-  "deterministic": true
+  "deterministic": true,
+  "supersededBy": "evidence/p0-r11/reseal-smoke-20260914.json",
+  "note": "These hashes remain immutable historical evidence for the original R11 artifact and do not identify the current dist/PPTSKILL-0.1.0.zip."
 }

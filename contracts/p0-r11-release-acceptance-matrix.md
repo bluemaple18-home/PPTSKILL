@@ -1,6 +1,6 @@
 # P0-R11 — End-to-end MVP Release Acceptance Matrix
 
-**Status:** SUSPENDED / R11-03 INVALIDATED BY REAL CLAUDE CODE ENTRY FAILURE / REPAIR IN P0-R11-R1
+**Status:** COMPLETE / RESEALED 2026-09-14 — R11-03 repaired by P0-R11-R1; current artifact checksum and package smoke PASS
 **Purpose:** Define the replayable final-release evidence for the reviewed Company Style Pack. This document adds no product feature and is not release evidence by itself.
 
 ## Fixed release subject

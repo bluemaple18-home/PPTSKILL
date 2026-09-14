@@ -1,6 +1,6 @@
 # P0-R11-R1 — Real AI Entry Enforcement
 
-**Status:** ACTIVE / RELEASE BLOCKER — S1/S2 COMPLETE, S3 PARTIAL
+**Status:** COMPLETE — S1/S2/S3 COMPLETE; Codex and Claude Code real installed-CLI replays PASS, Gemini CLI unavailable and explicitly UNVERIFIED
 **Owner report:** 2026-09-10 — Claude Code received an existing draft HTML, skipped Grill and outline approval, then changed both content and slide order while producing a replacement HTML.
 
 ## Objective
@@ -38,7 +38,7 @@ Make the packaged PPTSKILL entry a real, discoverable skill for Codex, Claude Co
 
 ### `R11R1-S3` — Real CLI replay
 
-**Status:** PARTIAL — Claude Code and Codex both discovered the skill and failed closed without changing the source or producing `new.html`. Full command execution is not yet proven: Claude Code's non-interactive session denied the required local Node command; Codex's configured code-mode host binary is missing; Gemini CLI is unavailable.
+**Status:** COMPLETE — Real Codex and Claude Code invocations discovered the installed skill, executed `inspect-existing`, classified the seven-slide source as `restyle-existing`, and stopped at the pressure-test gate without changing the source or producing `new.html`. Gemini CLI is unavailable and remains explicitly UNVERIFIED pending a supported environment.
 
 **traces_to:** `FR-R11R1-01` through `FR-R11R1-06`
 **depends_on:** `R11R1-S1`, `R11R1-S2`
@@ -49,7 +49,7 @@ Make the packaged PPTSKILL entry a real, discoverable skill for Codex, Claude Co
 
 - Checkpoint A after `S1`: preservation gate RED→GREEN and no renderer/visual changes.
 - Checkpoint B after `S2`: clean ZIP install/update/uninstall and unrelated-skill collision test PASS.
-- Final gate after `S3`: do not restore MVP release status until available real CLI replays pass; unavailable Gemini remains explicitly unverified, not silently PASS.
+- Final gate after `S3`: PASS — available real CLI replays pass and MVP release status is restored; unavailable Gemini remains explicitly unverified, not silently PASS.
 
 ## Out of scope
 
@@ -63,4 +63,4 @@ Make the packaged PPTSKILL entry a real, discoverable skill for Codex, Claude Co
 - Stable requirement and slice IDs: PASS.
 - Every slice has dependencies, acceptance and verification: PASS.
 - No dangling references or unresolved product decision: PASS.
-- Current frontier: `R11R1-S3` real installed-CLI replay.
+- Current frontier: none; `P0-R11-R1` is complete. Gemini replay remains deferred until a supported CLI is available and is not represented as PASS.

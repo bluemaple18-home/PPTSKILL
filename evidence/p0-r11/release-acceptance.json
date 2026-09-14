@@ -2,35 +2,40 @@
   "schemaVersion": "1.0",
   "release": "PPTSKILL 0.1.0",
   "gate": "P0-R11",
-  "status": "superseded",
-  "completedAt": "2026-09-10",
-  "invalidatedAt": "2026-09-10",
-  "invalidatedBy": "A real Claude Code user path skipped the packaged entry instructions, Grill and outline approval, then changed content and slide order. R11-03 used a controlled trace rather than real CLI discovery.",
+  "status": "pass",
+  "completedAt": "2026-09-14",
+  "resealedAt": "2026-09-14",
+  "history": {
+    "originalR11CompletedAt": "2026-09-10",
+    "invalidatedAt": "2026-09-10",
+    "invalidatedBy": "A real Claude Code user path skipped the packaged entry instructions, Grill and outline approval, then changed content and slide order. R11-03 used a controlled trace rather than real CLI discovery.",
+    "repairedBy": "P0-R11-R1"
+  },
   "finalZip": {
     "path": "dist/PPTSKILL-0.1.0.zip",
-    "sha256": "71fa2387f9eae3293eeebe93cc6e5b661cabe3853f8f1919ee2f07df116979c6"
+    "sha256": "824471ae05ec5ee045f796fbde3da993f4115e5b01c7639bb7c1b44e1b1337fd"
   },
   "summary": {
-    "pass": 17,
-    "fail": 1,
+    "pass": 18,
+    "fail": 0,
     "pending": 0,
-    "regressionTests": "110/110 PASS"
+    "regressionTests": "117/117 PASS"
   },
   "rows": [
     {
       "id": "R11-01",
       "status": "pass",
-      "evidence": ["dist/PPTSKILL-0.1.0.zip", "dist/PPTSKILL-0.1.0.zip.sha256", "evidence/p0-r11/final-zip-sha256.txt", "evidence/p0-r11/checksum-verification.json"]
+      "evidence": ["dist/PPTSKILL-0.1.0.zip", "dist/PPTSKILL-0.1.0.zip.sha256", "evidence/p0-r11/final-zip-sha256.txt", "evidence/p0-r11/reseal-smoke-20260914.json"]
     },
     {
       "id": "R11-02",
       "status": "pass",
-      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/fresh-install/command-trace.json"]
+      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/fresh-install/command-trace.json", "evidence/p0-r11/reseal-smoke-20260914.json"]
     },
     {
       "id": "R11-03",
-      "status": "fail",
-      "evidence": ["evidence/p0-r11/ai-entry-workflow/entry-transcript.json", "evidence/p0-r11/ai-entry-workflow/workflow-summary.json", "evidence/p0-r11-r1/repair-receipt.md"]
+      "status": "pass",
+      "evidence": ["evidence/p0-r11-r1/s3-real-cli-replay-20260914.md", "evidence/p0-r11-r1/repair-acceptance.json", "evidence/p0-r11-r1/repair-receipt.md"]
     },
     {
       "id": "R11-04",
@@ -105,7 +110,7 @@
     {
       "id": "R11-18",
       "status": "pass",
-      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/editor-export/browser-journey.json"]
+      "evidence": ["evidence/p0-r11/fresh-install/lifecycle.json", "evidence/p0-r11/editor-export/browser-journey.json", "evidence/p0-r11/reseal-smoke-20260914.json"]
     }
   ]
 }

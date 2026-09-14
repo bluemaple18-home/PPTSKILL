@@ -23,7 +23,7 @@ v0.1 的核心契約、full-deck visual worlds、motion、direct editor、portab
 - PS-002：capability probe 與 validator 保留。
 - P0-R1 / R2 / R4 / R6：DeckSpec、Grill Me／outline、bounded generation、browser geometry hard gate 均維持完成。
 - P0-R3／R5 與 VQ2／VQ3：功能、visual-world portability 與 Owner visual/motion gates 已通過。
-- **`P0-R11-R1 Real AI Entry Enforcement` 為目前 release blocker。** 2026-09-10 真實 Claude Code 使用揭露舊版 adapter 只提供說明文件、沒有註冊為可發現 Skill，也沒有既有 HTML preservation gate；先前 R11 release claim 已暫停。
+- **MVP 已於 2026-09-14 完成 release artifact reseal。** `P0-R11-R1 Real AI Entry Enforcement` 維持 COMPLETE；真實 Codex 與 Claude Code installed-skill replay PASS。最終 `PPTSKILL-0.1.0.zip` SHA-256 為 `824471ae05ec5ee045f796fbde3da993f4115e5b01c7639bb7c1b44e1b1337fd`，isolated lifecycle/package smoke PASS。Gemini CLI 維持 trigger-only `UNVERIFIED`，待 supported CLI 可用時補驗。
 
 ## Portable HTML editor
 
