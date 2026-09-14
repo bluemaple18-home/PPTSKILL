@@ -20,6 +20,7 @@
 1. Legacy `1.0` DeckSpec 無 claims 時維持可讀、可 render、可另存。
 2. Compact claim/source/derivation 可通過 sanitizer、renderer embed、editor export 與 recipient reparse，不遺失、不變形成第二正本。
 3. Private／unknown source fields 在所有保存路徑均被移除。
+   - `preflight-new` 的 `portableClaims` 在輸出當下即套用 source／derivation allowlist，不依賴後續 DeckSpec 二次清洗。
 4. Percentage-point 的 ratio 與 percent 輸入皆產生人類尺度的 point delta；缺 scale 或未知 scale fail loud。
 5. Claim ID 唯一、slide linkage 有效；derived claim 必須有可重算 derivation。
 6. Targeted、distribution、full regression、browser editor acceptance 與 `git diff --check` PASS。

@@ -1,4 +1,5 @@
 import { createGrillState, nextQuestion } from './grill-outline.js';
+import { sanitizePortableDerivation } from './deck-spec.js';
 
 const comparableFields = ['metric', 'period', 'population', 'unit', 'currency'];
 const requiredComparableFields = ['metric', 'period', 'unit'];
@@ -133,6 +134,8 @@ export function sanitizeShareableSourceRefs(sources = []) {
 export function preparePortableClaims(claims = []) {
   return claims.flatMap((claim) => {
     if (!nonEmptyText(claim?.id) || !claimKinds.includes(claim.kind) || !nonEmptyText(claim.summary) || !Array.isArray(claim.slideIds) || claim.slideIds.length < 1) return [];
+    const derivation = claim.kind === 'derived' ? sanitizePortableDerivation(claim.derivation) : null;
+    if (claim.kind === 'derived' && !derivation) return [];
     return [{
       id: claim.id.trim(),
       kind: claim.kind,
@@ -143,7 +146,7 @@ export function preparePortableClaims(claims = []) {
         .flatMap((field) => nonEmptyText(claim[field]) ? [[field, claim[field].trim()]] : [])),
       ...(['causal', 'correlation', 'descriptive'].includes(claim.relation) ? { relation: claim.relation } : {}),
       ...(['causal', 'correlation', 'descriptive', 'unknown'].includes(claim.evidenceRelation) ? { evidenceRelation: claim.evidenceRelation } : {}),
-      ...(claim.kind === 'derived' && claim.derivation ? { derivation: { ...claim.derivation } } : {}),
+      ...(derivation ? { derivation } : {}),
       sourceRefs: sanitizeShareableSourceRefs(claim.sourceRefs),
     }];
   });

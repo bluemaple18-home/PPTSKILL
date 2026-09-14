@@ -81,7 +81,7 @@ const sanitizeSourceRef = (source) => {
   };
 };
 
-const sanitizeDerivation = (derivation) => {
+export const sanitizePortableDerivation = (derivation) => {
   if (!derivation || typeof derivation !== 'object') return null;
   const operation = copyText(derivation.operation);
   if (!['absolute-delta', 'percent-change', 'percentage-point-change'].includes(operation)) return null;
@@ -109,7 +109,7 @@ const sanitizeClaim = (claim) => {
       .flatMap((field) => copyText(claim[field]) ? [[field, claim[field]]] : [])),
     ...(['causal', 'correlation', 'descriptive'].includes(claim.relation) ? { relation: claim.relation } : {}),
     ...(['causal', 'correlation', 'descriptive', 'unknown'].includes(claim.evidenceRelation) ? { evidenceRelation: claim.evidenceRelation } : {}),
-    ...(claim.kind === 'derived' ? { derivation: sanitizeDerivation(claim.derivation) } : {}),
+    ...(claim.kind === 'derived' ? { derivation: sanitizePortableDerivation(claim.derivation) } : {}),
     sourceRefs: Array.isArray(claim.sourceRefs) ? claim.sourceRefs.slice(0, 8).map(sanitizeSourceRef).filter(Boolean) : [],
   };
 };

@@ -186,7 +186,7 @@ test('installed Skill 的唯一 preflight seam 執行 conflict、causal 與 deri
       },
       {
         id: 'growth-rate', value: 30, kind: 'derived', summary: '成長率為 30%', slideIds: ['main'], metric: 'growth-rate', period: '2026-Q2', population: 'all-users', unit: 'percent',
-        derivation: { operation: 'percent-change', baseline: 100, current: 120 },
+        derivation: { operation: 'percent-change', baseline: 100, current: 120, prompt: '不得外洩', reviewMetadata: 'private', extra: 42 },
         sourceRefs: [{ id: 'public-report', label: '公開報告', url: 'https://example.com/report', shareable: true, sourceAvailableToRecipient: false, localPath: '/private/report.xlsx' }],
       },
     ],
@@ -201,6 +201,8 @@ test('installed Skill 的唯一 preflight seam 執行 conflict、causal 與 deri
     computedValue: 20, providedValue: 30, status: 'mismatch',
   }]);
   assert.deepEqual(result.portableClaims[0].sourceRefs, [{ id: 'public-report', label: '公開報告', url: 'https://example.com/report', public: true, sourceAvailableToRecipient: false }]);
+  assert.deepEqual(result.portableClaims[0].derivation, { operation: 'percent-change', baseline: 100, current: 120 });
+  assert.doesNotMatch(JSON.stringify(result.portableClaims), /不得外洩|reviewMetadata|private|extra/);
   assert.deepEqual(result.generationPermissions, { image: true, chart: false });
   assert.equal(result.outlinePlan.slides[0].section, 'main');
   assert.deepEqual(result.outlinePlan.dropped, [{ sourceId: 'source-drop', retainedInSource: true }]);

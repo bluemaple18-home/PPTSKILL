@@ -17,6 +17,10 @@
 
 Browser acceptance 起初兩次停在既有 image replacement check。證據顯示 claim round-trip、privacy 與 browser diagnostics 均已 PASS，但 hardcoded WebP fixture 無法完成 `createImageBitmap()`，事件 handler 因而保持原 PNG。對照既有 R10 harness 後，將測試素材改為 browser canvas 產生的有效 WebP；原 file-input UI path 隨即轉綠。產品 image runtime 未修改。
 
+## Review repair
+
+獨立 review 發現 packaged `preflight-new` 的 portable claim derivation 曾以 object spread 帶出未知欄位。修補後，preflight 與 DeckSpec sanitizer 共用同一個 derivation allowlist；direct report 與 installed-runtime 測試都會在 DeckSpec 二次清洗前，斷言 prompt、review metadata 與未知欄位已移除。
+
 ## 驗證
 
 - Contract + DeckSpec + renderer + editor + distribution targeted：51/51 PASS。
