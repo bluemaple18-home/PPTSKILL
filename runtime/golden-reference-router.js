@@ -70,7 +70,8 @@ const expectedAnchors = (proposal, candidate) => candidate.primitive === 'compon
 
 const antiPatternConflicts = (proposal, route) => {
   const conflicts = [];
-  if (imageAnchors.has(route.visualAnchor) && proposal.semantic?.component?.type !== 'image') {
+  const requiresSemanticImage = imageAnchors.has(route.visualAnchor) || route.imageTreatment !== 'none';
+  if (requiresSemanticImage && proposal.semantic?.component?.type !== 'image') {
     conflicts.push('anti_pattern_conflict_missing_semantic_image');
   }
   if (/50\s*[/:-]\s*50/u.test(route.dominantRegionRatio)) conflicts.push('anti_pattern_conflict_mechanical_50_50');
@@ -146,7 +147,7 @@ export function routeGoldenReferences({ compositionProposals = [], styleSpecId, 
         .map(([logicRef, route]) => evaluateLogic({ logicRef, route, proposal, candidate, styleSpec }))
         .sort((left, right) => right.score - left.score || left.logicRef.localeCompare(right.logicRef));
       const references = evaluated.filter(({ credible }) => credible).slice(0, 2).map(({ credible, ...reference }) => reference);
-      const excluded = evaluated.filter(({ routing }) => routing.antiPatternConflict.length > 0).slice(0, 2)
+      const excluded = evaluated.filter(({ routing }) => routing.antiPatternConflict.length > 0).slice(0, 3)
         .map(({ logicRef, routing, reasonCodes }) => ({ logicRef, antiPatternConflict: routing.antiPatternConflict, reasonCodes }));
       return {
         rank: candidate.rank,

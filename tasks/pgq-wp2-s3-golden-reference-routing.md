@@ -56,3 +56,14 @@
 - RED → GREEN public-interface tests：style-dependent routing、structured reasons、none path、anti-pattern guard、primitive/hash invariance、installed runtime。
 - Targeted regression：Slice 1/2、Golden grammar、generation plan、renderer、distribution、entry enforcement。
 - Full `pnpm test`、syntax、debug scan、完整 branch-range `git diff --check`。
+
+## Repair history
+
+### Repair 1 — image-treatment dependency guard
+
+- Review finding：缺 semantic image 時，`cropped-type-image` 因 `visualAnchor=display-type` 未被既有 image-anchor guard 排除，仍輸出 `deliberate-offstage-crop`／`photo-field`。
+- RED：`node --test --test-name-pattern=image-treatment-only tests/pgq-wp2-s3-golden-routing.test.mjs`，`0/1 PASS`；direct planner 實際把 `cropped-type-image` 放入 matched references。
+- 假說 A：image dependency 只由 `visualAnchor` 判斷而漏掉 `imageTreatment`；若所有非 `none` 的 grammar image treatment 都視為需要 semantic image，cropped route 應進入 existing anti-pattern exclusion。
+- 假說 B：只對單一 archetype 加例外會繼續漏掉 `architectural-negative-space`、`graphic-brand-field` 等同類 route；修正應依 canonical image-treatment token，而不是 hardcode logicRef。
+- GREEN：同一最小重現 `1/1 PASS`；direct 與 installed `plan-new` 均確認 image-treatment-only route 被排除。
+- Verification：Slice 3 `7/7`、targeted `56/56`、full regression `158/158` PASS。

@@ -61,6 +61,22 @@ test('Golden routing 提供 bounded structured reasons，且只引用 accepted e
   assert.doesNotMatch(JSON.stringify(plan.goldenRouting), /artifact|filename|<html|<style|class=|https?:|data:image|\.png|\.gif/i);
 });
 
+test('無 semantic image 時排除 image-treatment-only Golden logic', () => {
+  const coverOutline = { ...outline, slides: [{ ...slide, id: 'cover' }] };
+  const coverSignals = [{ slideId: 'cover', slideRole: 'cover', relationship: 'explanation', evidence: 'none', density: 'low' }];
+  const fullBleedStyle = style({ id: 'route-full-bleed', primaryMove: 'full-bleed-type', compositionLanguage: 'narrative', density: 'low' });
+  const plan = createGenerationPlan({
+    outline: coverOutline, styleSpecId: fullBleedStyle.id, styleSpec: fullBleedStyle, capacity,
+    generationPermissions: { image: false }, semanticSignals: coverSignals,
+  });
+  const candidate = plan.goldenRouting[0].candidates[0];
+  assert.equal(candidate.primitive, 'cover');
+  assert.equal(candidate.references.some(({ logicRef }) => logicRef === 'cropped-type-image'), false);
+  assert.ok(candidate.references.every(({ designLogic }) => designLogic.imageTreatment === 'none'));
+  assert.ok(candidate.excluded.some(({ logicRef, antiPatternConflict }) => logicRef === 'cropped-type-image'
+    && antiPatternConflict.includes('anti_pattern_conflict_missing_semantic_image')));
+});
+
 test('沒有同時通過 semantic、anchor 與 Style match 時回 none，不硬配', () => {
   const contradictoryStyle = style({ id: 'route-contradictory', primaryMove: 'technical-map', compositionLanguage: 'narrative', density: 'medium' });
   const plan = createGenerationPlan({ outline, styleSpecId: contradictoryStyle.id, styleSpec: contradictoryStyle, capacity, semanticSignals });
@@ -113,6 +129,20 @@ test('installed plan-new 輸出 Golden logic routing，舊 request 未帶 StyleS
   const result = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
   assert.equal(result.plan.goldenRouting[0].candidates[0].references[0].logicRef, 'typography-hero');
   assert.equal(result.plan.goldenRouting[0].candidates[0].primitive, 'split-proof');
+
+  const coverOutline = { ...outline, slides: [{ ...slide, id: 'cover' }] };
+  const coverSignals = [{ slideId: 'cover', slideRole: 'cover', relationship: 'explanation', evidence: 'none', density: 'low' }];
+  const fullBleedStyle = style({ id: 'route-full-bleed', primaryMove: 'full-bleed-type', compositionLanguage: 'narrative', density: 'low' });
+  await writeFile(requestPath, JSON.stringify({
+    outline: coverOutline, styleSpecId: fullBleedStyle.id, styleSpec: fullBleedStyle, capacity,
+    generationPermissions: { image: false }, semanticSignals: coverSignals,
+  }));
+  const noImage = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
+  const installedCover = noImage.plan.goldenRouting[0].candidates[0];
+  assert.equal(installedCover.references.some(({ logicRef }) => logicRef === 'cropped-type-image'), false);
+  assert.ok(installedCover.references.every(({ designLogic }) => designLogic.imageTreatment === 'none'));
+  assert.ok(installedCover.excluded.some(({ logicRef, antiPatternConflict }) => logicRef === 'cropped-type-image'
+    && antiPatternConflict.includes('anti_pattern_conflict_missing_semantic_image')));
 
   await writeFile(requestPath, JSON.stringify({ outline, styleSpecId: editorialStyle.id, capacity, semanticSignals }));
   const legacy = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
