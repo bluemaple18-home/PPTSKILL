@@ -1,7 +1,7 @@
 # PGQ-WP2 Slice 1 — Truthful Generation Capability / Chart Semantics Receipt
 
-**日期：** 2026-09-15  
-**狀態：** COMPLETE / READY FOR INDEPENDENT REVIEW  
+**日期：** 2026-09-15
+**狀態：** COMPLETE / READY FOR INDEPENDENT REVIEW
 **基線：** `b5d57570b7d27ded46d1c1138052abc4473c6d8a`
 
 ## 交付

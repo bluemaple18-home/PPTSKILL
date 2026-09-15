@@ -1,6 +1,6 @@
 # PGQ-WP2-S1 — Truthful Generation Capability / Chart Semantics Gate
 
-**Status:** COMPLETE / READY FOR INDEPENDENT REVIEW  
+**Status:** COMPLETE / READY FOR INDEPENDENT REVIEW
 **traces_to:** `PGQ-D02`, `PGQ-D06`
 
 ## Objective
