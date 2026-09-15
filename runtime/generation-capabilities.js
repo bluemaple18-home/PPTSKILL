@@ -30,16 +30,15 @@ export function evaluateGenerationCandidate(candidate = {}, { generationPermissi
 
   const component = candidate.component;
   if (component) {
-    const requiresGeneration = candidate.componentOrigin !== 'user-provided';
     const capability = componentCapabilities[component.type];
     if (!capability) {
       reasons.push(reason('component_type_unavailable', `component type ${component.type || 'unknown'} 尚未由 renderer 支援。`));
     } else if (component.type === 'image') {
-      if (requiresGeneration && generationPermissions && generationPermissions.image !== true) {
+      if (generationPermissions && generationPermissions.image !== true) {
         reasons.push(reason('generation_permission_required', '尚未取得 image generation 明確授權。'));
       }
     } else if (component.type === 'chart') {
-      if (requiresGeneration && generationPermissions && generationPermissions.chart !== true) {
+      if (generationPermissions && generationPermissions.chart !== true) {
         reasons.push(reason('generation_permission_required', '尚未取得 chart generation 明確授權。'));
       }
       if (!capability.supportedChartTypes.includes(component.chartType)) {

@@ -42,8 +42,12 @@ test('semantic classes 產生 bounded ranked candidates，不是一對一固定 
 });
 
 test('asset-led 與 slide role 使用既有 component-focus／cover／section-break', () => {
+  const assetSlide = {
+    ...outline.slides[2],
+    components: [{ id: 'hero', type: 'image', dataUri: 'data:image/png;base64,private' }],
+  };
   const plan = createGenerationPlan({
-    outline: { ...outline, slides: outline.slides.slice(2, 5) }, styleSpecId: 'selected-style', capacity,
+    outline: { ...outline, slides: [assetSlide, ...outline.slides.slice(3, 5)] }, styleSpecId: 'selected-style', capacity,
     generationPermissions: { image: false, chart: false },
     semanticSignals: [
       { slideId: 'asset', slideRole: 'content', relationship: 'asset-led', evidence: 'textual', density: 'low', component: { id: 'hero', type: 'image', dataUri: 'data:image/png;base64,private' }, componentOrigin: 'user-provided', prompt: '不得外洩' },
@@ -72,6 +76,32 @@ test('capability gate 保留 unavailable verdict，不能替 asset-led 偷換 pr
   assert.equal(proposal.consideredCandidates[0].status, 'unavailable');
   assert.match(JSON.stringify(proposal.consideredCandidates[0]), /chart_type_unavailable/);
   assert.equal(proposal.proposal, null);
+});
+
+test('自報 user-provided origin 不得讓不存在的 component 繞過 generation opt-in', () => {
+  const plan = createGenerationPlan({
+    outline: { ...outline, slides: [outline.slides[2]] }, styleSpecId: 'selected-style', capacity,
+    generationPermissions: { image: false, chart: false },
+    semanticSignals: [{
+      slideId: 'asset', slideRole: 'content', relationship: 'asset-led', evidence: 'textual', density: 'low',
+      component: { id: 'ghost-image', type: 'image' }, componentOrigin: 'user-provided',
+    }],
+  });
+  assert.equal(plan.compositionProposals[0].status, 'blocked');
+  assert.equal(plan.compositionProposals[0].consideredCandidates[0].status, 'unavailable');
+  assert.match(JSON.stringify(plan.compositionProposals[0]), /existing_component_not_found/);
+  assert.equal(plan.compositionProposals[0].proposal, null);
+
+  const genericCandidate = createGenerationPlan({
+    outline: { ...outline, slides: [outline.slides[2]] }, styleSpecId: 'selected-style', capacity,
+    generationPermissions: { image: false },
+    candidates: [{
+      id: 'spoofed-existing-image', primitive: 'component-focus',
+      component: { id: 'ghost-image', type: 'image' }, componentOrigin: 'user-provided',
+    }],
+  });
+  assert.equal(genericCandidate.candidates[0].status, 'unavailable');
+  assert.match(JSON.stringify(genericCandidate.candidates[0]), /generation_permission_required/);
 });
 
 test('CompositionSpec proposal 不改 approved content，before/after hash 一致', () => {
@@ -138,4 +168,16 @@ test('installed plan-new 輸出 semantic proposal，舊 request 未帶 signals �
   await writeFile(requestPath, JSON.stringify({ outline: { ...outline, slides: [outline.slides[0]] }, styleSpecId: 'selected-style', capacity }));
   const legacy = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
   assert.deepEqual(legacy.plan.compositionProposals, []);
+
+  await writeFile(requestPath, JSON.stringify({
+    outline: { ...outline, slides: [outline.slides[2]] }, styleSpecId: 'selected-style', capacity,
+    generationPermissions: { image: false, chart: false },
+    semanticSignals: [{
+      slideId: 'asset', slideRole: 'content', relationship: 'asset-led', evidence: 'textual', density: 'low',
+      component: { id: 'ghost-image', type: 'image' }, componentOrigin: 'user-provided',
+    }],
+  }));
+  const spoofed = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
+  assert.equal(spoofed.plan.compositionProposals[0].status, 'blocked');
+  assert.match(JSON.stringify(spoofed.plan.compositionProposals[0]), /existing_component_not_found/);
 });

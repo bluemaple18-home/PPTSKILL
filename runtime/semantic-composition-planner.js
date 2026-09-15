@@ -113,6 +113,20 @@ const proposalFor = (primitive, component) => ({
   },
 });
 
+const resolveComponent = (slide, signal) => {
+  if (!signal.component) return { component: null, generationRequired: true, existingComponentMissing: false };
+  if (signal.componentOrigin !== 'user-provided') {
+    return { component: signal.component, generationRequired: true, existingComponentMissing: false };
+  }
+  const inventory = Array.isArray(slide.components)
+    ? slide.components
+    : Array.isArray(slide.content?.components) ? slide.content.components : [];
+  const existing = inventory.find(({ id, type }) => id === signal.component.id && type === signal.component.type);
+  return existing
+    ? { component: sanitizeComponent(existing, slide.id), generationRequired: false, existingComponentMissing: false }
+    : { component: signal.component, generationRequired: true, existingComponentMissing: true };
+};
+
 export function planSemanticCompositions({ slides, semanticSignals = [], generationPermissions = {} }) {
   if (!Array.isArray(semanticSignals)) throw new Error('semanticSignals 必須是陣列。');
   if (semanticSignals.length === 0) return [];
@@ -128,14 +142,24 @@ export function planSemanticCompositions({ slides, semanticSignals = [], generat
 
   return slides.map((slide) => {
     const signal = signalsBySlide.get(slide.id);
+    const componentResolution = resolveComponent(slide, signal);
     const beforeHash = contentHash(slide);
     const consideredCandidates = semanticCandidates(signal).map((candidate, index) => {
-      const verdict = evaluateGenerationCandidate({
+      let verdict = evaluateGenerationCandidate({
         id: `${slide.id}/${candidate.primitive}`,
         primitive: candidate.primitive,
-        component: candidate.primitive === 'component-focus' ? signal.component : undefined,
-        componentOrigin: signal.componentOrigin,
-      }, { generationPermissions });
+        component: candidate.primitive === 'component-focus' ? componentResolution.component : undefined,
+      }, { generationPermissions: componentResolution.generationRequired ? generationPermissions : undefined });
+      if (candidate.primitive === 'component-focus' && componentResolution.existingComponentMissing) {
+        verdict = {
+          ...verdict,
+          status: 'unavailable',
+          reasons: [
+            { code: 'existing_component_not_found', message: `${slide.id} 找不到與 semantic signal 相符的 approved existing component。` },
+            ...(verdict.reasons ?? []),
+          ],
+        };
+      }
       return {
         rank: index + 1,
         primitive: candidate.primitive,
@@ -163,7 +187,7 @@ export function planSemanticCompositions({ slides, semanticSignals = [], generat
       },
       consideredCandidates,
       rankedCandidates,
-      proposal: top ? proposalFor(top.primitive, signal.component) : null,
+      proposal: top ? proposalFor(top.primitive, componentResolution.component) : null,
       contentIntegrity: { beforeHash, afterHash, unchanged: beforeHash === afterHash },
     };
   });

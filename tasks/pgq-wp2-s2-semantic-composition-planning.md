@@ -57,3 +57,14 @@
 - RED → GREEN public-interface tests covering ranked ambiguity, asset-led, role routing, unavailable preservation, hash invariance and installed runtime。
 - Existing WP2-S1、R4 generation plan、R5 renderer、R8 distribution 與 R11 entry regression。
 - Full `pnpm test`、syntax checks、JSON parse、complete branch-range `git diff --check`。
+
+## Repair history
+
+### Repair 1 — trusted existing-component binding
+
+- Review finding：caller 可自報 `componentOrigin: user-provided`，讓不存在的 component 免除 image/chart generation opt-in。
+- RED：`node --test --test-name-pattern=自報 tests/pgq-wp2-s2-semantic-composition.test.mjs`，`0/1 PASS`；ghost image 實際回傳 `ready`。
+- 假說 A：permission exemption 位於 generic capability evaluator 且直接信任 candidate origin；若移除這項 caller-controlled 判斷、讓 generic candidate 一律走既有 opt-in，direct spoof 應失效。
+- 假說 B：只恢復 permission check 仍可能在授權為 true 時產生不存在的 component ref；若 user-provided exemption 必須與 approved outline 的同 ID／type inventory 相符，ghost proposal 應 fail loud，真 existing component 應保留可用。
+- GREEN：同一最小重現 `1/1 PASS`；direct semantic planner、generic candidate 與 installed `plan-new` 均新增 spoof regression，trusted inventory match 保留 available。
+- Verification：Slice 2 `7/7`、targeted `43/43`、full regression `151/151` PASS。
