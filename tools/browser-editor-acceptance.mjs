@@ -103,25 +103,29 @@ try {
     click('duplicate');const afterDuplicate=document.querySelectorAll('.slide').length;
     click('delete');const afterDelete=document.querySelectorAll('.slide').length;
     click('move-down');click('move-up');
+    document.querySelector('.slide[data-slide-id="evidence"]').click();
+    let unsupportedChartRejection='';try{window.PPTSKILLEditor.applyLocalPatch({slideId:'evidence',region:'content.components.quality-bars',value:{chartType:'line'}})}catch(error){unsupportedChartRejection=error.message}
+    const chartTypeAfterRejection=window.PPTSKILLEditor.getDeckSpec().slides.find(s=>s.id==='evidence').content.components.find(c=>c.id==='quality-bars').chartType;
     document.querySelector('.slide[data-slide-id="portable"]').click();
     const canvas=document.createElement('canvas');canvas.width=8;canvas.height=8;const context=canvas.getContext('2d');context.fillStyle='#2563eb';context.fillRect(0,0,8,8);const blob=await new Promise((ok,fail)=>canvas.toBlob(value=>value?ok(value):fail(new Error('WebP fixture 建立失敗。')),'image/webp',.9));
     const file=new File([blob],'replacement.webp',{type:'image/webp'}),transfer=new DataTransfer();transfer.items.add(file);
     const input=document.querySelector('#pptskill-image-input');Object.defineProperty(input,'files',{value:transfer.files,configurable:true});input.dispatchEvent(new Event('change',{bubbles:true}));
     let imageReplaced=false;for(let attempt=0;attempt<40;attempt+=1){imageReplaced=document.querySelector('.slide[data-slide-id="portable"] img').src.startsWith('data:image/webp');if(imageReplaced)break;await new Promise(done=>setTimeout(done,50))}
     const html=window.PPTSKILLEditor.exportHtml();
-    return {afterDuplicate,afterDelete,imageReplaced,html,title:title.textContent,spec:window.PPTSKILLEditor.getDeckSpec()};
+    return {afterDuplicate,afterDelete,unsupportedChartRejection,chartTypeAfterRejection,imageReplaced,html,title:title.textContent,spec:window.PPTSKILLEditor.getDeckSpec()};
   })()`);
   await writeFile(exportedDeck, interaction.html);
   await navigate(exportedDeck);
   const reopened = await evaluate(String.raw`(()=>{const spec=window.PPTSKILLEditor.getDeckSpec();return{editorReady:Boolean(window.PPTSKILLEditor),slideCount:document.querySelectorAll('.slide').length,title:document.querySelector('[data-edit-target="slides.opening.content.title"]')?.textContent,subtitle:spec.slides.find(s=>s.id==='opening')?.content.subtitle,imageType:spec.slides.find(s=>s.id==='portable')?.content.components.find(c=>c.id==='portable-image')?.dataUri.slice(0,16),claim:spec.claims?.find(c=>c.id==='conversion-uplift'),serialized:JSON.stringify(spec),presenterText:/Presenter|講者模式/.test(document.body.innerText)}})()`);
   cdp.close();
   const receipt = {
-    status: interaction.afterDuplicate === 11 && interaction.afterDelete === 10 && interaction.imageReplaced && reopened.editorReady && reopened.slideCount === 10 && reopened.title === '瀏覽器直接編輯成功' && reopened.subtitle === '本機 AI 單區 patch 成功' && reopened.imageType === 'data:image/webp;' && reopened.claim?.derivation?.scale === 'ratio' && reopened.claim?.sourceRefs?.[0]?.sourceAvailableToRecipient === false && !reopened.presenterText && !/不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized) && !pageErrors.length && !networkFailures.length && !httpErrors.length ? 'pass' : 'fail',
+    status: interaction.afterDuplicate === 11 && interaction.afterDelete === 10 && /line.*支援|支援.*line/.test(interaction.unsupportedChartRejection) && interaction.chartTypeAfterRejection === 'bar' && interaction.imageReplaced && reopened.editorReady && reopened.slideCount === 10 && reopened.title === '瀏覽器直接編輯成功' && reopened.subtitle === '本機 AI 單區 patch 成功' && reopened.imageType === 'data:image/webp;' && reopened.claim?.derivation?.scale === 'ratio' && reopened.claim?.sourceRefs?.[0]?.sourceAvailableToRecipient === false && !reopened.presenterText && !/不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized) && !pageErrors.length && !networkFailures.length && !httpErrors.length ? 'pass' : 'fail',
     viewport: { width: 1280, height: 720 },
     directTextEdit: interaction.title,
     localPatch: reopened.subtitle,
     imageReplacement: interaction.imageReplaced,
     slideManagement: { afterDuplicate: interaction.afterDuplicate, afterDelete: interaction.afterDelete },
+    chartCapability: { unsupportedChartRejection: interaction.unsupportedChartRejection, chartTypeAfterRejection: interaction.chartTypeAfterRejection },
     reopen: { editorReady: reopened.editorReady, slideCount: reopened.slideCount, title: reopened.title, imageType: reopened.imageType, claim: reopened.claim },
     sanitizerLeak: /不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized),
     presenterModePresent: reopened.presenterText,

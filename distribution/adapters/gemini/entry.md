@@ -6,6 +6,6 @@
 
 1. 先以 `node <pptskill-runtime>/profile.mjs show` 讀取選配偏好；profile 不存在是正常狀態。
 2. 讀 `<pptskill-runtime>/core/working-spec.md` 與 `<pptskill-runtime>/core/schemas/`，保留 DeckSpec／StyleSpec／CompositionSpec 分離。
-3. 新簡報先以 `workflow-cli.mjs preflight-new --brief <brief.json>` 取得唯一 preflight report 與 Grill state，再使用 `<pptskill-runtime>/core/runtime/grill-outline.js` 完成單題 Grill Me 與人工 outline gate；既有 HTML 也不可跳過一次 pressure test 與人類確認。
+3. 新簡報先以 `workflow-cli.mjs preflight-new --brief <brief.json>` 取得唯一 preflight report 與 Grill state，再使用 `<pptskill-runtime>/core/runtime/grill-outline.js` 完成單題 Grill Me 與人工 outline gate；Style 選定後，把 preflight `generationPermissions` 帶入 `workflow-cli.mjs plan-new --request <plan-request.json>`，只使用 capability report 標為 `available` 的 candidate。既有 HTML 也不可跳過一次 pressure test 與人類確認。
 4. 不得直接呼叫 `renderFullDeck()` 或自行寫 final HTML；只能用 `<pptskill-runtime>/core/runtime/workflow-cli.mjs` 產生輸出。既有 HTML 預設保留內容、頁序與 slide ID，任何變更必須有逐項人工核准的 change set。export 必須遵守 `<pptskill-runtime>/core/contracts/export-sanitizer-allowlist.md`。
 5. 依 shared core 的 browser geometry 與既有 acceptance 規則驗收，不在 adapter 內新增第二套流程。

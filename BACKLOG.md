@@ -1,6 +1,6 @@
 # PPTSKILL Backlog
 
-**Updated:** 2026-09-14
+**Updated:** 2026-09-15
 
 **Status:** MVP CLOSED / RELEASE ARTIFACT RESEALED；`P0-R11-R1` remains COMPLETE；Gemini CLI is trigger-only `UNVERIFIED` until available
 **Authority:** This file is the execution queue. `working-spec.md` remains the product / requirement authority. Historical implementation details remain in Git history and `evidence/` receipts.
@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；WP2–WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 Slice 1 COMPLETE，remaining WP2 + WP3–WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -799,6 +799,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **PGQ-WP1 Slice 1 receipt：** `evidence/pgq-wp1/slice-1-receipt.md`。Pure preflight、既有 Grill 整合、Main/Appendix/Drop allocation 與 optional outline `section` 已完成；portable DeckSpec source/derivation refs 仍依原邊界延後，不視為本 slice 已交付。
 
 **PGQ-WP1 Slice 2 receipt：** `evidence/pgq-wp1-s2/slice-2-receipt.md`。Optional compact claim/source/derivation contract 已完成 schema、sanitizer、renderer、browser editor export、recipient reparse 與 legacy compatibility 閉環；percentage-point 明示 `ratio | percent` scale，模糊輸入 fail loud。
+
+**PGQ-WP2 Slice 1 receipt：** `evidence/pgq-wp2-s1/slice-1-receipt.md`。Generation planner、installed `plan-new`、renderer 與 editor 共用 truthful capability contract；目前只把非負值 `bar` 視為可保真 chart，line／area／pie／donut 與負值 bar 明示 unavailable，不再偷畫成正值 bar-row。語意構圖、Golden reference routing 與跨頁節奏仍待後續 WP2 slices。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

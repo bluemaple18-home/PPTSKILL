@@ -2,6 +2,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { contentHash, extractDeckSpec } from './deck-spec.js';
 import { preparePreflightBrief } from './preflight-brief.js';
+import { createGenerationPlan } from './generation-plan.js';
 import { renderExistingDeckWithGate, renderNewDeckWithGate } from './workflow-entry.js';
 
 const args = process.argv.slice(2);
@@ -22,6 +23,8 @@ const finish = (result) => {
 try {
   if (command === 'preflight-new') {
     finish(preparePreflightBrief(await readJson('--brief')));
+  } else if (command === 'plan-new') {
+    finish({ status: 'pass', mode: 'new-deck-plan', plan: createGenerationPlan(await readJson('--request')) });
   } else if (command === 'inspect-existing') {
     const input = valueOf('--input');
     const spec = extractDeckSpec(await readFile(input, 'utf8'));
@@ -54,7 +57,7 @@ try {
     if (result.status === 'pass') await writeFile(valueOf('--output'), result.html);
     finish({ ...result, ...(result.status === 'pass' ? { html: undefined, outputWritten: true } : { outputWritten: false }) });
   } else {
-    throw new Error('用法：workflow-cli.mjs preflight-new | inspect-existing | render-restyle | render-new');
+    throw new Error('用法：workflow-cli.mjs preflight-new | plan-new | inspect-existing | render-restyle | render-new');
   }
 } catch (error) {
   console.error(`PPTSKILL workflow：${error.message}`);

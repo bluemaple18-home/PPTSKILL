@@ -6,6 +6,7 @@ import { buildDeckEditorCss, buildDeckEditorMarkup, buildDeckEditorRuntimeScript
 import { buildBrowserAssetOptimizerRuntimeScript } from './browser-asset-optimizer.js';
 import { buildPortableSizeGuardRuntimeScript } from './portable-size-guard.js';
 import { getCompanyStylePackByStyleId } from './company-style-pack.js';
+import { validateDeckGenerationCapabilities } from './generation-capabilities.js';
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -34,8 +35,8 @@ const renderComponent = (component, slideId) => {
   if (component.type === 'citation') return `<p class="asset citation-asset" data-edit-kind="text" data-edit-target="${target}">${component.url ? `<a href="${attr(component.url)}">${escapeHtml(component.label)}</a>` : escapeHtml(component.label)}</p>`;
   if (component.type === 'table') return `<div class="asset table-asset" data-effect-role="diagram" data-edit-target="${target}"><table><thead><tr>${component.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${component.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   if (component.type === 'chart') {
-    const maximum = Math.max(1, ...component.series.flatMap(({ values }) => values.map(Math.abs)));
-    return `<div class="asset chart-asset" data-effect-role="diagram" data-edit-target="${target}">${component.series.map((series) => `<section><b>${escapeHtml(series.name)}</b>${series.values.map((value, index) => `<div class="bar-row"><span>${escapeHtml(component.labels[index] || '')}</span><i style="--bar:${Math.max(0, Math.min(100, Math.round((Math.abs(value) / maximum) * 100)))}%"></i><em>${escapeHtml(value)}</em></div>`).join('')}</section>`).join('')}</div>`;
+    const maximum = Math.max(1, ...component.series.flatMap(({ values }) => values));
+    return `<div class="asset chart-asset" data-effect-role="diagram" data-edit-target="${target}">${component.series.map((series) => `<section><b>${escapeHtml(series.name)}</b>${series.values.map((value, index) => `<div class="bar-row"><span>${escapeHtml(component.labels[index] || '')}</span><i style="--bar:${Math.max(0, Math.min(100, Math.round((value / maximum) * 100)))}%"></i><em>${escapeHtml(value)}</em></div>`).join('')}</section>`).join('')}</div>`;
   }
   return '';
 };
@@ -166,7 +167,8 @@ export function renderFullDeck(input) {
   const spec = sanitizeDeckSpec(input);
   const deckValidation = validateDeckSpec(spec);
   const compositionValidation = validateDeckCompositions(spec);
-  const errors = [...deckValidation.errors, ...compositionValidation.errors];
+  const capabilityValidation = validateDeckGenerationCapabilities(spec);
+  const errors = [...deckValidation.errors, ...compositionValidation.errors, ...capabilityValidation.errors];
   if (errors.length) return { status: 'fail', errors };
   const visualWorld = resolveVisualWorld(spec.style);
   const companyPack = visualWorld === 'company-dark' ? getCompanyStylePackByStyleId(spec.style.id) : null;

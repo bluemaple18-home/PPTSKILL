@@ -1,12 +1,16 @@
+import { evaluateGenerationCandidate, getGenerationCapabilities } from './generation-capabilities.js';
+
 const assertOutline = (outline) => {
   if (!Array.isArray(outline?.slides) || outline.slides.length < 1 || outline.slides.length > 15) throw new Error('Outline 必須是 1～15 頁。');
 };
 
-export function createGenerationPlan({ outline, styleSpecId, capacity, mode = 'direct', sampleCount = 0 }) {
+export function createGenerationPlan({ outline, styleSpecId, capacity, mode = 'direct', sampleCount = 0, candidates = [], generationPermissions = {} }) {
   assertOutline(outline);
   if (!Number.isInteger(capacity?.maxSlidesPerUnit) || capacity.maxSlidesPerUnit < 1) throw new Error('Runtime 必須明示 maxSlidesPerUnit。');
   if (!['direct', 'staged'].includes(mode)) throw new Error('mode 必須是 direct 或 staged。');
   if (![0, 1, 2].includes(sampleCount)) throw new Error('sampleCount 只能是 0、1 或 2。');
+  if (!Array.isArray(candidates)) throw new Error('candidates 必須是陣列。');
+  const permissions = { image: generationPermissions.image === true, chart: generationPermissions.chart === true };
 
   const batchSize = Math.min(capacity.maxSlidesPerUnit, outline.slides.length === 15 ? 14 : outline.slides.length);
   const units = [];
@@ -30,6 +34,9 @@ export function createGenerationPlan({ outline, styleSpecId, capacity, mode = 'd
   return {
     version: 1,
     mode,
+    capabilities: getGenerationCapabilities(),
+    generationPermissions: permissions,
+    candidates: candidates.map((candidate) => evaluateGenerationCandidate(candidate, { generationPermissions: permissions })),
     sample: sampleCount ? { slideIds: outline.slides.slice(0, sampleCount).map((slide) => slide.id), requiresApprovalBeforeRemaining: true } : null,
     units,
   };
