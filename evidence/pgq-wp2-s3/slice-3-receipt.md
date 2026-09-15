@@ -1,0 +1,33 @@
+# PGQ-WP2 Slice 3 — Golden Reference Routing Receipt
+
+**Date:** 2026-09-15
+
+**Status:** COMPLETE / READY FOR INDEPENDENT REVIEW
+
+**Base:** `b7a832e0cd1065fd193a3840e4587acdd8a38d90`
+
+## Delivered contract
+
+- `plan-new` 可接收 selected `styleSpec`；StyleSpec ID 必須與既有 `styleSpecId` 一致。
+- Slice 2 每個 ranked `available` candidate 保持原 rank／primitive，另取得零至兩筆 Golden design logic refs。
+- 同一 `split-proof` 在 Editorial Style 路由到 `typography-hero`，在 Technical Style 路由到 `information-led-cover`；Golden 不重新定義語意。
+- 每筆 reference 提供 `semanticMatch`、`densityMatch`、`anchorMatch`、`styleMatch`、`antiPatternConflict`、reason codes、少量 accepted evidence keys 與 allowlisted design tokens。
+- 只有同時通過 semantic、anchor、Style 與 anti-pattern gate 的 logic 才是 credible；沒有可信 match 時明示 `none`。
+- Packaged Golden grammar 的七項 `globalAntiPatterns` 與固定 guard codes 一對一驗證；需要不存在 semantic image 的路由會被排除。
+- Repo acceptance 以 Golden reference manifest 驗證所有 emitted evidence keys 均為 Owner accepted；installed runtime 不攜帶或讀取 reference 圖片。
+- 輸出不含 artifact path、filename、HTML、DOM、CSS、URL、data URI 或第三方 asset。
+- 未帶 StyleSpec 的舊 `plan-new` request 保持相容，回傳空 `goldenRouting`。
+
+## Evidence
+
+- RED：首個 public-interface test `0/1 PASS`，既有 plan 沒有 `goldenRouting`。
+- Slice 3 public tests：`6/6 PASS`。
+- Targeted（Slice 3 + Slice 2 + Slice 1 + Golden grammar + R4 generation + R5 renderer + R8 distribution + R11 entry）：`55/55 PASS`。
+- Full regression：`157/157 PASS`。
+- Browser acceptance：本 slice 未修改 browser、editor 或 renderer runtime，因此不新增 browser rerun；既有 renderer regression 已包含在 targeted 與 full suite。
+
+## Explicit deferrals
+
+- Slice 4：deck-level rhythm planning；本 slice 不判斷跨頁密度、anchor 重複、高潮位置或整份節奏。
+- 不新增 composition primitive、variant、renderer、schema、workflow engine、Evidence DB 或 Agent。
+- 不讀、複製、搜尋或包裝 Golden 圖片、模板、DOM、CSS 與第三方素材。
