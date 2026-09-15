@@ -57,6 +57,12 @@ test('planner capability view 直接反映 composition registry 與真實 chart 
   });
   assert.equal(unauthorized.candidates[0].status, 'unavailable');
   assert.match(JSON.stringify(unauthorized.candidates[0]), /generation_permission_required/);
+  const imagePermission = createGenerationPlan({
+    outline, styleSpecId: style.id, capacity: { maxSlidesPerUnit: 3 }, generationPermissions: { image: false, chart: false },
+    candidates: [{ id: 'image-no-permission', primitive: 'component-focus', component: { type: 'image' } }],
+  });
+  assert.equal(imagePermission.candidates[0].status, 'unavailable');
+  assert.match(JSON.stringify(imagePermission.candidates[0]), /generation_permission_required/);
 });
 
 test('renderer 只接受目前能保真呈現的 bar chart，不把其他圖型或負值畫成正值 bar-row', () => {
@@ -93,12 +99,17 @@ test('installed Skill 的 plan-new seam 輸出 capability view 並阻止 unavail
 
   const requestPath = join(root, 'plan-request.json');
   await writeFile(requestPath, JSON.stringify({
-    outline, styleSpecId: style.id, capacity: { maxSlidesPerUnit: 3 }, generationPermissions: { chart: true },
-    candidates: [{ id: 'line-no', primitive: 'component-focus', component: { type: 'chart', chartType: 'line', series: [{ values: [10, 20] }] } }],
+    outline, styleSpecId: style.id, capacity: { maxSlidesPerUnit: 3 }, generationPermissions: { image: false, chart: true },
+    candidates: [
+      { id: 'line-no', primitive: 'component-focus', component: { type: 'chart', chartType: 'line', series: [{ values: [10, 20] }] } },
+      { id: 'image-no-permission', primitive: 'component-focus', component: { type: 'image' } },
+    ],
   }));
   const result = JSON.parse((await run(process.execPath, [join(installRoot, 'core', 'runtime', 'workflow-cli.mjs'), 'plan-new', '--request', requestPath])).stdout);
   assert.equal(result.status, 'pass');
   assert.equal(result.mode, 'new-deck-plan');
   assert.equal(result.plan.candidates[0].status, 'unavailable');
+  assert.equal(result.plan.candidates[1].status, 'unavailable');
+  assert.match(JSON.stringify(result.plan.candidates[1]), /generation_permission_required/);
   assert.deepEqual(result.plan.capabilities.components.chart.supportedChartTypes, ['bar']);
 });

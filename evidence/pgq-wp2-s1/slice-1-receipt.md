@@ -27,6 +27,10 @@
 
 Machine-readable browser evidence：`evidence/pgq-wp2-s1/browser-editor-regression.json`。
 
+## Review repair
+
+獨立 review 發現 planner 原先只執行 chart permission，image candidate 可在 `generationPermissions.image === false` 時誤標 available。修補後 image／chart 都使用同一個 `generation_permission_required` gate；direct planner 與 installed `plan-new` regression 會重播 image opt-in 關閉情境。既有 user-provided image 的 renderer／editor 路徑不受此 generation permission 影響。
+
 ## 邊界
 
 本 slice 只關閉 truthful capability 與已知 chart correctness gap。PGQ-D02 的語意到構圖選擇、PGQ-D03 Golden reference routing、PGQ-D08 跨頁節奏，以及需要新 executable renderer 的 chart 類型仍未實作；不得由本收據推論已完成。

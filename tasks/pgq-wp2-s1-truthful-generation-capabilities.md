@@ -59,3 +59,8 @@
 - Browser diagnostics：console/page/network/HTTP errors 均為 0。
 - Syntax checks 與 `git diff --check`：PASS。
 - Receipt：`evidence/pgq-wp2-s1/slice-1-receipt.md`。
+
+## Review repair
+
+- RED：direct planner 與 installed `plan-new` 在 `generationPermissions.image === false` 時把 image candidate 誤標為 `available`。
+- GREEN：image／chart candidate 都執行 explicit generation opt-in；renderer/editor 的既有 user-provided image 不受影響。
