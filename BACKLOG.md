@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 Slice 1 + Slice 2 + Slice 3 COMPLETE，WP2 Slice 4 + WP3–WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；WP3–WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -805,6 +805,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **PGQ-WP2 Slice 2 receipt：** `evidence/pgq-wp2-s2/slice-2-receipt.md`。Approved content 現可經 allowlisted semantic signals 產生 bounded ranked CompositionSpec proposals；comparison／sequence／evidence／explanation／asset-led 與 cover／section role 均由 deterministic reason codes 排序，再通過 Slice 1 capability hard filter。Content hash 保持不變；Golden reference routing 與 deck-level rhythm 明確延後至 Slice 3／4。
 
 **PGQ-WP2 Slice 3 receipt：** `evidence/pgq-wp2-s3/slice-3-receipt.md`。Slice 2 available candidates 現依 selected StyleSpec 路由到零至兩筆 Owner-accepted Golden design logic refs；semantic／density／anchor／style match 與 anti-pattern conflict 均有 structured reasons。同一 primitive 可因 Style 不同取得不同 logic，但 rank、primitive 與 content hash 不變；找不到可信 reference 時回 `none`。Deck-level rhythm 仍延後至 Slice 4。
+
+**PGQ-WP2 Slice 4 receipt：** `evidence/pgq-wp2-s4/slice-4-receipt.md`。Slice 2／3 的 available candidates 現可經 allowlisted rhythm signals 產生 plan-only Deck Rhythm Plan；跨頁 composition／Golden logic／anchor 重複、高密度／高證據／高動態 runs、quiet balance 與 narrative roles 均有 deterministic reasons／warnings。Planner 只在 top semantic score 10 分內調整候選，保留 continuity group 的 intentional repetition，並輸出實際 selected CompositionSpec proposal；content hash 不變。至此 PGQ-WP2 COMPLETE。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

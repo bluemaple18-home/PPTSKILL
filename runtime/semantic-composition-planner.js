@@ -102,7 +102,7 @@ const reasonMessages = Object.freeze({
   'component-focus': '重要既有或已授權 component 應成為主要視覺錨點。',
 });
 
-const proposalFor = (primitive, component) => ({
+export const createCompositionProposal = (primitive, component) => ({
   primitive,
   variant: 'default',
   slots: {
@@ -187,7 +187,7 @@ export function planSemanticCompositions({ slides, semanticSignals = [], generat
       },
       consideredCandidates,
       rankedCandidates,
-      proposal: top ? proposalFor(top.primitive, componentResolution.component) : null,
+      proposal: top ? createCompositionProposal(top.primitive, componentResolution.component) : null,
       contentIntegrity: { beforeHash, afterHash, unchanged: beforeHash === afterHash },
     };
   });

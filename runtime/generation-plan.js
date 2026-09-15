@@ -1,4 +1,5 @@
 import { evaluateGenerationCandidate, getGenerationCapabilities } from './generation-capabilities.js';
+import { planDeckRhythm } from './deck-rhythm-planner.js';
 import { routeGoldenReferences } from './golden-reference-router.js';
 import { planSemanticCompositions } from './semantic-composition-planner.js';
 
@@ -6,7 +7,7 @@ const assertOutline = (outline) => {
   if (!Array.isArray(outline?.slides) || outline.slides.length < 1 || outline.slides.length > 15) throw new Error('Outline 必須是 1～15 頁。');
 };
 
-export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity, mode = 'direct', sampleCount = 0, candidates = [], generationPermissions = {}, semanticSignals = [] }) {
+export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity, mode = 'direct', sampleCount = 0, candidates = [], generationPermissions = {}, semanticSignals = [], rhythmSignals = [] }) {
   assertOutline(outline);
   if (!Number.isInteger(capacity?.maxSlidesPerUnit) || capacity.maxSlidesPerUnit < 1) throw new Error('Runtime 必須明示 maxSlidesPerUnit。');
   if (!['direct', 'staged'].includes(mode)) throw new Error('mode 必須是 direct 或 staged。');
@@ -14,6 +15,8 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
   if (!Array.isArray(candidates)) throw new Error('candidates 必須是陣列。');
   const permissions = { image: generationPermissions.image === true, chart: generationPermissions.chart === true };
   const compositionProposals = planSemanticCompositions({ slides: outline.slides, semanticSignals, generationPermissions: permissions });
+  const goldenRouting = routeGoldenReferences({ compositionProposals, styleSpecId, styleSpec });
+  const deckRhythmPlan = planDeckRhythm({ slides: outline.slides, compositionProposals, goldenRouting, rhythmSignals });
 
   const batchSize = Math.min(capacity.maxSlidesPerUnit, outline.slides.length === 15 ? 14 : outline.slides.length);
   const units = [];
@@ -41,7 +44,8 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
     generationPermissions: permissions,
     candidates: candidates.map((candidate) => evaluateGenerationCandidate(candidate, { generationPermissions: permissions })),
     compositionProposals,
-    goldenRouting: routeGoldenReferences({ compositionProposals, styleSpecId, styleSpec }),
+    goldenRouting,
+    deckRhythmPlan,
     sample: sampleCount ? { slideIds: outline.slides.slice(0, sampleCount).map((slide) => slide.id), requiresApprovalBeforeRemaining: true } : null,
     units,
   };
