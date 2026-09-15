@@ -39,6 +39,34 @@ const plan = (overrides = {}) => createGenerationPlan({
   outline, styleSpecId: style.id, styleSpec: style, capacity, semanticSignals, rhythmSignals, ...overrides,
 });
 
+const assetRequest = () => {
+  const assetStyle = {
+    ...style,
+    id: 'rhythm-editorial-image',
+    layout: { primaryMove: 'full-bleed-type', compositionLanguage: 'editorial' },
+    density: 'low',
+  };
+  const assetSlides = slides.map((item, index) => ({
+    ...item,
+    components: [{ id: `hero-${index + 1}`, type: 'image', dataUri: 'data:image/png;base64,AA==' }],
+  }));
+  return {
+    outline: { ...outline, slides: assetSlides },
+    styleSpecId: assetStyle.id,
+    styleSpec: assetStyle,
+    capacity,
+    generationPermissions: { image: false },
+    semanticSignals: assetSlides.map(({ id }, index) => ({
+      slideId: id, slideRole: 'content', relationship: 'asset-led', evidence: 'none', density: 'low',
+      component: { id: `hero-${index + 1}`, type: 'image' }, componentOrigin: 'user-provided',
+    })),
+    rhythmSignals: assetSlides.map(({ id }, index) => ({
+      slideId: id, density: 'low', emphasis: 'normal', evidenceWeight: 'low', motionIntensity: 'none',
+      sectionRole: index === 0 ? 'opening' : index === assetSlides.length - 1 ? 'close' : 'buildup',
+    })),
+  };
+};
+
 test('跨頁重複只在 bounded semantic candidates 內調整，並輸出 structured rhythm plan', () => {
   const result = plan();
   const selected = result.deckRhythmPlan.slides.map(({ selected: item }) => item);
@@ -73,6 +101,22 @@ test('不為節奏犧牲 semantic fit；無 bounded alternate 時保留 top 並�
   assert.ok(result.deckRhythmPlan.warnings.some(({ code, slideIds }) => code === 'composition_repetition_unresolved' && slideIds.at(-1) === 'proof-4'));
   assert.ok(result.deckRhythmPlan.slides[3].discardedAlternates.some(({ primitive, reasonCodes }) => primitive === 'title-points'
     && reasonCodes.includes('semantic_score_gap_exceeds_10')));
+});
+
+test('只解掉部分 repetition dimensions 時，其餘 dimensions 逐項保留 unresolved warning', () => {
+  const result = createGenerationPlan(assetRequest());
+  const fourth = result.deckRhythmPlan.slides[3];
+  assert.equal(fourth.selected.primitive, 'component-focus');
+  assert.equal(fourth.selected.goldenLogicRef, 'dark-premium-editorial');
+  assert.equal(fourth.selected.visualAnchorFamily, 'scene-photograph');
+  assert.ok(fourth.deckReasonCodes.includes('golden_logic_repetition_reduced'));
+  assert.equal(fourth.deckReasonCodes.includes('composition_repetition_reduced'), false);
+  assert.equal(fourth.deckReasonCodes.includes('visual_anchor_repetition_reduced'), false);
+  const unresolved = result.deckRhythmPlan.warnings.filter(({ code }) => code.endsWith('_repetition_unresolved'));
+  assert.deepEqual(unresolved.map(({ code }) => code).sort(), [
+    'composition_repetition_unresolved', 'visual_anchor_repetition_unresolved',
+  ]);
+  assert.ok(unresolved.every(({ slideIds }) => slideIds.length === 4 && slideIds.at(-1) === 'proof-4'));
 });
 
 test('高密度、高 emphasis 與 high motion run 產生 bounded warnings，content 全 deck 不變', () => {
@@ -120,6 +164,12 @@ test('installed plan-new 穿透 Deck Rhythm Plan；未帶 rhythmSignals 的舊 r
   const result = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
   assert.equal(result.plan.deckRhythmPlan.slides[3].selected.primitive, 'split-proof');
   assert.equal(result.plan.deckRhythmPlan.contentIntegrity.unchanged, true);
+
+  await writeFile(requestPath, JSON.stringify(assetRequest()));
+  const partial = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);
+  assert.deepEqual(partial.plan.deckRhythmPlan.warnings
+    .filter(({ code }) => code.endsWith('_repetition_unresolved'))
+    .map(({ code }) => code).sort(), ['composition_repetition_unresolved', 'visual_anchor_repetition_unresolved']);
 
   await writeFile(requestPath, JSON.stringify({ outline, styleSpecId: style.id, styleSpec: style, capacity, semanticSignals }));
   const legacy = JSON.parse((await run(process.execPath, [cli, 'plan-new', '--request', requestPath])).stdout);

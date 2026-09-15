@@ -50,3 +50,11 @@
 - RED → GREEN public-interface tests：bounded alternate、intentional repetition、semantic protection、structured warnings／integrity、invalid input、installed runtime／legacy。
 - Targeted regression：WP2 Slice 1～3、Golden grammar、generation plan、renderer、distribution、entry enforcement、R4/R5/R11。
 - Full `pnpm test`、syntax、debug scan、完整 branch-range `git diff --check`。
+
+## Repair history
+
+### Repair 1 — partial repetition dimensions
+
+- Review finding：alternate 若只換掉 Golden logic，舊版以整體 `changed` boolean 視為已處理，會漏報仍相同的 composition／visual anchor runs。
+- RED：asset-led 四頁 direct 與 installed `plan-new` 均未輸出兩筆必要 unresolved warnings。
+- 修復：alternate 改以實際解掉的 repeated dimensions 排序；selection 後重新逐項計算 unresolved dimensions，再分別輸出 warning。

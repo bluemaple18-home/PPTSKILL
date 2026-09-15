@@ -10,6 +10,11 @@ const enums = Object.freeze({
 });
 const semanticScoreTolerance = 10;
 const repetitionWindow = 4;
+const fieldByDimension = Object.freeze({
+  composition: 'compositionFamily',
+  golden_logic: 'goldenLogicRef',
+  visual_anchor: 'visualAnchorFamily',
+});
 
 const normalizeSignal = (signal, slideId) => {
   if (!signal || typeof signal !== 'object' || Array.isArray(signal)) throw new Error(`${slideId} rhythm signal 必須是 object。`);
@@ -72,8 +77,10 @@ const isIntentionalRun = (slides, continuityGroup) => Boolean(continuityGroup)
   && slides.length >= repetitionWindow - 1
   && slides.slice(-(repetitionWindow - 1)).every(({ signals }) => signals.continuityGroup === continuityGroup);
 
-const differenceCount = (baseline, option) => ['compositionFamily', 'goldenLogicRef', 'visualAnchorFamily']
-  .filter((field) => baseline[field] !== option.selected[field]).length;
+const unresolvedDimensions = (slides, repeated, selected) => repeated.filter((dimension) => {
+  const field = fieldByDimension[dimension];
+  return sameRun(slides, field, selected[field]);
+});
 
 const warning = (code, slideIds, reasonCodes) => ({ code, slideIds: [...slideIds], reasonCodes });
 
@@ -162,9 +169,12 @@ export function planDeckRhythm({ slides = [], compositionProposals = [], goldenR
 
     if (repeated.length > 0 && !intentional) {
       const alternates = bounded.slice(1)
-        .map((option) => ({ option, difference: differenceCount(baseline.selected, option) }))
-        .filter(({ difference }) => difference > 0)
-        .sort((left, right) => right.difference - left.difference
+        .map((option) => ({
+          option,
+          resolvedCount: repeated.length - unresolvedDimensions(plannedSlides, repeated, option.selected).length,
+        }))
+        .filter(({ resolvedCount }) => resolvedCount > 0)
+        .sort((left, right) => right.resolvedCount - left.resolvedCount
           || right.option.candidate.score - left.option.candidate.score
           || left.option.candidate.rank - right.option.candidate.rank
           || left.option.referenceRank - right.option.referenceRank);
@@ -172,6 +182,8 @@ export function planDeckRhythm({ slides = [], compositionProposals = [], goldenR
     }
 
     const changed = chosen !== baseline;
+    const unresolved = intentional ? [] : unresolvedDimensions(plannedSlides, repeated, chosen.selected);
+    const resolved = repeated.filter((dimension) => !unresolved.includes(dimension));
     const previous = plannedSlides.at(-1);
     const selectedRepeats = previous && previous.selected.compositionFamily === chosen.selected.compositionFamily
       && previous.selected.goldenLogicRef === chosen.selected.goldenLogicRef;
@@ -181,9 +193,9 @@ export function planDeckRhythm({ slides = [], compositionProposals = [], goldenR
           : selectedRepeats ? 'repeat' : 'contrast';
     const deckReasonCodes = [
       ...(intentional ? ['intentional_repetition_preserved'] : []),
-      ...(changed && baseline.selected.compositionFamily !== chosen.selected.compositionFamily ? ['composition_repetition_reduced'] : []),
-      ...(changed && baseline.selected.goldenLogicRef !== chosen.selected.goldenLogicRef ? ['golden_logic_repetition_reduced'] : []),
-      ...(changed && baseline.selected.visualAnchorFamily !== chosen.selected.visualAnchorFamily ? ['visual_anchor_repetition_reduced'] : []),
+      ...(resolved.includes('composition') ? ['composition_repetition_reduced'] : []),
+      ...(resolved.includes('golden_logic') ? ['golden_logic_repetition_reduced'] : []),
+      ...(resolved.includes('visual_anchor') ? ['visual_anchor_repetition_reduced'] : []),
       ...(!changed && !intentional ? ['top_semantic_candidate_preserved'] : []),
     ];
 
@@ -209,10 +221,10 @@ export function planDeckRhythm({ slides = [], compositionProposals = [], goldenR
     };
     plannedSlides.push(planned);
 
-    if (repeated.length > 0 && !intentional && !changed) {
+    if (unresolved.length > 0) {
       const ids = plannedSlides.slice(-repetitionWindow).map(({ slideId }) => slideId);
-      for (const dimension of repeated) {
-        warnings.push(warning(`${dimension}_repetition_unresolved`, ids, [`no_semantically_bounded_${dimension}_alternate`]));
+      for (const dimension of unresolved) {
+        warnings.push(warning(`${dimension}_repetition_unresolved`, ids, [`selected_candidate_leaves_${dimension}_repetition`]));
       }
     }
   }
