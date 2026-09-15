@@ -1,4 +1,5 @@
 import { listCompositionPrimitives } from './composition-primitives.js';
+import { getMotionCapabilities, validateSlideMotion } from './motion-capabilities.js';
 
 const componentCapabilities = Object.freeze({
   text: Object.freeze({ status: 'supported' }),
@@ -18,6 +19,7 @@ export function getGenerationCapabilities() {
       ...capability,
       ...(capability.supportedChartTypes ? { supportedChartTypes: [...capability.supportedChartTypes] } : {}),
     }])),
+    motion: getMotionCapabilities(),
   };
 }
 
@@ -70,6 +72,7 @@ export function validateDeckGenerationCapabilities(spec = {}) {
       const verdict = evaluateGenerationCandidate({ id: `${slide.id}/${component.id}`, primitive: slide.composition?.primitive, component });
       if (verdict.status === 'unavailable') errors.push(...verdict.reasons.map(({ message }) => `${slide.id}/${component.id}：${message}`));
     }
+    errors.push(...validateSlideMotion(slide));
   }
   return { status: errors.length ? 'fail' : 'pass', errors };
 }

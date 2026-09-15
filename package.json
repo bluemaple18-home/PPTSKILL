@@ -7,11 +7,23 @@
     "build:themes": "node tools/build-theme-previews.mjs",
     "build:styles": "node tools/build-style-candidates.mjs",
     "build:deck": "node tools/build-full-deck.mjs",
+    "build:motion-vendor": "node tools/build-number-flow-vendor.mjs",
     "build:dist": "node tools/build-distribution.mjs",
     "probe:dist": "node tools/distribution-host-probe.mjs",
     "qa:assets": "node tools/p1-r10-browser-acceptance.mjs",
     "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
     "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "number-flow": "0.6.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }

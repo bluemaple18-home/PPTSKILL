@@ -118,7 +118,7 @@ const geometryExpression = String.raw`(async () => {
       const fontMetricTolerance = element.matches('h1,h2,h3,h4,h5,h6,strong,b,em,p,span,li,blockquote,td,th')
         ? Math.max(8, Number.parseFloat(getComputedStyle(element).fontSize) * 0.3)
         : 8;
-      if (element.scrollWidth > element.clientWidth + 8 || element.scrollHeight > element.clientHeight + fontMetricTolerance) {
+      if (!element.matches('[data-pptskill-odometer]') && (element.scrollWidth > element.clientWidth + 8 || element.scrollHeight > element.clientHeight + fontMetricTolerance)) {
         issues.push({ code: 'OVERFLOW', slideId: slide.id, target: label(element), scroll: [element.scrollWidth, element.scrollHeight], client: [element.clientWidth, element.clientHeight] });
       }
     }
@@ -244,7 +244,27 @@ const motionTraceExpression = String.raw`(async () => {
   const changedRoles = Object.keys(initial).filter((role) => ['opacity', 'transform', 'clipPath'].some((field) => initial[role][field] !== resting[role][field]));
   const layoutStable = Object.keys(initial).every((role) => JSON.stringify(initial[role].layoutBox) === JSON.stringify(resting[role].layoutBox));
   const restingVisible = Object.values(resting).every(({ opacity, clipPath }) => Number(opacity) > 0 && !/100%/.test(clipPath));
-  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible };
+  const odometers = [...document.querySelectorAll('[data-pptskill-odometer]')];
+  const beforeReplay = odometers.map((element) => ({ starts: Number(element.dataset.animationStarts || 0), finishes: Number(element.dataset.animationFinishes || 0), replays: Number(element.dataset.replayCount || 0) }));
+  const replayResult = odometers.length ? await window.PPTSKILLMotion?.replaySlide(odometers[0].closest('.slide').dataset.slideId) : null;
+  await new Promise((resolve) => setTimeout(resolve, ${motionMode === 'normal' ? 1300 : 20}));
+  const afterReplay = odometers.map((element, index) => ({
+    state: element.dataset.motionState || null,
+    starts: Number(element.dataset.animationStarts || 0),
+    finishes: Number(element.dataset.animationFinishes || 0),
+    replays: Number(element.dataset.replayCount || 0),
+    replayed: Number(element.dataset.replayCount || 0) > beforeReplay[index].replays,
+  }));
+  window.PPTSKILLMotion?.forceStatic();
+  const forcedStatic = odometers.map((element) => ({ state: element.dataset.motionState || null, finalDisplay: element.dataset.finalDisplay, renderedText: element.textContent }));
+  const editorSpec = window.PPTSKILLEditor?.getDeckSpec();
+  const exported = window.PPTSKILLEditor?.exportHtml();
+  const exportedMatch = exported?.match(/<script[^>]*id=["']deck-spec["'][^>]*>([\s\S]*?)<\/script>/i);
+  const exportedSpec = exportedMatch ? JSON.parse(exportedMatch[1]) : null;
+  const editorMotion = editorSpec?.slides?.[0]?.composition?.motion ?? null;
+  const exportedMotion = exportedSpec?.slides?.[0]?.composition?.motion ?? null;
+  const editorRoundTrip = JSON.stringify(editorMotion) === JSON.stringify(exportedMotion) && editorMotion?.effect === 'number-flow-odometer';
+  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip } };
 })()`;
 
 const runAtViewport = async ({ width, height }) => {
@@ -374,7 +394,12 @@ const receipt = {
   status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors, motionTrace }) => (
     slideCount > 0 && issues.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
     && motionTrace.layoutStable && motionTrace.restingVisible
-    && (motionMode === 'reduce' || motionTrace.changedRoles.length >= 4)
+    && (motionMode === 'reduce' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0)
+    && (motionTrace.odometer.count === 0 || (motionMode === 'reduce'
+      ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === 'reduced' && starts === 0)
+      : motionTrace.odometer.replayResult === true && motionTrace.odometer.afterReplay.every(({ replayed, starts, finishes }) => replayed && starts > 0 && finishes > 0)))
+    && motionTrace.odometer.forcedStatic.every(({ state }) => state === (motionMode === 'reduce' ? 'reduced' : 'static'))
+    && (motionTrace.odometer.count === 0 || motionTrace.odometer.editorRoundTrip)
   )) ? 'pass' : 'fail',
   runs,
 };

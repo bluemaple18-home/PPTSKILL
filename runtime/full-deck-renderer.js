@@ -7,6 +7,8 @@ import { buildBrowserAssetOptimizerRuntimeScript } from './browser-asset-optimiz
 import { buildPortableSizeGuardRuntimeScript } from './portable-size-guard.js';
 import { getCompanyStylePackByStyleId } from './company-style-pack.js';
 import { validateDeckGenerationCapabilities } from './generation-capabilities.js';
+import { parseMotionMetric, validateDeckMotionInput } from './motion-capabilities.js';
+import { buildNumberFlowVendorScript } from './number-flow-vendor.js';
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -25,7 +27,10 @@ const renderPoints = (slide, className = 'point-list') => `<ol class="${classNam
 const renderMetrics = (slide) => `<div class="metric-cards" data-effect-role="metric" data-edit-target="slides.${attr(slide.id)}.content.keyPoints">${slide.content.keyPoints.map((point, index) => {
   const [value, ...labelParts] = point.split('｜');
   const label = labelParts.join('｜');
-  return `<article><b>${String(index + 1).padStart(2, '0')}</b>${label ? `<strong class="metric-value">${escapeHtml(value)}</strong><p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
+  const target = slide.composition.motion?.targets.find(({ ref }) => ref === `content.keyPoints.${index}`);
+  const parsed = target ? parseMotionMetric(point) : null;
+  const metric = parsed ? `<strong class="metric-value"><span>${escapeHtml(parsed.numberPrefix)}</span><number-flow data-pptskill-odometer data-from="${attr(target.from)}" data-to="${attr(parsed.finalValue)}" data-final-display="${attr(parsed.numericDisplay)}" data-use-grouping="${parsed.format.useGrouping}" data-fraction-digits="${parsed.format.maximumFractionDigits}" data-stagger-ms="${attr(slide.composition.motion.staggerMs)}" data-sequence-index="${index}">${escapeHtml(parsed.numericDisplay)}</number-flow><span>${escapeHtml(parsed.numberSuffix)}</span></strong>` : `<strong class="metric-value">${escapeHtml(value)}</strong>`;
+  return `<article><b>${String(index + 1).padStart(2, '0')}</b>${label ? `${metric}<p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
 }).join('')}</div>`;
 
 const renderComponent = (component, slideId) => {
@@ -164,6 +169,8 @@ const effectProfileFor = (visualWorld, style) => {
 };
 
 export function renderFullDeck(input) {
+  const rawMotionErrors = validateDeckMotionInput(input);
+  if (rawMotionErrors.length) return { status: 'fail', errors: rawMotionErrors };
   const spec = sanitizeDeckSpec(input);
   const deckValidation = validateDeckSpec(spec);
   const compositionValidation = validateDeckCompositions(spec);
@@ -174,6 +181,7 @@ export function renderFullDeck(input) {
   const companyPack = visualWorld === 'company-dark' ? getCompanyStylePackByStyleId(spec.style.id) : null;
   const { route, treatments } = effectProfileFor(visualWorld, spec.style);
   const slides = spec.slides.map((slide, index) => renderSlide(slide, index, spec.slides.length, visualWorld, treatments, companyPack)).join('');
-  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
+  const hasOdometer = spec.slides.some((slide) => slide.composition.motion?.effect === 'number-flow-odometer');
+  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.metric-cards article>b{display:block;margin-bottom:28px}.metric-value{display:inline-flex;min-width:7ch;color:var(--accent);font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${hasOdometer ? buildNumberFlowVendorScript() : ''}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
   return { status: 'pass', html: embedDeckSpec(shell, spec), spec };
 }

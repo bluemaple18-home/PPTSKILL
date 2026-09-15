@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "package": "number-flow",
+  "version": "0.6.2",
+  "license": "MIT",
+  "sourceSha256": "df08f25a6a37f0d30ba045caaab66c87ba95172df2ed5e9261e2b090aa8a9b8d",
+  "licenseSha256": "f8a3eac9fd2ae94f18a2bf0459e57d90da539f015a7ec4ad6186a5ca33a6aa9a",
+  "bundleSha256": "ea78e2aa83778c4642a3b12bb8f1e427db1528f8092bad98ac55837acf3ac73a",
+  "bundleBytes": 17146,
+  "build": {
+    "tool": "esbuild",
+    "version": "0.28.2",
+    "platform": "browser",
+    "format": "iife",
+    "target": "es2022",
+    "minified": true
+  }
+}

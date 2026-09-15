@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { sanitizeCompositionMotion } from './motion-capabilities.js';
 
 const copyText = (value, fallback = '') => typeof value === 'string' ? value : fallback;
 const copyStringArray = (value, minimum = 0, maximum = Infinity) => Array.isArray(value)
@@ -62,12 +63,16 @@ const sanitizeStyle = (style = {}) => ({
   assetTreatment: copyText(style.assetTreatment, defaultStyle.assetTreatment),
 });
 
-const sanitizeComposition = (composition = {}) => ({
-  primitive: copyText(composition.primitive, 'title-body'),
-  variant: copyText(composition.variant, 'default'),
-  slots: Object.fromEntries(Object.entries(composition.slots ?? {}).filter(([, ref]) => typeof ref === 'string' && /^content\.(title|subtitle|keyPoints|components\.[a-z0-9][a-z0-9._-]{0,79})$/.test(ref))),
-  ...(Array.isArray(composition.order) ? { order: copyStringArray(composition.order) } : {}),
-});
+const sanitizeComposition = (composition = {}) => {
+  const motion = sanitizeCompositionMotion(composition.motion);
+  return {
+    primitive: copyText(composition.primitive, 'title-body'),
+    variant: copyText(composition.variant, 'default'),
+    slots: Object.fromEntries(Object.entries(composition.slots ?? {}).filter(([, ref]) => typeof ref === 'string' && /^content\.(title|subtitle|keyPoints|components\.[a-z0-9][a-z0-9._-]{0,79})$/.test(ref))),
+    ...(Array.isArray(composition.order) ? { order: copyStringArray(composition.order) } : {}),
+    ...(motion ? { motion } : {}),
+  };
+};
 
 const sanitizeSourceRef = (source) => {
   if (source?.public !== true || !idPattern.test(copyText(source.id)) || !copyText(source.label)) return null;

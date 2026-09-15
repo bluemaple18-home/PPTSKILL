@@ -5,6 +5,7 @@ import { tmpdir } from 'node:os';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
+import { verifyNumberFlowVendor } from '../runtime/number-flow-vendor.js';
 
 const run = promisify(execFile);
 const repoRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -25,6 +26,8 @@ const normalizeAndListFiles = async (root, relative = '') => {
 };
 
 export async function buildDistribution({ archivePath, projectRoot = repoRoot } = {}) {
+  const vendorVerification = verifyNumberFlowVendor();
+  if (vendorVerification.status !== 'pass') throw new Error(vendorVerification.errors.join(' '));
   const packageJson = JSON.parse(await readFile(resolve(projectRoot, 'package.json'), 'utf8'));
   const version = packageJson.version;
   if (!version) throw new Error('package.json 缺少 version。');
