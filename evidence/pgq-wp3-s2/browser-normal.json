@@ -1,0 +1,540 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-16T07:38:42.015Z",
+  "artifact": "underline-sweep-browser.html",
+  "motionMode": "normal",
+  "status": "pass",
+  "editorExport": {
+    "status": "pass",
+    "artifact": "editor-export.html",
+    "title": "Browser edited title",
+    "subtitle": "Browser edited subtitle",
+    "motion": {
+      "effect": "underline-sweep",
+      "role": "text",
+      "replay": "slide-visible",
+      "staggerMs": 120,
+      "targets": [
+        {
+          "ref": "content.title"
+        },
+        {
+          "ref": "content.subtitle"
+        }
+      ]
+    },
+    "motionErrors": [],
+    "recipientBrowser": {
+      "status": "pass",
+      "title": "Browser edited title",
+      "subtitle": "Browser edited subtitle",
+      "effect": "underline-sweep",
+      "motion": {
+        "effect": "underline-sweep",
+        "role": "text",
+        "replay": "slide-visible",
+        "staggerMs": 120,
+        "targets": [
+          {
+            "ref": "content.title"
+          },
+          {
+            "ref": "content.subtitle"
+          }
+        ]
+      },
+      "textEntranceCount": 2,
+      "subtitleOpacity": "1",
+      "subtitleTransform": "none",
+      "underlineTransform": "none"
+    }
+  },
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px 98.1885% 0px 0px)",
+            "transitionDuration": "0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.018115",
+            "transform": "matrix(0.992145, 0, 0, 0.992145, 0, 0)",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "0.018115",
+            "transform": "matrix(1, 0, 0, 1, 0, 6.48044)",
+            "clipPath": "inset(0px 0px 100%)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "changedRoles": [
+          "diagram",
+          "visualAnchor",
+          "title",
+          "supportingCopy"
+        ],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": true,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 2,
+          "replayResult": true,
+          "replayed": true,
+          "afterReplay": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "matrix(1, 0, 0, 1, 0, 0)"
+            }
+          ],
+          "forcedStatic": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "editorRoundTrip": true
+        }
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 78,
+          "top": 402.1875,
+          "right": 1003.328125,
+          "bottom": 485.8125,
+          "width": 925.328125,
+          "height": 83.625
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        },
+        "supportingCopy": {
+          "left": 78,
+          "top": 513.8125,
+          "right": 978,
+          "bottom": 546.8125,
+          "width": 900,
+          "height": 33
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0488,
+          "y": 0.4469,
+          "width": 0.5783,
+          "height": 0.0929
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px 8.56892% 0px 0px)",
+            "transitionDuration": "0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.914311",
+            "transform": "matrix(0.999314, 0, 0, 0.999314, 0, 0)",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "0.914311",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.565549)",
+            "clipPath": "inset(0px 0px 100%)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0)",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.32s, 0.32s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "changedRoles": [
+          "diagram",
+          "visualAnchor",
+          "title",
+          "supportingCopy"
+        ],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": true,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 2,
+          "replayResult": true,
+          "replayed": true,
+          "afterReplay": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "matrix(1, 0, 0, 1, 0, 0)"
+            }
+          ],
+          "forcedStatic": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "editorRoundTrip": true
+        }
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 62.390625,
+          "top": 321.765625,
+          "right": 802.671875,
+          "bottom": 388.65625,
+          "width": 740.28125,
+          "height": 66.890625
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        },
+        "supportingCopy": {
+          "left": 62.390625,
+          "top": 411.046875,
+          "right": 782.390625,
+          "bottom": 437.4375,
+          "width": 720,
+          "height": 26.390625
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0487,
+          "y": 0.4469,
+          "width": 0.5783,
+          "height": 0.0929
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

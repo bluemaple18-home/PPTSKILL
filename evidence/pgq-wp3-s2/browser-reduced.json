@@ -1,0 +1,485 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-16T07:39:18.284Z",
+  "artifact": "underline-sweep-browser.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": false,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 2,
+          "replayResult": false,
+          "replayed": false,
+          "afterReplay": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "forcedStatic": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "editorRoundTrip": true
+        }
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 78,
+          "top": 402.1875,
+          "right": 1003.328125,
+          "bottom": 485.8125,
+          "width": 925.328125,
+          "height": 83.625
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        },
+        "supportingCopy": {
+          "left": 78,
+          "top": 513.8125,
+          "right": 978,
+          "bottom": 546.8125,
+          "width": 900,
+          "height": 33
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0488,
+          "y": 0.4469,
+          "width": 0.5783,
+          "height": 0.0929
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 402,
+              "width": 925,
+              "height": 84
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 514,
+              "width": 900,
+              "height": 33
+            }
+          }
+        },
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": false,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 2,
+          "replayResult": false,
+          "replayed": false,
+          "afterReplay": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "forcedStatic": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "editorRoundTrip": true
+        }
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 62.390625,
+          "top": 321.765625,
+          "right": 802.671875,
+          "bottom": 388.65625,
+          "width": 740.28125,
+          "height": 66.890625
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        },
+        "supportingCopy": {
+          "left": 62.390625,
+          "top": 411.046875,
+          "right": 782.390625,
+          "bottom": 437.4375,
+          "width": 720,
+          "height": 26.390625
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0487,
+          "y": 0.4469,
+          "width": 0.5783,
+          "height": 0.0929
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

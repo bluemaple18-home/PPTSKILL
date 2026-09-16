@@ -1,6 +1,6 @@
 # PGQ-WP3-S2 — E Sweep / Role-aware Text Entrance
 
-**Status:** IN PROGRESS
+**Status:** READY FOR REVIEW
 **traces_to:** `PGQ-D04`, `PGQ-D06`
 
 ## Objective
@@ -44,4 +44,3 @@
 - TDD：capability/planner → portable round-trip → renderer/runtime → installed workflow。
 - Browser：normal/replay、reduced-motion、forced-static、editor mutation/export/reopen；listeners 在 navigation 前註冊。
 - Targeted + full regression + syntax + debug scan + `git diff --check`。
-

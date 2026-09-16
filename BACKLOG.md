@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 Slice 1 COMPLETE、後續 slices NOT STARTED；WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 Slice 1 COMPLETE、Slice 2 REVIEW CANDIDATE、後續 slices NOT STARTED；WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -811,6 +811,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **PGQ-WP3 Slice 1 receipt：** `evidence/pgq-wp3-s1/slice-1-receipt.md`。WP2 Deck Rhythm Plan 現可透過 allowlisted `motionSignals` 產生 truthful NumberFlow B odometer proposal；pinned `number-flow@0.6.2` 以 deterministic inline IIFE 進同一 renderer/export，CompositionSpec、Node/browser editor、recipient reparse 與 installed ZIP 路徑閉環。Browser editor 與 Node 共用正式 motion semantic validator，非法 animated metric edit 會 fail loud 並 rollback，合法修改會同步 canonical value、NumberFlow target 與 export。Normal replay、reduced-motion、forced-static、offline、20 MiB 與 content integrity 均有真實證據；E Sweep、背景 vocabulary 與 WP4 仍未開始。
 
 **PGQ-WP3 Slice 2 task：** `tasks/pgq-wp3-s2-e-sweep-text-entrance.md`。Frontier 限定為既有 motion seam 上的 bounded title／supporting-copy entrance 與 subtitle underline sweep；背景 runtime/dependency、grouped reveal、WP4 與 EDX formal integration 不在本卡。
+
+**PGQ-WP3 Slice 2 review candidate receipt：** `evidence/pgq-wp3-s2/slice-2-receipt.md`。`underline-sweep` 已沿 Slice 1 的唯一 motion seam 穿透 planner、CompositionSpec、Node/browser editor、renderer、export/reopen 與 installed Skill/adapters；尚待獨立 review，不視為已整合或 WP3 COMPLETE。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

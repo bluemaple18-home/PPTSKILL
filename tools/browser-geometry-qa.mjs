@@ -20,8 +20,8 @@ const motionIndex = args.indexOf('--motion');
 const motionMode = motionIndex >= 0 ? args[motionIndex + 1] : 'reduce';
 const editorExportIndex = args.indexOf('--editor-export');
 const editorExportPath = editorExportIndex >= 0 ? args[editorExportIndex + 1] : null;
-if (!['reduce', 'normal'].includes(motionMode)) throw new Error('--motion 只接受 reduce 或 normal。');
-if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal] [--motion-frames path-prefix] [--editor-export deck.html]');
+if (!['reduce', 'normal', 'static'].includes(motionMode)) throw new Error('--motion 只接受 reduce、normal 或 static。');
+if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal|static] [--motion-frames path-prefix] [--editor-export deck.html]');
 
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
@@ -249,8 +249,11 @@ const motionTraceExpression = String.raw`(async () => {
   const layoutStable = Object.keys(initial).every((role) => JSON.stringify(initial[role].layoutBox) === JSON.stringify(resting[role].layoutBox));
   const restingVisible = Object.values(resting).every(({ opacity, clipPath }) => Number(opacity) > 0 && !/100%/.test(clipPath));
   const odometers = [...document.querySelectorAll('[data-pptskill-odometer]')];
+  const textEntrances = [...document.querySelectorAll('[data-pptskill-text-entrance]')];
+  const motionRoot = odometers[0]?.closest('.slide') || textEntrances[0]?.closest('.slide');
   const beforeReplay = odometers.map((element) => ({ starts: Number(element.dataset.animationStarts || 0), finishes: Number(element.dataset.animationFinishes || 0), replays: Number(element.dataset.replayCount || 0) }));
-  const replayResult = odometers.length ? await window.PPTSKILLMotion?.replaySlide(odometers[0].closest('.slide').dataset.slideId) : null;
+  const beforeTextReplay = Number(motionRoot?.dataset.replayCount || 0);
+  const replayResult = motionRoot ? await window.PPTSKILLMotion?.replaySlide(motionRoot.dataset.slideId) : null;
   await new Promise((resolve) => setTimeout(resolve, ${motionMode === 'normal' ? 1300 : 20}));
   const afterReplay = odometers.map((element, index) => ({
     state: element.dataset.motionState || null,
@@ -259,8 +262,16 @@ const motionTraceExpression = String.raw`(async () => {
     replays: Number(element.dataset.replayCount || 0),
     replayed: Number(element.dataset.replayCount || 0) > beforeReplay[index].replays,
   }));
+  const textAfterReplay = textEntrances.map((element) => ({
+    role: element.dataset.pptskillTextEntrance,
+    opacity: getComputedStyle(element).opacity,
+    transform: getComputedStyle(element).transform,
+    underlineTransform: element.dataset.pptskillTextEntrance === 'subtitle' ? getComputedStyle(element, '::after').transform : null,
+  }));
+  const textReplayed = Number(motionRoot?.dataset.replayCount || 0) > beforeTextReplay;
   window.PPTSKILLMotion?.forceStatic();
   const forcedStatic = odometers.map((element) => ({ state: element.dataset.motionState || null, finalDisplay: element.dataset.finalDisplay, renderedText: element.textContent }));
+  const textForcedStatic = textEntrances.map((element) => ({ role: element.dataset.pptskillTextEntrance, opacity: getComputedStyle(element).opacity, transform: getComputedStyle(element).transform, underlineTransform: element.dataset.pptskillTextEntrance === 'subtitle' ? getComputedStyle(element, '::after').transform : null }));
   let invalidPatchError = null, invalidPatchPreserved = true, editorRoundTrip = true;
   if (odometers.length) {
     const motionSlideId = odometers[0].closest('.slide').dataset.slideId;
@@ -290,8 +301,27 @@ const motionTraceExpression = String.raw`(async () => {
       && editorSlide?.content?.keyPoints?.[motionTargetIndex] === '1,360｜Browser acceptance'
       && exportedSlide?.content?.keyPoints?.[motionTargetIndex] === '1,360｜Browser acceptance'
       && liveTarget?.dataset.to === '1360';
+  } else if (textEntrances.length) {
+    const motionSlideId = motionRoot.dataset.slideId;
+    const originalSpec = window.PPTSKILLEditor?.getDeckSpec();
+    const originalSlide = originalSpec?.slides?.find(({ id }) => id === motionSlideId);
+    const originalMotion = JSON.stringify(originalSlide?.composition?.motion);
+    window.PPTSKILLEditor?.applyLocalPatch({ slideId: motionSlideId, region: 'content.title', value: 'Browser edited title' });
+    window.PPTSKILLEditor?.applyLocalPatch({ slideId: motionSlideId, region: 'content.subtitle', value: 'Browser edited subtitle' });
+    const editorSpec = window.PPTSKILLEditor?.getDeckSpec();
+    const exported = window.PPTSKILLEditor?.exportHtml();
+    const exportedMatch = exported?.match(/<script[^>]*id=["']deck-spec["'][^>]*>([\s\S]*?)<\/script>/i);
+    const exportedSpec = exportedMatch ? JSON.parse(exportedMatch[1]) : null;
+    const editorSlide = editorSpec?.slides?.find(({ id }) => id === motionSlideId);
+    const exportedSlide = exportedSpec?.slides?.find(({ id }) => id === motionSlideId);
+    editorRoundTrip = editorSlide?.content?.title === 'Browser edited title'
+      && editorSlide?.content?.subtitle === 'Browser edited subtitle'
+      && exportedSlide?.content?.title === 'Browser edited title'
+      && exportedSlide?.content?.subtitle === 'Browser edited subtitle'
+      && JSON.stringify(editorSlide?.composition?.motion) === originalMotion
+      && JSON.stringify(exportedSlide?.composition?.motion) === originalMotion;
   }
-  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip, invalidPatchError, invalidPatchPreserved } };
+  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip, invalidPatchError, invalidPatchPreserved }, textEntrance: { count: textEntrances.length, replayResult, replayed: textReplayed, afterReplay: textAfterReplay, forcedStatic: textForcedStatic, editorRoundTrip } };
 })()`;
 
 let editorExportEvidence = null;
@@ -347,6 +377,7 @@ const runAtViewport = async ({ width, height }) => {
     ]);
     await cdp.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: motionMode === 'reduce' ? 'reduce' : 'no-preference' }] });
+    if (motionMode === 'static') await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `Object.defineProperty(window,'IntersectionObserver',{value:undefined,configurable:true})` });
     const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
     await cdp.send('Page.navigate', { url: htmlUrl });
     await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
@@ -371,13 +402,57 @@ const runAtViewport = async ({ width, height }) => {
       const reopened = extractDeckSpec(exportedHtml);
       const motionErrors = validateDeckMotionInput(reopened);
       const reopenedSlide = reopened.slides.find((slide) => slide.composition.motion);
-      const reopenedTargetIndex = Number(reopenedSlide?.composition.motion?.targets?.[0]?.ref.split('.').at(-1));
+      const reopenedTargetIndex = reopenedSlide?.composition.motion?.effect === 'number-flow-odometer'
+        ? Number(reopenedSlide.composition.motion.targets[0]?.ref.split('.').at(-1))
+        : null;
+      const recipientLoaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
+      await cdp.send('Page.navigate', { url: pathToFileURL(resolve(editorExportPath)).href });
+      await Promise.race([recipientLoaded, new Promise((_, reject) => setTimeout(() => reject(new Error('Recipient export 重新開啟逾時。')), 5000))]);
+      await new Promise((resolveRecipient) => setTimeout(resolveRecipient, motionMode === 'normal' ? 700 : 20));
+      const recipientResult = await cdp.send('Runtime.evaluate', {
+        expression: `(() => {
+          const embedded = JSON.parse(document.querySelector('#deck-spec')?.textContent || 'null');
+          const slide = embedded?.slides?.find((item) => item.composition?.motion);
+          const root = slide ? document.querySelector('.motion-root[data-slide-id="' + CSS.escape(slide.id) + '"]') : null;
+          const title = root?.querySelector('[data-pptskill-text-entrance="title"]');
+          const subtitle = root?.querySelector('[data-pptskill-text-entrance="subtitle"]');
+          const subtitleStyle = subtitle ? getComputedStyle(subtitle) : null;
+          const underlineStyle = subtitle ? getComputedStyle(subtitle, '::after') : null;
+          return {
+            title: title?.textContent || null,
+            subtitle: subtitle?.textContent || null,
+            effect: root?.dataset.motionEffect || null,
+            motion: slide?.composition?.motion || null,
+            textEntranceCount: root?.querySelectorAll('[data-pptskill-text-entrance]').length || 0,
+            subtitleOpacity: subtitleStyle?.opacity || null,
+            subtitleTransform: subtitleStyle?.transform || null,
+            underlineTransform: underlineStyle?.transform || null,
+          };
+        })()`,
+        returnByValue: true,
+      });
+      if (recipientResult.exceptionDetails) throw new Error(recipientResult.exceptionDetails.text);
+      const recipient = recipientResult.result.value;
+      const recipientBrowserPass = reopenedTargetIndex == null
+        ? recipient.title === reopenedSlide?.content.title
+          && recipient.subtitle === reopenedSlide?.content.subtitle
+          && recipient.effect === reopenedSlide?.composition.motion?.effect
+          && JSON.stringify(recipient.motion) === JSON.stringify(reopenedSlide?.composition.motion)
+          && recipient.textEntranceCount === reopenedSlide?.composition.motion?.targets.length
+          && Number(recipient.subtitleOpacity) === 1
+          && recipient.subtitleTransform === 'none'
+          && ['none', 'matrix(1, 0, 0, 1, 0, 0)'].includes(recipient.underlineTransform)
+        : recipient.effect === reopenedSlide?.composition.motion?.effect
+          && JSON.stringify(recipient.motion) === JSON.stringify(reopenedSlide?.composition.motion);
       editorExportEvidence = {
-        status: motionErrors.length ? 'fail' : 'pass',
+        status: motionErrors.length || !recipientBrowserPass ? 'fail' : 'pass',
         artifact: basename(editorExportPath),
-        keyPoint: reopenedSlide?.content.keyPoints[reopenedTargetIndex],
+        ...(reopenedTargetIndex == null
+          ? { title: reopenedSlide?.content.title, subtitle: reopenedSlide?.content.subtitle }
+          : { keyPoint: reopenedSlide?.content.keyPoints[reopenedTargetIndex] }),
         motion: reopenedSlide?.composition.motion,
         motionErrors,
+        recipientBrowser: { status: recipientBrowserPass ? 'pass' : 'fail', ...recipient },
       };
     }
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
@@ -439,12 +514,18 @@ const receipt = {
   status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors, motionTrace }) => (
     slideCount > 0 && issues.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
     && motionTrace.layoutStable && motionTrace.restingVisible
-    && (motionMode === 'reduce' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0)
-    && (motionTrace.odometer.count === 0 || (motionMode === 'reduce'
-      ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === 'reduced' && starts === 0)
+    && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
+    && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'
+      ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === (motionMode === 'reduce' ? 'reduced' : 'static') && starts === 0)
       : motionTrace.odometer.replayResult === true && motionTrace.odometer.afterReplay.every(({ replayed, starts, finishes }) => replayed && starts > 0 && finishes > 0)))
     && motionTrace.odometer.forcedStatic.every(({ state }) => state === (motionMode === 'reduce' ? 'reduced' : 'static'))
     && (motionTrace.odometer.count === 0 || (motionTrace.odometer.editorRoundTrip && motionTrace.odometer.invalidPatchPreserved))
+    && (motionTrace.textEntrance.count === 0 || (motionTrace.textEntrance.editorRoundTrip
+      && (motionMode !== 'normal'
+        ? motionTrace.textEntrance.replayResult === false
+        : motionTrace.textEntrance.replayResult === true && motionTrace.textEntrance.replayed)
+      && motionTrace.textEntrance.afterReplay.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))
+      && motionTrace.textEntrance.forcedStatic.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))))
   )) && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
   ...(editorExportEvidence ? { editorExport: editorExportEvidence } : {}),
   runs,

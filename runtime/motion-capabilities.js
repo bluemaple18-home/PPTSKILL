@@ -1,8 +1,11 @@
-const MOTION_EFFECT = 'number-flow-odometer';
+const NUMBER_FLOW_EFFECT = 'number-flow-odometer';
+const TEXT_EFFECT = 'underline-sweep';
 const signalKeys = new Set(['slideId', 'effect', 'role', 'targets', 'replay', 'staggerMs']);
-const targetKeys = new Set(['ref', 'from']);
+const metricTargetKeys = new Set(['ref', 'from']);
+const textTargetKeys = new Set(['ref']);
 const targetPattern = /^content\.keyPoints\.([0-4])$/u;
 const metricPattern = /^([$€£¥])?([+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.(\d+))?)(%)?$/u;
+const textPrimitiveIds = new Set(['cover', 'section-break', 'title-points', 'split-proof', 'metric-grid', 'process-flow', 'component-focus']);
 
 const reason = (code, message, targetRef) => ({ code, message, ...(targetRef ? { targetRef } : {}) });
 
@@ -10,7 +13,7 @@ export function getMotionCapabilities() {
   return {
     version: 1,
     effects: {
-      [MOTION_EFFECT]: {
+      [NUMBER_FLOW_EFFECT]: {
         status: 'supported',
         semanticRole: 'metric',
         primitives: ['metric-grid'],
@@ -18,6 +21,15 @@ export function getMotionCapabilities() {
         replay: ['slide-visible'],
         fallback: ['prefers-reduced-motion', 'unsupported-browser', 'static'],
         formatBoundary: 'ascii-decimal-with-optional-grouping-currency-prefix-or-percent-suffix',
+      },
+      [TEXT_EFFECT]: {
+        status: 'supported',
+        semanticRole: 'text',
+        primitives: [...textPrimitiveIds],
+        provider: { name: 'css', bundled: true },
+        replay: ['slide-visible'],
+        fallback: ['prefers-reduced-motion', 'unsupported-browser', 'static'],
+        targetBoundary: 'optional-content-title-then-required-content-subtitle',
       },
     },
   };
@@ -48,9 +60,17 @@ export function parseMotionMetric(point) {
 
 export function sanitizeCompositionMotion(input) {
   if (!input || typeof input !== 'object' || Array.isArray(input)) return null;
-  if (input.effect !== MOTION_EFFECT || input.role !== 'metric' || input.replay !== 'slide-visible') return null;
+  if (input.replay !== 'slide-visible') return null;
   if (!Number.isInteger(input.staggerMs) || input.staggerMs < 0 || input.staggerMs > 300) return null;
-  if (!Array.isArray(input.targets) || input.targets.length < 1 || input.targets.length > 5) return null;
+  if (!Array.isArray(input.targets)) return null;
+  if (input.effect === TEXT_EFFECT && input.role === 'text') {
+    const refs = input.targets.map((target) => target?.ref);
+    const valid = (refs.length === 1 && refs[0] === 'content.subtitle')
+      || (refs.length === 2 && refs[0] === 'content.title' && refs[1] === 'content.subtitle');
+    if (!valid) return null;
+    return { effect: TEXT_EFFECT, role: 'text', replay: 'slide-visible', staggerMs: input.staggerMs, targets: refs.map((ref) => ({ ref })) };
+  }
+  if (input.effect !== NUMBER_FLOW_EFFECT || input.role !== 'metric' || input.targets.length < 1 || input.targets.length > 5) return null;
   const targets = [];
   const refs = new Set();
   for (const target of input.targets) {
@@ -59,24 +79,37 @@ export function sanitizeCompositionMotion(input) {
     refs.add(target.ref);
     targets.push({ ref: target.ref, from: target.from });
   }
-  return { effect: MOTION_EFFECT, role: 'metric', replay: 'slide-visible', staggerMs: input.staggerMs, targets };
+  return { effect: NUMBER_FLOW_EFFECT, role: 'metric', replay: 'slide-visible', staggerMs: input.staggerMs, targets };
 }
 
 const normalizeSignal = (signal) => {
   if (!signal || typeof signal !== 'object' || Array.isArray(signal)) throw new Error('motion signal 必須是 object。');
   const unknown = Object.keys(signal).filter((key) => !signalKeys.has(key));
   if (unknown.length) throw new Error(`${signal.slideId || 'unknown'} motion signal 不允許欄位：${unknown.join(', ')}。`);
+  const targetKeys = signal.effect === TEXT_EFFECT ? textTargetKeys : metricTargetKeys;
   for (const target of signal.targets ?? []) {
     const unknownTarget = target && typeof target === 'object' ? Object.keys(target).filter((key) => !targetKeys.has(key)) : [];
     if (unknownTarget.length) throw new Error(`${signal.slideId || 'unknown'} motion target 不允許欄位：${unknownTarget.join(', ')}。`);
   }
   const compositionMotion = sanitizeCompositionMotion(signal);
-  if (!compositionMotion) throw new Error(`${signal.slideId || 'unknown'} motion signal 不符合 NumberFlow allowlist。`);
+  if (!compositionMotion) throw new Error(`${signal.slideId || 'unknown'} motion signal 不符合 effect allowlist。`);
   return compositionMotion;
 };
 
 export function evaluateMotionComposition({ slide, primitive, motionIntensity, compositionMotion }) {
   const reasons = [];
+  if (compositionMotion.effect === TEXT_EFFECT) {
+    if (!textPrimitiveIds.has(primitive)) reasons.push(reason('motion_primitive_unavailable', 'underline-sweep 只支援既有 composition primitive。'));
+    if (motionIntensity === 'none') reasons.push(reason('motion_intensity_none', 'Deck Rhythm Plan 已將此頁 motionIntensity 設為 none。'));
+    const resolvedTargets = compositionMotion.targets.map(({ ref }) => ({ ref, role: ref === 'content.title' ? 'title' : 'subtitle' }));
+    for (const { ref } of compositionMotion.targets) {
+      const field = ref.slice('content.'.length);
+      if (typeof slide?.[field] !== 'string' || !slide[field].trim()) {
+        reasons.push(reason('motion_text_empty', `${ref} 不可為空。`, ref));
+      }
+    }
+    return { status: reasons.length ? 'unavailable' : 'available', ...(reasons.length ? { reasons } : {}), resolvedTargets };
+  }
   if (primitive !== 'metric-grid') reasons.push(reason('motion_primitive_unavailable', 'NumberFlow odometer 只支援 metric-grid。'));
   if (motionIntensity === 'none') reasons.push(reason('motion_intensity_none', 'Deck Rhythm Plan 已將此頁 motionIntensity 設為 none。'));
   const resolvedTargets = [];
@@ -156,7 +189,9 @@ export function validateDeckMotionInput(spec) {
 
 export function buildMotionBrowserContractRuntime() {
   return [
-    `const MOTION_EFFECT=${JSON.stringify(MOTION_EFFECT)};`,
+    `const NUMBER_FLOW_EFFECT=${JSON.stringify(NUMBER_FLOW_EFFECT)};`,
+    `const TEXT_EFFECT=${JSON.stringify(TEXT_EFFECT)};`,
+    `const textPrimitiveIds=new Set(${JSON.stringify([...textPrimitiveIds])});`,
     `const targetPattern=${targetPattern.toString()};`,
     `const metricPattern=${metricPattern.toString()};`,
     `const reason=${reason.toString()};`,

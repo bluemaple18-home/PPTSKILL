@@ -18,7 +18,16 @@ const escapeHtml = (value) => String(value ?? '')
   .replaceAll("'", '&#39;');
 
 const attr = escapeHtml;
-const editable = (slideId, field, tag, value, className = '') => `<${tag} class="${className}" data-edit-kind="text" data-edit-target="slides.${attr(slideId)}.content.${field}"${field === 'title' ? ' data-effect-title data-effect-role="title"' : ''}${field === 'subtitle' ? ' data-effect-role="supportingCopy"' : ''}>${escapeHtml(value)}</${tag}>`;
+const editable = (slide, field, tag, value, className = '') => {
+  const target = `content.${field}`;
+  const motionIndex = slide.composition.motion?.effect === 'underline-sweep'
+    ? slide.composition.motion.targets.findIndex(({ ref }) => ref === target)
+    : -1;
+  const motion = motionIndex >= 0
+    ? ` data-pptskill-text-entrance="${field}" style="--pptskill-text-delay:${motionIndex * slide.composition.motion.staggerMs}ms"`
+    : '';
+  return `<${tag} class="${className}" data-edit-kind="text" data-edit-target="slides.${attr(slide.id)}.content.${field}"${field === 'title' ? ' data-effect-title data-effect-role="title"' : ''}${field === 'subtitle' ? ' data-effect-role="supportingCopy"' : ''}${motion}>${escapeHtml(value)}</${tag}>`;
+};
 const typographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(0, 2).join('');
 const trailingTypographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(-2).join('');
 
@@ -82,20 +91,20 @@ const renderWorldChrome = (slide, index, total, visualWorld, companyPack) => {
 };
 
 const primitiveRenderers = {
-  cover: (slide, index, total, visualWorld) => `${visualWorld === 'typography-hero' ? `<span class="type-monument" data-glyphs="${attr(typographyGlyphs(slide.content.title))}" data-effect-visual-anchor data-effect-role="visualAnchor" aria-hidden="true"></span>` : ''}${visualWorld === 'information-led' ? renderInformationSequence(slide) : ''}<div class="cover-copy"><p class="eyebrow">${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</p>${editable(slide.id, 'title', 'h1', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div><aside class="cover-signal"><b>${String(index + 1).padStart(2, '0')}</b><i></i><span>${escapeHtml(slide.content.keyPoints[0])}</span></aside>`,
-  'section-break': (slide, index, total) => `<p class="chapter-number">${String(index + 1).padStart(2, '0')}</p><div class="section-copy"><p class="eyebrow">SECTION / ${String(total).padStart(2, '0')}</p>${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div>`,
-  'title-points': (slide) => `<header>${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderPoints(slide)}`,
-  'split-proof': (slide) => `<div class="split-copy">${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div><aside class="proof-panel">${renderPoints(slide, 'proof-list')}</aside>`,
-  'metric-grid': (slide) => `<header>${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderMetrics(slide)}`,
-  'process-flow': (slide) => `<header>${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header><div class="process-steps" data-effect-role="process">${slide.content.keyPoints.map((point, index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><p data-edit-kind="text" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></article>`).join('')}</div>`,
-  'component-focus': (slide) => `<header>${editable(slide.id, 'title', 'h2', slide.content.title)}${editable(slide.id, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderComponent(findComponent(slide), slide.id)}`,
+  cover: (slide, index, total, visualWorld) => `${visualWorld === 'typography-hero' ? `<span class="type-monument" data-glyphs="${attr(typographyGlyphs(slide.content.title))}" data-effect-visual-anchor data-effect-role="visualAnchor" aria-hidden="true"></span>` : ''}${visualWorld === 'information-led' ? renderInformationSequence(slide) : ''}<div class="cover-copy"><p class="eyebrow">${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}</p>${editable(slide, 'title', 'h1', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div><aside class="cover-signal"><b>${String(index + 1).padStart(2, '0')}</b><i></i><span>${escapeHtml(slide.content.keyPoints[0])}</span></aside>`,
+  'section-break': (slide, index, total) => `<p class="chapter-number">${String(index + 1).padStart(2, '0')}</p><div class="section-copy"><p class="eyebrow">SECTION / ${String(total).padStart(2, '0')}</p>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div>`,
+  'title-points': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderPoints(slide)}`,
+  'split-proof': (slide) => `<div class="split-copy">${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div><aside class="proof-panel">${renderPoints(slide, 'proof-list')}</aside>`,
+  'metric-grid': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderMetrics(slide)}`,
+  'process-flow': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header><div class="process-steps" data-effect-role="process">${slide.content.keyPoints.map((point, index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><p data-edit-kind="text" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></article>`).join('')}</div>`,
+  'component-focus': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderComponent(findComponent(slide), slide.id)}`,
 };
 
 const applyEffectTreatments = (markup, treatments) => markup.replace(/data-effect-role="([^"]+)"/g, (match, role) => `${match} data-effect-treatment="${attr(treatments.byRole[role] || 'none')}"`);
 
 const renderSlide = (slide, index, total, visualWorld, treatments, companyPack) => {
   const markup = `${renderWorldChrome(slide, index, total, visualWorld, companyPack)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
-  return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}">${applyEffectTreatments(markup, treatments)}</section>`;
+  return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}"${slide.composition.motion ? ` data-motion-effect="${attr(slide.composition.motion.effect)}"` : ''}>${applyEffectTreatments(markup, treatments)}</section>`;
 };
 
 const buildCss = (style) => `
