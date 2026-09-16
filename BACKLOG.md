@@ -810,6 +810,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP3 Slice 1 receipt：** `evidence/pgq-wp3-s1/slice-1-receipt.md`。WP2 Deck Rhythm Plan 現可透過 allowlisted `motionSignals` 產生 truthful NumberFlow B odometer proposal；pinned `number-flow@0.6.2` 以 deterministic inline IIFE 進同一 renderer/export，CompositionSpec、Node/browser editor、recipient reparse 與 installed ZIP 路徑閉環。Browser editor 與 Node 共用正式 motion semantic validator，非法 animated metric edit 會 fail loud 並 rollback，合法修改會同步 canonical value、NumberFlow target 與 export。Normal replay、reduced-motion、forced-static、offline、20 MiB 與 content integrity 均有真實證據；E Sweep、背景 vocabulary 與 WP4 仍未開始。
 
+**PGQ-WP3 Slice 2 task：** `tasks/pgq-wp3-s2-e-sweep-text-entrance.md`。Frontier 限定為既有 motion seam 上的 bounded title／supporting-copy entrance 與 subtitle underline sweep；背景 runtime/dependency、grouped reveal、WP4 與 EDX formal integration 不在本卡。
+
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
 | **PGQ-WP1 Preflight / Brief Upgrade** | `grill-outline.js`、`layout-repair-policy.js`、`workflow-entry.js`；R1/R2/R6/R10 | 素材歧義、文案校對、事實／衍生值、來源衝突與 linkage、時間／自讀、Main/Appendix/Drop；合併 D01/07/09/10/12/13/14/15/16 | release closure 後；核心來源衝突會問、無害未知不多問、不補造事實、主線＋附錄總計 ≤15；核准後縮文權限先契約化 |
