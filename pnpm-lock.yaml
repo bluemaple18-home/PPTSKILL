@@ -11,6 +11,12 @@ importers:
       number-flow:
         specifier: 0.6.2
         version: 0.6.2
+      three:
+        specifier: 0.134.0
+        version: 0.134.0
+      vanta:
+        specifier: 0.5.24
+        version: 0.5.24
     devDependencies:
       esbuild:
         specifier: 0.28.2
@@ -185,6 +191,12 @@ packages:
   number-flow@0.6.2:
     resolution: {integrity: sha512-MCnImG4Q5vPwhSXnov56nOuyyKn6LC+Qd7II1UiKc+ACRtug5iAtn0+CwXNxM38AC5lSowEY+oYEtZX2qMnUyw==}
 
+  three@0.134.0:
+    resolution: {integrity: sha512-LbBerg7GaSPjYtTOnu41AMp7tV6efUNR3p4Wk5NzkSsNTBuA5mDGOfwwZL1jhhVMLx9V20HolIUo0+U3AXehbg==}
+
+  vanta@0.5.24:
+    resolution: {integrity: sha512-fvieEbHy1ZS23zrcX+topzqAgA4Uct1enngOEWLFBgs9TtOf6RDFOYatH7KSVdrABzQDMCQ5myQy+nTSZZwLzg==}
+
 snapshots:
 
   '@esbuild/aix-ppc64@0.28.2':
@@ -299,3 +311,7 @@ snapshots:
   number-flow@0.6.2:
     dependencies:
       esm-env: 1.2.2
+
+  three@0.134.0: {}
+
+  vanta@0.5.24: {}

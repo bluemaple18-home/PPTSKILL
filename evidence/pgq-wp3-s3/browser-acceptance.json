@@ -1,0 +1,245 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "results": [
+    {
+      "effect": "waves",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "birds",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "net",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "globe",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "dots",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "fog",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "clouds",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "cells",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "ripple",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "rings",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    },
+    {
+      "effect": "halo",
+      "before": {
+        "state": "running",
+        "canvas": 1
+      },
+      "animatedPixels": true,
+      "replay": true,
+      "afterReplay": {
+        "state": "running",
+        "canvas": 1
+      },
+      "forced": {
+        "state": "forced-static",
+        "canvas": 0
+      }
+    }
+  ],
+  "reduced": {
+    "state": "reduced",
+    "canvas": 0
+  },
+  "duplicated": {
+    "layers": 2,
+    "canvases": 2,
+    "states": [
+      "running",
+      "running"
+    ]
+  },
+  "deleted": {
+    "layers": 1,
+    "canvases": 1
+  },
+  "light": {
+    "state": "running",
+    "canvas": 1,
+    "titleColor": "rgb(33, 27, 22)",
+    "slideBackground": "rgb(248, 241, 230)"
+  },
+  "noWebgl": {
+    "state": "webgl-unavailable",
+    "canvas": 0
+  },
+  "exportCheck": {
+    "canvas": 0,
+    "state": "static",
+    "effect": "waves",
+    "bytes": 852022
+  },
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/birds.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/net.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/globe.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/dots.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/fog.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/clouds.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/cells.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/ripple.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/rings.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/halo.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/light-waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html"
+  ],
+  "externalNetwork": []
+}

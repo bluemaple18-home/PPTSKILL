@@ -9,6 +9,9 @@ import { getCompanyStylePackByStyleId } from './company-style-pack.js';
 import { validateDeckGenerationCapabilities } from './generation-capabilities.js';
 import { parseMotionMetric, validateDeckMotionInput } from './motion-capabilities.js';
 import { buildNumberFlowVendorScript } from './number-flow-vendor.js';
+import { resolveBackgroundEffectOptions, validateDeckBackgroundEffects } from './background-effects.js';
+import { buildBackgroundEffectsVendorScript } from './background-effects-vendor.js';
+import { buildBackgroundEffectsCss, buildBackgroundEffectsRuntimeScript } from './background-effects-runtime.js';
 
 const escapeHtml = (value) => String(value ?? '')
   .replaceAll('&', '&amp;')
@@ -104,7 +107,9 @@ const applyEffectTreatments = (markup, treatments) => markup.replace(/data-effec
 
 const renderSlide = (slide, index, total, visualWorld, treatments, companyPack) => {
   const markup = `${renderWorldChrome(slide, index, total, visualWorld, companyPack)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
-  return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}"${slide.composition.motion ? ` data-motion-effect="${attr(slide.composition.motion.effect)}"` : ''}>${applyEffectTreatments(markup, treatments)}</section>`;
+  const background = slide.composition.backgroundEffect;
+  const layer = background ? `<div data-pptskill-background-layer data-background-effect="${attr(background.effect)}" data-background-options="${attr(JSON.stringify(resolveBackgroundEffectOptions(background, slide.__style)))}" data-background-state="static" aria-hidden="true"></div>` : '';
+  return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}"${slide.composition.motion ? ` data-motion-effect="${attr(slide.composition.motion.effect)}"` : ''}${background ? ` data-background-effect="${attr(background.effect)}"` : ''}>${layer}${applyEffectTreatments(markup, treatments)}</section>`;
 };
 
 const buildCss = (style) => `
@@ -179,7 +184,8 @@ const effectProfileFor = (visualWorld, style) => {
 
 export function renderFullDeck(input) {
   const rawMotionErrors = validateDeckMotionInput(input);
-  if (rawMotionErrors.length) return { status: 'fail', errors: rawMotionErrors };
+  const rawBackgroundErrors = validateDeckBackgroundEffects(input);
+  if (rawMotionErrors.length || rawBackgroundErrors.length) return { status: 'fail', errors: [...rawMotionErrors, ...rawBackgroundErrors] };
   const spec = sanitizeDeckSpec(input);
   const deckValidation = validateDeckSpec(spec);
   const compositionValidation = validateDeckCompositions(spec);
@@ -189,8 +195,9 @@ export function renderFullDeck(input) {
   const visualWorld = resolveVisualWorld(spec.style);
   const companyPack = visualWorld === 'company-dark' ? getCompanyStylePackByStyleId(spec.style.id) : null;
   const { route, treatments } = effectProfileFor(visualWorld, spec.style);
-  const slides = spec.slides.map((slide, index) => renderSlide(slide, index, spec.slides.length, visualWorld, treatments, companyPack)).join('');
+  const slides = spec.slides.map((slide, index) => renderSlide({ ...slide, __style: spec.style }, index, spec.slides.length, visualWorld, treatments, companyPack)).join('');
   const hasOdometer = spec.slides.some((slide) => slide.composition.motion?.effect === 'number-flow-odometer');
-  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.metric-cards article>b{display:block;margin-bottom:28px}.metric-value{display:inline-flex;min-width:7ch;color:var(--accent);font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${hasOdometer ? buildNumberFlowVendorScript() : ''}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
+  const hasBackground = spec.slides.some((slide) => slide.composition.backgroundEffect);
+  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${hasBackground ? buildBackgroundEffectsCss() : ''}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.metric-cards article>b{display:block;margin-bottom:28px}.metric-value{display:inline-flex;min-width:7ch;color:var(--accent);font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${hasOdometer ? buildNumberFlowVendorScript() : ''}${hasBackground ? `${buildBackgroundEffectsVendorScript()}${buildBackgroundEffectsRuntimeScript()}` : ''}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
   return { status: 'pass', html: embedDeckSpec(shell, spec), spec };
 }

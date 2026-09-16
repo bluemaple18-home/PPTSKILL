@@ -3,12 +3,13 @@ import { planDeckRhythm } from './deck-rhythm-planner.js';
 import { planMotionVocabulary } from './motion-capabilities.js';
 import { routeGoldenReferences } from './golden-reference-router.js';
 import { planSemanticCompositions } from './semantic-composition-planner.js';
+import { getBackgroundEffectCapabilities, planBackgroundEffects } from './background-effects.js';
 
 const assertOutline = (outline) => {
   if (!Array.isArray(outline?.slides) || outline.slides.length < 1 || outline.slides.length > 15) throw new Error('Outline 必須是 1～15 頁。');
 };
 
-export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity, mode = 'direct', sampleCount = 0, candidates = [], generationPermissions = {}, semanticSignals = [], rhythmSignals = [], motionSignals = [] }) {
+export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity, mode = 'direct', sampleCount = 0, candidates = [], generationPermissions = {}, semanticSignals = [], rhythmSignals = [], motionSignals = [], backgroundSignals = [] }) {
   assertOutline(outline);
   if (!Number.isInteger(capacity?.maxSlidesPerUnit) || capacity.maxSlidesPerUnit < 1) throw new Error('Runtime 必須明示 maxSlidesPerUnit。');
   if (!['direct', 'staged'].includes(mode)) throw new Error('mode 必須是 direct 或 staged。');
@@ -19,6 +20,7 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
   const goldenRouting = routeGoldenReferences({ compositionProposals, styleSpecId, styleSpec });
   const deckRhythmPlan = planDeckRhythm({ slides: outline.slides, compositionProposals, goldenRouting, rhythmSignals });
   const motionPlan = planMotionVocabulary({ slides: outline.slides, deckRhythmPlan, motionSignals });
+  const backgroundPlan = planBackgroundEffects({ slides: outline.slides, deckRhythmPlan, backgroundSignals });
 
   const batchSize = Math.min(capacity.maxSlidesPerUnit, outline.slides.length === 15 ? 14 : outline.slides.length);
   const units = [];
@@ -43,12 +45,14 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
     version: 1,
     mode,
     capabilities: getGenerationCapabilities(),
+    backgroundCapabilities: getBackgroundEffectCapabilities(),
     generationPermissions: permissions,
     candidates: candidates.map((candidate) => evaluateGenerationCandidate(candidate, { generationPermissions: permissions })),
     compositionProposals,
     goldenRouting,
     deckRhythmPlan,
     motionPlan,
+    backgroundPlan,
     sample: sampleCount ? { slideIds: outline.slides.slice(0, sampleCount).map((slide) => slide.id), requiresApprovalBeforeRemaining: true } : null,
     units,
   };

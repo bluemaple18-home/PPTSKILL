@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "results": [
+    {
+      "effect": "waves",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "8895e21dbe92d9f9c41a8af4bd59345404f2fb13bc2eb75260f5e84a469bf145",
+        "d623c4441f64ffa0f00236782a12818ca75a5f6f98b7296bfff60a793f43d086"
+      ]
+    },
+    {
+      "effect": "birds",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "9daf34ceae26e610de733754454f24efc8fe877c9fc1e40ea21c642fa3b3663c",
+        "688d2388791d6d3d529b84c1674db9e66ce892ad67c837a93ce0a5a46ab6dca5"
+      ]
+    },
+    {
+      "effect": "net",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "96cb1903854954d67baae9135ad5700c60c93fc646c9c9a15e59f3628b82b591",
+        "319f9e41715d9682efe0d14d9b580a47f024fccbf2152e4c5fc1a818a773e294"
+      ]
+    },
+    {
+      "effect": "globe",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "deaaec15fde1444f44e8d98218fb640f1a18a8df377ed93a18e8f9834ee98b01",
+        "76bfa2b2d5ac0f49db6bb8c4ffcbd6ce37b978fbc01eadb1b3274d3421a273f1"
+      ]
+    },
+    {
+      "effect": "dots",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "cb652a1c5b3851b2c6d469a333532088cef59a84be5b1506d010f5966718ebbc",
+        "e05f24876511e0fc9b886ecc6bc5ad2ede7fabe4e22d95448283a88de33a0b7d"
+      ]
+    },
+    {
+      "effect": "fog",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "5ee84b3eadccf66633a9a9c1eef146bd6d18c2a06a95c354aed9640ee93fb8d5",
+        "131d986c7ad59c2135e90a2ba4012bbdc1ca5cbb03d1da3b85db9d9f18f5764a"
+      ]
+    },
+    {
+      "effect": "clouds",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "2c75eb0fd28ad5408f579505adec95a9227095b4fbad3f83e914828e3d8445cf",
+        "2f48c94a1c764984b784f794e59c18b9b420149de7ab3b0e45e37c3e511e0619"
+      ]
+    },
+    {
+      "effect": "cells",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "78736673f534f4c243b31effcae3d90c42bbdc7500dea7245d10b7d0ff1b721b",
+        "acc9775cd6fbca8cc565658a26587a8e7b1999e2e15e32116517c804c79d4acf"
+      ]
+    },
+    {
+      "effect": "ripple",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "70627d5b1d14ea584ca444f8e3d63d3df25616a8c3db01f557532084b079bbb3",
+        "b89310523ce057b54d394a221d72035d79bbebe9bf7bdcd73ba1e02fac7218f6"
+      ]
+    },
+    {
+      "effect": "rings",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "f247e941bdd865e037022d901c7caf36abc0abc8535bfb3983a5783cddc06a1b",
+        "da62528766335f6a2e6c6e91be8041c46600085d42c48d00af4e4bf949578784"
+      ]
+    },
+    {
+      "effect": "halo",
+      "start": {
+        "status": "started",
+        "canvasCount": 1
+      },
+      "canvas": {
+        "canvasCount": 1,
+        "width": 800,
+        "height": 450
+      },
+      "animatedPixels": true,
+      "destroyed": true,
+      "frameSha256": [
+        "aec9547b300a86b303464af6f42cb017058acfc686c255fca59593e7424b44c1",
+        "0140a9c57b67442d0cdcc773fed0ae7740d7df90d685ccf7483a254bfeab5234"
+      ]
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "network": [
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-vanta-spike-iVT1tz/spike.html"
+  ],
+  "externalNetwork": []
+}
