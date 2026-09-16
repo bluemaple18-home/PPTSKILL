@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-16T07:39:18.284Z",
+  "generatedAt": "2026-09-16T08:23:02.030Z",
   "artifact": "underline-sweep-browser.html",
   "motionMode": "reduce",
   "status": "pass",
@@ -141,6 +141,34 @@
           "count": 2,
           "replayResult": false,
           "replayed": false,
+          "reset": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "sequence": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
           "afterReplay": [
             {
               "role": "title",
@@ -379,6 +407,34 @@
           "count": 2,
           "replayResult": false,
           "replayed": false,
+          "reset": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
+          "sequence": [
+            {
+              "role": "title",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "1",
+              "transform": "none",
+              "underlineTransform": "none"
+            }
+          ],
           "afterReplay": [
             {
               "role": "title",

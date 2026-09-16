@@ -250,10 +250,20 @@ const motionTraceExpression = String.raw`(async () => {
   const restingVisible = Object.values(resting).every(({ opacity, clipPath }) => Number(opacity) > 0 && !/100%/.test(clipPath));
   const odometers = [...document.querySelectorAll('[data-pptskill-odometer]')];
   const textEntrances = [...document.querySelectorAll('[data-pptskill-text-entrance]')];
+  const snapshotTextEntrance = () => textEntrances.map((element) => ({
+    role: element.dataset.pptskillTextEntrance,
+    opacity: getComputedStyle(element).opacity,
+    transform: getComputedStyle(element).transform,
+    underlineTransform: element.dataset.pptskillTextEntrance === 'subtitle' ? getComputedStyle(element, '::after').transform : null,
+  }));
   const motionRoot = odometers[0]?.closest('.slide') || textEntrances[0]?.closest('.slide');
   const beforeReplay = odometers.map((element) => ({ starts: Number(element.dataset.animationStarts || 0), finishes: Number(element.dataset.animationFinishes || 0), replays: Number(element.dataset.replayCount || 0) }));
   const beforeTextReplay = Number(motionRoot?.dataset.replayCount || 0);
-  const replayResult = motionRoot ? await window.PPTSKILLMotion?.replaySlide(motionRoot.dataset.slideId) : null;
+  const replayPromise = motionRoot ? window.PPTSKILLMotion?.replaySlide(motionRoot.dataset.slideId) : null;
+  const textReset = snapshotTextEntrance();
+  const replayResult = replayPromise ? await replayPromise : null;
+  await new Promise((resolve) => setTimeout(resolve, ${motionMode === 'normal' ? 70 : 0}));
+  const textSequence = snapshotTextEntrance();
   await new Promise((resolve) => setTimeout(resolve, ${motionMode === 'normal' ? 1300 : 20}));
   const afterReplay = odometers.map((element, index) => ({
     state: element.dataset.motionState || null,
@@ -262,12 +272,7 @@ const motionTraceExpression = String.raw`(async () => {
     replays: Number(element.dataset.replayCount || 0),
     replayed: Number(element.dataset.replayCount || 0) > beforeReplay[index].replays,
   }));
-  const textAfterReplay = textEntrances.map((element) => ({
-    role: element.dataset.pptskillTextEntrance,
-    opacity: getComputedStyle(element).opacity,
-    transform: getComputedStyle(element).transform,
-    underlineTransform: element.dataset.pptskillTextEntrance === 'subtitle' ? getComputedStyle(element, '::after').transform : null,
-  }));
+  const textAfterReplay = snapshotTextEntrance();
   const textReplayed = Number(motionRoot?.dataset.replayCount || 0) > beforeTextReplay;
   window.PPTSKILLMotion?.forceStatic();
   const forcedStatic = odometers.map((element) => ({ state: element.dataset.motionState || null, finalDisplay: element.dataset.finalDisplay, renderedText: element.textContent }));
@@ -321,7 +326,7 @@ const motionTraceExpression = String.raw`(async () => {
       && JSON.stringify(editorSlide?.composition?.motion) === originalMotion
       && JSON.stringify(exportedSlide?.composition?.motion) === originalMotion;
   }
-  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip, invalidPatchError, invalidPatchPreserved }, textEntrance: { count: textEntrances.length, replayResult, replayed: textReplayed, afterReplay: textAfterReplay, forcedStatic: textForcedStatic, editorRoundTrip } };
+  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip, invalidPatchError, invalidPatchPreserved }, textEntrance: { count: textEntrances.length, replayResult, replayed: textReplayed, reset: textReset, sequence: textSequence, afterReplay: textAfterReplay, forcedStatic: textForcedStatic, editorRoundTrip } };
 })()`;
 
 let editorExportEvidence = null;
@@ -523,7 +528,9 @@ const receipt = {
     && (motionTrace.textEntrance.count === 0 || (motionTrace.textEntrance.editorRoundTrip
       && (motionMode !== 'normal'
         ? motionTrace.textEntrance.replayResult === false
-        : motionTrace.textEntrance.replayResult === true && motionTrace.textEntrance.replayed)
+        : motionTrace.textEntrance.replayResult === true && motionTrace.textEntrance.replayed
+          && motionTrace.textEntrance.reset.every(({ opacity, underlineTransform }) => Number(opacity) === 0 && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(0, 0, 0, 1, 0, 0)'))
+          && Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'title')?.opacity || 0) > Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'subtitle')?.opacity || 0))
       && motionTrace.textEntrance.afterReplay.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))
       && motionTrace.textEntrance.forcedStatic.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))))
   )) && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',

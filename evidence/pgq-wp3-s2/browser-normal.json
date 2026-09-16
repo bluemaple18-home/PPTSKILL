@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-16T07:38:42.015Z",
+  "generatedAt": "2026-09-16T08:23:08.552Z",
   "artifact": "underline-sweep-browser.html",
   "motionMode": "normal",
   "status": "pass",
@@ -67,7 +67,7 @@
             "treatment": "rule-draw",
             "opacity": "1",
             "transform": "none",
-            "clipPath": "inset(0px 98.1885% 0px 0px)",
+            "clipPath": "inset(0px 98.2136% 0px 0px)",
             "transitionDuration": "0.32s",
             "layoutBox": {
               "left": 78,
@@ -78,8 +78,8 @@
           },
           "visualAnchor": {
             "treatment": "brand-device-accent",
-            "opacity": "0.018115",
-            "transform": "matrix(0.992145, 0, 0, 0.992145, 0, 0)",
+            "opacity": "0.0178637",
+            "transform": "matrix(0.992143, 0, 0, 0.992143, 0, 0)",
             "clipPath": "none",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -91,8 +91,8 @@
           },
           "title": {
             "treatment": "hard-cut-field",
-            "opacity": "0.018115",
-            "transform": "matrix(1, 0, 0, 1, 0, 6.48044)",
+            "opacity": "0.0178637",
+            "transform": "matrix(1, 0, 0, 1, 0, 6.4821)",
             "clipPath": "inset(0px 0px 100%)",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -191,6 +191,34 @@
           "count": 2,
           "replayResult": true,
           "replayed": true,
+          "reset": [
+            {
+              "role": "title",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": "matrix(0, 0, 0, 1, 0, 0)"
+            }
+          ],
+          "sequence": [
+            {
+              "role": "title",
+              "opacity": "0.320238",
+              "transform": "matrix(1, 0, 0, 1, 0, 4.48643)",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": "matrix(0, 0, 0, 1, 0, 0)"
+            }
+          ],
           "afterReplay": [
             {
               "role": "title",
@@ -310,7 +338,7 @@
             "treatment": "rule-draw",
             "opacity": "1",
             "transform": "none",
-            "clipPath": "inset(0px 8.56892% 0px 0px)",
+            "clipPath": "inset(0px 8.51851% 0px 0px)",
             "transitionDuration": "0.32s",
             "layoutBox": {
               "left": 78,
@@ -321,8 +349,8 @@
           },
           "visualAnchor": {
             "treatment": "brand-device-accent",
-            "opacity": "0.914311",
-            "transform": "matrix(0.999314, 0, 0, 0.999314, 0, 0)",
+            "opacity": "0.914815",
+            "transform": "matrix(0.999319, 0, 0, 0.999319, 0, 0)",
             "clipPath": "none",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -334,8 +362,8 @@
           },
           "title": {
             "treatment": "hard-cut-field",
-            "opacity": "0.914311",
-            "transform": "matrix(1, 0, 0, 1, 0, 0.565549)",
+            "opacity": "0.914815",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.562222)",
             "clipPath": "inset(0px 0px 100%)",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -434,6 +462,34 @@
           "count": 2,
           "replayResult": true,
           "replayed": true,
+          "reset": [
+            {
+              "role": "title",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": "matrix(0, 0, 0, 1, 0, 0)"
+            }
+          ],
+          "sequence": [
+            {
+              "role": "title",
+              "opacity": "0.32022",
+              "transform": "matrix(1, 0, 0, 1, 0, 4.48655)",
+              "underlineTransform": null
+            },
+            {
+              "role": "subtitle",
+              "opacity": "0",
+              "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+              "underlineTransform": "matrix(0, 0, 0, 1, 0, 0)"
+            }
+          ],
           "afterReplay": [
             {
               "role": "title",

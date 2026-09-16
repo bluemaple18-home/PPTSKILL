@@ -124,6 +124,9 @@ test('renderer 只標記核准文字，使用 transform/opacity 與 1px scaleX u
   assert.doesNotMatch(rendered.html, /transition:[^}]*\b(?:width|height|margin|top|left|right|bottom)\b/);
   assert.match(rendered.html, /classList\.remove\('is-visible'\)/);
   assert.match(rendered.html, /classList\.add\('is-visible'\)/);
+  assert.match(rendered.html, /classList\.add\('motion-resetting'\)/);
+  assert.match(rendered.html, /classList\.remove\('motion-resetting'\)/);
+  assert.match(rendered.html, /void root\.offsetWidth/);
   assert.match(rendered.html, /typeof IntersectionObserver==='function'/);
   assert.match(rendered.html, /forceStatic/);
   assert.doesNotMatch(rendered.html, /<number-flow data-pptskill-odometer/);
