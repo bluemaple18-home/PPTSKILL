@@ -26,11 +26,13 @@
 - Console exception、page error、network failure、HTTP error、geometry issue：兩模式皆 0。
 - 代表 HTML：58,243 bytes；SHA-256 `0fb1840994536c86dc19f3fbe0253cf2c963b3ba6c9aa7d7c461b1741e5d5fba`。
 - `browser-normal.png`、`browser-reduced.png` 已人工抽查；metric 編號、數值、currency/percent suffix 與標籤可辨識，normal/reduced resting state 一致。
+- Repair `f02b224` 真實 browser re-review：非法 `1.2e3｜不支援` 明確拒絕，DeckSpec 與 DOM rollback；合法 `1,360｜Browser acceptance` 同步 canonical value、NumberFlow `data-to=1360` 與 export。
+- Repair export 重新交由正式 `extractDeckSpec()` 與 `validateDeckMotionInput()` 驗證：PASS，`motionErrors=[]`；recipient reparse 保留合法值與 motion metadata。
 
 ## Verification
 
-- Slice 1 + WP1/WP2 + R4/R5/R7/R8/R10/R11 targeted：109/109 PASS。
-- Full regression：171/171 PASS。
+- Slice 1 repair tests：7/7 PASS；Slice 1 + WP1/WP2 + R4/R5/R7/R8/R10/R11 targeted：110/110 PASS。
+- Full regression：172/172 PASS。
 - Syntax checks：PASS。
 - Debug scan：runtime 無 debugger／debug console；兩個 build CLI 僅保留預期 JSON stdout。
 - Deterministic vendor rebuild：PASS，hash/bytes 不變。

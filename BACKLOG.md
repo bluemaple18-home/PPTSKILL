@@ -808,7 +808,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP2 Slice 4 receipt：** `evidence/pgq-wp2-s4/slice-4-receipt.md`。Slice 2／3 的 available candidates 現可經 allowlisted rhythm signals 產生 plan-only Deck Rhythm Plan；跨頁 composition／Golden logic／anchor 重複、高密度／高證據／高動態 runs、quiet balance 與 narrative roles 均有 deterministic reasons／warnings。Planner 只在 top semantic score 10 分內調整候選，保留 continuity group 的 intentional repetition，並輸出實際 selected CompositionSpec proposal；content hash 不變。至此 PGQ-WP2 COMPLETE。
 
-**PGQ-WP3 Slice 1 receipt：** `evidence/pgq-wp3-s1/slice-1-receipt.md`。WP2 Deck Rhythm Plan 現可透過 allowlisted `motionSignals` 產生 truthful NumberFlow B odometer proposal；pinned `number-flow@0.6.2` 以 deterministic inline IIFE 進同一 renderer/export，CompositionSpec、Node/browser editor、recipient reparse 與 installed ZIP 路徑閉環。Normal replay、reduced-motion、forced-static、offline、20 MiB 與 content integrity 均有真實證據；E Sweep、背景 vocabulary 與 WP4 仍未開始。
+**PGQ-WP3 Slice 1 receipt：** `evidence/pgq-wp3-s1/slice-1-receipt.md`。WP2 Deck Rhythm Plan 現可透過 allowlisted `motionSignals` 產生 truthful NumberFlow B odometer proposal；pinned `number-flow@0.6.2` 以 deterministic inline IIFE 進同一 renderer/export，CompositionSpec、Node/browser editor、recipient reparse 與 installed ZIP 路徑閉環。Browser editor 與 Node 共用正式 motion semantic validator，非法 animated metric edit 會 fail loud 並 rollback，合法修改會同步 canonical value、NumberFlow target 與 export。Normal replay、reduced-motion、forced-static、offline、20 MiB 與 content integrity 均有真實證據；E Sweep、背景 vocabulary 與 WP4 仍未開始。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
