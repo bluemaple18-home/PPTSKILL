@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-16T08:23:08.552Z",
+  "generatedAt": "2026-09-16T08:41:34.958Z",
   "artifact": "underline-sweep-browser.html",
   "motionMode": "normal",
   "status": "pass",
@@ -67,7 +67,7 @@
             "treatment": "rule-draw",
             "opacity": "1",
             "transform": "none",
-            "clipPath": "inset(0px 98.2136% 0px 0px)",
+            "clipPath": "inset(0px 100% 0px 0px)",
             "transitionDuration": "0.32s",
             "layoutBox": {
               "left": 78,
@@ -78,9 +78,9 @@
           },
           "visualAnchor": {
             "treatment": "brand-device-accent",
-            "opacity": "0.0178637",
-            "transform": "matrix(0.992143, 0, 0, 0.992143, 0, 0)",
-            "clipPath": "none",
+            "opacity": "0",
+            "transform": "matrix(0.992, 0, 0, 0.992, 0, 0)",
+            "clipPath": "inset(0px)",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
               "left": 0,
@@ -91,9 +91,9 @@
           },
           "title": {
             "treatment": "hard-cut-field",
-            "opacity": "0.0178637",
-            "transform": "matrix(1, 0, 0, 1, 0, 6.4821)",
-            "clipPath": "inset(0px 0px 100%)",
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 6.6)",
+            "clipPath": "inset(0px)",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
               "left": 78,
@@ -208,8 +208,8 @@
           "sequence": [
             {
               "role": "title",
-              "opacity": "0.320238",
-              "transform": "matrix(1, 0, 0, 1, 0, 4.48643)",
+              "opacity": "0.320065",
+              "transform": "matrix(1, 0, 0, 1, 0, 4.48757)",
               "underlineTransform": null
             },
             {
@@ -338,7 +338,7 @@
             "treatment": "rule-draw",
             "opacity": "1",
             "transform": "none",
-            "clipPath": "inset(0px 8.51851% 0px 0px)",
+            "clipPath": "inset(0px 8.56144% 0px 0px)",
             "transitionDuration": "0.32s",
             "layoutBox": {
               "left": 78,
@@ -349,8 +349,8 @@
           },
           "visualAnchor": {
             "treatment": "brand-device-accent",
-            "opacity": "0.914815",
-            "transform": "matrix(0.999319, 0, 0, 0.999319, 0, 0)",
+            "opacity": "0.914386",
+            "transform": "matrix(0.999315, 0, 0, 0.999315, 0, 0)",
             "clipPath": "none",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -362,8 +362,8 @@
           },
           "title": {
             "treatment": "hard-cut-field",
-            "opacity": "0.914815",
-            "transform": "matrix(1, 0, 0, 1, 0, 0.562222)",
+            "opacity": "0.914386",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.565055)",
             "clipPath": "inset(0px 0px 100%)",
             "transitionDuration": "0.32s, 0.32s",
             "layoutBox": {
@@ -479,8 +479,8 @@
           "sequence": [
             {
               "role": "title",
-              "opacity": "0.32022",
-              "transform": "matrix(1, 0, 0, 1, 0, 4.48655)",
+              "opacity": "0.3206",
+              "transform": "matrix(1, 0, 0, 1, 0, 4.48404)",
               "underlineTransform": null
             },
             {

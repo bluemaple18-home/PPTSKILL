@@ -1,7 +1,7 @@
 # PGQ-WP3 Slice 2 Receipt — E Sweep / Role-aware Text Entrance
 
-**Verdict:** READY FOR REVIEW
-**Branch:** `codex/pgq-wp3-s2`
+**Verdict:** COMPLETE / GO
+**Integrated implementation:** `8355188007122d2749eba14953b3156c2981d95f`
 **Base:** `main@b0e1623cfb843df63027e3dc06710541e7067f36`
 
 ## Delivered
@@ -42,4 +42,4 @@
 ## Deferred boundary
 
 - Grouped keyPoint reveal、專業 timeline、背景 effects、Vanta／Three.js／p5.js、14 類背景 vocabulary、WP4 與 EDX formal integration 均未開始。
-- 本 receipt 是 Slice 2 review candidate，不代表已 merge、已 push 或整個 PGQ-WP3 COMPLETE。
+- 獨立 re-review 對 Repair 1 給出 GO；Slice 2 已整合並關閉。這不代表整個 PGQ-WP3 COMPLETE，背景 effects 與後續 slices 仍維持 NOT STARTED。
