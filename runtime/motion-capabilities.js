@@ -153,3 +153,16 @@ export function validateSlideMotion(slide) {
 export function validateDeckMotionInput(spec) {
   return (spec?.slides ?? []).flatMap((slide) => validateSlideMotion(slide));
 }
+
+export function buildMotionBrowserContractRuntime() {
+  return [
+    `const MOTION_EFFECT=${JSON.stringify(MOTION_EFFECT)};`,
+    `const targetPattern=${targetPattern.toString()};`,
+    `const metricPattern=${metricPattern.toString()};`,
+    `const reason=${reason.toString()};`,
+    parseMotionMetric.toString(),
+    sanitizeCompositionMotion.toString(),
+    evaluateMotionComposition.toString(),
+    validateSlideMotion.toString(),
+  ].join('');
+}

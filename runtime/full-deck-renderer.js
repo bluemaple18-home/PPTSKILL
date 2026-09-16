@@ -30,7 +30,7 @@ const renderMetrics = (slide) => `<div class="metric-cards" data-effect-role="me
   const target = slide.composition.motion?.targets.find(({ ref }) => ref === `content.keyPoints.${index}`);
   const parsed = target ? parseMotionMetric(point) : null;
   const metric = parsed ? `<strong class="metric-value"><span>${escapeHtml(parsed.numberPrefix)}</span><number-flow data-pptskill-odometer data-from="${attr(target.from)}" data-to="${attr(parsed.finalValue)}" data-final-display="${attr(parsed.numericDisplay)}" data-use-grouping="${parsed.format.useGrouping}" data-fraction-digits="${parsed.format.maximumFractionDigits}" data-stagger-ms="${attr(slide.composition.motion.staggerMs)}" data-sequence-index="${index}">${escapeHtml(parsed.numericDisplay)}</number-flow><span>${escapeHtml(parsed.numberSuffix)}</span></strong>` : `<strong class="metric-value">${escapeHtml(value)}</strong>`;
-  return `<article><b>${String(index + 1).padStart(2, '0')}</b>${label ? `${metric}<p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
+  return `<article data-metric-index="${index}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}"><b>${String(index + 1).padStart(2, '0')}</b>${label ? `${metric}<p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
 }).join('')}</div>`;
 
 const renderComponent = (component, slideId) => {

@@ -3,6 +3,8 @@ import { tmpdir } from 'node:os';
 import { basename, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
+import { extractDeckSpec } from '../runtime/deck-spec.js';
+import { validateDeckMotionInput } from '../runtime/motion-capabilities.js';
 
 const args = process.argv.slice(2);
 const input = args.find((arg) => !arg.startsWith('--'));
@@ -16,8 +18,10 @@ const motionFramesIndex = args.indexOf('--motion-frames');
 const motionFramesPrefix = motionFramesIndex >= 0 ? args[motionFramesIndex + 1] : null;
 const motionIndex = args.indexOf('--motion');
 const motionMode = motionIndex >= 0 ? args[motionIndex + 1] : 'reduce';
+const editorExportIndex = args.indexOf('--editor-export');
+const editorExportPath = editorExportIndex >= 0 ? args[editorExportIndex + 1] : null;
 if (!['reduce', 'normal'].includes(motionMode)) throw new Error('--motion 只接受 reduce 或 normal。');
-if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal] [--motion-frames path-prefix]');
+if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal] [--motion-frames path-prefix] [--editor-export deck.html]');
 
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
@@ -257,16 +261,40 @@ const motionTraceExpression = String.raw`(async () => {
   }));
   window.PPTSKILLMotion?.forceStatic();
   const forcedStatic = odometers.map((element) => ({ state: element.dataset.motionState || null, finalDisplay: element.dataset.finalDisplay, renderedText: element.textContent }));
-  const editorSpec = window.PPTSKILLEditor?.getDeckSpec();
-  const exported = window.PPTSKILLEditor?.exportHtml();
-  const exportedMatch = exported?.match(/<script[^>]*id=["']deck-spec["'][^>]*>([\s\S]*?)<\/script>/i);
-  const exportedSpec = exportedMatch ? JSON.parse(exportedMatch[1]) : null;
-  const editorMotion = editorSpec?.slides?.[0]?.composition?.motion ?? null;
-  const exportedMotion = exportedSpec?.slides?.[0]?.composition?.motion ?? null;
-  const editorRoundTrip = JSON.stringify(editorMotion) === JSON.stringify(exportedMotion) && editorMotion?.effect === 'number-flow-odometer';
-  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip } };
+  let invalidPatchError = null, invalidPatchPreserved = true, editorRoundTrip = true;
+  if (odometers.length) {
+    const motionSlideId = odometers[0].closest('.slide').dataset.slideId;
+    const motionTargetIndex = Number(odometers[0].dataset.sequenceIndex);
+    const motionRegion = 'content.keyPoints.' + motionTargetIndex;
+    const originalSpec = window.PPTSKILLEditor?.getDeckSpec();
+    const originalSlide = originalSpec?.slides?.find(({ id }) => id === motionSlideId);
+    try { window.PPTSKILLEditor?.applyLocalPatch({ slideId: motionSlideId, region: motionRegion, value: '1.2e3｜不支援' }); }
+    catch (error) { invalidPatchError = error.message; }
+    const afterInvalid = window.PPTSKILLEditor?.getDeckSpec();
+    const afterInvalidSlide = afterInvalid?.slides?.find(({ id }) => id === motionSlideId);
+    invalidPatchPreserved = Boolean(invalidPatchError)
+      && afterInvalidSlide?.content?.keyPoints?.[motionTargetIndex] === originalSlide?.content?.keyPoints?.[motionTargetIndex]
+      && JSON.stringify(afterInvalidSlide?.composition?.motion) === JSON.stringify(originalSlide?.composition?.motion);
+    window.PPTSKILLEditor?.applyLocalPatch({ slideId: motionSlideId, region: motionRegion, value: '1,360｜Browser acceptance' });
+    const editorSpec = window.PPTSKILLEditor?.getDeckSpec();
+    const exported = window.PPTSKILLEditor?.exportHtml();
+    const exportedMatch = exported?.match(/<script[^>]*id=["']deck-spec["'][^>]*>([\s\S]*?)<\/script>/i);
+    const exportedSpec = exportedMatch ? JSON.parse(exportedMatch[1]) : null;
+    const editorSlide = editorSpec?.slides?.find(({ id }) => id === motionSlideId);
+    const exportedSlide = exportedSpec?.slides?.find(({ id }) => id === motionSlideId);
+    const editorMotion = editorSlide?.composition?.motion ?? null;
+    const exportedMotion = exportedSlide?.composition?.motion ?? null;
+    const liveTarget = document.querySelector('[data-pptskill-odometer]');
+    editorRoundTrip = JSON.stringify(editorMotion) === JSON.stringify(exportedMotion)
+      && editorMotion?.effect === 'number-flow-odometer'
+      && editorSlide?.content?.keyPoints?.[motionTargetIndex] === '1,360｜Browser acceptance'
+      && exportedSlide?.content?.keyPoints?.[motionTargetIndex] === '1,360｜Browser acceptance'
+      && liveTarget?.dataset.to === '1360';
+  }
+  return { mode: ${JSON.stringify(motionMode)}, initial, resting, changedRoles, layoutStable, restingVisible, odometer: { count: odometers.length, replayResult, afterReplay, forcedStatic, editorRoundTrip, invalidPatchError, invalidPatchPreserved } };
 })()`;
 
+let editorExportEvidence = null;
 const runAtViewport = async ({ width, height }) => {
   const profileDir = await mkdtemp(`${tmpdir()}/pptskill-geometry-`);
   const browser = spawn(chromeBin, [
@@ -335,6 +363,23 @@ const runAtViewport = async ({ width, height }) => {
     }
     const motionTraceResult = await cdp.send('Runtime.evaluate', { expression: motionTraceExpression, awaitPromise: true, returnByValue: true });
     if (motionTraceResult.exceptionDetails) throw new Error(motionTraceResult.exceptionDetails.text);
+    if (editorExportPath && width === 1280 && height === 720) {
+      const exportResult = await cdp.send('Runtime.evaluate', { expression: 'window.PPTSKILLEditor.exportHtml()', returnByValue: true });
+      if (exportResult.exceptionDetails) throw new Error(exportResult.exceptionDetails.text);
+      const exportedHtml = exportResult.result.value;
+      await writeFile(resolve(editorExportPath), exportedHtml);
+      const reopened = extractDeckSpec(exportedHtml);
+      const motionErrors = validateDeckMotionInput(reopened);
+      const reopenedSlide = reopened.slides.find((slide) => slide.composition.motion);
+      const reopenedTargetIndex = Number(reopenedSlide?.composition.motion?.targets?.[0]?.ref.split('.').at(-1));
+      editorExportEvidence = {
+        status: motionErrors.length ? 'fail' : 'pass',
+        artifact: basename(editorExportPath),
+        keyPoint: reopenedSlide?.content.keyPoints[reopenedTargetIndex],
+        motion: reopenedSlide?.composition.motion,
+        motionErrors,
+      };
+    }
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
     if (screenshotPath && width === 1280 && height === 720) {
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
@@ -399,8 +444,9 @@ const receipt = {
       ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === 'reduced' && starts === 0)
       : motionTrace.odometer.replayResult === true && motionTrace.odometer.afterReplay.every(({ replayed, starts, finishes }) => replayed && starts > 0 && finishes > 0)))
     && motionTrace.odometer.forcedStatic.every(({ state }) => state === (motionMode === 'reduce' ? 'reduced' : 'static'))
-    && (motionTrace.odometer.count === 0 || motionTrace.odometer.editorRoundTrip)
-  )) ? 'pass' : 'fail',
+    && (motionTrace.odometer.count === 0 || (motionTrace.odometer.editorRoundTrip && motionTrace.odometer.invalidPatchPreserved))
+  )) && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
+  ...(editorExportEvidence ? { editorExport: editorExportEvidence } : {}),
   runs,
 };
 if (outputPath) await writeFile(resolve(outputPath), `${JSON.stringify(receipt, null, 2)}\n`);

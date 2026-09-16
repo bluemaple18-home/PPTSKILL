@@ -5,12 +5,14 @@ import { mkdtemp, readFile, stat, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
+import { runInNewContext } from 'node:vm';
 import { createDeckEditor } from '../runtime/deck-editor.js';
 import { extractDeckSpec, sanitizeDeckSpec } from '../runtime/deck-spec.js';
 import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 import { createGenerationPlan } from '../runtime/generation-plan.js';
 import { verifyNumberFlowVendor } from '../runtime/number-flow-vendor.js';
 import { inspectPortableHtml } from '../runtime/portable-size-guard.js';
+import { buildMotionBrowserContractRuntime } from '../runtime/motion-capabilities.js';
 import { buildDistribution } from '../tools/build-distribution.mjs';
 
 const run = promisify(execFile);
@@ -134,6 +136,18 @@ test('unsupported persisted motion 不得被 sanitizer 靜默吞掉', () => {
   const unknownEffect = deckSpec({ motion: { ...compositionMotion, effect: 'magic' } });
   assert.equal(renderFullDeck(unknownEffect).status, 'fail');
   assert.throws(() => createDeckEditor(unknownEffect), /allowlist/);
+});
+
+test('browser editor 注入正式 motion semantic validator，拒絕失配 target content', () => {
+  const invalid = deckSpec();
+  invalid.slides[0].content.keyPoints[0] = '1.2e3｜不支援';
+  const context = { result: null };
+  runInNewContext(`${buildMotionBrowserContractRuntime()};result=validateSlideMotion(${JSON.stringify(invalid.slides[0])})`, context);
+  assert.ok(context.result.some((message) => message.includes('ASCII metric token')));
+  const rendered = renderFullDeck(deckSpec());
+  assert.match(rendered.html, /data-metric-index="0" data-edit-target="slides\.metrics\.content\.keyPoints\.0"/);
+  assert.match(rendered.html, /const rawErrors=spec\.slides\.flatMap\(validateSlideMotion\)/);
+  assert.match(rendered.html, /const errors=cleaned\.slides\.flatMap\(validateSlideMotion\)/);
 });
 
 test('installed plan-new 與 render-new 穿透 motion；legacy request 維持 null', async () => {
