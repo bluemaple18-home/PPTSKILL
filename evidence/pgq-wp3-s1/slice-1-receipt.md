@@ -1,7 +1,7 @@
 # PGQ-WP3 Slice 1 Receipt — Motion Capability + NumberFlow Odometer
 
-**Verdict:** PASS  
-**Branch:** `codex/pgq-wp3-s1`  
+**Verdict:** PASS
+**Branch:** `codex/pgq-wp3-s1`
 **Base:** `main@cff5d4c65db85e15149a98536642dee60ac0f375`
 
 ## Delivered
