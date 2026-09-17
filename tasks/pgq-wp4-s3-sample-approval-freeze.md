@@ -60,8 +60,14 @@
 
 ## Candidate result
 
-- Focused：6/6 PASS；WP4 Slice 1～3 compatibility：18/18 PASS。
-- PGQ targeted＋PS-002/R6：93/93 PASS；full regression：201/201 PASS。
-- Fresh ZIP lifecycle PASS；2,128,146 bytes；SHA-256 `a83a87df45b02da14dbb994f3341f1db129c78585c6a50aeedf299fdd5661af2`。
+- Focused：7/7 PASS；WP4 Slice 1～3 compatibility：19/19 PASS。
+- PGQ targeted＋PS-002/R6：94/94 PASS；full regression：202/202 PASS。
+- Fresh ZIP lifecycle PASS；2,129,589 bytes；SHA-256 `402b07030883ef9f15620701558963611f9f181645f97d86beb41db29d4fc95a`。
 - Browser gate：NOT_APPLICABLE；本 slice 只新增 pure approval/freeze decision、CLI 與 packaged instructions，未改 renderer／DOM／CSS／browser runtime。
-- Candidate implementation commit：`8d39450`；等待 independent review，不 merge／push／開後續 Slice 或 EDX。
+- Candidate implementation＋repair commit：`8d39450`、`1e06246`；等待 independent re-review，不 merge／push／開後續 Slice 或 EDX。
+
+## Review repair
+
+- Repair 1：Slice 2 hard gate 可接受 `validationContext`，從實際受驗的 sanitized sample content／composition、Style 與 contract version 自行派生 `validatedIdentity`；legacy 無 approval path 的 gate request 保持相容。
+- Slice 3 approval 現要求同一 identity-bound hard-gate request，並重算 approval DeckSpec identity；舊 PASS evidence 搭配改後 content、composition、Style 或 contract 一律 fail loud，要求重新 hard gate。
+- Direct 與 fresh installed CLI 均新增 stale-PASS regression；修補前為 RED，修補後 PASS。

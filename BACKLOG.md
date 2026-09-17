@@ -832,6 +832,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 3 candidate receipt：** `evidence/pgq-wp4-s3/slice-3-candidate-receipt.md`。`approve-sample` 會重播同一 hard-gate request，只在 human approval 後建立 content／composition／style／contract fingerprints；局部內容／構圖變更只使對應樣張失效，Style／contract 變更才使全部樣張失效，非 sample 變更維持 freeze。三種 feedback scope 均為 allowlist plan；profile opt-in 不執行寫入。等待 independent review。
 
+**PGQ-WP4 Slice 3 repair 1：** 前次 P1 指出 stale PASS evidence 可核准後改 DeckSpec。現 hard gate 由 `validationContext` 派生受驗 sample content／composition、Style、contract identity；approval 必須完全一致，否則 fail loud 並要求重驗。Direct／installed regression 均覆蓋；等待 independent re-review。
+
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
 | **PGQ-WP1 Preflight / Brief Upgrade** | `grill-outline.js`、`layout-repair-policy.js`、`workflow-entry.js`；R1/R2/R6/R10 | 素材歧義、文案校對、事實／衍生值、來源衝突與 linkage、時間／自讀、Main/Appendix/Drop；合併 D01/07/09/10/12/13/14/15/16 | release closure 後；核心來源衝突會問、無害未知不多問、不補造事實、主線＋附錄總計 ≤15；核准後縮文權限先契約化 |

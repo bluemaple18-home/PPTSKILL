@@ -2,7 +2,7 @@
 
 ## Scope
 
-Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..8d39450` on branch `codex/pgq-wp4-s3`，並核對：
+Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..1e06246` on branch `codex/pgq-wp4-s3`，並特別 re-review repair range `8d39450..1e06246`：
 
 - `tasks/pgq-wp4-s3-sample-approval-freeze.md`
 - `evidence/pgq-wp4-s3/slice-3-candidate-receipt.md`
@@ -11,8 +11,8 @@ Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..8d39450` on branch `codex/pgq-
 
 ## Review focus
 
-1. Public approval seam 是否真的重跑 hard gate，且 sample identity mismatch、non-PASS、非 human approval 均 fail loud。
-2. Freeze fingerprints 是否只來自 sanitized content／composition／Style／contract version，deterministic 且不接受 caller 自報 hash/verdict。
+1. Hard gate 是否從 `validationContext` 的實際 sanitized sample content／composition、Style／contract version 自行派生 `validatedIdentity`，而不是接受 caller 自報 hash/verdict。
+2. Public approval seam 是否重跑同一 identity-bound hard gate，並拒絕 stale PASS 搭配改後 content、composition、Style 或 contract state。
 3. Duplicate/missing sample slide、current deck identity mismatch、unknown feedback field/scope/code 是否 fail loud。
 4. `slide-local` 是否只 target sample slide 並要求該頁 reapproval；`deck-wide` 是否只 target 未核准頁，不改 frozen sample。
 5. `profile-opt-in` 是否必須 `remember=true`，但 pure seam／installed CLI 都沒有寫 `~/.pptskill/profile.json`。
@@ -24,17 +24,19 @@ Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..8d39450` on branch `codex/pgq-
 
 ```bash
 node --check runtime/sample-approval.js
+node --check runtime/representative-sample-identity.js
+node --check runtime/representative-qa-gate.js
 node --check runtime/workflow-cli.mjs
 node --test tests/pgq-wp4-s3-sample-approval.test.mjs
 node --test tests/pgq-wp4-s1-representative-sample-plan.test.mjs tests/pgq-wp4-s2-hard-gate.test.mjs tests/pgq-wp4-s3-sample-approval.test.mjs
 node --test tests/pgq-wp1*.test.mjs tests/pgq-wp2*.test.mjs tests/pgq-wp3*.test.mjs tests/pgq-wp4*.test.mjs tests/ps-002-validator.test.mjs tests/p0-r6-geometry-gate.test.mjs
 pnpm test
 pnpm build:dist
-git diff --check d5201fddcba20787b09df26f794a4ab2f70ba1d6..8d39450
+git diff --check d5201fddcba20787b09df26f794a4ab2f70ba1d6..1e06246
 ```
 
-Expected ZIP：2,128,146 bytes
-Expected SHA-256：`a83a87df45b02da14dbb994f3341f1db129c78585c6a50aeedf299fdd5661af2`
+Expected ZIP：2,129,589 bytes
+Expected SHA-256：`402b07030883ef9f15620701558963611f9f181645f97d86beb41db29d4fc95a`
 
 ## Verdict
 

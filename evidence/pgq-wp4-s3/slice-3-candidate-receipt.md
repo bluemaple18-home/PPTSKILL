@@ -4,10 +4,12 @@ Date：2026-09-17
 Branch：`codex/pgq-wp4-s3`
 Base：`d5201fddcba20787b09df26f794a4ab2f70ba1d6`
 Implementation：`8d39450`
+Repair 1：`1e06246`
 
 ## Delivered contract
 
 - `approveRepresentativeSample()` 重跑 Slice 2 pure hard gate；caller 不能只自報 PASS。
+- Hard gate 的 `validationContext` 會從實際受驗 DeckSpec／contract 自行派生 `validatedIdentity`；approval identity 不一致時必須重驗，不能沿用 stale PASS。
 - 只有 `approved=true` 且 `approvedBy=human` 可建立 freeze。
 - Freeze 由 sanitized DeckSpec 的 sample content、composition、deck Style 與 bounded contract version 派生 SHA-256 fingerprints。
 - Feedback 只接受 allowlisted `slide-local | deck-wide | profile-opt-in` code；不接受 raw prompt／任意 instruction。
@@ -17,14 +19,14 @@ Implementation：`8d39450`
 
 ## Verification
 
-- Focused Slice 3：6/6 PASS。
-- WP4 Slice 1～3 compatibility：18/18 PASS。
-- PGQ targeted＋PS-002/R6：93/93 PASS。
-- Full regression：201/201 PASS。
+- Focused Slice 3：7/7 PASS。
+- WP4 Slice 1～3 compatibility：19/19 PASS。
+- PGQ targeted＋PS-002/R6：94/94 PASS。
+- Full regression：202/202 PASS。
 - Syntax、branch-range `git diff --check`：PASS。
 - Fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,128,146 bytes。
-- SHA-256：`a83a87df45b02da14dbb994f3341f1db129c78585c6a50aeedf299fdd5661af2`。
+- ZIP：2,129,589 bytes。
+- SHA-256：`402b07030883ef9f15620701558963611f9f181645f97d86beb41db29d4fc95a`。
 - Browser gate：NOT_APPLICABLE；沒有 renderer／DOM／CSS／browser runtime 變更。
 
 ## Preserved boundaries
