@@ -14,7 +14,7 @@ PGQ-WP4 Slice 2 的 Representative Hard Gate 是否能以完整、可重播的 L
 - Base／task-card commit：`2e0b832f2a764813ba79a7a2af28162d6973e902`
 - Initial candidate commit：`7aec6f6056773cde1cf7ba235db4f54a1adcfb7b`
 - Repair 1 commit：`d6a246eaefdd5550b32e3d376c7628c9bb89b139`
-- Status：`READY FOR INDEPENDENT RE-REVIEW`
+- Status：`INDEPENDENT RE-REVIEW GO`；closure write-back 已授權，等待整合驗證與 push。
 - 尚未 merge、push，也未開 WP4 Slice 3／EDX。
 
 ## Constraints
@@ -73,7 +73,7 @@ git diff --check 2e0b832..d6a246e
 
 ## Candidate fork
 
-- `GO`：回主線做 closure write-back；merge／push 仍須 Owner 明示授權。
+- `GO`：已取得；Owner 已明示授權 closure write-back、merge 與 push。
 - `REQUEST CHANGES`：只修可重現 finding，不擴到實際 repair、feedback persistence 或 Layer-2/3。
 
 ## Reviewer prompt
@@ -86,3 +86,9 @@ git diff --check 2e0b832..d6a246e
 - Root cause：Slice 2 把 Slice 1 output 當成可信內部值，沒有在 public `qa-sample` boundary 重驗其 role／shape invariant。
 - Fix：入口現在完整 allowlist sample 與 entry fields，鎖 `version=1`、approval/full-deck flags、bounded unique reason codes，並只接受單張 `both` 或 ordered 雙張 `typical + stress`。
 - Regression：direct gate 與 fresh installed CLI 都用 reviewer 的兩種偽造 shape fail loud；修補前同一路徑為 RED，修補後 GREEN。
+
+## Re-review result
+
+- `GO — PGQ-WP4 Slice 2`；無新 finding。
+- 前次 P1 已確認關閉；focused 6/6、compatibility 21/21、PGQ targeted 87/87、full regression 195/195 PASS。
+- Fresh ZIP 2,124,775 bytes；SHA-256 `19d164d7ded203102528737b7be224221885ceea79f88f3f8f0e7cfd5122c647`；lifecycle 與 branch-range diff gate PASS。

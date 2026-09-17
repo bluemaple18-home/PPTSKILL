@@ -1,6 +1,6 @@
 # PGQ-WP4-S2 — Representative Hard Gate and Repair Budget
 
-**Status:** READY FOR INDEPENDENT RE-REVIEW
+**Status:** COMPLETE — INDEPENDENT RE-REVIEW GO
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -72,3 +72,9 @@
 
 - Repair 1：hard gate 現完整驗證 Slice 1 sample shape；單張只接受 `both`，雙張只接受 ordered `typical + stress`，並鎖定 sample／entry allowlist、approval/full-deck flags 與 bounded reason codes。
 - Direct 與 fresh installed CLI 均新增偽造 role regression；修補前為 RED，修補後 PASS。
+
+## Closure
+
+- Independent re-review：`GO — PGQ-WP4 Slice 2`；無新 finding。
+- Reviewer 確認前次 P1 關閉，並重跑 focused 6/6、compatibility 21/21、PGQ targeted 87/87、full regression 195/195、fresh ZIP lifecycle 與 branch-range `git diff --check`，結果一致。
+- Slice 2 已關閉；本 closure 不授權或預設開啟 WP4 Slice 3／EDX。

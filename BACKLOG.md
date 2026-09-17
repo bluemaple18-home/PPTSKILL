@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1 COMPLETE、Slice 2 REPAIR 1 READY FOR INDEPENDENT RE-REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～2 COMPLETE、後續 slices NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -826,7 +826,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 2 task：** `tasks/pgq-wp4-s2-hard-gate-repair-budget.md`。Frontier 是把 Slice 1 stable sample IDs 與 allowlisted content／geometry／static／animation evidence 接成 pure hard-gate decision，並以 `slideId + issue code` 共用同一個兩次 repair budget。只輸出 `pass | repair | blocked` 與 bounded next action，不自動 mutation；feedback persistence、sample freeze 與 Layer-2/3 判讀仍延後。
 
-**PGQ-WP4 Slice 2 candidate receipt：** `evidence/pgq-wp4-s2/slice-2-receipt.md`。`qa-sample` 已將 Representative Sample Plan、完整 allowlisted hard checks、local repair history 與 last-success reference 接成 pure `pass | repair | blocked` gate；NOT_RUN/UNKNOWN fail closed，同 issue 第 1／2 次只回 bounded action，第 3 次前 blocked。Direct／installed CLI parity、PS-002/R6 compatibility、full regression 與 fresh ZIP lifecycle PASS；等待 independent review，不預設 feedback／persistence slice。
+**PGQ-WP4 Slice 2 closure receipt：** `evidence/pgq-wp4-s2/slice-2-receipt.md`。`qa-sample` 已將 Representative Sample Plan、完整 allowlisted hard checks、local repair history 與 last-success reference 接成 pure `pass | repair | blocked` gate；NOT_RUN/UNKNOWN fail closed，同 issue 第 1／2 次只回 bounded action，第 3 次前 blocked。Repair 1 補齊 Slice 1 sample role／shape invariant，direct／installed 偽造 role regression 均 fail loud；獨立 re-review 無新 finding並給出 GO。Slice 2 COMPLETE；不預設 feedback／persistence slice。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

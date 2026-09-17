@@ -1,6 +1,6 @@
 # PGQ-WP4 Slice 2 Receipt — Representative Hard Gate and Repair Budget
 
-**Verdict:** REPAIR 1 READY FOR INDEPENDENT RE-REVIEW
+**Verdict:** COMPLETE — INDEPENDENT RE-REVIEW GO
 
 **Branch:** `codex/pgq-wp4-s2`
 
@@ -33,10 +33,17 @@
 
 - Hard check receipt 的產生仍沿用既有 content／geometry／browser evidence tools；本 slice 不新建 evidence service 或偽造 runtime evidence。
 - 不做實際自動 repair、Layer-2 advisory、Layer-3 Owner calibration、scope-aware feedback persistence、sample freeze/invalidation 或 full-deck orchestration。
-- 本 candidate 尚未獨立 review、merge 或 push；不宣告 Slice 2 或整個 WP4 COMPLETE。
+- 本 closure 不宣告後續 WP4 slices、EDX 或整個 PGQ upgrade COMPLETE。
 
 ## Independent review repair
 
 - Reviewer 發現 hard gate 只核對 slide IDs，未驗證 Slice 1 role shape；偽造「單張 typical」或「雙張 typical」可在 checks 全 PASS 時繞過 Stress QA。
 - Repair 1 在 gate 入口驗證完整 sample public contract：只接受 1 筆 `both` 或 2 筆 ordered `typical`／`stress`；同時驗證 sample／entry allowlist、version、approval/full-deck flags 與 bounded unique reason codes。
 - Direct 與 installed `qa-sample` regression 均證明偽造 shape fail loud；其餘 gate semantics 不變。
+
+## Independent re-review closure
+
+- Verdict：`GO — PGQ-WP4 Slice 2`；無新 finding。
+- Reviewer 確認偽造單張 `typical`、雙張 `typical + typical` 在 direct gate fail loud，installed CLI regression 亦覆蓋。
+- Reviewer 重跑 focused 6/6、compatibility 21/21、PGQ targeted 87/87、full regression 195/195；fresh ZIP bytes／checksum、install/smoke/uninstall 與 `git diff --check 2e0b832..d6a246e` 均一致。
+- Browser gate 維持 NOT_APPLICABLE；未以 pure gate 測試冒充 browser runtime PASS。
