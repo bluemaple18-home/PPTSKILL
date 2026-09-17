@@ -1,6 +1,6 @@
 # PGQ-WP4-S3 — Sample Approval Freeze and Scoped Invalidation
 
-**Status:** REPAIR 4 COMPLETE / MANAGED BROWSER ACCEPTANCE NO-GO
+**Status:** COMPLETE / PUBLISHED
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -76,4 +76,5 @@
 - Repair 3（Mainline replan）：移除 approval 對 caller-authored hard-check result／fingerprint 的信任。`approve-sample` 現要求 `--artifact`，自行執行 packaged static＋normal Chrome producer；只有同一 runtime 內由 producer 建立、以 private capability 綁定的 evidence 可進 approval gate，序列化／重算／改寫的新 fingerprint 一律 fail loud。Slice 2 `qa-sample` 保留為 legacy bounded repair planner，但不再具有 approval authority。
 - Forced-static browser seam 改用明確 bounded runtime flag，不再刪除 `IntersectionObserver`；producer 同時把 console 納入 PASS gate。Direct＋fresh-installed regression、PGQ targeted 94/94、full 202/202 及真 Chrome acceptance 均 PASS。
 - Repair 4：`content_integrity` 不再常數 PASS。Producer 從 embedded DeckSpec 重建 canonical deck，對每張 rendered slide 做 bounded normalization 後比對；visible HTML 與 canonical state 分歧會進 receipt 並 fail。RED 為 `Missing expected rejection`，修後 direct producer 與 fresh-installed approval 均拒絕同一 tampered artifact。
-- Repair 4 產品 regressions 全綠，但正式 managed browser lifecycle 本輪 NO-GO；待環境可完整觀測後重跑，才能恢復 Browser Acceptance PASS／Slice GO。
+- Repair 4 managed browser re-review：static／normal × 1600×900／1280×720 全 PASS；console／pageerror／network／HTTP／geometry 全 0，tampered visible content fail closed，lifecycle exit 0 且 owned-root cleanup PASS。
+- Independent post-integration review 無 P0～P2 finding並給出 `GO — PGQ-WP4 Slice 3`；已發布於 `main@e9172136e04209bd762f8e0420475baad29cd0f3`。

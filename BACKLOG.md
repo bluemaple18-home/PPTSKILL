@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～2 COMPLETE、Slice 3 READY FOR INDEPENDENT REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～3 COMPLETE、Slice 4 READY FOR IMPLEMENTATION；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -830,11 +830,9 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 3 task：** `tasks/pgq-wp4-s3-sample-approval-freeze.md`。Frontier 是把 Slice 2 PASS 與 human approval 綁成 deterministic sample freeze，並以 `slide-local | deck-wide | profile-opt-in` 薄規劃回饋及 affected-only invalidation；不執行 mutation／profile write，Layer-2/3 readability 仍延後。
 
-**PGQ-WP4 Slice 3 candidate receipt：** `evidence/pgq-wp4-s3/slice-3-candidate-receipt.md`。`approve-sample` 會重播同一 hard-gate request，只在 human approval 後建立 content／composition／style／contract fingerprints；局部內容／構圖變更只使對應樣張失效，Style／contract 變更才使全部樣張失效，非 sample 變更維持 freeze。三種 feedback scope 均為 allowlist plan；profile opt-in 不執行寫入。等待 independent review。
+**PGQ-WP4 Slice 3 closure receipt：** `evidence/pgq-wp4-s3/slice-3-candidate-receipt.md`。`approve-sample` 由 packaged Chrome producer 重驗同一 artifact，只在 trusted evidence 與 human approval 後建立 content／composition／style／contract fingerprints；局部內容／構圖變更只使對應樣張失效，Style／contract 變更才使全部樣張失效，非 sample 變更維持 freeze。三種 feedback scope 均為 allowlist plan；profile opt-in 不執行寫入。Repair 1～4 關閉 stale evidence、caller-authored identity 與 visible-content mismatch；managed browser、203/203 full regression、fresh ZIP 與 post-integration independent review 均 PASS。Slice 3 COMPLETE，發布於 `main@e9172136e04209bd762f8e0420475baad29cd0f3`。
 
-**PGQ-WP4 Slice 3 repair 1：** 前次 P1 指出 stale PASS evidence 可核准後改 DeckSpec。現 hard gate 由 `validationContext` 派生受驗 sample content／composition、Style、contract identity；approval 必須完全一致，否則 fail loud 並要求重驗。Direct／installed regression 均覆蓋；等待 independent re-review。
-
-**PGQ-WP4 Slice 3 repair 2：** Re-review 指出 validation context 與 hard-check evidence 仍可脫鉤。現 identity-bound path 要求 sample × 四項 hard-check result 每筆攜帶相同 `identityFingerprint`；缺漏、單筆竄改，或同改 DeckSpec/context 卻沿用舊 checks 均 fail loud。Legacy 無 validation context 的 hard gate 相容性保留；等待 independent re-review。
+**PGQ-WP4 Slice 4 task：** `tasks/pgq-wp4-s4-three-layer-full-deck-qa.md`。Measured gap 是 G7 尚缺 Layer-2 有引用理由的結構／閱讀 advisory、綁定同一 identity 的 Layer-3 Owner confirmation，以及不可由 sample shortcut 的逐頁 full-deck release gate。只重用 Slice 1～3 trusted producer／identity／repair budget／freeze；不新增 QA service、任意 score、自動改文或 renderer primitive。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
