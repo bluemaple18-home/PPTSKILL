@@ -10,5 +10,6 @@
 3a. Optional background 只可由 allowlisted `backgroundSignals` 觸發，且只套用 `available` proposal 的 `compositionBackgroundEffect`；不得偷換 unavailable effect，也不得加入 shader／selector／URL／provider。
 3b. `sampleCount` 只可為 0／1／2；1 張沿用回傳的 `both`，2 張沿用互異的 `typical`／`stress` 與 reason codes，不得自行改取前兩頁。0 只跳過人工 sample wait，`fullDeckQaRequired` 仍為 true，sample PASS 不替代 full-deck QA。
 3c. 人工 sample approval 前必須以 `workflow-cli.mjs qa-sample --request <qa-request.json>` 跑唯一 hard gate；每個代表頁完整提供 allowlisted evidence。`not_run`／`unknown` 保持 blocked，同一 `slideId + issue code` 共用最多兩次 repair budget，只執行 gate 回傳的 bounded action，不覆寫 last-success artifact。
+3d. 人工明確核准後，以 `workflow-cli.mjs approve-sample --request <approval-request.json>` 重播同一 hard-gate request 並建立 freeze。回饋只接受 `slide-local | deck-wide | profile-opt-in`；只修補並重驗 invalidated 樣張，deck-wide 只套未核准頁，preserved 樣張不得靜默重生，profile 只有 `remember: true` 才可另行寫入。
 4. 不得直接呼叫 `renderFullDeck()` 或自行寫 final HTML；只能用 `<pptskill-runtime>/core/runtime/workflow-cli.mjs` 產生輸出。既有 HTML 預設保留內容、頁序與 slide ID，任何變更必須有逐項人工核准的 change set。export 必須遵守 `<pptskill-runtime>/core/contracts/export-sanitizer-allowlist.md`。
 5. 依 shared core 的 browser geometry 與既有 acceptance 規則驗收，不在 adapter 內新增第二套流程。

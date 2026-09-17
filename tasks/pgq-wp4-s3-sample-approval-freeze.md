@@ -15,8 +15,8 @@
 
 ## Input / output contract
 
-- Input：合法 Slice 1 `sample`、Slice 2 `qaResult`、sanitized DeckSpec、human approval、bounded feedback items、contract version，以及 optional current DeckSpec／contract version。
-- Approval 只接受 `qaResult.status=pass`、`approved=true`、`approvedBy=human`；caller 不得自報 fingerprint、invalidation verdict 或 propagation target。
+- Input：合法 Slice 1 `sample`、可由 Slice 2 pure gate 重播的 `hardGateRequest`、sanitized DeckSpec、human approval、bounded feedback items、contract version，以及 optional current DeckSpec／contract version。
+- Approval 會重跑 hard gate，且只接受結果 `status=pass`、`approved=true`、`approvedBy=human`；caller 不得自報 PASS、fingerprint、invalidation verdict 或 propagation target。
 - Freeze identity 由 runtime 依每張 sample 的 sanitized content、composition，加上 deck style 與 contract version deterministic 派生。
 - Feedback scope 只接受 `slide-local | deck-wide | profile-opt-in`；slide-local 必須指向 sample slide，deck-wide 不得夾帶 target，profile-opt-in 必須明示 `remember=true`，但本 slice 不寫 profile。
 - Output：immutable approval freeze、sorted feedback plan、每張 sample 的 `preserved | invalidated` 與 bounded reason codes、`remainingDeckAction`、`fullDeckQaRequired=true`。

@@ -32,4 +32,6 @@ Set `sampleCount` to `1` or `2` only when a human sample approval step is reques
 
 Before asking for sample approval, run `node <runtime-root>/core/runtime/workflow-cli.mjs qa-sample --request <qa-request.json>`. Supply complete allowlisted hard evidence for each representative slide and preserve the returned `slideId + issue code` identity. Only `pass` may proceed; `not_run`／`unknown` remain blocked. Execute at most the returned bounded repair action, never reset a problem's shared two-attempt budget, never overwrite the last-success artifact, and never treat sample PASS as full-deck PASS.
 
+After explicit human approval, run `workflow-cli.mjs approve-sample --request <approval-request.json>` with the same replayable hard-gate request, current sanitized DeckSpec and bounded `slide-local | deck-wide | profile-opt-in` feedback. Preserve its freeze fingerprints; only invalidated sample slides may be repaired and re-approved. Apply deck-wide feedback only to unapproved slides. Never write profile preferences unless `remember: true`, never silently regenerate preserved samples, and always complete full-deck QA.
+
 Do not search externally unless the user explicitly authorizes it. Do not create a second renderer or bypass DeckSpec, StyleSpec, CompositionSpec, sanitizer, geometry or size gates.
