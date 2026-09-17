@@ -51,9 +51,13 @@ export async function collectRepresentativeQaEvidence({ artifactPath, sample, co
   if (createHash('sha256').update(finalHtml).digest('hex') !== artifactSha256) {
     throw new Error('Portable artifact 在 trusted browser producer 執行期間發生變更；不得建立 approval evidence。');
   }
+  const contentIntegrityPass = (slideId) => MODES.every((mode) => receipts[mode].runs.every((run) => (
+    Array.isArray(run.contentIntegrity)
+    && run.contentIntegrity.some((item) => item.slideId === slideId && item.status === 'pass')
+  )));
   const checks = sample.slideIds.flatMap((slideId) => CHECK_CODES.map((code) => {
     const status = code === 'content_integrity'
-      ? 'pass'
+      ? contentIntegrityPass(slideId) ? 'pass' : 'fail'
       : code === 'static_readability'
         ? receipts.static.status
         : code === 'animation_interference'

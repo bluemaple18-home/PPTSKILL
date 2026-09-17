@@ -9,6 +9,8 @@ Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..HEAD` on branch `codex/pgq-wp4
 
 唯讀 review；不要 repair、merge、push、deploy，也不要開 WP4 後續 Slice、EDX 或自動 mutation loop。
 
+Current gate：Repair 4 產品 regressions GREEN；managed Browser Acceptance 因 resource observer fail-closed 而 NO-GO。舊 Repair 3 browser receipt 已因 producer code 變更失效。
+
 ## Review focus
 
 1. Public approval seam 是否完全拒絕 caller-authored hard gate／PASS／evidence object／fingerprint，且 plain JSON clone 無法取得 trusted evidence authority。
@@ -21,6 +23,7 @@ Review `d5201fddcba20787b09df26f794a4ab2f70ba1d6..HEAD` on branch `codex/pgq-wp4
 8. Preserved sample 是否保留 freeze content/composition fingerprints，沒有 mutation、regeneration 或 full-deck PASS 宣告。
 9. Direct 與 installed `approve-sample` 是否 parity；packaged Skill／Codex／Claude Code／Gemini 是否只指向同一 `--artifact` CLI seam。
 10. Forced-static producer 是否使用 bounded runtime flag，而不是破壞 `IntersectionObserver`；static／normal receipts 是否都把 console、pageerror、network、HTTP 與 geometry 納入 PASS。
+11. `content_integrity` 是否由 actual rendered slide 與 embedded DeckSpec 重建的 canonical slide 比對產生；只改 sample 可見 HTML、保留 `#deck-spec` 時 direct／installed approval 是否都 fail loud。
 
 ## Reproduction commands
 
@@ -30,20 +33,20 @@ node --check runtime/representative-qa-evidence.js
 node --check runtime/representative-sample-identity.js
 node --check runtime/representative-qa-gate.js
 node --check runtime/workflow-cli.mjs
-node --test tests/pgq-wp4-s3-sample-approval.test.mjs
-node --test tests/pgq-wp4-s1-representative-sample-plan.test.mjs tests/pgq-wp4-s2-hard-gate.test.mjs tests/pgq-wp4-s3-sample-approval.test.mjs
+node --test tests/pgq-wp4-s3-content-integrity.test.mjs tests/pgq-wp4-s3-sample-approval.test.mjs
+node --test tests/pgq-wp4-s1-representative-sample-plan.test.mjs tests/pgq-wp4-s2-hard-gate.test.mjs tests/pgq-wp4-s3-content-integrity.test.mjs tests/pgq-wp4-s3-sample-approval.test.mjs
 node --test tests/pgq-wp1*.test.mjs tests/pgq-wp2*.test.mjs tests/pgq-wp3*.test.mjs tests/pgq-wp4*.test.mjs tests/ps-002-validator.test.mjs tests/p0-r6-geometry-gate.test.mjs
 pnpm test
 pnpm build:dist
 git diff --check d5201fddcba20787b09df26f794a4ab2f70ba1d6..HEAD
 ```
 
-Expected ZIP：2,140,638 bytes
-Expected SHA-256：`3f971fc33a390952e0ba84ff6c3d9df1e9086ba240c218d86babfa205462a73b`
+Expected ZIP：2,141,327 bytes
+Expected SHA-256：`591c5d5ac331e0f53cdeedd19bac6ddaaccf868c6700f965c46f2f939678db46`
 
 ## Verdict
 
-- `GO — PGQ-WP4 Slice 3`，或
+- managed Browser Acceptance 可重跑且 PASS 後：`GO — PGQ-WP4 Slice 3`；目前環境仍 fail-closed 時：`BLOCKED — Browser Acceptance NO-GO`，或
 - `REQUEST CHANGES` with reproducible findings。
 
 不要因為本 handoff 預設 WP4 Slice 4 必須存在；GO 後再由 Mainline 依 measured gap 決定下一 frontier。

@@ -1,0 +1,6 @@
+checked_at=2026-09-17T17:39:00+08:00
+owned_root=/private/tmp/aic-b-98888045ec884acd9d342fe36018dc27
+owned_root_removed=true
+exit_code=2
+status=NO_GO
+reason=resource observation unknown (symlink or special file)

@@ -4,6 +4,7 @@ import { basename, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import { extractDeckSpec } from '../runtime/deck-spec.js';
+import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 import { validateDeckMotionInput } from '../runtime/motion-capabilities.js';
 
 const args = process.argv.slice(2);
@@ -43,6 +44,10 @@ if (!chromeBin) throw new Error('找不到 Chrome/Chromium；可用 PPTSKILL_CHR
 
 const htmlPath = resolve(input);
 await access(htmlPath);
+const sourceHtml = await readFile(htmlPath, 'utf8');
+const canonicalRender = renderFullDeck(extractDeckSpec(sourceHtml));
+if (canonicalRender.status !== 'pass') throw new Error(`Canonical DeckSpec 無法重建：${canonicalRender.errors.join(' ')}`);
+const canonicalHtml = canonicalRender.html;
 const htmlUrl = pathToFileURL(htmlPath).href;
 
 class CdpClient {
@@ -102,6 +107,39 @@ const geometryExpression = String.raw`(async () => {
   const label = (element) => element.getAttribute('data-edit-target') || element.id || element.getAttribute('data-slide-id') || [element.tagName.toLowerCase(), ...element.classList].join('.');
   const intersects = (a, b) => Math.min(a.right, b.right) - Math.max(a.left, b.left) > 1 && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 1;
   const slides = [...document.querySelectorAll('.slide')];
+  const canonicalDocument = new DOMParser().parseFromString(${JSON.stringify(canonicalHtml)}, 'text/html');
+  const normalizeSlide = (slide) => {
+    if (!slide) return null;
+    const clone = slide.cloneNode(true);
+    clone.classList.remove('is-visible', 'motion-resetting');
+    const nodes = [clone, ...clone.querySelectorAll('*')];
+    for (const node of nodes) {
+      for (const attribute of [...node.attributes]) {
+        if (attribute.name === 'contenteditable' || attribute.name === 'data-editor-selected'
+          || /^data-(motion-state|animation-starts|animation-finishes|replay-count)$/u.test(attribute.name)) node.removeAttribute(attribute.name);
+      }
+      if (node.matches?.('[data-pptskill-background-layer]')) {
+        node.replaceChildren();
+        node.removeAttribute('style');
+        node.dataset.backgroundState = 'static';
+      }
+      if (node.matches?.('number-flow[data-pptskill-odometer]')) {
+        node.replaceChildren(document.createTextNode(node.dataset.finalDisplay || ''));
+        node.removeAttribute('aria-label');
+      }
+    }
+    return clone.outerHTML;
+  };
+  const contentIntegrity = slides.map((slide) => {
+    const expected = canonicalDocument.querySelector('.slide[data-slide-id="' + CSS.escape(slide.dataset.slideId) + '"]');
+    const actualHtml = normalizeSlide(slide);
+    const expectedHtml = normalizeSlide(expected);
+    return {
+      slideId: slide.dataset.slideId,
+      status: expectedHtml !== null && actualHtml === expectedHtml ? 'pass' : 'fail',
+      reason: expectedHtml === null ? 'canonical_slide_missing' : actualHtml === expectedHtml ? null : 'rendered_content_mismatch',
+    };
+  });
   for (const slide of slides) {
     const slideBox = box(slide);
     if (slideBox.width > innerWidth + 1 || slideBox.height > innerHeight + 1) {
@@ -206,7 +244,7 @@ const geometryExpression = String.raw`(async () => {
     dominantAxis,
     occupiedQuadrants: [...new Set([...quadrantMap(titleBox), ...quadrantMap(anchorBox)])],
   };
-  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, issues, visibleTraceback };
+  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, contentIntegrity, issues, visibleTraceback };
 })()`;
 
 const motionTraceExpression = String.raw`(async () => {
@@ -516,8 +554,9 @@ const receipt = {
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
   motionMode,
-  status: runs.every(({ issues, slideCount, console: consoleMessages, pageErrors, networkFailures, httpErrors, motionTrace }) => (
+  status: runs.every(({ issues, slideCount, contentIntegrity, console: consoleMessages, pageErrors, networkFailures, httpErrors, motionTrace }) => (
     slideCount > 0 && issues.length === 0 && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
+    && contentIntegrity.length === slideCount && contentIntegrity.every(({ status }) => status === 'pass')
     && motionTrace.layoutStable && motionTrace.restingVisible
     && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
     && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'

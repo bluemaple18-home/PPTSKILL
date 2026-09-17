@@ -30,6 +30,13 @@ const sample = {
 const contractVersion = 'pgq-wp4-v1';
 const qaEvidence = await collectRepresentativeQaEvidence({ artifactPath, sample, contractVersion });
 const remainingIds = deckSpec.slides.map(({ id }) => id).filter((id) => !sample.slideIds.includes(id));
+const tamperVisibleTitle = (source) => {
+  const slide = deckSpec.slides.find(({ id }) => id === typicalId);
+  const markerIndex = source.indexOf(`data-edit-target="slides.${slide.id}.content.title"`);
+  const titleIndex = source.indexOf(`>${slide.content.title}<`, markerIndex);
+  if (markerIndex < 0 || titleIndex < 0) throw new Error('fixture 缺少 sample title target。');
+  return `${source.slice(0, titleIndex + 1)}錯誤但可見的標題${source.slice(titleIndex + slide.content.title.length + 1)}`;
+};
 const request = (overrides = {}) => ({
   sample,
   qaEvidence,
@@ -147,6 +154,14 @@ test('installed approve-sample CLI 自行執行 producer，拒絕 caller hard ga
   assert.equal(installed.mode, 'representative-sample-approval');
   const { mode, ...decision } = installed;
   assert.deepEqual(decision, approveRepresentativeSample(request()));
+
+  const tamperedArtifact = join(root, 'tampered-visible-content.html');
+  await writeFile(tamperedArtifact, tamperVisibleTitle(await readFile(artifactPath, 'utf8')));
+  await assert.rejects(run(process.execPath, [cli, 'approve-sample', '--request', requestPath, '--artifact', tamperedArtifact], { maxBuffer: 32 * 1024 * 1024 }), (error) => {
+    assert.equal(error.code, 1);
+    assert.match(error.stderr, /hard gate.*PASS|hard gate.*pass/iu);
+    return true;
+  });
 
   const forgedRequest = { ...cliRequest(), hardGateRequest: { status: 'pass', checks: [] } };
   await writeFile(requestPath, JSON.stringify(forgedRequest));

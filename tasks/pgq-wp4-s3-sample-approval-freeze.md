@@ -1,6 +1,6 @@
 # PGQ-WP4-S3 — Sample Approval Freeze and Scoped Invalidation
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** REPAIR 4 COMPLETE / MANAGED BROWSER ACCEPTANCE NO-GO
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -25,6 +25,7 @@
 ## Acceptance
 
 1. 非 PASS hard gate、非 human approval、偽造／不一致 sample identity、DeckSpec 缺 sample slide 均 fail loud。
+1a. Producer 必須把每張 sample 的 rendered slide DOM 與 embedded DeckSpec 重新 render 的 canonical slide 比對；只改可見 HTML、保留 `#deck-spec` 時 `content_integrity` 必須 fail，不得常數 PASS。
 2. 同一 sanitized input 與 contract version 產生相同 fingerprint；input 與 output 不被 mutation。
 3. slide-local feedback 只規劃目標頁；deck-wide 只規劃尚未核准頁，且若允許設定已改變，透過 current state 使受影響 sample 失效。
 4. profile-opt-in 未明示 remember 時 fail loud；明示時只輸出 `profileWriteRequired=true`，不呼叫 local-profile writer。
@@ -60,10 +61,10 @@
 
 ## Candidate result
 
-- Focused：7/7 PASS；WP4 Slice 1～3 compatibility：19/19 PASS。
-- PGQ targeted＋PS-002/R6：94/94 PASS；full regression：202/202 PASS。
-- Fresh ZIP lifecycle PASS；2,140,638 bytes；SHA-256 `3f971fc33a390952e0ba84ff6c3d9df1e9086ba240c218d86babfa205462a73b`。
-- Browser gate：APPLICABLE／PASS；static 與 normal producer 均於 1600×900、1280×720 通過，console／pageerror／network／HTTP／geometry／resting visibility 全部為零問題。
+- Focused：8/8 PASS；WP4 Slice 1～3 compatibility：20/20 PASS。
+- PGQ targeted＋PS-002/R6：95/95 PASS；full regression：203/203 PASS。
+- Fresh ZIP lifecycle PASS；2,141,327 bytes；SHA-256 `591c5d5ac331e0f53cdeedd19bac6ddaaccf868c6700f965c46f2f939678db46`。
+- Managed Browser gate：NO-GO。Chrome 啟動後，AI Core resource observer 以 `resource observation unknown (symlink or special file)` fail-closed；exit 2，owned tmp root 已回收。不得沿用 Repair 3 的舊 browser PASS。
 - Candidate implementation＋repair commits：`8d39450`、`1e06246`、`eea6b7c`、`dab445a`；等待 independent re-review，不 merge／push／開後續 Slice 或 EDX。
 
 ## Review repair
@@ -74,3 +75,5 @@
 - Repair 2：每筆 hard-check result 現必須攜帶與 gate `validationContext` 派生結果完全相同的 `identityFingerprint`；缺漏、單筆竄改，或同步換 DeckSpec/context 卻沿用舊 checks 均 fail loud。Legacy 無 validation context 的 gate request維持既有形狀。
 - Repair 3（Mainline replan）：移除 approval 對 caller-authored hard-check result／fingerprint 的信任。`approve-sample` 現要求 `--artifact`，自行執行 packaged static＋normal Chrome producer；只有同一 runtime 內由 producer 建立、以 private capability 綁定的 evidence 可進 approval gate，序列化／重算／改寫的新 fingerprint 一律 fail loud。Slice 2 `qa-sample` 保留為 legacy bounded repair planner，但不再具有 approval authority。
 - Forced-static browser seam 改用明確 bounded runtime flag，不再刪除 `IntersectionObserver`；producer 同時把 console 納入 PASS gate。Direct＋fresh-installed regression、PGQ targeted 94/94、full 202/202 及真 Chrome acceptance 均 PASS。
+- Repair 4：`content_integrity` 不再常數 PASS。Producer 從 embedded DeckSpec 重建 canonical deck，對每張 rendered slide 做 bounded normalization 後比對；visible HTML 與 canonical state 分歧會進 receipt 並 fail。RED 為 `Missing expected rejection`，修後 direct producer 與 fresh-installed approval 均拒絕同一 tampered artifact。
+- Repair 4 產品 regressions 全綠，但正式 managed browser lifecycle 本輪 NO-GO；待環境可完整觀測後重跑，才能恢復 Browser Acceptance PASS／Slice GO。
