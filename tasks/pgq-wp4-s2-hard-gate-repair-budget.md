@@ -1,6 +1,6 @@
 # PGQ-WP4-S2 — Representative Hard Gate and Repair Budget
 
-**Status:** READY
+**Status:** READY FOR INDEPENDENT REVIEW
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -61,3 +61,9 @@
 - Direct/installed CLI parity；PS-002 aggregate legacy behavior 與 R6 repair order regression。
 - WP4 Slice 1 + PGQ targeted、full suite、fresh ZIP install/smoke/uninstall、syntax、`git diff --check`。
 
+## Candidate result
+
+- Slice 2 focused：5/5 PASS；Slice 1＋PS-002/R6 compatibility：20/20 PASS。
+- PGQ targeted＋PS-002/R6：86/86 PASS；full regression：194/194 PASS。
+- Fresh ZIP lifecycle PASS；2,124,379 bytes；SHA-256 `d377aed2c4fabe1451c42056cd0b7bcefdf4b1c4bdc859824f80a7b6f3b504ff`。
+- Browser gate：NOT_APPLICABLE；本 slice 只新增 pure evidence decision 與 CLI contract，未改 renderer／DOM／CSS／browser runtime。

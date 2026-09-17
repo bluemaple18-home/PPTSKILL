@@ -30,4 +30,6 @@ Optional backgrounds use allowlisted `backgroundSignals` in that same `plan-new`
 
 Set `sampleCount` to `1` or `2` only when a human sample approval step is requested. Use the returned Representative Sample Plan exactly: one sample has role `both`; two samples have distinct `typical` and `stress` roles with bounded reason codes. Never replace those IDs with the first slides or a prettier synthetic sample. `sampleCount: 0` skips the human wait only; `fullDeckQaRequired` remains true and sample PASS never substitutes for full-deck QA.
 
+Before asking for sample approval, run `node <runtime-root>/core/runtime/workflow-cli.mjs qa-sample --request <qa-request.json>`. Supply complete allowlisted hard evidence for each representative slide and preserve the returned `slideId + issue code` identity. Only `pass` may proceed; `not_run`／`unknown` remain blocked. Execute at most the returned bounded repair action, never reset a problem's shared two-attempt budget, never overwrite the last-success artifact, and never treat sample PASS as full-deck PASS.
+
 Do not search externally unless the user explicitly authorizes it. Do not create a second renderer or bypass DeckSpec, StyleSpec, CompositionSpec, sanitizer, geometry or size gates.
