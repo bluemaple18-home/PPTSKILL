@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1 COMPLETE、後續 slices NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1 COMPLETE、Slice 2 READY；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -823,6 +823,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **PGQ-WP4 Slice 1 task：** `tasks/pgq-wp4-s1-representative-sample-plan.md`。Frontier 是把目前固定取前 1～2 頁的 `sampleCount` 行為改為 deterministic Typical／Stress plan；只重用既有 composition、Golden、rhythm、motion、background truth。自動 repair、scope-aware feedback、sample persistence／失效與三層 readability 延後至後續 slices。
 
 **PGQ-WP4 Slice 1 closure receipt：** `evidence/pgq-wp4-s1/slice-1-receipt.md`。Planner 已由既有正式 truth 選出 1 張 `both` 或互異的 Typical／Stress，保留 bounded reason codes；`sampleCount=0` 只移除人工等待，不解除 full-deck QA。Direct／installed parity、legacy fallback、single-slide 收斂、deterministic rerun、planner output immutability、WP1～WP4 compatibility、full regression 與 fresh ZIP lifecycle 均 PASS；獨立 review 無 blocking finding並給出 GO。Slice 1 COMPLETE；不預設後續 repair／feedback slice。
+
+**PGQ-WP4 Slice 2 task：** `tasks/pgq-wp4-s2-hard-gate-repair-budget.md`。Frontier 是把 Slice 1 stable sample IDs 與 allowlisted content／geometry／static／animation evidence 接成 pure hard-gate decision，並以 `slideId + issue code` 共用同一個兩次 repair budget。只輸出 `pass | repair | blocked` 與 bounded next action，不自動 mutation；feedback persistence、sample freeze 與 Layer-2/3 判讀仍延後。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
