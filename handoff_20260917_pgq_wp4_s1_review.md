@@ -13,8 +13,8 @@ PGQ-WP4 Slice 1 的 Representative Sample Plan 是否能從既有正式 planning
 - Branch：`codex/pgq-wp4-s1`
 - Base／task-card commit：`9c644de`
 - Candidate commit：`ef848c9`
-- Status：`READY FOR INDEPENDENT REVIEW`
-- 尚未 merge、push，也未開 WP4 Slice 2／EDX。
+- Status：`INDEPENDENT REVIEW GO`；closure write-back 已授權，等待整合驗證與 push。
+- 尚未開 WP4 Slice 2／EDX。
 
 ## Constraints
 
@@ -68,9 +68,16 @@ git diff --check 9c644de..ef848c9
 
 ## Candidate fork
 
-- `GO`：回主線做 closure write-back；merge／push 仍須 Owner 明示授權。
+- `GO`：已取得；Owner 已明示授權 closure write-back、merge 與 push。
 - `REQUEST CHANGES`：只修可重現 finding，不擴到 WP4 後續責任。
 
 ## Reviewer prompt
 
 > 讀 `handoff_20260917_pgq_wp4_s1_review.md`，對 `9c644de..ef848c9` 做獨立唯讀 review。重跑必要 focused／compatibility／full／ZIP gates，輸出 GO 或可重現 findings。不要 repair、merge、push、deploy，也不要開 WP4 Slice 2、EDX 或重開 WP3 Slice 4。
+
+## Review result
+
+- `GO — PGQ-WP4 Slice 1`；無 blocking finding。
+- Focused 11/11、PGQ compatibility 72/72、full regression 189/189 PASS。
+- Fresh ZIP 2,121,377 bytes；SHA-256 與 receipt 一致。
+- Branch-range `git diff --check` PASS；Browser NOT_APPLICABLE 判定合理。

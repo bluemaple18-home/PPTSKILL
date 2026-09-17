@@ -1,6 +1,6 @@
 # PGQ-WP4 Slice 1 Receipt — Representative Sample Plan
 
-**Verdict:** CANDIDATE READY FOR INDEPENDENT REVIEW
+**Verdict:** COMPLETE — INDEPENDENT REVIEW GO
 
 **Branch:** `codex/pgq-wp4-s1`
 
@@ -30,4 +30,11 @@
 
 - 自動 repair、scope-aware feedback、sample freeze/invalidation、三層 readability 與 full-deck browser QA orchestration 仍未開始。
 - 不重開 PGQ-WP3 Slice 4、CLOUDS2／p5 license gate、EDX formal integration 或 whole-deck motion runtime。
-- 本 candidate 尚未獨立 review、merge 或 push；不宣告 PGQ-WP4 Slice 1 COMPLETE。
+- 本 closure 不宣告後續 WP4 slices、EDX 或 full PGQ upgrade COMPLETE。
+
+## Independent review closure
+
+- Verdict：`GO — PGQ-WP4 Slice 1`；無 blocking finding。
+- Reviewer 確認 deterministic ranking、第三頁後 Stress、single `both`、legacy fallback、skip/full-deck QA 邊界與 installed parity 符合 task contract。
+- Reviewer 重跑 focused 11/11、PGQ compatibility 72/72、full regression 189/189、fresh ZIP checksum 與 `git diff --check 9c644de..ef848c9`，結果一致。
+- Browser gate 維持 NOT_APPLICABLE；未以非 browser slice 冒充 runtime browser PASS。

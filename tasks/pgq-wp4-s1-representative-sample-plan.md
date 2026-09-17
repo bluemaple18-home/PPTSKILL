@@ -1,6 +1,6 @@
 # PGQ-WP4-S1 — Representative Sample Plan
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **traces_to:** `PGQ-D05`, `PGQ-D11`
 
 ## Objective
@@ -63,3 +63,10 @@
 - PGQ-WP1～WP4 compatibility：72/72 PASS；full regression：189/189 PASS。
 - Fresh ZIP lifecycle PASS；2,121,377 bytes；SHA-256 `45aad80a8d195e57300e5c12d13345cc7037e5a5cb430dc35db91823477f9b66`。
 - Browser gate：NOT_APPLICABLE；本 slice 只改 pure planning output 與 packaged instructions，沒有 renderer／DOM／CSS／runtime 可見行為。
+
+## Closure
+
+- Independent review：`GO — PGQ-WP4 Slice 1`；無 blocking finding。
+- Reviewer 重跑 focused 11/11、PGQ compatibility 72/72、full regression 189/189、fresh ZIP checksum 與 branch-range `git diff --check`，結果皆與 receipt 一致。
+- Reviewer hook 產生的未追蹤 `CLAUDE.md` 不屬 candidate；Owner 授權後已移除。
+- Slice 1 已關閉；本 closure 不授權或預設開啟 WP4 Slice 2／EDX。
