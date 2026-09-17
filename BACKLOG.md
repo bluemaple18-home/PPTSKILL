@@ -828,6 +828,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 2 closure receipt：** `evidence/pgq-wp4-s2/slice-2-receipt.md`。`qa-sample` 已將 Representative Sample Plan、完整 allowlisted hard checks、local repair history 與 last-success reference 接成 pure `pass | repair | blocked` gate；NOT_RUN/UNKNOWN fail closed，同 issue 第 1／2 次只回 bounded action，第 3 次前 blocked。Repair 1 補齊 Slice 1 sample role／shape invariant，direct／installed 偽造 role regression 均 fail loud；獨立 re-review 無新 finding並給出 GO。Slice 2 COMPLETE；不預設 feedback／persistence slice。
 
+**PGQ-WP4 Slice 3 task：** `tasks/pgq-wp4-s3-sample-approval-freeze.md`。Frontier 是把 Slice 2 PASS 與 human approval 綁成 deterministic sample freeze，並以 `slide-local | deck-wide | profile-opt-in` 薄規劃回饋及 affected-only invalidation；不執行 mutation／profile write，Layer-2/3 readability 仍延後。
+
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
 | **PGQ-WP1 Preflight / Brief Upgrade** | `grill-outline.js`、`layout-repair-policy.js`、`workflow-entry.js`；R1/R2/R6/R10 | 素材歧義、文案校對、事實／衍生值、來源衝突與 linkage、時間／自讀、Main/Appendix/Drop；合併 D01/07/09/10/12/13/14/15/16 | release closure 後；核心來源衝突會問、無害未知不多問、不補造事實、主線＋附錄總計 ≤15；核准後縮文權限先契約化 |
