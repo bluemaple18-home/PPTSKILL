@@ -65,7 +65,7 @@
 - PGQ targeted＋PS-002/R6：95/95 PASS；full regression：203/203 PASS。
 - Fresh ZIP lifecycle PASS；2,141,327 bytes；SHA-256 `591c5d5ac331e0f53cdeedd19bac6ddaaccf868c6700f965c46f2f939678db46`。
 - Managed Browser gate：NO-GO。Chrome 啟動後，AI Core resource observer 以 `resource observation unknown (symlink or special file)` fail-closed；exit 2，owned tmp root 已回收。不得沿用 Repair 3 的舊 browser PASS。
-- Candidate implementation＋repair commits：`8d39450`、`1e06246`、`eea6b7c`、`dab445a`；等待 independent re-review，不 merge／push／開後續 Slice 或 EDX。
+- Candidate implementation＋repair commits：`8d39450`、`1e06246`、`eea6b7c`、`dab445a`、`105197f`；等待 managed browser gate 可重跑與 independent re-review，不 merge／push／開後續 Slice 或 EDX。
 
 ## Review repair
 

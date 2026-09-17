@@ -7,7 +7,7 @@ Implementation：`8d39450`
 Repair 1：`1e06246`
 Repair 2：`eea6b7c`
 Repair 3：`dab445a`
-Repair 4：branch `HEAD`（本 receipt 隨 repair commit 提交）
+Repair 4：`105197f`
 
 ## Delivered contract
 
