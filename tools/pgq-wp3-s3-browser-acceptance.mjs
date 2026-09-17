@@ -40,12 +40,14 @@ try {
   if (!port) throw new Error('Chrome DevTools port 未就緒。');
   const page = (await fetch(`http://127.0.0.1:${port}/json`).then(r => r.json())).find(({ type }) => type === 'page');
   const cdp = new CdpClient(page.webSocketDebuggerUrl); await cdp.open();
-  const consoleMessages = [], pageErrors = [], network = [];
+  const consoleMessages = [], pageErrors = [], network = [], networkFailures = [];
   cdp.on('Runtime.consoleAPICalled', ({ type, args: values = [] }) => consoleMessages.push({ type, text: values.map(v => v.value ?? v.description ?? '').join(' ') }));
   cdp.on('Runtime.exceptionThrown', ({ exceptionDetails }) => pageErrors.push(exceptionDetails?.exception?.description || exceptionDetails?.text));
   cdp.on('Network.requestWillBeSent', ({ request }) => network.push(request.url));
+  cdp.on('Network.loadingFailed', ({ errorText, canceled, type }) => networkFailures.push({ errorText, canceled: Boolean(canceled), type }));
   await Promise.all([cdp.send('Page.enable'), cdp.send('Runtime.enable'), cdp.send('Network.enable')]);
-  const navigate = async effect => { const loaded = new Promise(ok => cdp.on('Page.loadEventFired', ok)); await cdp.send('Page.navigate', { url: pathToFileURL(resolve(temporary, `${effect}.html`)).href }); await loaded; await delay(650); };
+  const navigateFile = async file => { const loaded = new Promise(ok => cdp.on('Page.loadEventFired', ok)); await cdp.send('Page.navigate', { url: pathToFileURL(resolve(temporary, file)).href }); await loaded; await delay(650); };
+  const navigate = effect => navigateFile(`${effect}.html`);
   const evaluate = async expression => (await cdp.send('Runtime.evaluate', { expression, returnByValue: true })).result.value;
   const results = [];
   for (const effect of effects) {
@@ -59,14 +61,21 @@ try {
     const forced = await evaluate(`window.PPTSKILLBackground.forceStatic();({state:document.querySelector('[data-pptskill-background-layer]').dataset.backgroundState,canvas:document.querySelectorAll('[data-pptskill-background-layer] canvas').length})`);
     results.push({ effect, before, animatedPixels: firstHash !== secondHash, replay, afterReplay, forced });
   }
+  await cdp.send('Emulation.setEmulatedMedia', { media: '', features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] }); await navigate('waves');
+  await cdp.send('Emulation.setEmulatedMedia', { media: '', features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] }); await delay(150);
+  const reducedAfterRunning = await evaluate(`({state:document.querySelector('[data-pptskill-background-layer]').dataset.backgroundState,canvas:document.querySelectorAll('[data-pptskill-background-layer] canvas').length,reduced:matchMedia('(prefers-reduced-motion: reduce)').matches})`);
   await cdp.send('Emulation.setEmulatedMedia', { media: '', features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] }); await navigate('waves');
   const reduced = await evaluate(`({state:document.querySelector('[data-pptskill-background-layer]').dataset.backgroundState,canvas:document.querySelectorAll('[data-pptskill-background-layer] canvas').length})`);
   await cdp.send('Emulation.setEmulatedMedia', { media: '', features: [{ name: 'prefers-reduced-motion', value: 'no-preference' }] }); await navigate('waves');
   await evaluate(`document.querySelector('[data-action="duplicate"]').click()`); await delay(250);
   const duplicated = await evaluate(`({layers:document.querySelectorAll('[data-pptskill-background-layer]').length,canvases:document.querySelectorAll('[data-pptskill-background-layer] canvas').length,states:[...document.querySelectorAll('[data-pptskill-background-layer]')].map(x=>x.dataset.backgroundState)})`);
-  await evaluate(`document.querySelector('[data-action="delete"]').click()`); await delay(100);
+  await evaluate(`document.querySelector('[data-action="delete"]').click()`); await delay(650);
   const deleted = await evaluate(`({layers:document.querySelectorAll('[data-pptskill-background-layer]').length,canvases:document.querySelectorAll('[data-pptskill-background-layer] canvas').length})`);
   const exportCheck = await evaluate(`(()=>{const html=window.PPTSKILLEditor.exportHtml(),doc=new DOMParser().parseFromString(html,'text/html'),spec=JSON.parse(doc.querySelector('#deck-spec').textContent);return{canvas:doc.querySelectorAll('[data-pptskill-background-layer] canvas').length,state:doc.querySelector('[data-pptskill-background-layer]').dataset.backgroundState,effect:spec.slides[0].composition.backgroundEffect.effect,bytes:new Blob([html]).size}})()`);
+  const exportedHtml = await evaluate(`window.PPTSKILLEditor.exportHtml()`);
+  await writeFile(resolve(temporary, 'exported.html'), exportedHtml);
+  await navigateFile('exported.html');
+  const recipientReopen = await evaluate(`(()=>{const spec=JSON.parse(document.querySelector('#deck-spec').textContent),slides=[...document.querySelectorAll('.slide')],layers=[...document.querySelectorAll('[data-pptskill-background-layer]')];return{slideCount:slides.length,uniqueSlideIds:new Set(slides.map(slide=>slide.dataset.slideId)).size,layers:layers.length,canvases:layers.reduce((sum,layer)=>sum+layer.querySelectorAll('canvas').length,0),states:layers.map(layer=>layer.dataset.backgroundState),effect:spec.slides[0].composition.backgroundEffect.effect}})()`);
   const lightLoaded = new Promise(ok => cdp.on('Page.loadEventFired', ok)); await cdp.send('Page.navigate', { url: pathToFileURL(resolve(temporary, 'light-waves.html')).href }); await lightLoaded; await delay(650);
   const light = await evaluate(`(()=>{const slide=document.querySelector('.slide'),title=document.querySelector('h1'),layer=document.querySelector('[data-pptskill-background-layer]');return{state:layer.dataset.backgroundState,canvas:layer.querySelectorAll('canvas').length,titleColor:getComputedStyle(title).color,slideBackground:getComputedStyle(slide).backgroundColor}})()`);
   await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `(()=>{const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(type,...args){if(String(type).startsWith('webgl'))return null;return original.call(this,type,...args)}})()` });
@@ -74,7 +83,7 @@ try {
   const noWebgl = await evaluate(`({state:document.querySelector('[data-pptskill-background-layer]').dataset.backgroundState,canvas:document.querySelectorAll('[data-pptskill-background-layer] canvas').length})`);
   cdp.close();
   const externalNetwork = network.filter(url => !url.startsWith('file:'));
-  const pass = results.every(r => r.before.state === 'running' && r.before.canvas === 1 && r.animatedPixels && r.replay === true && r.afterReplay.state === 'running' && r.afterReplay.canvas === 1 && r.forced.state === 'forced-static' && r.forced.canvas === 0) && reduced.state === 'reduced' && reduced.canvas === 0 && duplicated.layers === 2 && duplicated.canvases === 2 && duplicated.states.every(state => state === 'running') && deleted.layers === 1 && deleted.canvases === 1 && light.state === 'running' && light.canvas === 1 && light.titleColor === 'rgb(33, 27, 22)' && noWebgl.state === 'webgl-unavailable' && noWebgl.canvas === 0 && exportCheck.canvas === 0 && exportCheck.state === 'static' && exportCheck.effect === 'waves' && pageErrors.length === 0 && externalNetwork.length === 0;
-  const receipt = { schemaVersion: '1.0', status: pass ? 'pass' : 'fail', results, reduced, duplicated, deleted, light, noWebgl, exportCheck, console: consoleMessages, pageErrors, network, externalNetwork };
+  const pass = results.every(r => r.before.state === 'running' && r.before.canvas === 1 && r.animatedPixels && r.replay === true && r.afterReplay.state === 'running' && r.afterReplay.canvas === 1 && r.forced.state === 'forced-static' && r.forced.canvas === 0) && reducedAfterRunning.reduced && reducedAfterRunning.state === 'reduced' && reducedAfterRunning.canvas === 0 && reduced.state === 'reduced' && reduced.canvas === 0 && duplicated.layers === 2 && duplicated.canvases === 2 && duplicated.states.every(state => state === 'running') && deleted.layers === 1 && deleted.canvases === 1 && recipientReopen.slideCount === 1 && recipientReopen.uniqueSlideIds === 1 && recipientReopen.layers === 1 && recipientReopen.canvases === 1 && recipientReopen.states.every(state => state === 'running') && recipientReopen.effect === 'waves' && light.state === 'running' && light.canvas === 1 && light.titleColor === 'rgb(33, 27, 22)' && noWebgl.state === 'webgl-unavailable' && noWebgl.canvas === 0 && exportCheck.canvas === 0 && exportCheck.state === 'static' && exportCheck.effect === 'waves' && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && externalNetwork.length === 0;
+  const receipt = { schemaVersion: '1.0', status: pass ? 'pass' : 'fail', results, reducedAfterRunning, reduced, duplicated, deleted, exportCheck, recipientReopen, light, noWebgl, console: consoleMessages, pageErrors, network, networkFailures, externalNetwork };
   await mkdir(dirname(output), { recursive: true }); await writeFile(output, `${JSON.stringify(receipt, null, 2)}\n`); console.log(JSON.stringify(receipt, null, 2)); if (!pass) process.exitCode = 1;
 } finally { browser.kill('SIGTERM'); await rm(temporary, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); }

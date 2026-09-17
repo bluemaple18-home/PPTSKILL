@@ -190,6 +190,11 @@
       }
     }
   ],
+  "reducedAfterRunning": {
+    "state": "reduced",
+    "canvas": 0,
+    "reduced": true
+  },
   "reduced": {
     "state": "reduced",
     "canvas": 0
@@ -206,6 +211,22 @@
     "layers": 1,
     "canvases": 1
   },
+  "exportCheck": {
+    "canvas": 0,
+    "state": "static",
+    "effect": "waves",
+    "bytes": 852811
+  },
+  "recipientReopen": {
+    "slideCount": 1,
+    "uniqueSlideIds": 1,
+    "layers": 1,
+    "canvases": 1,
+    "states": [
+      "running"
+    ],
+    "effect": "waves"
+  },
   "light": {
     "state": "running",
     "canvas": 1,
@@ -216,30 +237,27 @@
     "state": "webgl-unavailable",
     "canvas": 0
   },
-  "exportCheck": {
-    "canvas": 0,
-    "state": "static",
-    "effect": "waves",
-    "bytes": 852022
-  },
   "console": [],
   "pageErrors": [],
   "network": [
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/birds.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/net.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/globe.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/dots.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/fog.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/clouds.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/cells.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/ripple.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/rings.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/halo.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/light-waves.html",
-    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NLSBDJ/waves.html"
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/birds.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/net.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/globe.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/dots.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/fog.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/clouds.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/cells.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/ripple.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/rings.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/halo.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/exported.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/light-waves.html",
+    "file:///var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-background-acceptance-NnpJNP/waves.html"
   ],
+  "networkFailures": [],
   "externalNetwork": []
 }

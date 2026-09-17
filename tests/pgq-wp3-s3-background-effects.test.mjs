@@ -75,6 +75,13 @@ test('renderer 單檔內嵌 vendor/runtime，style mapping bounded，export trut
   assert.equal(renderFullDeck(deck(null)).html.includes('data-pptskill-background-vendor'), false);
 });
 
+test('background adapter 保留 DeckSpec 接受的合法 CSS 色彩語意', () => {
+  for (const canvas of ['#fff', '#ffffffff', 'rgb(255,255,255)', 'rgba(255,255,255,.5)', 'hsl(0,0%,100%)', 'white']) {
+    const options = resolveBackgroundEffectOptions(background, { ...style, palette: { ...style.palette, canvas } });
+    assert.equal(options.color, 0xd9d9d9, `${canvas} 應映射為白色衍生色，而非預設深色`);
+  }
+});
+
 test('fresh ZIP installed plan-new/render-new 使用同一 truth，且低於 20 MiB', async () => {
   const root = await mkdtemp(join(tmpdir(), 'pptskill-pgq-wp3-s3-'));
   const archive = join(root, 'PPTSKILL.zip');
