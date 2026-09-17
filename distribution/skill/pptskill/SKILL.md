@@ -28,4 +28,6 @@ Read all supplied materials, write the structured brief to a temporary JSON file
 
 Optional backgrounds use allowlisted `backgroundSignals` in that same `plan-new` request. Copy only an `available` `compositionBackgroundEffect`; never substitute an unavailable effect or add shader, selector, URL or provider fields. `CLOUDS2` remains unavailable without its pinned texture, and `TOPOLOGY`／`TRUNK` remain unavailable behind the p5 license gate.
 
+Set `sampleCount` to `1` or `2` only when a human sample approval step is requested. Use the returned Representative Sample Plan exactly: one sample has role `both`; two samples have distinct `typical` and `stress` roles with bounded reason codes. Never replace those IDs with the first slides or a prettier synthetic sample. `sampleCount: 0` skips the human wait only; `fullDeckQaRequired` remains true and sample PASS never substitutes for full-deck QA.
+
 Do not search externally unless the user explicitly authorizes it. Do not create a second renderer or bypass DeckSpec, StyleSpec, CompositionSpec, sanitizer, geometry or size gates.

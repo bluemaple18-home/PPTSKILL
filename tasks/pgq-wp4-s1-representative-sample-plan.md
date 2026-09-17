@@ -1,6 +1,6 @@
 # PGQ-WP4-S1 — Representative Sample Plan
 
-**Status:** READY
+**Status:** READY FOR INDEPENDENT REVIEW
 **traces_to:** `PGQ-D05`, `PGQ-D11`
 
 ## Objective
@@ -57,3 +57,9 @@
 - Contract：direct/installed `plan-new` parity、legacy/invalid inputs、content/planner output immutability。
 - Regression：WP1～WP3 targeted + full suite、syntax、fresh ZIP smoke／size、`git diff --check`。
 
+## Candidate result
+
+- Focused（含 installed `plan-new` parity）：11/11 PASS。
+- PGQ-WP1～WP4 compatibility：72/72 PASS；full regression：189/189 PASS。
+- Fresh ZIP lifecycle PASS；2,121,377 bytes；SHA-256 `45aad80a8d195e57300e5c12d13345cc7037e5a5cb430dc35db91823477f9b66`。
+- Browser gate：NOT_APPLICABLE；本 slice 只改 pure planning output 與 packaged instructions，沒有 renderer／DOM／CSS／runtime 可見行為。

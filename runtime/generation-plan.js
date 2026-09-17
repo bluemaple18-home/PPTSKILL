@@ -4,6 +4,7 @@ import { planMotionVocabulary } from './motion-capabilities.js';
 import { routeGoldenReferences } from './golden-reference-router.js';
 import { planSemanticCompositions } from './semantic-composition-planner.js';
 import { getBackgroundEffectCapabilities, planBackgroundEffects } from './background-effects.js';
+import { planRepresentativeSamples } from './representative-sample-planner.js';
 
 const assertOutline = (outline) => {
   if (!Array.isArray(outline?.slides) || outline.slides.length < 1 || outline.slides.length > 15) throw new Error('Outline 必須是 1～15 頁。');
@@ -21,6 +22,7 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
   const deckRhythmPlan = planDeckRhythm({ slides: outline.slides, compositionProposals, goldenRouting, rhythmSignals });
   const motionPlan = planMotionVocabulary({ slides: outline.slides, deckRhythmPlan, motionSignals });
   const backgroundPlan = planBackgroundEffects({ slides: outline.slides, deckRhythmPlan, backgroundSignals });
+  const sample = planRepresentativeSamples({ outline, sampleCount, deckRhythmPlan, motionPlan, backgroundPlan });
 
   const batchSize = Math.min(capacity.maxSlidesPerUnit, outline.slides.length === 15 ? 14 : outline.slides.length);
   const units = [];
@@ -53,7 +55,7 @@ export function createGenerationPlan({ outline, styleSpecId, styleSpec, capacity
     deckRhythmPlan,
     motionPlan,
     backgroundPlan,
-    sample: sampleCount ? { slideIds: outline.slides.slice(0, sampleCount).map((slide) => slide.id), requiresApprovalBeforeRemaining: true } : null,
+    sample,
     units,
   };
 }
