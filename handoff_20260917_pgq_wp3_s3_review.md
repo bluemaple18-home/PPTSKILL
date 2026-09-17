@@ -14,7 +14,8 @@ PGQ-WP3 Slice 3 的 truthful Background Effects Runtime 是否符合既定 capab
 - Base：`1d2be4dd96053ca651f846786ce1f36ecf76e1f4`
 - Task-card commit：`a6457cf`
 - Implementation／review-candidate commit：`169662db255306d5c06bf382a9a0d286fff0ff8b`
-- Status：`READY FOR INDEPENDENT REVIEW`；尚未 merge、push 或標記 Slice 3 COMPLETE。
+- Review repair commit：`cc7d259`
+- Status：`READY FOR INDEPENDENT RE-REVIEW`；尚未 merge、push 或標記 Slice 3 COMPLETE。
 - Worktree 在建立本 handoff 前為 clean；本 handoff 應是唯一後續 control artifact。
 
 ## Constraints and preferences
@@ -36,6 +37,7 @@ PGQ-WP3 Slice 3 的 truthful Background Effects Runtime 是否符合既定 capab
 - Runtime 支援 IntersectionObserver lifecycle、replay destroy/reinit、forced-static、reduced-motion、WebGL unavailable、init failure；BIRDS／HALO 有額外 GPU target disposal。
 - Browser editor duplicate/delete 會建立／銷毀正確 instance；export 移除 canvas、live style 與 runtime state，保留 canonical metadata。
 - Packaged Skill 與 Codex／Claude Code／Gemini adapters 已寫入相同 background allowlist 邊界。
+- Review repair 已補齊合法 CSS palette 解析、運行中 reduced-motion cleanup、真實 recipient Chrome reopen，以及 console／network failure gate。
 
 ## Evidence
 
@@ -44,11 +46,12 @@ PGQ-WP3 Slice 3 的 truthful Background Effects Runtime 是否符合既定 capab
 - Dependency spike：`evidence/pgq-wp3-s3/vanta-capability-spike.json`
 - Candidate ZIP checksum：`evidence/pgq-wp3-s3/final-zip-sha256.txt`
 - Task card：`tasks/pgq-wp3-s3-background-effects-runtime.md`
-- Focused：5/5 PASS。
-- Slice 1 compatibility + Slice 3：12/12 PASS。
-- Full regression：182/182 PASS。
-- 真 Chrome：11/11 effects normal/replay/static PASS；light、reduced、WebGL unavailable、duplicate/delete、export cleanup PASS；console/pageerror/external network=0。
-- Fresh ZIP：2,116,772 bytes；SHA-256 `ec3dce8032afded30c18a563ec138c4f4396e102ac2b36822c95de47997d5778`；package smoke/install/uninstall PASS。
+- Focused：6/6 PASS。
+- Slice 1 compatibility + Slice 3：13/13 PASS。
+- Full regression：183/183 PASS。
+- 真 Chrome：11/11 effects normal/replay/static PASS；light、初始與動態 reduced、WebGL unavailable、duplicate/delete、export cleanup、recipient reopen PASS；console/pageerror/network failure/external network=0。
+- Duplicate → delete → export → recipient reopen：1 slide／1 unique ID／1 layer／1 running canvas，canonical effect=`waves`。
+- Fresh ZIP：2,118,846 bytes；SHA-256 `cc8133aca38a1ccbab402332c85784d31146a0030e7b3b1a1d5b6e26f4b7225c`；package smoke/install/uninstall PASS。
 - Syntax 與 branch-range `git diff --check` PASS。
 
 ## Independent review focus
@@ -78,7 +81,7 @@ Browser command 需要可啟動本機 headless Chrome；reviewer 必須以 recei
 
 ## Blocker
 
-無已知 blocker。唯一等待條件是獨立 reviewer verdict。
+無已知產品 blocker。唯一等待條件是獨立 re-review verdict。
 
 ## Candidate fork
 
@@ -88,7 +91,7 @@ Browser command 需要可啟動本機 headless Chrome；reviewer 必須以 recei
 
 ## Remaining work
 
-1. 獨立 reviewer 讀實際 diff 與 evidence，輸出 `GO` 或具體 findings。
+1. 獨立 reviewer 讀原始 range 與 repair commit `cc7d259`、實際 evidence，輸出 `GO` 或具體 findings。
 2. `GO` 後才把 BACKLOG／receipt 從 review candidate 改為 COMPLETE。
 3. Owner 授權後才可 merge/push；整合後重跑 focused、full、browser scope、ZIP lifecycle 與 `git diff --check`。
 4. Slice 3 關閉後再判斷是否真的需要薄 Slice 4；不得預設新增。
