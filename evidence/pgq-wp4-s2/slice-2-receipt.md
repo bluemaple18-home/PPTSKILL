@@ -19,12 +19,13 @@
 
 ## Verification
 
-- TDD RED：新 focused suite 初始因 gate module 缺失而失敗；實作後 5/5 PASS。
-- Slice 1＋PS-002/R6 compatibility：20/20 PASS。
-- PGQ targeted＋PS-002/R6：86/86 PASS。
-- Full regression：194/194 PASS。
+- TDD RED：新 focused suite 初始因 gate module 缺失而失敗；Repair 1 的偽造 sample roles 在修補前亦精確 RED。
+- Slice 2 focused：6/6 PASS。
+- Slice 1＋PS-002/R6 compatibility：21/21 PASS。
+- PGQ targeted＋PS-002/R6：87/87 PASS。
+- Full regression：195/195 PASS。
 - Syntax 與 `git diff --check`：PASS。
-- Fresh ZIP：2,124,379 bytes，低於 20 MiB；SHA-256 `d377aed2c4fabe1451c42056cd0b7bcefdf4b1c4bdc859824f80a7b6f3b504ff`。
+- Fresh ZIP：2,124,775 bytes，低於 20 MiB；SHA-256 `19d164d7ded203102528737b7be224221885ceea79f88f3f8f0e7cfd5122c647`。
 - Fresh install/smoke/uninstall lifecycle：PASS；三個 adapter registration ready。
 - Browser：NOT_APPLICABLE。本 slice 未改 renderer、DOM、CSS、browser editor 或 motion/background runtime，不以 pure gate 測試冒充 browser PASS。
 
@@ -33,3 +34,9 @@
 - Hard check receipt 的產生仍沿用既有 content／geometry／browser evidence tools；本 slice 不新建 evidence service 或偽造 runtime evidence。
 - 不做實際自動 repair、Layer-2 advisory、Layer-3 Owner calibration、scope-aware feedback persistence、sample freeze/invalidation 或 full-deck orchestration。
 - 本 candidate 尚未獨立 review、merge 或 push；不宣告 Slice 2 或整個 WP4 COMPLETE。
+
+## Independent review repair
+
+- Reviewer 發現 hard gate 只核對 slide IDs，未驗證 Slice 1 role shape；偽造「單張 typical」或「雙張 typical」可在 checks 全 PASS 時繞過 Stress QA。
+- Repair 1 在 gate 入口驗證完整 sample public contract：只接受 1 筆 `both` 或 2 筆 ordered `typical`／`stress`；同時驗證 sample／entry allowlist、version、approval/full-deck flags 與 bounded unique reason codes。
+- Direct 與 installed `qa-sample` regression 均證明偽造 shape fail loud；其餘 gate semantics 不變。

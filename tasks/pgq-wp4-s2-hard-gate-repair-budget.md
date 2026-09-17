@@ -63,7 +63,12 @@
 
 ## Candidate result
 
-- Slice 2 focused：5/5 PASS；Slice 1＋PS-002/R6 compatibility：20/20 PASS。
-- PGQ targeted＋PS-002/R6：86/86 PASS；full regression：194/194 PASS。
-- Fresh ZIP lifecycle PASS；2,124,379 bytes；SHA-256 `d377aed2c4fabe1451c42056cd0b7bcefdf4b1c4bdc859824f80a7b6f3b504ff`。
+- Slice 2 focused：6/6 PASS；Slice 1＋PS-002/R6 compatibility：21/21 PASS。
+- PGQ targeted＋PS-002/R6：87/87 PASS；full regression：195/195 PASS。
+- Fresh ZIP lifecycle PASS；2,124,775 bytes；SHA-256 `19d164d7ded203102528737b7be224221885ceea79f88f3f8f0e7cfd5122c647`。
 - Browser gate：NOT_APPLICABLE；本 slice 只新增 pure evidence decision 與 CLI contract，未改 renderer／DOM／CSS／browser runtime。
+
+## Review repair
+
+- Repair 1：hard gate 現完整驗證 Slice 1 sample shape；單張只接受 `both`，雙張只接受 ordered `typical + stress`，並鎖定 sample／entry allowlist、approval/full-deck flags 與 bounded reason codes。
+- Direct 與 fresh installed CLI 均新增偽造 role regression；修補前為 RED，修補後 PASS。

@@ -4,6 +4,8 @@ const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_read
 const CHECK_STATUSES = new Set(['pass', 'fail', 'not_run', 'unknown']);
 const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef']);
 const HISTORY_FIELDS = new Set(['slideId', 'code', 'action', 'result']);
+const SAMPLE_FIELDS = new Set(['version', 'slideIds', 'entries', 'requiresApprovalBeforeRemaining', 'fullDeckQaRequired']);
+const SAMPLE_ENTRY_FIELDS = new Set(['slideId', 'role', 'reasonCodes']);
 const REPAIR_RESULTS = new Set(['failed', 'passed']);
 const MAX_REPAIRS_PER_ISSUE = 2;
 const ACTIONS = Object.freeze({
@@ -25,12 +27,30 @@ const assertKnownFields = (item, fields, label) => {
 };
 
 export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], lastSuccessfulEvidence = null }) {
+  assertKnownFields(sample, SAMPLE_FIELDS, 'representative sample');
+  if (sample.version !== 1 || sample.fullDeckQaRequired !== true || sample.requiresApprovalBeforeRemaining !== true) {
+    throw new Error('Representative sample shape 必須保留 version=1、approval wait 與 full-deck QA。');
+  }
   if (!Array.isArray(sample?.entries) || sample.entries.length < 1) throw new Error('Representative sample entries 不可為空。');
+  if (sample.entries.length > 2) throw new Error('Representative sample 最多只能有兩筆 entries。');
+  for (const entry of sample.entries) {
+    assertKnownFields(entry, SAMPLE_ENTRY_FIELDS, 'representative sample entry');
+    if (!Array.isArray(entry.reasonCodes) || entry.reasonCodes.length < 1
+      || entry.reasonCodes.some((code) => typeof code !== 'string' || !/^[a-z0-9_]{1,64}$/u.test(code))
+      || new Set(entry.reasonCodes).size !== entry.reasonCodes.length) {
+      throw new Error('Representative sample entry reasonCodes 必須是非空、唯一的 bounded codes。');
+    }
+  }
   const sampleSlideIds = sample.entries.map(({ slideId }) => slideId);
   if (sampleSlideIds.some((slideId) => typeof slideId !== 'string' || !slideId)
     || new Set(sampleSlideIds).size !== sampleSlideIds.length) throw new Error('Representative sample slideId 缺漏或重複。');
   if (!Array.isArray(sample.slideIds) || sample.slideIds.length !== sampleSlideIds.length
     || sample.slideIds.some((slideId, index) => slideId !== sampleSlideIds[index])) throw new Error('Representative sample slideIds 與 entries 不一致。');
+  const roles = sample.entries.map(({ role }) => role);
+  if ((roles.length === 1 && roles[0] !== 'both')
+    || (roles.length === 2 && (roles[0] !== 'typical' || roles[1] !== 'stress'))) {
+    throw new Error('Representative sample role shape 必須是單張 both 或兩張 typical + stress。');
+  }
   const sampleSet = new Set(sampleSlideIds);
   if (!Array.isArray(checks)) throw new Error('checks 必須是陣列。');
 

@@ -73,6 +73,23 @@ test('coverage、allowlist 與 history spoof fail loud', () => {
   assert.throws(() => evaluateRepresentativeQa(request({ repairHistory: [{ slideId: 'stress', code: 'geometry', action: 'shrink-font', result: 'failed' }] })), /action/);
 });
 
+test('拒絕繞過 Slice 1 的 single both 與 typical plus stress sample shape', () => {
+  const singleTypical = {
+    ...sample,
+    slideIds: ['typical'],
+    entries: [{ slideId: 'typical', role: 'typical', reasonCodes: ['main_narrative_role'] }],
+  };
+  assert.throws(() => evaluateRepresentativeQa({
+    ...request(), sample: singleTypical, checks: checks().filter(({ slideId }) => slideId === 'typical'),
+  }), /sample.*role|role.*sample/iu);
+
+  const duplicateTypical = {
+    ...sample,
+    entries: sample.entries.map((entry) => ({ ...entry, role: 'typical' })),
+  };
+  assert.throws(() => evaluateRepresentativeQa({ ...request(), sample: duplicateTypical }), /sample.*role|role.*sample/iu);
+});
+
 test('installed qa-sample CLI 與 direct pure gate parity', async () => {
   const root = await mkdtemp(join(tmpdir(), 'pptskill-pgq-wp4-s2-'));
   const archive = join(root, 'PPTSKILL.zip');
@@ -101,6 +118,15 @@ test('installed qa-sample CLI 與 direct pure gate parity', async () => {
   await assert.rejects(run(process.execPath, [cli, 'qa-sample', '--request', requestPath]), (error) => {
     assert.equal(error.code, 3);
     assert.equal(JSON.parse(error.stdout).status, 'repair');
+    return true;
+  });
+
+  await writeFile(requestPath, JSON.stringify(request({
+    sample: { ...sample, entries: sample.entries.map((entry) => ({ ...entry, role: 'typical' })) },
+  })));
+  await assert.rejects(run(process.execPath, [cli, 'qa-sample', '--request', requestPath]), (error) => {
+    assert.equal(error.code, 1);
+    assert.match(error.stderr, /sample.*role|role.*sample/iu);
     return true;
   });
 });
