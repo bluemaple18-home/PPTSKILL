@@ -1,6 +1,6 @@
-import { createHash } from 'node:crypto';
 import { sanitizeDeckSpec } from './deck-spec.js';
 import { evaluateRepresentativeQa } from './representative-qa-gate.js';
+import { createRepresentativeSampleIdentity, fingerprintValue, stableJson } from './representative-sample-identity.js';
 
 const CONTRACT_PATTERN = /^[a-z0-9][a-z0-9._-]{0,63}$/u;
 const FEEDBACK_CODES = Object.freeze({
@@ -15,15 +15,6 @@ const FEEDBACK_FIELDS = Object.freeze({
   'profile-opt-in': new Set(['scope', 'code', 'remember']),
 });
 
-const stableValue = (value) => {
-  if (Array.isArray(value)) return value.map(stableValue);
-  if (value && typeof value === 'object') {
-    return Object.fromEntries(Object.keys(value).sort().map((key) => [key, stableValue(value[key])]));
-  }
-  return value;
-};
-const stableJson = (value) => JSON.stringify(stableValue(value));
-const fingerprint = (value) => createHash('sha256').update(stableJson(value)).digest('hex');
 const assertReference = (value, label) => {
   if (typeof value !== 'string' || !value.trim() || value.length > 256) throw new Error(`${label} 必須是 1～256 字元 reference。`);
   return value;
@@ -71,33 +62,26 @@ export function approveRepresentativeSample({
   if (stableJson(sample) !== stableJson(hardGateRequest?.sample)) throw new Error('hard gate sample 與 approval sample 不一致。');
   const hardGate = evaluateRepresentativeQa(hardGateRequest);
   if (hardGate.status !== 'pass') throw new Error('Representative hard gate 必須 PASS 才能核准 sample。');
+  if (!hardGate.validatedIdentity) throw new Error('Representative hard-gate identity 缺漏；不得以未綁定 DeckSpec 的 PASS 建立 freeze。');
   assertExactFields(approval, new Set(['approved', 'approvedBy', 'evidenceRef']), 'approval');
   if (approval.approved !== true || approval.approvedBy !== 'human') throw new Error('Sample approval 必須由 human 明確核准。');
   assertReference(approval.evidenceRef, 'approval evidenceRef');
-  if (!CONTRACT_PATTERN.test(contractVersion)) throw new Error('contractVersion 必須是 bounded version ID。');
-
+  const approvalIdentity = createRepresentativeSampleIdentity({ sample, deckSpec, contractVersion });
+  if (approvalIdentity.identityFingerprint !== hardGate.validatedIdentity.identityFingerprint) {
+    throw new Error('Approval DeckSpec 與 hard-gate identity 不一致；必須重新執行 hard gate。');
+  }
   const sanitized = sanitizeDeckSpec(deckSpec);
   assertUniqueSlideIds(sanitized, 'approval DeckSpec');
-  const slideById = new Map(sanitized.slides.map((slide) => [slide.id, slide]));
-  const frozenSample = sample.entries.map(({ slideId, role }) => {
-    const slide = slideById.get(slideId);
-    if (!slide) throw new Error(`DeckSpec 缺少 representative sample slide：${slideId}。`);
-    return {
-      slideId,
-      role,
-      contentFingerprint: fingerprint(slide.content),
-      compositionFingerprint: fingerprint(slide.composition),
-    };
-  });
+  const frozenSample = approvalIdentity.sample;
   const freezeCore = {
-    version: 1,
-    deckId: sanitized.deckId,
-    contractVersion,
-    styleFingerprint: fingerprint(sanitized.style),
+    version: approvalIdentity.version,
+    deckId: approvalIdentity.deckId,
+    contractVersion: approvalIdentity.contractVersion,
+    styleFingerprint: approvalIdentity.styleFingerprint,
     sample: frozenSample,
     approval: { approvedBy: 'human', evidenceRef: approval.evidenceRef },
   };
-  const freeze = { ...freezeCore, approvalFingerprint: fingerprint(freezeCore) };
+  const freeze = { ...freezeCore, approvalFingerprint: fingerprintValue(freezeCore) };
   const sampleIds = frozenSample.map(({ slideId }) => slideId);
   const sampleSet = new Set(sampleIds);
   const remainingIds = sanitized.slides.map(({ id }) => id).filter((id) => !sampleSet.has(id));
@@ -107,11 +91,11 @@ export function approveRepresentativeSample({
   let current = null;
   let globalReasons = [];
   if (currentDeckSpec !== null || currentContractVersion !== null) {
-    if (!currentDeckSpec || !CONTRACT_PATTERN.test(currentContractVersion)) throw new Error('currentDeckSpec 與 currentContractVersion 必須一起提供。');
+    if (!currentDeckSpec || !CONTRACT_PATTERN.test(currentContractVersion)) throw new Error('currentDeckSpec 與 bounded currentContractVersion 必須一起提供。');
     current = sanitizeDeckSpec(currentDeckSpec);
     assertUniqueSlideIds(current, 'current DeckSpec');
     if (current.deckId !== sanitized.deckId) throw new Error('current DeckSpec deckId 與 approval freeze 不一致。');
-    if (fingerprint(current.style) !== freeze.styleFingerprint) globalReasons.push('style_changed');
+    if (fingerprintValue(current.style) !== freeze.styleFingerprint) globalReasons.push('style_changed');
     if (currentContractVersion !== contractVersion) globalReasons.push('contract_version_changed');
   }
 
@@ -124,8 +108,8 @@ export function approveRepresentativeSample({
       const slide = currentSlides.get(frozen.slideId);
       if (!slide) reasonCodes.push('sample_slide_missing');
       else {
-        if (fingerprint(slide.content) !== frozen.contentFingerprint) reasonCodes.push('content_changed');
-        if (fingerprint(slide.composition) !== frozen.compositionFingerprint) reasonCodes.push('composition_changed');
+        if (fingerprintValue(slide.content) !== frozen.contentFingerprint) reasonCodes.push('content_changed');
+        if (fingerprintValue(slide.composition) !== frozen.compositionFingerprint) reasonCodes.push('composition_changed');
       }
     }
     return {

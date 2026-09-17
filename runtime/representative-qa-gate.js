@@ -1,4 +1,5 @@
 import { layoutRepairSequence } from './layout-repair-policy.js';
+import { createRepresentativeSampleIdentity } from './representative-sample-identity.js';
 
 const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_readability', 'animation_interference']);
 const CHECK_STATUSES = new Set(['pass', 'fail', 'not_run', 'unknown']);
@@ -6,6 +7,7 @@ const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef']);
 const HISTORY_FIELDS = new Set(['slideId', 'code', 'action', 'result']);
 const SAMPLE_FIELDS = new Set(['version', 'slideIds', 'entries', 'requiresApprovalBeforeRemaining', 'fullDeckQaRequired']);
 const SAMPLE_ENTRY_FIELDS = new Set(['slideId', 'role', 'reasonCodes']);
+const VALIDATION_CONTEXT_FIELDS = new Set(['deckSpec', 'contractVersion']);
 const REPAIR_RESULTS = new Set(['failed', 'passed']);
 const MAX_REPAIRS_PER_ISSUE = 2;
 const ACTIONS = Object.freeze({
@@ -26,7 +28,7 @@ const assertKnownFields = (item, fields, label) => {
   if (unknown.length) throw new Error(`${label} 不允許欄位：${unknown.join(', ')}。`);
 };
 
-export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], lastSuccessfulEvidence = null }) {
+export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], lastSuccessfulEvidence = null, validationContext = null }) {
   assertKnownFields(sample, SAMPLE_FIELDS, 'representative sample');
   if (sample.version !== 1 || sample.fullDeckQaRequired !== true || sample.requiresApprovalBeforeRemaining !== true) {
     throw new Error('Representative sample shape 必須保留 version=1、approval wait 與 full-deck QA。');
@@ -98,12 +100,17 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     }];
   });
   const preservedLastSuccess = lastSuccessfulEvidence == null ? null : assertSafeReference(lastSuccessfulEvidence, 'lastSuccessfulEvidence');
+  if (validationContext != null) assertKnownFields(validationContext, VALIDATION_CONTEXT_FIELDS, 'validation context');
+  const validatedIdentity = validationContext == null
+    ? null
+    : createRepresentativeSampleIdentity({ sample, ...validationContext });
   const base = {
     version: 1,
     issues,
     nextActions: [],
     repairBudget: { maxPerIssue: MAX_REPAIRS_PER_ISSUE },
     preservedLastSuccess,
+    ...(validatedIdentity ? { validatedIdentity } : {}),
     fullDeckQaRequired: true,
   };
   if (!issues.length) return { status: 'pass', ...base };

@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { approveRepresentativeSample } from '../runtime/sample-approval.js';
+import { evaluateRepresentativeQa } from '../runtime/representative-qa-gate.js';
 import { buildDistribution } from '../tools/build-distribution.mjs';
 
 const run = promisify(execFile);
@@ -20,13 +21,14 @@ const sample = {
   fullDeckQaRequired: true,
 };
 const codes = ['content_integrity', 'geometry', 'static_readability', 'animation_interference'];
-const hardGateRequest = (status = 'pass') => ({
+const hardGateRequest = (status = 'pass', validatedDeckSpec = deckSpec, contractVersion = 'pgq-wp4-v1') => ({
   sample,
   checks: sample.slideIds.flatMap((slideId) => codes.map((code) => ({
     slideId, code, status, evidenceRef: `evidence/${slideId}-${code}.json`,
   }))),
   repairHistory: [],
   lastSuccessfulEvidence: 'evidence/sample-pass.json',
+  validationContext: { deckSpec: validatedDeckSpec, contractVersion },
 });
 const deckSpec = {
   schemaVersion: '1.0',
@@ -61,6 +63,8 @@ test('PASS hard gate 與 human approval 建立 deterministic immutable freeze', 
   const before = structuredClone(input);
   const first = approveRepresentativeSample(input);
   const second = approveRepresentativeSample(input);
+  const gate = evaluateRepresentativeQa(input.hardGateRequest);
+  assert.match(gate.validatedIdentity.identityFingerprint, /^[a-f0-9]{64}$/);
   assert.deepEqual(first, second);
   assert.deepEqual(input, before);
   assert.equal(first.status, 'pass');
@@ -77,6 +81,21 @@ test('非 PASS gate、非 human approval、sample 不一致與缺頁 fail loud',
   assert.throws(() => approveRepresentativeSample(request({ hardGateRequest: { ...hardGateRequest(), sample: { ...sample, slideIds: ['slide-01'] } } })), /sample/u);
   assert.throws(() => approveRepresentativeSample(request({ deckSpec: { ...deckSpec, slides: deckSpec.slides.slice(0, 2) } })), /slide-04/u);
   assert.throws(() => approveRepresentativeSample(request({ deckSpec: { ...deckSpec, slides: [...deckSpec.slides, { ...deckSpec.slides[0] }] } })), /IDs.*唯一/u);
+});
+
+test('舊 PASS evidence 不得核准已變更的 sample／Style／contract state', () => {
+  const changedContent = structuredClone(deckSpec);
+  changedContent.slides[0].content.title = 'Changed after hard gate';
+  assert.throws(() => approveRepresentativeSample(request({ deckSpec: changedContent })), /hard-gate.*identity|identity.*hard-gate/iu);
+
+  const changedComposition = structuredClone(deckSpec);
+  changedComposition.slides[2].composition.variant = 'changed-after-hard-gate';
+  assert.throws(() => approveRepresentativeSample(request({ deckSpec: changedComposition })), /hard-gate.*identity|identity.*hard-gate/iu);
+
+  const changedStyle = structuredClone(deckSpec);
+  changedStyle.style.density = 'high';
+  assert.throws(() => approveRepresentativeSample(request({ deckSpec: changedStyle })), /hard-gate.*identity|identity.*hard-gate/iu);
+  assert.throws(() => approveRepresentativeSample(request({ contractVersion: 'pgq-wp4-v2' })), /hard-gate.*identity|identity.*hard-gate/iu);
 });
 
 test('scope planner 僅接受 bounded feedback，profile 必須明示 opt-in', () => {
@@ -133,12 +152,25 @@ test('installed approve-sample CLI 與 direct pure contract parity', async () =>
   const installRoot = join(root, 'user', '.pptskill', 'runtime');
   await run(process.execPath, [join(extracted, 'PPTSKILL', 'install.mjs'), '--install-root', installRoot]);
   const requestPath = join(root, 'approval-request.json');
+  const gateRequestPath = join(root, 'hard-gate-request.json');
+  await writeFile(gateRequestPath, JSON.stringify(hardGateRequest()));
   await writeFile(requestPath, JSON.stringify(request()));
   const cli = join(installRoot, 'core', 'runtime', 'workflow-cli.mjs');
+  const installedGate = JSON.parse((await run(process.execPath, [cli, 'qa-sample', '--request', gateRequestPath])).stdout);
+  assert.match(installedGate.validatedIdentity.identityFingerprint, /^[a-f0-9]{64}$/);
   const installed = JSON.parse((await run(process.execPath, [cli, 'approve-sample', '--request', requestPath])).stdout);
   assert.equal(installed.mode, 'representative-sample-approval');
   const { mode, ...decision } = installed;
   assert.deepEqual(decision, approveRepresentativeSample(request()));
+
+  const staleRequest = request({ deckSpec: structuredClone(deckSpec) });
+  staleRequest.deckSpec.slides[0].content.title = 'Changed after hard gate';
+  await writeFile(requestPath, JSON.stringify(staleRequest));
+  await assert.rejects(run(process.execPath, [cli, 'approve-sample', '--request', requestPath]), (error) => {
+    assert.equal(error.code, 1);
+    assert.match(error.stderr, /hard-gate.*identity|identity.*hard-gate/iu);
+    return true;
+  });
   for (const adapter of ['.codex', '.claude', '.gemini']) {
     assert.match(await readFile(join(root, 'user', adapter, 'skills', 'pptskill', 'SKILL.md'), 'utf8'), /approve-sample/);
   }
