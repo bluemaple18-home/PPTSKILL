@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～2 COMPLETE、後續 slices NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～2 COMPLETE、Slice 3 READY FOR INDEPENDENT REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -829,6 +829,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **PGQ-WP4 Slice 2 closure receipt：** `evidence/pgq-wp4-s2/slice-2-receipt.md`。`qa-sample` 已將 Representative Sample Plan、完整 allowlisted hard checks、local repair history 與 last-success reference 接成 pure `pass | repair | blocked` gate；NOT_RUN/UNKNOWN fail closed，同 issue 第 1／2 次只回 bounded action，第 3 次前 blocked。Repair 1 補齊 Slice 1 sample role／shape invariant，direct／installed 偽造 role regression 均 fail loud；獨立 re-review 無新 finding並給出 GO。Slice 2 COMPLETE；不預設 feedback／persistence slice。
 
 **PGQ-WP4 Slice 3 task：** `tasks/pgq-wp4-s3-sample-approval-freeze.md`。Frontier 是把 Slice 2 PASS 與 human approval 綁成 deterministic sample freeze，並以 `slide-local | deck-wide | profile-opt-in` 薄規劃回饋及 affected-only invalidation；不執行 mutation／profile write，Layer-2/3 readability 仍延後。
+
+**PGQ-WP4 Slice 3 candidate receipt：** `evidence/pgq-wp4-s3/slice-3-candidate-receipt.md`。`approve-sample` 會重播同一 hard-gate request，只在 human approval 後建立 content／composition／style／contract fingerprints；局部內容／構圖變更只使對應樣張失效，Style／contract 變更才使全部樣張失效，非 sample 變更維持 freeze。三種 feedback scope 均為 allowlist plan；profile opt-in 不執行寫入。等待 independent review。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

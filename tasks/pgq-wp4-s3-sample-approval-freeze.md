@@ -1,6 +1,6 @@
 # PGQ-WP4-S3 — Sample Approval Freeze and Scoped Invalidation
 
-**Status:** ACTIVE — IMPLEMENTATION
+**Status:** READY FOR INDEPENDENT REVIEW
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -57,3 +57,11 @@
 - TDD RED：approval prerequisites、stable fingerprints、scope allowlist、profile explicit opt-in、local/global/contract invalidation、unaffected preservation、input/output immutability。
 - Direct/installed CLI parity；WP4 Slice 1～2 compatibility。
 - PGQ targeted、full suite、fresh ZIP install/smoke/uninstall、syntax、`git diff --check`。
+
+## Candidate result
+
+- Focused：6/6 PASS；WP4 Slice 1～3 compatibility：18/18 PASS。
+- PGQ targeted＋PS-002/R6：93/93 PASS；full regression：201/201 PASS。
+- Fresh ZIP lifecycle PASS；2,128,146 bytes；SHA-256 `a83a87df45b02da14dbb994f3341f1db129c78585c6a50aeedf299fdd5661af2`。
+- Browser gate：NOT_APPLICABLE；本 slice 只新增 pure approval/freeze decision、CLI 與 packaged instructions，未改 renderer／DOM／CSS／browser runtime。
+- Candidate implementation commit：`8d39450`；等待 independent review，不 merge／push／開後續 Slice 或 EDX。
