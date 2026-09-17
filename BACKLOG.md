@@ -834,6 +834,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 3 repair 1：** 前次 P1 指出 stale PASS evidence 可核准後改 DeckSpec。現 hard gate 由 `validationContext` 派生受驗 sample content／composition、Style、contract identity；approval 必須完全一致，否則 fail loud 並要求重驗。Direct／installed regression 均覆蓋；等待 independent re-review。
 
+**PGQ-WP4 Slice 3 repair 2：** Re-review 指出 validation context 與 hard-check evidence 仍可脫鉤。現 identity-bound path 要求 sample × 四項 hard-check result 每筆攜帶相同 `identityFingerprint`；缺漏、單筆竄改，或同改 DeckSpec/context 卻沿用舊 checks 均 fail loud。Legacy 無 validation context 的 hard gate 相容性保留；等待 independent re-review。
+
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
 | **PGQ-WP1 Preflight / Brief Upgrade** | `grill-outline.js`、`layout-repair-policy.js`、`workflow-entry.js`；R1/R2/R6/R10 | 素材歧義、文案校對、事實／衍生值、來源衝突與 linkage、時間／自讀、Main/Appendix/Drop；合併 D01/07/09/10/12/13/14/15/16 | release closure 後；核心來源衝突會問、無害未知不多問、不補造事實、主線＋附錄總計 ≤15；核准後縮文權限先契約化 |
