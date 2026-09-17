@@ -6,12 +6,13 @@ Base：`d5201fddcba20787b09df26f794a4ab2f70ba1d6`
 Implementation：`8d39450`
 Repair 1：`1e06246`
 Repair 2：`eea6b7c`
+Repair 3：`dab445a`
 
 ## Delivered contract
 
-- `approveRepresentativeSample()` 重跑 Slice 2 pure hard gate；caller 不能只自報 PASS。
-- Hard gate 的 `validationContext` 會從實際受驗 DeckSpec／contract 自行派生 `validatedIdentity`；approval identity 不一致時必須重驗，不能沿用 stale PASS。
-- 每筆 hard check 必須攜帶同一 identity fingerprint；missing/mismatch 立即 fail loud，不能只換 validation context 後重用舊 evidence refs/status。
+- `approveRepresentativeSample()` 只接受同一 runtime 內由 trusted Chrome producer 建立的 branded evidence；JSON clone、caller PASS、evidence refs 或重算 fingerprint 都不能取得 authority。
+- Installed `approve-sample` 要求 `--artifact`，自行跑 packaged static＋normal producer，並從 artifact 內 canonical DeckSpec 派生 `validatedIdentity`；approval request 不接受 `hardGateRequest` 或 `qaEvidence`。
+- Artifact 在 producer 執行前後會比對 SHA-256；DeckSpec／Style／contract 與 producer identity 不一致時 fail loud。
 - 只有 `approved=true` 且 `approvedBy=human` 可建立 freeze。
 - Freeze 由 sanitized DeckSpec 的 sample content、composition、deck Style 與 bounded contract version 派生 SHA-256 fingerprints。
 - Feedback 只接受 allowlisted `slide-local | deck-wide | profile-opt-in` code；不接受 raw prompt／任意 instruction。
@@ -27,9 +28,9 @@ Repair 2：`eea6b7c`
 - Full regression：202/202 PASS。
 - Syntax、branch-range `git diff --check`：PASS。
 - Fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,130,008 bytes。
-- SHA-256：`d23d31a4be8399178ababc0c168db7523a7ea51e7e8ddf8fc050c70500846848`。
-- Browser gate：NOT_APPLICABLE；沒有 renderer／DOM／CSS／browser runtime 變更。
+- Browser producer：static／normal 在 1600×900、1280×720 全部 PASS；console、pageerror、network failure、HTTP error、geometry issue 均為 0，layout stable 且 resting visible。
+- Browser evidence：`producer-browser-acceptance.json`；artifact SHA-256 `a185dea10de1c3c1f239fba2c7fd3277e4c0df9b315555df4aafa0a991e337c3`。
+- Fresh ZIP：2,140,638 bytes；SHA-256 `3f971fc33a390952e0ba84ff6c3d9df1e9086ba240c218d86babfa205462a73b`。
 
 ## Preserved boundaries
 

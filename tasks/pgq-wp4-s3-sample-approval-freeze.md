@@ -15,8 +15,8 @@
 
 ## Input / output contract
 
-- Input：合法 Slice 1 `sample`、可由 Slice 2 pure gate 重播的 `hardGateRequest`、sanitized DeckSpec、human approval、bounded feedback items、contract version，以及 optional current DeckSpec／contract version。
-- Approval 會重跑 hard gate，且只接受結果 `status=pass`、`approved=true`、`approvedBy=human`；caller 不得自報 PASS、fingerprint、invalidation verdict 或 propagation target。
+- Input：合法 Slice 1 `sample`、portable HTML artifact、sanitized DeckSpec、human approval、bounded feedback items、contract version，以及 optional current DeckSpec／contract version。
+- Approval CLI 會以 packaged Chrome producer 直接重驗 artifact，再從 artifact 內 canonical DeckSpec 派生 trusted in-process evidence；caller 不得提交 hard gate、PASS、evidence object、fingerprint、invalidation verdict 或 propagation target。
 - Freeze identity 由 runtime 依每張 sample 的 sanitized content、composition，加上 deck style 與 contract version deterministic 派生。
 - Feedback scope 只接受 `slide-local | deck-wide | profile-opt-in`；slide-local 必須指向 sample slide，deck-wide 不得夾帶 target，profile-opt-in 必須明示 `remember=true`，但本 slice 不寫 profile。
 - Output：immutable approval freeze、sorted feedback plan、每張 sample 的 `preserved | invalidated` 與 bounded reason codes、`remainingDeckAction`、`fullDeckQaRequired=true`。
@@ -62,9 +62,9 @@
 
 - Focused：7/7 PASS；WP4 Slice 1～3 compatibility：19/19 PASS。
 - PGQ targeted＋PS-002/R6：94/94 PASS；full regression：202/202 PASS。
-- Fresh ZIP lifecycle PASS；2,130,008 bytes；SHA-256 `d23d31a4be8399178ababc0c168db7523a7ea51e7e8ddf8fc050c70500846848`。
-- Browser gate：NOT_APPLICABLE；本 slice 只新增 pure approval/freeze decision、CLI 與 packaged instructions，未改 renderer／DOM／CSS／browser runtime。
-- Candidate implementation＋repair commits：`8d39450`、`1e06246`、`eea6b7c`；等待 independent re-review，不 merge／push／開後續 Slice 或 EDX。
+- Fresh ZIP lifecycle PASS；2,140,638 bytes；SHA-256 `3f971fc33a390952e0ba84ff6c3d9df1e9086ba240c218d86babfa205462a73b`。
+- Browser gate：APPLICABLE／PASS；static 與 normal producer 均於 1600×900、1280×720 通過，console／pageerror／network／HTTP／geometry／resting visibility 全部為零問題。
+- Candidate implementation＋repair commits：`8d39450`、`1e06246`、`eea6b7c`、`dab445a`；等待 independent re-review，不 merge／push／開後續 Slice 或 EDX。
 
 ## Review repair
 
@@ -72,3 +72,5 @@
 - Slice 3 approval 現要求同一 identity-bound hard-gate request，並重算 approval DeckSpec identity；舊 PASS evidence 搭配改後 content、composition、Style 或 contract 一律 fail loud，要求重新 hard gate。
 - Direct 與 fresh installed CLI 均新增 stale-PASS regression；修補前為 RED，修補後 PASS。
 - Repair 2：每筆 hard-check result 現必須攜帶與 gate `validationContext` 派生結果完全相同的 `identityFingerprint`；缺漏、單筆竄改，或同步換 DeckSpec/context 卻沿用舊 checks 均 fail loud。Legacy 無 validation context 的 gate request維持既有形狀。
+- Repair 3（Mainline replan）：移除 approval 對 caller-authored hard-check result／fingerprint 的信任。`approve-sample` 現要求 `--artifact`，自行執行 packaged static＋normal Chrome producer；只有同一 runtime 內由 producer 建立、以 private capability 綁定的 evidence 可進 approval gate，序列化／重算／改寫的新 fingerprint 一律 fail loud。Slice 2 `qa-sample` 保留為 legacy bounded repair planner，但不再具有 approval authority。
+- Forced-static browser seam 改用明確 bounded runtime flag，不再刪除 `IntersectionObserver`；producer 同時把 console 納入 PASS gate。Direct＋fresh-installed regression、PGQ targeted 94/94、full 202/202 及真 Chrome acceptance 均 PASS。
