@@ -15,7 +15,7 @@ PGQ-WP3 Slice 3 的 truthful Background Effects Runtime 是否符合既定 capab
 - Task-card commit：`a6457cf`
 - Implementation／review-candidate commit：`169662db255306d5c06bf382a9a0d286fff0ff8b`
 - Review repair commit：`cc7d259`
-- Status：`READY FOR INDEPENDENT RE-REVIEW`；尚未 merge、push 或標記 Slice 3 COMPLETE。
+- Status：`INDEPENDENT REVIEW GO`；closure write-back 已授權，等待整合後驗證與 push。
 - Worktree 在建立本 handoff 前為 clean；本 handoff 應是唯一後續 control artifact。
 
 ## Constraints and preferences
@@ -81,7 +81,7 @@ Browser command 需要可啟動本機 headless Chrome；reviewer 必須以 recei
 
 ## Blocker
 
-無已知產品 blocker。唯一等待條件是獨立 re-review verdict。
+無已知產品 blocker。獨立 re-review 已給出 `GO — PGQ-WP3 Slice 3`。
 
 ## Candidate fork
 
@@ -91,10 +91,9 @@ Browser command 需要可啟動本機 headless Chrome；reviewer 必須以 recei
 
 ## Remaining work
 
-1. 獨立 reviewer 讀原始 range 與 repair commit `cc7d259`、實際 evidence，輸出 `GO` 或具體 findings。
-2. `GO` 後才把 BACKLOG／receipt 從 review candidate 改為 COMPLETE。
-3. Owner 授權後才可 merge/push；整合後重跑 focused、full、browser scope、ZIP lifecycle 與 `git diff --check`。
-4. Slice 3 關閉後再判斷是否真的需要薄 Slice 4；不得預設新增。
+1. Closure write-back：已完成。
+2. Merge／push：Owner 已授權；整合後重跑 focused、full、browser scope、ZIP lifecycle 與 `git diff --check`。
+3. Slice 3 關閉後再判斷是否真的需要薄 Slice 4；不得預設新增。
 
 ## Key decisions and resolved questions
 

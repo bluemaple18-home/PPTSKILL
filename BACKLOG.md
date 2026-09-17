@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 Slice 1 + Slice 2 COMPLETE、Slice 3 READY FOR INDEPENDENT REVIEW、後續 slices NOT STARTED；WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 Slice 1～3 COMPLETE、後續 slices NOT STARTED；WP4 NOT STARTED；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -816,7 +816,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP3 Slice 3 task：** `tasks/pgq-wp3-s3-background-effects-runtime.md`。Frontier 限定為 truthful background capability、pinned Vanta/Three runtime、Style palette adapter、lifecycle/fallback、offline single-file 與 20 MiB gate；p5 effects 維持 license gate，upstream 未正式展示的 RIPPLE 只有真 browser matrix 通過才可 offered。
 
-**PGQ-WP3 Slice 3 review candidate receipt：** `evidence/pgq-wp3-s3/slice-3-receipt.md`。11 個 Vanta/Three effects 已通過正式 renderer 單檔 Chrome matrix；CLOUDS2 因缺 pinned texture、TOPOLOGY/TRUNK 因 p5 license gate 維持 unavailable。Planner、CompositionSpec、Node/browser editor、export、recipient reparse、reduced/static/WebGL fallback、offline ZIP 與 20 MiB gate 已閉環；等待獨立 review，尚未標 COMPLETE。
+**PGQ-WP3 Slice 3 closure receipt：** `evidence/pgq-wp3-s3/slice-3-receipt.md`。11 個 Vanta/Three effects 已通過正式 renderer 單檔 Chrome matrix；CLOUDS2 因缺 pinned texture、TOPOLOGY/TRUNK 因 p5 license gate 維持 unavailable。Planner、CompositionSpec、Node/browser editor、export、真實 recipient Chrome reopen、初始與動態 reduced/static/WebGL fallback、offline ZIP 與 20 MiB gate 已閉環；review repair 關閉 CSS palette、reopen 與 console/network gate findings，獨立 re-review 無新 finding並給出 GO。Slice 3 COMPLETE；不預設新增 Slice 4、WP4 或 EDX。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

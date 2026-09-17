@@ -1,6 +1,6 @@
 # PGQ-WP3-S3 — Background Effects Runtime
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **traces_to:** `PGQ-D04`, `PGQ-D06`
 
 ## Objective
@@ -52,3 +52,10 @@
 - TDD：capability matrix → schema/sanitizer → renderer/runtime lifecycle → installed workflow。
 - Browser：逐 effect normal/replay、reduced、forced-static、WebGL unavailable、export/reopen；navigation 前掛 console/pageerror/network listeners。
 - Fresh ZIP + host lifecycle + byte/checksum gate；targeted/full regression + syntax + `git diff --check`。
+
+## Closure
+
+- Independent re-review：`GO — PGQ-WP3 Slice 3`；無新 finding。
+- 前次 CSS color parsing、recipient Chrome reopen、console/pageerror/network gate 與 reduced-motion teardown findings 均已關閉。
+- Focused 6/6、Slice 1 compatibility + Slice 3 13/13、full regression 183/183 PASS。
+- Closure 不授權或預設開啟 Slice 4、WP4 或 EDX。

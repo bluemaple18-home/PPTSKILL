@@ -1,6 +1,6 @@
 # PGQ-WP3 Slice 3 Receipt — Background Effects Runtime
 
-**Verdict:** READY FOR INDEPENDENT REVIEW
+**Verdict:** COMPLETE — INDEPENDENT REVIEW GO
 
 **Branch:** `codex/pgq-wp3-s3`
 
@@ -41,7 +41,7 @@
 - CLOUDS2 只有在 pinned texture 進正式 dependency/license/checksum gate 後才可重評；本 slice 不以其他圖或 fallback 冒充。
 - TOPOLOGY／TRUNK 不打包 p5；license gate 未通過前維持 unavailable。
 - 不含 EDX、WP4、whole-deck motion consistency、任意 shader/CSS/JS、foreground effect、新 renderer primitive 或專業 timeline。
-- 本 receipt 是 review candidate evidence，不是獨立 review GO，也不把 PGQ-WP3 宣告 COMPLETE。
+- 本 receipt 已由獨立 re-review 驗證並給出 `GO — PGQ-WP3 Slice 3`；只關閉 Slice 3，不宣告整個 PGQ-WP3 或後續工作完成。
 - P0-R11 的 `824471ae…` receipt 保留為當時 MVP reseal 的 immutable historical evidence；本 Slice 的 candidate checksum 不回寫成 P0 已驗收事實。
 
 ## Independent review repair
@@ -50,3 +50,9 @@
 - 正式 browser gate 新增真實 recipient Chrome reopen，不再以同頁 `DOMParser` 代替離線 reopen。
 - console 與 network loading failure 已納入 browser PASS 條件。
 - 額外修正運行中切換 reduced-motion 未銷毀既有 Vanta instance 的 lifecycle 缺口。
+
+## Independent review closure
+
+- Verdict：`GO — PGQ-WP3 Slice 3`。
+- 新 findings：無。
+- Reviewer 確認前次 findings 全數關閉；其環境 fresh Chrome 仍卡 DevTools port，因此 Chrome runtime claim 以已提交正式 receipt 為證，不偽稱 reviewer fresh rerun。
