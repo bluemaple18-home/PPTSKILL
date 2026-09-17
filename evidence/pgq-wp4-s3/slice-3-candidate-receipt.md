@@ -1,8 +1,8 @@
 # PGQ-WP4 Slice 3 Candidate Receipt
 
-Date：2026-09-17  
-Branch：`codex/pgq-wp4-s3`  
-Base：`d5201fddcba20787b09df26f794a4ab2f70ba1d6`  
+Date：2026-09-17
+Branch：`codex/pgq-wp4-s3`
+Base：`d5201fddcba20787b09df26f794a4ab2f70ba1d6`
 Implementation：`8d39450`
 
 ## Delivered contract

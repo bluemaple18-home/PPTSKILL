@@ -33,7 +33,7 @@ pnpm build:dist
 git diff --check d5201fddcba20787b09df26f794a4ab2f70ba1d6..8d39450
 ```
 
-Expected ZIP：2,128,146 bytes  
+Expected ZIP：2,128,146 bytes
 Expected SHA-256：`a83a87df45b02da14dbb994f3341f1db129c78585c6a50aeedf299fdd5661af2`
 
 ## Verdict
