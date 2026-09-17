@@ -1,13 +1,13 @@
 import { layoutRepairSequence } from './layout-repair-policy.js';
-import { createRepresentativeSampleIdentity } from './representative-sample-identity.js';
+import { assertTrustedRepresentativeQaEvidence } from './representative-qa-evidence.js';
+import { stableJson } from './representative-sample-identity.js';
 
 const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_readability', 'animation_interference']);
 const CHECK_STATUSES = new Set(['pass', 'fail', 'not_run', 'unknown']);
-const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef', 'identityFingerprint']);
+const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef']);
 const HISTORY_FIELDS = new Set(['slideId', 'code', 'action', 'result']);
 const SAMPLE_FIELDS = new Set(['version', 'slideIds', 'entries', 'requiresApprovalBeforeRemaining', 'fullDeckQaRequired']);
 const SAMPLE_ENTRY_FIELDS = new Set(['slideId', 'role', 'reasonCodes']);
-const VALIDATION_CONTEXT_FIELDS = new Set(['deckSpec', 'contractVersion']);
 const REPAIR_RESULTS = new Set(['failed', 'passed']);
 const MAX_REPAIRS_PER_ISSUE = 2;
 const ACTIONS = Object.freeze({
@@ -28,7 +28,7 @@ const assertKnownFields = (item, fields, label) => {
   if (unknown.length) throw new Error(`${label} 不允許欄位：${unknown.join(', ')}。`);
 };
 
-export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], lastSuccessfulEvidence = null, validationContext = null }) {
+export function evaluateRepresentativeQa({ sample, checks = null, evidence = null, repairHistory = [], lastSuccessfulEvidence = null }) {
   assertKnownFields(sample, SAMPLE_FIELDS, 'representative sample');
   if (sample.version !== 1 || sample.fullDeckQaRequired !== true || sample.requiresApprovalBeforeRemaining !== true) {
     throw new Error('Representative sample shape 必須保留 version=1、approval wait 與 full-deck QA。');
@@ -54,10 +54,11 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     throw new Error('Representative sample role shape 必須是單張 both 或兩張 typical + stress。');
   }
   const sampleSet = new Set(sampleSlideIds);
-  if (validationContext != null) assertKnownFields(validationContext, VALIDATION_CONTEXT_FIELDS, 'validation context');
-  const validatedIdentity = validationContext == null
-    ? null
-    : createRepresentativeSampleIdentity({ sample, ...validationContext });
+  if (evidence !== null && checks !== null) throw new Error('Trusted evidence 與 caller-authored checks 不得同時提供。');
+  const trusted = evidence === null ? null : assertTrustedRepresentativeQaEvidence(evidence);
+  if (trusted && stableJson(sample) !== stableJson(trusted.sample)) throw new Error('Trusted evidence sample 與 hard gate sample 不一致。');
+  const validatedIdentity = trusted?.validatedIdentity ?? null;
+  checks = trusted?.checks ?? checks;
   if (!Array.isArray(checks)) throw new Error('checks 必須是陣列。');
 
   const checkByIssue = new Map();
@@ -67,12 +68,6 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     if (!CHECK_CODES.includes(check.code)) throw new Error(`${check.slideId} hard check code 不在 allowlist。`);
     if (!CHECK_STATUSES.has(check.status)) throw new Error(`${check.slideId}:${check.code} status 無效。`);
     assertSafeReference(check.evidenceRef, `${check.slideId}:${check.code}`);
-    if (validatedIdentity && check.identityFingerprint !== validatedIdentity.identityFingerprint) {
-      throw new Error(`${check.slideId}:${check.code} hard-check identity 與 validation context 不一致。`);
-    }
-    if (!validatedIdentity && check.identityFingerprint !== undefined) {
-      throw new Error(`${check.slideId}:${check.code} hard-check identity 缺少 validation context，無法驗證。`);
-    }
     const issueId = issueIdFor(check.slideId, check.code);
     if (checkByIssue.has(issueId)) throw new Error(`hard check 重複：${issueId}。`);
     checkByIssue.set(issueId, { ...check, issueId });

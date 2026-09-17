@@ -382,7 +382,7 @@ const runAtViewport = async ({ width, height }) => {
     ]);
     await cdp.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: motionMode === 'reduce' ? 'reduce' : 'no-preference' }] });
-    if (motionMode === 'static') await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: `Object.defineProperty(window,'IntersectionObserver',{value:undefined,configurable:true})` });
+    if (motionMode === 'static') await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: 'window.__PPTSKILL_FORCE_STATIC__=true' });
     const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
     await cdp.send('Page.navigate', { url: htmlUrl });
     await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
@@ -516,8 +516,8 @@ const receipt = {
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
   motionMode,
-  status: runs.every(({ issues, slideCount, pageErrors, networkFailures, httpErrors, motionTrace }) => (
-    slideCount > 0 && issues.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
+  status: runs.every(({ issues, slideCount, console: consoleMessages, pageErrors, networkFailures, httpErrors, motionTrace }) => (
+    slideCount > 0 && issues.length === 0 && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
     && motionTrace.layoutStable && motionTrace.restingVisible
     && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
     && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'

@@ -6,7 +6,7 @@ export const buildBackgroundEffectsCss = () => `
 
 export const buildBackgroundEffectsRuntimeScript = () => String.raw`<script data-pptskill-background-runtime>(()=>{
 const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>[...r.querySelectorAll(s)];
-const layers=new Map(),visibleLayers=new Set();let forcedStatic=false,observer;
+const layers=new Map(),visibleLayers=new Set();let forcedStatic=window.__PPTSKILL_FORCE_STATIC__===true,observer;
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 const reduced=()=>forcedStatic||motionPreference.matches;
 const webgl=()=>{try{const c=document.createElement('canvas');return Boolean(c.getContext('webgl2')||c.getContext('webgl'))}catch{return false}};

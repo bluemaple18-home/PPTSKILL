@@ -40,6 +40,8 @@ export async function buildDistribution({ archivePath, projectRoot = repoRoot } 
   try {
     await mkdir(resolve(bundle, 'core'), { recursive: true });
     for (const directory of ['runtime', 'contracts', 'schemas']) await cp(resolve(projectRoot, directory), resolve(bundle, 'core', directory), { recursive: true });
+    await mkdir(resolve(bundle, 'core', 'tools'), { recursive: true });
+    await cp(resolve(projectRoot, 'tools', 'browser-geometry-qa.mjs'), resolve(bundle, 'core', 'tools', 'browser-geometry-qa.mjs'));
     await mkdir(resolve(bundle, 'core', 'design', 'materials'), { recursive: true });
     for (const file of ['golden-design-grammar.v1.json', 'golden-design-grammar.md', 'motion-baseline.md']) await cp(resolve(projectRoot, 'design', 'materials', file), resolve(bundle, 'core', 'design', 'materials', file));
     await cp(resolve(projectRoot, 'design', 'visual-route-contract.md'), resolve(bundle, 'core', 'design', 'visual-route-contract.md'));

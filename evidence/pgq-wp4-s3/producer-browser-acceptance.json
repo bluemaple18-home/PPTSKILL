@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "date": "2026-09-17",
+  "artifact": "fixtures/full-deck.html",
+  "artifactSha256": "a185dea10de1c3c1f239fba2c7fd3277e4c0df9b315555df4aafa0a991e337c3",
+  "producer": "tools/browser-geometry-qa.mjs",
+  "modes": {
+    "static": {
+      "status": "pass",
+      "rawReceiptSha256": "b67d814c63d1a9aec01c71b6cced718b619651f2355ce52eedb57e4064efcd76",
+      "viewports": [
+        { "width": 1600, "height": 900, "issues": 0, "console": 0, "pageErrors": 0, "networkFailures": 0, "httpErrors": 0, "layoutStable": true, "restingVisible": true },
+        { "width": 1280, "height": 720, "issues": 0, "console": 0, "pageErrors": 0, "networkFailures": 0, "httpErrors": 0, "layoutStable": true, "restingVisible": true }
+      ]
+    },
+    "normal": {
+      "status": "pass",
+      "rawReceiptSha256": "08ca11c3c9da2b6304ee639477901b4dd6c102071ab4b70ac4749a87d0a95d5f",
+      "viewports": [
+        { "width": 1600, "height": 900, "issues": 0, "console": 0, "pageErrors": 0, "networkFailures": 0, "httpErrors": 0, "layoutStable": true, "restingVisible": true },
+        { "width": 1280, "height": 720, "issues": 0, "console": 0, "pageErrors": 0, "networkFailures": 0, "httpErrors": 0, "layoutStable": true, "restingVisible": true }
+      ]
+    }
+  }
+}

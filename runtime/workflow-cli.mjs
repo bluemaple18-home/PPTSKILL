@@ -5,6 +5,7 @@ import { preparePreflightBrief } from './preflight-brief.js';
 import { createGenerationPlan } from './generation-plan.js';
 import { evaluateRepresentativeQa } from './representative-qa-gate.js';
 import { approveRepresentativeSample } from './sample-approval.js';
+import { collectRepresentativeQaEvidence } from './representative-qa-evidence.js';
 import { renderExistingDeckWithGate, renderNewDeckWithGate } from './workflow-entry.js';
 
 const args = process.argv.slice(2);
@@ -31,7 +32,10 @@ try {
   } else if (command === 'qa-sample') {
     finish({ mode: 'representative-hard-gate', ...evaluateRepresentativeQa(await readJson('--request')) });
   } else if (command === 'approve-sample') {
-    finish({ mode: 'representative-sample-approval', ...approveRepresentativeSample(await readJson('--request')) });
+    const request = await readJson('--request');
+    if ('hardGateRequest' in request || 'qaEvidence' in request) throw new Error('approve-sample 不接受 caller-authored hard gate／evidence；請提供 --artifact。');
+    const qaEvidence = await collectRepresentativeQaEvidence({ artifactPath: valueOf('--artifact'), sample: request.sample, contractVersion: request.contractVersion });
+    finish({ mode: 'representative-sample-approval', ...approveRepresentativeSample({ ...request, qaEvidence }) });
   } else if (command === 'inspect-existing') {
     const input = valueOf('--input');
     const spec = extractDeckSpec(await readFile(input, 'utf8'));

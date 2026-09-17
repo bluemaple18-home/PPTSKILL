@@ -51,7 +51,7 @@ const planFeedback = ({ feedback, sampleIds, remainingIds }) => {
 
 export function approveRepresentativeSample({
   sample,
-  hardGateRequest,
+  qaEvidence,
   deckSpec,
   approval,
   feedback = [],
@@ -59,8 +59,7 @@ export function approveRepresentativeSample({
   currentDeckSpec = null,
   currentContractVersion = null,
 }) {
-  if (stableJson(sample) !== stableJson(hardGateRequest?.sample)) throw new Error('hard gate sample 與 approval sample 不一致。');
-  const hardGate = evaluateRepresentativeQa(hardGateRequest);
+  const hardGate = evaluateRepresentativeQa({ sample, evidence: qaEvidence });
   if (hardGate.status !== 'pass') throw new Error('Representative hard gate 必須 PASS 才能核准 sample。');
   if (!hardGate.validatedIdentity) throw new Error('Representative hard-gate identity 缺漏；不得以未綁定 DeckSpec 的 PASS 建立 freeze。');
   assertExactFields(approval, new Set(['approved', 'approvedBy', 'evidenceRef']), 'approval');
