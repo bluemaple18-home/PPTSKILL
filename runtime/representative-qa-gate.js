@@ -3,7 +3,7 @@ import { createRepresentativeSampleIdentity } from './representative-sample-iden
 
 const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_readability', 'animation_interference']);
 const CHECK_STATUSES = new Set(['pass', 'fail', 'not_run', 'unknown']);
-const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef']);
+const CHECK_FIELDS = new Set(['slideId', 'code', 'status', 'evidenceRef', 'identityFingerprint']);
 const HISTORY_FIELDS = new Set(['slideId', 'code', 'action', 'result']);
 const SAMPLE_FIELDS = new Set(['version', 'slideIds', 'entries', 'requiresApprovalBeforeRemaining', 'fullDeckQaRequired']);
 const SAMPLE_ENTRY_FIELDS = new Set(['slideId', 'role', 'reasonCodes']);
@@ -54,6 +54,10 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     throw new Error('Representative sample role shape 必須是單張 both 或兩張 typical + stress。');
   }
   const sampleSet = new Set(sampleSlideIds);
+  if (validationContext != null) assertKnownFields(validationContext, VALIDATION_CONTEXT_FIELDS, 'validation context');
+  const validatedIdentity = validationContext == null
+    ? null
+    : createRepresentativeSampleIdentity({ sample, ...validationContext });
   if (!Array.isArray(checks)) throw new Error('checks 必須是陣列。');
 
   const checkByIssue = new Map();
@@ -63,6 +67,12 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     if (!CHECK_CODES.includes(check.code)) throw new Error(`${check.slideId} hard check code 不在 allowlist。`);
     if (!CHECK_STATUSES.has(check.status)) throw new Error(`${check.slideId}:${check.code} status 無效。`);
     assertSafeReference(check.evidenceRef, `${check.slideId}:${check.code}`);
+    if (validatedIdentity && check.identityFingerprint !== validatedIdentity.identityFingerprint) {
+      throw new Error(`${check.slideId}:${check.code} hard-check identity 與 validation context 不一致。`);
+    }
+    if (!validatedIdentity && check.identityFingerprint !== undefined) {
+      throw new Error(`${check.slideId}:${check.code} hard-check identity 缺少 validation context，無法驗證。`);
+    }
     const issueId = issueIdFor(check.slideId, check.code);
     if (checkByIssue.has(issueId)) throw new Error(`hard check 重複：${issueId}。`);
     checkByIssue.set(issueId, { ...check, issueId });
@@ -100,10 +110,6 @@ export function evaluateRepresentativeQa({ sample, checks, repairHistory = [], l
     }];
   });
   const preservedLastSuccess = lastSuccessfulEvidence == null ? null : assertSafeReference(lastSuccessfulEvidence, 'lastSuccessfulEvidence');
-  if (validationContext != null) assertKnownFields(validationContext, VALIDATION_CONTEXT_FIELDS, 'validation context');
-  const validatedIdentity = validationContext == null
-    ? null
-    : createRepresentativeSampleIdentity({ sample, ...validationContext });
   const base = {
     version: 1,
     issues,

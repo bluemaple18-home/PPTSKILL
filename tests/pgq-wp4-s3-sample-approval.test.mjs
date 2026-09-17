@@ -7,6 +7,7 @@ import { join } from 'node:path';
 import { promisify } from 'node:util';
 import { approveRepresentativeSample } from '../runtime/sample-approval.js';
 import { evaluateRepresentativeQa } from '../runtime/representative-qa-gate.js';
+import { createRepresentativeSampleIdentity } from '../runtime/representative-sample-identity.js';
 import { buildDistribution } from '../tools/build-distribution.mjs';
 
 const run = promisify(execFile);
@@ -21,15 +22,19 @@ const sample = {
   fullDeckQaRequired: true,
 };
 const codes = ['content_integrity', 'geometry', 'static_readability', 'animation_interference'];
-const hardGateRequest = (status = 'pass', validatedDeckSpec = deckSpec, contractVersion = 'pgq-wp4-v1') => ({
-  sample,
-  checks: sample.slideIds.flatMap((slideId) => codes.map((code) => ({
-    slideId, code, status, evidenceRef: `evidence/${slideId}-${code}.json`,
-  }))),
-  repairHistory: [],
-  lastSuccessfulEvidence: 'evidence/sample-pass.json',
-  validationContext: { deckSpec: validatedDeckSpec, contractVersion },
-});
+const hardGateRequest = (status = 'pass', validatedDeckSpec = deckSpec, contractVersion = 'pgq-wp4-v1') => {
+  const validationContext = { deckSpec: validatedDeckSpec, contractVersion };
+  const identityFingerprint = createRepresentativeSampleIdentity({ sample, ...validationContext }).identityFingerprint;
+  return {
+    sample,
+    checks: sample.slideIds.flatMap((slideId) => codes.map((code) => ({
+      slideId, code, status, evidenceRef: `evidence/${slideId}-${code}.json`, identityFingerprint,
+    }))),
+    repairHistory: [],
+    lastSuccessfulEvidence: 'evidence/sample-pass.json',
+    validationContext,
+  };
+};
 const deckSpec = {
   schemaVersion: '1.0',
   deckId: 'sample-deck',
@@ -96,6 +101,17 @@ test('舊 PASS evidence 不得核准已變更的 sample／Style／contract state
   changedStyle.style.density = 'high';
   assert.throws(() => approveRepresentativeSample(request({ deckSpec: changedStyle })), /hard-gate.*identity|identity.*hard-gate/iu);
   assert.throws(() => approveRepresentativeSample(request({ contractVersion: 'pgq-wp4-v2' })), /hard-gate.*identity|identity.*hard-gate/iu);
+
+  const changedContextAndApproval = request({ deckSpec: changedContent });
+  changedContextAndApproval.hardGateRequest.validationContext.deckSpec = changedContent;
+  assert.throws(() => approveRepresentativeSample(changedContextAndApproval), /check.*identity|identity.*check/iu);
+
+  const missingCheckIdentity = request();
+  delete missingCheckIdentity.hardGateRequest.checks[0].identityFingerprint;
+  assert.throws(() => approveRepresentativeSample(missingCheckIdentity), /check.*identity|identity.*check/iu);
+  const mismatchedCheckIdentity = request();
+  mismatchedCheckIdentity.hardGateRequest.checks[0].identityFingerprint = '0'.repeat(64);
+  assert.throws(() => approveRepresentativeSample(mismatchedCheckIdentity), /check.*identity|identity.*check/iu);
 });
 
 test('scope planner 僅接受 bounded feedback，profile 必須明示 opt-in', () => {
@@ -169,6 +185,16 @@ test('installed approve-sample CLI 與 direct pure contract parity', async () =>
   await assert.rejects(run(process.execPath, [cli, 'approve-sample', '--request', requestPath]), (error) => {
     assert.equal(error.code, 1);
     assert.match(error.stderr, /hard-gate.*identity|identity.*hard-gate/iu);
+    return true;
+  });
+
+  const staleChecksRequest = request({ deckSpec: structuredClone(deckSpec) });
+  staleChecksRequest.deckSpec.slides[0].content.title = 'Changed with context after hard gate';
+  staleChecksRequest.hardGateRequest.validationContext.deckSpec = staleChecksRequest.deckSpec;
+  await writeFile(requestPath, JSON.stringify(staleChecksRequest));
+  await assert.rejects(run(process.execPath, [cli, 'approve-sample', '--request', requestPath]), (error) => {
+    assert.equal(error.code, 1);
+    assert.match(error.stderr, /check.*identity|identity.*check/iu);
     return true;
   });
   for (const adapter of ['.codex', '.claude', '.gemini']) {
