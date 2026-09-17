@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1 COMPLETE、Slice 2 READY FOR INDEPENDENT REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1 COMPLETE、Slice 2 REPAIR 1 READY FOR INDEPENDENT RE-REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 

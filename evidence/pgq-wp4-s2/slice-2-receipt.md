@@ -1,6 +1,6 @@
 # PGQ-WP4 Slice 2 Receipt — Representative Hard Gate and Repair Budget
 
-**Verdict:** CANDIDATE READY FOR INDEPENDENT REVIEW
+**Verdict:** REPAIR 1 READY FOR INDEPENDENT RE-REVIEW
 
 **Branch:** `codex/pgq-wp4-s2`
 

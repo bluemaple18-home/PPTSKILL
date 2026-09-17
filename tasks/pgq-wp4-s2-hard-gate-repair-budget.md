@@ -1,6 +1,6 @@
 # PGQ-WP4-S2 — Representative Hard Gate and Repair Budget
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** READY FOR INDEPENDENT RE-REVIEW
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
