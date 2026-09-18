@@ -1,6 +1,6 @@
 # PGQ-WP4 Slice 4 Candidate Receipt
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **Range:** `e9172136..HEAD`
 
 ## Delivered contract
@@ -71,6 +71,8 @@
 - Fix：canonical raster signal 新增 absolute page-space slide box與 target clip；candidate screenshot固定取 canonical page clip，並獨立比較 slide page position／size。位置 tolerance 0.5%，尺寸 tolerance 1%；超界分別為 `slide_position_mismatch`／`slide_size_mismatch`。Target-level position／size及既有 pixel visibility authority不變。
 - GREEN：`proof` 只產生 `animation_interference` issue；`metrics` target-only transform仍為 `position_mismatch`，既有 normal-only invisibility、opacity、clip、ancestor filter、partial clip、contrast與 missing identity probes全數精準。Focused browser regression PASS；full regression 211/211；ZIP lifecycle PASS。Implementation commit `1acdeb8`；ZIP 2,148,747 bytes，SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。
 
-## Independent review request
+## Independent review result
 
-唯讀 review `e9172136..HEAD`，核對本 receipt 與 task card。重跑必要 focused／WP4 compatibility／full／managed browser／ZIP gates；特別對抗 partial coverage、sample shortcut、caller-authored PASS／identity、stale Layer-2/3 identity、無引用 advisory、accepted-risk 未獲 human 涵蓋，以及 repair budget 被 layer／sample/full-deck 重置。輸出 GO 或可重現 findings；不要 repair、merge、push、deploy，也不要開 EDX／Slice 5。
+- Codex Native3 對鎖定 candidate `5ede238311ddaf83c1ee4055761f7a73ed5ad6db` 完成唯讀 re-review並給出 **GO — PGQ-WP4 Slice 4**。
+- Branch `codex/pgq-wp4-s4`、tracked-clean worktree與既有四個 untracked files均核對一致；review過程未 repair、merge、push，也未開 EDX／Slice 5。
+- Slice 4 COMPLETE，允許由 Mainline執行本地 integration；remote publication仍需另行授權。

@@ -790,7 +790,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 9. Owner-approved pre-generation upgrade — PGQ-20260914
 
-**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 Slice 1～3 COMPLETE、Slice 4 READY FOR INDEPENDENT REVIEW；EDX dependency spikes may run，formal editor integration NOT STARTED
+**Status:** INCREMENTAL DELIVERY — PGQ-WP1 COMPLETE（Slice 1 + Slice 2）；PGQ-WP2 COMPLETE（Slice 1～4）；PGQ-WP3 COMPLETE（Slice 1～3；無 measured gap 支持 Slice 4）；PGQ-WP4 COMPLETE（Slice 1～4；無 measured gap 支持 Slice 5）；EDX dependency spikes may run，formal editor integration NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE  
 **Decision trace and acceptance:** [前期品質強化整合](research/donors/html-slide-builder-oss/pre-generation-integration.md)（PGQ-D01～D16；7 個責任區；4 個工作包）。
 
@@ -834,7 +834,9 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 4 task：** `tasks/pgq-wp4-s4-three-layer-full-deck-qa.md`。Measured gap 是 G7 尚缺 Layer-2 有引用理由的結構／閱讀 advisory、綁定同一 identity 的 Layer-3 Owner confirmation，以及不可由 sample shortcut 的逐頁 full-deck release gate。只重用 Slice 1～3 trusted producer／identity／repair budget／freeze；不新增 QA service、任意 score、自動改文或 renderer primitive。
 
-**PGQ-WP4 Slice 4 candidate receipt：** `evidence/pgq-wp4-s4/slice-4-candidate-receipt.md`。`qa-full-deck` 已由 packaged Chrome producer 對每張 canonical slide 建立 Layer-1 coverage；Layer-2 review 必須綁定 current identity 並引用 trusted evidence，Layer-3 human confirmation 與 accepted-risk 亦綁定同一 identity。Sample shortcut、caller-authored PASS／coverage、stale confirmation、無引用 advisory 與 repair-budget reset 均 fail closed。第三次 visibility bypass 後，Owner 授權將 final authority 升級為同 renderer／viewport／DPR／font／final-state 的 canonical-vs-candidate per-target raster signal；computed style／hit-test 只作 precheck。Repair 4 把 normal resting frame納入同一 authority；Repair 5 固定 canonical slide-relative raster coordinates並加入 normalized target-box authority；Repair 6 再以 absolute canonical page clip與 slide page-box authority阻止整張 candidate slide位移時 capture 跟隨。Visibility、contrast、clip、missing identity、normal-only hidden、target transform與slide-root transform probes均精準 fail。Full 211/211、fresh ZIP lifecycle PASS；等待 independent re-review。
+**PGQ-WP4 Slice 4 closure receipt：** `evidence/pgq-wp4-s4/slice-4-candidate-receipt.md`。`qa-full-deck` 已由 packaged Chrome producer 對每張 canonical slide 建立 Layer-1 coverage；Layer-2 review 必須綁定 current identity 並引用 trusted evidence，Layer-3 human confirmation 與 accepted-risk 亦綁定同一 identity。Sample shortcut、caller-authored PASS／coverage、stale confirmation、無引用 advisory 與 repair-budget reset 均 fail closed。第三次 visibility bypass 後，Owner 授權將 final authority 升級為同 renderer／viewport／DPR／font／final-state 的 canonical-vs-candidate per-target raster signal；computed style／hit-test 只作 precheck。Repair 4 把 normal resting frame納入同一 authority；Repair 5 固定 canonical slide-relative raster coordinates並加入 normalized target-box authority；Repair 6 再以 absolute canonical page clip與 slide page-box authority阻止整張 candidate slide位移時 capture 跟隨。Visibility、contrast、clip、missing identity、normal-only hidden、target transform與slide-root transform probes均精準 fail。Full 211/211、fresh ZIP lifecycle PASS；Codex Native3 independent re-review GO，Slice 4 COMPLETE。
+
+**PGQ-WP4 completion decision：** Slice 1～4 已依序閉環 deterministic Typical／Stress sample、hard gate與共用 repair budget、human approval freeze／scope-aware feedback／affected-only invalidation，以及不可由 sample shortcut 的三層逐頁 full-deck QA。G7／PGQ-D05/D09/D11 已具可重播 evidence；未發現需要 Slice 5 的 measured gap，因此 WP4 COMPLETE。EDX 保持未開始，須另行決策。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|

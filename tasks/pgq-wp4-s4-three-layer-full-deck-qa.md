@@ -1,6 +1,6 @@
 # PGQ-WP4-S4 — Three-Layer Readability and Full-Deck QA Closure
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -37,7 +37,7 @@
 ## Blocking edges / checkpoint
 
 - 已滿足：PGQ-WP4 Slice 1～3 COMPLETE 且 independent review GO；trusted producer、stable identity、repair budget 與 sample freeze 可重用。
-- Frontier：本卡是 G7／WP4 completion candidate；只有驗收與 independent review GO 後，才能判斷 WP4 COMPLETE。
+- Frontier：已關閉。G7／WP4 completion candidate 已完成驗收並取得 independent review GO；不需要另開 Slice 5。
 - Checkpoint：不預設 Slice 5。若實作發現必須新增 renderer primitive、任意 LLM judge、第二套 evidence store 或自動內容 mutation，停止並回 Mainline 重切，不把 scope 塞入本卡。
 
 ## Likely files
@@ -69,7 +69,7 @@
 - Managed local Chrome 由 trusted producer 跑 static／reduced／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。Static／reduced 的 required-target visibility 最終權威為同 renderer、viewport、DPR、font 與 final-state 條件下的 canonical/candidate raster signal；DOM/style/hit-test 只保留 cheap precheck。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
 - Fresh ZIP install/smoke/uninstall PASS；2,148,747 bytes；SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。
-- Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
+- Syntax 與 branch-range `git diff --check` PASS；Codex Native3 independent re-review 對鎖定 HEAD `5ede238311ddaf83c1ee4055761f7a73ed5ad6db` 給出 GO。Slice 4 COMPLETE；不開 EDX 或後續 Slice。
 
 ## Review repair 1
 
