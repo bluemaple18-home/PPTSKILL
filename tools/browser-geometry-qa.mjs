@@ -90,12 +90,12 @@ class CdpClient {
   close() { this.socket.close(); }
 }
 
-const navigateAndSettle = async (cdp, url, { forceFinal = false } = {}) => {
+const navigateAndSettle = async (cdp, url, { forceFinal = false, restingMotion = false } = {}) => {
   const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
   await cdp.send('Page.navigate', { url });
   await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
   const settled = await cdp.send('Runtime.evaluate', {
-    expression: `(async()=>{await document.fonts.ready;if(${forceFinal}){window.PPTSKILLMotion?.forceStatic();window.PPTSKILLBackground?.forceStatic();document.querySelectorAll('.motion-root').forEach(root=>root.classList.add('is-visible'))}await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));return true})()`,
+    expression: `(async()=>{await document.fonts.ready;if(${forceFinal}){window.PPTSKILLMotion?.forceStatic();window.PPTSKILLBackground?.forceStatic();document.querySelectorAll('.motion-root').forEach(root=>root.classList.add('is-visible'))}else if(${restingMotion}){window.PPTSKILLBackground?.forceStatic();document.querySelectorAll('.motion-root').forEach(root=>root.classList.add('is-visible'));await new Promise(resolve=>setTimeout(resolve,1300))}await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));return true})()`,
     awaitPromise: true,
     returnByValue: true,
   });
@@ -622,15 +622,13 @@ const runAtViewport = async ({ width, height }) => {
       };
     }
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
-    let rasterVisibility = [];
-    if (motionMode === 'static' || motionMode === 'reduce') {
-      await navigateAndSettle(cdp, canonicalUrl, { forceFinal: true });
-      const canonicalSignals = await collectRasterSignals(cdp);
-      await navigateAndSettle(cdp, htmlUrl, { forceFinal: true });
-      const identities = canonicalSignals.map(({ slideId, target }) => ({ slideId, target }));
-      const candidateSignals = await collectRasterSignals(cdp, identities);
-      rasterVisibility = compareRasterSignals(candidateSignals, canonicalSignals);
-    }
+    const rasterSettle = motionMode === 'normal' ? { restingMotion: true } : { forceFinal: true };
+    await navigateAndSettle(cdp, canonicalUrl, rasterSettle);
+    const canonicalSignals = await collectRasterSignals(cdp);
+    await navigateAndSettle(cdp, htmlUrl, rasterSettle);
+    const identities = canonicalSignals.map(({ slideId, target }) => ({ slideId, target }));
+    const candidateSignals = await collectRasterSignals(cdp, identities);
+    const rasterVisibility = compareRasterSignals(candidateSignals, canonicalSignals);
     if (screenshotPath && width === 1280 && height === 720) {
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       await writeFile(resolve(screenshotPath), Buffer.from(screenshot.data, 'base64'));
@@ -713,7 +711,7 @@ const gates = {
   runtime: runs.every(runtimePass) ? 'pass' : 'fail',
   contentIntegrity: runs.every(contentPass) ? 'pass' : 'fail',
   requiredVisibility: runs.every(requiredVisibilityPass) ? 'pass' : 'fail',
-  rasterVisibility: motionMode === 'normal' ? 'not_applicable' : runs.every(rasterVisibilityPass) ? 'pass' : 'fail',
+  rasterVisibility: runs.every(rasterVisibilityPass) ? 'pass' : 'fail',
   geometry: runs.every(({ issues }) => issues.length === 0) ? 'pass' : 'fail',
   motion: runs.every(motionPass) ? 'pass' : 'fail',
 };

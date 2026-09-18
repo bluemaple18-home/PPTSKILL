@@ -99,7 +99,7 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
     content_integrity: `${basename(resolvedArtifact)}#trusted-browser-static+reduce+normal`,
     geometry: `${basename(resolvedArtifact)}#trusted-browser-static+reduce+normal`,
     static_readability: `${basename(resolvedArtifact)}#trusted-browser-static+reduce-raster`,
-    animation_interference: `${basename(resolvedArtifact)}#trusted-browser-static+reduce-raster+normal-motion`,
+    animation_interference: `${basename(resolvedArtifact)}#trusted-browser-normal-raster+motion`,
   });
   const contentPass = (slideId) => FULL_DECK_MODES.every((mode) => receipts[mode].runs.every((receiptRun) => (
     Array.isArray(receiptRun.contentIntegrity) && receiptRun.contentIntegrity.length === slideIds.length
@@ -118,7 +118,7 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
     const status = code === 'content_integrity'
       ? contentPass(slideId) ? 'pass' : 'fail'
       : code === 'static_readability' ? ['static', 'reduce'].every((mode) => geometryPass(mode, slideId) && rasterVisibilityPass(mode, slideId)) ? 'pass' : 'fail'
-        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' && ['static', 'reduce'].every((mode) => rasterVisibilityPass(mode, slideId)) ? 'pass' : 'fail'
+        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' && rasterVisibilityPass('normal', slideId) ? 'pass' : 'fail'
           : FULL_DECK_MODES.every((mode) => geometryPass(mode, slideId)) ? 'pass' : 'fail';
     return { slideId, code, status, evidenceRef: evidenceRefs[code] };
   }));
