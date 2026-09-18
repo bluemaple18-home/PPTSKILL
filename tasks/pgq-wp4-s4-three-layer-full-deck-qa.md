@@ -1,6 +1,6 @@
 # PGQ-WP4-S4 — Three-Layer Readability and Full-Deck QA Closure
 
-**Status:** READY FOR IMPLEMENTATION
+**Status:** READY FOR INDEPENDENT REVIEW
 **traces_to:** `PGQ-D05`, `PGQ-D09`, `PGQ-D11`
 
 ## Objective
@@ -62,3 +62,11 @@
 - Managed Chrome：static／normal × supported viewports；console、pageerror、network、HTTP、geometry、content integrity、motion interference 與 lifecycle cleanup。
 - PGQ targeted、full suite、fresh ZIP install/smoke/uninstall、syntax、`git diff --check`。
 
+## Candidate result
+
+- Implementation commit：`807f805`；task／frontier commit：`499abf9`。
+- Focused Slice 4：7/7 PASS；WP4 Slice 1～4 compatibility：27/27 PASS；full regression：210/210 PASS。
+- Managed local Chrome 由 trusted producer 跑 static／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。
+- 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
+- Fresh ZIP install/smoke/uninstall PASS；2,145,775 bytes；SHA-256 `91e82099911ecdc8608827e65c5e85d097eca15300024397a64e90ae9018c904`。
+- Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
