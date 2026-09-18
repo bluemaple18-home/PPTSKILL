@@ -1,7 +1,7 @@
 # PGQ-WP4 Slice 4 Candidate Receipt
 
 **Status:** READY FOR INDEPENDENT REVIEW
-**Range:** `e9172136..807f805`（另含本 receipt closure commit）
+**Range:** `e9172136..d39fbe9`（另含本 receipt 更新 commit）
 
 ## Delivered contract
 
@@ -13,13 +13,13 @@
 
 ## Verification evidence
 
-- Focused Slice 4：7/7 PASS。
-- WP4 Slice 1～4 compatibility：27/27 PASS。
-- Full regression：210/210 PASS。
+- Focused Slice 4：8/8 PASS。
+- WP4 Slice 1～4 compatibility：28/28 PASS。
+- Full regression：211/211 PASS。
 - Managed local Chrome：static／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,145,775 bytes（低於 20 MiB）；SHA-256 `91e82099911ecdc8608827e65c5e85d097eca15300024397a64e90ae9018c904`。
+- ZIP：2,146,182 bytes（低於 20 MiB）；SHA-256 `48e415b9e60027a9d02f0a098ff8aa0f9906218ff889d65759a1dab5d5013837`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -27,6 +27,13 @@
 - 無 QA service、DB、ledger、workflow engine、任意 AI score、profile write、renderer primitive 或自動內容 mutation。
 - 無 WP1～WP3 reopen、EDX、Slice 5、merge、push、deploy。
 - 原有 `.DS_Store`、`CLAUDE.md` 與兩份 HANDOFF untracked files 未動。
+
+## Review repair 1
+
+- Finding：CSS 可將非首張 required title 設為 `opacity:0`，舊 geometry 與 global motion gate 仍可能全部 PASS。
+- RED：`tests/pgq-wp4-s4-required-visibility.test.mjs` 初次執行為 `Missing expected rejection`。
+- Fix：browser producer 逐頁比對 canonical `data-edit-target`，檢查 target 及 ancestor 的 display／visibility／opacity／box，並輸出 `requiredVisibility`；full-deck mapper 分別把 static 與 normal visibility 綁到該頁 hard checks。
+- GREEN：同一 hidden `decision` title 使 browser receipt fail，且 full-deck decision 只回該頁 `static_readability`、`animation_interference` issues；Focused 8/8、WP4 28/28、Full 211/211、fresh ZIP lifecycle PASS。
 
 ## Independent review request
 

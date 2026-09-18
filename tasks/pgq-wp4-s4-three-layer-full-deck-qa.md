@@ -65,8 +65,15 @@
 ## Candidate result
 
 - Implementation commit：`807f805`；task／frontier commit：`499abf9`。
-- Focused Slice 4：7/7 PASS；WP4 Slice 1～4 compatibility：27/27 PASS；full regression：210/210 PASS。
+- Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
 - Managed local Chrome 由 trusted producer 跑 static／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,145,775 bytes；SHA-256 `91e82099911ecdc8608827e65c5e85d097eca15300024397a64e90ae9018c904`。
+- Fresh ZIP install/smoke/uninstall PASS；2,146,182 bytes；SHA-256 `48e415b9e60027a9d02f0a098ff8aa0f9906218ff889d65759a1dab5d5013837`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
+
+## Review repair 1
+
+- 前次 P1 證明 hidden required title 會被舊 `visible()` 排除，且 global motion PASS 被複製到各頁。Producer 現從 canonical render 列出每張 slide 的 required `data-edit-target`，沿 element→slide ancestor chain 驗證 `display`／`visibility`／effective opacity 與 non-zero box，輸出逐頁 `requiredVisibility` evidence。
+- Static readability 只在該頁 geometry 與 static required targets 全 PASS 時通過；animation interference 另要求 normal required targets 與 motion runtime PASS，不再只有 global motion verdict。
+- 原始 `#decision [data-effect-title]{opacity:0!important}` probe 先重現 `Missing expected rejection`，修後 browser receipt `requiredVisibility=fail`，full-deck decision 對該頁回 `static_readability`＋`animation_interference` repair；其他頁不受影響。
+- Repair commit：`d39fbe9`；更新後 gates 如上，等待 independent re-review。
