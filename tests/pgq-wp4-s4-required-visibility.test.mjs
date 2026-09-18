@@ -15,7 +15,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 test('每張 canonical slide 的 required title 必須有 painted visibility', async () => {
   const source = await readFile(join(root, 'fixtures', 'full-deck.html'), 'utf8');
   const tampered = source
-    .replace('</head>', '<style>html:not(.motion-static) #problem [data-effect-title]{filter:opacity(0)!important}html:not(.motion-static) #metrics [data-effect-title]{transform:translateX(400px)!important}#decision [data-effect-title]{opacity:0!important}#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}#portable{filter:opacity(0)!important}#evidence [data-effect-title]{clip-path:inset(0 0 60% 0)!important}#workflow [data-effect-title]{opacity:.2!important}</style></head>')
+    .replace('</head>', '<style>html:not(.motion-static) #problem [data-effect-title]{filter:opacity(0)!important}html:not(.motion-static) #proof{transform:translateX(400px)!important}html:not(.motion-static) #metrics [data-effect-title]{transform:translateX(400px)!important}#decision [data-effect-title]{opacity:0!important}#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}#portable{filter:opacity(0)!important}#evidence [data-effect-title]{clip-path:inset(0 0 60% 0)!important}#workflow [data-effect-title]{opacity:.2!important}</style></head>')
     .replace('data-edit-target="slides.transition.content.title"', 'data-removed-edit-target="slides.transition.content.title"');
   const temporary = await mkdtemp(join(tmpdir(), 'pptskill-required-visibility-'));
   const artifact = join(temporary, 'hidden-title.html');
@@ -64,6 +64,10 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
         item.slideId === 'metrics' && item.target === 'slides.metrics.content.title'
           && item.status === 'fail' && item.classification === 'position_mismatch'
       ))));
+      assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => (
+        item.slideId === 'proof' && item.target === 'slides.proof.content.title'
+          && item.status === 'fail' && item.classification === 'slide_position_mismatch'
+      ))));
       return true;
     },
   );
@@ -72,6 +76,7 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
   assert.equal(decision.status, 'repair');
   assert.deepEqual(decision.layer1.issues.map(({ slideId, code }) => [slideId, code]), [
     ['problem', 'animation_interference'],
+    ['proof', 'animation_interference'],
     ['metrics', 'animation_interference'],
     ['workflow', 'static_readability'],
     ['workflow', 'animation_interference'],
