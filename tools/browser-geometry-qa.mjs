@@ -112,6 +112,21 @@ const geometryExpression = String.raw`(async () => {
     return null;
   };
   const visible = (element) => visibilityFailure(element, element.closest('.slide')) === null;
+  const paintedCoverage = (element) => {
+    const rect = element.getBoundingClientRect();
+    const fractions = [0.2, 0.5, 0.8];
+    let sampled = 0;
+    let painted = 0;
+    for (const xFraction of fractions) for (const yFraction of fractions) {
+      const x = rect.left + rect.width * xFraction;
+      const y = rect.top + rect.height * yFraction;
+      if (x < 0 || y < 0 || x >= innerWidth || y >= innerHeight) continue;
+      sampled += 1;
+      const hit = document.elementFromPoint(x, y);
+      if (hit && (hit === element || element.contains(hit))) painted += 1;
+    }
+    return { sampled, painted, ratio: sampled ? painted / sampled : 0 };
+  };
   const box = (element) => {
     const rect = element.getBoundingClientRect();
     return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height };
@@ -152,15 +167,22 @@ const geometryExpression = String.raw`(async () => {
       reason: expectedHtml === null ? 'canonical_slide_missing' : actualHtml === expectedHtml ? null : 'rendered_content_mismatch',
     };
   });
-  const requiredVisibility = slides.flatMap((slide) => {
+  const requiredVisibility = [];
+  for (const slide of slides) {
+    slide.scrollIntoView({ block: 'center', inline: 'center' });
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     const expected = canonicalDocument.querySelector('.slide[data-slide-id="' + CSS.escape(slide.dataset.slideId) + '"]');
     const expectedTargets = expected ? [...new Set([...expected.querySelectorAll('[data-edit-target]')].map((element) => element.getAttribute('data-edit-target')))] : [];
     const actualTargets = new Map([...slide.querySelectorAll('[data-edit-target]')].map((element) => [element.getAttribute('data-edit-target'), element]));
-    return expectedTargets.map((target) => {
-      const reason = visibilityFailure(actualTargets.get(target), slide);
-      return { slideId: slide.dataset.slideId, target, status: reason ? 'fail' : 'pass', reason };
-    });
-  });
+    for (const target of expectedTargets) {
+      const element = actualTargets.get(target);
+      let reason = visibilityFailure(element, slide);
+      const coverage = reason ? null : paintedCoverage(element);
+      if (!reason && (coverage.sampled < 5 || coverage.ratio < 0.5)) reason = 'painted_area_insufficient';
+      requiredVisibility.push({ slideId: slide.dataset.slideId, target, status: reason ? 'fail' : 'pass', reason, paintedCoverage: coverage });
+    }
+  }
+  scrollTo(0, 0);
   for (const slide of slides) {
     const slideBox = box(slide);
     if (slideBox.width > innerWidth + 1 || slideBox.height > innerHeight + 1) {

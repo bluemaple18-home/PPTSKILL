@@ -12,9 +12,9 @@ import { collectFullDeckQaEvidence } from '../runtime/representative-qa-evidence
 const run = promisify(execFile);
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-test('每張 canonical slide 的 required title 在 static mode 不可被 CSS 隱藏', async () => {
+test('每張 canonical slide 的 required title 必須有 painted visibility', async () => {
   const source = await readFile(join(root, 'fixtures', 'full-deck.html'), 'utf8');
-  const tampered = source.replace('</head>', '<style>#decision [data-effect-title]{opacity:0!important}</style></head>');
+  const tampered = source.replace('</head>', '<style>#decision [data-effect-title]{opacity:0!important}#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}</style></head>');
   const temporary = await mkdtemp(join(tmpdir(), 'pptskill-required-visibility-'));
   const artifact = join(temporary, 'hidden-title.html');
   await writeFile(artifact, tampered);
@@ -27,6 +27,9 @@ test('每張 canonical slide 的 required title 在 static mode 不可被 CSS �
       assert.ok(receipt.runs.every(({ requiredVisibility }) => requiredVisibility.some(({ slideId, target, status }) => (
         slideId === 'decision' && target === 'slides.decision.content.title' && status === 'fail'
       ))));
+      assert.ok(receipt.runs.every(({ requiredVisibility }) => requiredVisibility.some(({ slideId, target, status }) => (
+        slideId === 'guardrails' && target === 'slides.guardrails.content.title' && status === 'fail'
+      ))));
       return true;
     },
   );
@@ -34,6 +37,8 @@ test('每張 canonical slide 的 required title 在 static mode 不可被 CSS �
   const decision = evaluateFullDeckQa({ evidence });
   assert.equal(decision.status, 'repair');
   assert.deepEqual(decision.layer1.issues.map(({ slideId, code }) => [slideId, code]), [
+    ['guardrails', 'static_readability'],
+    ['guardrails', 'animation_interference'],
     ['decision', 'static_readability'],
     ['decision', 'animation_interference'],
   ]);
