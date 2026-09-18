@@ -1,7 +1,7 @@
 # PGQ-WP4 Slice 4 Candidate Receipt
 
 **Status:** READY FOR INDEPENDENT REVIEW
-**Range:** `e9172136..fe255b1`（另含本 receipt 更新 commit）
+**Range:** `e9172136..HEAD`
 
 ## Delivered contract
 
@@ -16,10 +16,10 @@
 - Focused Slice 4：8/8 PASS。
 - WP4 Slice 1～4 compatibility：28/28 PASS。
 - Full regression：211/211 PASS。
-- Managed local Chrome：static／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
+- Managed local Chrome：static／reduced／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,146,485 bytes（低於 20 MiB）；SHA-256 `b324f839df79bbc9ab5d9e8fe0d65130cb531d59225cce6d938598511039dcb6`。
+- ZIP：2,148,248 bytes（低於 20 MiB）；SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -41,6 +41,14 @@
 - RED：同一 browser test 加入 `#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}`，receipt 未把該 target 判 fail。
 - Fix：每張 slide scroll 入 viewport 後，以 3×3 `elementFromPoint` painted-area sampling 驗證 canonical targets；有效 samples <5 或 coverage <50% fail closed。Opacity probe 與 clip-path probe 同時保留。
 - GREEN：兩個 targets 分別只使自己的 static readability／normal animation interference 失敗；WP4 28/28 PASS。Full suite 的並行 Chrome 啟動曾出現單一 DevTools port 環境競爭，該檔單獨 7/7 PASS；改用 serial browser lifecycle 後完整 211/211 PASS。
+
+## Review repair 3 — raster visibility authority
+
+- Finding：ancestor `filter: opacity(0)` 不改 element box、computed opacity 或 hit-test，Repair 2 仍會把整張不可見 slide 判 PASS。這是 acceptance model 缺口，不再追加 CSS 特例。
+- RED：在既有 adversarial browser test 加入 `#portable{filter:opacity(0)!important}`，新契約要求的 `rasterVisibility` gate 不存在而 FAIL。
+- Fix：static／reduced 模式在同一 Chrome、renderer、viewport、DPR=1、font-ready、forced-final 條件下，依 canonical `data-edit-target` 逐 target 比較 normal raster 與 target-only hidden raster，再以 canonical 同 target signal 校準 candidate coverage/energy。DOM/style/hit-test 保留 precheck，不再是 final authority；normal 只負責 motion 行為，final-state 可見性不再由 global role snapshot 代替逐頁 evidence。
+- Classification：近零 signal=`fully_invisible`；coverage ratio `<0.60`=`partially_occluded`；energy ratio `<0.40`=`insufficient_contrast`；canonical identity 在 candidate 缺失=`required_target_missing`；每 channel delta `<12` 當作 AA/subpixel noise。Test 同時驗證 opacity、clip-path、ancestor filter、partial clip、低 opacity 與 target identity removal，且只標記實際受影響頁。
+- GREEN：Focused 8/8、WP4 compatibility 28/28、PGQ targeted 94/94、full regression 211/211 PASS；fresh ZIP install/smoke/uninstall PASS，2,148,248 bytes，SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
 
 ## Independent review request
 

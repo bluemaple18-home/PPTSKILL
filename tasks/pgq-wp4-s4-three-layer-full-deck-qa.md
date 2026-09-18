@@ -66,9 +66,9 @@
 
 - Implementation commit：`807f805`；task／frontier commit：`499abf9`。
 - Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
-- Managed local Chrome 由 trusted producer 跑 static／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。
+- Managed local Chrome 由 trusted producer 跑 static／reduced／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。Static／reduced 的 required-target visibility 最終權威為同 renderer、viewport、DPR、font 與 final-state 條件下的 canonical/candidate raster signal；DOM/style/hit-test 只保留 cheap precheck。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,146,485 bytes；SHA-256 `b324f839df79bbc9ab5d9e8fe0d65130cb531d59225cce6d938598511039dcb6`。
+- Fresh ZIP install/smoke/uninstall PASS；2,148,248 bytes；SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
 
 ## Review repair 1
@@ -84,3 +84,10 @@
 - Producer 現逐頁 scroll 至 viewport，對每個 canonical target 以 3×3 browser hit-test 取樣；少於 5 個有效 samples 或 painted coverage 低於 50% 即 `painted_area_insufficient`。這同時受 ancestor visibility、clip-path、stacking/cover 與 non-zero box 約束。
 - 同一 probe 同時保留 `decision opacity:0` 與新增 `guardrails clip-path`；RED 為 clip target 未出現 fail，修後兩頁在 static／normal 各自精準產生 readability／animation issues，正常 deck 不誤殺。
 - Repair commit：`fe255b1`。WP4 compatibility 28/28 PASS；full regression 以 serial browser lifecycle 211/211 PASS（並行跑曾有單一 Chrome DevTools port 啟動競爭，該檔單獨 7/7 PASS）；等待 independent re-review。
+
+## Review repair 3 — raster visibility authority
+
+- 第三次 P1 證明 `filter: opacity(0)` 仍可保留 layout、computed opacity 與 hit-test，property enumeration 已不足以作 final visibility authority。Owner 明示授權只在 Slice 4 acceptance contract 內升級，不新增 renderer、service、canonical truth、Slice 5 或 EDX。
+- Producer 在同一 Chrome、renderer、viewport、DPR=1、font-ready 與 deterministic static/reduced final state，依 canonical `data-edit-target` identity 對每個 required target 各取 normal raster 與僅隱藏該 target 的 raster；兩者差值量化 target 實際 pixel contribution，再與 canonical render 的同 target signal 比較。每 channel delta `<12` 視為 AA/subpixel noise；candidate coverage `<60%` 分類 `partially_occluded`，energy `<40%` 分類 `insufficient_contrast`，signal 接近零分類 `fully_invisible`。
+- `static_readability` 現要求 static＋reduced 每頁 raster PASS；`animation_interference` 要求同一 final-state raster PASS 加 normal motion PASS。Normal motion 不再把 global resting-visibility verdict 複製為每頁結果。
+- 同一 browser test 保留 `opacity:0`、full clip-path、ancestor `filter:opacity(0)`，另加入 partial clip、低 opacity 與 canonical identity 缺失 probes；六張受影響頁各自產生精準 repair，其餘頁不受污染。Focused 8/8、WP4 compatibility 28/28、PGQ targeted 94/94、full regression 211/211 PASS。
