@@ -1,6 +1,6 @@
 import { access, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
-import { basename, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import { extractDeckSpec } from '../runtime/deck-spec.js';
@@ -89,6 +89,84 @@ class CdpClient {
   }
   close() { this.socket.close(); }
 }
+
+const navigateAndSettle = async (cdp, url, { forceFinal = false } = {}) => {
+  const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
+  await cdp.send('Page.navigate', { url });
+  await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
+  const settled = await cdp.send('Runtime.evaluate', {
+    expression: `(async()=>{await document.fonts.ready;if(${forceFinal}){window.PPTSKILLMotion?.forceStatic();window.PPTSKILLBackground?.forceStatic();document.querySelectorAll('.motion-root').forEach(root=>root.classList.add('is-visible'))}await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));return true})()`,
+    awaitPromise: true,
+    returnByValue: true,
+  });
+  if (settled.exceptionDetails) throw new Error(settled.exceptionDetails.text);
+};
+
+const rasterMetric = async (cdp, normalData, hiddenData) => {
+  const measured = await cdp.send('Runtime.evaluate', {
+    expression: `(async()=>{const decode=source=>new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{const canvas=document.createElement('canvas');canvas.width=image.width;canvas.height=image.height;const context=canvas.getContext('2d',{willReadFrequently:true});context.drawImage(image,0,0);resolve(context.getImageData(0,0,image.width,image.height))};image.onerror=reject;image.src=source});const [normal,hidden]=await Promise.all([decode(${JSON.stringify(`data:image/png;base64,${normalData}`)}),decode(${JSON.stringify(`data:image/png;base64,${hiddenData}`)})]);const length=Math.min(normal.data.length,hidden.data.length);let changedPixels=0,energy=0;for(let index=0;index<length;index+=4){const delta=Math.max(Math.abs(normal.data[index]-hidden.data[index]),Math.abs(normal.data[index+1]-hidden.data[index+1]),Math.abs(normal.data[index+2]-hidden.data[index+2]));if(delta>=12){changedPixels+=1;energy+=delta}}return{width:normal.width,height:normal.height,totalPixels:Math.floor(length/4),changedPixels,energy}})()`,
+    awaitPromise: true,
+    returnByValue: true,
+  });
+  if (measured.exceptionDetails) throw new Error(measured.exceptionDetails.text);
+  return measured.result.value;
+};
+
+const collectRasterSignals = async (cdp, expectedIdentities = null) => {
+  let identities = expectedIdentities;
+  if (!identities) {
+    const targetsResult = await cdp.send('Runtime.evaluate', {
+      expression: `(()=>[...document.querySelectorAll('.slide')].flatMap(slide=>[...slide.querySelectorAll('[data-edit-target]')].map(element=>({slideId:slide.dataset.slideId,target:element.dataset.editTarget}))))()`,
+      returnByValue: true,
+    });
+    if (targetsResult.exceptionDetails) throw new Error(targetsResult.exceptionDetails.text);
+    identities = targetsResult.result.value;
+  }
+  const signals = [];
+  for (const identity of identities) {
+    const prepared = await cdp.send('Runtime.evaluate', {
+      expression: `(async()=>{const slide=document.querySelector('.slide[data-slide-id='+JSON.stringify(${JSON.stringify(identity.slideId)})+']');const element=slide?.querySelector('[data-edit-target='+JSON.stringify(${JSON.stringify(identity.target)})+']');if(!element)return null;slide.scrollIntoView({block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const rect=element.getBoundingClientRect();window.__pptskillRasterRestore={element,style:element.getAttribute('style')};return{x:Math.max(0,Math.floor(rect.left+scrollX)),y:Math.max(0,Math.floor(rect.top+scrollY)),width:Math.max(1,Math.ceil(rect.width)),height:Math.max(1,Math.ceil(rect.height))}})()`,
+      awaitPromise: true,
+      returnByValue: true,
+    });
+    if (prepared.exceptionDetails) throw new Error(prepared.exceptionDetails.text);
+    const clip = prepared.result.value;
+    if (!clip) {
+      signals.push({ ...identity, status: 'fail', classification: 'required_target_missing' });
+      continue;
+    }
+    const normal = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { ...clip, scale: 1 } });
+    await cdp.send('Runtime.evaluate', { expression: `(()=>{window.__pptskillRasterRestore.element.style.setProperty('visibility','hidden','important');return document.body.offsetWidth})()` });
+    const hidden = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { ...clip, scale: 1 } });
+    await cdp.send('Runtime.evaluate', { expression: `(()=>{const saved=window.__pptskillRasterRestore;if(saved.style===null)saved.element.removeAttribute('style');else saved.element.setAttribute('style',saved.style);delete window.__pptskillRasterRestore;return document.body.offsetWidth})()` });
+    signals.push({ ...identity, ...(await rasterMetric(cdp, normal.data, hidden.data)) });
+  }
+  return signals;
+};
+
+const compareRasterSignals = (candidateSignals, canonicalSignals) => {
+  const canonicalByIdentity = new Map(canonicalSignals.map((item) => [`${item.slideId}\u0000${item.target}`, item]));
+  return candidateSignals.map((candidate) => {
+    const canonical = canonicalByIdentity.get(`${candidate.slideId}\u0000${candidate.target}`);
+    if (!canonical || canonical.changedPixels < 8 || canonical.energy < 96) return { ...candidate, status: 'fail', classification: 'canonical_signal_missing', canonical: canonical || null };
+    if (candidate.status === 'fail') return { ...candidate, canonical: { changedPixels: canonical.changedPixels, energy: canonical.energy, totalPixels: canonical.totalPixels } };
+    const coverageRatio = candidate.changedPixels / canonical.changedPixels;
+    const energyRatio = candidate.energy / canonical.energy;
+    const classification = candidate.changedPixels <= Math.max(3, canonical.changedPixels * 0.03) || energyRatio < 0.03
+      ? 'fully_invisible'
+      : coverageRatio < 0.6 ? 'partially_occluded'
+        : energyRatio < 0.4 ? 'insufficient_contrast' : 'pass';
+    return {
+      slideId: candidate.slideId,
+      target: candidate.target,
+      status: classification === 'pass' ? 'pass' : 'fail',
+      classification,
+      ratios: { coverage: coverageRatio, energy: energyRatio },
+      candidate: { changedPixels: candidate.changedPixels, energy: candidate.energy, totalPixels: candidate.totalPixels },
+      canonical: { changedPixels: canonical.changedPixels, energy: canonical.energy, totalPixels: canonical.totalPixels },
+    };
+  });
+};
 
 const geometryExpression = String.raw`(async () => {
   await document.fonts.ready;
@@ -413,6 +491,10 @@ const motionTraceExpression = String.raw`(async () => {
 let editorExportEvidence = null;
 const runAtViewport = async ({ width, height }) => {
   const profileDir = await mkdtemp(`${tmpdir()}/pptskill-geometry-`);
+  const canonicalPath = resolve(profileDir, 'canonical-render.html');
+  const artifactBaseUrl = pathToFileURL(`${dirname(htmlPath)}/`).href;
+  await writeFile(canonicalPath, canonicalHtml.replace(/<head>/iu, `<head><base href="${artifactBaseUrl}">`));
+  const canonicalUrl = pathToFileURL(canonicalPath).href;
   const browser = spawn(chromeBin, [
     '--headless=new', '--hide-scrollbars', '--disable-gpu', '--no-first-run', '--no-default-browser-check',
     '--remote-debugging-port=0', `--user-data-dir=${profileDir}`, `--window-size=${width},${height}`, 'about:blank',
@@ -464,9 +546,7 @@ const runAtViewport = async ({ width, height }) => {
     await cdp.send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: false });
     await cdp.send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: motionMode === 'reduce' ? 'reduce' : 'no-preference' }] });
     if (motionMode === 'static') await cdp.send('Page.addScriptToEvaluateOnNewDocument', { source: 'window.__PPTSKILL_FORCE_STATIC__=true' });
-    const loaded = new Promise((resolveLoad) => cdp.on('Page.loadEventFired', resolveLoad));
-    await cdp.send('Page.navigate', { url: htmlUrl });
-    await Promise.race([loaded, new Promise((_, reject) => setTimeout(() => reject(new Error('頁面載入逾時。')), 5000))]);
+    await navigateAndSettle(cdp, htmlUrl, { forceFinal: motionMode !== 'normal' });
     if (motionFramesPrefix && motionMode === 'normal' && width === 1280 && height === 720) {
       await cdp.send('Runtime.evaluate', { expression: `(() => { document.querySelectorAll('.motion-root').forEach((root) => root.classList.remove('is-visible')); return document.body.offsetWidth; })()` });
       await new Promise((resolveFrame) => setTimeout(resolveFrame, 40));
@@ -542,6 +622,15 @@ const runAtViewport = async ({ width, height }) => {
       };
     }
     const result = await cdp.send('Runtime.evaluate', { expression: geometryExpression, awaitPromise: true, returnByValue: true });
+    let rasterVisibility = [];
+    if (motionMode === 'static' || motionMode === 'reduce') {
+      await navigateAndSettle(cdp, canonicalUrl, { forceFinal: true });
+      const canonicalSignals = await collectRasterSignals(cdp);
+      await navigateAndSettle(cdp, htmlUrl, { forceFinal: true });
+      const identities = canonicalSignals.map(({ slideId, target }) => ({ slideId, target }));
+      const candidateSignals = await collectRasterSignals(cdp, identities);
+      rasterVisibility = compareRasterSignals(candidateSignals, canonicalSignals);
+    }
     if (screenshotPath && width === 1280 && height === 720) {
       const screenshot = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       await writeFile(resolve(screenshotPath), Buffer.from(screenshot.data, 'base64'));
@@ -575,6 +664,7 @@ const runAtViewport = async ({ width, height }) => {
       networkFailures,
       httpErrors,
       motionTrace: motionTraceResult.result.value,
+      rasterVisibility,
       ...result.result.value,
     };
   } finally {
@@ -600,7 +690,11 @@ const requiredVisibilityPass = ({ slideCount, requiredVisibility }) => Array.isA
   && new Set(requiredVisibility.map(({ slideId }) => slideId)).size === slideCount
   && requiredVisibility.length >= slideCount
   && requiredVisibility.every(({ status }) => status === 'pass');
-const motionPass = ({ motionTrace }) => motionTrace.layoutStable && motionTrace.restingVisible
+const rasterVisibilityPass = ({ slideCount, rasterVisibility }) => Array.isArray(rasterVisibility)
+  && new Set(rasterVisibility.map(({ slideId }) => slideId)).size === slideCount
+  && rasterVisibility.length >= slideCount
+  && rasterVisibility.every(({ status }) => status === 'pass');
+const motionPass = ({ motionTrace }) => motionTrace.layoutStable
   && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
   && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'
     ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === (motionMode === 'reduce' ? 'reduced' : 'static') && starts === 0)
@@ -619,6 +713,7 @@ const gates = {
   runtime: runs.every(runtimePass) ? 'pass' : 'fail',
   contentIntegrity: runs.every(contentPass) ? 'pass' : 'fail',
   requiredVisibility: runs.every(requiredVisibilityPass) ? 'pass' : 'fail',
+  rasterVisibility: motionMode === 'normal' ? 'not_applicable' : runs.every(rasterVisibilityPass) ? 'pass' : 'fail',
   geometry: runs.every(({ issues }) => issues.length === 0) ? 'pass' : 'fail',
   motion: runs.every(motionPass) ? 'pass' : 'fail',
 };
@@ -627,7 +722,7 @@ const receipt = {
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
   motionMode,
-  status: Object.values(gates).every((status) => status === 'pass') && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
+  status: Object.values(gates).every((status) => status === 'pass' || status === 'not_applicable') && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
   gates,
   ...(editorExportEvidence ? { editorExport: editorExportEvidence } : {}),
   runs,

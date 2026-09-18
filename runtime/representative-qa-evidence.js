@@ -11,6 +11,7 @@ const run = promisify(execFile);
 const trustedEvidence = new WeakSet();
 const trustedFullDeckEvidence = new WeakSet();
 const MODES = Object.freeze(['static', 'normal']);
+const FULL_DECK_MODES = Object.freeze(['static', 'reduce', 'normal']);
 const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_readability', 'animation_interference']);
 
 const deepFreeze = (value) => {
@@ -91,24 +92,24 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
   if (typeof contractVersion !== 'string' || !/^[a-z0-9][a-z0-9._-]{0,63}$/u.test(contractVersion)) throw new Error('contractVersion 必須是 bounded version ID。');
   const producerPath = fileURLToPath(new URL('../tools/browser-geometry-qa.mjs', import.meta.url));
   const receipts = {};
-  for (const mode of MODES) receipts[mode] = await runProducer({ producerPath, artifactPath: resolvedArtifact, mode });
+  for (const mode of FULL_DECK_MODES) receipts[mode] = await runProducer({ producerPath, artifactPath: resolvedArtifact, mode });
   const finalHtml = await readFile(resolvedArtifact, 'utf8');
   if (createHash('sha256').update(finalHtml).digest('hex') !== artifactSha256) throw new Error('Portable artifact 在 full-deck trusted producer 執行期間發生變更。');
   const evidenceRefs = Object.freeze({
-    content_integrity: `${basename(resolvedArtifact)}#trusted-browser-static+normal`,
-    geometry: `${basename(resolvedArtifact)}#trusted-browser-static+normal`,
-    static_readability: `${basename(resolvedArtifact)}#trusted-browser-static`,
-    animation_interference: `${basename(resolvedArtifact)}#trusted-browser-normal`,
+    content_integrity: `${basename(resolvedArtifact)}#trusted-browser-static+reduce+normal`,
+    geometry: `${basename(resolvedArtifact)}#trusted-browser-static+reduce+normal`,
+    static_readability: `${basename(resolvedArtifact)}#trusted-browser-static+reduce-raster`,
+    animation_interference: `${basename(resolvedArtifact)}#trusted-browser-static+reduce-raster+normal-motion`,
   });
-  const contentPass = (slideId) => MODES.every((mode) => receipts[mode].runs.every((receiptRun) => (
+  const contentPass = (slideId) => FULL_DECK_MODES.every((mode) => receipts[mode].runs.every((receiptRun) => (
     Array.isArray(receiptRun.contentIntegrity) && receiptRun.contentIntegrity.length === slideIds.length
     && receiptRun.contentIntegrity.some((item) => item.slideId === slideId && item.status === 'pass')
   )));
   const runtimePass = (mode) => receipts[mode].gates?.runtime === 'pass';
-  const requiredVisibilityPass = (mode, slideId) => receipts[mode].runs.every((receiptRun) => (
-    Array.isArray(receiptRun.requiredVisibility)
-    && receiptRun.requiredVisibility.some((item) => item.slideId === slideId)
-    && receiptRun.requiredVisibility.filter((item) => item.slideId === slideId).every((item) => item.status === 'pass')
+  const rasterVisibilityPass = (mode, slideId) => receipts[mode].runs.every((receiptRun) => (
+      Array.isArray(receiptRun.rasterVisibility)
+      && receiptRun.rasterVisibility.some((item) => item.slideId === slideId)
+      && receiptRun.rasterVisibility.filter((item) => item.slideId === slideId).every((item) => item.status === 'pass')
   ));
   const geometryPass = (mode, slideId) => runtimePass(mode) && receipts[mode].runs.every((receiptRun) => (
     receiptRun.issues.every((issue) => issue.slideId !== slideId)
@@ -116,9 +117,9 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
   const checks = slideIds.flatMap((slideId) => CHECK_CODES.map((code) => {
     const status = code === 'content_integrity'
       ? contentPass(slideId) ? 'pass' : 'fail'
-      : code === 'static_readability' ? geometryPass('static', slideId) && requiredVisibilityPass('static', slideId) ? 'pass' : 'fail'
-        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' && requiredVisibilityPass('normal', slideId) ? 'pass' : 'fail'
-          : MODES.every((mode) => geometryPass(mode, slideId)) ? 'pass' : 'fail';
+      : code === 'static_readability' ? ['static', 'reduce'].every((mode) => geometryPass(mode, slideId) && rasterVisibilityPass(mode, slideId)) ? 'pass' : 'fail'
+        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' && ['static', 'reduce'].every((mode) => rasterVisibilityPass(mode, slideId)) ? 'pass' : 'fail'
+          : FULL_DECK_MODES.every((mode) => geometryPass(mode, slideId)) ? 'pass' : 'fail';
     return { slideId, code, status, evidenceRef: evidenceRefs[code] };
   }));
   const identityCore = { version: 1, deckId: deckSpec.deckId, contractVersion, artifactSha256, deckSpecFingerprint: fingerprintValue(deckSpec), slideIds };
@@ -129,7 +130,7 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
     identity: { ...identityCore, identityFingerprint: fingerprintValue(identityCore) },
     checks,
     evidenceRefs,
-    receiptFingerprints: Object.fromEntries(MODES.map((mode) => [mode, fingerprintValue(receipts[mode])])),
+    receiptFingerprints: Object.fromEntries(FULL_DECK_MODES.map((mode) => [mode, fingerprintValue(receipts[mode])])),
   };
   trustedFullDeckEvidence.add(evidence);
   return deepFreeze(evidence);

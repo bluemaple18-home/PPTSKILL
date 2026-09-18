@@ -14,7 +14,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 test('每張 canonical slide 的 required title 必須有 painted visibility', async () => {
   const source = await readFile(join(root, 'fixtures', 'full-deck.html'), 'utf8');
-  const tampered = source.replace('</head>', '<style>#decision [data-effect-title]{opacity:0!important}#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}</style></head>');
+  const tampered = source
+    .replace('</head>', '<style>#decision [data-effect-title]{opacity:0!important}#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}#portable{filter:opacity(0)!important}#evidence [data-effect-title]{clip-path:inset(0 0 60% 0)!important}#workflow [data-effect-title]{opacity:.2!important}</style></head>')
+    .replace('data-edit-target="slides.transition.content.title"', 'data-removed-edit-target="slides.transition.content.title"');
   const temporary = await mkdtemp(join(tmpdir(), 'pptskill-required-visibility-'));
   const artifact = join(temporary, 'hidden-title.html');
   await writeFile(artifact, tampered);
@@ -23,6 +25,22 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
     (error) => {
       const receipt = JSON.parse(error.stdout);
       assert.equal(receipt.status, 'fail');
+      assert.equal(receipt.gates.rasterVisibility, 'fail');
+      for (const [slideId, target] of [
+        ['workflow', 'slides.workflow.content.title'],
+        ['portable', 'slides.portable.content.title'],
+        ['guardrails', 'slides.guardrails.content.title'],
+        ['transition', 'slides.transition.content.title'],
+        ['evidence', 'slides.evidence.content.title'],
+        ['decision', 'slides.decision.content.title'],
+      ]) {
+        assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => (
+          item.slideId === slideId && item.target === target && item.status === 'fail'
+        ))));
+      }
+      assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => item.slideId === 'evidence' && item.classification === 'partially_occluded')));
+      assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => item.slideId === 'workflow' && item.classification === 'insufficient_contrast')));
+      assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => item.slideId === 'transition' && item.classification === 'required_target_missing')));
       assert.equal(receipt.gates.requiredVisibility, 'fail');
       assert.ok(receipt.runs.every(({ requiredVisibility }) => requiredVisibility.some(({ slideId, target, status }) => (
         slideId === 'decision' && target === 'slides.decision.content.title' && status === 'fail'
@@ -37,8 +55,17 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
   const decision = evaluateFullDeckQa({ evidence });
   assert.equal(decision.status, 'repair');
   assert.deepEqual(decision.layer1.issues.map(({ slideId, code }) => [slideId, code]), [
+    ['workflow', 'static_readability'],
+    ['workflow', 'animation_interference'],
+    ['portable', 'static_readability'],
+    ['portable', 'animation_interference'],
     ['guardrails', 'static_readability'],
     ['guardrails', 'animation_interference'],
+    ['transition', 'content_integrity'],
+    ['transition', 'static_readability'],
+    ['transition', 'animation_interference'],
+    ['evidence', 'static_readability'],
+    ['evidence', 'animation_interference'],
     ['decision', 'static_readability'],
     ['decision', 'animation_interference'],
   ]);
