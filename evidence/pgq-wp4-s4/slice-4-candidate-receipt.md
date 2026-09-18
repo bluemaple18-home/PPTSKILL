@@ -19,7 +19,7 @@
 - Managed local Chrome：static／reduced／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,148,248 bytes（低於 20 MiB）；SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
+- ZIP：2,148,278 bytes（低於 20 MiB）；SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -49,6 +49,13 @@
 - Fix：static／reduced 模式在同一 Chrome、renderer、viewport、DPR=1、font-ready、forced-final 條件下，依 canonical `data-edit-target` 逐 target 比較 normal raster 與 target-only hidden raster，再以 canonical 同 target signal 校準 candidate coverage/energy。DOM/style/hit-test 保留 precheck，不再是 final authority；normal 只負責 motion 行為，final-state 可見性不再由 global role snapshot 代替逐頁 evidence。
 - Classification：近零 signal=`fully_invisible`；coverage ratio `<0.60`=`partially_occluded`；energy ratio `<0.40`=`insufficient_contrast`；canonical identity 在 candidate 缺失=`required_target_missing`；每 channel delta `<12` 當作 AA/subpixel noise。Test 同時驗證 opacity、clip-path、ancestor filter、partial clip、低 opacity 與 target identity removal，且只標記實際受影響頁。
 - GREEN：Focused 8/8、WP4 compatibility 28/28、PGQ targeted 94/94、full regression 211/211 PASS；fresh ZIP install/smoke/uninstall PASS，2,148,248 bytes，SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
+
+## Review repair 4 — normal-motion-only visibility
+
+- Finding：`html:not(.motion-static)` 可只在 normal mode 隱藏 required target；static／reduced raster PASS，而 normal motion trace 在 `forceStatic()` 後才執行其他 visibility checks，導致逐頁 `animation_interference` 錯誤 PASS。
+- RED：加入 `#problem` normal-only `filter:opacity(0)` probe 後，browser receipt 回 `rasterVisibility=not_applicable`，精準重現 authority 缺口。
+- Fix：normal mode 現重新載入 canonical/candidate，在不呼叫 motion `forceStatic()`、不加入 `.motion-static` 的 resting frame做逐 target raster；motion roots 明確進入 `is-visible` 並等待 1300ms，background 單獨 forced-static 以消除 raster noise。`animation_interference` 現要求該頁 normal raster＋normal motion 均 PASS。
+- GREEN：probe 只使 `problem.animation_interference` fail，static readability 仍 PASS；其餘 opacity／clip／filter／contrast／missing-identity probes保持精準。Focused 8/8、WP4 compatibility 28/28、full 211/211、ZIP lifecycle PASS；ZIP 2,148,278 bytes，SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
 
 ## Independent review request
 

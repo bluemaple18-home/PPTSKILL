@@ -68,7 +68,7 @@
 - Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
 - Managed local Chrome 由 trusted producer 跑 static／reduced／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。Static／reduced 的 required-target visibility 最終權威為同 renderer、viewport、DPR、font 與 final-state 條件下的 canonical/candidate raster signal；DOM/style/hit-test 只保留 cheap precheck。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,148,248 bytes；SHA-256 `20e8dfa552246ba116416c2ca4fcbc7848319f3cae93062da9562db20bcae654`。
+- Fresh ZIP install/smoke/uninstall PASS；2,148,278 bytes；SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
 
 ## Review repair 1
@@ -91,3 +91,10 @@
 - Producer 在同一 Chrome、renderer、viewport、DPR=1、font-ready 與 deterministic static/reduced final state，依 canonical `data-edit-target` identity 對每個 required target 各取 normal raster 與僅隱藏該 target 的 raster；兩者差值量化 target 實際 pixel contribution，再與 canonical render 的同 target signal 比較。每 channel delta `<12` 視為 AA/subpixel noise；candidate coverage `<60%` 分類 `partially_occluded`，energy `<40%` 分類 `insufficient_contrast`，signal 接近零分類 `fully_invisible`。
 - `static_readability` 現要求 static＋reduced 每頁 raster PASS；`animation_interference` 要求同一 final-state raster PASS 加 normal motion PASS。Normal motion 不再把 global resting-visibility verdict 複製為每頁結果。
 - 同一 browser test 保留 `opacity:0`、full clip-path、ancestor `filter:opacity(0)`，另加入 partial clip、低 opacity 與 canonical identity 缺失 probes；六張受影響頁各自產生精準 repair，其餘頁不受污染。Focused 8/8、WP4 compatibility 28/28、PGQ targeted 94/94、full regression 211/211 PASS。
+
+## Review repair 4 — normal resting-frame raster
+
+- Re-review P1 證明 `html:not(.motion-static)` 可讓 target 只在 normal mode 不可見；前版 normal receipt 在 motion trace 內 `forceStatic()` 後才跑 geometry，且 raster 僅 static／reduced，導致 Layer-1 錯誤 PASS。
+- RED 在同一 adversarial test 加入 `html:not(.motion-static) #problem [data-effect-title]{filter:opacity(0)!important}`；舊 receipt 明確回 `rasterVisibility=not_applicable`。
+- Producer 現對 normal 重新載入 canonical/candidate，同 renderer／viewport／DPR／font 下把 motion roots 推到 resting frame並等待 1300ms，但不呼叫 motion `forceStatic()`、不建立 `.motion-static`；只凍結 background 避免 animation pixel noise。Normal raster 成為 `animation_interference` 的逐頁必要 evidence，static readability 仍由 static＋reduced raster 負責。
+- Reviewer probe 現只產生 `problem.animation_interference`，不污染該頁 static readability 或其他頁。Focused 8/8、WP4 compatibility 28/28、full regression 211/211、fresh ZIP lifecycle PASS。
