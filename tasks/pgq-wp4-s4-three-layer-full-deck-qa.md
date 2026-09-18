@@ -68,7 +68,7 @@
 - Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
 - Managed local Chrome 由 trusted producer 跑 static／reduced／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。Static／reduced 的 required-target visibility 最終權威為同 renderer、viewport、DPR、font 與 final-state 條件下的 canonical/candidate raster signal；DOM/style/hit-test 只保留 cheap precheck。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,148,629 bytes；SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
+- Fresh ZIP install/smoke/uninstall PASS；2,148,747 bytes；SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
 
 ## Review repair 1
@@ -105,3 +105,10 @@
 - RED 在同一 normal adversarial artifact 加入 `#metrics` title 的 `translateX(400px)`；舊 receipt 沒有 `position_mismatch`。
 - Candidate capture 現固定使用 canonical target 的 slide-relative coordinates，不再跟隨 candidate box；同時比較 canonical/candidate normalized box。位置差超過 slide 的 0.5% 分類 `position_mismatch`，尺寸差超過 1% 分類 `size_mismatch`，再進 coverage／energy visibility分類。
 - Probe 現只產生 `metrics.animation_interference`，不誤標 static readability 或其他頁。Focused、full regression 211/211、fresh ZIP lifecycle PASS。
+
+## Review repair 6 — slide-root spatial authority
+
+- Re-review P1 證明 Repair 5 的 target box 與 raster clip 都相對 candidate slide；normal-only `#proof{transform:translateX(400px)}` 會讓整張 slide 與 target 一起移動，target normalized box 不變，capture 又跟隨 candidate slide，因而可能錯誤 PASS。
+- RED 加入獨立 slide-root displacement probe；舊 receipt 未輸出 `slide_position_mismatch`，證明 target-level authority 不足以綁定 viewport position。
+- Canonical signal 現攜帶 slide absolute page box 與 required target absolute canonical page clip。Candidate capture 固定使用 canonical page coordinates，不再跟隨 displaced candidate slide；另比較 canonical/candidate slide page position與尺寸，tolerance 分別為 slide dimension 的 0.5% 與 1%，超界輸出 `slide_position_mismatch`／`slide_size_mismatch`。既有 target `position_mismatch`／`size_mismatch` 與 raster visibility classification維持不變。
+- Probe 只使 `proof.animation_interference` fail；target-only transform仍精準使 `metrics.animation_interference` fail，其餘 visibility／contrast／clip／missing identity probes均保留。Focused browser regression PASS；full regression 211/211；fresh ZIP install/smoke/uninstall PASS。Implementation commit：`1acdeb8`；ZIP 2,148,747 bytes，SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。

@@ -19,7 +19,7 @@
 - Managed local Chrome：static／reduced／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,148,629 bytes（低於 20 MiB）；SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
+- ZIP：2,148,747 bytes（低於 20 MiB）；SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -63,6 +63,13 @@
 - RED：加入 `html:not(.motion-static) #metrics [data-effect-title]{transform:translateX(400px)!important}` 後，舊 normal receipt未輸出 `position_mismatch`。
 - Fix：canonical signal 現攜帶 slide-relative normalized box；candidate normal/hidden screenshots固定採 canonical coordinates，另直接比較 candidate box。位置 tolerance 為 slide dimension 的 0.5%，尺寸 tolerance 為 1%；超界分別輸出 `position_mismatch`／`size_mismatch`。
 - GREEN：probe 只使 `metrics.animation_interference` fail，該頁 static readability與其餘頁保持 PASS；既有 visibility、contrast、partial clip、missing identity及 normal-only invisibility probes全數保留。Full regression 211/211、ZIP lifecycle PASS；ZIP 2,148,629 bytes，SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
+
+## Review repair 6 — slide-root spatial authority
+
+- Finding：normal-only slide-root transform 會讓 target 與 candidate slide 同步位移；Repair 5 的 slide-relative box 不變，且 raster clip 跟隨 candidate slide，故可能錯誤 PASS。
+- RED：加入 `html:not(.motion-static) #proof{transform:translateX(400px)!important}`，舊 authority 未回 `slide_position_mismatch`。
+- Fix：canonical raster signal 新增 absolute page-space slide box與 target clip；candidate screenshot固定取 canonical page clip，並獨立比較 slide page position／size。位置 tolerance 0.5%，尺寸 tolerance 1%；超界分別為 `slide_position_mismatch`／`slide_size_mismatch`。Target-level position／size及既有 pixel visibility authority不變。
+- GREEN：`proof` 只產生 `animation_interference` issue；`metrics` target-only transform仍為 `position_mismatch`，既有 normal-only invisibility、opacity、clip、ancestor filter、partial clip、contrast與 missing identity probes全數精準。Focused browser regression PASS；full regression 211/211；ZIP lifecycle PASS。Implementation commit `1acdeb8`；ZIP 2,148,747 bytes，SHA-256 `0011b5736ed58d47e5b3a6b95fbb418d653f4a6aedd385d26ff2cf0b87ddd710`。
 
 ## Independent review request
 
