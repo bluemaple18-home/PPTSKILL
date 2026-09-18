@@ -549,30 +549,38 @@ const runAtViewport = async ({ width, height }) => {
 const viewports = [{ width: 1600, height: 900 }, { width: 1280, height: 720 }];
 const runs = [];
 for (const viewport of viewports) runs.push(await runAtViewport(viewport));
+const runtimePass = ({ slideCount, console: consoleMessages, pageErrors, networkFailures, httpErrors, traceback }) => (
+  slideCount > 0 && !traceback && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
+);
+const contentPass = ({ slideCount, contentIntegrity }) => contentIntegrity.length === slideCount && contentIntegrity.every(({ status }) => status === 'pass');
+const motionPass = ({ motionTrace }) => motionTrace.layoutStable && motionTrace.restingVisible
+  && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
+  && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'
+    ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === (motionMode === 'reduce' ? 'reduced' : 'static') && starts === 0)
+    : motionTrace.odometer.replayResult === true && motionTrace.odometer.afterReplay.every(({ replayed, starts, finishes }) => replayed && starts > 0 && finishes > 0)))
+  && motionTrace.odometer.forcedStatic.every(({ state }) => state === (motionMode === 'reduce' ? 'reduced' : 'static'))
+  && (motionTrace.odometer.count === 0 || (motionTrace.odometer.editorRoundTrip && motionTrace.odometer.invalidPatchPreserved))
+  && (motionTrace.textEntrance.count === 0 || (motionTrace.textEntrance.editorRoundTrip
+    && (motionMode !== 'normal'
+      ? motionTrace.textEntrance.replayResult === false
+      : motionTrace.textEntrance.replayResult === true && motionTrace.textEntrance.replayed
+        && motionTrace.textEntrance.reset.every(({ opacity, underlineTransform }) => Number(opacity) === 0 && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(0, 0, 0, 1, 0, 0)'))
+        && Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'title')?.opacity || 0) > Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'subtitle')?.opacity || 0))
+    && motionTrace.textEntrance.afterReplay.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))
+    && motionTrace.textEntrance.forcedStatic.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))));
+const gates = {
+  runtime: runs.every(runtimePass) ? 'pass' : 'fail',
+  contentIntegrity: runs.every(contentPass) ? 'pass' : 'fail',
+  geometry: runs.every(({ issues }) => issues.length === 0) ? 'pass' : 'fail',
+  motion: runs.every(motionPass) ? 'pass' : 'fail',
+};
 const receipt = {
   schemaVersion: '1.0',
   generatedAt: new Date().toISOString(),
   artifact: basename(htmlPath),
   motionMode,
-  status: runs.every(({ issues, slideCount, contentIntegrity, console: consoleMessages, pageErrors, networkFailures, httpErrors, motionTrace }) => (
-    slideCount > 0 && issues.length === 0 && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
-    && contentIntegrity.length === slideCount && contentIntegrity.every(({ status }) => status === 'pass')
-    && motionTrace.layoutStable && motionTrace.restingVisible
-    && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
-    && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'
-      ? motionTrace.odometer.replayResult === false && motionTrace.odometer.afterReplay.every(({ state, starts }) => state === (motionMode === 'reduce' ? 'reduced' : 'static') && starts === 0)
-      : motionTrace.odometer.replayResult === true && motionTrace.odometer.afterReplay.every(({ replayed, starts, finishes }) => replayed && starts > 0 && finishes > 0)))
-    && motionTrace.odometer.forcedStatic.every(({ state }) => state === (motionMode === 'reduce' ? 'reduced' : 'static'))
-    && (motionTrace.odometer.count === 0 || (motionTrace.odometer.editorRoundTrip && motionTrace.odometer.invalidPatchPreserved))
-    && (motionTrace.textEntrance.count === 0 || (motionTrace.textEntrance.editorRoundTrip
-      && (motionMode !== 'normal'
-        ? motionTrace.textEntrance.replayResult === false
-        : motionTrace.textEntrance.replayResult === true && motionTrace.textEntrance.replayed
-          && motionTrace.textEntrance.reset.every(({ opacity, underlineTransform }) => Number(opacity) === 0 && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(0, 0, 0, 1, 0, 0)'))
-          && Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'title')?.opacity || 0) > Number(motionTrace.textEntrance.sequence.find(({ role }) => role === 'subtitle')?.opacity || 0))
-      && motionTrace.textEntrance.afterReplay.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))
-      && motionTrace.textEntrance.forcedStatic.every(({ opacity, transform, underlineTransform }) => Number(opacity) === 1 && transform === 'none' && (!underlineTransform || underlineTransform === 'none' || underlineTransform === 'matrix(1, 0, 0, 1, 0, 0)'))))
-  )) && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
+  status: Object.values(gates).every((status) => status === 'pass') && (!editorExportPath || editorExportEvidence?.status === 'pass') ? 'pass' : 'fail',
+  gates,
   ...(editorExportEvidence ? { editorExport: editorExportEvidence } : {}),
   runs,
 };

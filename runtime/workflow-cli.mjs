@@ -5,7 +5,8 @@ import { preparePreflightBrief } from './preflight-brief.js';
 import { createGenerationPlan } from './generation-plan.js';
 import { evaluateRepresentativeQa } from './representative-qa-gate.js';
 import { approveRepresentativeSample } from './sample-approval.js';
-import { collectRepresentativeQaEvidence } from './representative-qa-evidence.js';
+import { collectFullDeckQaEvidence, collectRepresentativeQaEvidence } from './representative-qa-evidence.js';
+import { evaluateFullDeckQa } from './full-deck-qa.js';
 import { renderExistingDeckWithGate, renderNewDeckWithGate } from './workflow-entry.js';
 
 const args = process.argv.slice(2);
@@ -21,6 +22,7 @@ const finish = (result) => {
   console.log(JSON.stringify(result, null, 2));
   if (result.status === 'blocked') process.exitCode = 2;
   else if (result.status === 'repair') process.exitCode = 3;
+  else if (result.status === 'awaiting-owner') process.exitCode = 4;
   else if (result.status !== 'pass') process.exitCode = 1;
 };
 
@@ -36,6 +38,11 @@ try {
     if ('hardGateRequest' in request || 'qaEvidence' in request) throw new Error('approve-sample 不接受 caller-authored hard gate／evidence；請提供 --artifact。');
     const qaEvidence = await collectRepresentativeQaEvidence({ artifactPath: valueOf('--artifact'), sample: request.sample, contractVersion: request.contractVersion });
     finish({ mode: 'representative-sample-approval', ...approveRepresentativeSample({ ...request, qaEvidence }) });
+  } else if (command === 'qa-full-deck') {
+    const request = await readJson('--request');
+    if ('evidence' in request || 'checks' in request || 'coverage' in request || 'status' in request) throw new Error('qa-full-deck 不接受 caller-authored evidence、checks、coverage 或 PASS。');
+    const evidence = await collectFullDeckQaEvidence({ artifactPath: valueOf('--artifact'), contractVersion: request.contractVersion });
+    finish({ mode: 'full-deck-three-layer-qa', ...evaluateFullDeckQa({ ...request, evidence }) });
   } else if (command === 'inspect-existing') {
     const input = valueOf('--input');
     const spec = extractDeckSpec(await readFile(input, 'utf8'));
@@ -68,7 +75,7 @@ try {
     if (result.status === 'pass') await writeFile(valueOf('--output'), result.html);
     finish({ ...result, ...(result.status === 'pass' ? { html: undefined, outputWritten: true } : { outputWritten: false }) });
   } else {
-    throw new Error('用法：workflow-cli.mjs preflight-new | plan-new | qa-sample | approve-sample | inspect-existing | render-restyle | render-new');
+    throw new Error('用法：workflow-cli.mjs preflight-new | plan-new | qa-sample | approve-sample | qa-full-deck | inspect-existing | render-restyle | render-new');
   }
 } catch (error) {
   console.error(`PPTSKILL workflow：${error.message}`);

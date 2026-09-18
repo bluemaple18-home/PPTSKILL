@@ -9,6 +9,7 @@ import { createRepresentativeSampleIdentity, fingerprintValue } from './represen
 
 const run = promisify(execFile);
 const trustedEvidence = new WeakSet();
+const trustedFullDeckEvidence = new WeakSet();
 const MODES = Object.freeze(['static', 'normal']);
 const CHECK_CODES = Object.freeze(['content_integrity', 'geometry', 'static_readability', 'animation_interference']);
 
@@ -80,9 +81,63 @@ export async function collectRepresentativeQaEvidence({ artifactPath, sample, co
   return deepFreeze(evidence);
 }
 
+export async function collectFullDeckQaEvidence({ artifactPath, contractVersion }) {
+  const resolvedArtifact = resolve(artifactPath);
+  const html = await readFile(resolvedArtifact, 'utf8');
+  const artifactSha256 = createHash('sha256').update(html).digest('hex');
+  const deckSpec = extractDeckSpec(html);
+  const slideIds = deckSpec.slides.map(({ id }) => id);
+  if (!slideIds.length || new Set(slideIds).size !== slideIds.length) throw new Error('Full-deck QA 需要非空且唯一的 canonical slide IDs。');
+  if (typeof contractVersion !== 'string' || !/^[a-z0-9][a-z0-9._-]{0,63}$/u.test(contractVersion)) throw new Error('contractVersion 必須是 bounded version ID。');
+  const producerPath = fileURLToPath(new URL('../tools/browser-geometry-qa.mjs', import.meta.url));
+  const receipts = {};
+  for (const mode of MODES) receipts[mode] = await runProducer({ producerPath, artifactPath: resolvedArtifact, mode });
+  const finalHtml = await readFile(resolvedArtifact, 'utf8');
+  if (createHash('sha256').update(finalHtml).digest('hex') !== artifactSha256) throw new Error('Portable artifact 在 full-deck trusted producer 執行期間發生變更。');
+  const evidenceRefs = Object.freeze({
+    content_integrity: `${basename(resolvedArtifact)}#trusted-browser-static+normal`,
+    geometry: `${basename(resolvedArtifact)}#trusted-browser-static+normal`,
+    static_readability: `${basename(resolvedArtifact)}#trusted-browser-static`,
+    animation_interference: `${basename(resolvedArtifact)}#trusted-browser-normal`,
+  });
+  const contentPass = (slideId) => MODES.every((mode) => receipts[mode].runs.every((receiptRun) => (
+    Array.isArray(receiptRun.contentIntegrity) && receiptRun.contentIntegrity.length === slideIds.length
+    && receiptRun.contentIntegrity.some((item) => item.slideId === slideId && item.status === 'pass')
+  )));
+  const runtimePass = (mode) => receipts[mode].gates?.runtime === 'pass';
+  const geometryPass = (mode, slideId) => runtimePass(mode) && receipts[mode].runs.every((receiptRun) => (
+    receiptRun.issues.every((issue) => issue.slideId !== slideId)
+  ));
+  const checks = slideIds.flatMap((slideId) => CHECK_CODES.map((code) => {
+    const status = code === 'content_integrity'
+      ? contentPass(slideId) ? 'pass' : 'fail'
+      : code === 'static_readability' ? geometryPass('static', slideId) ? 'pass' : 'fail'
+        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' ? 'pass' : 'fail'
+          : MODES.every((mode) => geometryPass(mode, slideId)) ? 'pass' : 'fail';
+    return { slideId, code, status, evidenceRef: evidenceRefs[code] };
+  }));
+  const identityCore = { version: 1, deckId: deckSpec.deckId, contractVersion, artifactSha256, deckSpecFingerprint: fingerprintValue(deckSpec), slideIds };
+  const evidence = {
+    version: 1,
+    producer: 'pptskill-browser-geometry-qa',
+    artifact: basename(resolvedArtifact),
+    identity: { ...identityCore, identityFingerprint: fingerprintValue(identityCore) },
+    checks,
+    evidenceRefs,
+    receiptFingerprints: Object.fromEntries(MODES.map((mode) => [mode, fingerprintValue(receipts[mode])])),
+  };
+  trustedFullDeckEvidence.add(evidence);
+  return deepFreeze(evidence);
+}
+
 export function assertTrustedRepresentativeQaEvidence(evidence) {
   if (!evidence || !trustedEvidence.has(evidence)) {
     throw new Error('Representative QA evidence 必須由本次 runtime 的 trusted browser producer 產生；不可由 caller 提交 JSON、PASS 或 fingerprint。');
   }
+  return evidence;
+}
+
+export function assertTrustedFullDeckQaEvidence(evidence) {
+  if (!evidence || !trustedFullDeckEvidence.has(evidence)) throw new Error('Full-deck QA evidence 必須由本次 runtime 的 trusted browser producer 產生；不可由 caller 提交 JSON、PASS、coverage 或 fingerprint。');
   return evidence;
 }
