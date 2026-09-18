@@ -92,14 +92,26 @@ class CdpClient {
 
 const geometryExpression = String.raw`(async () => {
   await document.fonts.ready;
+  document.querySelectorAll('.motion-root').forEach((root) => root.classList.add('is-visible'));
   await new Promise((resolve) => setTimeout(resolve, 1300));
   await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
   const issues = [];
-  const visible = (element) => {
-    const style = getComputedStyle(element);
+  const visibilityFailure = (element, boundary) => {
+    if (!element) return 'required_target_missing';
+    let current = element;
+    while (current) {
+      const style = getComputedStyle(current);
+      if (style.display === 'none') return 'display_none';
+      if (style.visibility === 'hidden' || style.visibility === 'collapse') return 'visibility_hidden';
+      if (Number(style.opacity) <= 0.001) return 'opacity_hidden';
+      if (current === boundary) break;
+      current = current.parentElement;
+    }
     const rect = element.getBoundingClientRect();
-    return style.display !== 'none' && style.visibility !== 'hidden' && Number(style.opacity) > 0 && rect.width > 0 && rect.height > 0;
+    if (rect.width <= 0 || rect.height <= 0) return 'zero_box';
+    return null;
   };
+  const visible = (element) => visibilityFailure(element, element.closest('.slide')) === null;
   const box = (element) => {
     const rect = element.getBoundingClientRect();
     return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom, width: rect.width, height: rect.height };
@@ -139,6 +151,15 @@ const geometryExpression = String.raw`(async () => {
       status: expectedHtml !== null && actualHtml === expectedHtml ? 'pass' : 'fail',
       reason: expectedHtml === null ? 'canonical_slide_missing' : actualHtml === expectedHtml ? null : 'rendered_content_mismatch',
     };
+  });
+  const requiredVisibility = slides.flatMap((slide) => {
+    const expected = canonicalDocument.querySelector('.slide[data-slide-id="' + CSS.escape(slide.dataset.slideId) + '"]');
+    const expectedTargets = expected ? [...new Set([...expected.querySelectorAll('[data-edit-target]')].map((element) => element.getAttribute('data-edit-target')))] : [];
+    const actualTargets = new Map([...slide.querySelectorAll('[data-edit-target]')].map((element) => [element.getAttribute('data-edit-target'), element]));
+    return expectedTargets.map((target) => {
+      const reason = visibilityFailure(actualTargets.get(target), slide);
+      return { slideId: slide.dataset.slideId, target, status: reason ? 'fail' : 'pass', reason };
+    });
   });
   for (const slide of slides) {
     const slideBox = box(slide);
@@ -244,7 +265,7 @@ const geometryExpression = String.raw`(async () => {
     dominantAxis,
     occupiedQuadrants: [...new Set([...quadrantMap(titleBox), ...quadrantMap(anchorBox)])],
   };
-  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, contentIntegrity, issues, visibleTraceback };
+  return { slideCount: slides.length, slideBoxes: slides.map(box), semanticBoxes, compositionContract, computedStructure, contentIntegrity, requiredVisibility, issues, visibleTraceback };
 })()`;
 
 const motionTraceExpression = String.raw`(async () => {
@@ -553,6 +574,10 @@ const runtimePass = ({ slideCount, console: consoleMessages, pageErrors, network
   slideCount > 0 && !traceback && consoleMessages.length === 0 && pageErrors.length === 0 && networkFailures.length === 0 && httpErrors.length === 0
 );
 const contentPass = ({ slideCount, contentIntegrity }) => contentIntegrity.length === slideCount && contentIntegrity.every(({ status }) => status === 'pass');
+const requiredVisibilityPass = ({ slideCount, requiredVisibility }) => Array.isArray(requiredVisibility)
+  && new Set(requiredVisibility.map(({ slideId }) => slideId)).size === slideCount
+  && requiredVisibility.length >= slideCount
+  && requiredVisibility.every(({ status }) => status === 'pass');
 const motionPass = ({ motionTrace }) => motionTrace.layoutStable && motionTrace.restingVisible
   && (motionMode !== 'normal' || motionTrace.changedRoles.length >= 4 || motionTrace.odometer.count > 0 || motionTrace.textEntrance.count > 0)
   && (motionTrace.odometer.count === 0 || (motionMode !== 'normal'
@@ -571,6 +596,7 @@ const motionPass = ({ motionTrace }) => motionTrace.layoutStable && motionTrace.
 const gates = {
   runtime: runs.every(runtimePass) ? 'pass' : 'fail',
   contentIntegrity: runs.every(contentPass) ? 'pass' : 'fail',
+  requiredVisibility: runs.every(requiredVisibilityPass) ? 'pass' : 'fail',
   geometry: runs.every(({ issues }) => issues.length === 0) ? 'pass' : 'fail',
   motion: runs.every(motionPass) ? 'pass' : 'fail',
 };

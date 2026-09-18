@@ -105,14 +105,19 @@ export async function collectFullDeckQaEvidence({ artifactPath, contractVersion 
     && receiptRun.contentIntegrity.some((item) => item.slideId === slideId && item.status === 'pass')
   )));
   const runtimePass = (mode) => receipts[mode].gates?.runtime === 'pass';
+  const requiredVisibilityPass = (mode, slideId) => receipts[mode].runs.every((receiptRun) => (
+    Array.isArray(receiptRun.requiredVisibility)
+    && receiptRun.requiredVisibility.some((item) => item.slideId === slideId)
+    && receiptRun.requiredVisibility.filter((item) => item.slideId === slideId).every((item) => item.status === 'pass')
+  ));
   const geometryPass = (mode, slideId) => runtimePass(mode) && receipts[mode].runs.every((receiptRun) => (
     receiptRun.issues.every((issue) => issue.slideId !== slideId)
   ));
   const checks = slideIds.flatMap((slideId) => CHECK_CODES.map((code) => {
     const status = code === 'content_integrity'
       ? contentPass(slideId) ? 'pass' : 'fail'
-      : code === 'static_readability' ? geometryPass('static', slideId) ? 'pass' : 'fail'
-        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' ? 'pass' : 'fail'
+      : code === 'static_readability' ? geometryPass('static', slideId) && requiredVisibilityPass('static', slideId) ? 'pass' : 'fail'
+        : code === 'animation_interference' ? runtimePass('normal') && receipts.normal.gates?.motion === 'pass' && requiredVisibilityPass('normal', slideId) ? 'pass' : 'fail'
           : MODES.every((mode) => geometryPass(mode, slideId)) ? 'pass' : 'fail';
     return { slideId, code, status, evidenceRef: evidenceRefs[code] };
   }));
