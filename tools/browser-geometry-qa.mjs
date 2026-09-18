@@ -125,21 +125,22 @@ const collectRasterSignals = async (cdp, expectedIdentities = null) => {
   const signals = [];
   for (const identity of identities) {
     const prepared = await cdp.send('Runtime.evaluate', {
-      expression: `(async()=>{const slide=document.querySelector('.slide[data-slide-id='+JSON.stringify(${JSON.stringify(identity.slideId)})+']');const element=slide?.querySelector('[data-edit-target='+JSON.stringify(${JSON.stringify(identity.target)})+']');if(!element)return null;slide.scrollIntoView({block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const rect=element.getBoundingClientRect();window.__pptskillRasterRestore={element,style:element.getAttribute('style')};return{x:Math.max(0,Math.floor(rect.left+scrollX)),y:Math.max(0,Math.floor(rect.top+scrollY)),width:Math.max(1,Math.ceil(rect.width)),height:Math.max(1,Math.ceil(rect.height))}})()`,
+      expression: `(async()=>{const slide=document.querySelector('.slide[data-slide-id='+JSON.stringify(${JSON.stringify(identity.slideId)})+']');const element=slide?.querySelector('[data-edit-target='+JSON.stringify(${JSON.stringify(identity.target)})+']');if(!element)return null;slide.scrollIntoView({block:'center',inline:'center'});await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));const slideRect=slide.getBoundingClientRect(),rect=element.getBoundingClientRect(),expected=${JSON.stringify(identity.canonicalBox || null)};const box={x:(rect.left-slideRect.left)/slideRect.width,y:(rect.top-slideRect.top)/slideRect.height,width:rect.width/slideRect.width,height:rect.height/slideRect.height};const capture=expected?{left:slideRect.left+expected.x*slideRect.width,top:slideRect.top+expected.y*slideRect.height,width:expected.width*slideRect.width,height:expected.height*slideRect.height}:rect;window.__pptskillRasterRestore={element,style:element.getAttribute('style')};return{clip:{x:Math.max(0,Math.floor(capture.left+scrollX)),y:Math.max(0,Math.floor(capture.top+scrollY)),width:Math.max(1,Math.ceil(capture.width)),height:Math.max(1,Math.ceil(capture.height))},box}})()`,
       awaitPromise: true,
       returnByValue: true,
     });
     if (prepared.exceptionDetails) throw new Error(prepared.exceptionDetails.text);
-    const clip = prepared.result.value;
-    if (!clip) {
+    const preparedValue = prepared.result.value;
+    if (!preparedValue) {
       signals.push({ ...identity, status: 'fail', classification: 'required_target_missing' });
       continue;
     }
+    const { clip, box } = preparedValue;
     const normal = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { ...clip, scale: 1 } });
     await cdp.send('Runtime.evaluate', { expression: `(()=>{window.__pptskillRasterRestore.element.style.setProperty('visibility','hidden','important');return document.body.offsetWidth})()` });
     const hidden = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: true, clip: { ...clip, scale: 1 } });
     await cdp.send('Runtime.evaluate', { expression: `(()=>{const saved=window.__pptskillRasterRestore;if(saved.style===null)saved.element.removeAttribute('style');else saved.element.setAttribute('style',saved.style);delete window.__pptskillRasterRestore;return document.body.offsetWidth})()` });
-    signals.push({ ...identity, ...(await rasterMetric(cdp, normal.data, hidden.data)) });
+    signals.push({ slideId: identity.slideId, target: identity.target, box, ...(await rasterMetric(cdp, normal.data, hidden.data)) });
   }
   return signals;
 };
@@ -150,20 +151,24 @@ const compareRasterSignals = (candidateSignals, canonicalSignals) => {
     const canonical = canonicalByIdentity.get(`${candidate.slideId}\u0000${candidate.target}`);
     if (!canonical || canonical.changedPixels < 8 || canonical.energy < 96) return { ...candidate, status: 'fail', classification: 'canonical_signal_missing', canonical: canonical || null };
     if (candidate.status === 'fail') return { ...candidate, canonical: { changedPixels: canonical.changedPixels, energy: canonical.energy, totalPixels: canonical.totalPixels } };
+    const positionDelta = Math.max(Math.abs(candidate.box.x - canonical.box.x), Math.abs(candidate.box.y - canonical.box.y));
+    const sizeDelta = Math.max(Math.abs(candidate.box.width - canonical.box.width), Math.abs(candidate.box.height - canonical.box.height));
     const coverageRatio = candidate.changedPixels / canonical.changedPixels;
     const energyRatio = candidate.energy / canonical.energy;
-    const classification = candidate.changedPixels <= Math.max(3, canonical.changedPixels * 0.03) || energyRatio < 0.03
-      ? 'fully_invisible'
-      : coverageRatio < 0.6 ? 'partially_occluded'
-        : energyRatio < 0.4 ? 'insufficient_contrast' : 'pass';
+    const classification = positionDelta > 0.005 ? 'position_mismatch'
+      : sizeDelta > 0.01 ? 'size_mismatch'
+        : candidate.changedPixels <= Math.max(3, canonical.changedPixels * 0.03) || energyRatio < 0.03
+          ? 'fully_invisible'
+          : coverageRatio < 0.6 ? 'partially_occluded'
+            : energyRatio < 0.4 ? 'insufficient_contrast' : 'pass';
     return {
       slideId: candidate.slideId,
       target: candidate.target,
       status: classification === 'pass' ? 'pass' : 'fail',
       classification,
-      ratios: { coverage: coverageRatio, energy: energyRatio },
-      candidate: { changedPixels: candidate.changedPixels, energy: candidate.energy, totalPixels: candidate.totalPixels },
-      canonical: { changedPixels: canonical.changedPixels, energy: canonical.energy, totalPixels: canonical.totalPixels },
+      ratios: { coverage: coverageRatio, energy: energyRatio, positionDelta, sizeDelta },
+      candidate: { changedPixels: candidate.changedPixels, energy: candidate.energy, totalPixels: candidate.totalPixels, box: candidate.box },
+      canonical: { changedPixels: canonical.changedPixels, energy: canonical.energy, totalPixels: canonical.totalPixels, box: canonical.box },
     };
   });
 };
@@ -626,7 +631,7 @@ const runAtViewport = async ({ width, height }) => {
     await navigateAndSettle(cdp, canonicalUrl, rasterSettle);
     const canonicalSignals = await collectRasterSignals(cdp);
     await navigateAndSettle(cdp, htmlUrl, rasterSettle);
-    const identities = canonicalSignals.map(({ slideId, target }) => ({ slideId, target }));
+    const identities = canonicalSignals.map(({ slideId, target, box: canonicalBox }) => ({ slideId, target, canonicalBox }));
     const candidateSignals = await collectRasterSignals(cdp, identities);
     const rasterVisibility = compareRasterSignals(candidateSignals, canonicalSignals);
     if (screenshotPath && width === 1280 && height === 720) {
