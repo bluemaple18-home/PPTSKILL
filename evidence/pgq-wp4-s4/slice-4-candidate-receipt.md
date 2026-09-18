@@ -19,7 +19,7 @@
 - Managed local Chrome：static／reduced／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,148,278 bytes（低於 20 MiB）；SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
+- ZIP：2,148,629 bytes（低於 20 MiB）；SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -56,6 +56,13 @@
 - RED：加入 `#problem` normal-only `filter:opacity(0)` probe 後，browser receipt 回 `rasterVisibility=not_applicable`，精準重現 authority 缺口。
 - Fix：normal mode 現重新載入 canonical/candidate，在不呼叫 motion `forceStatic()`、不加入 `.motion-static` 的 resting frame做逐 target raster；motion roots 明確進入 `is-visible` 並等待 1300ms，background 單獨 forced-static 以消除 raster noise。`animation_interference` 現要求該頁 normal raster＋normal motion 均 PASS。
 - GREEN：probe 只使 `problem.animation_interference` fail，static readability 仍 PASS；其餘 opacity／clip／filter／contrast／missing-identity probes保持精準。Focused 8/8、WP4 compatibility 28/28、full 211/211、ZIP lifecycle PASS；ZIP 2,148,278 bytes，SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
+
+## Review repair 5 — normal positional interference
+
+- Finding：normal candidate raster clip 跟著 target 移動，只比較 coverage／energy；`translateX(400px)` 仍有相似像素 signal，可繞過逐頁 `animation_interference`。
+- RED：加入 `html:not(.motion-static) #metrics [data-effect-title]{transform:translateX(400px)!important}` 後，舊 normal receipt未輸出 `position_mismatch`。
+- Fix：canonical signal 現攜帶 slide-relative normalized box；candidate normal/hidden screenshots固定採 canonical coordinates，另直接比較 candidate box。位置 tolerance 為 slide dimension 的 0.5%，尺寸 tolerance 為 1%；超界分別輸出 `position_mismatch`／`size_mismatch`。
+- GREEN：probe 只使 `metrics.animation_interference` fail，該頁 static readability與其餘頁保持 PASS；既有 visibility、contrast、partial clip、missing identity及 normal-only invisibility probes全數保留。Full regression 211/211、ZIP lifecycle PASS；ZIP 2,148,629 bytes，SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
 
 ## Independent review request
 

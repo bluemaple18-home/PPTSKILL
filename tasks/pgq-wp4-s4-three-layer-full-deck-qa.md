@@ -68,7 +68,7 @@
 - Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
 - Managed local Chrome 由 trusted producer 跑 static／reduced／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。Static／reduced 的 required-target visibility 最終權威為同 renderer、viewport、DPR、font 與 final-state 條件下的 canonical/candidate raster signal；DOM/style/hit-test 只保留 cheap precheck。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,148,278 bytes；SHA-256 `9065b7844259ece466169f2b8b975dbab89b2c225008bfa52fa83b9d97037ac0`。
+- Fresh ZIP install/smoke/uninstall PASS；2,148,629 bytes；SHA-256 `8d84d47763845aaf8a4107edf77272bc66139c1e4fd9ee78929c187bcf4673dd`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
 
 ## Review repair 1
@@ -98,3 +98,10 @@
 - RED 在同一 adversarial test 加入 `html:not(.motion-static) #problem [data-effect-title]{filter:opacity(0)!important}`；舊 receipt 明確回 `rasterVisibility=not_applicable`。
 - Producer 現對 normal 重新載入 canonical/candidate，同 renderer／viewport／DPR／font 下把 motion roots 推到 resting frame並等待 1300ms，但不呼叫 motion `forceStatic()`、不建立 `.motion-static`；只凍結 background 避免 animation pixel noise。Normal raster 成為 `animation_interference` 的逐頁必要 evidence，static readability 仍由 static＋reduced raster 負責。
 - Reviewer probe 現只產生 `problem.animation_interference`，不污染該頁 static readability 或其他頁。Focused 8/8、WP4 compatibility 28/28、full regression 211/211、fresh ZIP lifecycle PASS。
+
+## Review repair 5 — canonical spatial authority
+
+- Re-review P1 證明 normal raster 原先跟著 candidate target box 移動；`translateX(400px)` 雖改變閱讀位置，target-only raster signal仍近似 canonical，因此可能錯誤 PASS。
+- RED 在同一 normal adversarial artifact 加入 `#metrics` title 的 `translateX(400px)`；舊 receipt 沒有 `position_mismatch`。
+- Candidate capture 現固定使用 canonical target 的 slide-relative coordinates，不再跟隨 candidate box；同時比較 canonical/candidate normalized box。位置差超過 slide 的 0.5% 分類 `position_mismatch`，尺寸差超過 1% 分類 `size_mismatch`，再進 coverage／energy visibility分類。
+- Probe 現只產生 `metrics.animation_interference`，不誤標 static readability 或其他頁。Focused、full regression 211/211、fresh ZIP lifecycle PASS。
