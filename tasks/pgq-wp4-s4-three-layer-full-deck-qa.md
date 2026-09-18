@@ -68,7 +68,7 @@
 - Focused Slice 4：8/8 PASS；WP4 Slice 1～4 compatibility：28/28 PASS；full regression：211/211 PASS。
 - Managed local Chrome 由 trusted producer 跑 static／normal × 1600×900／1280×720；完整 coverage、console／pageerror／network／HTTP／geometry／content integrity／motion gate 均由 receipt contract 驗證。
 - 對抗測試證明單頁 visible-content mismatch 只產生該頁 `content_integrity` issue，且 sample/full-deck 共用兩次 repair budget；caller-authored PASS／coverage／evidence、stale Owner identity、無引用 advisory 與跳過 Layer 2 均 fail closed。
-- Fresh ZIP install/smoke/uninstall PASS；2,146,182 bytes；SHA-256 `48e415b9e60027a9d02f0a098ff8aa0f9906218ff889d65759a1dab5d5013837`。
+- Fresh ZIP install/smoke/uninstall PASS；2,146,485 bytes；SHA-256 `b324f839df79bbc9ab5d9e8fe0d65130cb531d59225cce6d938598511039dcb6`。
 - Syntax 與 branch-range `git diff --check` PASS；等待 independent review，不 merge／push／開 EDX 或後續 Slice。
 
 ## Review repair 1
@@ -77,3 +77,10 @@
 - Static readability 只在該頁 geometry 與 static required targets 全 PASS 時通過；animation interference 另要求 normal required targets 與 motion runtime PASS，不再只有 global motion verdict。
 - 原始 `#decision [data-effect-title]{opacity:0!important}` probe 先重現 `Missing expected rejection`，修後 browser receipt `requiredVisibility=fail`，full-deck decision 對該頁回 `static_readability`＋`animation_interference` repair；其他頁不受影響。
 - Repair commit：`d39fbe9`；更新後 gates 如上，等待 independent re-review。
+
+## Review repair 2
+
+- Re-review P1 證明 `clip-path: inset(...100%...)` 保留 box／opacity，仍可繞過 Repair 1。共同錯誤假設修正為：required target 必須有足夠實際 painted hit area，不能只以 CSS layout properties 推論。
+- Producer 現逐頁 scroll 至 viewport，對每個 canonical target 以 3×3 browser hit-test 取樣；少於 5 個有效 samples 或 painted coverage 低於 50% 即 `painted_area_insufficient`。這同時受 ancestor visibility、clip-path、stacking/cover 與 non-zero box 約束。
+- 同一 probe 同時保留 `decision opacity:0` 與新增 `guardrails clip-path`；RED 為 clip target 未出現 fail，修後兩頁在 static／normal 各自精準產生 readability／animation issues，正常 deck 不誤殺。
+- Repair commit：`fe255b1`。WP4 compatibility 28/28 PASS；full regression 以 serial browser lifecycle 211/211 PASS（並行跑曾有單一 Chrome DevTools port 啟動競爭，該檔單獨 7/7 PASS）；等待 independent re-review。

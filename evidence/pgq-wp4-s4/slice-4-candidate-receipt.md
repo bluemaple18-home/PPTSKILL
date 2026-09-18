@@ -1,7 +1,7 @@
 # PGQ-WP4 Slice 4 Candidate Receipt
 
 **Status:** READY FOR INDEPENDENT REVIEW
-**Range:** `e9172136..d39fbe9`（另含本 receipt 更新 commit）
+**Range:** `e9172136..fe255b1`（另含本 receipt 更新 commit）
 
 ## Delivered contract
 
@@ -19,7 +19,7 @@
 - Managed local Chrome：static／normal × 1600×900／1280×720；trusted producer lifecycle PASS。
 - Visible-content tamper：只對受影響 slide 產生 `content_integrity` repair；兩次既有 action 後 blocked。
 - Direct／fresh-installed CLI parity：PASS；fresh ZIP install/smoke/uninstall：PASS。
-- ZIP：2,146,182 bytes（低於 20 MiB）；SHA-256 `48e415b9e60027a9d02f0a098ff8aa0f9906218ff889d65759a1dab5d5013837`。
+- ZIP：2,146,485 bytes（低於 20 MiB）；SHA-256 `b324f839df79bbc9ab5d9e8fe0d65130cb531d59225cce6d938598511039dcb6`。
 - Syntax、`git diff --check`：PASS。
 
 ## Boundaries
@@ -34,6 +34,13 @@
 - RED：`tests/pgq-wp4-s4-required-visibility.test.mjs` 初次執行為 `Missing expected rejection`。
 - Fix：browser producer 逐頁比對 canonical `data-edit-target`，檢查 target 及 ancestor 的 display／visibility／opacity／box，並輸出 `requiredVisibility`；full-deck mapper 分別把 static 與 normal visibility 綁到該頁 hard checks。
 - GREEN：同一 hidden `decision` title 使 browser receipt fail，且 full-deck decision 只回該頁 `static_readability`、`animation_interference` issues；Focused 8/8、WP4 28/28、Full 211/211、fresh ZIP lifecycle PASS。
+
+## Review repair 2
+
+- Finding：fully clipped required title 仍有 non-zero box 與 opacity 1，可繞過 property-only visibility。
+- RED：同一 browser test 加入 `#guardrails [data-effect-title]{clip-path:inset(0 0 100% 0)!important}`，receipt 未把該 target 判 fail。
+- Fix：每張 slide scroll 入 viewport 後，以 3×3 `elementFromPoint` painted-area sampling 驗證 canonical targets；有效 samples <5 或 coverage <50% fail closed。Opacity probe 與 clip-path probe 同時保留。
+- GREEN：兩個 targets 分別只使自己的 static readability／normal animation interference 失敗；WP4 28/28 PASS。Full suite 的並行 Chrome 啟動曾出現單一 DevTools port 環境競爭，該檔單獨 7/7 PASS；改用 serial browser lifecycle 後完整 211/211 PASS。
 
 ## Independent review request
 

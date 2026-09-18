@@ -834,7 +834,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **PGQ-WP4 Slice 4 task：** `tasks/pgq-wp4-s4-three-layer-full-deck-qa.md`。Measured gap 是 G7 尚缺 Layer-2 有引用理由的結構／閱讀 advisory、綁定同一 identity 的 Layer-3 Owner confirmation，以及不可由 sample shortcut 的逐頁 full-deck release gate。只重用 Slice 1～3 trusted producer／identity／repair budget／freeze；不新增 QA service、任意 score、自動改文或 renderer primitive。
 
-**PGQ-WP4 Slice 4 candidate receipt：** `evidence/pgq-wp4-s4/slice-4-candidate-receipt.md`。`qa-full-deck` 已由 packaged Chrome producer 對每張 canonical slide 建立 Layer-1 coverage；Layer-2 review 必須綁定 current identity 並引用 trusted evidence，Layer-3 human confirmation 與 accepted-risk 亦綁定同一 identity。Sample shortcut、caller-authored PASS／coverage、stale confirmation、無引用 advisory 與 repair-budget reset 均 fail closed。Repair 1 補上 canonical required targets 的逐頁 static／normal visibility evidence，hidden 非首張標題會精準使該頁 readability／animation checks fail。Focused 8/8、WP4 compatibility 28/28、full 211/211、fresh ZIP lifecycle PASS；等待 independent re-review。
+**PGQ-WP4 Slice 4 candidate receipt：** `evidence/pgq-wp4-s4/slice-4-candidate-receipt.md`。`qa-full-deck` 已由 packaged Chrome producer 對每張 canonical slide 建立 Layer-1 coverage；Layer-2 review 必須綁定 current identity 並引用 trusted evidence，Layer-3 human confirmation 與 accepted-risk 亦綁定同一 identity。Sample shortcut、caller-authored PASS／coverage、stale confirmation、無引用 advisory 與 repair-budget reset 均 fail closed。Repair 1 補上逐頁 static／normal target visibility；Repair 2 再以 browser painted-area sampling 關閉 clip-path 等保留 box 的隱藏路徑。Opacity／clip probes 均精準使各自頁面的 readability／animation checks fail。Focused 8/8、WP4 compatibility 28/28、serial full 211/211、fresh ZIP lifecycle PASS；等待 independent re-review。
 
 | 工作包 | 既有 surfaces / 重用卡 | 本次增量 | 依賴與驗收 |
 |---|---|---|---|
