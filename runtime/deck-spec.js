@@ -17,6 +17,55 @@ const safeEasing = (value, fallback) => safeCssText(value, fallback, /^(linear|e
 const clampInteger = (value, fallback, minimum, maximum) => Number.isInteger(value) ? Math.max(minimum, Math.min(maximum, value)) : fallback;
 const idPattern = /^[a-z0-9][a-z0-9._-]{0,79}$/;
 
+const keyPointId = (index) => `key-point-${String(index + 1).padStart(2, '0')}`;
+const namespacedElementId = (namespace, id) => {
+  const candidate = `${namespace}-${id}`;
+  if (idPattern.test(candidate)) return candidate;
+  let hash = 2166136261;
+  for (const character of id) hash = Math.imul(hash ^ character.codePointAt(0), 16777619) >>> 0;
+  const suffix = hash.toString(16).padStart(8, '0');
+  return `${namespace}-${id.slice(0, 78 - namespace.length - suffix.length)}-${suffix}`;
+};
+
+export const ROLE_ELEMENT_IDS = Object.freeze({ title: 'role-title', subtitle: 'role-subtitle' });
+export const pointElementId = (id) => namespacedElementId('point', id);
+export const componentElementId = (id) => namespacedElementId('component', id);
+export const resolveSlideElementIds = (slide) => [
+  ROLE_ELEMENT_IDS.title,
+  ROLE_ELEMENT_IDS.subtitle,
+  ...(slide.content?.keyPointIds ?? []).map(pointElementId),
+  ...(slide.content?.components ?? []).map(({ id }) => componentElementId(id)),
+];
+
+const sanitizeSlide = (slide, index) => {
+  const rawKeyPoints = slide?.content?.keyPoints;
+  const explicitIds = slide?.content?.keyPointIds;
+  if (explicitIds !== undefined) {
+    if (!Array.isArray(explicitIds) || !Array.isArray(rawKeyPoints) || explicitIds.length !== rawKeyPoints.length) throw new Error(`slide ${slide?.id || index + 1} 的 keyPointIds 長度不符。`);
+    if (explicitIds.some((id) => typeof id !== 'string' || !idPattern.test(id))) throw new Error(`slide ${slide?.id || index + 1} 的 keyPointIds 格式非法。`);
+    if (new Set(explicitIds).size !== explicitIds.length) throw new Error(`slide ${slide?.id || index + 1} 的 keyPointIds 重複。`);
+  }
+  const keyPoints = copyStringArray(rawKeyPoints, 3, 5);
+  const keyPointIds = explicitIds === undefined ? keyPoints.map((_, pointIndex) => keyPointId(pointIndex)) : [...explicitIds];
+  if (keyPointIds.length !== keyPoints.length) throw new Error(`slide ${slide?.id || index + 1} 的 keyPointIds 長度不符。`);
+  const components = Array.isArray(slide?.content?.components) ? slide.content.components.map(sanitizeComponent).filter(Boolean) : [];
+  if (components.some(({ id }) => !idPattern.test(id))) throw new Error(`slide ${slide?.id || index + 1} 的 component ID 格式非法。`);
+  const elementIds = resolveSlideElementIds({ content: { keyPointIds, components } });
+  if (elementIds.some((id) => !idPattern.test(id))) throw new Error(`slide ${slide?.id || index + 1} 的 element ID 格式非法。`);
+  if (new Set(elementIds).size !== elementIds.length) throw new Error(`slide ${slide?.id || index + 1} 的 element ID 重複。`);
+  return {
+    id: copyText(slide?.id, `slide-${String(index + 1).padStart(2, '0')}`),
+    content: {
+      title: copyText(slide?.content?.title),
+      subtitle: copyText(slide?.content?.subtitle),
+      keyPoints,
+      keyPointIds,
+      components,
+    },
+    composition: sanitizeComposition(slide?.composition),
+  };
+};
+
 const defaultStyle = {
   id: 'portable-default',
   name: 'Portable Default',
@@ -130,16 +179,7 @@ export function sanitizeDeckSpec(input) {
     language: copyText(input?.language, 'zh-Hant'),
     style: sanitizeStyle(input?.style),
     ...(Array.isArray(input?.claims) ? { claims: input.claims.slice(0, 100).map(sanitizeClaim).filter(Boolean) } : {}),
-    slides: Array.isArray(input?.slides) ? input.slides.slice(0, 15).map((slide, index) => ({
-      id: copyText(slide?.id, `slide-${String(index + 1).padStart(2, '0')}`),
-      content: {
-        title: copyText(slide?.content?.title),
-        subtitle: copyText(slide?.content?.subtitle),
-        keyPoints: copyStringArray(slide?.content?.keyPoints, 3, 5),
-        components: Array.isArray(slide?.content?.components) ? slide.content.components.map(sanitizeComponent).filter(Boolean) : [],
-      },
-      composition: sanitizeComposition(slide?.composition),
-    })) : [],
+    slides: Array.isArray(input?.slides) ? input.slides.slice(0, 15).map(sanitizeSlide) : [],
   };
 }
 
@@ -170,6 +210,11 @@ export function validateDeckSpec(spec) {
   if (ids.some((id) => !id) || new Set(ids).size !== ids.length) errors.push('slide ID 不可缺漏或重複。');
   for (const slide of spec?.slides ?? []) {
     if (!slide.content?.title || !slide.content?.subtitle || !Array.isArray(slide.content?.keyPoints) || slide.content.keyPoints.length < 3 || slide.content.keyPoints.length > 5) errors.push(`${slide.id || 'unknown'} 缺少 title／subtitle／3～5 keyPoints。`);
+    const elementIds = resolveSlideElementIds(slide);
+    if (!Array.isArray(slide.content?.keyPointIds) || slide.content.keyPointIds.length !== slide.content?.keyPoints?.length || slide.content.keyPointIds.some((id) => !idPattern.test(id))) errors.push(`${slide.id || 'unknown'} 的 keyPointIds 無效。`);
+    if ((slide.content?.components ?? []).some(({ id }) => !idPattern.test(id))) errors.push(`${slide.id || 'unknown'} 的 component ID 無效。`);
+    if (elementIds.some((id) => !idPattern.test(id))) errors.push(`${slide.id || 'unknown'} 的 element ID 無效。`);
+    if (new Set(elementIds).size !== elementIds.length) errors.push(`${slide.id || 'unknown'} 的 element ID 不可重複。`);
     if (JSON.stringify(slide.composition ?? {}).match(/"(title|subtitle|keyPoints|text)"\s*:\s*"(?!content\.)/)) errors.push(`${slide.id || 'unknown'} 的 CompositionSpec 內嵌內容。`);
   }
   if (spec?.claims !== undefined && !Array.isArray(spec.claims)) errors.push('claims 必須是陣列。');
@@ -183,7 +228,17 @@ export function validateDeckSpec(spec) {
   return { status: errors.length ? 'fail' : 'pass', errors };
 }
 
-export const contentHash = (slide) => createHash('sha256').update(JSON.stringify(slide.content)).digest('hex');
+export const contentHash = (slide) => {
+  const keyPoints = Array.isArray(slide?.content?.keyPoints) ? slide.content.keyPoints : [];
+  const content = {
+    title: slide?.content?.title,
+    subtitle: slide?.content?.subtitle,
+    keyPoints,
+    keyPointIds: slide?.content?.keyPointIds ?? keyPoints.map((_, index) => keyPointId(index)),
+    components: slide?.content?.components,
+  };
+  return createHash('sha256').update(JSON.stringify(content)).digest('hex');
+};
 
 export function patchComposition(spec, slideId, composition) {
   const sanitized = sanitizeDeckSpec(spec);

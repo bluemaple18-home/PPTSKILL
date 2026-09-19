@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "generatedAt": "2026-09-17T03:17:55.829Z",
+  "generatedAt": "2026-09-19T16:33:26.318Z",
   "lifecycleStatus": "pass",
   "archive": {
     "version": "0.1.0",
-    "sha256": "cc8133aca38a1ccbab402332c85784d31146a0030e7b3b1a1d5b6e26f4b7225c"
+    "sha256": "12b092000ae6296710e579e446ba7be4527b4ce717c06e78ce036830739a832e"
   },
   "sharedCore": {
     "ready": true,
@@ -28,7 +28,7 @@
       "id": "claude-code",
       "status": "recognized",
       "message": "已辨識 Claude Code。",
-      "version": "2.1.274 (Claude Code)"
+      "version": "2.1.277 (Claude Code)"
     },
     {
       "id": "gemini",

@@ -875,6 +875,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 2 task：** `tasks/edx-wp1-s2-stable-identity-operation-path.md`。Frontier先建立backward-compatible slide-local element identity與第一條descriptor-backed `edit-text` operation；舊`applyLocalPatch`只作adapter。Moveable／Selecto仍不安裝，geometry overrides、drag/resize/snap、marquee與完整Operation Registry vocabulary保持blocked。
 
+**EDX-WP1 Slice 2 candidate：** legacy keyPoints deterministic backfill為stable IDs，role／point／component使用互斥element identity namespace；renderer、Node/browser editor、export/reopen與duplicate閉合同一target pair。第一條`edit-text` descriptor拒絕arbitrary payload，legacy patch只作adapter。Focused 8/8、targeted 27/27、non-browser 208/208、PGQ browser compatibility 16/16與fresh editor export→reopen均PASS。Fresh ZIP 2,151,973 bytes，SHA-256 `12b092000ae6296710e579e446ba7be4527b4ce717c06e78ce036830739a832e`；等待independent review，vendor install與geometry interaction仍blocked。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。

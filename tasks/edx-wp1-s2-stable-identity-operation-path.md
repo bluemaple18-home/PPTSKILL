@@ -1,6 +1,6 @@
 # EDX-WP1-S2 — Stable Element Identity + Bounded Operation Path
 
-**Status:** READY FOR IMPLEMENTATION
+**Status:** READY FOR INDEPENDENT REVIEW
 **traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
 
 ## Objective
@@ -64,3 +64,14 @@ Bundle / portable cost：本 Slice 不新增 dependency；僅 schema metadata、
 - 不做 drag、resize、snap、marquee、toolbar、keyboard nudge或 selection UI。
 - 不做 geometry/typography/motion override schema、Undo/Redo、Operation Registry全 vocabulary或 AI bridge。
 - 不 merge、push、deploy或開 EDX-WP1-S3。
+
+## Candidate result — 2026-09-20
+
+- 舊 DeckSpec 缺 `keyPointIds` 時 deterministic backfill；合法 explicit IDs保留，長度／格式／重複錯誤在 sanitizer 前 fail loud。
+- Stable target使用 `{slideId, elementId}`；互斥 namespace為`role-*`、`point-*`、`component-*`。舊 component ID即使叫`title`或`key-point-01`也不與新 identity碰撞；legacy非pattern slide ID仍可操作。
+- Renderer／browser runtime／export／reopen共用 identity；duplicate保留slide-local IDs並以新slide ID維持target pair唯一。Committed `fixtures/full-deck.html`已由正式renderer重建，避免舊artifact與新canonical schema分歧。
+- 第一條 `edit-text` descriptor已定義bounded schema與metadata；Node／browser `executeOperation()`拒絕未知operation、額外root/target欄位、非法element ID、錯誤role與非字串value。Legacy `editText`／`editKeyPoint`／`applyLocalPatch`皆走同一operation path。
+- Focused 8/8、targeted editor/schema/renderer 27/27、non-browser regression 208/208 PASS。PGQ browser compatibility serial 16/16 PASS。
+- Fresh editor browser export→offline reopen PASS；console／pageerror／network／HTTP全0，exit 0。證據：`evidence/edx-wp1-s2/browser-acceptance.json`。
+- Fresh ZIP install/smoke/uninstall PASS；2,151,973 bytes；SHA-256 `12b092000ae6296710e579e446ba7be4527b4ce717c06e78ce036830739a832e`。Syntax與`git diff --check` PASS。
+- 未安裝Moveable／Selecto，未新增dependency/lockfile，未做geometry override、drag/resize/snap、marquee、history或AI bridge。
