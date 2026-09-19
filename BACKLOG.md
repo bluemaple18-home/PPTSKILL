@@ -855,11 +855,13 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** PLANNED / NOT STARTED / DEPENDENCY SPIKES NOT RUN  
+**Status:** DEPENDENCY SPIKE IN PROGRESS — EDX-WP1-S1；FORMAL EDITOR INTEGRATION NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
 本節是 P0-R7 後續能力擴充，不把舊 P0-R7 receipt 改寫成「以前就有拖拉」。目前 MVP 的 `no free x/y dragging` 歷史決策繼續描述舊版；EDX 的新 Owner 方向是 **No ungoverned freeform canvas; support guided direct manipulation**。只有 EDX 完成實作、schema migration、sanitizer/export/browser evidence 後才更新現行 runtime contract。
+
+**EDX-WP1 Slice 1 task：** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`。Frontier 只做 Moveable／Selecto／Floating UI 的 pinned version、license／integrity、實際 bundle、offline browser與架構適配 spike；正式 dependency、stable-ID migration、Operation Registry mutation與 editor runtime改動均保持 blocked。
 
 ## 10.1 八項 Owner 決策
 
