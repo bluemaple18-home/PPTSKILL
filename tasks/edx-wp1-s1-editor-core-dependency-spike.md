@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike
 
-**Status:** BLOCKED — PRODUCT EXPORT CLEANUP CONTRACT MISSING
+**Status:** COMPLETE — ADOPTION DECISION RECORDED
 **traces_to:** `EDX-10.1.1`, `EDX-10.1.4`, `EDX-10.1.8`, `EDX-10.2`, `EDX-10.3/WP1`, `EDX-10.5`, `EDX-10.7`, `EDX-10.8`
 
 ## Objective
@@ -28,8 +28,8 @@
 ## Blocking edges / frontier
 
 - 已滿足：PGQ-WP1～WP4 COMPLETE；EDX Owner方向與 mandatory prior-art gate已存在。
-- Current frontier：本 research-only spike。
-- Blocked：EDX-WP1 implementation、stable-ID schema migration、Operation Registry mutation path與任何 dependency commit。
+- Current frontier：本 research-only spike 已完成；下一步若啟動開發，必須另切 EDX-WP1 implementation card。
+- Blocked：stable-ID schema migration、Operation Registry mutation path與任何 dependency commit，直到正式 implementation card 明確授權。
 - Checkpoint：若實測需要第二 renderer、第二 canonical model、中央服務、任意 HTML/CSS patch或放寬20 MiB gate，立即 `REJECT / BLOCK_SCOPE_EXPANSION`。
 
 ## Verification
@@ -39,6 +39,13 @@
 - Browser hooks在 navigation前註冊 console／pageerror／requestfailed；保存精簡 evidence refs。
 - Repo status證明僅 task／research control artifacts改動，無 dependency或runtime mutation。
 - `git diff --check`。
+
+## Final adoption decision — 2026-09-19
+
+- Moveable `0.53.0`：**GO / ADAPT**。只允許後續 WP1 card 用於 bounded drag／resize／snap／group target normalization；package DOM／transform 不得成為 canonical truth。
+- Selecto `1.26.3`：**GO / ADAPT**。只允許後續 WP1 card 用於 marquee／Shift multi-select；selection state 與 chrome 不得 export。
+- `@floating-ui/dom` `1.8.0`：**REJECT FOR WP1**。目前只有「套件本身可正確定位」的證據，沒有 measured gap 證明既有原生/CSS positioning 不足；依 minimum-sufficient gate 不新增 dependency。未來只有 fresh edge-collision evidence 證明原生方案不足時才可重開。
+- 本決策只授權後續 implementation card 可以採用 Moveable／Selecto；不等於已安裝 dependency、已修改 runtime、已建立 stable IDs 或 Operation Registry。
 
 ## Non-goals
 

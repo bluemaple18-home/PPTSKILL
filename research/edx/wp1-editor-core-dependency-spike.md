@@ -1,18 +1,18 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike Receipt
 
-**Status:** R1 COMPLETE — DEPENDENCY ADOPTION DECISION CHECKPOINT
-**Candidate identity:** `main@26463dd1702a267527407db1467ec5ca2e3e912a`
+**Status:** COMPLETE — MOVEABLE + SELECTO GO；FLOATING UI REJECT FOR WP1
+**Decision baseline:** `main@a63051f328f95ba92f3826616685f92b9accbbbb`
 **Task:** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`
 
 ## Decision snapshot
 
 | Candidate | Pinned version | Classification | Current decision | Reason |
 |---|---:|---|---|---|
-| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；R1 independent review 已證明 allowlisted controls 不進 export。正式 adoption 現回到 decision checkpoint；只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
-| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；R1 independent review 已證明 Selecto chrome 不進 export。正式 adoption 現回到 decision checkpoint。 |
-| `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | Toolbar positioning與viewport內收斂 PASS；R1 fresh managed-browser 已證明 context toolbar 不進 export；多邊界必要性仍需 adoption checkpoint 收斂。 |
+| Moveable | `0.53.0` | ADAPT | **GO** | Fresh drag／resize／real snap均 PASS；R1 independent review 已證明 allowlisted controls 不進 export。後續只可映射成 bounded operation payload，不得把 transform DOM當 canonical。 |
+| Selecto | `1.26.3` | ADAPT | **GO** | Fresh marquee／Shift多選與 Moveable handoff PASS；R1 independent review 已證明 Selecto chrome 不進 export。selection 只屬 editor-local state。 |
+| `@floating-ui/dom` | `1.8.0` | REFERENCE / REOPEN-ON-GAP | **REJECT FOR WP1** | 套件 positioning／viewport collision 本身 PASS，但沒有 measured evidence 證明既有原生/CSS positioning 不足；依 minimum-sufficient gate 不新增 dependency。 |
 
-沒有 candidate取得 GO；R1 只關閉 export-cleanup 技術缺口，dependency commit、stable-ID migration、Operation Registry mutation與正式 EDX interaction implementation仍 blocked。
+採用裁決已完成：Moveable＋Selecto 允許進入後續 WP1 implementation card；Floating UI 本輪不採。這不等於 dependency 已安裝；dependency commit、stable-ID migration、Operation Registry mutation與正式 EDX interaction implementation仍需下一張 implementation card 明確授權。
 
 ## Official package evidence
 
@@ -86,6 +86,9 @@ Packages只安裝於 `/tmp/pptskill-edx-wp1-s1.*`，使用 exact versions與 `pn
 - 目前 Native3 sandbox 無法 fresh 啟動舊 `browser-geometry-qa.mjs` raw Chrome；independent review 需補跑既有 PGQ browser-backed compatibility。這不改變 R1 managed-browser PASS，也不授權 dependency adoption。
 - Independent review 已補跑既有 PGQ browser compatibility 16/16 PASS；reviewer 發現 standalone editor acceptance 在功能 PASS 後可能因 Chrome profile teardown race 回 `ENOTEMPTY`。R1 repair 已加入 bounded process-exit wait 與 profile removal retry，fresh export／reopen exit 0；direct focused 數字亦更正為 5/5。Independent re-review 最終 GO；R1 COMPLETE，三候選仍維持 DEFER，現在進入 adoption decision checkpoint。
 
-## Required next evidence
+## Adoption decision closure
 
-下一步是 R1 independent review：補跑舊 PGQ browser compatibility、核對 fresh ZIP／receipt 與 bounded diff。R1 GO 後回到 EDX-WP1-S1 adoption decision；三個候選在該 checkpoint 前持續 `DEFER`，不得自動新增 dependency或開始正式 interaction implementation。
+- **Moveable GO**：相對於原生 pointer events，已量測的 resize handles、snap guideline、group target／input normalization 是實際缺口；bundle與portable成本可接受，且 canonical/export boundary 已由 R1 關閉。
+- **Selecto GO**：marquee／Shift multi-select 與 Moveable handoff 有 fresh browser evidence；自行重做通用 selection primitive 沒有更小，也沒有現成 PPTSKILL seam 可替代。
+- **Floating UI REJECT FOR WP1**：目前沒有「不用它就做不到」的證據；contextual toolbar 先沿用 native/CSS positioning。只有 fresh multi-viewport／edge-collision 對抗證明 native seam 不足，才可重開。
+- Next frontier：另切 EDX-WP1 implementation card，先處理 backward-compatible stable element identity＋bounded operation path，再接 Moveable／Selecto。不得在本 research closure 直接安裝套件或開正式 interaction implementation。

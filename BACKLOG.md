@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** DEPENDENCY SPIKE BLOCKED — EDX-WP1-S1 PRODUCT EXPORT CLEANUP CONTRACT MISSING；FORMAL EDITOR INTEGRATION NOT STARTED
+**Status:** EDX-WP1-S1 COMPLETE — DEPENDENCY ADOPTION DECISION CLOSED；FORMAL EDITOR INTEGRATION NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -863,13 +863,15 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 1 task：** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`。Frontier 只做 Moveable／Selecto／Floating UI 的 pinned version、license／integrity、實際 bundle、offline browser與架構適配 spike；正式 dependency、stable-ID migration、Operation Registry mutation與 editor runtime改動均保持 blocked。
 
-**EDX-WP1 Slice 1 interim receipt：** `research/edx/wp1-editor-core-dependency-spike.md`。三個候選的official version、MIT license、registry integrity與實測bundle已鎖定；合併tree-shaken minified 290,306 bytes、inline harness 291,197 bytes，容量不是blocker。修復後fresh managed-browser重跑證明Shift多選、drag、resize、真實snap與toolbar positioning均PASS，console／pageerror／network為0且lifecycle cleanup PASS；但正式`exportHtml()`仍會帶入Moveable、Selecto與toolbar chrome。三候選維持DEFER，formal EDX implementation未開始。
+**EDX-WP1 Slice 1 closure receipt：** `research/edx/wp1-editor-core-dependency-spike.md`。三個候選的official version、MIT license、registry integrity與實測bundle已鎖定；R1 已關閉 editor chrome export leak 並獨立 review GO。Final adoption：Moveable `0.53.0` **GO / ADAPT**、Selecto `1.26.3` **GO / ADAPT**、`@floating-ui/dom` `1.8.0` **REJECT FOR WP1**；Floating UI 缺少 native/CSS positioning 不足的 measured gap。Formal EDX implementation 尚未開始。
 
 **EDX-WP1 Slice 1 Repair 1 task：** `tasks/edx-wp1-s1-r1-export-cleanup-seam.md`。Frontier只補正式exporter的bounded editor-only chrome cleanup seam：first-party marker＋明確Moveable／Selecto／context-toolbar selector、clone-only移除、canonical/presentation不變與mis-mark fail-loud。Direct＋managed-browser GO前，dependency adoption與所有正式EDX interaction implementation保持blocked。
 
 **EDX-WP1 Slice 1 Repair 1 candidate：** clone-only export cleanup已接入正式 `prepareExport()`／`exportHtml()`；direct 5/5與fresh managed-browser export→recipient reopen PASS，canonical／presentation／live DOM保持且mis-mark fail loud。Non-browser 200/200與fresh ZIP lifecycle PASS；ZIP 2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。PGQ browser-backed compatibility 已由 independent reviewer 補跑通過；三候選仍為 DEFER，未開始 dependency adoption或正式 EDX interaction implementation。
 
-**EDX-WP1 Slice 1 Repair 1 closure：** independent reviewer 已重播既有 PGQ browser compatibility 16/16 PASS，並確認 exporter 功能無 finding；P2 teardown race 已以 bounded exit wait＋profile removal retry 關閉，fresh export→recipient reopen exit 0，direct 5/5、non-browser 200/200 均 PASS。Independent re-review 最終 **GO**；R1 COMPLETE。Current frontier 回到 dependency adoption decision checkpoint，三候選在裁決前維持 DEFER。
+**EDX-WP1 Slice 1 Repair 1 closure：** independent reviewer 已重播既有 PGQ browser compatibility 16/16 PASS，並確認 exporter 功能無 finding；P2 teardown race 已以 bounded exit wait＋profile removal retry 關閉，fresh export→recipient reopen exit 0，direct 5/5、non-browser 200/200 均 PASS。Independent re-review 最終 **GO**；R1 COMPLETE。Dependency adoption decision 已由下一筆 closure 收斂。
+
+**EDX-WP1 Slice 1 adoption decision：** Moveable＋Selecto 通過後續 implementation 採用 gate；兩者只能產生／承接 bounded operation payload，DOM／selection 不具 canonical authority。Floating UI 本輪拒絕，contextual toolbar 先用 native/CSS positioning；只有 fresh edge-collision evidence 證明 measured gap 才可重開。下一步需另切 WP1 implementation card；不得由本決策直接安裝 dependency 或修改 runtime/schema。
 
 ## 10.1 八項 Owner 決策
 
@@ -888,10 +890,10 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 | OSS / donor | Verified license / status | Classification | EDX 用途 | Gate / 不吸收 |
 |---|---|---|---|---|
-| `daybrush/moveable` | MIT；repo 描述含 draggable/resizable/groupable/snappable | **ADAPT / P0 candidate** | drag/resize/group transform/snap guides | DOM state 不作 canonical；warp/任意 rotate 不作一般預設；先做 scaling + bundle spike |
-| `daybrush/selecto` | MIT；mouse/touch drag-area selection | **ADAPT / P0 candidate** | marquee、多選 | selection/editor chrome 不 export |
+| `daybrush/moveable` | MIT；repo 描述含 draggable/resizable/groupable/snappable | **ADAPT / P0 GO** | drag/resize/group transform/snap guides | DOM state 不作 canonical；warp/任意 rotate 不作一般預設；只接 bounded operation path |
+| `daybrush/selecto` | MIT；mouse/touch drag-area selection | **ADAPT / P0 GO** | marquee、多選 | selection/editor chrome 不 export；只提供 selection input |
 | donor `html-slide-builder-oss` editor | repo snapshot / research-only | **ADAPT** | 8px grid、align/distribute、arrow nudge、IME、style copy/paste、undo/redo、first-edit backup、animation editor guardrails | 不吸收 HTML-as-only-truth、Python server、任意 HTML、runtime `@latest`、mtime 假設 |
-| `floating-ui/floating-ui` | MIT；活躍 | **DIRECT_REUSE candidate** | contextual toolbar/inspector positioning/viewport collision | 只解 UI positioning，不擁有 editor state |
+| `floating-ui/floating-ui` | MIT；活躍 | **REJECT FOR WP1 / REOPEN-ON-GAP** | contextual toolbar/inspector positioning prior art | native/CSS first；缺 measured gap 不新增 dependency；未來 fresh edge-collision failure 才重開 |
 | `fengyuanchen/cropperjs` | MIT；2026 活躍 | **ADAPT / P0 candidate** | crop/move/zoom/fit | Evidence 圖由 PPTSKILL policy 保護；crop 不取代原 Evidence |
 | `GoogleChromeLabs/browser-fs-access` | Apache-2.0；2026 活躍 | **ADAPT / P1 candidate** | file open/save + handle capability seam | 無 handle 不宣稱 mtime/conflict detection；portable editor 不依賴此 lib 才能基本運作 |
 | `jakearchibald/idb-keyval` | LICENSE 明示 Apache-2.0；2026 活躍 | **DIRECT_REUSE candidate** | local draft/recovery IndexedDB | 先 probe file:// persistence；失敗不得顯示「已自動儲存」；不升級成 app DB |
@@ -909,7 +911,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 | Work package | Prior art first | PPTSKILL custom delta | Primary existing surfaces | Acceptance summary |
 |---|---|---|---|---|
-| **EDX-WP1 Editor Core** | Moveable + Selecto + Floating UI；donor grid/nudge | stable element identity、Operation Registry、guided overrides、safe-area/QA、contextual selection | `runtime/deck-editor.js`、DeckSpec/CompositionSpec、geometry gate | drag/resize/multi-select/snap 可用；一個 gesture 一筆 history；不產生任意 CSS/DOM truth；save/reopen geometry 一致 |
+| **EDX-WP1 Editor Core** | Moveable + Selecto；contextual toolbar 先用 native/CSS positioning；donor grid/nudge | stable element identity、Operation Registry、guided overrides、safe-area/QA、contextual selection | `runtime/deck-editor.js`、DeckSpec/CompositionSpec、geometry gate | drag/resize/multi-select/snap 可用；一個 gesture 一筆 history；不產生任意 CSS/DOM truth；save/reopen geometry 一致 |
 | **EDX-WP2 Content / Asset Editing** | donor IME/style copy；Cropper.js；browser clipboard/file primitives | role typography、text/style overrides、replace/insert component IDs、Evidence crop policy、portable video limits、group/lock relationship | `deck-editor.js`、asset optimizer/policy、StyleSpec、sanitizer/export | 雙擊中文輸入、style copy/paste、image replace/crop/insert/group/lock；overflow/geometry recheck；另存不丟 overrides |
 | **EDX-WP3 History / Motion** | Immer + idb-keyval + browser-fs-access；NumberFlow；existing motion + donor rules + Vanta；Motion only if needed | operation coalescing、draft capability probe、recovery/source fingerprint semantics、role/motion metadata、slide lifecycle、Style color adapter | editor/history seam、`motion-primitives.js`、renderer、PGQ-WP3、size guard | Undo/Redo/recovery/降級 truthful；B odometer/E sweep/背景可 replay；reduced motion 終態正確；history/draft/chrome 不出檔；20 MiB 不放寬 |
 | **EDX-WP4 Human Intent / Compatibility** | Excalidraw/成熟 editor UX 只作 reference | scoped patch precedence、destructive confirmation、stable ID migration、manual override preservation、recipient reparse、optional AI bridge bounded operation contract | DeckSpec/CompositionSpec/schema/sanitizer/editor/export/CLI adapters | content edit 不洗人工版面；recompose 明示 destructive scope；舊 deck 可讀；新 deck save/reopen/recipient AI 不丟 identity/overrides；無 bridge 仍完整人工可編輯 |
