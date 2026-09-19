@@ -1,0 +1,66 @@
+# EDX-WP1-S2 — Stable Element Identity + Bounded Operation Path
+
+**Status:** READY FOR IMPLEMENTATION
+**traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
+
+## Objective
+
+在不安裝 Moveable／Selecto、也不實作 drag／resize／marquee UI 的前提下，建立第一條可攜、向後相容的 element identity 與 operation path。舊 DeckSpec 必須可讀；新版 export／reopen 必須保留 identity；第一個 `edit-text` operation 必須由 descriptor allowlist 驗證並更新 canonical DeckSpec，不能把 DOM、selection 或任意 patch 當 truth。
+
+## Minimum contract
+
+- Stable target 是 `{ slideId, elementId }`；slide-local `elementId` 必須符合既有 ID 字元邊界且在同一 slide 唯一。
+- `title`／`subtitle` 使用固定 role identity；component 使用既有 component ID；只有目前不穩定的 keyPoints 新增 optional `content.keyPointIds` parallel array。
+- 舊 deck 缺 `keyPointIds` 時 deterministic backfill `key-point-01`…；合法既有 ID 必須保留。另存後不得再依文字或 DOM 順序重建 identity。
+- Renderer 對所有可直接操作的 title／subtitle／keyPoint／component root 輸出 `data-pptskill-element-id`；`data-edit-target` 保持相容。
+- 第一個 descriptor 只做 `edit-text`，定義 input schema、allowed target roles、mutates/preserve scopes、destructive/confirmation、undoable、QA invalidation、portable serialization與unsupported reason。
+- `executeOperation()` 只接受 allowlisted descriptor與payload；未知 operation、slide、element、role或非字串 value 必須 fail loud。`applyLocalPatch()` 保持舊 API，改作 bounded adapter，不另寫第二套 mutation truth。
+
+## Prior art gate
+
+| Prior art | Classification / license / pin | 本 Slice 使用 | Why custom |
+|---|---|---|---|
+| Moveable `0.53.0` | GO / ADAPT / MIT / integrity 已鎖 | **不安裝**；未來只產生 geometry operation payload | 不提供 PPTSKILL canonical identity、schema portability或 mutation authority。 |
+| Selecto `1.26.3` | GO / ADAPT / MIT / integrity 已鎖 | **不安裝**；未來只提供 selection input | 不提供 canonical target identity或 operation validation。 |
+| donor editor | ADAPT / research snapshot | 參考 stable selection／operation UX | HTML-as-truth 與任意 DOM mutation不符合 portable DeckSpec。 |
+| Floating UI `1.8.0` | REJECT FOR WP1 | 不使用 | 無 edge-collision measured gap。 |
+
+Bundle / portable cost：本 Slice 不新增 dependency；僅 schema metadata、DOM attributes與小型 descriptor/dispatcher。20 MiB hard gate不變。
+
+## Acceptance
+
+1. RED→GREEN：舊 fixture 無 `keyPointIds` 可 deterministic migration；合法 supplied IDs deep-preserve；長度不符、重複或非法 explicit IDs fail loud。
+2. Sanitizer／validator／renderer／extract／editor／export→reopen 關閉同一 identity chain；新版另存不丟 ID。
+3. 每張 slide 的 `data-pptskill-element-id` 唯一；title／subtitle／keyPoint／component identity 可從 canonical spec deterministic resolve。
+4. Duplicate slide 仍可保留 slide-local element IDs，並藉新 slide ID 維持 global target pair 唯一；delete/reorder不污染其他 identity。
+5. `edit-text` operation 只改指定 title／subtitle／keyPoint；content hash以外的 composition/style/motion/background/component與其他 slide保持。
+6. Legacy `editText`、`editKeyPoint`、`applyLocalPatch`持續PASS，且 adapter最終走同一 operation path。
+7. 未支援 `move-element`／`resize-element`、任意 HTML/JS/CSS、DOM geometry與 selection state全部fail loud；不提前建立 overrides、history、AI bridge或 vendor adapter。
+8. Focused direct、existing editor/export、DeckSpec/renderer compatibility、full non-browser regression、fresh ZIP install/smoke/uninstall、syntax與`git diff --check` PASS。若 runtime DOM attribute／browser export path受影響，補 fresh export→offline reopen gate。
+
+## Blocking edges / checkpoint
+
+- 已滿足：EDX-WP1-S1 dependency decision；Moveable與Selecto GO / ADAPT，Floating UI REJECT。
+- Current frontier：本 Slice。
+- Blocked until GO：dependency install、Moveable drag/resize/snap、Selecto marquee、多選、geometry overrides、history、正式 AI bridge。
+- Checkpoint：本 Slice independent review GO後，才切 geometry operation Slice；不得直接接 vendor UI。
+
+## Likely files
+
+- `runtime/deck-spec.js`
+- `runtime/full-deck-renderer.js`
+- `runtime/deck-editor.js`
+- focused tests／fixtures／candidate receipt
+
+## Verification / TDD
+
+- 先以 public interfaces 建立 identity migration、duplicate、export/reopen與 operation fail-loud RED。
+- 最小 GREEN；不改 schemaVersion、不新增 dependency、不建立第二 renderer/exporter。
+- 收工記錄 exact tests、ZIP bytes/SHA、scope scan與 reviewer range。
+
+## Non-goals
+
+- 不安裝或 bundle Moveable／Selecto。
+- 不做 drag、resize、snap、marquee、toolbar、keyboard nudge或 selection UI。
+- 不做 geometry/typography/motion override schema、Undo/Redo、Operation Registry全 vocabulary或 AI bridge。
+- 不 merge、push、deploy或開 EDX-WP1-S3。

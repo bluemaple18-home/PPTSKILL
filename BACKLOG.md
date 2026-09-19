@@ -873,6 +873,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 1 adoption decision：** Moveable＋Selecto 通過後續 implementation 採用 gate；兩者只能產生／承接 bounded operation payload，DOM／selection 不具 canonical authority。Floating UI 本輪拒絕，contextual toolbar 先用 native/CSS positioning；只有 fresh edge-collision evidence 證明 measured gap 才可重開。下一步需另切 WP1 implementation card；不得由本決策直接安裝 dependency 或修改 runtime/schema。
 
+**EDX-WP1 Slice 2 task：** `tasks/edx-wp1-s2-stable-identity-operation-path.md`。Frontier先建立backward-compatible slide-local element identity與第一條descriptor-backed `edit-text` operation；舊`applyLocalPatch`只作adapter。Moveable／Selecto仍不安裝，geometry overrides、drag/resize/snap、marquee與完整Operation Registry vocabulary保持blocked。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。
