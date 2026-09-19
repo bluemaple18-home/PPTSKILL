@@ -1,6 +1,6 @@
 # EDX-WP1-S2 — Stable Element Identity + Bounded Operation Path
 
-**Status:** READY FOR INDEPENDENT REVIEW
+**Status:** READY FOR INDEPENDENT RE-REVIEW
 **traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
 
 ## Objective
@@ -75,3 +75,12 @@ Bundle / portable cost：本 Slice 不新增 dependency；僅 schema metadata、
 - Fresh editor browser export→offline reopen PASS；console／pageerror／network／HTTP全0，exit 0。證據：`evidence/edx-wp1-s2/browser-acceptance.json`。
 - Fresh ZIP install/smoke/uninstall PASS；2,151,973 bytes；SHA-256 `12b092000ae6296710e579e446ba7be4527b4ce717c06e78ce036830739a832e`。Syntax與`git diff --check` PASS。
 - 未安裝Moveable／Selecto，未新增dependency/lockfile，未做geometry override、drag/resize/snap、marquee、history或AI bridge。
+
+## Repair 1 result — 2026-09-20
+
+- Independent review 發現兩個P1與一個P2：operation path對合法超長legacy slide ID另設200字元限制；bounded namespace可與另一合法legacy ID碰撞；公開descriptor只做shallow freeze而可被mutation擴張role metadata。
+- Operation path已移除額外slide ID上限，完整沿用DeckSpec既有非空unique ID domain。Fresh Chrome以234字元slide ID實際完成`applyLocalPatch`→`executeOperation`、export與recipient reopen，三階段ID與編輯文字一致。
+- Element identity改為deterministic、bounded、slide-local collision allocator；分配順序按canonical namespace/raw ID排序，不受keyPoint/component array reorder影響。對抗性component與keyPoint suffix collision保持unique且可round-trip。
+- Descriptor metadata已deep-freeze；Node/browser enforcement另持有private immutable role allowlist，外部mutation不能擴張operation authority。
+- Focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser compatibility serial 16/16 PASS。Fresh editor browser export→offline reopen PASS；console／pageerror／network／HTTP全0，managed lifecycle exit 0。
+- Fresh ZIP install/smoke/uninstall PASS；2,152,740 bytes；SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`。Syntax與`git diff --check` PASS。

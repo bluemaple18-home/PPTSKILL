@@ -1,4 +1,4 @@
-import { componentElementId, embedDeckSpec, pointElementId, ROLE_ELEMENT_IDS, sanitizeDeckSpec, validateDeckSpec } from './deck-spec.js';
+import { embedDeckSpec, resolveSlideElementIdentities, ROLE_ELEMENT_IDS, sanitizeDeckSpec, validateDeckSpec } from './deck-spec.js';
 import { validateDeckCompositions } from './composition-primitives.js';
 import { compileVisualRouteCandidate, resolveRoleTreatments } from './design-grammar.js';
 import { buildMotionCss, buildMotionRuntimeScript } from './motion-primitives.js';
@@ -34,20 +34,25 @@ const editable = (slide, field, tag, value, className = '') => {
 const typographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(0, 2).join('');
 const trailingTypographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(-2).join('');
 
-const renderPoints = (slide, className = 'point-list') => `<ol class="${className}">${slide.content.keyPoints.map((point, index) => `<li data-point-index="${index}"><span>${String(index + 1).padStart(2, '0')}</span><p data-edit-kind="text" data-pptskill-element-id="${attr(pointElementId(slide.content.keyPointIds[index]))}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></li>`).join('')}</ol>`;
+const renderPoints = (slide, className = 'point-list') => {
+  const identities = resolveSlideElementIdentities(slide);
+  return `<ol class="${className}">${slide.content.keyPoints.map((point, index) => `<li data-point-index="${index}"><span>${String(index + 1).padStart(2, '0')}</span><p data-edit-kind="text" data-pptskill-element-id="${attr(identities.keyPoints[index])}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></li>`).join('')}</ol>`;
+};
 
 const renderMetrics = (slide) => `<div class="metric-cards" data-effect-role="metric" data-edit-target="slides.${attr(slide.id)}.content.keyPoints">${slide.content.keyPoints.map((point, index) => {
+  const identities = resolveSlideElementIdentities(slide);
   const [value, ...labelParts] = point.split('｜');
   const label = labelParts.join('｜');
   const target = slide.composition.motion?.targets.find(({ ref }) => ref === `content.keyPoints.${index}`);
   const parsed = target ? parseMotionMetric(point) : null;
   const metric = parsed ? `<strong class="metric-value"><span>${escapeHtml(parsed.numberPrefix)}</span><number-flow data-pptskill-odometer data-from="${attr(target.from)}" data-to="${attr(parsed.finalValue)}" data-final-display="${attr(parsed.numericDisplay)}" data-use-grouping="${parsed.format.useGrouping}" data-fraction-digits="${parsed.format.maximumFractionDigits}" data-stagger-ms="${attr(slide.composition.motion.staggerMs)}" data-sequence-index="${index}">${escapeHtml(parsed.numericDisplay)}</number-flow><span>${escapeHtml(parsed.numberSuffix)}</span></strong>` : `<strong class="metric-value">${escapeHtml(value)}</strong>`;
-  return `<article data-metric-index="${index}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}" data-pptskill-element-id="${attr(pointElementId(slide.content.keyPointIds[index]))}"><b>${String(index + 1).padStart(2, '0')}</b>${label ? `${metric}<p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
+  return `<article data-metric-index="${index}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}" data-pptskill-element-id="${attr(identities.keyPoints[index])}"><b>${String(index + 1).padStart(2, '0')}</b>${label ? `${metric}<p>${escapeHtml(label)}</p>` : `<p>${escapeHtml(point)}</p>`}</article>`;
 }).join('')}</div>`;
 
-const renderComponent = (component, slideId) => {
-  const target = `slides.${attr(slideId)}.content.components.${attr(component.id)}`;
-  const identity = ` data-pptskill-element-id="${attr(componentElementId(component.id))}"`;
+const renderComponent = (component, slide) => {
+  const target = `slides.${attr(slide.id)}.content.components.${attr(component.id)}`;
+  const componentIndex = slide.content.components.findIndex(({ id }) => id === component.id);
+  const identity = ` data-pptskill-element-id="${attr(resolveSlideElementIdentities(slide).components[componentIndex])}"`;
   if (component.type === 'image') return `<figure class="asset image-asset" data-effect-role="image"${identity} data-edit-target="${target}"><img src="${attr(component.dataUri)}" alt="${attr(component.alt)}" style="object-fit:${component.fit || 'contain'}"></figure>`;
   if (component.type === 'text') return `<blockquote class="asset text-asset" data-effect-role="visualAnchor" data-edit-kind="text"${identity} data-edit-target="${target}">${escapeHtml(component.text)}</blockquote>`;
   if (component.type === 'citation') return `<p class="asset citation-asset" data-edit-kind="text"${identity} data-edit-target="${target}">${component.url ? `<a href="${attr(component.url)}">${escapeHtml(component.label)}</a>` : escapeHtml(component.label)}</p>`;
@@ -100,8 +105,8 @@ const primitiveRenderers = {
   'title-points': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderPoints(slide)}`,
   'split-proof': (slide) => `<div class="split-copy">${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</div><aside class="proof-panel">${renderPoints(slide, 'proof-list')}</aside>`,
   'metric-grid': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderMetrics(slide)}`,
-  'process-flow': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header><div class="process-steps" data-effect-role="process">${slide.content.keyPoints.map((point, index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><p data-edit-kind="text" data-pptskill-element-id="${attr(pointElementId(slide.content.keyPointIds[index]))}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></article>`).join('')}</div>`,
-  'component-focus': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderComponent(findComponent(slide), slide.id)}`,
+  'process-flow': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header><div class="process-steps" data-effect-role="process">${slide.content.keyPoints.map((point, index) => `<article><b>${String(index + 1).padStart(2, '0')}</b><p data-edit-kind="text" data-pptskill-element-id="${attr(resolveSlideElementIdentities(slide).keyPoints[index])}" data-edit-target="slides.${attr(slide.id)}.content.keyPoints.${index}">${escapeHtml(point)}</p></article>`).join('')}</div>`,
+  'component-focus': (slide) => `<header>${editable(slide, 'title', 'h2', slide.content.title)}${editable(slide, 'subtitle', 'p', slide.content.subtitle, 'subtitle')}</header>${renderComponent(findComponent(slide), slide)}`,
 };
 
 const applyEffectTreatments = (markup, treatments) => markup.replace(/data-effect-role="([^"]+)"/g, (match, role) => `${match} data-effect-treatment="${attr(treatments.byRole[role] || 'none')}"`);

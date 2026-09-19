@@ -8,6 +8,8 @@ import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 const output = resolve(process.argv[2] || 'evidence/p0-r7/browser-editor-acceptance.json');
 const exportedDeck = resolve(process.argv[3] || 'evidence/p0-r7/portable-edited-deck.html');
 const fixture = JSON.parse(await readFile(resolve('fixtures/full-deck-spec.json'), 'utf8'));
+const legacySlideId = `Opening Cover ${'X'.repeat(220)}`;
+fixture.slides[0].id = legacySlideId;
 fixture.profile = { customer: '不得外洩' };
 fixture.localPath = '/Users/private/source.pdf';
 fixture.prompt = 'hidden working prompt';
@@ -96,13 +98,15 @@ try {
   const interaction = await evaluate(String.raw`(async()=>{
     await document.fonts.ready;
     if(!window.PPTSKILLEditor)throw new Error('editor runtime 未啟動');
+    const legacySlideId=${JSON.stringify(legacySlideId)};
     const click=a=>document.querySelector('[data-action="'+a+'"]').click();
     click('edit');
-    const title=document.querySelector('[data-edit-target="slides.opening.content.title"]');
+    const title=[...document.querySelectorAll('[data-edit-target]')].find(el=>el.dataset.editTarget==='slides.'+legacySlideId+'.content.title');
     title.textContent='瀏覽器直接編輯成功';
     click('edit');
-    document.querySelector('.slide[data-slide-id="opening"]').click();
-    window.PPTSKILLEditor.applyLocalPatch({slideId:'opening',region:'content.subtitle',value:'本機 AI 單區 patch 成功'});
+    document.querySelector('.slide[data-slide-id="'+CSS.escape(legacySlideId)+'"]').click();
+    window.PPTSKILLEditor.applyLocalPatch({slideId:legacySlideId,region:'content.subtitle',value:'本機 AI 單區 patch 成功'});
+    const legacyCanonicalText=window.PPTSKILLEditor.getDeckSpec().slides.find(s=>s.id===legacySlideId)?.content.subtitle;
     document.querySelector('.slide[data-slide-id="proof"]').click();
     click('duplicate');const afterDuplicate=document.querySelectorAll('.slide').length;
     click('delete');const afterDelete=document.querySelectorAll('.slide').length;
@@ -132,11 +136,11 @@ try {
     const inspect=source=>{const doc=new DOMParser().parseFromString(source,'text/html'),exportedSpec=JSON.parse(doc.querySelector('#deck-spec').textContent);return{chromeCounts:chromeSelectors.map(selector=>doc.querySelectorAll(selector).length),presentation:presentationSnapshot(doc),spec:exportedSpec}};
     const preparedExport=inspect(prepared.html),directExport=inspect(html),repeatExport=inspect(repeatHtml);
     const liveChromeAfter=chromeSelectors.map(selector=>document.querySelectorAll(selector).length);
-    return {afterDuplicate,afterDelete,unsupportedChartRejection,chartTypeAfterRejection,imageReplaced,html,title:title.textContent,spec:window.PPTSKILLEditor.getDeckSpec(),specBeforeExport,presentationBeforeExport,presentationAfterExport:presentationSnapshot(document),liveChromeBefore,liveChromeAfter,misMarkError,preparedExport,directExport,repeatExport};
+    return {afterDuplicate,afterDelete,unsupportedChartRejection,chartTypeAfterRejection,imageReplaced,html,title:title.textContent,legacySlideId,legacyCanonicalText,spec:window.PPTSKILLEditor.getDeckSpec(),specBeforeExport,presentationBeforeExport,presentationAfterExport:presentationSnapshot(document),liveChromeBefore,liveChromeAfter,misMarkError,preparedExport,directExport,repeatExport};
   })()`);
   await writeFile(exportedDeck, interaction.html);
   await navigate(exportedDeck);
-  const reopened = await evaluate(String.raw`(()=>{const spec=window.PPTSKILLEditor.getDeckSpec();return{editorReady:Boolean(window.PPTSKILLEditor),slideCount:document.querySelectorAll('.slide').length,title:document.querySelector('[data-edit-target="slides.opening.content.title"]')?.textContent,subtitle:spec.slides.find(s=>s.id==='opening')?.content.subtitle,imageType:spec.slides.find(s=>s.id==='portable')?.content.components.find(c=>c.id==='portable-image')?.dataUri.slice(0,16),claim:spec.claims?.find(c=>c.id==='conversion-uplift'),serialized:JSON.stringify(spec),presenterText:/Presenter|講者模式/.test(document.body.innerText)}})()`);
+  const reopened = await evaluate(String.raw`(()=>{const legacySlideId=${JSON.stringify(legacySlideId)},spec=window.PPTSKILLEditor.getDeckSpec(),legacySlide=spec.slides.find(s=>s.id===legacySlideId);return{editorReady:Boolean(window.PPTSKILLEditor),slideCount:document.querySelectorAll('.slide').length,legacySlideId:legacySlide?.id,title:legacySlide?.content.title,subtitle:legacySlide?.content.subtitle,imageType:spec.slides.find(s=>s.id==='portable')?.content.components.find(c=>c.id==='portable-image')?.dataUri.slice(0,16),claim:spec.claims?.find(c=>c.id==='conversion-uplift'),serialized:JSON.stringify(spec),presenterText:/Presenter|講者模式/.test(document.body.innerText)}})()`);
   if (managedPortFile) await cdp.send('Browser.close');
   cdp.close();
   const exportChromeCleanup = [interaction.preparedExport, interaction.directExport, interaction.repeatExport].every(({ chromeCounts }) => chromeCounts.every((count) => count === 0));
@@ -146,16 +150,19 @@ try {
   const livePresentationStable = JSON.stringify(interaction.presentationAfterExport) === JSON.stringify(interaction.presentationBeforeExport);
   const liveEditorChromePreserved = JSON.stringify(interaction.liveChromeBefore) === JSON.stringify(interaction.liveChromeAfter) && interaction.liveChromeAfter.every((count) => count === 1);
   const misMarkFailsLoud = /editor chrome.*presentation truth/u.test(interaction.misMarkError);
+  const exportedLegacySlide = interaction.directExport.spec.slides.find(({ id }) => id === legacySlideId);
+  const legacySlideOperationPath = interaction.legacySlideId === legacySlideId && interaction.legacyCanonicalText === '本機 AI 單區 patch 成功' && exportedLegacySlide?.id === legacySlideId && exportedLegacySlide?.content.title === '瀏覽器直接編輯成功' && exportedLegacySlide?.content.subtitle === '本機 AI 單區 patch 成功' && reopened.legacySlideId === legacySlideId && reopened.title === '瀏覽器直接編輯成功' && reopened.subtitle === '本機 AI 單區 patch 成功';
   const receipt = {
-    status: interaction.afterDuplicate === 11 && interaction.afterDelete === 10 && /line.*支援|支援.*line/.test(interaction.unsupportedChartRejection) && interaction.chartTypeAfterRejection === 'bar' && interaction.imageReplaced && exportChromeCleanup && exportCanonicalStable && exportPresentationStable && liveCanonicalStable && livePresentationStable && liveEditorChromePreserved && misMarkFailsLoud && reopened.editorReady && reopened.slideCount === interaction.specBeforeExport.slides.length && reopened.title === '瀏覽器直接編輯成功' && reopened.subtitle === '本機 AI 單區 patch 成功' && reopened.imageType === 'data:image/webp;' && reopened.claim?.derivation?.scale === 'ratio' && reopened.claim?.sourceRefs?.[0]?.sourceAvailableToRecipient === false && !reopened.presenterText && !/不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized) && !pageErrors.length && !networkFailures.length && !httpErrors.length ? 'pass' : 'fail',
+    status: interaction.afterDuplicate === 11 && interaction.afterDelete === 10 && /line.*支援|支援.*line/.test(interaction.unsupportedChartRejection) && interaction.chartTypeAfterRejection === 'bar' && interaction.imageReplaced && exportChromeCleanup && exportCanonicalStable && exportPresentationStable && liveCanonicalStable && livePresentationStable && liveEditorChromePreserved && misMarkFailsLoud && legacySlideOperationPath && reopened.editorReady && reopened.slideCount === interaction.specBeforeExport.slides.length && reopened.title === '瀏覽器直接編輯成功' && reopened.subtitle === '本機 AI 單區 patch 成功' && reopened.imageType === 'data:image/webp;' && reopened.claim?.derivation?.scale === 'ratio' && reopened.claim?.sourceRefs?.[0]?.sourceAvailableToRecipient === false && !reopened.presenterText && !/不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized) && !pageErrors.length && !networkFailures.length && !httpErrors.length ? 'pass' : 'fail',
     viewport: { width: 1280, height: 720 },
     directTextEdit: interaction.title,
     localPatch: reopened.subtitle,
+    legacySlideOperationPath: { pass: legacySlideOperationPath, slideIdLength: legacySlideId.length, sourceSlideId: interaction.legacySlideId, editedCanonicalText: interaction.legacyCanonicalText, exportedSlideId: exportedLegacySlide?.id, exportedTitle: exportedLegacySlide?.content.title, exportedSubtitle: exportedLegacySlide?.content.subtitle, reopenedSlideId: reopened.legacySlideId, reopenedTitle: reopened.title, reopenedSubtitle: reopened.subtitle },
     imageReplacement: interaction.imageReplaced,
     slideManagement: { afterDuplicate: interaction.afterDuplicate, afterDelete: interaction.afterDelete },
     chartCapability: { unsupportedChartRejection: interaction.unsupportedChartRejection, chartTypeAfterRejection: interaction.chartTypeAfterRejection },
     exportCleanup: { exportChromeCleanup, exportCanonicalStable, exportPresentationStable, liveCanonicalStable, livePresentationStable, liveEditorChromePreserved, misMarkFailsLoud, liveChromeBefore: interaction.liveChromeBefore, liveChromeAfter: interaction.liveChromeAfter },
-    reopen: { editorReady: reopened.editorReady, slideCount: reopened.slideCount, title: reopened.title, imageType: reopened.imageType, claim: reopened.claim },
+    reopen: { editorReady: reopened.editorReady, slideCount: reopened.slideCount, legacySlideId: reopened.legacySlideId, title: reopened.title, subtitle: reopened.subtitle, imageType: reopened.imageType, claim: reopened.claim },
     sanitizerLeak: /不得外洩|private\/source|hidden working prompt|private notes/.test(reopened.serialized),
     presenterModePresent: reopened.presenterText,
     console: consoleMessages,

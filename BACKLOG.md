@@ -875,7 +875,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 2 task：** `tasks/edx-wp1-s2-stable-identity-operation-path.md`。Frontier先建立backward-compatible slide-local element identity與第一條descriptor-backed `edit-text` operation；舊`applyLocalPatch`只作adapter。Moveable／Selecto仍不安裝，geometry overrides、drag/resize/snap、marquee與完整Operation Registry vocabulary保持blocked。
 
-**EDX-WP1 Slice 2 candidate：** legacy keyPoints deterministic backfill為stable IDs，role／point／component使用互斥element identity namespace；renderer、Node/browser editor、export/reopen與duplicate閉合同一target pair。第一條`edit-text` descriptor拒絕arbitrary payload，legacy patch只作adapter。Focused 8/8、targeted 27/27、non-browser 208/208、PGQ browser compatibility 16/16與fresh editor export→reopen均PASS。Fresh ZIP 2,151,973 bytes，SHA-256 `12b092000ae6296710e579e446ba7be4527b4ce717c06e78ce036830739a832e`；等待independent review，vendor install與geometry interaction仍blocked。
+**EDX-WP1 Slice 2 candidate：** legacy keyPoints deterministic backfill為stable IDs，role／point／component使用互斥element identity namespace；renderer、Node/browser editor、export/reopen與duplicate閉合同一target pair。第一條`edit-text` descriptor拒絕arbitrary payload，legacy patch只作adapter。Independent review的Repair 1已移除operation path私設的slide ID長度上限，以deterministic slide-local allocator關閉合法long ID／hash suffix碰撞，並deep-freeze descriptor且以private immutable role allowlist執行。Focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser compatibility 16/16與fresh editor export→reopen均PASS；234字元legacy slide ID已在真Chrome完成operation/export/reopen。Fresh ZIP 2,152,740 bytes，SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`；等待independent re-review，vendor install與geometry interaction仍blocked。
 
 ## 10.1 八項 Owner 決策
 

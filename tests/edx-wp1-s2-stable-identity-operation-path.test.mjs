@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { createDeckEditor, OPERATION_DESCRIPTORS } from '../runtime/deck-editor.js';
-import { extractDeckSpec, sanitizeDeckSpec } from '../runtime/deck-spec.js';
+import { extractDeckSpec, resolveSlideElementIdentities, resolveSlideElementIds, sanitizeDeckSpec } from '../runtime/deck-spec.js';
 import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 
 const fixture = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
@@ -61,7 +61,7 @@ test('edit-text descriptor 完整宣告 bounded metadata', () => {
         required: ['slideId', 'elementId'],
         additionalProperties: false,
         properties: {
-          slideId: { type: 'string', minLength: 1, maxLength: 200 },
+          slideId: { type: 'string', minLength: 1 },
           elementId: { type: 'string', pattern: '^[a-z0-9][a-z0-9._-]{0,79}$' },
         },
       },
@@ -91,21 +91,87 @@ test('executeOperation 只依 stable target pair 編輯文字並 fail loud', () 
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'role-title' }, value: 'x', arbitrary: true }), /payload|欄位|additional/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'role-title', arbitrary: true }, value: 'x' }), /target|欄位|additional/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: '', elementId: 'role-title' }, value: 'x' }), /slideId|target|格式/u);
-  assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'x'.repeat(201), elementId: 'role-title' }, value: 'x' }), /slideId|target|格式/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: `role-${'x'.repeat(80)}` }, value: 'x' }), /elementId|target|格式/u);
 });
 
-test('legacy non-pattern slideId 仍可走 stable operation path', () => {
+test('legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path', () => {
   const input = structuredClone(fixture);
-  input.slides[0].id = 'Opening Cover';
+  const legacySlideId = `Opening Cover ${'X'.repeat(220)}`;
+  input.slides[0].id = legacySlideId;
   const editor = createDeckEditor(input);
   const edited = editor.executeOperation({
     operation: 'edit-text',
-    target: { slideId: 'Opening Cover', elementId: 'role-title' },
+    target: { slideId: legacySlideId, elementId: 'role-title' },
     value: 'legacy slide edited',
   });
-  assert.equal(edited.slides[0].id, 'Opening Cover');
+  assert.equal(edited.slides[0].id, legacySlideId);
   assert.equal(edited.slides[0].content.title, 'legacy slide edited');
+  const rendered = renderFullDeck(input);
+  assert.equal(rendered.status, 'pass');
+  assert.match(rendered.html, /request\.target\.slideId\.length<1/);
+  assert.doesNotMatch(rendered.html, /request\.target\.slideId\.length>\d+/);
+});
+
+test('對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip', () => {
+  const input = structuredClone(fixture);
+  const slide = input.slides.find(({ id }) => id === 'portable');
+  const longComponentId = 'a'.repeat(80);
+  const collidingComponentId = 'a'.repeat(61) + '-5143e6d5';
+  slide.content.components = [
+    { id: longComponentId, type: 'text', text: 'long' },
+    { id: collidingComponentId, type: 'text', text: 'suffix collision' },
+  ];
+  slide.composition.slots.component = `content.components.${longComponentId}`;
+  slide.content.keyPointIds = [
+    'b'.repeat(80),
+    'b'.repeat(65) + '-cbdd63c5',
+    'third-point',
+  ];
+
+  const clean = sanitizeDeckSpec(input);
+  const cleanSlide = clean.slides.find(({ id }) => id === 'portable');
+  const identities = resolveSlideElementIdentities(cleanSlide);
+  const elementIds = resolveSlideElementIds(cleanSlide);
+  assert.equal(new Set(elementIds).size, elementIds.length);
+  assert.ok(elementIds.every((id) => /^[a-z0-9][a-z0-9._-]{0,79}$/.test(id)));
+  assert.notEqual(identities.keyPoints[0], identities.keyPoints[1]);
+  assert.notEqual(identities.components[0], identities.components[1]);
+  const reordered = structuredClone(cleanSlide);
+  reordered.content.keyPointIds.reverse();
+  reordered.content.keyPoints.reverse();
+  reordered.content.components.reverse();
+  const reorderedIdentities = resolveSlideElementIdentities(reordered);
+  assert.equal(reorderedIdentities.keyPoints[reordered.content.keyPointIds.indexOf(slide.content.keyPointIds[0])], identities.keyPoints[0]);
+  assert.equal(reorderedIdentities.components[reordered.content.components.findIndex(({ id }) => id === longComponentId)], identities.components[0]);
+
+  const edited = createDeckEditor(clean).executeOperation({
+    operation: 'edit-text',
+    target: { slideId: 'portable', elementId: identities.keyPoints[1] },
+    value: 'collision-safe edit',
+  });
+  assert.equal(edited.slides.find(({ id }) => id === 'portable').content.keyPoints[1], 'collision-safe edit');
+
+  const rendered = renderFullDeck(clean);
+  assert.equal(rendered.status, 'pass');
+  assert.match(rendered.html, new RegExp(`data-pptskill-element-id="${identities.components[0]}"`));
+  assert.match(rendered.html, /resolveSlideElementIdentities=slide=>/);
+  assert.match(rendered.html, /identities\.keyPoints\.indexOf\(o\.target\.elementId\)/);
+  assert.deepEqual(extractDeckSpec(rendered.html), rendered.spec);
+  assert.deepEqual(rendered.spec.slides.find(({ id }) => id === 'portable').content.keyPointIds, slide.content.keyPointIds);
+});
+
+test('descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist', () => {
+  assert.throws(() => OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles.push('component'), TypeError);
+  assert.throws(() => { OPERATION_DESCRIPTORS['edit-text'].inputSchema.properties.value.type = 'object'; }, TypeError);
+  const editor = createDeckEditor(fixture);
+  assert.throws(() => editor.executeOperation({
+    operation: 'edit-text',
+    target: { slideId: 'portable', elementId: 'component-portable-quote' },
+    value: 'still rejected',
+  }), /role/u);
+  const runtime = renderFullDeck(fixture).html;
+  assert.match(runtime, /editTextAllowedTargetRoles=Object\.freeze\(\['title','subtitle','keyPoint'\]\)/);
+  assert.match(runtime, /if\(!editTextAllowedTargetRoles\.includes\(role\)\)throw new Error/);
 });
 
 test('legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞', () => {
