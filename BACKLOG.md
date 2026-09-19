@@ -867,9 +867,9 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 1 Repair 1 task：** `tasks/edx-wp1-s1-r1-export-cleanup-seam.md`。Frontier只補正式exporter的bounded editor-only chrome cleanup seam：first-party marker＋明確Moveable／Selecto／context-toolbar selector、clone-only移除、canonical/presentation不變與mis-mark fail-loud。Direct＋managed-browser GO前，dependency adoption與所有正式EDX interaction implementation保持blocked。
 
-**EDX-WP1 Slice 1 Repair 1 candidate：** clone-only export cleanup已接入正式 `prepareExport()`／`exportHtml()`；direct 5/5與fresh managed-browser export→recipient reopen PASS，canonical／presentation／live DOM保持且mis-mark fail loud。Non-browser 200/200與fresh ZIP lifecycle PASS；ZIP 2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。目前等待 independent review 補跑既有 PGQ browser-backed compatibility；三候選仍為 DEFER，未開始 dependency adoption或正式 EDX interaction implementation。
+**EDX-WP1 Slice 1 Repair 1 candidate：** clone-only export cleanup已接入正式 `prepareExport()`／`exportHtml()`；direct 5/5與fresh managed-browser export→recipient reopen PASS，canonical／presentation／live DOM保持且mis-mark fail loud。Non-browser 200/200與fresh ZIP lifecycle PASS；ZIP 2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。PGQ browser-backed compatibility 已由 independent reviewer 補跑通過；三候選仍為 DEFER，未開始 dependency adoption或正式 EDX interaction implementation。
 
-**EDX-WP1 Slice 1 Repair 1 re-review repair：** independent reviewer 已重播既有 PGQ browser compatibility 16/16 PASS，並確認 exporter 功能無 finding；P2 僅為 standalone browser runner 成功後未等待 Chrome exit 即刪 profile，偶發 `ENOTEMPTY`，以及 focused 數字誤報。Runner 已改為 bounded exit wait＋profile removal retry；fresh export→recipient reopen exit 0，direct 數字更正為 5/5。等待 independent re-review；dependency adoption仍維持DEFER。
+**EDX-WP1 Slice 1 Repair 1 closure：** independent reviewer 已重播既有 PGQ browser compatibility 16/16 PASS，並確認 exporter 功能無 finding；P2 teardown race 已以 bounded exit wait＋profile removal retry 關閉，fresh export→recipient reopen exit 0，direct 5/5、non-browser 200/200 均 PASS。Independent re-review 最終 **GO**；R1 COMPLETE。Current frontier 回到 dependency adoption decision checkpoint，三候選在裁決前維持 DEFER。
 
 ## 10.1 八項 Owner 決策
 

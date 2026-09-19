@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike Receipt
 
-**Status:** R1 EXPORT CLEANUP CANDIDATE PASS — INDEPENDENT REVIEW PENDING
+**Status:** R1 COMPLETE — DEPENDENCY ADOPTION DECISION CHECKPOINT
 **Candidate identity:** `main@26463dd1702a267527407db1467ec5ca2e3e912a`
 **Task:** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`
 
@@ -8,8 +8,8 @@
 
 | Candidate | Pinned version | Classification | Current decision | Reason |
 |---|---:|---|---|---|
-| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；R1 fresh managed-browser 已證明 allowlisted controls 不進 export。正式 adoption 仍待獨立 review 與 adoption checkpoint；只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
-| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；R1 fresh managed-browser 已證明 Selecto chrome 不進 export。正式 adoption 仍待獨立 review 與 adoption checkpoint。 |
+| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；R1 independent review 已證明 allowlisted controls 不進 export。正式 adoption 現回到 decision checkpoint；只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
+| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；R1 independent review 已證明 Selecto chrome 不進 export。正式 adoption 現回到 decision checkpoint。 |
 | `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | Toolbar positioning與viewport內收斂 PASS；R1 fresh managed-browser 已證明 context toolbar 不進 export；多邊界必要性仍需 adoption checkpoint 收斂。 |
 
 沒有 candidate取得 GO；R1 只關閉 export-cleanup 技術缺口，dependency commit、stable-ID migration、Operation Registry mutation與正式 EDX interaction implementation仍 blocked。
@@ -84,7 +84,7 @@ Packages只安裝於 `/tmp/pptskill-edx-wp1-s1.*`，使用 exact versions與 `pn
 - Browser evidence：`evidence/edx-wp1-s1/browser-export-cleanup-r1.json`；managed lifecycle：`evidence/edx-wp1-s1/browser-export-cleanup-r1-lifecycle.json`。
 - Non-browser regression 200/200 PASS；fresh ZIP lifecycle PASS，2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。
 - 目前 Native3 sandbox 無法 fresh 啟動舊 `browser-geometry-qa.mjs` raw Chrome；independent review 需補跑既有 PGQ browser-backed compatibility。這不改變 R1 managed-browser PASS，也不授權 dependency adoption。
-- Independent review 已補跑既有 PGQ browser compatibility 16/16 PASS；reviewer 發現 standalone editor acceptance 在功能 PASS 後可能因 Chrome profile teardown race 回 `ENOTEMPTY`。R1 repair 已加入 bounded process-exit wait 與 profile removal retry，fresh export／reopen exit 0；direct focused 數字亦更正為 5/5。三候選仍維持 DEFER，等待 re-review verdict。
+- Independent review 已補跑既有 PGQ browser compatibility 16/16 PASS；reviewer 發現 standalone editor acceptance 在功能 PASS 後可能因 Chrome profile teardown race 回 `ENOTEMPTY`。R1 repair 已加入 bounded process-exit wait 與 profile removal retry，fresh export／reopen exit 0；direct focused 數字亦更正為 5/5。Independent re-review 最終 GO；R1 COMPLETE，三候選仍維持 DEFER，現在進入 adoption decision checkpoint。
 
 ## Required next evidence
 

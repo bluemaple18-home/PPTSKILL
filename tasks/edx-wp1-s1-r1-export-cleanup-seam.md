@@ -1,6 +1,6 @@
 # EDX-WP1-S1-R1 — Editor Chrome Export Cleanup Seam
 
-**Status:** READY FOR INDEPENDENT REVIEW — LEGACY PGQ BROWSER COMPATIBILITY REPLAY REQUIRED
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **traces_to:** `EDX-WP1-S1 Acceptance 4`, `EDX-WP1-S1 Acceptance 7`, `EDX-10.1.8`, `EDX-10.3/WP1`, `EDX-10.5`, `EDX-10.8`
 
 ## Objective
@@ -34,10 +34,10 @@
 
 ## Blocking edges / checkpoint
 
-- 已滿足：EDX-WP1-S1 static、interaction與lifecycle evidence完成；唯一blocking assertion為export cleanup。
-- Current frontier：本repair card。
-- Blocked：三個dependency的final `GO | REJECT`、任何dependency commit、stable-ID migration、Operation Registry mutation與EDX-WP1正式interaction implementation。
-- Checkpoint：本卡 independent review GO後只回到EDX-WP1-S1 adoption decision；不得自動安裝dependency或開WP1下一功能slice。
+- 已滿足：EDX-WP1-S1 static、interaction、lifecycle 與 export cleanup evidence 完成；R1 independent review 已 GO。
+- Current frontier：EDX-WP1-S1 dependency adoption decision checkpoint。
+- Blocked：任何dependency commit、stable-ID migration、Operation Registry mutation與EDX-WP1正式interaction implementation，直到 adoption decision 明確落定。
+- Checkpoint：只做三個候選的 `GO | REJECT | DEFER` 裁決；不得因 R1 GO 自動安裝dependency或開WP1下一功能slice。
 
 ## Likely files
 
@@ -69,7 +69,8 @@
 - Reviewer fresh replay：export／recipient reopen 功能 assertions 全 PASS，既有 PGQ browser compatibility 16/16 PASS，non-browser 200/200 PASS；但 standalone browser runner 在成功後刪除 Chrome profile 時出現 `ENOTEMPTY`，另確認 direct focused 實際為 5/5 而非 8/8，因此判定 REQUEST CHANGES。
 - 根因：standalone Chrome 收到 `SIGTERM` 後尚未退出，runner 已立即遞迴刪除 profile；Chrome 的延遲寫入與 profile cleanup 形成 teardown race。
 - Repair：runner 僅在 process 尚存時送出 `SIGTERM`，bounded 等待 exit 最多 2 秒，再以 `maxRetries: 5`／`retryDelay: 100` 清除 profile；未改 exporter、DeckSpec、presentation 或 dependency scope。
-- GREEN：syntax、direct focused 5/5、`git diff --check` PASS；fresh standalone managed-browser export→offline reopen PASS，console／pageerror／network／HTTP 全 0，process exit 0 且 profile cleanup 不再拋錯。等待 independent re-review。
+- GREEN：syntax、direct focused 5/5、`git diff --check` PASS；fresh standalone managed-browser export→offline reopen PASS，console／pageerror／network／HTTP 全 0，process exit 0 且 profile cleanup 不再拋錯。
+- Independent re-review：GO。PGQ browser compatibility 16/16、non-browser 200/200、fresh export → offline reopen、console／pageerror／network／HTTP 與 scope boundary 全部通過；R1 正式 COMPLETE。
 
 ## Non-goals
 
