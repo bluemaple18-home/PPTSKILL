@@ -867,6 +867,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 1 Repair 1 task：** `tasks/edx-wp1-s1-r1-export-cleanup-seam.md`。Frontier只補正式exporter的bounded editor-only chrome cleanup seam：first-party marker＋明確Moveable／Selecto／context-toolbar selector、clone-only移除、canonical/presentation不變與mis-mark fail-loud。Direct＋managed-browser GO前，dependency adoption與所有正式EDX interaction implementation保持blocked。
 
+**EDX-WP1 Slice 1 Repair 1 candidate：** clone-only export cleanup已接入正式 `prepareExport()`／`exportHtml()`；direct 8/8與fresh managed-browser export→recipient reopen PASS，canonical／presentation／live DOM保持且mis-mark fail loud。Non-browser 200/200與fresh ZIP lifecycle PASS；ZIP 2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。目前等待 independent review 補跑既有 PGQ browser-backed compatibility；三候選仍為 DEFER，未開始 dependency adoption或正式 EDX interaction implementation。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。

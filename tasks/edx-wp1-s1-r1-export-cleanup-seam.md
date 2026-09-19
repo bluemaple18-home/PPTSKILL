@@ -1,6 +1,6 @@
 # EDX-WP1-S1-R1 — Editor Chrome Export Cleanup Seam
 
-**Status:** READY TO START
+**Status:** READY FOR INDEPENDENT REVIEW — LEGACY PGQ BROWSER COMPATIBILITY REPLAY REQUIRED
 **traces_to:** `EDX-WP1-S1 Acceptance 4`, `EDX-WP1-S1 Acceptance 7`, `EDX-10.1.8`, `EDX-10.3/WP1`, `EDX-10.5`, `EDX-10.8`
 
 ## Objective
@@ -53,6 +53,16 @@
 - Direct：canonical identity、presentation targets、live DOM與mis-mark fail-loud。
 - Browser：export → offline reopen → recipient parse，console／pageerror／network與lifecycle cleanup。
 - Full regression、fresh ZIP lifecycle、`git diff --check`。
+
+## Candidate result — 2026-09-19
+
+- 正式 `serializeHtml()` 已接入單一 clone-only cleanup seam；`prepareExport().html` 與 `exportHtml()` 共用同一 contract。
+- Allowlist：`data-pptskill-editor-chrome`、`.moveable-control-box`、`.selecto-selection`、`[data-pptskill-context-toolbar]`。誤標 `.slide`／`#deck-spec`／`[data-edit-target]` 或包住 presentation truth 時 fail loud；editor chrome 可正常位於 presentation 容器內而不取得 canonical authority。
+- Direct focused：8/8 PASS；syntax、`git diff --check` PASS。
+- Fresh managed browser：PASS。`exportChromeCleanup`、`exportCanonicalStable`、`exportPresentationStable`、`liveCanonicalStable`、`livePresentationStable`、`liveEditorChromePreserved`、`misMarkFailsLoud` 全為 `true`；recipient reopen PASS；console／pageerror／network／HTTP errors 全 0；managed lifecycle exit 0 且 owned root 已清除。證據：`evidence/edx-wp1-s1/browser-export-cleanup-r1.json`、`evidence/edx-wp1-s1/browser-export-cleanup-r1-lifecycle.json`。
+- Non-browser regression：200/200 PASS。Fresh ZIP install/smoke/uninstall PASS；2,149,207 bytes；SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。
+- 本 Native3 sandbox fresh 重播既有 PGQ browser-backed suite 時，`browser-geometry-qa.mjs` 在 Chrome 啟動階段回 `Chrome DevTools port 未就緒`；這是 runner environment blocker，未形成產品 finding。Independent reviewer 需在可啟動 Chrome 的環境補跑既有四個 browser-backed files，再決定本卡 GO。
+- 三個 dependency 維持 `DEFER`；未新增 dependency、未修改 DeckSpec／CompositionSpec schema、未開始正式 EDX interaction implementation。
 
 ## Non-goals
 

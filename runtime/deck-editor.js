@@ -5,6 +5,36 @@ import { buildBackgroundBrowserContractRuntime, validateDeckBackgroundEffects } 
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
 
+export const EDITOR_CHROME_SELECTORS = Object.freeze([
+  '[data-pptskill-editor-chrome]',
+  '.moveable-control-box',
+  '.selecto-selection',
+  '[data-pptskill-context-toolbar]',
+]);
+
+export const EDITOR_PRESENTATION_TRUTH_SELECTORS = Object.freeze([
+  '.deck',
+  '.slide',
+  '#deck-spec',
+  '[data-edit-target]',
+]);
+
+export function cleanupEditorChromeFromExportClone(root, chromeSelectors, presentationTruthSelectors) {
+  if (!root || !Array.isArray(chromeSelectors) || !Array.isArray(presentationTruthSelectors)) throw new Error('editor chrome cleanup contract 無效。');
+  const chromeRoots = [...new Set(chromeSelectors.flatMap((selector) => [
+    ...(root.matches?.(selector) ? [root] : []),
+    ...root.querySelectorAll(selector),
+  ]))];
+  for (const node of chromeRoots) {
+    const touchesPresentationTruth = presentationTruthSelectors.some((selector) => (
+      node.matches?.(selector) || node.querySelector?.(selector)
+    ));
+    if (touchesPresentationTruth) throw new Error('editor chrome contract 指向 presentation truth；拒絕匯出。');
+  }
+  chromeRoots.forEach((node) => node.remove());
+  return chromeRoots.length;
+}
+
 const uniqueSlideId = (slides, baseId) => {
   let suffix = 1;
   let candidate = `${baseId}-copy-${suffix}`;
@@ -118,10 +148,12 @@ export const buildDeckEditorRuntimeScript = () => {
   const chartCapability = getGenerationCapabilities().components.chart;
   const motionContractRuntime = buildMotionBrowserContractRuntime();
   const backgroundContractRuntime = buildBackgroundBrowserContractRuntime();
+  const editorChromeCleanupRuntime = cleanupEditorChromeFromExportClone.toString();
   return String.raw`<script data-pptskill-editor-runtime>(()=>{const boot=()=>{
 const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>[...r.querySelectorAll(s)],clone=v=>JSON.parse(JSON.stringify(v));
 ${motionContractRuntime}
 ${backgroundContractRuntime}
+const editorChromeSelectors=${JSON.stringify(EDITOR_CHROME_SELECTORS)},editorPresentationTruthSelectors=${JSON.stringify(EDITOR_PRESENTATION_TRUTH_SELECTORS)},cleanupEditorChromeFromExportClone=${editorChromeCleanupRuntime};
 const supportedChartTypes=${JSON.stringify(chartCapability.supportedChartTypes)},chartValueDomain=${JSON.stringify(chartCapability.valueDomain)};
 const tag=q('#deck-spec');if(!tag)return;let spec=JSON.parse(tag.textContent);const safeStyle=clone(spec.style);let currentId=spec.slides[0]?.id||'';let editMode=false;let editingComponentId='';
 const status=m=>{const e=q('[data-editor-status]');if(e)e.textContent=m};
@@ -136,7 +168,7 @@ const retarget=(node,oldId,newId)=>{node.id=newId;node.dataset.slideId=newId;qa(
 const sanitizeComponent=c=>{if(!c||typeof c!=='object'||typeof c.id!=='string')return null;const b={id:c.id,type:String(c.type||'')};if(b.type==='text')return {...b,text:String(c.text||'')};const imageMime=String(c.dataUri||'').slice(11).split(';',1)[0];if(b.type==='image'&&String(c.dataUri||'').startsWith('data:image/')&&['png','jpeg','webp','gif','svg+xml'].includes(imageMime))return {...b,alt:String(c.alt||''),dataUri:c.dataUri,...(['contain','cover'].includes(c.fit)?{fit:c.fit}:{})};if(b.type==='table')return {...b,headers:Array.isArray(c.headers)?c.headers.slice(0,12).map(String):[],rows:Array.isArray(c.rows)?c.rows.slice(0,30).map(r=>Array.isArray(r)?r.slice(0,12).map(v=>['string','number','boolean'].includes(typeof v)||v===null?v:''):[]):[]};if(b.type==='chart'){const chartType=String(c.chartType||''),series=Array.isArray(c.series)?c.series.map(s=>({name:String(s?.name||''),values:Array.isArray(s?.values)?s.values.filter(v=>typeof v==='number'):[]})):[];if(!supportedChartTypes.includes(chartType))throw new Error('chart type '+chartType+' 尚未支援；不得偷換成 bar。');if(chartValueDomain==='non-negative'&&series.some(s=>s.values.some(v=>v<0)))throw new Error('目前 bar renderer 不支援負值語意。');return {...b,chartType,labels:Array.isArray(c.labels)?c.labels.map(String):[],series}}if(b.type==='citation'&&c.public===true){const url=String(c.url||'');return {...b,label:String(c.label||''),...(url.startsWith('http://')||url.startsWith('https://')?{url}:{}) ,public:true}}return null};
 const sanitizeClaim=c=>{if(!c||typeof c!=='object'||typeof c.id!=='string'||!['fact','derived','inference'].includes(c.kind)||typeof c.summary!=='string')return null;const refs=Array.isArray(c.sourceRefs)?c.sourceRefs.slice(0,8).filter(r=>r?.public===true&&typeof r.id==='string'&&typeof r.label==='string').map(r=>({id:r.id,label:r.label,...(/^https?:\/\//.test(String(r.url||''))?{url:r.url}:{}),public:true,sourceAvailableToRecipient:r.sourceAvailableToRecipient===true})):[];if(c.kind==='derived'&&c.derivation?.operation==='percentage-point-change'&&!['ratio','percent'].includes(c.derivation.scale))throw new Error('percentage-point derivation 必須明示 scale: ratio | percent。');const derivation=c.kind==='derived'&&c.derivation&&['absolute-delta','percent-change','percentage-point-change'].includes(c.derivation.operation)&&Number.isFinite(c.derivation.baseline)&&Number.isFinite(c.derivation.current)?{operation:c.derivation.operation,baseline:c.derivation.baseline,current:c.derivation.current,...(c.derivation.operation==='percentage-point-change'?{scale:c.derivation.scale}:{})}:null;if(c.kind==='derived'&&!derivation)throw new Error('derived claim 必須包含可重算 derivation。');return{id:c.id,kind:c.kind,summary:c.summary,slideIds:Array.isArray(c.slideIds)?c.slideIds.slice(0,15).map(String):[],...(Number.isFinite(c.value)?{value:c.value}:{}),...Object.fromEntries(['metric','period','population','unit','currency'].flatMap(k=>typeof c[k]==='string'&&c[k]?[[k,c[k]]]:[])),...(['causal','correlation','descriptive'].includes(c.relation)?{relation:c.relation}:{}),...(['causal','correlation','descriptive','unknown'].includes(c.evidenceRelation)?{evidenceRelation:c.evidenceRelation}:{}),...(c.kind==='derived'?{derivation}:{}),sourceRefs:refs}};
 const clean=()=>{const rawErrors=spec.slides.flatMap(validateSlideMotion),rawBackgroundErrors=spec.slides.flatMap(validateSlideBackgroundEffect);if(rawErrors.length||rawBackgroundErrors.length)throw new Error([...rawErrors,...rawBackgroundErrors].join(' '));const cleaned={schemaVersion:'1.0',deckId:String(spec.deckId||'deck'),title:String(spec.title||'Untitled deck'),language:String(spec.language||'zh-Hant'),style:clone(safeStyle),...(Array.isArray(spec.claims)?{claims:spec.claims.slice(0,100).map(sanitizeClaim).filter(Boolean)}:{}),slides:spec.slides.slice(0,15).map((s,i)=>({id:String(s.id||'slide-'+String(i+1).padStart(2,'0')),content:{title:String(s.content?.title||''),subtitle:String(s.content?.subtitle||''),keyPoints:Array.isArray(s.content?.keyPoints)?s.content.keyPoints.slice(0,5).map(String):[],components:Array.isArray(s.content?.components)?s.content.components.map(sanitizeComponent).filter(Boolean):[]},composition:{primitive:String(s.composition?.primitive||'title-body'),variant:String(s.composition?.variant||'default'),slots:Object.fromEntries(Object.entries(s.composition?.slots||{}).filter(([,v])=>typeof v==='string'&&/^content\.(title|subtitle|keyPoints|components\.[a-z0-9][a-z0-9._-]{0,79})$/.test(v))),...(Array.isArray(s.composition?.order)?{order:s.composition.order.map(String)}:{}),...(sanitizeCompositionMotion(s.composition?.motion)?{motion:sanitizeCompositionMotion(s.composition.motion)}:{}),...(sanitizeCompositionBackgroundEffect(s.composition?.backgroundEffect)?{backgroundEffect:sanitizeCompositionBackgroundEffect(s.composition.backgroundEffect)}:{})}}))};const errors=cleaned.slides.flatMap(validateSlideMotion),backgroundErrors=cleaned.slides.flatMap(validateSlideBackgroundEffect);if(errors.length||backgroundErrors.length)throw new Error([...errors,...backgroundErrors].join(' '));return cleaned};
-const serializeHtml=()=>{syncText();spec=clean();tag.textContent=JSON.stringify(spec).replaceAll('<','\\u003c');const root=document.documentElement.cloneNode(true);qa('[contenteditable]',root).forEach(el=>el.removeAttribute('contenteditable'));qa('.slide[data-editor-selected]',root).forEach(el=>el.removeAttribute('data-editor-selected'));qa('[data-pptskill-background-layer]',root).forEach(layer=>{layer.replaceChildren();layer.removeAttribute('style');layer.dataset.backgroundState='static'});root.querySelector('body').dataset.editorMode='play';const state=q('[data-editor-status]',root);if(state)state.textContent='可直接播放';return '<!doctype html>'+root.outerHTML};
+const serializeHtml=()=>{syncText();spec=clean();tag.textContent=JSON.stringify(spec).replaceAll('<','\\u003c');const root=document.documentElement.cloneNode(true);cleanupEditorChromeFromExportClone(root,editorChromeSelectors,editorPresentationTruthSelectors);qa('[contenteditable]',root).forEach(el=>el.removeAttribute('contenteditable'));qa('.slide[data-editor-selected]',root).forEach(el=>el.removeAttribute('data-editor-selected'));qa('[data-pptskill-background-layer]',root).forEach(layer=>{layer.replaceChildren();layer.removeAttribute('style');layer.dataset.backgroundState='static'});root.querySelector('body').dataset.editorMode='play';const state=q('[data-editor-status]',root);if(state)state.textContent='可直接播放';return '<!doctype html>'+root.outerHTML};
 const prepareExport=()=>{const html=serializeHtml();if(!window.PPTSKILLSizeGuard)throw new Error('Portable size guard 未載入。');return window.PPTSKILLSizeGuard.prepare(html,spec)};
 const exportHtml=()=>{const prepared=prepareExport();if(prepared.status==='fail')throw new Error('HTML 超過 20 MiB 上限；請先替換過大的圖片。');return prepared.html};
 const download=()=>{try{const prepared=prepareExport();if(prepared.status==='fail'){status('匯出失敗：HTML 超過 20 MiB');return false}const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([prepared.html],{type:'text/html;charset=utf-8'}));a.download=(spec.deckId||'deck')+'.html';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),0);status(prepared.status==='warn'?'已另存 HTML（檔案偏大）':'已另存 HTML');return true}catch(error){status(error.message);return false}};

@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike Receipt
 
-**Status:** BLOCKED — PRODUCT EXPORT CLEANUP CONTRACT MISSING
+**Status:** R1 EXPORT CLEANUP CANDIDATE PASS — INDEPENDENT REVIEW PENDING
 **Candidate identity:** `main@26463dd1702a267527407db1467ec5ca2e3e912a`
 **Task:** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`
 
@@ -8,11 +8,11 @@
 
 | Candidate | Pinned version | Classification | Current decision | Reason |
 |---|---:|---|---|---|
-| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；但正式 `exportHtml()` 仍會帶入 Moveable controls。只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
-| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；但正式 export仍會帶入 Selecto selection chrome。 |
-| `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | Toolbar positioning與viewport內收斂 PASS；但正式 export仍會帶入 contextual toolbar，且多邊界必要性仍需 implementation前收斂。 |
+| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；R1 fresh managed-browser 已證明 allowlisted controls 不進 export。正式 adoption 仍待獨立 review 與 adoption checkpoint；只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
+| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；R1 fresh managed-browser 已證明 Selecto chrome 不進 export。正式 adoption 仍待獨立 review 與 adoption checkpoint。 |
+| `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | Toolbar positioning與viewport內收斂 PASS；R1 fresh managed-browser 已證明 context toolbar 不進 export；多邊界必要性仍需 adoption checkpoint 收斂。 |
 
-沒有 candidate取得 GO；EDX-WP1 implementation、dependency commit、stable-ID migration與 Operation Registry mutation仍 blocked。
+沒有 candidate取得 GO；R1 只關閉 export-cleanup 技術缺口，dependency commit、stable-ID migration、Operation Registry mutation與正式 EDX interaction implementation仍 blocked。
 
 ## Official package evidence
 
@@ -77,6 +77,14 @@ Packages只安裝於 `/tmp/pptskill-edx-wp1-s1.*`，使用 exact versions與 `pn
 - 產品 fixture注入三種候選 editor chrome後呼叫正式 `PPTSKILLEditor.exportHtml()`：canonical DeckSpec前後一致，但輸出同時包含`moveable-control-box`、`selecto-selection`與context toolbar。`exportChromeCleanup=false`是目前唯一blocking assertion。
 - Machine-readable evidence：`evidence/edx-wp1-s1/browser-adoption-rerun.json`。
 
+## Repair 1 export cleanup evidence
+
+- `tasks/edx-wp1-s1-r1-export-cleanup-seam.md` 已實作 bounded clone-only cleanup seam；first-party marker與三個明確 selector共用同一 exporter contract。
+- Direct focused 8/8 PASS；fresh managed-browser export／reopen PASS。Export 後 chrome 全數移除，embedded DeckSpec、presentation snapshot、live canonical／presentation與live editor chrome均保持；mis-mark canonical node會 fail loud。
+- Browser evidence：`evidence/edx-wp1-s1/browser-export-cleanup-r1.json`；managed lifecycle：`evidence/edx-wp1-s1/browser-export-cleanup-r1-lifecycle.json`。
+- Non-browser regression 200/200 PASS；fresh ZIP lifecycle PASS，2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。
+- 目前 Native3 sandbox 無法 fresh 啟動舊 `browser-geometry-qa.mjs` raw Chrome；independent review 需補跑既有 PGQ browser-backed compatibility。這不改變 R1 managed-browser PASS，也不授權 dependency adoption。
+
 ## Required next evidence
 
-下一步不是再測 runner，而是先定義最小 export cleanup contract：正式 exporter必須移除 allowlisted Moveable controls、Selecto selection與context toolbar，同時保留 canonical DeckSpec與presentation DOM。此 mutation屬 EDX implementation，不在 research-only spike授權內；完成 direct＋browser export regression前，三個候選維持 `DEFER`，不新增 dependency。
+下一步是 R1 independent review：補跑舊 PGQ browser compatibility、核對 fresh ZIP／receipt 與 bounded diff。R1 GO 後回到 EDX-WP1-S1 adoption decision；三個候選在該 checkpoint 前持續 `DEFER`，不得自動新增 dependency或開始正式 interaction implementation。
