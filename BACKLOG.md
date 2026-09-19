@@ -855,13 +855,15 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** DEPENDENCY SPIKE IN PROGRESS — EDX-WP1-S1；FORMAL EDITOR INTEGRATION NOT STARTED
+**Status:** DEPENDENCY SPIKE BLOCKED — EDX-WP1-S1 FRESH BROWSER EVIDENCE INCOMPLETE；FORMAL EDITOR INTEGRATION NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
 本節是 P0-R7 後續能力擴充，不把舊 P0-R7 receipt 改寫成「以前就有拖拉」。目前 MVP 的 `no free x/y dragging` 歷史決策繼續描述舊版；EDX 的新 Owner 方向是 **No ungoverned freeform canvas; support guided direct manipulation**。只有 EDX 完成實作、schema migration、sanitizer/export/browser evidence 後才更新現行 runtime contract。
 
 **EDX-WP1 Slice 1 task：** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`。Frontier 只做 Moveable／Selecto／Floating UI 的 pinned version、license／integrity、實際 bundle、offline browser與架構適配 spike；正式 dependency、stable-ID migration、Operation Registry mutation與 editor runtime改動均保持 blocked。
+
+**EDX-WP1 Slice 1 interim receipt：** `research/edx/wp1-editor-core-dependency-spike.md`。三個候選的official version、MIT license、registry integrity與實測bundle已鎖定；合併tree-shaken minified 290,306 bytes、inline harness 291,197 bytes，容量不是blocker。現有canonical/export seam證明套件只能作interaction adapter。受管Chrome第三次已啟動但temporary runner未取得lifecycle event而未連線，依停止規則不再重試；三候選均維持DEFER，formal EDX implementation未開始。
 
 ## 10.1 八項 Owner 決策
 

@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike
 
-**Status:** READY TO START
+**Status:** BLOCKED — FRESH BROWSER EVIDENCE INCOMPLETE
 **traces_to:** `EDX-10.1.1`, `EDX-10.1.4`, `EDX-10.1.8`, `EDX-10.2`, `EDX-10.3/WP1`, `EDX-10.5`, `EDX-10.7`, `EDX-10.8`
 
 ## Objective
@@ -46,4 +46,3 @@
 - 不新增 npm/pnpm dependency、lockfile、vendored JS、build pipeline或永久 test harness。
 - 不決定 WP2 content/asset、WP3 history/motion或WP4 compatibility細節。
 - 不 merge、push、deploy或發布新 ZIP。
-
