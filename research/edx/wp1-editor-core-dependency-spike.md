@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike Receipt
 
-**Status:** BLOCKED — FRESH BROWSER EVIDENCE INCOMPLETE
+**Status:** BLOCKED — PRODUCT EXPORT CLEANUP CONTRACT MISSING
 **Candidate identity:** `main@26463dd1702a267527407db1467ec5ca2e3e912a`
 **Task:** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`
 
@@ -8,9 +8,9 @@
 
 | Candidate | Pinned version | Classification | Current decision | Reason |
 |---|---:|---|---|---|
-| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | License、integrity與 bundle 已通過 static gate；仍缺 fresh offline browser drag／resize／snap evidence。只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
-| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | License、integrity與 bundle 已通過 static gate；仍缺 fresh marquee／Shift多選與 Moveable handoff evidence。Selection永遠是 editor-local chrome。 |
-| `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | 體積小且責任單一；仍缺 toolbar collision的 fresh browser evidence，也需先證明原生 CSS不足以滿足 viewport boundary。 |
+| Moveable | `0.53.0` | ADAPT candidate | **DEFER** | Fresh drag／resize／real snap均 PASS；但正式 `exportHtml()` 仍會帶入 Moveable controls。只能輸出 bounded operation payload，不得把 transform DOM當 canonical。 |
+| Selecto | `1.26.3` | ADAPT candidate | **DEFER** | Fresh marquee／Shift多選與 Moveable handoff PASS；但正式 export仍會帶入 Selecto selection chrome。 |
+| `@floating-ui/dom` | `1.8.0` | DIRECT_REUSE candidate | **DEFER** | Toolbar positioning與viewport內收斂 PASS；但正式 export仍會帶入 contextual toolbar，且多邊界必要性仍需 implementation前收斂。 |
 
 沒有 candidate取得 GO；EDX-WP1 implementation、dependency commit、stable-ID migration與 Operation Registry mutation仍 blocked。
 
@@ -68,23 +68,15 @@ Packages只安裝於 `/tmp/pptskill-edx-wp1-s1.*`，使用 exact versions與 `pn
 - **Floating UI checkpoint：** 只有 contextual toolbar在多 viewport／edge collision下證明原生CSS不足，才採用；否則REJECT以省 dependency。
 - **Do not absorb：** package DOM state、raw CSS transform、arbitrary target selector、history、serialization、toolbar state、runtime CDN與任何第二 canonical model。
 
-## Browser attempt / blocker
+## Fresh browser rerun / blocker
 
 - 使用 `ai-core/scripts/tmp_session.py browser`、fresh owned profile、loopback CDP與temp Git harness。
-- 前兩次在Chrome前由lifecycle fail closed：一次拒絕放寬容量上限，一次拒絕非Git repo root；兩項前置條件均已修正。
-- 第三次 Chrome 實際啟動，stderr記錄 `DevTools listening on ws://127.0.0.1:51215/...`；temporary runner沒有觀察到父層 `browser-starting` event，因而未連線、未導航、未取得 console／pageerror／network與互動 assertions。
-- Lifecycle已輸出 `session.json`，owned root `/private/tmp/aic-b-ee73586e1e924f15862bd41dd79959c1` 已不存在，cleanup PASS。
-- 依同一 browser blocker第三次停止規則，不做第四次啟動。這不是產品或 dependency assertion failure，但不足以宣告browser acceptance PASS。
+- ai-core bounded repair已修正 lifecycle JSON parser、Moveable vanilla API與evidence path；parser regression 3/3 PASS。
+- Fresh rerun：marquee、Shift多選、drag、resize、真實snap guideline event與toolbar viewport placement全部 PASS。Move operation為`translate(239px, 0px)`，target落在`x=344`；Shift selection精準包含`slide-1/title`與`slide-1/evidence`。
+- Console／pageerror／network failure／external HTTP全為0；lifecycle exit `0`，profile與owned root cleanup PASS。
+- 產品 fixture注入三種候選 editor chrome後呼叫正式 `PPTSKILLEditor.exportHtml()`：canonical DeckSpec前後一致，但輸出同時包含`moveable-control-box`、`selecto-selection`與context toolbar。`exportChromeCleanup=false`是目前唯一blocking assertion。
+- Machine-readable evidence：`evidence/edx-wp1-s1/browser-adoption-rerun.json`。
 
 ## Required next evidence
 
-下一輪只能從已修正的 lifecycle event parser開始，做一次 bounded fresh replay，必須同時取得：
-
-1. marquee與Shift多選；
-2. Moveable drag／resize operation events與snap guide行為；
-3. Floating toolbar viewport collision；
-4. zero console／pageerror／requestfailed／external HTTP；
-5. editor chrome不進可攜輸出；
-6. lifecycle exit `0`與owned root cleanup。
-
-上述 evidence 完成前維持 `BLOCKED / DEFER`，不切 EDX-WP1 implementation。
+下一步不是再測 runner，而是先定義最小 export cleanup contract：正式 exporter必須移除 allowlisted Moveable controls、Selecto selection與context toolbar，同時保留 canonical DeckSpec與presentation DOM。此 mutation屬 EDX implementation，不在 research-only spike授權內；完成 direct＋browser export regression前，三個候選維持 `DEFER`，不新增 dependency。

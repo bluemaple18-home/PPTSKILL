@@ -1,6 +1,6 @@
 # EDX-WP1-S1 — Editor Core Dependency Spike
 
-**Status:** BLOCKED — FRESH BROWSER EVIDENCE INCOMPLETE
+**Status:** BLOCKED — PRODUCT EXPORT CLEANUP CONTRACT MISSING
 **traces_to:** `EDX-10.1.1`, `EDX-10.1.4`, `EDX-10.1.8`, `EDX-10.2`, `EDX-10.3/WP1`, `EDX-10.5`, `EDX-10.7`, `EDX-10.8`
 
 ## Objective

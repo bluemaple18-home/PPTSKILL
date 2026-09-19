@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** DEPENDENCY SPIKE BLOCKED — EDX-WP1-S1 FRESH BROWSER EVIDENCE INCOMPLETE；FORMAL EDITOR INTEGRATION NOT STARTED
+**Status:** DEPENDENCY SPIKE BLOCKED — EDX-WP1-S1 PRODUCT EXPORT CLEANUP CONTRACT MISSING；FORMAL EDITOR INTEGRATION NOT STARTED
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -863,7 +863,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 1 task：** `tasks/edx-wp1-s1-editor-core-dependency-spike.md`。Frontier 只做 Moveable／Selecto／Floating UI 的 pinned version、license／integrity、實際 bundle、offline browser與架構適配 spike；正式 dependency、stable-ID migration、Operation Registry mutation與 editor runtime改動均保持 blocked。
 
-**EDX-WP1 Slice 1 interim receipt：** `research/edx/wp1-editor-core-dependency-spike.md`。三個候選的official version、MIT license、registry integrity與實測bundle已鎖定；合併tree-shaken minified 290,306 bytes、inline harness 291,197 bytes，容量不是blocker。現有canonical/export seam證明套件只能作interaction adapter。受管Chrome第三次已啟動但temporary runner未取得lifecycle event而未連線，依停止規則不再重試；三候選均維持DEFER，formal EDX implementation未開始。
+**EDX-WP1 Slice 1 interim receipt：** `research/edx/wp1-editor-core-dependency-spike.md`。三個候選的official version、MIT license、registry integrity與實測bundle已鎖定；合併tree-shaken minified 290,306 bytes、inline harness 291,197 bytes，容量不是blocker。修復後fresh managed-browser重跑證明Shift多選、drag、resize、真實snap與toolbar positioning均PASS，console／pageerror／network為0且lifecycle cleanup PASS；但正式`exportHtml()`仍會帶入Moveable、Selecto與toolbar chrome。三候選維持DEFER，formal EDX implementation未開始。
 
 ## 10.1 八項 Owner 決策
 
