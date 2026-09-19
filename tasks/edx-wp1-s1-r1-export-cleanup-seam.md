@@ -58,11 +58,18 @@
 
 - 正式 `serializeHtml()` 已接入單一 clone-only cleanup seam；`prepareExport().html` 與 `exportHtml()` 共用同一 contract。
 - Allowlist：`data-pptskill-editor-chrome`、`.moveable-control-box`、`.selecto-selection`、`[data-pptskill-context-toolbar]`。誤標 `.slide`／`#deck-spec`／`[data-edit-target]` 或包住 presentation truth 時 fail loud；editor chrome 可正常位於 presentation 容器內而不取得 canonical authority。
-- Direct focused：8/8 PASS；syntax、`git diff --check` PASS。
+- Direct focused：5/5 PASS；syntax、`git diff --check` PASS。
 - Fresh managed browser：PASS。`exportChromeCleanup`、`exportCanonicalStable`、`exportPresentationStable`、`liveCanonicalStable`、`livePresentationStable`、`liveEditorChromePreserved`、`misMarkFailsLoud` 全為 `true`；recipient reopen PASS；console／pageerror／network／HTTP errors 全 0；managed lifecycle exit 0 且 owned root 已清除。證據：`evidence/edx-wp1-s1/browser-export-cleanup-r1.json`、`evidence/edx-wp1-s1/browser-export-cleanup-r1-lifecycle.json`。
 - Non-browser regression：200/200 PASS。Fresh ZIP install/smoke/uninstall PASS；2,149,207 bytes；SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。
 - 本 Native3 sandbox fresh 重播既有 PGQ browser-backed suite 時，`browser-geometry-qa.mjs` 在 Chrome 啟動階段回 `Chrome DevTools port 未就緒`；這是 runner environment blocker，未形成產品 finding。Independent reviewer 需在可啟動 Chrome 的環境補跑既有四個 browser-backed files，再決定本卡 GO。
 - 三個 dependency 維持 `DEFER`；未新增 dependency、未修改 DeckSpec／CompositionSpec schema、未開始正式 EDX interaction implementation。
+
+## Independent review repair — 2026-09-19
+
+- Reviewer fresh replay：export／recipient reopen 功能 assertions 全 PASS，既有 PGQ browser compatibility 16/16 PASS，non-browser 200/200 PASS；但 standalone browser runner 在成功後刪除 Chrome profile 時出現 `ENOTEMPTY`，另確認 direct focused 實際為 5/5 而非 8/8，因此判定 REQUEST CHANGES。
+- 根因：standalone Chrome 收到 `SIGTERM` 後尚未退出，runner 已立即遞迴刪除 profile；Chrome 的延遲寫入與 profile cleanup 形成 teardown race。
+- Repair：runner 僅在 process 尚存時送出 `SIGTERM`，bounded 等待 exit 最多 2 秒，再以 `maxRetries: 5`／`retryDelay: 100` 清除 profile；未改 exporter、DeckSpec、presentation 或 dependency scope。
+- GREEN：syntax、direct focused 5/5、`git diff --check` PASS；fresh standalone managed-browser export→offline reopen PASS，console／pageerror／network／HTTP 全 0，process exit 0 且 profile cleanup 不再拋錯。等待 independent re-review。
 
 ## Non-goals
 

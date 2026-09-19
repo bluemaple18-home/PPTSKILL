@@ -168,6 +168,16 @@ try {
   if (receipt.status !== 'pass') throw new Error(JSON.stringify(receipt, null, 2));
   process.stdout.write(`${JSON.stringify(receipt, null, 2)}\n`);
 } finally {
-  if (browser) browser.kill('SIGTERM');
-  if (profile) await rm(profile, { recursive: true, force: true });
+  if (browser) {
+    if (browser.exitCode === null) {
+      await Promise.race([
+        new Promise((resolveExit) => {
+          browser.once('exit', resolveExit);
+          browser.kill('SIGTERM');
+        }),
+        new Promise((resolveWait) => setTimeout(resolveWait, 2000)),
+      ]);
+    }
+  }
+  if (profile) await rm(profile, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
 }

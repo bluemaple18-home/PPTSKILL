@@ -80,10 +80,11 @@ Packages只安裝於 `/tmp/pptskill-edx-wp1-s1.*`，使用 exact versions與 `pn
 ## Repair 1 export cleanup evidence
 
 - `tasks/edx-wp1-s1-r1-export-cleanup-seam.md` 已實作 bounded clone-only cleanup seam；first-party marker與三個明確 selector共用同一 exporter contract。
-- Direct focused 8/8 PASS；fresh managed-browser export／reopen PASS。Export 後 chrome 全數移除，embedded DeckSpec、presentation snapshot、live canonical／presentation與live editor chrome均保持；mis-mark canonical node會 fail loud。
+- Direct focused 5/5 PASS；fresh managed-browser export／reopen PASS。Export 後 chrome 全數移除，embedded DeckSpec、presentation snapshot、live canonical／presentation與live editor chrome均保持；mis-mark canonical node會 fail loud。
 - Browser evidence：`evidence/edx-wp1-s1/browser-export-cleanup-r1.json`；managed lifecycle：`evidence/edx-wp1-s1/browser-export-cleanup-r1-lifecycle.json`。
 - Non-browser regression 200/200 PASS；fresh ZIP lifecycle PASS，2,149,207 bytes，SHA-256 `0fb680c0c0c3427bc6f36b47c58004d820a5fecb21cd24419042f9fe6c97bdf8`。
 - 目前 Native3 sandbox 無法 fresh 啟動舊 `browser-geometry-qa.mjs` raw Chrome；independent review 需補跑既有 PGQ browser-backed compatibility。這不改變 R1 managed-browser PASS，也不授權 dependency adoption。
+- Independent review 已補跑既有 PGQ browser compatibility 16/16 PASS；reviewer 發現 standalone editor acceptance 在功能 PASS 後可能因 Chrome profile teardown race 回 `ENOTEMPTY`。R1 repair 已加入 bounded process-exit wait 與 profile removal retry，fresh export／reopen exit 0；direct focused 數字亦更正為 5/5。三候選仍維持 DEFER，等待 re-review verdict。
 
 ## Required next evidence
 
