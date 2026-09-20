@@ -1,6 +1,6 @@
 # EDX-WP1-S5 — 單一 component 鍵盤微調
 
-Status: REVIEW CANDIDATE — Independent Review pending
+Status: REPAIR CANDIDATE — targeted Independent re-review pending
 Base: `d2bd314`（S3-MOTION closure）；branch `codex/edx-wp1-s5`。
 traces_to: BACKLOG.md §10.2 donor arrow nudge、§10.3 WP1 guided direct manipulation、§10.4 shared Operation Registry、§10.5 portability。
 類型：standard bounded；一名clean native Worker，shared sequential writer；Mainline負責control與fresh browser/ZIP，Owner自行帶候選做獨立review。沿既有Astra替代授權，不更動主對話模型。
@@ -40,3 +40,9 @@ Mainline 接手完成實作；focused 70/70、non-browser 259/259、ZIP lifecycl
 ## 最終驗收
 
 真 browser 發現點選元件後仍有 toolbar focus，已依本卡條款只在明確選取元件時 blur editor chrome，不增 tabindex；保留直接操作 chrome 的鍵盤避讓。focused 71/71、non-browser 260/260、fresh 雙 viewport 各19 checks、ZIP lifecycle PASS；正常 browser cleanup PASS。舊失敗證據保留，詳見 receipt；PGQ 僅 inherited，未重跑。
+
+## Independent NO-GO / bounded repair
+
+Reviewer 核對 `be7b0bddad3d96384d3a17fe9e1f47349161826c`：P0/P1/P3=0，P2=1；Escape 先於 IME/modifier/input guard，會攔截並清 selection。主線接受，限定移動 guard 順序與 guarded-Escape regression，普通 Escape pointer cancel 須保留；更新 ZIP 與 source evidence 後 targeted re-review。無其他 scope；Mainline 直接執行此 minimal bounded repair。
+
+修復驗收：73 focused／262 non-browser PASS；fresh browser雙viewport各20 checks PASS，ZIP/cleanup PASS。最終證據：`evidence/edx-wp1-s5/repair-escape/receipt.md`。

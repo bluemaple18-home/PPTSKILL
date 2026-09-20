@@ -1,0 +1,219 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/source.html",
+  "sourceSha256": "8e9a772cf3a99519e9f493dbbff1b1473f9c810f8bfbeddb9bb7ad0147adf0fe",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        "S5 play／無selection／legacy無geometry不提交",
+        "S5 真方向／Shift／repeat為1px或10px，尺寸與非geometry不變",
+        "S5 真修飾鍵／229及synthetic composition lifecycle避讓",
+        "S5 真input／textarea／select／contenteditable／textbox／chrome focus不挪動",
+        "S5 safe-area越界拒絕、不clamp",
+        "S5 真drag／resize途中按鍵不提交、release仍只提交pointer結果",
+        "S5 guarded Escape保留selection與drag/resize；普通Escape沿既有pointer cancel驗收",
+        "S5 離線export/reopen保留geometry且可繼續微調",
+        "S5 文字模式不微調",
+        "S5 已刪DOM target不提交"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-legacy-selected.html",
+          "bytes": 369199,
+          "sha256": "5d7ed5671b84816324434fbe92b5667fe1a75b4e5cc18572b180a2f6273398f3"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-preview-export.html",
+          "bytes": 369508,
+          "sha256": "06d465f5eaaec831d1ea2ed1a8240ec81f6af02caf96e086457c98622f7c2341"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-cancel.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-noop.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-invalid.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-invalid-resize.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-play-mode.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-export.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-reopen-export.html",
+          "bytes": 369508,
+          "sha256": "6bde501d1ec8cbd1d69d5b83d1d133e4a2a030268aa8cc8b52bebfb085ad3931"
+        },
+        {
+          "label": "keyboard-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-keyboard-export.html",
+          "bytes": 369508,
+          "sha256": "8661e3db3aa09003c227b666e79f0b9a2c8871c9c3f0cff15bea3bd583276270"
+        },
+        {
+          "label": "keyboard-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1280-keyboard-reopen.html",
+          "bytes": 369508,
+          "sha256": "1d5660bf08992d906f95185ed997fe63546f971545bac69213fa7030978875ac"
+        }
+      ],
+      "keyboardDiagnostic": {
+        "keys": [],
+        "status": "未套用：geometry y 低於 minimum／safe area。"
+      },
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        "S5 play／無selection／legacy無geometry不提交",
+        "S5 真方向／Shift／repeat為1px或10px，尺寸與非geometry不變",
+        "S5 真修飾鍵／229及synthetic composition lifecycle避讓",
+        "S5 真input／textarea／select／contenteditable／textbox／chrome focus不挪動",
+        "S5 safe-area越界拒絕、不clamp",
+        "S5 真drag／resize途中按鍵不提交、release仍只提交pointer結果",
+        "S5 guarded Escape保留selection與drag/resize；普通Escape沿既有pointer cancel驗收",
+        "S5 離線export/reopen保留geometry且可繼續微調",
+        "S5 文字模式不微調",
+        "S5 已刪DOM target不提交"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-legacy-selected.html",
+          "bytes": 369199,
+          "sha256": "5d7ed5671b84816324434fbe92b5667fe1a75b4e5cc18572b180a2f6273398f3"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-preview-export.html",
+          "bytes": 369508,
+          "sha256": "06d465f5eaaec831d1ea2ed1a8240ec81f6af02caf96e086457c98622f7c2341"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-cancel.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-noop.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-invalid.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-invalid-resize.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-play-mode.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-export.html",
+          "bytes": 369508,
+          "sha256": "6f507f9033b0263a2f61ba3b0941c28ec7bc87d6e2212d12726e7c4d98217f10"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-reopen-export.html",
+          "bytes": 369508,
+          "sha256": "6bde501d1ec8cbd1d69d5b83d1d133e4a2a030268aa8cc8b52bebfb085ad3931"
+        },
+        {
+          "label": "keyboard-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-keyboard-export.html",
+          "bytes": 369508,
+          "sha256": "8661e3db3aa09003c227b666e79f0b9a2c8871c9c3f0cff15bea3bd583276270"
+        },
+        {
+          "label": "keyboard-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s5/repair-escape/browser/1600-keyboard-reopen.html",
+          "bytes": 369508,
+          "sha256": "1d5660bf08992d906f95185ed997fe63546f971545bac69213fa7030978875ac"
+        }
+      ],
+      "keyboardDiagnostic": {
+        "keys": [],
+        "status": "未套用：geometry y 低於 minimum／safe area。"
+      },
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

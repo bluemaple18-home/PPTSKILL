@@ -39,3 +39,7 @@ PGQ 僅沿 S3-MOTION Independent GO 的28 unique inherited evidence，並非 S5 
 - PGQ 沿 S3-MOTION GO 的28 unique inherited evidence（19+1+8），不宣稱 S5 fresh，也不宣稱單輪28/28；geometry/motion authority 未變。
 
 下一步：Owner 手動將 handoff 交獨立 Reviewer；尚無 Independent GO，不 merge／push／deploy。不再重跑同一已通過組合。
+
+## Independent NO-GO 後修復
+
+be7b0bd 收到唯一 P2 guarded Escape finding，已接受並修復。最新狀態為 targeted re-review pending；最終 source/ZIP/browser 以 `repair-escape/receipt.md` 為準（73/262/雙viewport20）。上方數字為歷史候選證據。

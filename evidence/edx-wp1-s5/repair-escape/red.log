@@ -1,0 +1,64 @@
+✔ S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y (27.002166ms)
+✔ S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp (10.535666ms)
+✔ S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏 (82.419ms)
+✔ S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理 (53.898708ms)
+✔ S5 mounted no mode／selection／geometry／deleted 與原子 bounds (33.17775ms)
+✔ S5 mounted drag 中按鍵不取消／不提交 gesture (15.232791ms)
+✔ S5 mounted resize 中按鍵不取消／不提交 gesture (13.57075ms)
+✔ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (10.596667ms)
+✖ S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消 (14.467875ms)
+✖ S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消 (19.864125ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 8
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1338.82325
+
+✖ failing tests:
+
+test at tests/edx-wp1-s5-keyboard.test.mjs:99:40
+✖ S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消 (14.467875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at untouched (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:104:12)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:107:123)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s5-keyboard.test.mjs:99:40
+✖ S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消 (19.864125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at untouched (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:104:12)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:107:123)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

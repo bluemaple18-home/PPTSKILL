@@ -203,11 +203,11 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   const compositionStart = () => { composing = true; };
   const compositionEnd = () => { composing = false; };
   const keydown = event => {
+    if (composing || event.isComposing || event.keyCode === 229 || event.ctrlKey || event.metaKey || event.altKey
+      || inputOwnsKey(event.target) || inputOwnsKey(document.activeElement)) return;
     if (interaction.getState().enabled && event.key === 'Escape') {
       event.preventDefault(); event.stopImmediatePropagation(); cancel(); clearSelection(); return;
     }
-    if (composing || event.isComposing || event.keyCode === 229 || event.ctrlKey || event.metaKey || event.altKey
-      || inputOwnsKey(event.target) || inputOwnsKey(document.activeElement)) return;
     if (interaction.nudge(event.key, event.shiftKey)) {
       event.preventDefault(); event.stopImmediatePropagation(); moveable?.updateRect();
     }

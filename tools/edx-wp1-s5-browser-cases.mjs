@@ -7,7 +7,7 @@ export async function runKeyboardBrowserCases({ cdp, evaluate, navigate, sourceP
   const rect = s => s.slides[0].composition.geometryOverrides?.['portable-quote'];
   const move = value => evaluate(`window.PPTSKILLEditor.executeOperation(${JSON.stringify({ operation: 'move-element', target, value })})`);
   const key = async (name, modifiers = 0, extra = {}) => {
-    const code = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 }[name];
+    const code = { Escape: 27, ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 }[name];
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: name, code: name, windowsVirtualKeyCode: code, modifiers, ...extra });
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: name, code: name, windowsVirtualKeyCode: code, modifiers });
   };
@@ -37,6 +37,8 @@ export async function runKeyboardBrowserCases({ cdp, evaluate, navigate, sourceP
   for (const [tag, attribute, value] of [['input', '', ''], ['textarea', '', ''], ['select', '', ''], ['div', 'contenteditable', 'true'], ['div', 'contenteditable', 'plaintext-only'], ['div', 'role', 'textbox']]) {
     await evaluate(`(()=>{const e=document.createElement(${JSON.stringify(tag)});e.id='s5-input';e.tabIndex=0;${attribute ? `e.setAttribute(${JSON.stringify(attribute)},${JSON.stringify(value)});` : ''}document.body.append(e);e.focus()})()`);
     await key('ArrowRight'); assert.deepEqual(await spec(), expected);
+    const selected = await evaluate('window.PPTSKILLEditor.layout.getState()');
+    await key('Escape'); assert.deepEqual(await evaluate('window.PPTSKILLEditor.layout.getState()'), selected);
     await evaluate('document.getElementById("s5-input").remove()');
   }
   await evaluate('document.querySelector("[data-action=layout]").focus()');
@@ -52,6 +54,13 @@ export async function runKeyboardBrowserCases({ cdp, evaluate, navigate, sourceP
   await move({ x: 820, y: 300 });
   for (const kind of ['drag', 'resize']) {
     const committed = await spec(), p = await startGesture(kind, 10, 10);
+    const selected = await evaluate('window.PPTSKILLEditor.layout.getState()');
+    for (const modifiers of [1, 2, 4]) { await key('Escape', modifiers); assert.deepEqual(await evaluate('window.PPTSKILLEditor.layout.getState()'), selected); }
+    await key('Escape', 0, { windowsVirtualKeyCode: 229 });
+    assert.deepEqual(await evaluate('window.PPTSKILLEditor.layout.getState()'), selected);
+    await evaluate('document.dispatchEvent(new CompositionEvent("compositionstart",{bubbles:true}))');
+    await key('Escape'); assert.deepEqual(await evaluate('window.PPTSKILLEditor.layout.getState()'), selected);
+    await evaluate('document.dispatchEvent(new CompositionEvent("compositionend",{bubbles:true}))');
     await key('ArrowRight'); assert.deepEqual(await spec(), committed);
     assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), true);
     await endGesture(p);
@@ -59,6 +68,7 @@ export async function runKeyboardBrowserCases({ cdp, evaluate, navigate, sourceP
     assert.deepEqual(rect(await spec()), wanted); await assertRect(wanted);
   }
   run.checks.push('S5 真drag／resize途中按鍵不提交、release仍只提交pointer結果');
+  run.checks.push('S5 guarded Escape保留selection與drag/resize；普通Escape沿既有pointer cancel驗收');
   const saved = await spec(), path = await assertExport('keyboard-export', saved);
   await navigate(path); assert.deepEqual(await spec(), saved); await assertRect(rect(saved));
   await click('[data-action="layout"]'); await click(selector); await key('ArrowRight');

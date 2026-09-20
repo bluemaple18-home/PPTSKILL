@@ -96,3 +96,21 @@ test('S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome �
   assert.equal(key(h).prevented, true);
   assert.deepEqual(geometry(h.getSpec()), { ...box, x: box.x + 1 });
 });
+for (const kind of ['drag', 'resize']) test('S5 guarded Escape 保留 ' + kind + ' 與 selection；普通 Escape 才取消', () => {
+  const h = mountedEditor(fixture(0)); h.ready(); h.begin(kind); h.update(20, 10, kind);
+  const before = h.getSpec(), state = h.api.layout.getState();
+  const untouched = fields => {
+    const e = key(h, { key: 'Escape', ...fields });
+    assert.equal(e.prevented, false); assert.equal(e.stopped, false);
+    assert.deepEqual(h.api.layout.getState(), state); assert.deepEqual(h.getSpec(), before);
+  };
+  for (const fields of [{ ctrlKey: true }, { metaKey: true }, { altKey: true }, { isComposing: true }, { keyCode: 229 }]) untouched(fields);
+  emit(h, 'compositionstart'); untouched({}); untouched({ isComposing: true }); emit(h, 'compositionend');
+  for (const [tag, attrs] of [['input', {}], ['textarea', {}], ['select', {}], ['div', { contenteditable: 'true' }], ['div', { contenteditable: 'plaintext-only' }], ['div', { role: 'textbox' }], ['div', { class: 'pptskill-editor' }], ['div', { 'data-pptskill-editor-chrome': 'layout' }]]) {
+    const node = h.document.createElement(tag); for (const [k,v] of Object.entries(attrs)) node.setAttribute(k,v);
+    h.document.body.append(node); untouched({ target: node }); h.document.activeElement = node; untouched({}); h.document.activeElement = null; node.remove();
+  }
+  const e = key(h, { key: 'Escape' }); assert.equal(e.prevented, true); assert.equal(e.stopped, true);
+  assert.equal(h.api.layout.getState().gesturing, false); assert.equal(h.api.layout.getState().target, null);
+  assert.deepEqual(h.getSpec(), before); h.finish(kind); assert.deepEqual(h.getSpec(), before);
+});
