@@ -26,3 +26,9 @@ standard唯讀spike；native clean Worker只唯讀查vendor能力/metadata，回
 ## Decision
 
 見 `evidence/edx-wp1-s6/decision.md`。既有vendor Snappable可保留；需真browser座標映射probe才能決定production adapter。Public controller probe4組PASS，vendor驗證PASS；production/runtime/ZIP均未改，沒有snap feature GO宣稱。
+
+## Browser mapping follow-up
+
+Owner「繼續」承接fixture-only frontier；主線直接執行一次性bounded harness。固定slide1600×900、container/snapContainer=slide、rootContainer=body；viewport1280×720/1600×900，off-grid(803,283,637,477)，grid0/8、drag/SE resize、identity/scale(.8)/translateY(20px)。收真CDP pointer與vendor beforeTranslate/translate/width/height/drag payload；不假設payload單位、不修改production/runtime/ZIP，不將synthetic transform視為實際motion suite。成功為採集完整且無console/page/network/HTTP/remote錯誤；mapping不符必須寫入決策。
+
+Browser follow-up COMPLETE：24組採集PASS、errors0、cleanupPASS；直接payload映射REJECT，非runtime功能PASS。決策與限制：`evidence/edx-wp1-s6/browser-mapping/decision.md`。

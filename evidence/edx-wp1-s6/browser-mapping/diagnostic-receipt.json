@@ -1,0 +1,81 @@
+{
+  "status": "fail",
+  "scope": "fixture-only；不投影或提交canonical，static transform不是motion lifecycle",
+  "runs": [
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 0,
+      "kind": "drag",
+      "rawCanonicalDelta": 7,
+      "events": [
+        {
+          "type": "dragStart"
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            6.25,
+            6.25,
+            0,
+            0
+          ],
+          "translate": [
+            6.25,
+            6.25,
+            0,
+            1
+          ],
+          "beforeDist": [
+            6.25,
+            6.25,
+            0,
+            0
+          ],
+          "dist": [
+            6.25,
+            6.25,
+            0,
+            1
+          ],
+          "left": 809.25,
+          "top": 289.25,
+          "width": 637,
+          "height": 477,
+          "client": [
+            902,
+            422
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "remoteRequests": [],
+  "pointerDiagnostic": {
+    "width": 1280,
+    "transform": "none",
+    "grid": 0,
+    "kind": "resize",
+    "position": {
+      "x": 1152,
+      "y": 608.0000305175781
+    },
+    "hit": "<div id=\"slide\" style=\"transform: scale(0.8);\"><div id=\"target\" style=\"transform: none;\">座標映射 probe</div><div data-probe-overlay=\"true\"><div data-styled-id=\"rCS1w3zcxh\" data-able-draggable=\"true\" data-able-resizable=\"true\" data-able-padding=\"true\" data-able-clickable=\"true\" class=\"moveable-control-box     rCS1w3zcxh\" style=\"position: absolute; display: block; visibility: hidden; transform: translate3d(803px, 283px, 0px); --zoom: 1; --zoompx: 1px;\"><div data-rotation=\"135\" data-direction=\"se\" class=\"moveable-control moveable-direction moveable-se moveable-resizable\" style=\"transform: translateZ(0px) translate(637px, 477px) rotate(0rad) scale(1);\"></div><div data-rotation=\"-1\" data-line-key=\"render-line-0\" data-direction=\"\" class=\"moveable-line moveable-direction  \" style=\"transform: translateY(-50%) translate(-0.5px, 0px) rotate(0rad) scaleY(1); width: 638px;\"></div><div data-rotation=\"-1\" data-line-key=\"render-line-1\" data-direction=\"\" class=\"moveable-line moveable-direction  \" style=\"transform: translateY(-50%) translate(637px, -0.5px) rotate(1.5708rad) scaleY(1); width: 478px;\"></div><div data-rotation=\"-1\" data-line-key=\"render-line-2\" data-direction=\"\" class=\"moveable-line moveable-direction  \" style=\"transform: translateY(-50%) translate(637.5px, 477px) rotate(3.14159rad) scaleY(1); width: 638px;\"></div><div data-rotation=\"-1\" data-line-key=\"render-line-3\" data-direction=\"\" class=\"moveable-line moveable-direction  \" style=\"transform: translateY(-50%) translate(0px, 477.5px) rotate(4.71239rad) scaleY(1); width: 478px;\"></div></div></div></div>"
+  },
+  "error": "AssertionError [ERR_ASSERTION]: {\"width\":1280,\"transform\":\"none\",\"grid\":0,\"kind\":\"resize\",\"events\":[]}\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/browser-mapping/probe.mjs:56:198",
+  "targetClosed": true
+}

@@ -14,3 +14,7 @@ why_not_less：只開flag不能改canonical提交；why_not_more：既有Snappab
 本卡研究驗收完成，無需把純研究當production Independent Review候選；不回寫S5 GO或既有PGQ證據。未merge/push/deploy。
 
 派工紀錄：dispatch.txt為705 UTF-8 bytes（不含檔末newline）；開工前preflight採1800保守上限，完成後context-preflight-exact.json補核實值，兩者PASS；shared唯一writer為Mainline，Worker唯讀。無新visible task。
+
+## Fresh browser follow-up
+
+24組採集完成；直接vendor payload→canonical接法REJECT，詳 `browser-mapping/decision.md`。靜態transform會改變snap尺寸/錨點，多邊吸附不等同左上角8px格點。Pointer要求值與實際取整值分開記錄。下一步限定vendor方向設定／editor-only geometry target的fixture測量，不直接接production。

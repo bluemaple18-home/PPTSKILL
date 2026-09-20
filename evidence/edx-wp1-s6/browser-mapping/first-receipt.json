@@ -1,0 +1,70 @@
+{
+  "status": "fail",
+  "scope": "fixture-only；不投影或提交canonical，static transform不是motion lifecycle",
+  "runs": [
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 0,
+      "kind": "drag",
+      "rawCanonicalDelta": 7,
+      "events": [
+        {
+          "type": "dragStart"
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            6.25,
+            6.25,
+            0,
+            0
+          ],
+          "translate": [
+            6.25,
+            6.25,
+            0,
+            1
+          ],
+          "beforeDist": [
+            6.25,
+            6.25,
+            0,
+            0
+          ],
+          "dist": [
+            6.25,
+            6.25,
+            0,
+            1
+          ],
+          "left": 809.25,
+          "top": 289.25,
+          "width": 637,
+          "height": 477,
+          "client": [
+            902,
+            422
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "remoteRequests": [],
+  "error": "AssertionError [ERR_ASSERTION]: {\"width\":1280,\"transform\":\"none\",\"grid\":0,\"kind\":\"resize\",\"events\":[]}\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/browser-mapping/probe.mjs:56:47",
+  "targetClosed": true
+}

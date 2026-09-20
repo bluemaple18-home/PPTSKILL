@@ -1,7 +1,9 @@
-# S6 snap spike handoff
+# S6 browser mapping handoff
 
-Branch codex/edx-wp1-s6-snap-spike，基準S5 closure8dd76cc。S5 Independent GO不變。
-S6研究完成：conditional ADAPT；決策 `evidence/edx-wp1-s6/decision.md`，來源 `vendor-findings.md`，first-party實測 `operation-probe.mjs/json`，後續矩陣 `authority-map.md`。
+Branch codex/edx-wp1-s6-snap-spike。S5 GO與production/ZIP不變。
+Fresh fixture-only browser24組採集完成，錯誤0／target/profile cleanup PASS；詳 `evidence/edx-wp1-s6/browser-mapping/decision.md` 與receipt.json。直接vendor payload→canonical方案REJECT；transform會改尺寸/錨點，預設多邊snap不保證左上角8px格點。requested7與實際pointer取整值須分開。
 
-接續唯一frontier為fixture-only真browser snap mapping：先量測container原點、root/target矩陣、resize box與motion；不直接把grid8當canonical8，不重複縮放vendor payload。此probe完成才能決定production adapter。未實作snap UI，無fresh browser snap PASS，未改runtime/vendor/ZIP。
-四個既有untracked保留；不merge/push/deploy。依既有受管browser生命週期、serial suites與source/evidence分界續做。
+唯一下一frontier：fixture限制drag left/top、resize right/bottom的vendor方向設定，及無presentation transform的editor-only geometry target候選；仍不修改canonical/runtime，先證明vendor可表達grid與固定SE anchor。不得手刻quantizer或復活transform suppression。研究尚不能宣稱production snap可用。
+
+首輪hidden handle失敗已定位與保留，updateRect初始化後採集成功；static transform不是motion lifecycle驗收。無負向/多次preview/export效能PASS宣稱。
+未merge/push/deploy；四個既有untracked不變。

@@ -1,0 +1,67 @@
+
+DevTools listening on ws://127.0.0.1:55153/devtools/browser/12466fe8-ae7f-4048-9064-f1b05d7c6eba
+Trying to load the allocator multiple times. This is *not* supported.
+[8507:15928239:0920/235457.148909:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8507:15928239:0920/235457.149815:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8507:15928239:0920/235457.149915:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8507:15928239:0920/235457.150007:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8507:15928239:0920/235457.150084:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8507:15928239:0920/235457.150173:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[8477:15928196:0920/235459.316890:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[8799:15929048:0920/235515.712199:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[8799:15929048:0920/235515.712912:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 498974, parent pid: 8477
+[8799:15929048:0920/235515.714680:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 68376125440B (63.680GiB) / 494384795648B (460.432GiB)
+[8799:15929048:0920/235515.714696:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 68376125440B (63.680GiB) / 494384795648B (460.432GiB)
+[8799:15929048:0920/235515.714772:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[8801:15929052:0920/235515.723900:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=152.0.7933.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[8801:15929052:0920/235515.724430:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 498974, parent pid: 1
+[8801:15929052:0920/235515.726080:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 68376121344B (63.680GiB) / 494384795648B (460.432GiB)
+[8801:15929052:0920/235515.726095:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 68376121344B (63.680GiB) / 494384795648B (460.432GiB)
+[8801:15929052:0920/235515.726163:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[8799:15929048:0920/235515.726558:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[8799:15929048:0920/235515.727284:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[8799:15929048:0920/235515.727366:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[8799:15929048:0920/235515.727454:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[8799:15929048:0920/235515.727487:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[8799:15929048:0920/235515.727519:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/AndroidStudio2025.2.2/Crashpad/settings.dat: No such file or directory (2)
+[8799:15929048:0920/235515.727557:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/ChromeForTesting/Crashpad/settings.dat: No such file or directory (2)
+[8799:15929048:0920/235515.727568:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/Chrome-headless/Crashpad/settings.dat: No such file or directory (2)
+[8799:15929048:0920/235515.727582:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[8799:15929060:0920/235515.727829:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[8799:15929060:0920/235515.727924:VERBOSE1:chrome/updater/app/app_wakeall.cc:64] `/Users/matt/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` process invalid: Undefined error: 0 (0)
+[8799:15929060:0920/235515.727937:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/148.0.7730.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[8799:15929060:0920/235515.727995:VERBOSE1:chrome/updater/app/app_wakeall.cc:64] `/Users/matt/Library/Application Support/Google/GoogleUpdater/148.0.7730.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` process invalid: Undefined error: 0 (0)
+[8799:15929060:0920/235515.728006:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[8804:15929066:0920/235515.736011:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[8804:15929066:0920/235515.736488:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 498974, parent pid: 8799
+[8804:15929066:0920/235515.738083:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 68376117248B (63.680GiB) / 494384795648B (460.432GiB)
+[8804:15929066:0920/235515.738100:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 68376117248B (63.680GiB) / 494384795648B (460.432GiB)
+[8804:15929066:0920/235515.738166:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[8806:15929070:0920/235515.746815:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=152.0.7933.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[8806:15929070:0920/235515.747301:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 498974, parent pid: 1
+[8806:15929070:0920/235515.748846:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 68376117248B (63.680GiB) / 494384795648B (460.432GiB)
+[8806:15929070:0920/235515.748868:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 68376117248B (63.680GiB) / 494384795648B (460.432GiB)
+[8806:15929070:0920/235515.748932:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[8804:15929066:0920/235515.749303:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[8804:15929066:0920/235515.749905:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[8804:15929066:0920/235515.749977:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[8804:15929066:0920/235515.750052:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[8804:15929066:0920/235515.750065:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[8804:15929066:0920/235515.750092:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/AndroidStudio2025.2.2/Crashpad/settings.dat: No such file or directory (2)
+[8804:15929066:0920/235515.750125:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/ChromeForTesting/Crashpad/settings.dat: No such file or directory (2)
+[8804:15929066:0920/235515.750135:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/Chrome-headless/Crashpad/settings.dat: No such file or directory (2)
+[8804:15929066:0920/235515.750148:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[8804:15929066:0920/235515.750271:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[8477:15928196:0920/235526.697662:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[8804:15929066:0920/235532.397166:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[8804:15929066:0920/235532.397799:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[8804:15929066:0920/235532.397826:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--wake) returned 0.
+[8799:15929060:0920/235532.532357:VERBOSE1:chrome/updater/app/app_wakeall.cc:68] `/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` exited 0
+[8799:15929048:0920/235532.532743:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[8799:15929048:0920/235532.533418:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[8799:15929048:0920/235532.533451:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--wake-all) returned 0.
+[8806:15929070:0920/235542.409794:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[8806:15929070:0920/235542.409922:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--crash-handler) returned 0.
+[8801:15929052:0920/235542.412101:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[8801:15929052:0920/235542.412335:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--crash-handler) returned 0.
+[8477:15928196:0920/235614.870954:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
