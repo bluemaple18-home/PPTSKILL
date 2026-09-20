@@ -15,3 +15,7 @@ S3/S4/S4-PERF原GO保持；S3 motion P2尚未正式關閉；S5 pending。未merg
 ## Recovery入口核對
 
 本輪唯讀確認helper僅有run CLI，沒有跨程序recovery；ownership存原程序記憶體。因此未重試已知會拒絕的cleanup，未更改ai-core或隔離標記。具體控制面修補提案：`tasks/edx-wp1-s3-motion-environment-recovery-proposal.md`，待Owner明示授權擴到ai-core。
+
+## Owner帶卡至ai-core
+
+Owner要求正式開卡後自行貼給ai-core；`tasks/edx-wp1-s3-motion-environment-recovery-proposal.md` 現為 READY FOR AI-CORE INTAKE，Task ID `AI-CORE-TMP-RECOVERY-20260920`，已附synthetic重現、scope、failure-state驗收及回傳契約。本task不自動建立／傳送其他task，不修改ai-core或回收root；等待ai-core receipt後由本Mainline續驗。

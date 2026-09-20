@@ -1,6 +1,10 @@
-# S3-MOTION 環境回收修補提案
+# AI-CORE-TMP-RECOVERY — S3-MOTION 受管瀏覽器回收修補卡
 
-Status: PROPOSED — 等待Owner明示ai-core控制面修補授權；未實作、未執行回收。
+Status: READY FOR AI-CORE INTAKE — Owner要求開卡，將自行交給ai-core；本task未修改ai-core、未執行回收。
+Task ID: AI-CORE-TMP-RECOVERY-20260920
+類型：既有lifecycle控制面bounded repair；ai-core依自身規則判定派工／review。
+工作repo：`/Users/matt/ai-core`；消費端：PPTSKILL S3-MOTION。
+責任：ai-core負責此環境修補與回收證據；PPTSKILL Mainline責任留在原task，非轉交整個專案。
 目標：恢復S3-MOTION既有驗收，非新增產品功能或第二套lifecycle。
 
 ## 已確認根因／範圍
@@ -8,6 +12,21 @@ Status: PROPOSED — 等待Owner明示ai-core控制面修補授權；未實作�
 `/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py` 的 `read_owned_root` 只接受本程序 `OWNED_ROOTS`；manifest不能單獨授權接管。CLI目前只有run，沒有recover。原supervisor因resource scan limit及process-group observation incomplete退出後，保留unknown marker及owned root，因此重啟驗收前需要正式recovery入口。不得篡改OWNED_ROOTS或直接刪marker繞過。
 
 只處理repo `/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical` 的本輪root `/private/tmp/aic-b-0fe6c1feeb8c41f58361299a7e64ef1d`。歷史session PID/PGID 74559僅作定位，必須fresh核對PID重用與所有相關程序；不能用舊0 matches當永久授權。
+
+## 接手與重現
+
+先讀工作repo的AGENTS、task指定規則及 `docs/tmp-session-lifecycle.md`；CodeGraph後按需限域查 `scripts/tmp_artifact_lifecycle.py`、`scripts/tmp_session.py` 與既有測試。不要重跑PPTSKILL測試來確認已知環境阻擋。
+
+PPTSKILL implementation checkpoint：`1b2d4f3`；本卡前一版proposal：`274c556`；branch `codex/edx-wp1-s3-motion`。以下路徑相對PPTSKILL repo：
+- `evidence/edx-wp1-s3-motion/browser-environment-interruption.json`
+- `evidence/edx-wp1-s3-motion/browser-environment-failure/session.json`、`stderr.log`
+- `evidence/edx-wp1-s3-motion/mainline-receipt.md`
+- `evidence/edx-wp1-s3-motion/mainline-pgq.log`
+- `.git/.ai-core-tmp-artifact-isolation.json`（唯讀核對目前狀態，禁止先清除）
+
+原觸發：受管Chrome supervisor回 `resource observation unknown (scan limit)`，隨後 `owned process-group observation is incomplete`，exit 2。回收嘗試在repo lock內先fresh ps核對原PID／PGID與root matches為0，再呼叫既有helper；`read_owned_root`拒絕 `tmp root is not owned by this helper process`，沒有刪root或marker。
+
+先以synthetic跨程序fixture重現「原helper退出、保留unknown、新程序無法回收」；不得用真profile反覆試刪，亦不得把manifest或marker中的nonce寫入OWNED_ROOTS冒充原程序。原scan-limit原因未進一步分解；此卡不順手放寬它。
 
 ## 建議修補
 
@@ -22,6 +41,17 @@ Status: PROPOSED — 等待Owner明示ai-core控制面修補授權；未實作�
 ## 驗收／回退
 
 先以synthetic fixture覆蓋正常回收、活程序／PID重用／觀測失敗、foreign/symlink/identity mismatch、evidence保存失敗、刪除失敗與marker更新失敗；確認原run fail-closed測試仍通過。控制面變更依ai-core規則獨立驗證後，才對此唯一root執行dry-run與授權回收。code可revert；實際暫存profile回收不可還原，故先保存必要evidence，禁止觸及使用者profile。
+
+## 回傳契約／停止條件
+
+請回傳一份可貼回原PPTSKILL task的receipt：
+1. ai-core branch、base／commit SHA、實際改檔與根因；若已有合法既有入口可用，優先採用並說明，不為卡片措辭強行新增API。
+2. 實跑測試／review結果、dry-run與實際回收指令、exit code、evidence絕對路徑。
+3. fresh程序觀測依據、exact root是否已消失、對應unknown marker是否已合法清除；不可只寫「已恢復」。
+4. 是否可重新啟動同repo受管browser；若仍NO_GO，明列未能證明的ownership／process條件與所需資訊，保留隔離。無法證明舊root可安全回收時，不准為了完成卡片強刪。
+5. 確認未修改PPTSKILL delivery code／ZIP／四個untracked，未影響使用者或其他task的profile；未merge/push/deploy。
+
+code／config回退與實際暫存刪除須分開描述；需執行不可逆的exact-root回收時，由ai-core依Owner在接手對話的明示指令及自身規則確認授權。此卡本身不是越權憑證。不得另建registry／daemon／通用管理平台。
 
 ## PPTSKILL後續
 
