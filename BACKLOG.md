@@ -885,6 +885,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 4 candidate：** single-component Moveable drag／SE resize → S3 operation → export/reopen 已閉環；focused 25/25、compatibility 53/53、non-browser 225/225、fresh 雙 viewport pointer 與 static/normal geometry PASS。PGQ 28 unique cases 通過（首輪 browser lifecycle 中止 26/28，相同來源 bounded retry 3/3，含兩個受影響 case）；不是單輪28/28。ZIP 2,248,891 bytes、lifecycle PASS，SHA `4aa7fa8a683b57b49a1d6a3ad2ea87b77f0312f1731b724abfb240d9ac47402c`。Independent Review pending；S3 motion P2保留，不merge／push／deploy，不開S5。見 `evidence/edx-wp1-s4/mainline-receipt.md`。
 
+**EDX-WP1 Slice 4 closure：** `05295d3853364157a6da0ae30459eebc26bf11c5` Independent Review GO；P0/P1=0。保留新P2（pointer update全deck stringify成本）與S3 motion P2。下一步僅bounded performance follow-up，不開多選/history。見 `evidence/edx-wp1-s4/independent-review.md`。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。

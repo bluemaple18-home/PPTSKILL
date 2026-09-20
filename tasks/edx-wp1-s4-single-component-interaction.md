@@ -1,6 +1,6 @@
 # EDX-WP1-S4 — 單一 component Moveable interaction
 
-**Status:** REVIEW CANDIDATE — Mainline 驗收完成；Independent Review 尚未執行
+**Status:** COMPLETE — Independent Review GO
 **Base:** `20b54ac64c99682a20c0af1a71ceb7b4fa6de406`（S3 GO closure；stacked branch，不 merge main）
 **traces_to:** `BACKLOG.md 10.1 Decisions 1/7/8`、`10.2`、`10.3 EDX-WP1`、`10.4–10.8`
 
@@ -52,3 +52,7 @@ Measured gap：S3 已有可驗證的 operation，但沒有使用者可操作的 
 - ZIP 2,248,891 bytes，SHA-256 `4aa7fa8a683b57b49a1d6a3ad2ea87b77f0312f1731b724abfb240d9ac47402c`；lifecycle/smoke PASS。Gemini CLI 缺席，host capability partial。
 - 來源 SHA 前後一致；兩個 owned profile 已清理，四個既有 untracked hash 未變。S3 motion P2 延續。
 - 交付 `evidence/edx-wp1-s4/mainline-receipt.md` 與 `handoff_20260920_edx_wp1_s4_review.md`；停止在獨立 review candidate，不 merge／push／deploy，不開 S5。
+
+## Independent Review closure
+
+Owner回傳 reviewed commit `05295d3853364157a6da0ae30459eebc26bf11c5`：GO，P0/P1/P3=0，P2新增1＋繼承1。新P2為pointer update整份DeckSpec stringify成本；繼承S3 motion transform P2。均不阻擋S4。Reviewed code與ZIP未改，完整獨立重驗範圍見 independent-review.md。

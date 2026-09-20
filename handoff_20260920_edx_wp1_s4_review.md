@@ -48,3 +48,7 @@ node --test --test-concurrency=1 tests/pgq-wp4-s*.test.mjs
 ## Next step／limits
 
 Owner交Claude Code／Gemini獨立review，回報reviewed SHA、P0/P1/P2/P3與可重現證據。Mainline收到後裁決bounded repair或closure；不自動merge／push／deploy、不開S5。四個既有untracked `.DS_Store`、`CLAUDE.md`、`HANDOFF-20260914-P0-R11-R1-S3.md`、`HANDOFF-20260914-PGQ-WP1.md` 均保留，hash baseline見receipt目錄。
+
+## 後續裁決
+
+Owner已回傳上述candidate Independent Review GO，S4 COMPLETE。P0/P1=0；兩項P2見 `evidence/edx-wp1-s4/independent-review.md`。既有內容為review當時snapshot，reviewed source/ZIP未改。
