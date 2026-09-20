@@ -84,3 +84,15 @@ for (const kind of ['drag', 'resize']) test('S5 mounted ' + kind + ' 中按鍵�
   assert.equal(key(h).prevented, true); assert.deepEqual(geometry(h.getSpec()), box); assert.equal(h.api.layout.getState().gesturing, true);
   h.finish(kind); assert.deepEqual(geometry(h.getSpec()), kind === 'drag' ? { ...box, x: 820, y: 290 } : { ...box, width: 660, height: 490 });
 });
+test('S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  const chrome = h.document.querySelector('[data-action="layout"]');
+  chrome.setAttribute('data-pptskill-editor-chrome', 'toolbar');
+  chrome.blur = () => { h.document.activeElement = h.document.body; };
+  h.document.activeElement = chrome;
+  assert.equal(key(h).prevented, false);
+  emit(h, 'click', { target: h.component() });
+  assert.equal(h.document.activeElement, h.document.body);
+  assert.equal(key(h).prevented, true);
+  assert.deepEqual(geometry(h.getSpec()), { ...box, x: box.x + 1 });
+});

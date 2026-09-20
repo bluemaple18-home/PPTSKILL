@@ -1,0 +1,16 @@
+
+DevTools listening on ws://127.0.0.1:53010/devtools/browser/2bd93429-854e-433d-81bb-d0a330ab49e2
+Trying to load the allocator multiple times. This is *not* supported.
+[79440:15844129:0920/230813.743369:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79440:15844129:0920/230813.743980:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79440:15844129:0920/230813.744086:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79440:15844129:0920/230813.744171:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79440:15844129:0920/230813.744253:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79440:15844129:0920/230813.744352:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[79414:15844067:0920/230815.975483:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[79414:15844067:0920/230842.434929:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[79414:15844067:0920/230937.031367:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[79414:15844067:0920/231109.258227:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[79414:15844067:0920/231125.304510:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -2
+[79414:15844014:0920/231125.378049:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15
+[79414:15844014:0920/231125.547699:ERROR:content/browser/network_service_instance_impl.cc:655] Network service crashed or was terminated, restarting service.

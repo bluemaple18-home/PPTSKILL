@@ -1,6 +1,6 @@
 # EDX-WP1-S5 — 單一 component 鍵盤微調
 
-Status: IMPLEMENTED — BROWSER ACCEPTANCE BLOCKED
+Status: REVIEW CANDIDATE — Independent Review pending
 Base: `d2bd314`（S3-MOTION closure）；branch `codex/edx-wp1-s5`。
 traces_to: BACKLOG.md §10.2 donor arrow nudge、§10.3 WP1 guided direct manipulation、§10.4 shared Operation Registry、§10.5 portability。
 類型：standard bounded；一名clean native Worker，shared sequential writer；Mainline負責control與fresh browser/ZIP，Owner自行帶候選做獨立review。沿既有Astra替代授權，不更動主對話模型。
@@ -36,3 +36,7 @@ Worker可改runtime/component-interaction.js、必要keyboard協調（須先證�
 ## 本輪 checkpoint
 
 Mainline 接手完成實作；focused 70/70、non-browser 259/259、ZIP lifecycle PASS。受管 browser 啟動因 scan limit 退出2，未完成 attach，故無 fresh browser 結論、尚非 review candidate。詳見 `evidence/edx-wp1-s5/mainline-receipt.md`。deck.js 翻頁屬另一 legacy renderer；本卡僅驗證 handled key 攔截，不宣稱 full-deck 存在該翻頁功能。
+
+## 最終驗收
+
+真 browser 發現點選元件後仍有 toolbar focus，已依本卡條款只在明確選取元件時 blur editor chrome，不增 tabindex；保留直接操作 chrome 的鍵盤避讓。focused 71/71、non-browser 260/260、fresh 雙 viewport 各19 checks、ZIP lifecycle PASS；正常 browser cleanup PASS。舊失敗證據保留，詳見 receipt；PGQ 僅 inherited，未重跑。

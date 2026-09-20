@@ -1,0 +1,39 @@
+✔ S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y (5.61875ms)
+✔ S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp (4.238875ms)
+✔ S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏 (15.189208ms)
+✔ S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理 (8.505458ms)
+✔ S5 mounted no mode／selection／geometry／deleted 與原子 bounds (7.611834ms)
+✔ S5 mounted drag 中按鍵不取消／不提交 gesture (3.475375ms)
+✔ S5 mounted resize 中按鍵不取消／不提交 gesture (3.115209ms)
+✖ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (3.191584ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 7
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.602042
+
+✖ failing tests:
+
+test at tests/edx-wp1-s5-keyboard.test.mjs:87:1
+✖ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (3.191584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:92:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

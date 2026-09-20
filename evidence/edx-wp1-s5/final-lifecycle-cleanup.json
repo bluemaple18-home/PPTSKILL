@@ -1,0 +1,17 @@
+{
+  "sessions": [
+    {
+      "root": "/private/tmp/aic-b-b09f9aab2c5f4fc5bd0b0b265483c0b0",
+      "exitCode": 2,
+      "reason": "resource observation unknown (scan limit)",
+      "rootAbsent": true
+    },
+    {
+      "root": "/private/tmp/aic-b-97d5caec3b6548fcb1da48fdb663d5dc",
+      "exitCode": 0,
+      "close": "Browser.close",
+      "rootAbsent": true
+    }
+  ],
+  "isolationMarkerAbsent": true
+}

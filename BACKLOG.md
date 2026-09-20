@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO；S5 KEYBOARD NUDGE IMPLEMENTED / BROWSER BLOCKED（stacked branch，尚未整合 main）
+**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO；S5 KEYBOARD NUDGE REVIEW CANDIDATE（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -893,7 +893,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **S3-MOTION follow-up：** `tasks/edx-wp1-s3-motion-preservation.md`；先修manual geometry壓制motion transform的inherited P2，維持canonical geometry與portable契約，不擴WP1互動功能。實作與nonbrowser251/251已完成；ai-core合法回收後，fresh motion雙viewport各31 checks、PGQ 28 unique覆蓋與browser cleanup PASS。Independent Review GO（reviewed `68eace8`，P0/P1=0、0 new P2），S3 inherited motion-transform P2正式關閉；首輪fail與19＋1＋8補驗紀錄保留。詳見 `evidence/edx-wp1-s3-motion/independent-review.md`。
 
-**EDX-WP1 S5：** `tasks/edx-wp1-s5-keyboard-nudge.md`，单一component方向鍵微調沿move-element；輸入／IME避讓、safe-area拒絕與portable驗證，不擴多選/history/AI。
+**EDX-WP1 S5：** `tasks/edx-wp1-s5-keyboard-nudge.md`，單一component方向鍵微調沿move-element；輸入／IME避讓、safe-area拒絕與portable驗證，不擴多選/history/AI。
 
 ## 10.1 八項 Owner 決策
 

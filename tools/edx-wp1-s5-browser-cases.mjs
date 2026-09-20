@@ -43,9 +43,11 @@ export async function runKeyboardBrowserCases({ cdp, evaluate, navigate, sourceP
   await key('ArrowRight'); assert.deepEqual(await spec(), expected); await click(selector);
   run.checks.push('S5 真input／textarea／select／contenteditable／textbox／chrome focus不挪動');
   await move({ x: 80, y: 80 }); const edge = await spec();
+  await evaluate('window.__s5keys=[];document.addEventListener("keydown",e=>window.__s5keys.push({key:e.key,active:document.activeElement.outerHTML,state:window.PPTSKILLEditor.layout.getState(),defaultPrevented:e.defaultPrevented}),true)');
   for (const name of ['ArrowLeft', 'ArrowUp']) { await key(name, 8); assert.deepEqual(await spec(), edge); }
   await assertRect(rect(edge));
-  assert.match(await evaluate('document.querySelector("[data-editor-status]").textContent'), /未套用/);
+  run.keyboardDiagnostic = await evaluate('({keys:window.__s5keys,status:document.querySelector("[data-editor-status]").textContent})');
+  assert.match(run.keyboardDiagnostic.status, /未套用/);
   run.checks.push('S5 safe-area越界拒絕、不clamp');
   await move({ x: 820, y: 300 });
   for (const kind of ['drag', 'resize']) {

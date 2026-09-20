@@ -163,6 +163,9 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     clearSelection(); interaction.select(target);
     const selected = interaction.getState().target, current = selected && resolve(selected);
     if (!current) return;
+    // vendor 可能保留工具列焦點；明確選取元件後才釋放，避免方向鍵持續被 chrome guard 略過。
+    const active = document.activeElement;
+    if (active?.closest?.('.pptskill-editor,[data-pptskill-editor-chrome]')) active.blur?.();
     current.node.setAttribute('data-editor-selected', 'true');
     selectSlide(target.slideId);
     initializeButton.hidden = Boolean(current.rect);

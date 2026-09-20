@@ -1,0 +1,102 @@
+✔ Node absolute move/resize 僅改 canonical override，content edit 保留 (22.884042ms)
+✔ Node invalid 全部 fail loud 且 state 原子性 (13.35825ms)
+✔ Node descriptors 深度 immutable 且 allowlist 無法擴權 (1.896416ms)
+✔ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (42.493041ms)
+✔ browser API VM invalid 全部 fail loud 且 state 原子性 (108.031666ms)
+✔ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (39.718958ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (23.917375ms)
+✔ canonical geometry renderer/recipient round-trip 與 viewport 無關 (13.563166ms)
+✔ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (5.368791ms)
+✔ Node 合法 constructor ID 與非 slot component 走 own-property override (15.621541ms)
+✔ Node safe-area 精確邊界／integer 非 grid 值不 clamp (4.568209ms)
+✔ browser API VM 合法 constructor ID 與非 slot component 走 own-property override (30.036583ms)
+✔ browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp (12.827458ms)
+✔ legacy component patch 保留 geometry；sanitizer 移除失效 component override (2.709791ms)
+✔ geometry QA managed attach 只建／關 owned target，navigation 失敗仍清理且不 spawn (451.588959ms)
+✔ S3 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (200.994208ms)
+✔ 舊 geometry suppression 清除、preview 回復 canonical，保留無關 inline style／priority (17.058083ms)
+✔ 非 geometry inline transform 與無 override 元件不被抹除 (4.293209ms)
+✔ renderer 與 export/reopen spec 的 move/resize 不壓制 motion (31.622541ms)
+✔ mounted public preview/cancel/commit/export clone 保留無關 style 與 motion seam (126.064833ms)
+✔ 三種 browser treatment fixture 使用當前 renderer、可攜 canonical 且未改 motion CSS (59.783208ms)
+✔ mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation (7.701958ms)
+✔ scale 0.8 drag/SE resize preview ephemeral，release 至多一次 (8.790167ms)
+✔ scale 1 drag/SE resize preview ephemeral，release 至多一次 (5.459917ms)
+✔ no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕 (12.755125ms)
+✔ SE resize 小於 minimum 原子拒絕；非 component / play 不啟動 (1.291ms)
+✔ stale target 刪除不提交；切選取取消 preview (2.744584ms)
+✔ export 只移除 control 對應 style，canonical component 不作 chrome root (0.495083ms)
+✔ S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn (439.588208ms)
+✔ S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (266.43775ms)
+✔ S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (200.42375ms)
+✔ S4 managed attach --keyboard-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (176.832167ms)
+✔ S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (135.752083ms)
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (52.9385ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (163.741666ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (358.901125ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (96.659291ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (30.222542ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (41.608542ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (33.565292ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (35.195167ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (32.493167ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (8.1365ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (33.261334ms)
+✔ mounted semantic sync component text 使 gesture stale，不覆寫新 state (29.122834ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (46.266416ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (43.393583ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (144.70725ms)
+✔ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (67.095667ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (55.797458ms)
+✔ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (67.306917ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (227.640334ms)
+✔ 正式 Moveable bundle/hash/metafile/license 與禁用 input 邊界 (33.7675ms)
+✔ portable 內嵌 vendor/license，無 CDN；generated editor script 可解析 (28.720334ms)
+✔ S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y (12.517792ms)
+✔ S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp (12.15725ms)
+✔ S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏 (120.826583ms)
+✔ S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理 (36.484708ms)
+✔ S5 mounted no mode／selection／geometry／deleted 與原子 bounds (20.504458ms)
+✔ S5 mounted drag 中按鍵不取消／不提交 gesture (12.974583ms)
+✔ S5 mounted resize 中按鍵不取消／不提交 gesture (7.678375ms)
+✖ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (7.516458ms)
+✔ motion personality 只解析成 bounded portable preset (1.461917ms)
+✔ motion CSS 只用 transform/opacity 類進場並提供 reduced-motion fallback (6.993541ms)
+✔ motion runtime 使用 IntersectionObserver，不依賴外部 animation library (0.543417ms)
+✔ full deck 內建共用 motion root / runtime，而不是每頁手寫動畫 code (20.651291ms)
+✔ style cover preview 也沿用 StyleSpec motion personality (8.784291ms)
+✔ S3 由 Style grammar 與 semantic role 決定 effect，不是全站 fade-in (23.775083ms)
+✔ 每個 Style 最多兩個 primary effect families，並涵蓋代表性角色 (10.010292ms)
+✔ effect CSS 只改 transform / opacity / clip-path，reduced motion 立即回到 resting state (9.147959ms)
+✔ S3 effect routing 不改動兩套 deck 的內容雜湊 (2.185792ms)
+ℹ tests 71
+ℹ suites 0
+ℹ pass 70
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1841.431042
+
+✖ failing tests:
+
+test at tests/edx-wp1-s5-keyboard.test.mjs:87:1
+✖ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (7.516458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:92:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
