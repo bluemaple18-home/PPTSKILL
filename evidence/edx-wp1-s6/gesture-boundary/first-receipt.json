@@ -1,0 +1,138 @@
+{
+  "status": "fail",
+  "scope": "fixture-only controller bridge；canonical為測試替身，preview只改proxy，非production整合",
+  "runs": [
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "remoteRequests": [],
+  "error": "Error: TypeError: Cannot set properties of null (setting '__CROACT__')\n    at ef (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/fixture.html:1:41203)\n    at Hn (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/fixture.html:1:41290)\n    at e.destroy (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/fixture.html:274:5295)\n    at window.setup (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/fixture.html:354:12)\n    at <anonymous>:1:1\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/probe.mjs:54:157)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp1-s6/gesture-boundary/probe.mjs:60:28",
+  "targetClosed": true
+}

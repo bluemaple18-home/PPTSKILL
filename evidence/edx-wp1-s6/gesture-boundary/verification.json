@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "cases": 48,
+  "viewportPairs": 24,
+  "previewNoCommit": true,
+  "negativeAndMultiSingleCommit": true,
+  "zeroAndCancelNoCommit": true,
+  "teardownNoResidue": true,
+  "presentationUnchanged": true,
+  "limits": "fixture canonical替身；非full-deck整合／sanitizer／export／完整motion lifecycle"
+}

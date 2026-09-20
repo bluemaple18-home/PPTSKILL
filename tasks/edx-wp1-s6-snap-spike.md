@@ -1,6 +1,6 @@
 # EDX-WP1-S6 — 8px snap bounded integration spike
 
-Status: COMPLETE — CONDITIONAL ADAPT / production snap pending
+Status: COMPLETE — architecture ADAPT for S7 / production pending
 Base: 8dd76cc；branch codex/edx-wp1-s6-snap-spike。
 traces_to: BACKLOG.md §10.1 guided direct manipulation／invisible snap grid、§10.2 prior-art-first、§10.3 WP1、§10.4 operation authority。
 Dependencies：S3/S4/S4-PERF/S3-MOTION/S5均Independent GO，無未解blocking edge。trace preflight：references存在、單一ID、無新schema、驗證見下；無Critical。無取代。
@@ -38,3 +38,9 @@ Browser follow-up COMPLETE：24組採集PASS、errors0、cleanupPASS；直接pay
 Owner明示只做mapping/architecture，不進production、不Independent GO。fixture對照default／方向限制／無transform editor-only geometry target；兩viewport、3種static transform、drag/SE共36組，requested10px且記observed值。驗證方向語意、transform隔離、固定SE anchor與presentation CSS不變；只產evidence，未證明full-deck互動／export／motion lifecycle。
 
 2026-09-21結果：方向限制單獨不足；方向＋independent geometry target在36組採集／12組proxy invariant中成立，actual delta全部10。Resize採right/bottom落格而非尺寸倍數。仍為architecture candidate、非production；詳 `evidence/edx-wp1-s6/direction-target/decision.md`。
+
+## 最終bounded gesture驗證
+
+Owner繼續：兩viewport×三static transform×drag/SE×negative/zero/multi/cancel共48組。fixture接既有controller，canonical為測試替身、preview只改proxy；確認preview0提交、release最多1筆、cancel/zero0提交、teardown無proxy/control/overlay。通過後收斂架構並開production卡，不新增泛化研究。
+
+最終：48組gesture boundary PASS，架構採用geometry target＋指定吸附邊，停止泛化研究；見 `evidence/edx-wp1-s6/gesture-boundary/decision.md`。S7另卡進production；本卡不Independent GO。

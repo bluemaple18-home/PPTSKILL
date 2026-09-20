@@ -1,0 +1,7860 @@
+{
+  "status": "pass",
+  "scope": "fixture-only controller bridge；canonical為測試替身，preview只改proxy，非production整合",
+  "runs": [
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            913,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            889,
+            409
+          ]
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1168,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1144,
+            600
+          ]
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        }
+      ],
+      "presentationStyle": "transform: none;",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        }
+      ],
+      "presentationStyle": "transform: scale(0.8);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "negative",
+      "steps": [
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "zero",
+      "steps": [],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": []
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 792,
+        "y": 272,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [
+        {
+          "operation": "move-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "x": 792,
+            "y": 272
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "multi",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 629,
+        "height": 469
+      },
+      "calls": [
+        {
+          "operation": "resize-element",
+          "target": {
+            "slideId": "fixture",
+            "elementId": "component-probe"
+          },
+          "value": {
+            "width": 629,
+            "height": 469
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "drag",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 816,
+              "y": 296,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 824,
+              "y": 304,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 792,
+              "y": 272,
+              "width": 637,
+              "height": 477
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 824,
+            "y": 304,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "translate": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "beforeDist": [
+            21,
+            21,
+            0,
+            0
+          ],
+          "dist": [
+            21,
+            21,
+            0,
+            1
+          ],
+          "left": 824,
+          "top": 304,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1141,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "translate": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "beforeDist": [
+            -11,
+            -11,
+            0,
+            0
+          ],
+          "dist": [
+            -11,
+            -11,
+            0,
+            1
+          ],
+          "left": 792,
+          "top": 272,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1111,
+            511
+          ]
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "kind": "resize",
+      "scenario": "cancel",
+      "steps": [
+        10,
+        20,
+        -10
+      ],
+      "beforeRelease": {
+        "canonical": {
+          "x": 803,
+          "y": 283,
+          "width": 637,
+          "height": 477
+        },
+        "calls": [],
+        "snapshots": [
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 645,
+              "height": 485
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 653,
+              "height": 493
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          },
+          {
+            "preview": {
+              "x": 803,
+              "y": 283,
+              "width": 629,
+              "height": 469
+            },
+            "canonical": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "commits": 0
+          }
+        ]
+      },
+      "canonical": {
+        "x": 803,
+        "y": 283,
+        "width": 637,
+        "height": 477
+      },
+      "calls": [],
+      "snapshots": [
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 653,
+            "height": 493
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        },
+        {
+          "preview": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          },
+          "canonical": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          },
+          "commits": 0
+        }
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            16,
+            16
+          ],
+          "width": 653,
+          "height": 493,
+          "boundingWidth": 653,
+          "boundingHeight": 493,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1460,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            -8,
+            -8
+          ],
+          "width": 629,
+          "height": 469,
+          "boundingWidth": 629,
+          "boundingHeight": 469,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1430,
+            750
+          ]
+        }
+      ],
+      "presentationStyle": "transform: translateY(20px);",
+      "cleanup": {
+        "proxyCount": 0,
+        "controlCount": 0,
+        "overlayCount": 0
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "remoteRequests": [],
+  "targetClosed": true
+}
