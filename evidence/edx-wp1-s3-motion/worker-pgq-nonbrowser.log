@@ -1,0 +1,23 @@
+✔ plan-new 暴露 pinned motion capability 並產生 bounded NumberFlow odometer proposal (14.078209ms)
+✔ motion planner 對格式、primitive、rhythm 與自報欄位 fail loud (2.574542ms)
+✔ CompositionSpec motion 可攜 round-trip，未知欄位在 Node sanitizer/editor 被移除 (6.520833ms)
+✔ renderer 只將核准 target 轉為 bundled NumberFlow，保留靜態 metric 與色彩字型 token (5.607458ms)
+✔ unsupported persisted motion 不得被 sanitizer 靜默吞掉 (0.195959ms)
+✔ browser editor 注入正式 motion semantic validator，拒絕失配 target content (6.591709ms)
+✔ planner 暴露 underline-sweep capability，target role 只由 ref 派生且不改 content hash (4.426458ms)
+✔ underline-sweep signal 僅接受 optional title 接 required subtitle，且 gate 空文字與 none intensity (2.733542ms)
+✔ CompositionSpec/editor/embed/export/reparse 只保留 allowlisted refs 與 canonical edited text (9.671041ms)
+✔ renderer 只標記核准文字，使用 transform/opacity 與 1px scaleX underline，runtime 可 replay/static (9.06075ms)
+✔ capability matrix truthful：11 offered、CLOUDS2/p5 routes unavailable，vendor pin/checksum PASS (4.650792ms)
+✔ planner 使用 rhythm/capability truth；unsupported 不偷換，unknown config fail loud (4.402708ms)
+✔ DeckSpec/editor/browser contract allowlist background metadata，移除 executable 欄位 (2.448292ms)
+✔ renderer 單檔內嵌 vendor/runtime，style mapping bounded，export truth 不含 canvas (16.705875ms)
+✔ background adapter 保留 DeckSpec 接受的合法 CSS 色彩語意 (0.653333ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 170.425417

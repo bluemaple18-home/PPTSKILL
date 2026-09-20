@@ -1,0 +1,76 @@
+✖ 舊 geometry suppression 清除、preview 回復 canonical，保留無關 inline style／priority (3.122542ms)
+✖ 非 geometry inline transform 與無 override 元件不被抹除 (0.669208ms)
+✖ renderer 與 export/reopen spec 的 move/resize 不壓制 motion (9.963833ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 124.372375
+
+✖ failing tests:
+
+test at tests/edx-wp1-s3-motion.test.mjs:45:1
+✖ 舊 geometry suppression 清除、preview 回復 canonical，保留無關 inline style／priority (3.122542ms)
+  AssertionError [ERR_ASSERTION]: transform
+
+  'none' !== ''
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-motion.test.mjs:47:73)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 'none',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s3-motion.test.mjs:58:1
+✖ 非 geometry inline transform 與無 override 元件不被抹除 (0.669208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'none'
+  - 'rotate(2deg)'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-motion.test.mjs:61:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'none',
+    expected: 'rotate(2deg)',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s3-motion.test.mjs:65:1
+✖ renderer 與 export/reopen spec 的 move/resize 不壓制 motion (9.963833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'none' !== ''
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-motion.test.mjs:72:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'none',
+    expected: '',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

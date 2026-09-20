@@ -1,0 +1,1252 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/source.html",
+  "sourceSha256": "0b8e2d8b72f6ab63dcc586c387de3fa022220604833ad9aafcb4ed75544355dd",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "rect": {
+              "x": 820,
+              "y": 309.89999771118164,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-legacy-selected.html",
+          "bytes": 366757,
+          "sha256": "37b3ed44325e5d48dbb57f5f06f2d8b84072b92b8df13ee2224ae32d4c530618"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-preview-export.html",
+          "bytes": 367066,
+          "sha256": "d7351349e1b620d672f7d0695da9633bbbd48c26f0f176b8fee668e1b778af6a"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-cancel.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-noop.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-invalid.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-invalid-resize.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-play-mode.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-export.html",
+          "bytes": 367066,
+          "sha256": "0bf94f1c9adddbd08d93e2e57a9304626f79e2bfcc4304ec46246a7cce740163"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-reopen-export.html",
+          "bytes": 367066,
+          "sha256": "feb667c6597ce21e517345915c377d53d666881f93979cb5ffa2d6406636dca0"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-brand-device-accent-preview.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-brand-device-accent-normal.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-brand-device-accent-reduced.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-brand-device-accent-static.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-image-zoom-settle-preview.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-image-zoom-settle-normal.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-image-zoom-settle-reduced.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-image-zoom-settle-static.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3-motion/mainline-browser/1280-motion-restrained-fade-rise-preview.html"
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(identity(end.transform))\n\n    at checkMotion (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s3-motion-browser-cases.mjs:38:56)\n    at async runMotionBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s3-motion-browser-cases.mjs:78:50)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:167:57",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(identity(end.transform))\n\n    at checkMotion (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s3-motion-browser-cases.mjs:38:56)\n    at async runMotionBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s3-motion-browser-cases.mjs:78:50)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:167:57"
+}

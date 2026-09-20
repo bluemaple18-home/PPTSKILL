@@ -18,16 +18,28 @@ export function fixture(mib = 1) {
 // 最小 DOM double 只驗 mounted/public runtime；不宣稱瀏覽器排版或 vendor pointer 驗收。
 const attrName = key => 'data-' + key.replace(/[A-Z]/g, c => '-' + c.toLowerCase());
 const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+// 同步 declaration 與 style attribute，讓 clone/export 替身維持 DOM 語意。
+function elementStyle(element) {
+  const read = () => Object.fromEntries((element.attrs.style || '').split(';').filter(Boolean).map(part => { const i = part.indexOf(':'); return [part.slice(0, i).trim(), part.slice(i + 1).trim()]; }));
+  const write = values => { element.attrs.style = Object.entries(values).map(([k, v]) => k + ':' + v).join(';'); };
+  const methods = {
+    setProperty(k, v, p = '') { write({ ...read(), [k]: v + (p ? '!important' : '') }); },
+    getPropertyValue(k) { return (read()[k] || '').replace(/!important$/, ''); },
+    getPropertyPriority(k) { return /!important$/.test(read()[k] || '') ? 'important' : ''; },
+    removeProperty(k) { const values = read(); delete values[k]; write(values); },
+  };
+  return new Proxy(methods, { get: (target, k) => target[k] || methods.getPropertyValue(k), set: (_, k, v) => { methods.setProperty(k, v); return true; } });
+}
 class Element {
   constructor(tag = 'div', attrs = {}, text = '') {
-    this.tag = tag; this.attrs = { ...attrs }; this.children = []; this.text = text; this.style = {}; this.listeners = {};
+    this.tag = tag; this.attrs = { ...attrs }; this.children = []; this.text = text; this.style = elementStyle(this); this.listeners = {};
     this.dataset = new Proxy({}, { get: (_, key) => this.attrs[attrName(key)], set: (_, key, value) => { this.attrs[attrName(key)] = String(value); return true; } });
   }
   get textContent() { return this.text + this.children.map(c => c.textContent).join(''); }
   set textContent(value) { this.text = String(value); this.children = []; }
-  setAttribute(k, v) { this.attrs[k] = String(v); if (k === 'style') for (const part of String(v).split(';')) { const [key, value] = part.split(':'); if (key && value) this.style[key.trim()] = value.trim(); } }
+  setAttribute(k, v) { this.attrs[k] = String(v); }
   getAttribute(k) { return this.attrs[k] ?? null; }
-  removeAttribute(k) { delete this.attrs[k]; if (k === 'style') this.style = {}; }
+  removeAttribute(k) { delete this.attrs[k]; }
   get isConnected() { return this.tag === 'html' || Boolean(this.parentElement?.isConnected); }
   get parentNode() { return this.parentElement; }
   append(node) { node.remove(); this.children.push(node); node.parentElement = this; }
@@ -53,7 +65,7 @@ class Element {
   removeEventListener(type, fn) { this.listeners[type] = (this.listeners[type] || []).filter(f => f !== fn); }
   getBoundingClientRect() { return { width: 1600 }; }
   scrollIntoView() {}
-  cloneNode() { const node = new Element(this.tag, this.attrs, this.text); node.style = { ...this.style }; for (const c of this.children) node.append(c.cloneNode()); return node; }
+  cloneNode() { const node = new Element(this.tag, this.attrs, this.text); for (const c of this.children) node.append(c.cloneNode()); return node; }
   get outerHTML() { return '<' + this.tag + Object.entries(this.attrs).map(([k, v]) => ` ${k}="${escape(v)}"`).join('') + '>' + (this.tag === 'script' ? this.text : escape(this.text)) + this.children.map(c => c.outerHTML).join('') + '</' + this.tag + '>'; }
   set innerHTML(html) {
     const match = html.match(/^<([\w-]+)([^>]*)>([\s\S]*)<\/\1>$/);

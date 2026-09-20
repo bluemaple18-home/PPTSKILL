@@ -1,0 +1,25 @@
+{
+  "status": "BLOCKED_ENVIRONMENT",
+  "supervisorExit": 2,
+  "reasons": [
+    "resource observation unknown (scan limit)",
+    "owned process-group observation is incomplete"
+  ],
+  "ownedRoot": "/private/tmp/aic-b-0fe6c1feeb8c41f58361299a7e64ef1d",
+  "ownedPid": 74559,
+  "freshProcessAudit": {
+    "pidPgidAndRootMatches": 0,
+    "method": "escalated ps under lifecycle repo lock"
+  },
+  "cleanupAttempt": "existing helper cleanup refused: tmp root is not owned by this helper process",
+  "rootStillPresent": true,
+  "unknownIsolationPreserved": true,
+  "policyChanged": false,
+  "retryStarted": false,
+  "pgq": {
+    "reporterTests": 22,
+    "pass": 19,
+    "fail": 3,
+    "note": "包含一個未完成的file-level failure；不得当28 unique完整執行。"
+  }
+}

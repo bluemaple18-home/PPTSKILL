@@ -1,0 +1,105 @@
+✔ 兩張代表頁從正式 planner truth 選出 Typical 與第三頁 Stress (14.127667ms)
+✔ 一張代表頁同時承擔 Typical 與 Stress，且重跑 byte-stable (1.35175ms)
+✔ skip sample 不建立人工等待，但不解除 full-deck QA (0.470583ms)
+✔ sample selection 不改 composition、rhythm、motion、background 或 generation units (1.581333ms)
+✔ legacy 無 planner signals 仍 deterministic；單頁 deck 收斂為一筆 both (0.241625ms)
+✔ installed plan-new 使用相同 Representative Sample contract (422.054125ms)
+✔ 完整 hard evidence 才 PASS，且 sample PASS 不解除 full-deck QA (1.783292ms)
+✔ NOT_RUN/UNKNOWN blocked 且不消耗 repair budget (0.19ms)
+✔ 同一 issue 只允許兩次 bounded repair，第三次前 blocked (0.2955ms)
+✔ coverage、allowlist 與 history spoof fail loud (0.422583ms)
+✔ 拒絕繞過 Slice 1 的 single both 與 typical plus stress sample shape (0.452958ms)
+✔ installed qa-sample CLI 與 direct pure gate parity (652.449791ms)
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (41164.534625ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (4.253625ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (1.047125ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (1.959458ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.346791ms)
+✔ sample content 或 composition 只使該頁失效 (1.377167ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.834083ms)
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (87965.73825ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+[TypeError: fetch failed] {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:56375
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16) {
+    errno: -61,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 56375
+  }
+}
+
+Node.js v25.9.0
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async collectFullDeckQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:95:56)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-full-deck-qa.test.mjs:17:18
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (475.276291ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (172.851875ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 19
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 224060.641541
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-sample-approval.test.mjs:142:1
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (87965.73825ms)
+  Error: Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/runtime/workflow-cli.mjs approve-sample --request /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/approval-request.json --artifact /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html
+  PPTSKILL workflow：Trusted browser producer normal 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion normal
+  Warning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695
+  for (const viewport of viewports) runs.push(await runAtViewport(viewport));
+                                              ^
+
+
+
+
+
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:509:20)
+      at maybeClose (node:internal/child_process:1108:16)
+      at Socket.<anonymous> (node:internal/child_process:480:11)
+      at Socket.emit (node:events:509:20)
+      at Pipe.<anonymous> (node:net:350:12) {
+    code: 1,
+    killed: false,
+    signal: null,
+    cmd: '/opt/homebrew/Cellar/node/25.9.0_3/bin/node /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/runtime/workflow-cli.mjs approve-sample --request /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/approval-request.json --artifact /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html',
+    stdout: '',
+    stderr: 'PPTSKILL workflow：Trusted browser producer normal 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion normal\nWarning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-SRM7H0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695\nfor (const viewport of viewports) runs.push(await runAtViewport(viewport));\n                                            ^\n\n\n\n\n'
+  }
+
+test at tests/pgq-wp4-s4-full-deck-qa.test.mjs:1:1
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (475.276291ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (172.851875ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:26:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:23:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

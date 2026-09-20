@@ -1,0 +1,21 @@
+{
+  "status": "FROZEN",
+  "sourceSHA": "a0f5f6fe35b9afee56d285033c484cab8c4b7093",
+  "requestedBase": "a5e5d43",
+  "branch": "codex/edx-wp1-s3-motion",
+  "files": {
+    "runtime/component-geometry.js": "44ce6c0f85a1ae0195f15676acd217d372a9f83a120aecfbecccf9f65b0cde88",
+    "runtime/deck-editor.js": "ec8f8b2a95ded516c920032353b71cbe17350b09fd585b9f34684c7a4d25f94e",
+    "tests/edx-wp1-s3-motion.test.mjs": "271ecb3a259532f36ce60aba741508c49919354479da429c6fa2f7f46546e71a",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "519f1357419c210333e243a4f44ad743cea798a897e2529f5c8713d0ff46f543",
+    "tools/edx-wp1-s3-motion-browser-cases.mjs": "1a44302d9bd5c70dee0f91a76dec9ee6e9875af48e9946ed8a1c98f42fbbd887",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "9f75b746d293a2152fc18e0ab7c11a855fafc3ccee8b800eb6d2d08acd68d94d",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "133ec136ec138b096ae11a47f254a6021c9a4ab751ddda87a8d7ae6cbbcb401c"
+  },
+  "sourceSetSHA256": "f88985a365280da969168e5494c6b8e340adf8e214bbb739fbcd786234e98a4a",
+  "diffCheck": {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "output": ""
+  }
+}

@@ -1,0 +1,17 @@
+✔ 舊 geometry suppression 清除、preview 回復 canonical，保留無關 inline style／priority (2.795417ms)
+✔ 非 geometry inline transform 與無 override 元件不被抹除 (1.090209ms)
+✔ renderer 與 export/reopen spec 的 move/resize 不壓制 motion (9.041125ms)
+✔ mounted public preview/cancel/commit/export clone 保留無關 style 與 motion seam (58.518ms)
+✔ 三種 browser treatment fixture 使用當前 renderer、可攜 canonical 且未改 motion CSS (22.813166ms)
+✔ S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn (135.293125ms)
+✔ S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (124.637875ms)
+✔ S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (133.774958ms)
+✔ S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (95.991875ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 583.501667

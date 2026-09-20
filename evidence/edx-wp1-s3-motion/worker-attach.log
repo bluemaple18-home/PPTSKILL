@@ -1,0 +1,12 @@
+✔ S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn (151.451542ms)
+✔ S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (135.261583ms)
+✔ S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (130.118584ms)
+✔ S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (89.000167ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 604.239667

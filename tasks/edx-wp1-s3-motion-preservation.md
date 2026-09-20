@@ -1,6 +1,6 @@
 # EDX-WP1-S3-MOTION — manual geometry 保留 motion
 
-Status: IN PROGRESS
+Status: BLOCKED_ENVIRONMENT — implementation checkpoint，非 review candidate
 Base: `a5e5d43`；branch `codex/edx-wp1-s3-motion`。
 類型：standard bounded follow-up；Mainline裁決先關閉已量測的preserves契約缺口，再擴充WP1功能。
 traces_to: BACKLOG.md §10.5 content-only/manual override preservation、§10.6 transform composition；evidence/edx-wp1-s3/independent-review.md inherited P2；evidence/edx-wp1-s4-perf/independent-review.md。
@@ -27,3 +27,7 @@ Blocking edges：S3/S4/S4-PERF皆Independent GO，依賴已清。其他WP1功能
 
 1個clean native Worker，shared sequential single writer；Mainline在Worker完成前只唯讀與管理既有受管browser，不平行寫repo。實作由Worker，控制文件由Mainline。既有Owner核准Astra替代不可用5.5沿用，不更動主對話模型。
 Worker只寫delivery檔與evidence/edx-wp1-s3-motion/worker-*；不寫本卡/backlog，不build dist、不commit、不merge/push/deploy。Mainline於交接後檢查diff、browser與ZIP。保留4既有untracked。兩次同類無進展即停報具體證據。
+
+## 主線 checkpoint
+
+實作完成，focused60/60、完整nonbrowser251/251與ZIP lifecycle PASS；fresh browser首輪motion終點失敗待判根因，PGQ遭受管Chrome資源觀測中止。owned process audit=0，但helper跨程序ownership拒絕cleanup；root與unknown isolation保留，不繞過。詳見 `evidence/edx-wp1-s3-motion/mainline-receipt.md`。恢復browser環境後由Mainline補single-suite motion與PGQ，未達review candidate。

@@ -1,3 +1,4 @@
+import { runMotionBrowserCases } from './edx-wp1-s3-motion-browser-cases.mjs';
 import assert from 'node:assert/strict';
 import { runPerfBrowserCases } from './edx-wp1-s4-perf-browser-cases.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -99,12 +100,12 @@ try {
       const assertExport = async (label, expectedSpec) => {
         const html = await evaluate('window.PPTSKILLEditor.exportHtml()');
         assert.deepEqual(extractDeckSpec(html), expectedSpec, label + ' spec');
-        // 直接檢查真正 export DOM；沿既有 authority 的 transient-only normalize，不放寬 style／attribute 順序。
+        // 直接檢查真正 export DOM；沿既有 authority 移除 transient，style 雙側使用 CSSOM 序列化；仍保留全部 declaration／priority／順序。
         const expectedHtml = renderFullDeck(expectedSpec).html;
         const check = await evaluate(`(()=>{
           const actual=new DOMParser().parseFromString(${JSON.stringify(html)},'text/html'),expected=new DOMParser().parseFromString(${JSON.stringify(expectedHtml)},'text/html');
           const ids=[...document.querySelectorAll('.moveable-control-box[data-styled-id]')].map(n=>n.getAttribute('data-styled-id'));
-          const normalize=slide=>{const clone=slide.cloneNode(true);clone.classList.remove('is-visible','motion-resetting');for(const node of [clone,...clone.querySelectorAll('*')]){for(const a of [...node.attributes])if(a.name==='contenteditable'||a.name==='data-editor-selected'||/^data-(motion-state|animation-starts|animation-finishes|replay-count)$/.test(a.name))node.removeAttribute(a.name);if(node.matches('[data-pptskill-background-layer]')){node.replaceChildren();node.removeAttribute('style');node.dataset.backgroundState='static'}if(node.matches('number-flow[data-pptskill-odometer]')){node.replaceChildren(document.createTextNode(node.dataset.finalDisplay||''));node.removeAttribute('aria-label')}}return clone.outerHTML};
+          const normalize=slide=>{const clone=slide.cloneNode(true);clone.classList.remove('is-visible','motion-resetting');for(const node of [clone,...clone.querySelectorAll('*')]){if(node.hasAttribute('style'))node.setAttribute('style',node.style.cssText);for(const a of [...node.attributes])if(a.name==='contenteditable'||a.name==='data-editor-selected'||/^data-(motion-state|animation-starts|animation-finishes|replay-count)$/.test(a.name))node.removeAttribute(a.name);if(node.matches('[data-pptskill-background-layer]')){node.replaceChildren();node.removeAttribute('style');node.dataset.backgroundState='static'}if(node.matches('number-flow[data-pptskill-odometer]')){node.replaceChildren(document.createTextNode(node.dataset.finalDisplay||''));node.removeAttribute('aria-label')}}return clone.outerHTML};
           return{canonical:normalize(actual.querySelector('.slide'))===normalize(expected.querySelector('.slide')),chrome:actual.querySelectorAll('[data-pptskill-editor-chrome],.moveable-control-box,[data-editor-selected]').length,styles:[...actual.querySelectorAll('style[data-styled-id]')].filter(n=>ids.includes(n.getAttribute('data-styled-id'))).length,mode:actual.body.dataset.editorMode};
         })()`);
         assert.deepEqual(check, { canonical: true, chrome: 0, styles: 0, mode: 'play' }, label + ' DOM');
@@ -163,13 +164,14 @@ try {
       assert.equal(await evaluate('document.querySelectorAll(".moveable-control-box").length'), 0);
       assert.equal(await evaluate('document.querySelector("[data-edit-kind=text]").contentEditable'), 'true');
       run.checks.push('文字模式互斥');
+      if (process.argv.includes('--motion-regression')) await runMotionBrowserCases({ cdp, evaluate, navigate, outputDir, width, selector, run, click, startGesture, endGesture });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';
     } catch (error) { run.status = 'fail'; run.error = error.stack; throw error; }
     finally {
       cdp?.close();
-      if (targetId) { const closed = await fetch(`http://127.0.0.1:${port}/json/close/${targetId}`); run.targetClosed = closed.ok; }
+      if (targetId) { const closed = await fetch(`http://127.0.0.1:${port}/json/close/${targetId}`); run.targetClosed = closed.ok; assert.ok(closed.ok, 'owned target 清理失敗'); }
       await writeFile(resolve(outputDir, 'acceptance.json'), JSON.stringify(receipt, null, 2) + '\n');
     }
   }

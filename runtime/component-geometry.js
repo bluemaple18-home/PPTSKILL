@@ -45,11 +45,31 @@ export function updateComponentGeometry(slide, componentId, operation, value) {
 export function componentGeometryStyle(box) {
   if (!box) return '';
   const { x, y, width, height } = validateComponentGeometry(box);
-  return `position:absolute;inset:auto;left:${x}px;top:${y}px;width:${width}px;height:${height}px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box;transform:none!important;translate:none!important;rotate:none!important;scale:none!important`;
+  return `position:absolute;inset:auto;left:${x}px;top:${y}px;width:${width}px;height:${height}px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box`;
+}
+
+// 僅退場舊 geometry 寫入的 suppression；保留作者樣式及其 priority。
+export function projectComponentGeometryStyle(element, box) {
+  const owned = element.getAttribute('data-pptskill-geometry') === 'canonical';
+  if (owned) {
+    for (const key of ['transform', 'translate', 'rotate', 'scale']) {
+      if (element.style.getPropertyValue(key) === 'none' && element.style.getPropertyPriority(key) === 'important') element.style.removeProperty(key);
+    }
+  }
+  if (box) element.setAttribute('data-pptskill-geometry', 'canonical');
+  // preview 只暫改這組 position/size；取消與 export clone 均投影 committed box。
+  if (box || owned) {
+    for (const entry of componentGeometryStyle(box || COMPONENT_GEOMETRY.defaultBox).split(';')) {
+      const [key, value] = entry.split(':');
+      if (box) element.style.setProperty(key, value);
+      else element.style.removeProperty(key);
+    }
+  }
+  if (!box) element.removeAttribute('data-pptskill-geometry');
 }
 
 export const buildComponentGeometryRuntime = () => [
   `const COMPONENT_GEOMETRY=${JSON.stringify(COMPONENT_GEOMETRY)};`,
   validateComponentGeometry.toString(), sanitizeGeometryOverrides.toString(),
-  getComponentGeometry.toString(), updateComponentGeometry.toString(), componentGeometryStyle.toString(),
+  getComponentGeometry.toString(), updateComponentGeometry.toString(), componentGeometryStyle.toString(), projectComponentGeometryStyle.toString(),
 ].join('\n');

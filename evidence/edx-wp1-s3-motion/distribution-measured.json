@@ -1,0 +1,11 @@
+{
+  "bytes": 2249561,
+  "sha256": "9eb63de4894f1495d63b351c751d9d776bb5ca5382ed48b9b3a16ebc6cfde58c",
+  "producerFrozen": true,
+  "mainlineHarnessDiagnosticOnly": [
+    "visibility",
+    "rootClasses",
+    "animations playState/currentTime/computedTiming",
+    "persist end before assertion"
+  ]
+}

@@ -1,0 +1,267 @@
+{
+  "executedByWorker": false,
+  "skipPattern": "installed|fresh ZIP|^ZIP install",
+  "excludedFiles": [
+    "p1-r8-b-distribution.test.mjs",
+    "pgq-wp4-s3-content-integrity.test.mjs",
+    "pgq-wp4-s3-sample-approval.test.mjs",
+    "pgq-wp4-s4-full-deck-qa.test.mjs",
+    "pgq-wp4-s4-required-visibility.test.mjs"
+  ],
+  "command": [
+    "node",
+    "--test",
+    "--test-skip-pattern=installed|fresh ZIP|^ZIP install",
+    "tests/edx-wp1-s1-export-cleanup.test.mjs",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "tests/edx-wp1-s3-managed-browser-attach.test.mjs",
+    "tests/edx-wp1-s3-motion.test.mjs",
+    "tests/edx-wp1-s4-interaction.test.mjs",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs",
+    "tests/edx-wp1-s4-perf.test.mjs",
+    "tests/edx-wp1-s4-vendor.test.mjs",
+    "tests/p0-r1-deck-spec.test.mjs",
+    "tests/p0-r11-r1-entry-enforcement.test.mjs",
+    "tests/p0-r2-grill-outline.test.mjs",
+    "tests/p0-r3-style-candidates.test.mjs",
+    "tests/p0-r4-generation-plan.test.mjs",
+    "tests/p0-r5-full-deck-renderer.test.mjs",
+    "tests/p0-r6-geometry-gate.test.mjs",
+    "tests/p0-r7-editor-export.test.mjs",
+    "tests/p0-vq1-design-grammar.test.mjs",
+    "tests/p0-vq1-motion-baseline.test.mjs",
+    "tests/p0-vq3-s1-typography-world.test.mjs",
+    "tests/p0-vq3-s2-information-world.test.mjs",
+    "tests/p0-vq3-s3-motion-effects.test.mjs",
+    "tests/p1-r10-asset-size.test.mjs",
+    "tests/p1-r8-a-local-profile.test.mjs",
+    "tests/p1-r9-company-style-pack.test.mjs",
+    "tests/pgq-wp1-preflight.test.mjs",
+    "tests/pgq-wp1-s2-portable-evidence.test.mjs",
+    "tests/pgq-wp2-s1-generation-capabilities.test.mjs",
+    "tests/pgq-wp2-s2-semantic-composition.test.mjs",
+    "tests/pgq-wp2-s3-golden-routing.test.mjs",
+    "tests/pgq-wp2-s4-deck-rhythm.test.mjs",
+    "tests/pgq-wp3-s1-motion-numberflow.test.mjs",
+    "tests/pgq-wp3-s2-e-sweep-text-entrance.test.mjs",
+    "tests/pgq-wp3-s3-background-effects.test.mjs",
+    "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+    "tests/pgq-wp4-s2-hard-gate.test.mjs",
+    "tests/ps-001-functional-sample.test.mjs",
+    "tests/ps-002-validator.test.mjs",
+    "tests/ps-003-theme-preview.test.mjs"
+  ],
+  "omitted": [
+    {
+      "file": "tests/p0-r11-r1-entry-enforcement.test.mjs",
+      "name": "ZIP install 註冊三個真實 pptskill Skill，update 更新且 uninstall 可逆移除",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p0-r11-r1-entry-enforcement.test.mjs",
+      "name": "ZIP install 遇到同名非 PPTSKILL skill 時拒絕覆寫且不啟用 runtime",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "ZIP 可在無 Git 流程 fresh install，三個 adapter 共用單一 core",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "相同 source tree 在不同 process timezone 產生相同 ZIP SHA",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "package smoke 會拒絕 adapter manifest 指向但不存在的 portable profile entry",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "built ZIP 可直接 show/save canonical profile，不依賴 pnpm 或 repo tools",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "update 保留外部 profile，失敗時 rollback 舊 runtime",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "update commit point 後的 backup cleanup failure 回傳 committed warning",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "activation failure 後 rollback 本身失敗時 fail-loud 並保留 recovery backup",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "stage cleanup 失敗也必須先完成 pre-activation rollback",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "tampered install marker 使 update 與 uninstall 拒絕 destructive action",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "uninstall 預設保留 profile，只有明確 purge-profile 才刪除",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "production uninstall CLI 拒絕任意 profile path，purge 只刪 canonical profile",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "adapter 缺少或版本無法辨識時回報人話，不吐 stack trace",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "低於 adapter minimumVersion 時提供明確 unsupported 訊息",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/p1-r8-b-distribution.test.mjs",
+      "name": "ZIP control docs 不攜帶 repo execution frontier 或視覺退回狀態",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp1-preflight.test.mjs",
+      "name": "installed Skill 的唯一 preflight seam 執行 conflict、causal 與 derived correctness checks",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp2-s1-generation-capabilities.test.mjs",
+      "name": "installed Skill 的 plan-new seam 輸出 capability view 並阻止 unavailable candidate 冒充可用",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp2-s2-semantic-composition.test.mjs",
+      "name": "installed plan-new 輸出 semantic proposal，舊 request 未帶 signals 仍可用",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp2-s3-golden-routing.test.mjs",
+      "name": "installed plan-new 輸出 Golden logic routing，舊 request 未帶 StyleSpec 仍可用",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp2-s4-deck-rhythm.test.mjs",
+      "name": "installed plan-new 穿透 Deck Rhythm Plan；未帶 rhythmSignals 的舊 request 回 null",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp3-s1-motion-numberflow.test.mjs",
+      "name": "installed plan-new 與 render-new 穿透 motion；legacy request 維持 null",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp3-s2-e-sweep-text-entrance.test.mjs",
+      "name": "browser contract 與 installed plan-new 使用同一 sanitizer/capability truth；legacy 維持 null",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp3-s3-background-effects.test.mjs",
+      "name": "fresh ZIP installed plan-new/render-new 使用同一 truth，且低於 20 MiB",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "installed plan-new 使用相同 Representative Sample contract",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "installed qa-sample CLI 與 direct pure gate parity",
+      "reason": "ZIP／installed build 交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-content-integrity.test.mjs",
+      "name": "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "sample content 或 composition 只使該頁失效",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "style 或 contract version 變更使全部 sample 失效",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "stale Owner identity 與 caller forged evidence fail loud",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+      "reason": "需要真正 browser producer，交 Mainline"
+    },
+    {
+      "file": "tests/pgq-wp4-s4-required-visibility.test.mjs",
+      "name": "每張 canonical slide 的 required title 必須有 painted visibility",
+      "reason": "需要真正 browser producer，交 Mainline"
+    }
+  ]
+}
