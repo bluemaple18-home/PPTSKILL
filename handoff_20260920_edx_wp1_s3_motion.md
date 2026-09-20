@@ -1,21 +1,28 @@
-# S3-MOTION Mainline checkpoint
+# S3-MOTION Mainline review handoff
 
 ## Root question／current state
-manual geometry保留motion且不破壞canonical contract。branch `codex/edx-wp1-s3-motion`，base `a5e5d43`。實作checkpoint，非review candidate。Mainline責任仍在本task，不轉交使用者裁決下一Slice。
 
-## Evidence／blocker
-讀 `tasks/edx-wp1-s3-motion-preservation.md`、`evidence/edx-wp1-s3-motion/mainline-receipt.md` 與 browser-environment-interruption.json。focused60、nonbrowser251、ZIP lifecycle PASS；motion首次browser第三treatment終點失敗，end未存且同時PGQ另開target，根因未定。Mainline補診斷但未重驗。PGQ中途Chrome resource scan limit退出，reporter19PASS/3FAIL非全28具名案例。
+manual geometry保留motion transform且不破壞canonical geometry、preview/cancel與portable契約。Mainline驗收完成，REVIEW CANDIDATE，Independent Review pending。
+Branch `codex/edx-wp1-s3-motion`；review base `a5e5d43`（S4-PERF closure）；delivery checkpoint `1b2d4f3`。包含本handoff最終版的commit為候選，review前鎖完整HEAD SHA。
 
-## Waiting conditions／next step
-受管Chrome owned root `/private/tmp/aic-b-0fe6c1feeb8c41f58361299a7e64ef1d` 仍存在，unknown isolation保留；PID/PGID 74559與root process matches=0，既有helper因跨程序ownership拒絕cleanup。不得篡改helper registry、移除隔離標記或換入口繞過。需先以授權的lifecycle恢復途徑確認回收，再同一producer單獨重驗motion，補未完成PGQ。不要因environment failure重寫runtime或重跑已通過nonbrowser。
+## Scope／evidence
 
-## Limits／fork
-S3/S4/S4-PERF原GO保持；S3 motion P2尚未正式關閉；S5 pending。未merge/push/deploy。4原untracked不動，Worker已關閉。未取得完整browser evidence前不交外部review verdict、不自動開／傳review task。
+先讀 `tasks/edx-wp1-s3-motion-preservation.md` 與 `evidence/edx-wp1-s3-motion/mainline-receipt.md`；CodeGraph後bounded rg。核心兩檔component-geometry.js／deck-editor.js：永久transform suppression退場，canonical projector保留無關inline style與priority，只清舊canonical none!important。檢查legacy清理、preview/cancel/commit、export clone、renderer/reopen與motion三mode；不改schema/vendor/motion canonical。
 
-## Recovery入口核對
+- focused60/60；完整nonbrowser251/251；diagnostic-only browser工具補測9/9為重疊子集，不相加。
+- fresh單獨motion：1280×720、1600×900各31 checks PASS，console/page/network/HTTP/remote全0，targetClosed=true。`mainline-browser-retry/acceptance.json`含computed transform與animation診斷。
+- PGQ：首輪19具名PASS＋approval1/1＋full/visibility8/8，28 unique有完整覆蓋；`pgq-coverage.json`逐項對照，非單輪28/28。
+- ZIP 2,249,561 bytes；SHA `9eb63de4894f1495d63b351c751d9d776bb5ca5382ed48b9b3a16ebc6cfde58c`，lifecycle/smoke PASS；Gemini CLI缺席為host partial。
+- source7/7 hashes與四個既有untracked保持；三個新browser均supervisor exit0、exact root與marker清除。
 
-本輪唯讀確認helper僅有run CLI，沒有跨程序recovery；ownership存原程序記憶體。因此未重試已知會拒絕的cleanup，未更改ai-core或隔離標記。具體控制面修補提案：`tasks/edx-wp1-s3-motion-environment-recovery-proposal.md`，待Owner明示授權擴到ai-core。
+## 歷史失敗／限制
 
-## Owner帶卡至ai-core
+首輪motion的restrained-fade-rise normal pointer後終點失敗，當時另有PGQ target，end snapshot未記。主線只補diagnostics，後續單獨重驗全部PASS；未證實首輪確切因果，不抹掉fail。PGQ首輪Chrome被resource scan limit中止且跨程序回收拒絕；ai-core以Owner授權recovery合法清舊root／unknown marker，完整receipt在本卡evidence。ai-core自報92tests／兩份review通過，但commit因既有devflow fixture仍blocked，不能宣稱已提交。此上游commit狀態不等同PPTSKILL產品verdict。
 
-Owner要求正式開卡後自行貼給ai-core；`tasks/edx-wp1-s3-motion-environment-recovery-proposal.md` 現為 READY FOR AI-CORE INTAKE，Task ID `AI-CORE-TMP-RECOVERY-20260920`，已附synthetic重現、scope、failure-state驗收及回傳契約。本task不自動建立／傳送其他task，不修改ai-core或回收root；等待ai-core receipt後由本Mainline續驗。
+restrained-fade-rise fixture是既有renderer component effect-token seam，預設自然routing屬supportingCopy；不可宣稱全style routing覆蓋。legacy canonical none!important無法與完全相同的人手inline值區分，其他style保留。
+
+## 重現／next step
+
+從repo root核對 `shasum -a 256 -c evidence/edx-wp1-s3-motion/verification-source.sha256`；focused命令見worker-receipt.md。真browser需新的owned session，設定PPTSKILL_DEVTOOLS_ACTIVE_PORT後執行 `node tools/edx-wp1-s4-browser-acceptance.mjs <new-evidence-dir> --motion-regression`，禁止與PGQ共用session同時跑，舊profile已清不可重用。
+
+Owner带去獨立唯讀review，回傳reviewed SHA／severity／fresh與核對證據邊界。Mainline保留本task，收到verdict後裁決closure。無merge/push/deploy，不開S5；S3 motion P2在獨立GO前未正式關閉。新review evidence放repo外，不修改candidate／ZIP／4既有untracked。

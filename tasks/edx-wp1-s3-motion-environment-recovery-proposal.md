@@ -1,6 +1,6 @@
 # AI-CORE-TMP-RECOVERY — S3-MOTION 受管瀏覽器回收修補卡
 
-Status: READY FOR AI-CORE INTAKE — Owner要求開卡，將自行交給ai-core；本task未修改ai-core、未執行回收。
+Status: RECOVERY PASS — ai-core已執行合法回收；上游commit仍BLOCKED（依Owner回傳receipt），本task未修改ai-core。
 Task ID: AI-CORE-TMP-RECOVERY-20260920
 類型：既有lifecycle控制面bounded repair；ai-core依自身規則判定派工／review。
 工作repo：`/Users/matt/ai-core`；消費端：PPTSKILL S3-MOTION。
@@ -56,3 +56,7 @@ code／config回退與實際暫存刪除須分開描述；需執行不可逆的e
 ## PPTSKILL後續
 
 recovery完成後，Mainline單独重驗motion，補未完成PGQ，正常關browser確認profile清除，再裁決review candidate。保留251 nonbrowser PASS與已提交ZIP證據，S3 motion P2在完整驗收前仍未關閉。不merge/push/deploy。
+
+## 回傳核對
+
+Owner回傳receipt後，Mainline確認exact root／unknown marker消失、PPTSKILL producer 7/7 SHA不變，已恢復受管browser驗收。回傳副本 `evidence/edx-wp1-s3-motion/ai-core-recovery-handoff.md`；recovery dry-run／execute receipts同目錄。上游92 tests／兩份review為ai-core回傳證據，非PPTSKILL Mainline重跑；上游commit失敗不冒稱已完成。fixture修正仍由Owner在ai-core原對話決定。

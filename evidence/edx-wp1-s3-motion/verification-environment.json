@@ -1,0 +1,13 @@
+{
+  "upstreamCommitNotClaimed": true,
+  "toolsSha256": {
+    "/Users/matt/ai-core/scripts/tmp_session.py": "d3a705bdf9e0fe3cb148d411e80335be73d5c4d8fded5d008fbfdaaa78d14a29",
+    "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py": "d465b6be34d0dbc28c532da6c00774e2fdc81de6f59abc969a947bc35fabc2c4"
+  },
+  "browserLimits": {
+    "maxBytes": 67108864,
+    "maxFileCount": 10000,
+    "ttlSeconds": 1800
+  },
+  "mode": "sequential suites; distinct owned profiles after normal cleanup"
+}

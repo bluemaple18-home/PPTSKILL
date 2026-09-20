@@ -1,6 +1,6 @@
 # EDX-WP1-S3-MOTION — manual geometry 保留 motion
 
-Status: BLOCKED_ENVIRONMENT — implementation checkpoint，非 review candidate
+Status: REVIEW CANDIDATE — Mainline驗收完成；Independent Review pending
 Base: `a5e5d43`；branch `codex/edx-wp1-s3-motion`。
 類型：standard bounded follow-up；Mainline裁決先關閉已量測的preserves契約缺口，再擴充WP1功能。
 traces_to: BACKLOG.md §10.5 content-only/manual override preservation、§10.6 transform composition；evidence/edx-wp1-s3/independent-review.md inherited P2；evidence/edx-wp1-s4-perf/independent-review.md。
@@ -31,3 +31,7 @@ Worker只寫delivery檔與evidence/edx-wp1-s3-motion/worker-*；不寫本卡/bac
 ## 主線 checkpoint
 
 實作完成，focused60/60、完整nonbrowser251/251與ZIP lifecycle PASS；fresh browser首輪motion終點失敗待判根因，PGQ遭受管Chrome資源觀測中止。owned process audit=0，但helper跨程序ownership拒絕cleanup；root與unknown isolation保留，不繞過。詳見 `evidence/edx-wp1-s3-motion/mainline-receipt.md`。恢復browser環境後由Mainline補single-suite motion與PGQ，未達review candidate。
+
+## 最終驗收
+
+ai-core合法回收後，motion單獨重驗1280×720／1600×900各31 checks PASS、errors全0；PGQ 19＋1＋8＝28 unique PASS，原環境fail保留。三個新session正常回收、source7/7、ZIP SHA及四個原untracked不變。詳見mainline-receipt.md與pgq-coverage.json。S3 motion P2待獨立verdict正式關閉；候選交Owner帶去review，不自行開／傳可見task。

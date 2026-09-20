@@ -1,0 +1,9 @@
+{
+  "recoveryReceipt": "/Users/matt/ai-core/.work/AI-CORE-TMP-RECOVERY-20260920/result.md",
+  "receiptSha256": "4aa2f558ab567ce842449b3916a38a41166e28ca9974bacd99cf3c1aa8b65381",
+  "oldRootRemoved": true,
+  "isolationRemovedBeforeNewRun": true,
+  "aiCoreCommitStatus": "BLOCKED per owner supplied receipt; not claimed committed",
+  "productProducerChanges": false,
+  "plan": "single motion suite, then only omitted/interrupted PGQ cases sequentially"
+}

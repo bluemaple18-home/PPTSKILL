@@ -1,0 +1,206 @@
+{
+  "status": "pass",
+  "uniqueNamedCases": 28,
+  "firstPass": 19,
+  "approvalRetryPass": 1,
+  "fullRetryPass": 8,
+  "singleRun28Pass": false,
+  "cases": [
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "兩張代表頁從正式 planner truth 選出 Typical 與第三頁 Stress",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "一張代表頁同時承擔 Typical 與 Stress，且重跑 byte-stable",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "skip sample 不建立人工等待，但不解除 full-deck QA",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "sample selection 不改 composition、rhythm、motion、background 或 generation units",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "legacy 無 planner signals 仍 deterministic；單頁 deck 收斂為一筆 both",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s1-representative-sample-plan.test.mjs",
+      "name": "installed plan-new 使用相同 Representative Sample contract",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "完整 hard evidence 才 PASS，且 sample PASS 不解除 full-deck QA",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "NOT_RUN/UNKNOWN blocked 且不消耗 repair budget",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "同一 issue 只允許兩次 bounded repair，第三次前 blocked",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "coverage、allowlist 與 history spoof fail loud",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "拒絕繞過 Slice 1 的 single both 與 typical plus stress sample shape",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s2-hard-gate.test.mjs",
+      "name": "installed qa-sample CLI 與 direct pure gate parity",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-content-integrity.test.mjs",
+      "name": "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "sample content 或 composition 只使該頁失效",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "style 或 contract version 變更使全部 sample 失效",
+      "passedEvidence": [
+        "mainline-pgq.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+      "name": "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+      "passedEvidence": [
+        "pgq-approval-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "stale Owner identity 與 caller forged evidence fail loud",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+      "name": "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    },
+    {
+      "file": "tests/pgq-wp4-s4-required-visibility.test.mjs",
+      "name": "每張 canonical slide 的 required title 必須有 painted visibility",
+      "passedEvidence": [
+        "pgq-full-retry.log"
+      ]
+    }
+  ]
+}
