@@ -1,6 +1,6 @@
 # EDX-WP1-S7 — 單一 component 8px 邊緣吸附
 
-Status: READY — implementation尚未開始
+Status: IN PROGRESS — clean native Worker implementation
 Depends on: S5 Independent GO dd74700／closure8dd76cc；S6 architecture evidence 5a937bf、9b0280d與gesture-boundary/decision.md。
 traces_to: BACKLOG.md §10.1 guided direct manipulation／invisible snap grid、§10.2 prior-art-first、§10.3 WP1、§10.4 Operation Registry、§10.5 portability。
 Trace preflight：上述refs存在；依賴已清；S7唯一ID；acceptance下列可重現；無Critical。
@@ -28,3 +28,7 @@ Full non-browser、focused、source hashes、diffcheck、ZIP lifecycle/hash。�
 
 standard bounded Worker＋Mainline驗收，依當前native model能力做routing/preflight，shared僅一writer；runtime/component-interaction.js、必要deck-editor chrome與cleanup、tests/tools、evidence/edx-wp1-s7；control/ZIP由主線。
 先核對本實體卡及source query再實作；能力/設計阻擋依證據回主線，不再做泛化研究。不merge/push/deploy，不碰四untracked。完成停獨立review candidate，Owner手動交Reviewer；不另開可見review task。
+
+## 開工路由
+
+Branch codex/edx-wp1-s7，base5b767e4；一名clean native Worker，繼承主對話模型/effort（工具無Terra lane，不自行override）。shared single writer，主線期間唯讀準備驗收；Worker freeze後主線接手。Preflight與短prompt見evidence/edx-wp1-s7，無新visible task。
