@@ -3,7 +3,7 @@
 ## 交付契約
 
 - Base：`b43def29751fa8d964a5fa59d90c77df1fadc729`；branch：`codex/edx-wp1-s3`。
-- 只交付 component-only `move-element`／`resize-element` canonical operation candidate；獨立 review 尚未執行，不代表 review GO。
+- 只交付 component-only `move-element`／`resize-element` canonical operation；獨立 review 已由 Owner 回傳 GO，適用於 `51494b35e5462311d37d1411793bc14780483359`，尚未整合 main。
 - Owner 於本輪授權以可用 GPT-6 Astra 替代原 GPT-5.5 跑道。採一名 high Worker、clean context、shared workspace 單一程式 writer；Mainline 保留裁決與驗收。派工 prompt 1978 bytes，native context gate PASS；未建立額外 task／worktree／registry。
 - 既有 optional CompositionSpec seam，未升 schemaVersion；無新 dependency、Moveable／Selecto／Floating UI、interaction UI、history 或 AI bridge。
 
@@ -36,11 +36,14 @@
 - Focused：26/26；compatibility：42/42；non-browser full：214/214；PGQ suite：28/28；full regression 合計 242/242 PASS，無 skip。Focused／compatibility 為重疊驗證，不重複加進 full 總數。
 - PGQ 串行命令：`PPTSKILL_DEVTOOLS_ACTIVE_PORT=<本輪 owned port file> node --test --test-concurrency=1 tests/pgq-wp4-s*.test.mjs`，exit 0；涵蓋 installed sample/full-deck、content tamper、required visibility 與 raster rejection。
 - Runtime／schema／tools syntax、source SHA、ZIP SHA 與 `git diff --check` PASS。
-- 結論：**REVIEW CANDIDATE READY**，沒有本輪自驗留下的已知 blocker；independent review 仍待執行。
-- Review handoff：`handoff_20260920_edx_wp1_s3_review.md`；source review range 為 base 至包含該 handoff 的 candidate commit。
+- 結論：**COMPLETE — INDEPENDENT REVIEW GO**；P0 0／P1 0／P2 1／P3 0。GO 由 Owner 在本 task 回傳，並非 Mainline 自封的獨立 review。
+- Reviewed commit：`51494b35e5462311d37d1411793bc14780483359`；source review range 為 base 至該 SHA。後續 closure commit 僅改 control documents，不改 reviewed code／ZIP。
+- Reviewer 自行重驗 source SHA、focused 26/26、non-browser full 214/214、diff check 與 ZIP SHA。其受管 Chrome 遭自動安全審核拒絕，native DevTools 無可連 port，因此 PGQ／static／normal browser 部分是核對已提交 evidence，沒有 reviewer fresh rerun；Mainline 本輪 fresh evidence 仍保留原實測來源。
+- 殘留 P2：manual geometry 的 `transform:none!important`／`scale:none!important` 會抑制既有 component motion 的 transform 部分，與 descriptor 完整 preserves motion 的宣告有落差。接受為不阻擋 canonical geometry contract 的已知限制；後續修復須補 normal-mode moved-component motion regression，不直接改動本 reviewed candidate。
+- Review handoff：`handoff_20260920_edx_wp1_s3_review.md`。
 
 ## 邊界與剩餘事項
 
 - 未 merge／push／deploy；四個既有 untracked 原樣保留。
 - 首次 geometry operation 的另一半尺寸／位置採 deterministic manual default `{x:800,y:280,width:640,height:480}`，不是 legacy flow box 的 DOM 反推；此限制已明示於 Worker 契約，interaction Slice 不在本輪。
-- 下一步只交獨立 review；後續 vendor interaction 必須在 S3 review GO 後另行裁決。
+- Review GO 已收到；下一步等待 Owner 指示整合或後續 Slice，不自動 merge／push／deploy。P2 留在本 task 的殘留事項，未另建流程或開卡。

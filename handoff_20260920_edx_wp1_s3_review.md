@@ -8,10 +8,10 @@ Component-only move／resize 是否在既有 CompositionSpec 上形成 bounded�
 
 - Branch：`codex/edx-wp1-s3`。
 - Base：`b43def29751fa8d964a5fa59d90c77df1fadc729`。
-- Candidate：包含本 handoff 的 S3 candidate commit；開始 review 前用 `git rev-parse HEAD` 鎖定完整 SHA，與 Mainline 交付訊息核對。
+- Reviewed candidate：`51494b35e5462311d37d1411793bc14780483359`；後續 docs closure 不改 reviewed source／ZIP。
 - Task：`tasks/edx-wp1-s3-bounded-geometry-operation-path.md`。
 - 實作與主線驗收：`evidence/edx-wp1-s3/worker-receipt.md`、`evidence/edx-wp1-s3/mainline-receipt.md`。
-- 本輪只到獨立 review candidate，不代表 independent review GO；沒有 merge／push／deploy。
+- Owner 已回傳獨立 review GO：P0 0／P1 0／P2 1／P3 0；Mainline 接受 closure，尚未整合 main，沒有 merge／push／deploy。
 
 ## Review scope
 
@@ -45,12 +45,13 @@ Browser 使用既有 native 或 `tmp_session.py browser` 受管入口。macOS �
 
 ## Blocker / candidate fork
 
-- 本輪不開下一 Slice；獨立 reviewer 尚未給 verdict。
+- 本輪不開下一 Slice；獨立 review 已 GO，尚無整合授權。
+- 已知 P2：manual geometry 的 `transform:none!important`／`scale:none!important` 會壓掉 component motion 的 transform 部分。保留為後續 bounded 修復事項，需補 normal-mode moved-component motion regression；不改本 reviewed candidate。
+- Reviewer 的 fresh browser rerun 被其環境自動安全審核／缺 DevToolsActivePort 阻擋；其 browser 結論為核對已提交 evidence，非 fresh rerun。獨立 source SHA／focused 26/26／non-browser 214/214／diff／ZIP SHA 已重驗 PASS。
 - 本機 Gemini CLI 不在 PATH，ZIP lifecycle PASS 不代表 Gemini host 實機驗證。
 - 如 reviewer 有 P0/P1，附最小重現與修復驗收條件交 Mainline 裁決；不要在 reviewer 對話直接修。
 
 ## Next step / waiting conditions / limits
 
-- 唯讀獨立 review，回報 `verdict`、`reviewed_commit`、findings（severity、file/line、重現證據、驗收條件）。
-- 等 review GO／REQUEST CHANGES；GO 後仍由 Mainline 決定後續，不自動整合或安裝 vendor。
+- GO 已落盤；等待 Owner 指示整合或後續 Slice，不自動整合、修 P2 或安裝 vendor。
 - 不 merge／push／deploy，不做 interaction UI／history／AI bridge，不改四個既有 untracked：`.DS_Store`、`CLAUDE.md`、`HANDOFF-20260914-P0-R11-R1-S3.md`、`HANDOFF-20260914-PGQ-WP1.md`。

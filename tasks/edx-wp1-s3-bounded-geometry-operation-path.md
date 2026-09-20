@@ -1,6 +1,8 @@
 # EDX-WP1-S3 — Bounded Component Geometry Operation Path
 
-**Status:** REVIEW CANDIDATE READY — INDEPENDENT REVIEW PENDING
+**Status:** COMPLETE — INDEPENDENT REVIEW GO；尚未整合 main
+
+**Reviewed commit:** `51494b35e5462311d37d1411793bc14780483359`
 
 **Evidence:** `evidence/edx-wp1-s3/mainline-receipt.md`；`handoff_20260920_edx_wp1_s3_review.md`。
 **traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
@@ -69,3 +71,12 @@ Bundle / portable cost：不得新增dependency、vendor bundle或CDN；只增�
 - 不做mouse/touch drag、resize handles、snap、marquee、Shift multi-select、align/distribute、toolbar或keyboard nudge。
 - 不做title／subtitle／keyPoint geometry、rotation、warp、crop、group/lock、typography override、history、draft/autosave或AI bridge。
 - 不merge、push、deploy或開後續Slice。
+
+## 獨立 review closure
+
+- Owner 回傳 verdict：GO；P0 0／P1 0／P2 1／P3 0，綁定上述 reviewed commit。
+- Reviewer 獨立重驗 source SHA、focused 26/26、non-browser full 214/214、diff check 與 ZIP SHA 均 PASS。
+- Reviewer 無法 fresh browser rerun：受管 Chrome 被其環境的自動安全審核拒絕，native DevTools 無可連 port；browser 結論僅核對本 candidate 已提交的 PGQ 28/28 與 static／normal 雙 viewport evidence，不宣稱 reviewer fresh runtime PASS。
+- 殘留 P2：`runtime/component-geometry.js:48` 的 `transform:none!important`／`scale:none!important` 壓掉 component motion 的 scale／translate；canonical geometry 保持正確，但 descriptor 的 motion preservation 並非完整視覺效果保留。
+- P2 不阻擋 S3 closure，不在本輪直接修改 reviewed code。後續另行裁決 projector 只清除舊 inline style、投影 position／size 的修法，並補 normal-mode moved-component motion regression，同時保留 canonical geometry／export authority。
+- Mainline 接受 GO；本輪只落 review closure 文件，不 merge／push／deploy、不安裝 vendor、不開下一 Slice。
