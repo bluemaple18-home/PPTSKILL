@@ -981,3 +981,5 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 **EDX-WP1 S6 snap spike：** `tasks/edx-wp1-s6-snap-spike.md` COMPLETE；既有Moveable已含Snappable，conditional ADAPT。Raw pointer authority會忽略vendor snap；grid origin／矩陣／resize語意需fixture-only真browser映射驗證後才實作。見 `evidence/edx-wp1-s6/decision.md`；production snap pending，runtime/ZIP未改。
 
 **S6 browser mapping：** fixture-only24組fresh採集與cleanup PASS；直接vendor payload→canonical方案REJECT，transform/多邊吸附需限定adapter。詳 `evidence/edx-wp1-s6/browser-mapping/decision.md`；production snap仍pending。
+
+**S6 direction/target validation：** 36組fresh pointer採集、18對viewport與12組proxy invariant PASS；方向限制無法單獨隔離transform，無transform geometry target＋方向限制於本矩陣成立。Resize語意為right/bottom落格，非尺寸整除。仍mapping/architecture validation，非production candidate；見 `evidence/edx-wp1-s6/direction-target/decision.md`。

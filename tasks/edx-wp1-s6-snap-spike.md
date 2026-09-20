@@ -32,3 +32,9 @@ standard唯讀spike；native clean Worker只唯讀查vendor能力/metadata，回
 Owner「繼續」承接fixture-only frontier；主線直接執行一次性bounded harness。固定slide1600×900、container/snapContainer=slide、rootContainer=body；viewport1280×720/1600×900，off-grid(803,283,637,477)，grid0/8、drag/SE resize、identity/scale(.8)/translateY(20px)。收真CDP pointer與vendor beforeTranslate/translate/width/height/drag payload；不假設payload單位、不修改production/runtime/ZIP，不將synthetic transform視為實際motion suite。成功為採集完整且無console/page/network/HTTP/remote錯誤；mapping不符必須寫入決策。
 
 Browser follow-up COMPLETE：24組採集PASS、errors0、cleanupPASS；直接payload映射REJECT，非runtime功能PASS。決策與限制：`evidence/edx-wp1-s6/browser-mapping/decision.md`。
+
+## 2026-09-21 direction／geometry target validation
+
+Owner明示只做mapping/architecture，不進production、不Independent GO。fixture對照default／方向限制／無transform editor-only geometry target；兩viewport、3種static transform、drag/SE共36組，requested10px且記observed值。驗證方向語意、transform隔離、固定SE anchor與presentation CSS不變；只產evidence，未證明full-deck互動／export／motion lifecycle。
+
+2026-09-21結果：方向限制單獨不足；方向＋independent geometry target在36組採集／12組proxy invariant中成立，actual delta全部10。Resize採right/bottom落格而非尺寸倍數。仍為architecture candidate、非production；詳 `evidence/edx-wp1-s6/direction-target/decision.md`。

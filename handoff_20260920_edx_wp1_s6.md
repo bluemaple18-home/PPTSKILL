@@ -1,9 +1,9 @@
-# S6 browser mapping handoff
+# S6 architecture validation handoff — 2026-09-21
 
-Branch codex/edx-wp1-s6-snap-spike。S5 GO與production/ZIP不變。
-Fresh fixture-only browser24組採集完成，錯誤0／target/profile cleanup PASS；詳 `evidence/edx-wp1-s6/browser-mapping/decision.md` 與receipt.json。直接vendor payload→canonical方案REJECT；transform會改尺寸/錨點，預設多邊snap不保證左上角8px格點。requested7與實際pointer取整值須分開。
+Branch codex/edx-wp1-s6-snap-spike。維持Owner界線：mapping/architecture validation，非production review candidate，不Independent GO；S5 code/ZIP不變。
 
-唯一下一frontier：fixture限制drag left/top、resize right/bottom的vendor方向設定，及無presentation transform的editor-only geometry target候選；仍不修改canonical/runtime，先證明vendor可表達grid與固定SE anchor。不得手刻quantizer或復活transform suppression。研究尚不能宣稱production snap可用。
+最新 `evidence/edx-wp1-s6/direction-target/decision.md`：36組真pointer採集，兩viewport實際delta均10；方向限制單獨不隔離transform，無transform geometry target＋限定方向在12組proxy案例完全一致。Drag left/top落格，SE resize固定左上角、right/bottom落格（尺寸本身不必8倍數）。18對viewport一致、presentation未改，errors0、cleanupPASS。
 
-首輪hidden handle失敗已定位與保留，updateRect初始化後採集成功；static transform不是motion lifecycle驗收。無負向/多次preview/export效能PASS宣稱。
-未merge/push/deploy；四個既有untracked不變。
+`5a937bf`直接vendor payload否決仍成立。新架構只是bounded候選，尚未驗證real full-deck、motion lifecycle、hit routing、negative/zero、多次preview、export或performance。後續唯一窄frontier可先補negative/zero/multi-update與proxy teardown，不能直接宣布production可用，也不自造quantizer。
+
+原始證據receipt.json、驗證verification.json與verify.mjs可重播。四個untracked不變；未merge/push/deploy。

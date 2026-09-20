@@ -1,0 +1,2921 @@
+{
+  "status": "pass",
+  "scope": "fixture-only；不投影或提交canonical，static transform不是motion lifecycle",
+  "runs": [
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            8,
+            8,
+            0,
+            0
+          ],
+          "translate": [
+            8,
+            8,
+            0,
+            1
+          ],
+          "beforeDist": [
+            8,
+            8,
+            0,
+            0
+          ],
+          "dist": [
+            8,
+            8,
+            0,
+            1
+          ],
+          "left": 811,
+          "top": 291,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            7.7,
+            7.7,
+            0,
+            0
+          ],
+          "translate": [
+            7.7,
+            7.7,
+            0,
+            1
+          ],
+          "beforeDist": [
+            7.7,
+            7.7,
+            0,
+            0
+          ],
+          "dist": [
+            7.7,
+            7.7,
+            0,
+            1
+          ],
+          "left": 810.7,
+          "top": 290.7,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1101,
+            569
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.624999999999773,
+            9.625
+          ],
+          "width": 646.6249999999998,
+          "height": 486.625,
+          "boundingWidth": 646.6249999999998,
+          "boundingHeight": 486.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.9625,
+              -0.9625,
+              0,
+              0
+            ],
+            "translate": [
+              -0.9625,
+              -0.9625,
+              0,
+              1
+            ],
+            "left": 802.0375,
+            "top": 282.0375
+          },
+          "client": [
+            1109,
+            577
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.249999999999545,
+            9.25
+          ],
+          "width": 636.6249999999998,
+          "height": 476.625,
+          "boundingWidth": 636.6249999999998,
+          "boundingHeight": 476.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.925,
+              -0.925,
+              0,
+              0
+            ],
+            "translate": [
+              -0.925,
+              -0.925,
+              0,
+              1
+            ],
+            "left": 802.075,
+            "top": 282.075
+          },
+          "client": [
+            1109,
+            577
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13.3,
+            13.3,
+            0,
+            0
+          ],
+          "translate": [
+            13.3,
+            13.3,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13.3,
+            13.3,
+            0,
+            0
+          ],
+          "dist": [
+            13.3,
+            13.3,
+            0,
+            1
+          ],
+          "left": 816.3,
+          "top": 296.3,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1101,
+            569
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.624999999999773,
+            9.625
+          ],
+          "width": 646.6249999999998,
+          "height": 486.625,
+          "boundingWidth": 646.6249999999998,
+          "boundingHeight": 486.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.9625,
+              -0.9625,
+              0,
+              0
+            ],
+            "translate": [
+              -0.9625,
+              -0.9625,
+              0,
+              1
+            ],
+            "left": 802.0375,
+            "top": 282.0375
+          },
+          "client": [
+            1109,
+            577
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.249999999999545,
+            9.25
+          ],
+          "width": 636.6249999999998,
+          "height": 476.625,
+          "boundingWidth": 636.6249999999998,
+          "boundingHeight": 476.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.925,
+              -0.925,
+              0,
+              0
+            ],
+            "translate": [
+              -0.925,
+              -0.925,
+              0,
+              1
+            ],
+            "left": 802.075,
+            "top": 282.075
+          },
+          "client": [
+            1109,
+            577
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            8,
+            9,
+            0,
+            0
+          ],
+          "translate": [
+            8,
+            9,
+            0,
+            1
+          ],
+          "beforeDist": [
+            8,
+            9,
+            0,
+            0
+          ],
+          "dist": [
+            8,
+            9,
+            0,
+            1
+          ],
+          "left": 811,
+          "top": 292,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            441
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            12
+          ],
+          "width": 645,
+          "height": 489,
+          "boundingWidth": 645,
+          "boundingHeight": 489,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            632
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 473,
+          "boundingWidth": 637,
+          "boundingHeight": 473,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            632
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            433
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            9,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            9,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            9,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            9,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 292,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            441
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            624
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            12
+          ],
+          "width": 645,
+          "height": 489,
+          "boundingWidth": 645,
+          "boundingHeight": 489,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            632
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 473,
+          "boundingWidth": 637,
+          "boundingHeight": 473,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            632
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            897,
+            417
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            905,
+            425
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1280,
+      "scale": 0.8,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1152,
+            608
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1160,
+            616
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            8,
+            8,
+            0,
+            0
+          ],
+          "translate": [
+            8,
+            8,
+            0,
+            1
+          ],
+          "beforeDist": [
+            8,
+            8,
+            0,
+            0
+          ],
+          "dist": [
+            8,
+            8,
+            0,
+            1
+          ],
+          "left": 811,
+          "top": 291,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "none",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: none;",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            7.7,
+            7.7,
+            0,
+            0
+          ],
+          "translate": [
+            7.7,
+            7.7,
+            0,
+            1
+          ],
+          "beforeDist": [
+            7.7,
+            7.7,
+            0,
+            0
+          ],
+          "dist": [
+            7.7,
+            7.7,
+            0,
+            1
+          ],
+          "left": 810.7,
+          "top": 290.7,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1376,
+            712
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.624999999999773,
+            9.625
+          ],
+          "width": 646.6249999999998,
+          "height": 486.625,
+          "boundingWidth": 646.6249999999998,
+          "boundingHeight": 486.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.9625,
+              -0.9625,
+              0,
+              0
+            ],
+            "translate": [
+              -0.9625,
+              -0.9625,
+              0,
+              1
+            ],
+            "left": 802.0375,
+            "top": 282.0375
+          },
+          "client": [
+            1386,
+            722
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.249999999999545,
+            9.25
+          ],
+          "width": 636.6249999999998,
+          "height": 476.625,
+          "boundingWidth": 636.6249999999998,
+          "boundingHeight": 476.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.925,
+              -0.925,
+              0,
+              0
+            ],
+            "translate": [
+              -0.925,
+              -0.925,
+              0,
+              1
+            ],
+            "left": 802.075,
+            "top": 282.075
+          },
+          "client": [
+            1386,
+            722
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13.3,
+            13.3,
+            0,
+            0
+          ],
+          "translate": [
+            13.3,
+            13.3,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13.3,
+            13.3,
+            0,
+            0
+          ],
+          "dist": [
+            13.3,
+            13.3,
+            0,
+            1
+          ],
+          "left": 816.3,
+          "top": 296.3,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1376,
+            712
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.624999999999773,
+            9.625
+          ],
+          "width": 646.6249999999998,
+          "height": 486.625,
+          "boundingWidth": 646.6249999999998,
+          "boundingHeight": 486.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.9625,
+              -0.9625,
+              0,
+              0
+            ],
+            "translate": [
+              -0.9625,
+              -0.9625,
+              0,
+              1
+            ],
+            "left": 802.0375,
+            "top": 282.0375
+          },
+          "client": [
+            1386,
+            722
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            9.249999999999545,
+            9.25
+          ],
+          "width": 636.6249999999998,
+          "height": 476.625,
+          "boundingWidth": 636.6249999999998,
+          "boundingHeight": 476.625,
+          "drag": {
+            "beforeTranslate": [
+              -0.925,
+              -0.925,
+              0,
+              0
+            ],
+            "translate": [
+              -0.925,
+              -0.925,
+              0,
+              1
+            ],
+            "left": 802.075,
+            "top": 282.075
+          },
+          "client": [
+            1386,
+            722
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "scale(0.8)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: scale(0.8);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "default",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            8,
+            9,
+            0,
+            0
+          ],
+          "translate": [
+            8,
+            9,
+            0,
+            1
+          ],
+          "beforeDist": [
+            8,
+            9,
+            0,
+            0
+          ],
+          "dist": [
+            8,
+            9,
+            0,
+            1
+          ],
+          "left": 811,
+          "top": 292,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            551
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "default",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            12
+          ],
+          "width": 645,
+          "height": 489,
+          "boundingWidth": 645,
+          "boundingHeight": 489,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            790
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 473,
+          "boundingWidth": 637,
+          "boundingHeight": 473,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            790
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "directions",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            541
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            9,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            9,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            9,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            9,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 292,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            551
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "directions",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            780
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            12
+          ],
+          "width": 645,
+          "height": 489,
+          "boundingWidth": 645,
+          "boundingHeight": 489,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            790
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 473,
+          "boundingWidth": 637,
+          "boundingHeight": 473,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            790
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "drag",
+      "mode": "proxy",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "dragStart",
+          "client": [
+            1121,
+            521
+          ]
+        },
+        {
+          "type": "drag",
+          "beforeTranslate": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "translate": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "beforeDist": [
+            13,
+            13,
+            0,
+            0
+          ],
+          "dist": [
+            13,
+            13,
+            0,
+            1
+          ],
+          "left": 816,
+          "top": 296,
+          "width": 637,
+          "height": 477,
+          "client": [
+            1131,
+            531
+          ]
+        },
+        {
+          "type": "dragEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    },
+    {
+      "width": 1600,
+      "scale": 1,
+      "transform": "translateY(20px)",
+      "grid": 8,
+      "kind": "resize",
+      "mode": "proxy",
+      "presentationStyle": "transform: translateY(20px);",
+      "requestedCanonicalDelta": 10,
+      "observedCanonicalDelta": [
+        10,
+        10
+      ],
+      "events": [
+        {
+          "type": "resizeStart",
+          "client": [
+            1440,
+            760
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 645,
+          "height": 485,
+          "boundingWidth": 645,
+          "boundingHeight": 485,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resize",
+          "dist": [
+            8,
+            8
+          ],
+          "width": 637,
+          "height": 477,
+          "boundingWidth": 637,
+          "boundingHeight": 477,
+          "drag": {
+            "beforeTranslate": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "translate": [
+              0,
+              0,
+              0,
+              1
+            ],
+            "left": 803,
+            "top": 283
+          },
+          "client": [
+            1450,
+            770
+          ]
+        },
+        {
+          "type": "resizeEnd"
+        }
+      ],
+      "cssBox": {
+        "left": 803,
+        "top": 283,
+        "width": 637,
+        "height": 477
+      }
+    }
+  ],
+  "console": [],
+  "pageErrors": [],
+  "networkFailures": [],
+  "httpErrors": [],
+  "remoteRequests": [],
+  "pointerDiagnostic": {
+    "width": 1600,
+    "transform": "translateY(20px)",
+    "grid": 8,
+    "kind": "resize",
+    "position": {
+      "x": 1440,
+      "y": 760
+    },
+    "hit": "<div data-rotation=\"135\" data-direction=\"se\" class=\"moveable-control moveable-direction moveable-se moveable-resizable\" style=\"transform: translateZ(0px) translate(637px, 477px) rotate(0rad) scale(1);\"></div>"
+  },
+  "targetClosed": true
+}
