@@ -1,0 +1,17 @@
+✔ Node absolute move/resize 僅改 canonical override，content edit 保留 (4.571791ms)
+✔ Node invalid 全部 fail loud 且 state 原子性 (4.250833ms)
+✔ Node descriptors 深度 immutable 且 allowlist 無法擴權 (0.441333ms)
+✔ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (7.6445ms)
+✔ browser API VM invalid 全部 fail loud 且 state 原子性 (14.791375ms)
+✔ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (1.506083ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (2.95025ms)
+✔ canonical geometry renderer/recipient round-trip 與 viewport 無關 (1.701ms)
+✔ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (2.055ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 165.147167

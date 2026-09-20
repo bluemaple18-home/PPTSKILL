@@ -1,0 +1,154 @@
+✖ Node absolute move/resize 僅改 canonical override，content edit 保留 (5.540375ms)
+✖ Node invalid 全部 fail loud 且 state 原子性 (0.405583ms)
+✖ Node descriptors 深度 immutable 且 allowlist 無法擴權 (2.832834ms)
+✖ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (7.378542ms)
+✖ browser API VM invalid 全部 fail loud 且 state 原子性 (1.771834ms)
+✖ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (2.201834ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (4.737541ms)
+✖ canonical geometry renderer/recipient round-trip 與 viewport 無關 (0.253042ms)
+✖ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (0.451958ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 1
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 205.377875
+
+✖ failing tests:
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:39:3
+✖ Node absolute move/resize 僅改 canonical override，content edit 保留 (5.540375ms)
+  Error: operation value 必須是 string。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:25:48)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:127:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:41:25)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:51:3
+✖ Node invalid 全部 fail loud 且 state 原子性 (0.405583ms)
+  Error: operation value 必須是 string。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:25:48)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:127:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:53:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:66:3
+✖ Node descriptors 深度 immutable 且 allowlist 無法擴權 (2.832834ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'edit-text',
+  -   'move-element',
+  -   'resize-element'
+    ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:68:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'edit-text' ],
+    expected: [ 'edit-text', 'move-element', 'resize-element' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:39:3
+✖ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (7.378542ms)
+  Error: operation value 必須是 string。
+      at validateOperationRequest (evalmachine.<anonymous>:139:664)
+      at executeOperation (evalmachine.<anonymous>:165:42)
+      at Object.executeOperation (evalmachine.<anonymous>:173:130)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:35:65)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:41:25)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:51:3
+✖ browser API VM invalid 全部 fail loud 且 state 原子性 (1.771834ms)
+  Error: operation value 必須是 string。
+      at validateOperationRequest (evalmachine.<anonymous>:139:664)
+      at executeOperation (evalmachine.<anonymous>:165:42)
+      at Object.executeOperation (evalmachine.<anonymous>:173:130)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:35:65)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:53:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:66:3
+✖ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (2.201834ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'edit-text',
+  -   'move-element',
+  -   'resize-element'
+    ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:68:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'edit-text' ],
+    expected: [ 'edit-text', 'move-element', 'resize-element' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:85:1
+✖ canonical geometry renderer/recipient round-trip 與 viewport 無關 (0.253042ms)
+  Error: operation value 必須是 string。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:25:48)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:127:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s3-bounded-geometry.test.mjs:97:1
+✖ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (0.451958ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:101:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

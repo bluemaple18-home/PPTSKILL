@@ -45,7 +45,7 @@ test('renderer 對 directly operable roots 輸出 slide-local unique element ide
 });
 
 test('edit-text descriptor 完整宣告 bounded metadata', () => {
-  assert.deepEqual(Object.keys(OPERATION_DESCRIPTORS), ['edit-text']);
+  assert.deepEqual(Object.keys(OPERATION_DESCRIPTORS), ['edit-text', 'move-element', 'resize-element']);
   assert.deepEqual(OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles, ['title', 'subtitle', 'keyPoint']);
   for (const field of ['inputSchema', 'mutates', 'preserves', 'destructive', 'confirmation', 'undoable', 'qaInvalidation', 'portableSerialization', 'unsupportedReason']) {
     assert.ok(field in OPERATION_DESCRIPTORS['edit-text'], `descriptor 缺少 ${field}`);
@@ -83,7 +83,7 @@ test('executeOperation 只依 stable target pair 編輯文字並 fail loud', () 
   assert.deepEqual(edited.slides[1].composition, before.slides[1].composition);
   assert.deepEqual(edited.slides[1].content.components, before.slides[1].content.components);
 
-  assert.throws(() => editor.executeOperation({ operation: 'move-element', target: { slideId: 'problem', elementId: 'role-title' }, value: 'x' }), /operation|支援/u);
+  assert.throws(() => editor.executeOperation({ operation: 'unknown-operation', target: { slideId: 'problem', elementId: 'role-title' }, value: 'x' }), /operation|支援/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'missing', elementId: 'role-title' }, value: 'x' }), /slide/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'missing' }, value: 'x' }), /element/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'component-portable-quote' }, value: 'x' }), /role/u);
@@ -170,8 +170,8 @@ test('descriptor metadata 深層 immutable，mutation 不可擴張 enforcement a
     value: 'still rejected',
   }), /role/u);
   const runtime = renderFullDeck(fixture).html;
-  assert.match(runtime, /editTextAllowedTargetRoles=Object\.freeze\(\['title','subtitle','keyPoint'\]\)/);
-  assert.match(runtime, /if\(!editTextAllowedTargetRoles\.includes\(role\)\)throw new Error/);
+  assert.match(runtime, /operationDescriptors=deepFreeze\(/);
+  assert.match(runtime, /if\(!operationDescriptors\[o\.operation\]\.allowedTargetRoles\.includes\(role\)\)throw new Error/);
 });
 
 test('legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞', () => {

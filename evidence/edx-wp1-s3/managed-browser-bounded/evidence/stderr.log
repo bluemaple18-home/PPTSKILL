@@ -1,0 +1,154 @@
+
+DevTools listening on ws://127.0.0.1:62172/devtools/browser/9011844e-5480-4766-b9c1-986bc1f22f39
+Trying to load the allocator multiple times. This is *not* supported.
+[27198:14607262:0920/110419.889855:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/110419.890395:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/110419.890840:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/110419.890964:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/110419.891101:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/110419.891173:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27166:14607213:0920/110422.157577:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27594:14608274:0920/110438.492748:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[27594:14608274:0920/110438.493533:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 461698, parent pid: 27166
+[27594:14608274:0920/110438.495478:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 72143843328B (67.189GiB) / 494384795648B (460.432GiB)
+[27594:14608274:0920/110438.495494:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 72143843328B (67.189GiB) / 494384795648B (460.432GiB)
+[27594:14608274:0920/110438.495571:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[27596:14608278:0920/110438.504417:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=152.0.7933.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[27596:14608278:0920/110438.504928:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 461698, parent pid: 1
+[27596:14608278:0920/110438.506570:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 72143839232B (67.189GiB) / 494384795648B (460.432GiB)
+[27596:14608278:0920/110438.506585:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 72143839232B (67.189GiB) / 494384795648B (460.432GiB)
+[27596:14608278:0920/110438.506652:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[27594:14608274:0920/110438.507040:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[27594:14608274:0920/110438.507645:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[27594:14608274:0920/110438.507727:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[27594:14608274:0920/110438.507807:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[27594:14608274:0920/110438.507840:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[27594:14608274:0920/110438.507870:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/AndroidStudio2025.2.2/Crashpad/settings.dat: No such file or directory (2)
+[27594:14608274:0920/110438.507905:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/ChromeForTesting/Crashpad/settings.dat: No such file or directory (2)
+[27594:14608274:0920/110438.507916:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/Chrome-headless/Crashpad/settings.dat: No such file or directory (2)
+[27594:14608274:0920/110438.507931:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[27594:14608286:0920/110438.508155:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[27594:14608286:0920/110438.508263:VERBOSE1:chrome/updater/app/app_wakeall.cc:64] `/Users/matt/Library/Application Support/Google/GoogleUpdater/149.0.7814.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` process invalid: Undefined error: 0 (0)
+[27594:14608286:0920/110438.508278:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/148.0.7730.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[27594:14608286:0920/110438.508329:VERBOSE1:chrome/updater/app/app_wakeall.cc:64] `/Users/matt/Library/Application Support/Google/GoogleUpdater/148.0.7730.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` process invalid: Undefined error: 0 (0)
+[27594:14608286:0920/110438.508341:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[27599:14608292:0920/110438.516377:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[27599:14608292:0920/110438.516909:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 461698, parent pid: 27594
+[27599:14608292:0920/110438.518607:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 72143835136B (67.189GiB) / 494384795648B (460.432GiB)
+[27599:14608292:0920/110438.518621:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 72143835136B (67.189GiB) / 494384795648B (460.432GiB)
+[27599:14608292:0920/110438.518689:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[27601:14608296:0920/110438.527559:VERBOSE1:chrome/updater/updater.cc:374] Version: 152.0.7933.0, opt, ARM_64, command line: /Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=152.0.7933.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[27601:14608296:0920/110438.528060:VERBOSE1:chrome/updater/updater.cc:377] OS version: 26.6.2, arch: arm64, System uptime (seconds): 461698, parent pid: 1
+[27601:14608296:0920/110438.529829:VERBOSE1:chrome/updater/updater.cc:382] Available disk space in install directory (/Users/matt/Library/Application Support/Google/GoogleUpdater): 72143835136B (67.189GiB) / 494384795648B (460.432GiB)
+[27601:14608296:0920/110438.529845:VERBOSE1:chrome/updater/updater.cc:386] Available disk space in temporary directory (/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/): 72143835136B (67.189GiB) / 494384795648B (460.432GiB)
+[27601:14608296:0920/110438.529922:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS START event to the history log
+[27599:14608292:0920/110438.530386:VERBOSE1:chrome/updater/crash_reporter.cc:124] Crash handler launched and ready.
+[27599:14608292:0920/110438.531084:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[27599:14608292:0920/110438.531181:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[27599:14608292:0920/110438.531269:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[27599:14608292:0920/110438.531284:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[27599:14608292:0920/110438.531317:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/AndroidStudio2025.2.2/Crashpad/settings.dat: No such file or directory (2)
+[27599:14608292:0920/110438.531355:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/ChromeForTesting/Crashpad/settings.dat: No such file or directory (2)
+[27599:14608292:0920/110438.531370:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/matt/Library/Application Support/Google/Chrome-headless/Crashpad/settings.dat: No such file or directory (2)
+[27599:14608292:0920/110438.531384:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[27599:14608292:0920/110438.531527:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[27166:14607213:0920/110446.560825:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27599:14608292:0920/110454.081257:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[27599:14608292:0920/110454.081738:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[27599:14608292:0920/110454.081756:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--wake) returned 0.
+[27594:14608286:0920/110454.245567:VERBOSE1:chrome/updater/app/app_wakeall.cc:68] `/Users/matt/Library/Application Support/Google/GoogleUpdater/152.0.7933.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake` exited 0
+[27594:14608274:0920/110454.245776:VERBOSE1:chrome/updater/app/app.cc:52] Shutdown: 0
+[27594:14608274:0920/110454.246382:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[27594:14608274:0920/110454.246445:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--wake-all) returned 0.
+[27601:14608296:0920/110504.091162:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[27601:14608296:0920/110504.091224:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--crash-handler) returned 0.
+[27596:14608278:0920/110504.092777:VERBOSE2:chrome/updater/event_history.cc:265] Emitted a UPDATER_PROCESS END event to the history log
+[27596:14608278:0920/110504.092835:VERBOSE1:chrome/updater/updater.cc:419] UpdaterMain (--crash-handler) returned 0.
+[27166:14607213:0920/110535.857935:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27166:14607213:0920/110720.470260:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27198:14607262:0920/111010.792004:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792440:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792460:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792469:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792476:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792481:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27198:14607262:0920/111010.792488:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.
+[27166:14607213:0920/111055.033033:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27198:14607262:0920/111630.019885:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111630.065074:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111635.957039:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111636.001780:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111641.856332:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111641.895600:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27166:14607213:0920/111645.587027:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[27198:14607262:0920/111825.165864:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27198:14607262:0920/111825.206726:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[27166:14607152:0920/111835.992145:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111836.092493:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111836.609548:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111837.643103:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111837.776223:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111837.942512:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.076581:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.243828:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.376386:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.542324:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.676200:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.842779:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111838.975322:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.110280:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.225457:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.359087:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.526081:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.659745:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.825447:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111839.959771:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.159106:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.293529:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.458714:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.592197:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.749732:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.858963:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111840.993344:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.159356:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.292271:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.458333:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.592311:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.759086:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111841.892488:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111842.058814:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111842.192963:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.025 s for first_image_paint 0.022 s
+[27166:14607152:0920/111853.025335:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111853.125619:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111853.630748:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111854.624648:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111854.758959:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111854.925283:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.058559:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.224775:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.359170:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.525834:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.659037:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.825194:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111855.958470:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.074469:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.208225:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.374569:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.508598:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.674223:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.808825:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111856.974457:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.112851:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.225040:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.391244:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.525185:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.692038:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.825131:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111857.992236:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.125037:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.292027:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.425479:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.591127:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.724782:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111858.891337:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s
+[27166:14607152:0920/111859.024947:ERROR:components/page_load_metrics/browser/page_load_metrics_update_dispatcher.cc:179] Invalid first_paint 0.029 s for first_image_paint 0.027 s

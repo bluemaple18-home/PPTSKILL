@@ -1,3 +1,4 @@
+import { sanitizeGeometryOverrides } from './component-geometry.js';
 import { createHash } from 'node:crypto';
 import { sanitizeCompositionMotion } from './motion-capabilities.js';
 import { sanitizeCompositionBackgroundEffect } from './background-effects.js';
@@ -89,7 +90,7 @@ const sanitizeSlide = (slide, index) => {
       keyPointIds,
       components,
     },
-    composition: sanitizeComposition(slide?.composition),
+    composition: sanitizeComposition(slide?.composition, components),
   };
 };
 
@@ -140,7 +141,8 @@ const sanitizeStyle = (style = {}) => ({
   assetTreatment: copyText(style.assetTreatment, defaultStyle.assetTreatment),
 });
 
-const sanitizeComposition = (composition = {}) => {
+const sanitizeComposition = (composition = {}, components = []) => {
+  const geometryOverrides = sanitizeGeometryOverrides(composition.geometryOverrides, components);
   const motion = sanitizeCompositionMotion(composition.motion);
   const backgroundEffect = sanitizeCompositionBackgroundEffect(composition.backgroundEffect);
   return {
@@ -150,6 +152,7 @@ const sanitizeComposition = (composition = {}) => {
     ...(Array.isArray(composition.order) ? { order: copyStringArray(composition.order) } : {}),
     ...(motion ? { motion } : {}),
     ...(backgroundEffect ? { backgroundEffect } : {}),
+    ...(geometryOverrides ? { geometryOverrides } : {}),
   };
 };
 
@@ -236,6 +239,7 @@ export function validateDeckSpec(spec) {
   const ids = spec?.slides?.map((slide) => slide.id) ?? [];
   if (ids.some((id) => !id) || new Set(ids).size !== ids.length) errors.push('slide ID 不可缺漏或重複。');
   for (const slide of spec?.slides ?? []) {
+    try { sanitizeGeometryOverrides(slide.composition?.geometryOverrides, slide.content?.components ?? []); } catch (error) { errors.push(error.message); }
     if (!slide.content?.title || !slide.content?.subtitle || !Array.isArray(slide.content?.keyPoints) || slide.content.keyPoints.length < 3 || slide.content.keyPoints.length > 5) errors.push(`${slide.id || 'unknown'} 缺少 title／subtitle／3～5 keyPoints。`);
     const elementIds = resolveSlideElementIds(slide);
     if (!Array.isArray(slide.content?.keyPointIds) || slide.content.keyPointIds.length !== slide.content?.keyPoints?.length || slide.content.keyPointIds.some((id) => !idPattern.test(id))) errors.push(`${slide.id || 'unknown'} 的 keyPointIds 無效。`);

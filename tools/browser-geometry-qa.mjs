@@ -24,6 +24,7 @@ const editorExportPath = editorExportIndex >= 0 ? args[editorExportIndex + 1] : 
 if (!['reduce', 'normal', 'static'].includes(motionMode)) throw new Error('--motion 只接受 reduce、normal 或 static。');
 if (!input) throw new Error('Usage: node tools/browser-geometry-qa.mjs <html-path> [--output receipt.json] [--screenshot image.png] [--montage image.png] [--motion reduce|normal|static] [--motion-frames path-prefix] [--editor-export deck.html]');
 
+const managedPortFile = process.env.PPTSKILL_DEVTOOLS_ACTIVE_PORT;
 const chromeCandidates = [
   process.env.PPTSKILL_CHROME_BIN,
   '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
@@ -33,14 +34,14 @@ const chromeCandidates = [
 ].filter(Boolean);
 
 let chromeBin;
-for (const candidate of chromeCandidates) {
+for (const candidate of managedPortFile ? [] : chromeCandidates) {
   try {
     if (candidate.includes('/')) await access(candidate);
     chromeBin = candidate;
     break;
   } catch {}
 }
-if (!chromeBin) throw new Error('找不到 Chrome/Chromium；可用 PPTSKILL_CHROME_BIN 指定。');
+if (!managedPortFile && !chromeBin) throw new Error('找不到 Chrome/Chromium；可用 PPTSKILL_CHROME_BIN 指定。');
 
 const htmlPath = resolve(input);
 await access(htmlPath);
@@ -504,32 +505,28 @@ const runAtViewport = async ({ width, height }) => {
   const artifactBaseUrl = pathToFileURL(`${dirname(htmlPath)}/`).href;
   await writeFile(canonicalPath, canonicalHtml.replace(/<head>/iu, `<head><base href="${artifactBaseUrl}">`));
   const canonicalUrl = pathToFileURL(canonicalPath).href;
-  const browser = spawn(chromeBin, [
+  const browser = managedPortFile ? null : spawn(chromeBin, [
     '--headless=new', '--hide-scrollbars', '--disable-gpu', '--no-first-run', '--no-default-browser-check',
     '--remote-debugging-port=0', `--user-data-dir=${profileDir}`, `--window-size=${width},${height}`, 'about:blank',
   ], { stdio: 'ignore' });
+  let port, ownedTargetId, cdp;
   try {
-    let port;
     for (let attempt = 0; attempt < 40; attempt += 1) {
       try {
-        const [activePort] = (await readFile(`${profileDir}/DevToolsActivePort`, 'utf8')).trim().split('\n');
+        const [activePort] = (await readFile(managedPortFile || `${profileDir}/DevToolsActivePort`, 'utf8')).trim().split('\n');
         port = Number(activePort);
         if (Number.isInteger(port) && port > 0) break;
       } catch {}
       await new Promise((resolveWait) => setTimeout(resolveWait, 100));
     }
     if (!port) throw new Error('Chrome DevTools port 未就緒。');
-    let pages;
-    for (let attempt = 0; attempt < 40; attempt += 1) {
-      try {
-        pages = await fetch(`http://127.0.0.1:${port}/json`).then((response) => response.json());
-        if (pages.some(({ type }) => type === 'page')) break;
-      } catch {}
-      await new Promise((resolveWait) => setTimeout(resolveWait, 100));
-    }
-    const page = pages?.find(({ type }) => type === 'page');
-    if (!page) throw new Error('Chrome DevTools target 未就緒。');
-    const cdp = new CdpClient(page.webSocketDebuggerUrl);
+    // managed 與 standalone 均只操作本輪建立的 target。
+    const response = await fetch('http://127.0.0.1:' + port + '/json/new?about:blank', { method: 'PUT' });
+    if (!response.ok) throw new Error('Chrome owned target 建立失敗。');
+    const page = await response.json();
+    ownedTargetId = page.id;
+    if (!ownedTargetId || !page.webSocketDebuggerUrl) throw new Error('Chrome DevTools target 未就緒。');
+    cdp = new CdpClient(page.webSocketDebuggerUrl);
     await cdp.open();
     const consoleMessages = [];
     const pageErrors = [];
@@ -661,7 +658,6 @@ const runAtViewport = async ({ width, height }) => {
       const montage = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       await writeFile(resolve(montagePath), Buffer.from(montage.data, 'base64'));
     }
-    cdp.close();
     if (result.exceptionDetails) throw new Error(result.exceptionDetails.text);
     return {
       viewport: { width, height },
@@ -675,14 +671,22 @@ const runAtViewport = async ({ width, height }) => {
       ...result.result.value,
     };
   } finally {
-    browser.kill('SIGTERM');
-    if (browser.exitCode === null) {
+    cdp?.close();
+    try {
+      if (ownedTargetId) {
+        const closed = await fetch('http://127.0.0.1:' + port + '/json/close/' + ownedTargetId);
+        if (!closed.ok) throw new Error('Chrome owned target cleanup 失敗。');
+      }
+    } finally {
+    browser?.kill('SIGTERM');
+    if (browser && browser.exitCode === null) {
       await Promise.race([
         new Promise((resolveExit) => browser.once('exit', resolveExit)),
         new Promise((resolveWait) => setTimeout(resolveWait, 2000)),
       ]);
     }
     await rm(profileDir, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 });
+    }
   }
 };
 

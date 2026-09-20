@@ -1,0 +1,36 @@
+✔ 兩張代表頁從正式 planner truth 選出 Typical 與第三頁 Stress (13.495542ms)
+✔ 一張代表頁同時承擔 Typical 與 Stress，且重跑 byte-stable (1.261209ms)
+✔ skip sample 不建立人工等待，但不解除 full-deck QA (0.480583ms)
+✔ sample selection 不改 composition、rhythm、motion、background 或 generation units (1.549ms)
+✔ legacy 無 planner signals 仍 deterministic；單頁 deck 收斂為一筆 both (0.2005ms)
+✔ installed plan-new 使用相同 Representative Sample contract (414.717792ms)
+✔ 完整 hard evidence 才 PASS，且 sample PASS 不解除 full-deck QA (1.906ms)
+✔ NOT_RUN/UNKNOWN blocked 且不消耗 repair budget (0.196792ms)
+✔ 同一 issue 只允許兩次 bounded repair，第三次前 blocked (0.305584ms)
+✔ coverage、allowlist 與 history spoof fail loud (0.424166ms)
+✔ 拒絕繞過 Slice 1 的 single both 與 typical plus stress sample shape (0.444709ms)
+✔ installed qa-sample CLI 與 direct pure gate parity (656.704625ms)
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (22770.950833ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (4.771792ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (0.982958ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (1.79575ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.155083ms)
+✔ sample content 或 composition 只使該頁失效 (0.893084ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.796333ms)
+✔ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (168245.116417ms)
+✔ trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在 (3.320541ms)
+✔ Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner (0.256042ms)
+✔ stale Owner identity 與 caller forged evidence fail loud (0.6175ms)
+✔ Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs (0.386458ms)
+✔ accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair (0.366208ms)
+✔ 單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget (78700.749167ms)
+✔ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (241087.90225ms)
+✔ 每張 canonical slide 的 required title 必須有 painted visibility (133974.266666ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 804223.119667

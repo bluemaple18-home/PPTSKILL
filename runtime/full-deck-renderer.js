@@ -1,3 +1,4 @@
+import { componentGeometryStyle, getComponentGeometry } from './component-geometry.js';
 import { embedDeckSpec, resolveSlideElementIdentities, ROLE_ELEMENT_IDS, sanitizeDeckSpec, validateDeckSpec } from './deck-spec.js';
 import { validateDeckCompositions } from './composition-primitives.js';
 import { compileVisualRouteCandidate, resolveRoleTreatments } from './design-grammar.js';
@@ -52,14 +53,16 @@ const renderMetrics = (slide) => `<div class="metric-cards" data-effect-role="me
 const renderComponent = (component, slide) => {
   const target = `slides.${attr(slide.id)}.content.components.${attr(component.id)}`;
   const componentIndex = slide.content.components.findIndex(({ id }) => id === component.id);
+  const box = getComponentGeometry(slide.composition, component.id);
   const identity = ` data-pptskill-element-id="${attr(resolveSlideElementIdentities(slide).components[componentIndex])}"`;
-  if (component.type === 'image') return `<figure class="asset image-asset" data-effect-role="image"${identity} data-edit-target="${target}"><img src="${attr(component.dataUri)}" alt="${attr(component.alt)}" style="object-fit:${component.fit || 'contain'}"></figure>`;
-  if (component.type === 'text') return `<blockquote class="asset text-asset" data-effect-role="visualAnchor" data-edit-kind="text"${identity} data-edit-target="${target}">${escapeHtml(component.text)}</blockquote>`;
-  if (component.type === 'citation') return `<p class="asset citation-asset" data-edit-kind="text"${identity} data-edit-target="${target}">${component.url ? `<a href="${attr(component.url)}">${escapeHtml(component.label)}</a>` : escapeHtml(component.label)}</p>`;
-  if (component.type === 'table') return `<div class="asset table-asset" data-effect-role="diagram"${identity} data-edit-target="${target}"><table><thead><tr>${component.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${component.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  const geometry = box ? ` data-pptskill-geometry="canonical" style="${componentGeometryStyle(box)}"` : '';
+  if (component.type === 'image') return `<figure class="asset image-asset" data-effect-role="image"${identity} data-edit-target="${target}"${geometry}><img src="${attr(component.dataUri)}" alt="${attr(component.alt)}" style="object-fit:${component.fit || 'contain'}"></figure>`;
+  if (component.type === 'text') return `<blockquote class="asset text-asset" data-effect-role="visualAnchor" data-edit-kind="text"${identity} data-edit-target="${target}"${geometry}>${escapeHtml(component.text)}</blockquote>`;
+  if (component.type === 'citation') return `<p class="asset citation-asset" data-edit-kind="text"${identity} data-edit-target="${target}"${geometry}>${component.url ? `<a href="${attr(component.url)}">${escapeHtml(component.label)}</a>` : escapeHtml(component.label)}</p>`;
+  if (component.type === 'table') return `<div class="asset table-asset" data-effect-role="diagram"${identity} data-edit-target="${target}"${geometry}><table><thead><tr>${component.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${component.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   if (component.type === 'chart') {
     const maximum = Math.max(1, ...component.series.flatMap(({ values }) => values));
-    return `<div class="asset chart-asset" data-effect-role="diagram"${identity} data-edit-target="${target}">${component.series.map((series) => `<section><b>${escapeHtml(series.name)}</b>${series.values.map((value, index) => `<div class="bar-row"><span>${escapeHtml(component.labels[index] || '')}</span><i style="--bar:${Math.max(0, Math.min(100, Math.round((value / maximum) * 100)))}%"></i><em>${escapeHtml(value)}</em></div>`).join('')}</section>`).join('')}</div>`;
+    return `<div class="asset chart-asset" data-effect-role="diagram"${identity} data-edit-target="${target}"${geometry}>${component.series.map((series) => `<section><b>${escapeHtml(series.name)}</b>${series.values.map((value, index) => `<div class="bar-row"><span>${escapeHtml(component.labels[index] || '')}</span><i style="--bar:${Math.max(0, Math.min(100, Math.round((value / maximum) * 100)))}%"></i><em>${escapeHtml(value)}</em></div>`).join('')}</section>`).join('')}</div>`;
   }
   return '';
 };
@@ -112,7 +115,12 @@ const primitiveRenderers = {
 const applyEffectTreatments = (markup, treatments) => markup.replace(/data-effect-role="([^"]+)"/g, (match, role) => `${match} data-effect-treatment="${attr(treatments.byRole[role] || 'none')}"`);
 
 const renderSlide = (slide, index, total, visualWorld, treatments, companyPack) => {
-  const markup = `${renderWorldChrome(slide, index, total, visualWorld, companyPack)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
+  let markup = `${renderWorldChrome(slide, index, total, visualWorld, companyPack)}${primitiveRenderers[slide.composition.primitive](slide, index, total, visualWorld)}`;
+  // 非 slot 元件在取得 manual geometry 後也必須有唯一 presentation root。
+  const identities = resolveSlideElementIdentities(slide);
+  slide.content.components.forEach((component, componentIndex) => {
+    if (getComponentGeometry(slide.composition, component.id) && !markup.includes('data-pptskill-element-id="' + attr(identities.components[componentIndex]) + '"')) markup += renderComponent(component, slide);
+  });
   const background = slide.composition.backgroundEffect;
   const layer = background ? `<div data-pptskill-background-layer data-background-effect="${attr(background.effect)}" data-background-options="${attr(JSON.stringify(resolveBackgroundEffectOptions(background, slide.__style)))}" data-background-state="static" aria-hidden="true"></div>` : '';
   return `<section class="slide primitive-${attr(slide.composition.primitive)} motion-root variant-${attr(slide.composition.variant)}" id="${attr(slide.id)}" data-slide-id="${attr(slide.id)}" data-primitive="${attr(slide.composition.primitive)}"${slide.composition.motion ? ` data-motion-effect="${attr(slide.composition.motion.effect)}"` : ''}${background ? ` data-background-effect="${attr(background.effect)}"` : ''}>${layer}${applyEffectTreatments(markup, treatments)}</section>`;
@@ -204,6 +212,6 @@ export function renderFullDeck(input) {
   const slides = spec.slides.map((slide, index) => renderSlide({ ...slide, __style: spec.style }, index, spec.slides.length, visualWorld, treatments, companyPack)).join('');
   const hasOdometer = spec.slides.some((slide) => slide.composition.motion?.effect === 'number-flow-odometer');
   const hasBackground = spec.slides.some((slide) => slide.composition.backgroundEffect);
-  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${hasBackground ? buildBackgroundEffectsCss() : ''}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.metric-cards article>b{display:block;margin-bottom:28px}.metric-value{display:inline-flex;min-width:7ch;color:var(--accent);font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${hasOdometer ? buildNumberFlowVendorScript() : ''}${hasBackground ? `${buildBackgroundEffectsVendorScript()}${buildBackgroundEffectsRuntimeScript()}` : ''}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript()}</body></html>`;
+  const shell = `<!doctype html><html lang="${attr(spec.language)}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(spec.title)}</title><style>${buildCss(spec.style)}${buildVisualWorldCss(visualWorld, companyPack)}${buildMotionCss(spec.style.motion)}${hasBackground ? buildBackgroundEffectsCss() : ''}${buildDeckEditorCss()}.deck{zoom:min(1,calc(100vw / 1600px))}.metric-cards{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}.metric-cards article>b{display:block;margin-bottom:28px}.metric-value{display:inline-flex;min-width:7ch;color:var(--accent);font:900 48px/1 var(--display);font-variant-numeric:tabular-nums}</style></head><body><main class="deck" data-deck-id="${attr(spec.deckId)}" data-style-id="${attr(spec.style.id)}" data-visual-world="${attr(visualWorld)}" data-effect-language="${attr(route.effectLanguage)}" data-effect-families="${attr(treatments.primaryFamilies.join('+'))}" data-motion-personality="${attr(treatments.motion.personality)}">${slides}</main>${buildDeckEditorMarkup()}${hasOdometer ? buildNumberFlowVendorScript() : ''}${hasBackground ? `${buildBackgroundEffectsVendorScript()}${buildBackgroundEffectsRuntimeScript()}` : ''}${buildMotionRuntimeScript()}${buildBrowserAssetOptimizerRuntimeScript()}${buildPortableSizeGuardRuntimeScript()}${buildDeckEditorRuntimeScript(treatments.byRole)}</body></html>`;
   return { status: 'pass', html: embedDeckSpec(shell, spec), spec };
 }

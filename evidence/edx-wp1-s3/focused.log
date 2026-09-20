@@ -1,0 +1,34 @@
+✔ legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留 (2.928ms)
+✔ caller-supplied invalid identity 在 sanitizer 前 fail loud (0.523875ms)
+✔ renderer 對 directly operable roots 輸出 slide-local unique element identity (3.955375ms)
+✔ edit-text descriptor 完整宣告 bounded metadata (0.184959ms)
+✔ executeOperation 只依 stable target pair 編輯文字並 fail loud (1.069125ms)
+✔ legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path (2.071166ms)
+✔ 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip (3.764541ms)
+✔ descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist (1.642125ms)
+✔ legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞 (1.241208ms)
+✔ legacy adapters、duplicate 與 export/reopen 共用 canonical identity (2.931167ms)
+✔ Node absolute move/resize 僅改 canonical override，content edit 保留 (4.709542ms)
+✔ Node invalid 全部 fail loud 且 state 原子性 (3.991167ms)
+✔ Node descriptors 深度 immutable 且 allowlist 無法擴權 (0.706292ms)
+✔ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (8.533041ms)
+✔ browser API VM invalid 全部 fail loud 且 state 原子性 (18.211166ms)
+✔ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (1.513042ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (3.073625ms)
+✔ canonical geometry renderer/recipient round-trip 與 viewport 無關 (1.848333ms)
+✔ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (2.931667ms)
+✔ Node 合法 constructor ID 與非 slot component 走 own-property override (3.034333ms)
+✔ Node safe-area 精確邊界／integer 非 grid 值不 clamp (0.819042ms)
+✔ browser API VM 合法 constructor ID 與非 slot component 走 own-property override (4.425125ms)
+✔ browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp (2.9985ms)
+✔ legacy component patch 保留 geometry；sanitizer 移除失效 component override (0.840167ms)
+✔ geometry QA managed attach 只建／關 owned target，navigation 失敗仍清理且不 spawn (137.002167ms)
+✔ S3 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (84.550416ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 323.781417

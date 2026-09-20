@@ -1,0 +1,239 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3/browser/source.html",
+  "canonicalPath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s3/browser/canonical.html",
+  "runs": [
+    {
+      "mode": "static",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "targetClosed": true,
+      "legacyRoundTrip": true,
+      "interaction": {
+        "immutable": true,
+        "invalidCases": 24,
+        "atomicity": true,
+        "contentEditPreserved": true
+      },
+      "geometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 0.8,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "reopenedGeometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 0.8,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "recipientRoundTrip": true,
+      "traceback": false,
+      "cleanup": {
+        "duplicate": true,
+        "independent": true,
+        "removed": true
+      },
+      "prototypeId": {
+        "own": true,
+        "rendered": true,
+        "directChild": true
+      },
+      "status": "pass"
+    },
+    {
+      "mode": "static",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "targetClosed": true,
+      "legacyRoundTrip": true,
+      "interaction": {
+        "immutable": true,
+        "invalidCases": 24,
+        "atomicity": true,
+        "contentEditPreserved": true
+      },
+      "geometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 1,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "reopenedGeometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 1,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "recipientRoundTrip": true,
+      "traceback": false,
+      "cleanup": {
+        "duplicate": true,
+        "independent": true,
+        "removed": true
+      },
+      "prototypeId": {
+        "own": true,
+        "rendered": true,
+        "directChild": true
+      },
+      "status": "pass"
+    },
+    {
+      "mode": "normal",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "targetClosed": true,
+      "legacyRoundTrip": true,
+      "interaction": {
+        "immutable": true,
+        "invalidCases": 24,
+        "atomicity": true,
+        "contentEditPreserved": true
+      },
+      "geometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 0.8,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "reopenedGeometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 0.8,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "recipientRoundTrip": true,
+      "traceback": false,
+      "cleanup": {
+        "duplicate": true,
+        "independent": true,
+        "removed": true
+      },
+      "prototypeId": {
+        "own": true,
+        "rendered": true,
+        "directChild": true
+      },
+      "status": "pass"
+    },
+    {
+      "mode": "normal",
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "targetClosed": true,
+      "legacyRoundTrip": true,
+      "interaction": {
+        "immutable": true,
+        "invalidCases": 24,
+        "atomicity": true,
+        "contentEditPreserved": true
+      },
+      "geometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 1,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "reopenedGeometry": {
+        "x": 820,
+        "y": 300,
+        "width": 600,
+        "height": 400,
+        "slideWidth": 1600,
+        "slideHeight": 900,
+        "scale": 1,
+        "directChild": true,
+        "containingBlock": true,
+        "boxSizing": "border-box",
+        "overflow": false
+      },
+      "recipientRoundTrip": true,
+      "traceback": false,
+      "cleanup": {
+        "duplicate": true,
+        "independent": true,
+        "removed": true
+      },
+      "prototypeId": {
+        "own": true,
+        "rendered": true,
+        "directChild": true
+      },
+      "status": "pass"
+    }
+  ]
+}

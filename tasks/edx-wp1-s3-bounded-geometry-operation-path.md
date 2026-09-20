@@ -1,6 +1,8 @@
 # EDX-WP1-S3 — Bounded Component Geometry Operation Path
 
-**Status:** READY TO START
+**Status:** REVIEW CANDIDATE READY — INDEPENDENT REVIEW PENDING
+
+**Evidence:** `evidence/edx-wp1-s3/mainline-receipt.md`；`handoff_20260920_edx_wp1_s3_review.md`。
 **traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
 
 ## Objective

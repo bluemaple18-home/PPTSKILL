@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "sessions": [
+    {
+      "root": "/private/tmp/aic-b-3bd0b6e32d1745f5a8c5893e47bf4d58",
+      "removed": true,
+      "exitCode": 2,
+      "reason": "runtime budget exceeded",
+      "evidence": "managed-browser/evidence/session.json"
+    },
+    {
+      "root": "/private/tmp/aic-b-f209c1b1784d4108971a7a8bba3fe464",
+      "removed": true,
+      "exitCode": 0,
+      "evidence": "managed-browser-bounded/evidence/session.json"
+    }
+  ],
+  "zipBytes": 2155908
+}

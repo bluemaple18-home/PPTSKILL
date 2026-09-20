@@ -1,0 +1,12 @@
+PASS syntax runtime/component-geometry.js
+PASS syntax runtime/deck-spec.js
+PASS syntax runtime/deck-editor.js
+PASS syntax runtime/full-deck-renderer.js
+PASS syntax tools/browser-geometry-qa.mjs
+PASS syntax tools/edx-wp1-s3-browser-acceptance.mjs
+PASS syntax tests/edx-wp1-s2-stable-identity-operation-path.test.mjs
+PASS syntax tests/edx-wp1-s3-bounded-geometry.test.mjs
+PASS syntax tests/edx-wp1-s3-managed-browser-attach.test.mjs
+PASS syntax tests/helpers/edx-wp1-s3-managed-browser-probe.mjs
+PASS schema JSON
+PASS git diff --check

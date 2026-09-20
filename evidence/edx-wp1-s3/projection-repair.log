@@ -1,0 +1,22 @@
+✔ Node absolute move/resize 僅改 canonical override，content edit 保留 (5.221333ms)
+✔ Node invalid 全部 fail loud 且 state 原子性 (4.298542ms)
+✔ Node descriptors 深度 immutable 且 allowlist 無法擴權 (0.316ms)
+✔ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (6.62725ms)
+✔ browser API VM invalid 全部 fail loud 且 state 原子性 (14.161584ms)
+✔ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (1.406708ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (3.902458ms)
+✔ canonical geometry renderer/recipient round-trip 與 viewport 無關 (1.794625ms)
+✔ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (1.773667ms)
+✔ Node 合法 constructor ID 與非 slot component 走 own-property override (2.389833ms)
+✔ Node safe-area 精確邊界／integer 非 grid 值不 clamp (0.7575ms)
+✔ browser API VM 合法 constructor ID 與非 slot component 走 own-property override (4.324416ms)
+✔ browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp (3.036458ms)
+✔ legacy component patch 保留 geometry；sanitizer 移除失效 component override (0.8355ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 163.262833
