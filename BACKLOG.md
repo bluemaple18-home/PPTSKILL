@@ -877,6 +877,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 2 closure：** legacy keyPoints deterministic backfill為stable IDs，role／point／component使用互斥element identity namespace；renderer、Node/browser editor、export/reopen與duplicate閉合同一target pair。第一條`edit-text` descriptor拒絕arbitrary payload，legacy patch只作adapter。Repair 1已移除operation path私設的slide ID長度上限，以deterministic slide-local allocator關閉合法long ID／hash suffix碰撞，並deep-freeze descriptor且以private immutable role allowlist執行。Independent re-review對candidate `6a76b03`給出 **GO**：focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser 16/16與fresh Chrome長ID export→reopen均PASS；ZIP 2,152,740 bytes，SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`。僅留non-blocking P2：公開descriptor snapshot可被本機mutation，但private enforcement無法被擴權。S2 COMPLETE；vendor install、geometry interaction與S3仍未開啟。
 
+**EDX-WP1 Slice 3 task：** `tasks/edx-wp1-s3-bounded-geometry-operation-path.md`。Current frontier只建立component-only optional geometry override與`move-element`／`resize-element` bounded operation path，閉環canonical 1600×900 absolute coordinates、sanitizer、renderer、Node/browser editor、export/reopen與geometry QA；同時使browser公開descriptor snapshot immutable。Moveable／Selecto仍不安裝，drag/resize UI、snap、selection/multi-select、history與AI bridge保持blocked，直到S3 independent review GO後另切vendor interaction card。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。
