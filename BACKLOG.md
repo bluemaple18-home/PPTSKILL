@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** EDX-WP1-S3 COMPLETE — INDEPENDENT REVIEW GO；S4 SINGLE-COMPONENT INTERACTION IN PROGRESS（stacked branch，尚未整合 main）
+**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION bounded follow-up IN PROGRESS（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -890,6 +890,8 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **S4 performance follow-up：** `tasks/edx-wp1-s4-perf-bounded-revision.md`，分支 `codex/edx-wp1-s4-perf`。只移除pointer stale check的whole-deck serialization，保持semantic mutation取消、preview/export/reopen契約；不擴新editor功能。
 
 **S4-PERF CLOSED：** pointer resolver改ephemeral revision，1/6/12MiB mounted payload reads/serialization=0；focused45、完整non-browser245具名案例、fresh雙viewport真pointer/stale/export/reopen與ZIP lifecycle PASS。PGQ只繼承S4 GO，無本卡fresh宣稱。新ZIP SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`。Independent Review GO（reviewed `5191e6b`，P0/P1=0、0 new P2）；motion P2保留。詳見 `evidence/edx-wp1-s4-perf/independent-review.md`。
+
+**S3-MOTION follow-up：** `tasks/edx-wp1-s3-motion-preservation.md`；先修manual geometry壓制motion transform的inherited P2，維持canonical geometry與portable契約，不擴WP1互動功能。
 
 ## 10.1 八項 Owner 決策
 
