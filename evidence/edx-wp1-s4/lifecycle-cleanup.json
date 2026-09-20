@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "checks": [
+    {
+      "root": "/private/tmp/aic-b-140e0eccb90844b0b8cef74a4e3da04c",
+      "removed": true
+    },
+    {
+      "root": "/private/tmp/aic-b-8eb3b1b1411a4fb3a039f192de5e569a",
+      "removed": true
+    }
+  ],
+  "initialSupervisorExit": 2,
+  "initialReason": "resource observation unknown (scan limit)",
+  "retrySupervisorExit": 0,
+  "closeAttempt": "Browser.close invocation ended with WebSocket ErrorEvent during exit; supervisor exit 0 and root absence independently confirmed",
+  "unrelatedBrowserTouched": false
+}

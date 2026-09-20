@@ -1,0 +1,853 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-20T04:55:52.035Z",
+  "artifact": "1600-reopen-export.html",
+  "motionMode": "normal",
+  "status": "pass",
+  "gates": {
+    "runtime": "pass",
+    "contentIntegrity": "pass",
+    "requiredVisibility": "pass",
+    "rasterVisibility": "pass",
+    "geometry": "pass",
+    "motion": "pass"
+  },
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px 22.8911% 0px 0px)",
+            "transitionDuration": "0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 4.1204)",
+            "clipPath": "inset(0px 0px 22.8911%)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 126,
+              "width": 453,
+              "height": 63
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 217,
+              "width": 453,
+              "height": 66
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.771089",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          },
+          "componentFocus": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.771089",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 126,
+              "width": 453,
+              "height": 63
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 217,
+              "width": 453,
+              "height": 66
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          },
+          "componentFocus": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          }
+        },
+        "changedRoles": [
+          "diagram",
+          "title",
+          "visualAnchor",
+          "componentFocus"
+        ],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": null,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 0,
+          "replayResult": null,
+          "replayed": false,
+          "reset": [],
+          "sequence": [],
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true
+        }
+      },
+      "rasterVisibility": [
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.title",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 11943,
+            "energy": 2232187,
+            "totalPixels": 28602,
+            "box": {
+              "x": 0.04875,
+              "y": 0.14,
+              "width": 0.283330078125,
+              "height": 0.06958333333333333
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "canonical": {
+            "changedPixels": 11943,
+            "energy": 2232187,
+            "totalPixels": 28602,
+            "box": {
+              "x": 0.04875,
+              "y": 0.14,
+              "width": 0.283330078125,
+              "height": 0.06958333333333333
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.subtitle",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 4581,
+            "energy": 453639,
+            "totalPixels": 29964,
+            "box": {
+              "x": 0.04875,
+              "y": 0.24069444444444443,
+              "width": 0.283330078125,
+              "height": 0.07333333333333333
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "canonical": {
+            "changedPixels": 4581,
+            "energy": 453639,
+            "totalPixels": 29964,
+            "box": {
+              "x": 0.04875,
+              "y": 0.24069444444444443,
+              "width": 0.283330078125,
+              "height": 0.07333333333333333
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.components.portable-quote",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 11664,
+            "energy": 2216470,
+            "totalPixels": 240000,
+            "box": {
+              "x": 0.53125,
+              "y": 0.34444444444444444,
+              "width": 0.375,
+              "height": 0.4444444444444444
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          },
+          "canonical": {
+            "changedPixels": 11664,
+            "energy": 2216470,
+            "totalPixels": 240000,
+            "box": {
+              "x": 0.53125,
+              "y": 0.34444444444444444,
+              "width": 0.375,
+              "height": 0.4444444444444444
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1600,
+              "height": 900
+            }
+          }
+        }
+      ],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 78,
+          "top": 126,
+          "right": 531.328125,
+          "bottom": 188.625,
+          "width": 453.328125,
+          "height": 62.625
+        },
+        "visualAnchor": null,
+        "supportingCopy": {
+          "left": 78,
+          "top": 216.625,
+          "right": 531.328125,
+          "bottom": 282.625,
+          "width": 453.328125,
+          "height": 66
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0488,
+          "y": 0.14,
+          "width": 0.2833,
+          "height": 0.0696
+        },
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": [
+          "q1"
+        ]
+      },
+      "contentIntegrity": [
+        {
+          "slideId": "portable",
+          "status": "pass",
+          "reason": null
+        }
+      ],
+      "requiredVisibility": [
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.title",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.subtitle",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.components.portable-quote",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        }
+      ],
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px 22.8899% 0px 0px)",
+            "transitionDuration": "0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 4.12018)",
+            "clipPath": "inset(0px 0px 22.8899%)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 126,
+              "width": 453,
+              "height": 63
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 217,
+              "width": 453,
+              "height": 66
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.771101",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          },
+          "componentFocus": {
+            "treatment": "brand-device-accent",
+            "opacity": "0.771101",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          }
+        },
+        "resting": {
+          "diagram": {
+            "treatment": "rule-draw",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 861,
+              "width": 1444,
+              "height": 1
+            }
+          },
+          "title": {
+            "treatment": "hard-cut-field",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 78,
+              "top": 126,
+              "width": 453,
+              "height": 63
+            }
+          },
+          "supportingCopy": {
+            "treatment": "none",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0s",
+            "layoutBox": {
+              "left": 78,
+              "top": 217,
+              "width": 453,
+              "height": 66
+            }
+          },
+          "visualAnchor": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          },
+          "componentFocus": {
+            "treatment": "brand-device-accent",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.42s, 0.42s",
+            "layoutBox": {
+              "left": 850,
+              "top": 310,
+              "width": 600,
+              "height": 400
+            }
+          }
+        },
+        "changedRoles": [
+          "diagram",
+          "title",
+          "visualAnchor",
+          "componentFocus"
+        ],
+        "layoutStable": true,
+        "restingVisible": true,
+        "odometer": {
+          "count": 0,
+          "replayResult": null,
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true,
+          "invalidPatchError": null,
+          "invalidPatchPreserved": true
+        },
+        "textEntrance": {
+          "count": 0,
+          "replayResult": null,
+          "replayed": false,
+          "reset": [],
+          "sequence": [],
+          "afterReplay": [],
+          "forcedStatic": [],
+          "editorRoundTrip": true
+        }
+      },
+      "rasterVisibility": [
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.title",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 7823,
+            "energy": 1433362,
+            "totalPixels": 18513,
+            "box": {
+              "x": 0.04874267578125,
+              "y": 0.13997395833333334,
+              "width": 0.28333740234375,
+              "height": 0.06959635416666667
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "canonical": {
+            "changedPixels": 7823,
+            "energy": 1433362,
+            "totalPixels": 18513,
+            "box": {
+              "x": 0.04874267578125,
+              "y": 0.13997395833333334,
+              "width": 0.28333740234375,
+              "height": 0.06959635416666667
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.subtitle",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 3161,
+            "energy": 294608,
+            "totalPixels": 19239,
+            "box": {
+              "x": 0.04874267578125,
+              "y": 0.2406684027777778,
+              "width": 0.28333740234375,
+              "height": 0.07330729166666666
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "canonical": {
+            "changedPixels": 3161,
+            "energy": 294608,
+            "totalPixels": 19239,
+            "box": {
+              "x": 0.04874267578125,
+              "y": 0.2406684027777778,
+              "width": 0.28333740234375,
+              "height": 0.07330729166666666
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.components.portable-quote",
+          "status": "pass",
+          "classification": "pass",
+          "ratios": {
+            "coverage": 1,
+            "energy": 1,
+            "slidePositionDelta": 0,
+            "slideSizeDelta": 0,
+            "positionDelta": 0,
+            "sizeDelta": 0
+          },
+          "candidate": {
+            "changedPixels": 7819,
+            "energy": 1452088,
+            "totalPixels": 153600,
+            "box": {
+              "x": 0.53125,
+              "y": 0.34444444444444444,
+              "width": 0.375,
+              "height": 0.4444444444444444
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          },
+          "canonical": {
+            "changedPixels": 7819,
+            "energy": 1452088,
+            "totalPixels": 153600,
+            "box": {
+              "x": 0.53125,
+              "y": 0.34444444444444444,
+              "width": 0.375,
+              "height": 0.4444444444444444
+            },
+            "slideBox": {
+              "x": 0,
+              "y": 0,
+              "width": 1280,
+              "height": 720
+            }
+          }
+        }
+      ],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 62.390625,
+          "top": 100.78125,
+          "right": 425.0625,
+          "bottom": 150.890625,
+          "width": 362.671875,
+          "height": 50.109375
+        },
+        "visualAnchor": null,
+        "supportingCopy": {
+          "left": 62.390625,
+          "top": 173.28125,
+          "right": 425.0625,
+          "bottom": 226.0625,
+          "width": 362.671875,
+          "height": 52.78125
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0487,
+          "y": 0.14,
+          "width": 0.2833,
+          "height": 0.0696
+        },
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": [
+          "q1"
+        ]
+      },
+      "contentIntegrity": [
+        {
+          "slideId": "portable",
+          "status": "pass",
+          "reason": null
+        }
+      ],
+      "requiredVisibility": [
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.title",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.subtitle",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        },
+        {
+          "slideId": "portable",
+          "target": "slides.portable.content.components.portable-quote",
+          "status": "pass",
+          "reason": null,
+          "paintedCoverage": {
+            "sampled": 9,
+            "painted": 9,
+            "ratio": 1
+          }
+        }
+      ],
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

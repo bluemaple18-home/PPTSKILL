@@ -1,0 +1,21 @@
+ ERR_PNPM_META_FETCH_FAIL  GET https://registry.npmjs.org/pnpm: request to https://registry.npmjs.org/pnpm failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+
+   ╭─────────────────────────────────────────╮
+   │                                         │
+   │   Update available! 10.28.2 → 12.4.2.   │
+   │   Changelog: https://pnpm.io/v/12.4.2   │
+   │    To update, run: pnpm self-update     │
+   │                                         │
+   ╰─────────────────────────────────────────╯
+
+Progress: resolved 1, reused 0, downloaded 0, added 0
+ WARN  GET https://registry.npmjs.org/number-flow/-/number-flow-0.6.2.tgz error (ENOTFOUND). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz error (ENOTFOUND). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/vanta/-/vanta-0.5.24.tgz error (ENOTFOUND). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/moveable/-/moveable-0.53.0.tgz error (ENOTFOUND). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/three/-/three-0.134.0.tgz error (ENOTFOUND). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/number-flow/-/number-flow-0.6.2.tgz error (ENOTFOUND). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz error (ENOTFOUND). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/vanta/-/vanta-0.5.24.tgz error (ENOTFOUND). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/moveable/-/moveable-0.53.0.tgz error (ENOTFOUND). Will retry in 1 minute. 1 retries left.
+ WARN  GET https://registry.npmjs.org/three/-/three-0.134.0.tgz error (ENOTFOUND). Will retry in 1 minute. 1 retries left.

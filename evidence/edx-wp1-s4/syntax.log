@@ -1,0 +1,9 @@
+PASS runtime/component-interaction.js
+PASS runtime/moveable-vendor.js
+PASS runtime/deck-editor.js
+PASS runtime/full-deck-renderer.js
+PASS tools/build-moveable-vendor.mjs
+PASS tools/edx-wp1-s4-browser-acceptance.mjs
+PASS tests/edx-wp1-s4-interaction.test.mjs
+PASS tests/edx-wp1-s4-vendor.test.mjs
+PASS tests/edx-wp1-s4-managed-browser-attach.test.mjs

@@ -1,0 +1,33 @@
+✔ Node absolute move/resize 僅改 canonical override，content edit 保留 (14.402125ms)
+✔ Node invalid 全部 fail loud 且 state 原子性 (7.535958ms)
+✔ Node descriptors 深度 immutable 且 allowlist 無法擴權 (1.551166ms)
+✔ browser API VM absolute move/resize 僅改 canonical override，content edit 保留 (12.293125ms)
+✔ browser API VM invalid 全部 fail loud 且 state 原子性 (30.549625ms)
+✔ browser API VM descriptors 深度 immutable 且 allowlist 無法擴權 (2.633083ms)
+✔ legacy sanitizer/render/export/recipient 不引入 optional 欄位 (7.681709ms)
+✔ canonical geometry renderer/recipient round-trip 與 viewport 無關 (5.070625ms)
+✔ sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享 (3.24125ms)
+✔ Node 合法 constructor ID 與非 slot component 走 own-property override (10.831375ms)
+✔ Node safe-area 精確邊界／integer 非 grid 值不 clamp (2.465792ms)
+✔ browser API VM 合法 constructor ID 與非 slot component 走 own-property override (12.502291ms)
+✔ browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp (5.068625ms)
+✔ legacy component patch 保留 geometry；sanitizer 移除失效 component override (1.05175ms)
+✔ mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation (8.048584ms)
+✔ scale 0.8 drag/SE resize preview ephemeral，release 至多一次 (4.844625ms)
+✔ scale 1 drag/SE resize preview ephemeral，release 至多一次 (2.441541ms)
+✔ no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕 (10.5115ms)
+✔ SE resize 小於 minimum 原子拒絕；非 component / play 不啟動 (0.967875ms)
+✔ stale target 刪除不提交；切選取取消 preview (3.48525ms)
+✔ export 只移除 control 對應 style，canonical component 不作 chrome root (0.487416ms)
+✔ S4 managed attach 只建／關 owned target，navigation 失敗仍清理且不 spawn (203.305958ms)
+✔ S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (120.599709ms)
+✔ 正式 Moveable bundle/hash/metafile/license 與禁用 input 邊界 (14.474292ms)
+✔ portable 內嵌 vendor/license，無 CDN；generated editor script 可解析 (14.244083ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 517.803792

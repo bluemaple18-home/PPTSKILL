@@ -1,0 +1,20 @@
+{
+  "status": "built",
+  "archivePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/dist/PPTSKILL-0.1.0.zip",
+  "version": "0.1.0",
+  "sha256": "4aa7fa8a683b57b49a1d6a3ad2ea87b77f0312f1731b724abfb240d9ac47402c",
+  "manifest": {
+    "schemaVersion": "1.0",
+    "name": "PPTSKILL",
+    "version": "0.1.0",
+    "corePath": "core",
+    "adapters": [
+      "codex",
+      "claude-code",
+      "gemini"
+    ],
+    "requiresGit": false,
+    "profilePath": "~/.pptskill/profile.json",
+    "skillPath": "skill/pptskill/SKILL.md"
+  }
+}

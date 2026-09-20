@@ -1,0 +1,67 @@
+✔ 兩張代表頁從正式 planner truth 選出 Typical 與第三頁 Stress (12.247458ms)
+✔ 一張代表頁同時承擔 Typical 與 Stress，且重跑 byte-stable (1.686792ms)
+✔ skip sample 不建立人工等待，但不解除 full-deck QA (0.445417ms)
+✔ sample selection 不改 composition、rhythm、motion、background 或 generation units (1.353417ms)
+✔ legacy 無 planner signals 仍 deterministic；單頁 deck 收斂為一筆 both (0.179834ms)
+✔ installed plan-new 使用相同 Representative Sample contract (422.248708ms)
+✔ 完整 hard evidence 才 PASS，且 sample PASS 不解除 full-deck QA (1.758334ms)
+✔ NOT_RUN/UNKNOWN blocked 且不消耗 repair budget (0.191458ms)
+✔ 同一 issue 只允許兩次 bounded repair，第三次前 blocked (0.29825ms)
+✔ coverage、allowlist 與 history spoof fail loud (0.43275ms)
+✔ 拒絕繞過 Slice 1 的 single both 與 typical plus stress sample shape (0.44725ms)
+✔ installed qa-sample CLI 與 direct pure gate parity (667.56ms)
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (22824.756834ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (5.215875ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (1.001833ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (1.764791ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.045333ms)
+✔ sample content 或 composition 只使該頁失效 (0.901125ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.796458ms)
+✔ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (168005.519458ms)
+✔ trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在 (2.856208ms)
+✔ Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner (0.268917ms)
+✔ stale Owner identity 與 caller forged evidence fail loud (0.644709ms)
+✔ Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs (0.477166ms)
+✔ accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair (0.350833ms)
+✔ 單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget (79022.649167ms)
+✖ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (72894.98525ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4171.975959ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 26
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 483682.237208
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s4-full-deck-qa.test.mjs:86:1
+✖ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (72894.98525ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  1 !== 2
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-full-deck-qa.test.mjs:102:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4171.975959ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:26:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:23:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

@@ -1,0 +1,15 @@
+✔ mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation (4.810875ms)
+✔ scale 0.8 drag/SE resize preview ephemeral，release 至多一次 (2.166083ms)
+✔ scale 1 drag/SE resize preview ephemeral，release 至多一次 (1.286958ms)
+✔ no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕 (5.162167ms)
+✔ SE resize 小於 minimum 原子拒絕；非 component / play 不啟動 (0.909166ms)
+✔ stale target 刪除不提交；切選取取消 preview (1.464666ms)
+✔ export 只移除 control 對應 style，canonical component 不作 chrome root (0.37125ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.835208

@@ -1,0 +1,14 @@
+{
+  "status": "environment-interrupted",
+  "ownedRoot": "/private/tmp/aic-b-140e0eccb90844b0b8cef74a4e3da04c",
+  "supervisorExitCode": 2,
+  "reason": "NO_GO: resource observation unknown (scan limit)",
+  "cleanup": "owned root removed",
+  "pgq": {
+    "pass": 26,
+    "fail": 2,
+    "log": "pgq-browser.log"
+  },
+  "sourceChanged": false,
+  "decision": "保留26個PASS；相同來源、新owned profile只重驗2個失敗案例，不調高或關閉lifecycle限制。"
+}

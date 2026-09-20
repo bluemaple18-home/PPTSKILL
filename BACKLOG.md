@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** EDX-WP1-S1 COMPLETE — DEPENDENCY ADOPTION DECISION CLOSED；FORMAL EDITOR INTEGRATION NOT STARTED
+**Status:** EDX-WP1-S3 COMPLETE — INDEPENDENT REVIEW GO；S4 SINGLE-COMPONENT INTERACTION IN PROGRESS（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -878,6 +878,12 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 **EDX-WP1 Slice 2 closure：** legacy keyPoints deterministic backfill為stable IDs，role／point／component使用互斥element identity namespace；renderer、Node/browser editor、export/reopen與duplicate閉合同一target pair。第一條`edit-text` descriptor拒絕arbitrary payload，legacy patch只作adapter。Repair 1已移除operation path私設的slide ID長度上限，以deterministic slide-local allocator關閉合法long ID／hash suffix碰撞，並deep-freeze descriptor且以private immutable role allowlist執行。Independent re-review對candidate `6a76b03`給出 **GO**：focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser 16/16與fresh Chrome長ID export→reopen均PASS；ZIP 2,152,740 bytes，SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`。僅留non-blocking P2：公開descriptor snapshot可被本機mutation，但private enforcement無法被擴權。S2 COMPLETE；vendor install、geometry interaction與S3仍未開啟。
 
 **EDX-WP1 Slice 3 task：** `tasks/edx-wp1-s3-bounded-geometry-operation-path.md`。Current frontier只建立component-only optional geometry override與`move-element`／`resize-element` bounded operation path，閉環canonical 1600×900 absolute coordinates、sanitizer、renderer、Node/browser editor、export/reopen與geometry QA；同時使browser公開descriptor snapshot immutable。Moveable／Selecto仍不安裝，drag/resize UI、snap、selection/multi-select、history與AI bridge保持blocked，直到S3 independent review GO後另切vendor interaction card。
+
+**EDX-WP1 Slice 3 closure：** reviewed commit `51494b35e5462311d37d1411793bc14780483359`，closure `20b54ac64c99682a20c0af1a71ceb7b4fa6de406`；Independent Review GO，P0/P1 0，保留 manual geometry 抑制 motion transform 的 P2。主線 full regression 242/242、fresh browser geometry/export/reopen、ZIP lifecycle PASS；reviewer browser 僅核對已提交 evidence，未 fresh rerun。詳 `evidence/edx-wp1-s3/mainline-receipt.md`。
+
+**EDX-WP1 Slice 4 task：** `tasks/edx-wp1-s4-single-component-interaction.md`。從 S3 closure 建立相依分支，只採 Moveable `0.53.0` 做 single-component drag／SE resize、明示 legacy manual initialization、gesture→S3 operation、cancel/export/reopen。Selecto 不直接採用且不得進 bundle（容許 Moveable upstream 的 unused transitive chain，須 metafile 證據）；多選、snap、history、AI bridge 與 motion P2 修復不在本 Slice；不 merge／push／deploy。
+
+**EDX-WP1 Slice 4 candidate：** single-component Moveable drag／SE resize → S3 operation → export/reopen 已閉環；focused 25/25、compatibility 53/53、non-browser 225/225、fresh 雙 viewport pointer 與 static/normal geometry PASS。PGQ 28 unique cases 通過（首輪 browser lifecycle 中止 26/28，相同來源 bounded retry 3/3，含兩個受影響 case）；不是單輪28/28。ZIP 2,248,891 bytes、lifecycle PASS，SHA `4aa7fa8a683b57b49a1d6a3ad2ea87b77f0312f1731b724abfb240d9ac47402c`。Independent Review pending；S3 motion P2保留，不merge／push／deploy，不開S5。見 `evidence/edx-wp1-s4/mainline-receipt.md`。
 
 ## 10.1 八項 Owner 決策
 

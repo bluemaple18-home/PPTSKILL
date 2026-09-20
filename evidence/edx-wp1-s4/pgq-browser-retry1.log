@@ -1,0 +1,11 @@
+✔ trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在 (2.934334ms)
+✔ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (161481.8735ms)
+✔ 每張 canonical slide 的 required title 必須有 painted visibility (133981.70725ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 374335.46425

@@ -1,0 +1,298 @@
+{
+  "schemaVersion": "1.0",
+  "package": "moveable",
+  "version": "0.53.0",
+  "license": "MIT",
+  "registryIntegrity": "sha512-71jS9zIoQzMhnNvduhg4tUEdm23+fO/40FN7muVMbZvVwbTku2MIxxLhnU4qFvxI4oVxn75l79SbtgjuA+s7Pw==",
+  "licenseSha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+  "bundleSha256": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053",
+  "bundleBytes": 247646,
+  "gzipBytes": 80891,
+  "metafileSha256": "7baa17bb4fdf6147280e3ec8392d03d78de9bbd489f8b09bddfe0f385cc2e18d",
+  "attributionSha256": "0ca8b832ee207340ff0fa39c5de79086b9e072ec06f60f0da5a90a1627f56266",
+  "inputs": [
+    {
+      "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+      "sha256": "31758630daeb03a27663ee2e9061d9592097a4c8d7cbdcd3cf98d9ba022ce506",
+      "bytes": 1939
+    },
+    {
+      "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+      "sha256": "686d95120e5701f19758b425e513d06fb229712e50b8e718a0758e697e6b5408",
+      "bytes": 39101
+    },
+    {
+      "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+      "sha256": "c5d28f268eeef25de5e236f9ee9cf4cb2190e8509a6d54ac918a1eac7426282a",
+      "bytes": 11345
+    },
+    {
+      "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+      "sha256": "bf0189e9d2931dec791625e6fef231a713825cb82989291a6a283bbb69a3dbf6",
+      "bytes": 33024
+    },
+    {
+      "path": "node_modules/.pnpm/@egjs+agent@2.4.4/node_modules/@egjs/agent/dist/agent.esm.js",
+      "sha256": "d6e1aacd8222f0fc4dfb892f5042ca035fb4fb69103c2df81bc69bda10342b03",
+      "bytes": 10697
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js",
+      "sha256": "6970505daf038c51c6561bac11ddf1a7cdf0cf7b8a6c43269c96bb280df13531",
+      "bytes": 10177
+    },
+    {
+      "path": "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js",
+      "sha256": "c4098bf8486e5c79951b580a0e9278fa9ec67a63bdb51d61ec25cd205b6137d0",
+      "bytes": 7247
+    },
+    {
+      "path": "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js",
+      "sha256": "ffbcb921345113d56a765a1685aae5309e091ade8c9112cf442e07a7b3997388",
+      "bytes": 4485
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+      "sha256": "8f6e99993320faee6811cb0042fcad1bdbedd8c4acfe52bb5c6a29163da57750",
+      "bytes": 6527
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js",
+      "sha256": "3b40a5ab65225049491cb8d5345b9200eef543292726f5fe0eca836748f1ab08",
+      "bytes": 10044
+    },
+    {
+      "path": "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js",
+      "sha256": "97560c2c35364e152d29e4e489f6314492897befebd427deb21dbc67cd2aeaf6",
+      "bytes": 19291
+    },
+    {
+      "path": "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js",
+      "sha256": "d6ac62f94e54527df5fa89f35c2d625426ffddf90208a779186d7edbde66954e",
+      "bytes": 30866
+    },
+    {
+      "path": "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js",
+      "sha256": "102fd35845496211fd537704d894ca0e1a609bd25eaa52df6f81fe97cf8e0f78",
+      "bytes": 3758
+    },
+    {
+      "path": "node_modules/.pnpm/croact-css-styled@1.1.9/node_modules/croact-css-styled/dist/styled.esm.js",
+      "sha256": "77e8a017765dfc9fe7e676724da462508ebf71b279a46bf17a5265219e614edc",
+      "bytes": 5414
+    },
+    {
+      "path": "node_modules/.pnpm/croact-moveable@0.9.0_croact@1.0.4/node_modules/croact-moveable/dist/moveable.esm.js",
+      "sha256": "3198a0bccd601f2409ccefcf4d95497f3de7901d01144e9c5f3312b2fedf8455",
+      "bytes": 595739
+    },
+    {
+      "path": "node_modules/.pnpm/moveable@0.53.0/node_modules/moveable/dist/moveable.esm.js",
+      "sha256": "51076366d5e7efe4a49ff07bb8712ea2a8efbb6feb78d31c4a20cd9a4f8ce0c2",
+      "bytes": 7382
+    }
+  ],
+  "packages": [
+    {
+      "name": "framework-utils",
+      "version": "1.1.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@daybrush/utils",
+      "version": "1.13.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "07267d703fbfc8fbbd2586d0fef147303e0647bbc5e62d33f96ee8f23437fa59",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@egjs/list-differ",
+      "version": "1.0.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "bfecc97e4888896b7acf08534372baf25796b98c087ba5a424b46ee25adec871",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "croact",
+      "version": "1.0.4",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "dist/croact.esm.js notice + 標準 MIT permission",
+          "sha256": "9673b3ebd86b187d7ef6aea92162d6b4595c9c29e86c122fe62dddf4873a7136",
+          "source": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "sourceSha256": "bf0189e9d2931dec791625e6fef231a713825cb82989291a6a283bbb69a3dbf6"
+        }
+      ]
+    },
+    {
+      "name": "@egjs/agent",
+      "version": "2.4.4",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "fd3cd1d05b9e05d8310eeeaba997140b2fdd21f237ff3afe1d94bfa64b3b96ed",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/matrix",
+      "version": "1.1.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "css-to-mat",
+      "version": "1.1.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@egjs/children-differ",
+      "version": "1.0.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "bfecc97e4888896b7acf08534372baf25796b98c087ba5a424b46ee25adec871",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/event-emitter",
+      "version": "1.0.5",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/dragscroll",
+      "version": "1.4.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "overlap-area",
+      "version": "1.1.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "gesto",
+      "version": "1.19.4",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "css-styled",
+      "version": "1.0.8",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "官方 repository LICENSE（package 未附）",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "https://github.com/daybrush/css-styled/blob/51fb10e66da6c8e2ca3c121b614a54e527617f08/LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "croact-css-styled",
+      "version": "1.1.9",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "官方 repository LICENSE（package 未附）",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "https://github.com/daybrush/css-styled/blob/51fb10e66da6c8e2ca3c121b614a54e527617f08/LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "croact-moveable",
+      "version": "0.9.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "moveable",
+      "version": "0.53.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    }
+  ],
+  "build": {
+    "tool": "esbuild",
+    "version": "0.28.2",
+    "platform": "browser",
+    "format": "iife",
+    "target": "es2022",
+    "minified": true
+  }
+}

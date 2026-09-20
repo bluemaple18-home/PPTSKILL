@@ -1,0 +1,8 @@
+{
+  "bundleBytes": 247646,
+  "gzipBytes": 80891,
+  "bundleSha256": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053",
+  "inputs": 16,
+  "packages": 16,
+  "selectoInputs": 0
+}

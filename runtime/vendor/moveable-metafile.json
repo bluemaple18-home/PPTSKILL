@@ -1,0 +1,334 @@
+{
+  "inputs": {
+    "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js": {
+      "bytes": 1939,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js": {
+      "bytes": 39101,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js": {
+      "bytes": 11345,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js": {
+      "bytes": 33024,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/list-differ"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@egjs+agent@2.4.4/node_modules/@egjs/agent/dist/agent.esm.js": {
+      "bytes": 10697,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js": {
+      "bytes": 10177,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js": {
+      "bytes": 7247,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/matrix"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js": {
+      "bytes": 4485,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/list-differ"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js": {
+      "bytes": 6527,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js": {
+      "bytes": 10044,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js": {
+      "bytes": 19291,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js": {
+      "bytes": 30866,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js": {
+      "bytes": 3758,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/croact-css-styled@1.1.9/node_modules/croact-css-styled/dist/styled.esm.js": {
+      "bytes": 5414,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js",
+          "kind": "import-statement",
+          "original": "css-styled"
+        },
+        {
+          "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "kind": "import-statement",
+          "original": "croact"
+        },
+        {
+          "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "framework-utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/croact-moveable@0.9.0_croact@1.0.4/node_modules/croact-moveable/dist/moveable.esm.js": {
+      "bytes": 595739,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@egjs+agent@2.4.4/node_modules/@egjs/agent/dist/agent.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/agent"
+        },
+        {
+          "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "framework-utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/matrix"
+        },
+        {
+          "path": "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js",
+          "kind": "import-statement",
+          "original": "css-to-mat"
+        },
+        {
+          "path": "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/children-differ"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/dragscroll"
+        },
+        {
+          "path": "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js",
+          "kind": "import-statement",
+          "original": "overlap-area"
+        },
+        {
+          "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "kind": "import-statement",
+          "original": "croact"
+        },
+        {
+          "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "kind": "import-statement",
+          "original": "croact"
+        },
+        {
+          "path": "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js",
+          "kind": "import-statement",
+          "original": "gesto"
+        },
+        {
+          "path": "node_modules/.pnpm/croact-css-styled@1.1.9/node_modules/croact-css-styled/dist/styled.esm.js",
+          "kind": "import-statement",
+          "original": "croact-css-styled"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/list-differ"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/moveable@0.53.0/node_modules/moveable/dist/moveable.esm.js": {
+      "bytes": 7382,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "framework-utils"
+        },
+        {
+          "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "kind": "import-statement",
+          "original": "croact"
+        },
+        {
+          "path": "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js",
+          "kind": "import-statement",
+          "original": "croact"
+        },
+        {
+          "path": "node_modules/.pnpm/croact-moveable@0.9.0_croact@1.0.4/node_modules/croact-moveable/dist/moveable.esm.js",
+          "kind": "import-statement",
+          "original": "croact-moveable"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "moveable-0.53.0.iife.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "node_modules/.pnpm/moveable@0.53.0/node_modules/moveable/dist/moveable.esm.js",
+      "inputs": {
+        "node_modules/.pnpm/moveable@0.53.0/node_modules/moveable/dist/moveable.esm.js": {
+          "bytesInOutput": 2960
+        },
+        "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js": {
+          "bytesInOutput": 725
+        },
+        "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js": {
+          "bytesInOutput": 6651
+        },
+        "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js": {
+          "bytesInOutput": 2580
+        },
+        "node_modules/.pnpm/croact@1.0.4/node_modules/croact/dist/croact.esm.js": {
+          "bytesInOutput": 10699
+        },
+        "node_modules/.pnpm/@egjs+agent@2.4.4/node_modules/@egjs/agent/dist/agent.esm.js": {
+          "bytesInOutput": 4408
+        },
+        "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js": {
+          "bytesInOutput": 3637
+        },
+        "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js": {
+          "bytesInOutput": 1953
+        },
+        "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js": {
+          "bytesInOutput": 588
+        },
+        "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js": {
+          "bytesInOutput": 1347
+        },
+        "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js": {
+          "bytesInOutput": 4200
+        },
+        "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js": {
+          "bytesInOutput": 4178
+        },
+        "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js": {
+          "bytesInOutput": 13246
+        },
+        "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js": {
+          "bytesInOutput": 1432
+        },
+        "node_modules/.pnpm/croact-css-styled@1.1.9/node_modules/croact-css-styled/dist/styled.esm.js": {
+          "bytesInOutput": 923
+        },
+        "node_modules/.pnpm/croact-moveable@0.9.0_croact@1.0.4/node_modules/croact-moveable/dist/moveable.esm.js": {
+          "bytesInOutput": 187646
+        }
+      },
+      "bytes": 247646
+    }
+  }
+}

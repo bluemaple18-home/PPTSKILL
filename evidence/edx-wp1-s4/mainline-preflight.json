@@ -1,0 +1,22 @@
+{
+  "objective": "S4 單一 component Moveable interaction",
+  "base": "20b54ac64c99682a20c0af1a71ceb7b4fa6de406",
+  "scope": "tasks/edx-wp1-s4-single-component-interaction.md",
+  "decision": {
+    "branch": "codex/edx-wp1-s4",
+    "stacked": true,
+    "merge": false,
+    "worker": "gpt-6-astra high",
+    "context": "clean",
+    "promptBytes": 2214,
+    "contextGate": "PASS",
+    "workspace": "shared sequential single code writer",
+    "review": "candidate 後待獨立 review"
+  },
+  "evidenceRefs": [
+    "../edx-wp1-s3/mainline-receipt.md",
+    "../../research/edx/wp1-editor-core-dependency-spike.md",
+    "preexisting-untracked.sha256"
+  ],
+  "status": "WORKER IMPLEMENTING; MAINLINE PREPARING ACCEPTANCE"
+}
