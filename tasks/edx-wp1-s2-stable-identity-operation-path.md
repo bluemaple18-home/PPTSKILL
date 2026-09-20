@@ -1,6 +1,6 @@
 # EDX-WP1-S2 — Stable Element Identity + Bounded Operation Path
 
-**Status:** READY FOR INDEPENDENT RE-REVIEW
+**Status:** COMPLETE — INDEPENDENT REVIEW GO
 **traces_to:** `EDX-20260914 10.1 Decisions 1/7/8`, `EDX-20260914 10.4 Unified Operation Registry`, `EDX-20260914 10.5 Shared schema / portability rules`
 
 ## Objective
@@ -41,9 +41,9 @@ Bundle / portable cost：本 Slice 不新增 dependency；僅 schema metadata、
 ## Blocking edges / checkpoint
 
 - 已滿足：EDX-WP1-S1 dependency decision；Moveable與Selecto GO / ADAPT，Floating UI REJECT。
-- Current frontier：本 Slice。
-- Blocked until GO：dependency install、Moveable drag/resize/snap、Selecto marquee、多選、geometry overrides、history、正式 AI bridge。
-- Checkpoint：本 Slice independent review GO後，才切 geometry operation Slice；不得直接接 vendor UI。
+- Current frontier：本 Slice 已完成；後續 Slice 尚未開啟。
+- 仍 blocked：dependency install、Moveable drag/resize/snap、Selecto marquee、多選、geometry overrides、history、正式 AI bridge，直到後續 implementation card 明確授權。
+- Checkpoint：S2 independent review 已 GO；只代表 stable identity＋bounded `edit-text` operation path 可作後續基線，不自動開 S3 或直接接 vendor UI。
 
 ## Likely files
 
@@ -84,3 +84,11 @@ Bundle / portable cost：本 Slice 不新增 dependency；僅 schema metadata、
 - Descriptor metadata已deep-freeze；Node/browser enforcement另持有private immutable role allowlist，外部mutation不能擴張operation authority。
 - Focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser compatibility serial 16/16 PASS。Fresh editor browser export→offline reopen PASS；console／pageerror／network／HTTP全0，managed lifecycle exit 0。
 - Fresh ZIP install/smoke/uninstall PASS；2,152,740 bytes；SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`。Syntax與`git diff --check` PASS。
+
+## Independent re-review closure — 2026-09-20
+
+- Reviewer 對 candidate `6a76b03cd14dcac71a9672eb634f55561e00c623` 給出 **GO**。
+- Focused 10/10、targeted 29/29、non-browser 210/210、PGQ browser compatibility 16/16 PASS；fresh Chrome 長 ID operation → export → offline reopen PASS，console／pageerror／network／HTTP 全 0。
+- Fresh ZIP：2,152,740 bytes；SHA-256 `f0dff328f707889deac71f8616ab4d06cdc62ade79d7781769756cc40656f2c0`。
+- Non-blocking P2：browser 公開的 descriptor snapshot 可被本機修改，但 enforcement 使用 private immutable authority，無法擴張允許的 operation role／權限；不阻擋 S2 closure。
+- Scope 無擴張；未安裝 Moveable／Selecto，未開始 geometry interaction、history、AI bridge 或後續 Slice。
