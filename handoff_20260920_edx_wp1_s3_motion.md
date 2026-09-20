@@ -11,3 +11,7 @@ manual geometry保留motion且不破壞canonical contract。branch `codex/edx-wp
 
 ## Limits／fork
 S3/S4/S4-PERF原GO保持；S3 motion P2尚未正式關閉；S5 pending。未merge/push/deploy。4原untracked不動，Worker已關閉。未取得完整browser evidence前不交外部review verdict、不自動開／傳review task。
+
+## Recovery入口核對
+
+本輪唯讀確認helper僅有run CLI，沒有跨程序recovery；ownership存原程序記憶體。因此未重試已知會拒絕的cleanup，未更改ai-core或隔離標記。具體控制面修補提案：`tasks/edx-wp1-s3-motion-environment-recovery-proposal.md`，待Owner明示授權擴到ai-core。
