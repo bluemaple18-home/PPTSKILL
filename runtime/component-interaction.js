@@ -2,13 +2,15 @@ import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.j
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
 export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {} }) {
-  let enabled = false, target = null, gesture = null;
+  let enabled = false, target = null, gesture = null, selectedToken = null;
   const cancel = () => { gesture = null; restore(); };
   const select = next => {
     cancel();
-    target = enabled && next && readTarget(next) ? { ...next } : null;
+    const current = enabled && next && readTarget(next);
+    target = current ? { ...next } : null;
+    selectedToken = current?.token ?? null;
   };
-  const setMode = on => { cancel(); enabled = Boolean(on); target = null; };
+  const setMode = on => { cancel(); enabled = Boolean(on); target = null; selectedToken = null; };
   const initialize = () => {
     const current = target && readTarget(target);
     if (!enabled || !current || current.rect) return false;
@@ -24,6 +26,22 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
   return {
     setMode, select, initialize, cancel,
     getState: () => ({ enabled, target: target && { ...target }, gesturing: Boolean(gesture) }),
+    // 回傳是否已處理按鍵；越界拒絕與gesture互斥亦須阻止外層翻頁。
+    nudge(key, shift = false) {
+      const delta = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[key];
+      if (!enabled || !target || !Array.isArray(delta)) return false;
+      const current = readTarget(target);
+      if (!current?.rect || current.token !== selectedToken) return false;
+      if (gesture) return true;
+      const step = shift ? 10 : 1;
+      try {
+        executeOperation({ operation: 'move-element', target: { ...target },
+          value: { x: current.rect.x + delta[0] * step, y: current.rect.y + delta[1] * step } });
+        notify('手動版面已更新');
+      } catch (error) { notify('未套用：' + error.message); }
+      finally { restore(); }
+      return true;
+    },
     begin(kind, point, scale) {
       cancel();
       const current = target && readTarget(target);
@@ -79,7 +97,7 @@ export function cleanupComponentInteractionClone(root) {
 // DOM 與 vendor 只負責呈現；pointer 座標來自 Moveable 原始 input event。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
   project, notify, setTextMode, selectSlide }) {
-  let moveable = null, overlay = null, observer = null;
+  let moveable = null, overlay = null, observer = null, composing = false;
   const button = document.querySelector('[data-action="layout"]');
   const initializeButton = document.querySelector('[data-action="initialize-layout"]');
   if (!button || !initializeButton) return null;
@@ -148,11 +166,11 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     current.node.setAttribute('data-editor-selected', 'true');
     selectSlide(target.slideId);
     initializeButton.hidden = Boolean(current.rect);
-    notify(current.rect ? '拖曳元件或右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
+    notify(current.rect ? '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
     bindVendor();
   };
   const setMode = on => {
-    clearSelection(); interaction.setMode(on);
+    composing = false; clearSelection(); interaction.setMode(on);
     if (on) setTextMode(false);
     document.body.dataset.editorMode = on ? 'layout' : 'play';
     button.textContent = on ? '完成版面' : '編輯版面'; button.setAttribute('aria-pressed', String(Boolean(on)));
@@ -174,25 +192,42 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     }
     clearSelection();
   };
+  const inputOwnsKey = node => {
+    if (node?.closest?.('input,textarea,select,[role="textbox"],.pptskill-editor,[data-pptskill-editor-chrome]')) return true;
+    const editable = node?.closest?.('[contenteditable]');
+    return Boolean(node?.isContentEditable || (editable && editable.getAttribute('contenteditable') !== 'false'));
+  };
+  const compositionStart = () => { composing = true; };
+  const compositionEnd = () => { composing = false; };
   const keydown = event => {
     if (interaction.getState().enabled && event.key === 'Escape') {
-      event.preventDefault(); event.stopImmediatePropagation(); cancel(); clearSelection();
+      event.preventDefault(); event.stopImmediatePropagation(); cancel(); clearSelection(); return;
+    }
+    if (composing || event.isComposing || event.keyCode === 229 || event.ctrlKey || event.metaKey || event.altKey
+      || inputOwnsKey(event.target) || inputOwnsKey(document.activeElement)) return;
+    if (interaction.nudge(event.key, event.shiftKey)) {
+      event.preventDefault(); event.stopImmediatePropagation(); moveable?.updateRect();
     }
   };
   const pointerCancel = () => { if (interaction.getState().enabled) cancel(); };
   const viewportChanged = () => { if (interaction.getState().enabled) cancel(); };
   document.addEventListener('click', click);
   document.addEventListener('keydown', keydown, true);
+  document.addEventListener('compositionstart', compositionStart, true);
+  document.addEventListener('compositionend', compositionEnd, true);
   document.addEventListener('pointercancel', pointerCancel, true);
-  window.addEventListener('blur', pointerCancel);
+  const blur = () => { composing = false; pointerCancel(); };
+  window.addEventListener('blur', blur);
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
   return { setMode, clearSelection, cancel, getState: interaction.getState,
     destroy() {
       setMode(false);
       document.removeEventListener('click', click); document.removeEventListener('keydown', keydown, true);
+      document.removeEventListener('compositionstart', compositionStart, true);
+      document.removeEventListener('compositionend', compositionEnd, true);
       document.removeEventListener('pointercancel', pointerCancel, true);
-      window.removeEventListener('blur', pointerCancel); window.removeEventListener('resize', viewportChanged);
+      window.removeEventListener('blur', blur); window.removeEventListener('resize', viewportChanged);
       window.removeEventListener('scroll', viewportChanged, true);
     },
   };

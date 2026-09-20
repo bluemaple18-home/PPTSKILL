@@ -1,0 +1,15 @@
+✔ S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y (5.905625ms)
+✔ S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp (2.898792ms)
+✔ S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏 (13.542125ms)
+✔ S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理 (8.360625ms)
+✔ S5 mounted no mode／selection／geometry／deleted 與原子 bounds (5.523916ms)
+✔ S5 mounted drag 中按鍵不取消／不提交 gesture (4.117083ms)
+✔ S5 mounted resize 中按鍵不取消／不提交 gesture (3.4585ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 173.048583

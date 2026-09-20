@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO；S5 KEYBOARD NUDGE IN PROGRESS（stacked branch，尚未整合 main）
+**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO；S5 KEYBOARD NUDGE IMPLEMENTED / BROWSER BLOCKED（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 

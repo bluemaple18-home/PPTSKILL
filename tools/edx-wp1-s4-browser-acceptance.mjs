@@ -1,3 +1,4 @@
+import { runKeyboardBrowserCases } from './edx-wp1-s5-browser-cases.mjs';
 import { runMotionBrowserCases } from './edx-wp1-s3-motion-browser-cases.mjs';
 import assert from 'node:assert/strict';
 import { runPerfBrowserCases } from './edx-wp1-s4-perf-browser-cases.mjs';
@@ -164,6 +165,7 @@ try {
       assert.equal(await evaluate('document.querySelectorAll(".moveable-control-box").length'), 0);
       assert.equal(await evaluate('document.querySelector("[data-edit-kind=text]").contentEditable'), 'true');
       run.checks.push('文字模式互斥');
+      if (process.argv.includes('--keyboard-regression')) await runKeyboardBrowserCases({ cdp, evaluate, navigate, sourcePath, selector, run, click, startGesture, endGesture, assertExport, assertRect });
       if (process.argv.includes('--motion-regression')) await runMotionBrowserCases({ cdp, evaluate, navigate, outputDir, width, selector, run, click, startGesture, endGesture });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);

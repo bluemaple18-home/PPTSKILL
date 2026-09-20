@@ -1,0 +1,25 @@
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s5-keyboard.test.mjs:6
+import { mountedRuntime, fixture, target, box, geometry, request } from '../tools/edx-wp1-s4-perf-mounted.mjs';
+         ^^^^^^^^^^^^^^
+SyntaxError: The requested module '../tools/edx-wp1-s4-perf-mounted.mjs' does not provide an export named 'mountedRuntime'
+    at #asyncInstantiate (node:internal/modules/esm/module_job:326:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:429:5)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:639:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v25.9.0
+✖ tests/edx-wp1-s5-keyboard.test.mjs (92.156583ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 98.223166
+
+✖ failing tests:
+
+test at tests/edx-wp1-s5-keyboard.test.mjs:1:1
+✖ tests/edx-wp1-s5-keyboard.test.mjs (92.156583ms)
+  'test failed'

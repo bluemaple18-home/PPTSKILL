@@ -1,9 +1,9 @@
 # EDX-WP1-S5 — 單一 component 鍵盤微調
 
-Status: IN PROGRESS
+Status: IMPLEMENTED — BROWSER ACCEPTANCE BLOCKED
 Base: `d2bd314`（S3-MOTION closure）；branch `codex/edx-wp1-s5`。
 traces_to: BACKLOG.md §10.2 donor arrow nudge、§10.3 WP1 guided direct manipulation、§10.4 shared Operation Registry、§10.5 portability。
-類型：standard bounded；一名clean native Worker，shared sequential writer；Mainline负责control與fresh browser/ZIP，Owner自行帶候選做獨立review。沿既有Astra替代授權，不更動主對話模型。
+類型：standard bounded；一名clean native Worker，shared sequential writer；Mainline負責control與fresh browser/ZIP，Owner自行帶候選做獨立review。沿既有Astra替代授權，不更動主對話模型。
 
 ## 目標／frontier
 
@@ -23,7 +23,7 @@ CodeGraph query未命中interaction，Mainline已bounded rg核對component-inter
 
 ## 驗收／證據
 
-- public/mounted keyboard RED→GREEN；方向/Shift/repeat、guard矩陣、bounds、deleted target、gesture互斥、operation次數与portable roundtrip。
+- public/mounted keyboard RED→GREEN；方向/Shift/repeat、guard矩陣、bounds、deleted target、gesture互斥、operation次數與portable roundtrip。
 - focused S3/S4/perf/motion/S5，non-browser full具名cases；source SHA、diff check。Worker只跑focused與記exact command；Mainline接手全套，避免重複。
 - 提供attach-only browser工具，沿既有S4 harness新增--keyboard-regression或等價bounded cases；真Input.dispatchKeyEvent、雙viewport1px/10px相同canonical delta、bounds、輸入/IME/修飾鍵/gestureguards、非layout不nudge、export/offline reopen；console/page/network/HTTP/remote=0，finally僅清自己的target。
 - Mainline fresh browser按suite順序執行，禁止PGQ與motion共用browser並行；freeze後fresh ZIP/lifecycle及source複驗。未改geometry/motion/QA authority時沿S3-MOTION已review的PGQ28 unique作繼承、不冒稱本卡fresh；若觸及那些seam再重判。
@@ -32,3 +32,7 @@ CodeGraph query未命中interaction，Mainline已bounded rg核對component-inter
 
 Worker可改runtime/component-interaction.js、必要keyboard協調（須先證明）與tests/tools對應檔，evidence/edx-wp1-s5/worker-*；不改task/backlog、dist或原四untracked，不commit、不開agent。主線期間不平行寫repo，只唯讀準備驗收，Worker freeze後接手。
 不用新的可見task、不代傳review、不merge/push/deploy。兩次同類無進展附證據停回主線。完成停獨立review candidate，未達驗收不得宣稱GO。
+
+## 本輪 checkpoint
+
+Mainline 接手完成實作；focused 70/70、non-browser 259/259、ZIP lifecycle PASS。受管 browser 啟動因 scan limit 退出2，未完成 attach，故無 fresh browser 結論、尚非 review candidate。詳見 `evidence/edx-wp1-s5/mainline-receipt.md`。deck.js 翻頁屬另一 legacy renderer；本卡僅驗證 handled key 攔截，不宣稱 full-deck 存在該翻頁功能。
