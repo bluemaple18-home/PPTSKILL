@@ -889,7 +889,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **S4 performance follow-up：** `tasks/edx-wp1-s4-perf-bounded-revision.md`，分支 `codex/edx-wp1-s4-perf`。只移除pointer stale check的whole-deck serialization，保持semantic mutation取消、preview/export/reopen契約；不擴新editor功能。
 
-**S4-PERF candidate：** pointer resolver改ephemeral revision，1/6/12MiB mounted payload reads/serialization=0；focused45、完整non-browser245具名案例、fresh雙viewport真pointer/stale/export/reopen與ZIP lifecycle PASS。PGQ只繼承S4 GO，無本卡fresh宣稱。新ZIP SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`。Independent Review pending；motion P2保留。
+**S4-PERF CLOSED：** pointer resolver改ephemeral revision，1/6/12MiB mounted payload reads/serialization=0；focused45、完整non-browser245具名案例、fresh雙viewport真pointer/stale/export/reopen與ZIP lifecycle PASS。PGQ只繼承S4 GO，無本卡fresh宣稱。新ZIP SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`。Independent Review GO（reviewed `5191e6b`，P0/P1=0、0 new P2）；motion P2保留。詳見 `evidence/edx-wp1-s4-perf/independent-review.md`。
 
 ## 10.1 八項 Owner 決策
 

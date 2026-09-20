@@ -1,6 +1,6 @@
 # EDX-WP1-S4-PERF — pointer revision 成本界定
 
-Status: REVIEW CANDIDATE — Mainline 驗收完成；Independent Review pending
+Status: CLOSED — Independent Review GO；reviewed SHA `5191e6b0e17d5f4803667927791d2952f2aa42b8`
 類型：standard bounded performance follow-up；review candidate後停，不開S5。
 Base: S4 GO closure `5ae8bb8`；branch `codex/edx-wp1-s4-perf`。
 traces_to: tasks/edx-wp1-s4-single-component-interaction.md 操作契約4–7；evidence/edx-wp1-s4/independent-review.md 新P2。
@@ -44,3 +44,7 @@ Mounted async asset×readonly export RED顯示export換spec object時原captured
 - 新ZIP 2,249,243 bytes，SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`；lifecycle/smoke PASS，Gemini CLI缺席仍為host partial。
 - 8檔source SHA前後相同，owned browser supervisor exit0/profile已清，4既有untracked hash不變。PGQ-WP4僅繼承S4 GO evidence，不冒稱fresh。
 - 本卡取代已完成：正式pointer resolver無whole-spec fingerprint fallback；runtime以ephemeral revision讀取，cold commit/export原有完整驗證保留。獨立review未執行，S3 motion P2仍保留；不merge/push/deploy、不開S5。
+
+## 獨立 review closure
+
+Owner回傳 Independent Review GO；P0/P1=0、P2=0 new＋1 inherited、P3=0。完整 verdict 與 fresh／inherited 邊界見 `evidence/edx-wp1-s4-perf/independent-review.md`。以上主線結果中的「獨立review未執行」為candidate時點紀錄，現由本節更新。S4 performance P2已解決，S3 motion P2保留；reviewed code／ZIP不改，不merge/push/deploy、不開S5。

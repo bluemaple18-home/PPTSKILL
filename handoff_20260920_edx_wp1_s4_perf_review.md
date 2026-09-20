@@ -2,7 +2,7 @@
 
 ## Root question／current state
 
-pointer stale guard能否避免whole-DeckSpec serialization，同時保留semantic mutation、readonly/export、cancel與portable契約？本輪已完成Mainline驗收，停在REVIEW CANDIDATE，Independent Review pending。
+pointer stale guard能否避免whole-DeckSpec serialization，同時保留semantic mutation、readonly/export、cancel與portable契約？本輪已完成Mainline驗收與Independent Review GO，S4-PERF正式關閉。Reviewed SHA：`5191e6b0e17d5f4803667927791d2952f2aa42b8`。
 
 Branch `codex/edx-wp1-s4-perf`，review base `5ae8bb806cef7a3b11916daabb4b7b8bcc3ebece`（S4 GO closure）。本文件首次加入的commit為本輪candidate；review前先鎖SHA。S4 reviewed code `05295d3` 已獨立GO，原新增P2在本卡處理，S3 motion P2保留。
 
@@ -31,8 +31,8 @@ node tools/edx-wp1-s4-perf-probe.mjs <new-evidence-dir>/mounted.json
 
 ## Blocker／waiting conditions
 
-無未解實作blocker；等待獨立review。來源與ZIP是新candidate，不使用S4 GO冒充本卡GO。仍存在的cold commit/export資料成本不在hot-path改善宣稱內。
+無未解實作blocker；Owner已回傳獨立review GO，P0/P1=0、0 new P2、1 inherited P2。來源與ZIP是新candidate，不使用S4 GO冒充本卡GO。仍存在的cold commit/export資料成本不在hot-path改善宣稱內。
 
 ## Next step／limits
 
-Owner交獨立review，回報reviewed SHA、severity與可重現證據；Mainline再裁決follow-up closure。無merge/push/deploy，不開S5。owned browser清理PASS，4原untracked hashes保持。只可唯讀review，不修改candidate；不得順手修S3 motion。
+獨立review完整紀錄見 `evidence/edx-wp1-s4-perf/independent-review.md`；fresh source/focused/perf/non-browser/ZIP驗證通過，browser僅核對已提交evidence，PGQ僅繼承S4 GO。Mainline裁決closure，下一Slice尚未開；等待後續整合或切卡決策。無merge/push/deploy，不開S5。owned browser清理PASS，4原untracked hashes保持。只可唯讀review，不修改candidate；不得順手修S3 motion。
