@@ -1,0 +1,1 @@
+PASS: 2 scales × drag/resize；raw pointer delta仍為7，未採用假設snap=8；keyboard仍1px。

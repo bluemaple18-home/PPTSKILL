@@ -1,0 +1,102 @@
+{
+  "status": "pass",
+  "boundary": "first-party public controller probe；額外snap欄位是假設輸入，非真vendor/browser evidence",
+  "results": [
+    {
+      "scale": 0.8,
+      "kind": "drag",
+      "rawCanonicalDelta": 7,
+      "hypotheticalVendorSnapDelta": 8,
+      "committed": {
+        "x": 807,
+        "y": 287,
+        "width": 640,
+        "height": 480
+      },
+      "operation": {
+        "operation": "move-element",
+        "target": {
+          "slideId": "s",
+          "elementId": "component-c"
+        },
+        "value": {
+          "x": 807,
+          "y": 287
+        }
+      },
+      "singleCommit": true
+    },
+    {
+      "scale": 0.8,
+      "kind": "resize",
+      "rawCanonicalDelta": 7,
+      "hypotheticalVendorSnapDelta": 8,
+      "committed": {
+        "x": 807,
+        "y": 287,
+        "width": 647,
+        "height": 487
+      },
+      "operation": {
+        "operation": "resize-element",
+        "target": {
+          "slideId": "s",
+          "elementId": "component-c"
+        },
+        "value": {
+          "width": 647,
+          "height": 487
+        }
+      },
+      "singleCommit": true
+    },
+    {
+      "scale": 1,
+      "kind": "drag",
+      "rawCanonicalDelta": 7,
+      "hypotheticalVendorSnapDelta": 8,
+      "committed": {
+        "x": 807,
+        "y": 287,
+        "width": 640,
+        "height": 480
+      },
+      "operation": {
+        "operation": "move-element",
+        "target": {
+          "slideId": "s",
+          "elementId": "component-c"
+        },
+        "value": {
+          "x": 807,
+          "y": 287
+        }
+      },
+      "singleCommit": true
+    },
+    {
+      "scale": 1,
+      "kind": "resize",
+      "rawCanonicalDelta": 7,
+      "hypotheticalVendorSnapDelta": 8,
+      "committed": {
+        "x": 807,
+        "y": 287,
+        "width": 647,
+        "height": 487
+      },
+      "operation": {
+        "operation": "resize-element",
+        "target": {
+          "slideId": "s",
+          "elementId": "component-c"
+        },
+        "value": {
+          "width": 647,
+          "height": 487
+        }
+      },
+      "singleCommit": true
+    }
+  ]
+}

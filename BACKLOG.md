@@ -977,3 +977,5 @@ PPTSKILL 可比 donor 更乾淨：canonical DeckSpec 與 live animation layer �
 EDX 不能建立第二 editor architecture、第二 renderer、第二 export、中央 backend、雲端 collaboration、專業 timeline 或 AI API 直塞 deck.html。Optional AI bridge 之後若做，必須可缺席且不能拿 token/key 寫進 HTML。
 
 **EDX-WP1 S5 closure：** `dd747008d53584c5fed8ae2545ea4268c954ffa1` Independent targeted re-review GO；P0/P1/P2/P3全0，Escape-guard P2關閉。證據見 `evidence/edx-wp1-s5/independent-review.md`；reviewed code/ZIP未改，未整合main，下一Slice尚未開。
+
+**EDX-WP1 S6 snap spike：** `tasks/edx-wp1-s6-snap-spike.md` COMPLETE；既有Moveable已含Snappable，conditional ADAPT。Raw pointer authority會忽略vendor snap；grid origin／矩陣／resize語意需fixture-only真browser映射驗證後才實作。見 `evidence/edx-wp1-s6/decision.md`；production snap pending，runtime/ZIP未改。
