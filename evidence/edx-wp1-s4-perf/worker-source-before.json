@@ -1,0 +1,13 @@
+{
+  "head": "5ae8bb806cef7a3b11916daabb4b7b8bcc3ebece",
+  "sourceSha256": {
+    "runtime/component-interaction.js": "cf08b4c437b8dddb37df7afd81213c6ad1d481551762a1b83fcdd92e5aa2de5b",
+    "runtime/deck-editor.js": "0af4a9e5d74cf14338ef72302dd17aa358ef15deb16fcf727d4ac95e61a868f8",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "4ff47031b41a1de146ce52936e224605128134bb5480dc537caf33de14d11365",
+    "tests/edx-wp1-s4-perf.test.mjs": "7bcf5fa36fafd1178a2f6b6c62420c50dfb57c7c87c10bf33ee29a16185c8a81",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "8e4c7e32831b8bfda51d08cf678f224afaab741dbed4752ad37b1375e4b413a4",
+    "tools/edx-wp1-s4-perf-browser-cases.mjs": "0778cef2b23de7b5b12245ad22655da2bd4e96c03d62139ab7e4f25965cb3c03",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "091e5d7f7ba1e33ae7f4dcdb44ad0a7ed9db04a3d8458d5af2c0912eea0c5136",
+    "tools/edx-wp1-s4-perf-probe.mjs": "f3ddec932ba33343ae57997e3da1f7f933f4891a2f6eb52321ac76f018493fdf"
+  }
+}

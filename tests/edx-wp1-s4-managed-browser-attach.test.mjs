@@ -7,12 +7,12 @@ import { promisify } from 'node:util';
 import test from 'node:test';
 
 const run = promisify(execFile);
-test('S4 managed attach 只建／關 owned target，navigation 失敗仍清理且不 spawn', async () => {
+for (const flags of [[], ['--perf-regression']]) test('S4 managed attach ' + flags.join(' ') + ' 只建／關 owned target，navigation 失敗仍清理且不 spawn', async () => {
   const dir = await mkdtemp(resolve(tmpdir(), 's3-attach-probe-'));
   try {
     const port = resolve(dir, 'DevToolsActivePort'), log = resolve(dir, 'log.jsonl');
     await writeFile(port, '12345\n/devtools/browser/foreign-browser\n');
-    await assert.rejects(run(process.execPath, ['--import', resolve('tests/helpers/edx-wp1-s3-managed-browser-probe.mjs'), 'tools/edx-wp1-s4-browser-acceptance.mjs', resolve(dir, 'browser')], {
+    await assert.rejects(run(process.execPath, ['--import', resolve('tests/helpers/edx-wp1-s3-managed-browser-probe.mjs'), 'tools/edx-wp1-s4-browser-acceptance.mjs', resolve(dir, 'browser'), ...flags], {
       env: { ...process.env, PPTSKILL_DEVTOOLS_ACTIVE_PORT: port, S3_PROBE_LOG: log }, timeout: 15000,
     }), error => error.code === 1);
     const receipt = JSON.parse(await readFile(resolve(dir, 'browser/acceptance.json'), 'utf8'));

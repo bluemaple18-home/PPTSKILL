@@ -887,6 +887,10 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **EDX-WP1 Slice 4 closure：** `05295d3853364157a6da0ae30459eebc26bf11c5` Independent Review GO；P0/P1=0。保留新P2（pointer update全deck stringify成本）與S3 motion P2。下一步僅bounded performance follow-up，不開多選/history。見 `evidence/edx-wp1-s4/independent-review.md`。
 
+**S4 performance follow-up：** `tasks/edx-wp1-s4-perf-bounded-revision.md`，分支 `codex/edx-wp1-s4-perf`。只移除pointer stale check的whole-deck serialization，保持semantic mutation取消、preview/export/reopen契約；不擴新editor功能。
+
+**S4-PERF candidate：** pointer resolver改ephemeral revision，1/6/12MiB mounted payload reads/serialization=0；focused45、完整non-browser245具名案例、fresh雙viewport真pointer/stale/export/reopen與ZIP lifecycle PASS。PGQ只繼承S4 GO，無本卡fresh宣稱。新ZIP SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`。Independent Review pending；motion P2保留。
+
 ## 10.1 八項 Owner 決策
 
 1. **Guided Direct Manipulation**：可 drag/resize/snap、keyboard nudge；不是 Canva 式無治理自由畫布；geometry hard gate 仍有效。

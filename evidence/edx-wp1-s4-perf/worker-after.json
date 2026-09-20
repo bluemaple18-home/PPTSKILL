@@ -1,0 +1,50 @@
+{
+  "status": "pass",
+  "scope": "generated browser runtime mounted update+preview；DOM/vendor double，非真 browser/frame timing",
+  "gate": "payloadReads=serializations=wholeSpecSerializations=0；release committed once",
+  "node": "v25.9.0",
+  "sourceSha256": {
+    "runtime/component-interaction.js": "cf08b4c437b8dddb37df7afd81213c6ad1d481551762a1b83fcdd92e5aa2de5b",
+    "runtime/deck-editor.js": "0af4a9e5d74cf14338ef72302dd17aa358ef15deb16fcf727d4ac95e61a868f8",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "091e5d7f7ba1e33ae7f4dcdb44ad0a7ed9db04a3d8458d5af2c0912eea0c5136",
+    "tools/edx-wp1-s4-perf-probe.mjs": "f3ddec932ba33343ae57997e3da1f7f933f4891a2f6eb52321ac76f018493fdf"
+  },
+  "runs": [
+    {
+      "mib": 1,
+      "payloadCharacters": 1048576,
+      "warmupUpdates": 30,
+      "measuredUpdates": 101,
+      "payloadReads": 0,
+      "serializations": 0,
+      "wholeSpecSerializations": 0,
+      "p50Ms": 0.04449999999999932,
+      "p95Ms": 0.058583999999996195,
+      "maxMs": 0.24479100000000642
+    },
+    {
+      "mib": 6,
+      "payloadCharacters": 6291456,
+      "warmupUpdates": 30,
+      "measuredUpdates": 101,
+      "payloadReads": 0,
+      "serializations": 0,
+      "wholeSpecSerializations": 0,
+      "p50Ms": 0.04408300000000054,
+      "p95Ms": 0.0515840000000054,
+      "maxMs": 0.08341599999999971
+    },
+    {
+      "mib": 12,
+      "payloadCharacters": 12582912,
+      "warmupUpdates": 30,
+      "measuredUpdates": 101,
+      "payloadReads": 0,
+      "serializations": 0,
+      "wholeSpecSerializations": 0,
+      "p50Ms": 0.038207999999997355,
+      "p95Ms": 0.046499999999980446,
+      "maxMs": 0.05095900000000597
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (22.123583ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (67.954542ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (123.013959ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (62.858541ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (20.889042ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (21.723ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (22.47775ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (22.361917ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (19.856834ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (4.592375ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (21.195459ms)
+✔ mounted semantic sync component text 使 gesture stale，不覆寫新 state (24.076416ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (31.139959ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (33.051084ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (97.459041ms)
+✖ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (41.043417ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (30.924625ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (130.14925ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 17
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 909.981916
+
+✖ failing tests:
+
+test at tests/edx-wp1-s4-perf.test.mjs:63:1
+✖ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (41.043417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + '2ac09217d93240041d533e365e4c6cd5a516deacd1b45a7dc843748afb9499dd'
+  - 'b4de581969a1fac6b3df61060d7b44811848e340bb1012f0af18ba6f71c17123'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s4-perf.test.mjs:71:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '2ac09217d93240041d533e365e4c6cd5a516deacd1b45a7dc843748afb9499dd',
+    expected: 'b4de581969a1fac6b3df61060d7b44811848e340bb1012f0af18ba6f71c17123',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

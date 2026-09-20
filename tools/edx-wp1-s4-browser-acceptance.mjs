@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { runPerfBrowserCases } from './edx-wp1-s4-perf-browser-cases.mjs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -7,14 +8,16 @@ import { extractDeckSpec } from '../runtime/deck-spec.js';
 import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 
 // 僅 attach Mainline owned browser；絕不 spawn，finally 只清自己的 target。
-const outputDir = resolve(process.argv[2] || 'evidence/edx-wp1-s4/browser');
+const outputDir = resolve(process.argv[2] || (process.argv.includes('--perf-regression') ? 'evidence/edx-wp1-s4-perf/worker-browser' : 'evidence/edx-wp1-s4/browser'));
 const fixtureOnly = process.argv.includes('--fixture-only');
+const perfRegression = process.argv.includes('--perf-regression');
 const portFile = process.env.PPTSKILL_DEVTOOLS_ACTIVE_PORT;
 if (!fixtureOnly && !portFile) throw new Error('必須提供 PPTSKILL_DEVTOOLS_ACTIVE_PORT；本工具不啟動 browser。');
 await mkdir(outputDir, { recursive: true });
 const input = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
 input.slides = input.slides.filter(slide => slide.id === 'portable');
 input.slides[0].content.components[0].text = '座標保持一致';
+if (perfRegression) input.slides[0].content.components.push({ id: 'perf-image', type: 'image', alt: '成本回歸圖片', dataUri: 'data:image/svg+xml;base64,' + Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>').toString('base64') });
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -155,6 +158,7 @@ try {
       assert.deepEqual(await evaluate(rectExpression), box); await assertRect(box);
       await assertExport('reopen-export', await evaluate(specExpression)); run.checks.push('offline reopen 再 drag／單一 instance');
       const shot = await cdp.send('Page.captureScreenshot', { format: 'png' }); await writeFile(resolve(outputDir, `${width}-selected.png`), Buffer.from(shot.data, 'base64'));
+      if (perfRegression) await runPerfBrowserCases({ evaluate, navigate, sourcePath, click, selector, startGesture, endGesture, assertExport, run });
       await click('[data-action="edit"]');
       assert.equal(await evaluate('document.querySelectorAll(".moveable-control-box").length'), 0);
       assert.equal(await evaluate('document.querySelector("[data-edit-kind=text]").contentEditable'), 'true');

@@ -77,7 +77,7 @@ export function cleanupComponentInteractionClone(root) {
 }
 
 // DOM 與 vendor 只負責呈現；pointer 座標來自 Moveable 原始 input event。
-export function mountComponentInteraction({ document, window, getSpec, resolveIdentities, executeOperation,
+export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
   project, notify, setTextMode, selectSlide }) {
   let moveable = null, overlay = null, observer = null;
   const button = document.querySelector('[data-action="layout"]');
@@ -91,7 +91,7 @@ export function mountComponentInteraction({ document, window, getSpec, resolveId
     const slideNode = document.querySelector('.slide[data-slide-id="' + CSS.escape(target.slideId) + '"]');
     const node = slideNode?.querySelector('[data-pptskill-element-id="' + CSS.escape(target.elementId) + '"]');
     if (!node?.isConnected) return null;
-    return { node, slideNode, token: node, revision: JSON.stringify(spec), rect: getComponentGeometry(slide.composition, slide.content.components[index].id) };
+    return { node, slideNode, token: node, revision: getRevision(), rect: getComponentGeometry(slide.composition, slide.content.components[index].id) };
   };
   const restore = () => { project(); };
   const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,

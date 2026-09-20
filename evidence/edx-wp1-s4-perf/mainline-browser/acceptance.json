@@ -1,0 +1,265 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/source.html",
+  "sourceSha256": "4c755ffd075e543ae62715cad2f0ccbb3ccdf080e4d081d42b2e0c59fb47e7e1",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "PERF readonly/noop/invalid/export 換 object 後真 pointer release",
+        "PERF stale 真 pointer public-text",
+        "PERF stale 真 pointer legacy-text",
+        "PERF stale 真 pointer legacy-component",
+        "PERF stale 真 pointer sync-export",
+        "PERF stale 真 pointer geometry",
+        "PERF stale 真 pointer asset-after-export",
+        "文字模式互斥"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-legacy-selected.html",
+          "bytes": 366306,
+          "sha256": "387719b9d3d6f97765b27a0e0e22bd2ff70fe4d141a657c25aba40ddf3e4f9b6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-preview-export.html",
+          "bytes": 366686,
+          "sha256": "1608fb28a3ca4eaa9fed97ffc5916b11dd4349ee0125ac698e2a93b2a9f828f3"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-cancel.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-noop.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-invalid.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-invalid-resize.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-play-mode.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-export.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-reopen-export.html",
+          "bytes": 366686,
+          "sha256": "4d2da4492dd70aa96afc766cedf599a5e02a3a5b6aa12564b8ba2bbd85c37d53"
+        },
+        {
+          "label": "perf-preview-readonly",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-preview-readonly.html",
+          "bytes": 366686,
+          "sha256": "1608fb28a3ca4eaa9fed97ffc5916b11dd4349ee0125ac698e2a93b2a9f828f3"
+        },
+        {
+          "label": "perf-stale-public-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-public-text.html",
+          "bytes": 366660,
+          "sha256": "3f12d2b776467b50566049c0880ec92029bfb0d46dce97d6cd9a88e215cc70db"
+        },
+        {
+          "label": "perf-stale-legacy-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-legacy-text.html",
+          "bytes": 366594,
+          "sha256": "a3ae3259e603d350603077818f15e09952011757d4f4d515d2a2570653c86bf1"
+        },
+        {
+          "label": "perf-stale-legacy-component",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-legacy-component.html",
+          "bytes": 366678,
+          "sha256": "275a546adcbb57c467a169a363628d06e73c387f56a6d831504e83338a2dfa94"
+        },
+        {
+          "label": "perf-stale-sync-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-sync-export.html",
+          "bytes": 366668,
+          "sha256": "b9eaea933aa91f33ee85746f0055828c30c0e2c56c8d44c1c64c9979b591723a"
+        },
+        {
+          "label": "perf-stale-geometry",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-geometry.html",
+          "bytes": 366686,
+          "sha256": "66ff2bd3e966a3cdfff08d3924d2dac76ca653f649be2c21f6488981c022e11a"
+        },
+        {
+          "label": "perf-stale-asset-after-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1280-perf-stale-asset-after-export.html",
+          "bytes": 366746,
+          "sha256": "ff65006cdd1aa3baa5f48a1b2fb6f20e0ee6c967eeb6e3a61b76754afb3a3f84"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "PERF readonly/noop/invalid/export 換 object 後真 pointer release",
+        "PERF stale 真 pointer public-text",
+        "PERF stale 真 pointer legacy-text",
+        "PERF stale 真 pointer legacy-component",
+        "PERF stale 真 pointer sync-export",
+        "PERF stale 真 pointer geometry",
+        "PERF stale 真 pointer asset-after-export",
+        "文字模式互斥"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-legacy-selected.html",
+          "bytes": 366306,
+          "sha256": "387719b9d3d6f97765b27a0e0e22bd2ff70fe4d141a657c25aba40ddf3e4f9b6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-preview-export.html",
+          "bytes": 366686,
+          "sha256": "1608fb28a3ca4eaa9fed97ffc5916b11dd4349ee0125ac698e2a93b2a9f828f3"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-cancel.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-noop.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-invalid.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-invalid-resize.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-play-mode.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-export.html",
+          "bytes": 366686,
+          "sha256": "c4eadb646f28f7f847351637a93076038044765fd7279e41ef70f1f7c1d0ccac"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-reopen-export.html",
+          "bytes": 366686,
+          "sha256": "4d2da4492dd70aa96afc766cedf599a5e02a3a5b6aa12564b8ba2bbd85c37d53"
+        },
+        {
+          "label": "perf-preview-readonly",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-preview-readonly.html",
+          "bytes": 366686,
+          "sha256": "1608fb28a3ca4eaa9fed97ffc5916b11dd4349ee0125ac698e2a93b2a9f828f3"
+        },
+        {
+          "label": "perf-stale-public-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-public-text.html",
+          "bytes": 366660,
+          "sha256": "3f12d2b776467b50566049c0880ec92029bfb0d46dce97d6cd9a88e215cc70db"
+        },
+        {
+          "label": "perf-stale-legacy-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-legacy-text.html",
+          "bytes": 366594,
+          "sha256": "a3ae3259e603d350603077818f15e09952011757d4f4d515d2a2570653c86bf1"
+        },
+        {
+          "label": "perf-stale-legacy-component",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-legacy-component.html",
+          "bytes": 366678,
+          "sha256": "275a546adcbb57c467a169a363628d06e73c387f56a6d831504e83338a2dfa94"
+        },
+        {
+          "label": "perf-stale-sync-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-sync-export.html",
+          "bytes": 366668,
+          "sha256": "b9eaea933aa91f33ee85746f0055828c30c0e2c56c8d44c1c64c9979b591723a"
+        },
+        {
+          "label": "perf-stale-geometry",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-geometry.html",
+          "bytes": 366686,
+          "sha256": "66ff2bd3e966a3cdfff08d3924d2dac76ca653f649be2c21f6488981c022e11a"
+        },
+        {
+          "label": "perf-stale-asset-after-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s4-perf/mainline-browser/1600-perf-stale-asset-after-export.html",
+          "bytes": 366746,
+          "sha256": "ff65006cdd1aa3baa5f48a1b2fb6f20e0ee6c967eeb6e3a61b76754afb3a3f84"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

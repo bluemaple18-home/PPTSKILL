@@ -1,0 +1,119 @@
+import vm from 'node:vm';
+import { readFileSync } from 'node:fs';
+import { buildDeckEditorRuntimeScript } from '../runtime/deck-editor.js';
+import { sanitizeDeckSpec, resolveSlideElementIdentities } from '../runtime/deck-spec.js';
+
+export const target = { slideId: 'portable', elementId: 'component-portable-quote' };
+export const box = { x: 800, y: 280, width: 640, height: 480 };
+export const request = (operation, value, destination = target) => ({ operation, target: destination, value });
+export const geometry = spec => spec.slides.find(s => s.id === target.slideId)?.composition.geometryOverrides?.['portable-quote'];
+export function fixture(mib = 1) {
+  const spec = JSON.parse(readFileSync(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
+  spec.slides = spec.slides.filter(s => s.id === 'portable');
+  spec.slides[0].composition.geometryOverrides = { 'portable-quote': { ...box } };
+  spec.slides[0].content.components.push({ id: 'perf-image', type: 'image', alt: '成本探針', dataUri: 'data:image/png;base64,' + 'A'.repeat(mib * 1024 * 1024) });
+  return sanitizeDeckSpec(spec);
+}
+
+// 最小 DOM double 只驗 mounted/public runtime；不宣稱瀏覽器排版或 vendor pointer 驗收。
+const attrName = key => 'data-' + key.replace(/[A-Z]/g, c => '-' + c.toLowerCase());
+const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
+class Element {
+  constructor(tag = 'div', attrs = {}, text = '') {
+    this.tag = tag; this.attrs = { ...attrs }; this.children = []; this.text = text; this.style = {}; this.listeners = {};
+    this.dataset = new Proxy({}, { get: (_, key) => this.attrs[attrName(key)], set: (_, key, value) => { this.attrs[attrName(key)] = String(value); return true; } });
+  }
+  get textContent() { return this.text + this.children.map(c => c.textContent).join(''); }
+  set textContent(value) { this.text = String(value); this.children = []; }
+  setAttribute(k, v) { this.attrs[k] = String(v); if (k === 'style') for (const part of String(v).split(';')) { const [key, value] = part.split(':'); if (key && value) this.style[key.trim()] = value.trim(); } }
+  getAttribute(k) { return this.attrs[k] ?? null; }
+  removeAttribute(k) { delete this.attrs[k]; if (k === 'style') this.style = {}; }
+  get isConnected() { return this.tag === 'html' || Boolean(this.parentElement?.isConnected); }
+  get parentNode() { return this.parentElement; }
+  append(node) { node.remove(); this.children.push(node); node.parentElement = this; }
+  remove() { if (this.parentElement) { const p = this.parentElement; p.children.splice(p.children.indexOf(this), 1); this.parentElement = null; } }
+  after(node) { const p = this.parentElement; node.remove(); p.children.splice(p.children.indexOf(this) + 1, 0, node); node.parentElement = p; }
+  replaceWith(node) { this.after(node); this.remove(); }
+  insertBefore(node, other) { node.remove(); this.children.splice(this.children.indexOf(other), 0, node); node.parentElement = this; }
+  get nextElementSibling() { return this.parentElement?.children[this.parentElement.children.indexOf(this) + 1]; }
+  get previousElementSibling() { return this.parentElement?.children[this.parentElement.children.indexOf(this) - 1]; }
+  matches(selector) {
+    if (selector.includes(',')) return selector.split(',').some(s => this.matches(s.trim()));
+    const parts = selector.split(' '); if (parts.length > 1) return this.matches(parts.pop()) && Boolean(this.parentElement?.closest(parts.join(' ')));
+    if (selector.startsWith('#')) return this.attrs.id === selector.slice(1);
+    const tag = selector.match(/^[a-z][\w-]*/)?.[0]; if (tag && this.tag !== tag) return false;
+    for (const [, cls] of selector.split('[')[0].matchAll(/\.([\w-]+)/g)) if (!(this.attrs.class || '').split(' ').includes(cls)) return false;
+    for (const [, key, value] of selector.matchAll(/\[([\w-]+)(?:="([^"]*)")?\]/g)) if (!(key in this.attrs) || (value !== undefined && this.attrs[key] !== value)) return false;
+    return true;
+  }
+  closest(s) { return this.matches(s) ? this : this.parentElement?.closest(s); }
+  querySelectorAll(s) { return this.children.flatMap(c => [...(c.matches(s) ? [c] : []), ...c.querySelectorAll(s)]); }
+  querySelector(s) { return this.querySelectorAll(s)[0] || null; }
+  addEventListener(type, fn) { (this.listeners[type] ||= []).push(fn); }
+  removeEventListener(type, fn) { this.listeners[type] = (this.listeners[type] || []).filter(f => f !== fn); }
+  getBoundingClientRect() { return { width: 1600 }; }
+  scrollIntoView() {}
+  cloneNode() { const node = new Element(this.tag, this.attrs, this.text); node.style = { ...this.style }; for (const c of this.children) node.append(c.cloneNode()); return node; }
+  get outerHTML() { return '<' + this.tag + Object.entries(this.attrs).map(([k, v]) => ` ${k}="${escape(v)}"`).join('') + '>' + (this.tag === 'script' ? this.text : escape(this.text)) + this.children.map(c => c.outerHTML).join('') + '</' + this.tag + '>'; }
+  set innerHTML(html) {
+    const match = html.match(/^<([\w-]+)([^>]*)>([\s\S]*)<\/\1>$/);
+    if (!match) throw new Error('DOM double 不支援此 markup');
+    const attrs = Object.fromEntries([...match[2].matchAll(/([\w-]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
+    this.content = { firstElementChild: new Element(match[1], attrs, match[3].replace(/<[^>]*>/g, '')) };
+  }
+}
+
+export function mountedEditor(input = fixture()) {
+  const state = sanitizeDeckSpec(input), root = new Element('html'), body = new Element('body'), deck = new Element('main', { class: 'deck' });
+  root.append(body); body.append(deck);
+  const tag = new Element('script', { id: 'deck-spec', type: 'application/json' }, JSON.stringify(state)); body.append(tag);
+  for (const action of ['layout', 'initialize-layout', 'edit', 'move-up', 'move-down', 'duplicate', 'delete']) body.append(new Element('button', { 'data-action': action }));
+  body.append(new Element('span', { 'data-editor-status': '' }));
+  for (const slide of state.slides) {
+    const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);
+    const ids = resolveSlideElementIdentities(slide);
+    const add = (id, field, value, kind = 'text') => node.append(new Element('blockquote', { 'data-pptskill-element-id': id, 'data-edit-target': `slides.${slide.id}.content.${field}`, ...(kind ? { 'data-edit-kind': kind } : {}) }, value));
+    add(ids.title, 'title', slide.content.title); add(ids.subtitle, 'subtitle', slide.content.subtitle);
+    slide.content.keyPoints.forEach((p, i) => add(ids.keyPoints[i], 'keyPoints.' + i, p));
+    slide.content.components.forEach((c, i) => add(ids.components[i], 'components.' + c.id, c.text || c.label || '', ['text', 'citation'].includes(c.type) ? 'text' : ''));
+  }
+  const counts = { payloadReads: 0, serializations: 0, wholeSpecSerializations: 0 };
+  const observedJSON = {
+    parse(text) {
+      const value = JSON.parse(text);
+      if (text === tag.textContent && value.slides) for (const s of value.slides) for (const c of s.content.components) if (c.dataUri) {
+        let data = c.dataUri;
+        Object.defineProperty(c, 'dataUri', { enumerable: true, configurable: true, get() { counts.payloadReads++; return data; }, set(value) { data = value; } });
+      }
+      return value;
+    },
+    stringify(value, ...args) { counts.serializations++; if (value?.slides) counts.wholeSpecSerializations++; return JSON.stringify(value, ...args); },
+  };
+  let vendor;
+  class Moveable {
+    constructor() { this.handlers = {}; vendor = this; }
+    on(name, fn) { this.handlers[name] = fn; }
+    destroy() {} stopDrag() {} updateRect() {}
+  }
+  const document = Object.assign(root, { body, documentElement: root, readyState: 'complete', createElement: tag => new Element(tag) });
+  const window = { PPTSKILLMoveable: { default: Moveable }, addEventListener() {}, removeEventListener() {},
+    PPTSKILLSizeGuard: { prepare: html => ({ status: 'pass', html, report: {} }) },
+    PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
+  };
+  vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, ''), {
+    document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { observe() {} disconnect() {} }, console,
+  });
+  const api = window.PPTSKILLEditor;
+  const click = node => { for (const fn of document.listeners.click || []) fn({ target: node, preventDefault() {} }); };
+  const component = () => document.querySelector(`[data-pptskill-element-id="${target.elementId}"]`);
+  const ready = () => { api.layout.setMode(true); click(component()); };
+  const event = (x = 0, y = 0) => ({ inputEvent: { clientX: x, clientY: y }, set() {}, stop() { throw new Error('gesture 未啟動'); } });
+  const begin = (kind = 'drag') => vendor.handlers[kind + 'Start'](event());
+  const update = (x, y, kind = 'drag') => vendor.handlers[kind](event(x, y));
+  const finish = (kind = 'drag') => vendor.handlers[kind + 'End']();
+  const getSpec = () => JSON.parse(JSON.stringify(api.getDeckSpec()));
+  return { api, document, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
+    resetCounts() { for (const key of Object.keys(counts)) counts[key] = 0; },
+    action(name) { click(document.querySelector(`[data-action="${name}"]`)); },
+  };
+}

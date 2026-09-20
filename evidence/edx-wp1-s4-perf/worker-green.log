@@ -1,0 +1,27 @@
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (21.841416ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (64.408084ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (124.392167ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (70.049125ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (20.913292ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (22.253042ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (22.737625ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (24.869875ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (19.615875ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (4.57175ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (26.997458ms)
+✔ mounted semantic sync component text 使 gesture stale，不覆寫新 state (19.781416ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (32.01375ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (31.535333ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (95.492541ms)
+✔ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (33.466958ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (30.867541ms)
+✔ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (41.276209ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (131.8755ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 947.647167
