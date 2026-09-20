@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION REVIEW CANDIDATE／Independent Review pending（stacked branch，尚未整合 main）
+**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -891,7 +891,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 **S4-PERF CLOSED：** pointer resolver改ephemeral revision，1/6/12MiB mounted payload reads/serialization=0；focused45、完整non-browser245具名案例、fresh雙viewport真pointer/stale/export/reopen與ZIP lifecycle PASS。PGQ只繼承S4 GO，無本卡fresh宣稱。新ZIP SHA `eca0af886794934f3d862a9ad0e140226b693e007c361dfc2218fda9ac4dde85`。Independent Review GO（reviewed `5191e6b`，P0/P1=0、0 new P2）；motion P2保留。詳見 `evidence/edx-wp1-s4-perf/independent-review.md`。
 
-**S3-MOTION follow-up：** `tasks/edx-wp1-s3-motion-preservation.md`；先修manual geometry壓制motion transform的inherited P2，維持canonical geometry與portable契約，不擴WP1互動功能。實作與nonbrowser251/251已完成；ai-core合法回收後，fresh motion雙viewport各31 checks、PGQ 28 unique覆蓋與browser cleanup PASS。現為review candidate，P2待獨立review正式關閉；首輪fail與19＋1＋8補驗紀錄保留。
+**S3-MOTION follow-up：** `tasks/edx-wp1-s3-motion-preservation.md`；先修manual geometry壓制motion transform的inherited P2，維持canonical geometry與portable契約，不擴WP1互動功能。實作與nonbrowser251/251已完成；ai-core合法回收後，fresh motion雙viewport各31 checks、PGQ 28 unique覆蓋與browser cleanup PASS。Independent Review GO（reviewed `68eace8`，P0/P1=0、0 new P2），S3 inherited motion-transform P2正式關閉；首輪fail與19＋1＋8補驗紀錄保留。詳見 `evidence/edx-wp1-s3-motion/independent-review.md`。
 
 ## 10.1 八項 Owner 決策
 

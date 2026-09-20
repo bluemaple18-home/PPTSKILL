@@ -1,6 +1,6 @@
 # EDX-WP1-S3-MOTION — manual geometry 保留 motion
 
-Status: REVIEW CANDIDATE — Mainline驗收完成；Independent Review pending
+Status: CLOSED — Independent Review GO；reviewed `68eace85123993db84a03c4e75aeb9415ae7e47f`
 Base: `a5e5d43`；branch `codex/edx-wp1-s3-motion`。
 類型：standard bounded follow-up；Mainline裁決先關閉已量測的preserves契約缺口，再擴充WP1功能。
 traces_to: BACKLOG.md §10.5 content-only/manual override preservation、§10.6 transform composition；evidence/edx-wp1-s3/independent-review.md inherited P2；evidence/edx-wp1-s4-perf/independent-review.md。
@@ -35,3 +35,7 @@ Worker只寫delivery檔與evidence/edx-wp1-s3-motion/worker-*；不寫本卡/bac
 ## 最終驗收
 
 ai-core合法回收後，motion單獨重驗1280×720／1600×900各31 checks PASS、errors全0；PGQ 19＋1＋8＝28 unique PASS，原環境fail保留。三個新session正常回收、source7/7、ZIP SHA及四個原untracked不變。詳見mainline-receipt.md與pgq-coverage.json。S3 motion P2待獨立verdict正式關閉；候選交Owner帶去review，不自行開／傳可見task。
+
+## Independent Review closure
+
+Owner回傳GO：P0/P1=0、0 new P2、P3=0；S3 inherited motion-transform P2正式關閉。reviewer fresh focused60／bounded nonbrowser237／source7通過；主線251與browser/PGQ為已提交evidence核對，詳見 `evidence/edx-wp1-s3-motion/independent-review.md`。reviewed code／ZIP保持；既知legacy同值辨識限制保留，首輪失敗原因未證實。
