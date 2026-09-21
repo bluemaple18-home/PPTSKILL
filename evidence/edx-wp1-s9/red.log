@@ -1,0 +1,146 @@
+✖ S9 Node 六種 align-selection 使用 selection bbox 且保持尺寸 (3.118167ms)
+✖ S9 Node align-selection invalid / missing geometry 原子拒絕 (3.925708ms)
+✖ S9 Node align-selection descriptor 深度 immutable (8.91925ms)
+✖ S9 portable browser runtime 六種 align-selection 使用 selection bbox 且保持尺寸 (6.227709ms)
+✖ S9 portable browser runtime align-selection invalid / missing geometry 原子拒絕 (7.215ms)
+✖ S9 portable browser runtime align-selection descriptor 深度 immutable (2.018416ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.948667
+
+✖ failing tests:
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:65:3
+✖ S9 Node 六種 align-selection 使用 selection bbox 且保持尺寸 (3.118167ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:32:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:158:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:56:39)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:69:29)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:74:3
+✖ S9 Node align-selection invalid / missing geometry 原子拒絕 (3.925708ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /canonical geometry|手動版面|geometry/u. Input:
+
+  'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: operation target 欄位必須恰為 slideId、elementId。
+        at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:32:70)
+        at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:158:42)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:56:39)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:39
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /canonical geometry|手動版面|geometry/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:103:3
+✖ S9 Node align-selection descriptor 深度 immutable (8.91925ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(descriptor)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:106:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:65:3
+✖ S9 portable browser runtime 六種 align-selection 使用 selection bbox 且保持尺寸 (6.227709ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (evalmachine.<anonymous>:205:343)
+      at executeOperation (evalmachine.<anonymous>:256:42)
+      at Object.executeOperation (evalmachine.<anonymous>:672:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:60:44)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:69:29)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:74:3
+✖ S9 portable browser runtime align-selection invalid / missing geometry 原子拒絕 (7.215ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /canonical geometry|手動版面|geometry/u. Input:
+
+  'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: operation target 欄位必須恰為 slideId、elementId。
+        at validateOperationRequest (evalmachine.<anonymous>:205:343)
+        at executeOperation (evalmachine.<anonymous>:256:42)
+        at Object.executeOperation (evalmachine.<anonymous>:672:130)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:60:44)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:39
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:99:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /canonical geometry|手動版面|geometry/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s9-align-selection.test.mjs:103:3
+✖ S9 portable browser runtime align-selection descriptor 深度 immutable (2.018416ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(descriptor)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s9-align-selection.test.mjs:106:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

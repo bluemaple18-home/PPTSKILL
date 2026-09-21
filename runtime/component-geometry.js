@@ -3,6 +3,7 @@ export const COMPONENT_GEOMETRY = Object.freeze({
   slideWidth: 1600, slideHeight: 900, safeInset: 80, minimumSize: 80,
   defaultBox: Object.freeze({ x: 800, y: 280, width: 640, height: 480 }),
 });
+export const COMPONENT_ALIGNMENT_VALUES = Object.freeze(['left', 'center-x', 'right', 'top', 'center-y', 'bottom']);
 
 export function validateComponentGeometry(value, fields = ['x', 'y', 'width', 'height']) {
   if (!value || typeof value !== 'object' || Array.isArray(value)
@@ -32,6 +33,35 @@ export function sanitizeGeometryOverrides(overrides, components) {
 export function getComponentGeometry(composition, componentId) {
   const overrides = composition?.geometryOverrides;
   return overrides && Object.hasOwn(overrides, componentId) ? overrides[componentId] : undefined;
+}
+
+export function alignComponentGeometries(slide, componentIds, alignment) {
+  if (!Array.isArray(componentIds) || componentIds.length < 2 || componentIds.some(id => typeof id !== 'string')
+    || new Set(componentIds).size !== componentIds.length) throw new Error('align-selection 至少需要兩個唯一 component。');
+  if (!COMPONENT_ALIGNMENT_VALUES.includes(alignment)) throw new Error('align-selection alignment 不支援。');
+  const available = new Set((slide?.content?.components || []).map(component => component.id));
+  const entries = componentIds.map(id => {
+    if (!available.has(id)) throw new Error('align-selection 找不到 component：' + id);
+    const box = getComponentGeometry(slide.composition, id);
+    if (!box) throw new Error('align-selection target 缺少 canonical geometry：' + id);
+    return [id, validateComponentGeometry(box)];
+  });
+  const left = Math.min(...entries.map(([, box]) => box.x));
+  const right = Math.max(...entries.map(([, box]) => box.x + box.width));
+  const top = Math.min(...entries.map(([, box]) => box.y));
+  const bottom = Math.max(...entries.map(([, box]) => box.y + box.height));
+  const next = Object.fromEntries(entries.map(([id, box]) => {
+    const aligned = { ...box };
+    if (alignment === 'left') aligned.x = left;
+    if (alignment === 'center-x') aligned.x = Math.round((left + right - box.width) / 2);
+    if (alignment === 'right') aligned.x = right - box.width;
+    if (alignment === 'top') aligned.y = top;
+    if (alignment === 'center-y') aligned.y = Math.round((top + bottom - box.height) / 2);
+    if (alignment === 'bottom') aligned.y = bottom - box.height;
+    return [id, validateComponentGeometry(aligned)];
+  }));
+  slide.composition.geometryOverrides = { ...slide.composition.geometryOverrides, ...next };
+  return next;
 }
 
 export function updateComponentGeometry(slide, componentId, operation, value) {
@@ -70,6 +100,8 @@ export function projectComponentGeometryStyle(element, box) {
 
 export const buildComponentGeometryRuntime = () => [
   `const COMPONENT_GEOMETRY=${JSON.stringify(COMPONENT_GEOMETRY)};`,
+  `const COMPONENT_ALIGNMENT_VALUES=${JSON.stringify(COMPONENT_ALIGNMENT_VALUES)};`,
   validateComponentGeometry.toString(), sanitizeGeometryOverrides.toString(),
-  getComponentGeometry.toString(), updateComponentGeometry.toString(), componentGeometryStyle.toString(), projectComponentGeometryStyle.toString(),
+  getComponentGeometry.toString(), alignComponentGeometries.toString(), updateComponentGeometry.toString(),
+  componentGeometryStyle.toString(), projectComponentGeometryStyle.toString(),
 ].join('\n');

@@ -107,6 +107,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   const button = document.querySelector('[data-action="layout"]');
   const initializeButton = document.querySelector('[data-action="initialize-layout"]');
   const snapButton = document.querySelector('[data-action="snap-layout"]');
+  const alignToolbar = document.querySelector('[data-pptskill-context-toolbar]');
   if (!button || !initializeButton) return null;
   const resolve = target => {
     const spec = getSpec(), slide = spec.slides.find(s => s.id === target.slideId);
@@ -157,6 +158,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     document.querySelectorAll('.slide [data-editor-selected]').forEach(node => node.removeAttribute('data-editor-selected'));
     selecto?.setSelectedTargets?.([]);
     initializeButton.hidden = true;
+    if (alignToolbar) alignToolbar.hidden = true;
   };
   let selection;
   const applySelection = ids => {
@@ -166,6 +168,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const selectedNodes = ids.map(id => slideNode.querySelector('[data-pptskill-element-id="' + CSS.escape(id) + '"]')).filter(Boolean);
     selectedNodes.forEach(node => node.setAttribute('data-editor-selected', 'true'));
     selecto?.setSelectedTargets?.(selectedNodes);
+    if (alignToolbar) alignToolbar.hidden = ids.length <= 1;
     if (ids.length > 1) { notify('已選取 ' + ids.length + ' 個元件'); return; }
     const target = { slideId: slideNode.dataset.slideId, elementId: ids[0] };
     interaction.select(target);
@@ -300,6 +303,25 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (on) bindSelecto(); else destroySelecto();
     notify(on ? '點選元件或拖曳空白區框選多個元件' : '可直接播放');
   };
+  const alignSelection = alignment => {
+    const selected = selection.getState().selected, slideNode = currentSlideNode();
+    if (!interaction.getState().enabled || !slideNode || selected.length < 2) {
+      notify('至少選取 2 個元件才能對齊');
+      return false;
+    }
+    interaction.cancel(); moveable?.stopDrag();
+    try {
+      executeOperation({ operation: 'align-selection',
+        target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { alignment } });
+      applySelection(selected);
+      notify('已對齊 ' + selected.length + ' 個元件');
+      return true;
+    } catch (error) {
+      applySelection(selected);
+      notify('未套用：' + error.message);
+      return false;
+    }
+  };
   const click = event => {
     const routed = routedControlClick === event; routedControlClick = null;
     // vendor stop/destroy 會移除 click 防護；只消耗本次取消的 pointer 尾隨事件。
@@ -308,6 +330,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     }
     const action = event.target.closest?.('[data-action]')?.dataset.action;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
+    if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
     if (action === 'snap-layout') {
       if (!interaction.getState().enabled) return;
       interaction.cancel(); moveable?.stopDrag(); destroyVendor();
@@ -350,7 +373,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (!interaction.getState().gesturing) return;
     const node = event.target, action = node.closest?.('[data-action]')?.dataset.action;
     const selection = node.closest?.('.slide') && !node.closest?.('.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box');
-    if (!['layout', 'snap-layout', 'edit'].includes(action) && !selection) return;
+    if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !selection) return;
     // 比 gesture 才註冊的 vendor window capture 更早；stopDrag 解除 blocker，原事件仍走既有 handler。
     cancel(); routedControlClick = event;
   };

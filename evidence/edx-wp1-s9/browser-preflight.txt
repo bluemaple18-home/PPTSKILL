@@ -1,0 +1,7 @@
+status=BLOCKED_BY_RUNTIME_ROUTE
+CODEX_SANDBOX=seatbelt
+ai_core_head=2d78d8e18d42156f43f12f0ebc6997914ec64328
+guard=/Users/matt/ai-core/scripts/tmp_session.py require_browser_runtime
+reason=browser_launch_blocked_in_codex_sandbox
+action=no_launch_no_bypass
+next=run existing --alignment-regression via allowed host runtime; 1280x720 + 1600x900; then affected PGQ

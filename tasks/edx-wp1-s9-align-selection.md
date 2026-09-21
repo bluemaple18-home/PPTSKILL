@@ -1,10 +1,20 @@
 # EDX-WP1-S9 — Bounded multi-selection alignment
 
-Status: IN_PROGRESS
+Status: IMPLEMENTED / NON_BROWSER_PASS / HOST_BROWSER_PENDING
 Branch: `codex/edx-wp1-s9-align-selection`
 Base: `f7537c4`
 Depends on: S8 COMPLETE；Product `3065bcb8745e3109531eb6f155e930a0b3c24c15` targeted independent re-review GO。
-traces_to: `BACKLOG.md `10.1 Decision 4`、``10.3 EDX-WP1`、``10.4 Operation Registry`、``10.5 portability`、``10.8 product simplicity`。
+traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.3 EDX-WP1`、`§10.4 Operation Registry`、`§10.5 portability`、`§10.8 product simplicity`。
+
+
+## Current checkpoint — 2026-09-21
+
+- 六種 `align-selection` 已進既有 Unified Operation Registry；Node／portable runtime 共用 geometry helper。任一 target 缺 canonical geometry、非法／重複／foreign target 皆整筆原子拒絕；no-op 保持 canonical state。
+- Multi-selection contextual alignment toolbar 只在 2+ selection 顯示；align 成功／失敗皆保留 selection；export clone 移除 toolbar／selection chrome。沒有新增第二 selection state、renderer、schema 或 dependency。
+- RED 保留於 `evidence/edx-wp1-s9/red.log`；fresh focused **185/185 PASS**，full non-browser（排除四支 browser-backed PGQ）**390/390 PASS**，`git diff --check` PASS。
+- Browser harness 已沿既有 attach-only runner 新增 `--alignment-regression`；managed attach/no-spawn regression PASS。正式 1280×720＋1600×900 尚未執行：本 task `CODEX_SANDBOX=seatbelt`，AI Core `2d78d8e18d42156f43f12f0ebc6997914ec64328` 會在 managed browser launch 前 fail-closed；未清旗標、未繞 routing。
+- Fresh ZIP lifecycle PASS：2,281,550 bytes；SHA-256 `b4ba66f24d6780d6899f6bc1c48f5d2f32cf03fb3878091d28636c2ec3e0db57`。Source freeze 11/11；protected untracked 4/4 與 S8 baseline MATCH。
+- 因 fresh host browser 與受影響 PGQ 仍 pending，目前是 **checkpoint，不是 independent review candidate**；不 merge／push／deploy，不開 S10。
 
 ## Objective
 
