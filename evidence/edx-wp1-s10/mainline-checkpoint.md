@@ -1,6 +1,6 @@
-# S10 Mainline checkpoint
+# S10 Mainline checkpoint（歷史）
 
-狀態：**CHECKPOINT / HOST_BROWSER_PENDING**。
+狀態：**SUPERSEDED BY `mainline-receipt.md`**。本檔保留 host blocker 當時的 checkpoint，不應作為目前 acceptance 狀態。
 
 Product SHA：`902671238980941b321179a4df37e4d867733f14`。Branch：`codex/edx-wp1-s10-distribute-selection`；base：`cbe12a62a749d1c7cca67e3acb8de1b832995924`。本 checkpoint 不宣稱 browser / PGQ PASS，也不是 Independent Review candidate。
 

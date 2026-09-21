@@ -1,6 +1,6 @@
 # EDX-WP1-S10 — Bounded multi-selection distribution
 
-Status: CHECKPOINT / HOST_BROWSER_PENDING
+Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
 Branch: `codex/edx-wp1-s10-distribute-selection`
 Base: `cbe12a62a749d1c7cca67e3acb8de1b832995924`
 Depends on: S9 COMPLETE / Independent Review GO。
@@ -63,3 +63,12 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Prior-Art-First`、`§10.3 E
 - Browser preflight：目前 task `CODEX_SANDBOX=seatbelt`，runner 是 attach-only，且沒有合法 managed `DevToolsActivePort`；因此 **HOST_BROWSER_PENDING**。沒有 unset sandbox、naked-launch Chrome 或繞過 AI Core gate。
 - 待正式 host runtime：雙 viewport 執行 `node tools/edx-wp1-s4-browser-acceptance.mjs <evidence-dir> --distribution-regression`，再以 `--test-concurrency=1` 跑四支 affected PGQ。完成前 **不是 Independent Review candidate**。
 - Evidence：`evidence/edx-wp1-s10/`。不 merge／push／deploy，不開 S11。
+
+## Mainline acceptance — 2026-09-21
+
+- Host blocker 已解除；AI Core 修復 commit `e155b3abeabe45c2442bcf86c30236237c84ffaa`，其獨立 review GO。PPTSKILL 產品碼、測試、harness、ZIP 未因修復而改動。
+- Fresh browser：1280×720、1600×900 各 **13 checks PASS**（10 base + 3 S10 aggregated），真 3-item multi-select → horizontal → vertical → selection retained → export/offline reopen；console/page/network/HTTP/remote errors 全 0，owned target closed。
+- 修復後 affected PGQ：四支 `--test-concurrency=1` **單輪 16/16 named PASS**；readiness／PGQ／Browser.close／supervisor 全 exit 0，owned root 回收、isolation marker absent。
+- `host-final-verification.json`：Product `902671238980941b321179a4df37e4d867733f14`，source **11/11 MATCH**、protected **4/4 MATCH**、ZIP `2,282,450 bytes` / SHA-256 `664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64`。
+- 早期 scan-limit FAIL、retry 與診斷 evidence 全保留；browser PASS 是工具修復前已完成的 fresh run，PGQ 16/16 是工具修復後 fresh single run，兩者不混稱同一輪。
+- Mainline 判定：**可交 Independent Review**。本狀態不是 Independent GO；不 merge／push／deploy，不開 S11。
