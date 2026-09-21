@@ -1,6 +1,6 @@
 # EDX-WP1-S7 Mainline receipt
 
-狀態：REVIEW_CANDIDATE；Independent Review pending。Candidate `c390d26`，branch `codex/edx-wp1-s7`，base `4cd4540a71aa7f94cc60e4495155c572034a57a4`。未merge／push／deploy，未開下一Slice。
+狀態：COMPLETE。Product candidate `c390d26`；Independent targeted re-review GO。Branch `codex/edx-wp1-s7`，base `4cd4540a71aa7f94cc60e4495155c572034a57a4`。未merge／push／deploy，未開下一Slice。
 
 ## 實作與修復
 
@@ -27,3 +27,7 @@ Fresh `dist/PPTSKILL-0.1.0.zip`：2,251,917 bytes；SHA-256 `f94e99eeac7627f5c8e
 ## Mainline review P2 supplement
 
 Mainline複核 `c390d26` 程式面GO，但指出task card要求1600×900也必須有完整pointer矩陣；舊1600證據只有三motion模式正常drag/resize/export，故列P2 evidence gap。補驗未改產品／verifier／ZIP，直接使用已提交 `edx-wp1-s4-browser-acceptance.mjs --snap-regression`：1280與1600各66 checks PASS；1600包含snap on/off drag/resize、Escape、pointercancel、bounds/minimum、preview export/offline reopen，errors全0、targetClosed=true。Readiness／Browser.close／managed lifecycle均exit0，post 14/14 source與4/4 protected hashes MATCH。詳 `review-p2-full-pointer-20260921/receipt.md`。等待targeted Independent re-review；不自行關閉review。
+
+## Independent targeted re-review closure
+
+Reviewer：Descartes；clean context、未參與實作。Reviewed product SHA `c390d26899f5b3289ad5b46cae562ec54f8accf6`，evidence commit `b68e04f`。Reviewer交叉核對1600×900 66 checks、harness、hashes與cleanup，判定原P2 coverage gap可關閉；P0/P1/P2/P3均0，targeted verdict **GO**。Reviewer未fresh重跑browser／PGQ／ZIP，也未修改candidate；本GO僅針對該P2。Mainline據此關閉S7，不把reviewer evidence核對冒稱fresh execution。

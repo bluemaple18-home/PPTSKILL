@@ -986,4 +986,4 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 
 **S6 architecture closure / S7 READY：** gesture-boundary48組fresh PASS，preview0提交、release1筆、zero/cancel0筆、proxy teardown無殘留。架構收斂為canonical投影geometry target＋vendor方向限制；非production GO。`tasks/edx-wp1-s7-component-grid-snap.md` 已開卡，待實作，停止泛化研究。
 
-**S7 REVIEW CANDIDATE：** 8px單元件edge snap與motion reset窄修復完成；focused158/158、full non-browser337/337、1280＋1600 normal/reduced/static targeted PASS，fresh affected PGQ以 `--test-concurrency=1` 串行2/2 PASS。Fresh ZIP lifecycle PASS，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`；Independent Review pending，不merge/push/deploy、不開下一Slice。
+**S7 COMPLETE：** Product `c390d26`。8px單元件edge snap與motion reset窄修復完成；focused158/158、full non-browser337/337、1280＋1600完整pointer/motion驗收PASS，fresh affected PGQ串行2/2 PASS；ZIP lifecycle PASS，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`。主線複核原P2（1600完整pointer coverage）已由補驗commit `b68e04f` 關閉，Independent targeted re-review（Descartes，clean context）GO，無新增P0–P3。未merge/push/deploy；下一Slice另行開卡。

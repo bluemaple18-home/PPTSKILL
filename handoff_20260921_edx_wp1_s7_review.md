@@ -42,3 +42,7 @@
 - ZIP SHA仍為 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`。
 
 若此P2已關閉，請仍以 reviewed product SHA `c390d26899f5b3289ad5b46cae562ec54f8accf6` 回覆targeted GO／NO-GO；本補驗commit僅承載evidence/control docs，不改reviewed code或ZIP。
+
+## Closure
+
+Descartes（clean context、未參與實作）已完成targeted re-review：**GO**。Reviewed product `c390d26899f5b3289ad5b46cae562ec54f8accf6`，evidence `b68e04f`；1600×900 66 checks、harness、hashes與cleanup已交叉核對，原P2關閉，無新增P0–P3。Reviewer未fresh重跑browser／PGQ／ZIP、未修改candidate。本文件至此關閉；後續Mainline只做closure metadata，不改reviewed product／ZIP。

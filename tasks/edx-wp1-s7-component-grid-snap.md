@@ -1,6 +1,6 @@
 # EDX-WP1-S7 — 單一 component 8px 邊緣吸附
 
-Status: REVIEW_CANDIDATE — 1280＋1600三模式PASS；fresh affected PGQ串行2/2 PASS；ZIP lifecycle PASS；Independent Review pending
+Status: COMPLETE — Product `c390d26`；Independent targeted re-review GO，P0/P1/P2/P3=0；S7 closed
 Depends on: S5 Independent GO dd74700／closure8dd76cc；S6 architecture evidence 5a937bf、9b0280d與gesture-boundary/decision.md。
 traces_to: BACKLOG.md §10.1 guided direct manipulation／invisible snap grid、§10.2 prior-art-first、§10.3 WP1、§10.4 Operation Registry、§10.5 portability。
 Trace preflight：上述refs存在；依賴已清；S7唯一ID；acceptance下列可重現；無Critical。
