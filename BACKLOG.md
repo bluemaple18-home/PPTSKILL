@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** S3／S4／S4-PERF INDEPENDENT REVIEW GO；S3-MOTION INDEPENDENT REVIEW GO；S5 INDEPENDENT REVIEW GO（stacked branch，尚未整合 main）
+**Status:** S7 COMPLETE；S8 SELECTO MULTI-SELECTION INPUT READY（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -987,3 +987,5 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 **S6 architecture closure / S7 READY：** gesture-boundary48組fresh PASS，preview0提交、release1筆、zero/cancel0筆、proxy teardown無殘留。架構收斂為canonical投影geometry target＋vendor方向限制；非production GO。`tasks/edx-wp1-s7-component-grid-snap.md` 已開卡，待實作，停止泛化研究。
 
 **S7 COMPLETE：** Product `c390d26`。8px單元件edge snap與motion reset窄修復完成；focused158/158、full non-browser337/337、1280＋1600完整pointer/motion驗收PASS，fresh affected PGQ串行2/2 PASS；ZIP lifecycle PASS，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`。主線複核原P2（1600完整pointer coverage）已由補驗commit `b68e04f` 關閉，Independent targeted re-review（Descartes，clean context）GO，無新增P0–P3。未merge/push/deploy；下一Slice另行開卡。
+
+**S8 CURRENT FRONTIER：** `tasks/edx-wp1-s8-selecto-multiselect-input.md`。正式採用已核准的 Selecto `1.26.3`，只交付 component-only marquee＋Shift多選與 single Moveable handoff；selection保持editor-local且不export。多選batch mutation、align/distribute、group/lock、history仍blocked，待S8 GO後另依 measured gap 切卡。Branch `codex/edx-wp1-s8`，base `9188b78`；不merge/push/deploy。
