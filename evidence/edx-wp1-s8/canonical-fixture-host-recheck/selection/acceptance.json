@@ -1,0 +1,235 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/source.html",
+  "sourceSha256": "18fcccc73b7bac0b88f330c6c558b7df39b21bddd598515d5bbad4060e403bef",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "s8": "pointer-marquee",
+          "ids": [
+            "component-portable-quote",
+            "component-s8-two"
+          ],
+          "controls": 0,
+          "proxies": 0
+        },
+        {
+          "s8": "shift-toggle",
+          "result": [
+            "component-portable-quote",
+            "component-s8-three"
+          ]
+        },
+        "S8 >1 teardown Moveable；回 1 恢復單一 Moveable",
+        "S8 Escape/layout/text/slide-switch/blur cleanup",
+        {
+          "s8": "export-reopen",
+          "canonicalSha256": "da435ade21e58ae620871261689b3a808bf833fe708f0ccc57739ccb527f7a4c",
+          "liveSelectionPreserved": true,
+          "reopenedSelection": []
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-legacy-selected.html",
+          "bytes": 460484,
+          "sha256": "28595c60a6aa6336c8065fac0b965f3fe38e9a60c7eea69588e77dbce93defc0"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-preview-export.html",
+          "bytes": 460793,
+          "sha256": "a5e1a218bde6a65f8ab0d65a801baf015be9ebfd27c3f7d5043f7ea4900ecbe5"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-cancel.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-noop.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-invalid.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-invalid-resize.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-play-mode.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-export.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-reopen-export.html",
+          "bytes": 460793,
+          "sha256": "f88cf9651f9d73d105e558bfe033c9c9bd5f4ae42104c0b26395b3d6ab3d4e13"
+        },
+        {
+          "label": "s8-multiselect-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1280-s8-multiselect-export.html",
+          "bytes": 463821,
+          "sha256": "3667b1e99f7d209dc8566fb2a522832c6bdf13145bd649652e2cbfd4e1f0abe3"
+        },
+        {
+          "label": "s8-source",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/s8-source.html"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "s8": "pointer-marquee",
+          "ids": [
+            "component-portable-quote",
+            "component-s8-two"
+          ],
+          "controls": 0,
+          "proxies": 0
+        },
+        {
+          "s8": "shift-toggle",
+          "result": [
+            "component-portable-quote",
+            "component-s8-three"
+          ]
+        },
+        "S8 >1 teardown Moveable；回 1 恢復單一 Moveable",
+        "S8 Escape/layout/text/slide-switch/blur cleanup",
+        {
+          "s8": "export-reopen",
+          "canonicalSha256": "da435ade21e58ae620871261689b3a808bf833fe708f0ccc57739ccb527f7a4c",
+          "liveSelectionPreserved": true,
+          "reopenedSelection": []
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-legacy-selected.html",
+          "bytes": 460484,
+          "sha256": "28595c60a6aa6336c8065fac0b965f3fe38e9a60c7eea69588e77dbce93defc0"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-preview-export.html",
+          "bytes": 460793,
+          "sha256": "a5e1a218bde6a65f8ab0d65a801baf015be9ebfd27c3f7d5043f7ea4900ecbe5"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-cancel.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-noop.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-invalid.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-invalid-resize.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-play-mode.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-export.html",
+          "bytes": 460793,
+          "sha256": "959bb5e28742b3cb71e51170a06df6a9af2bd936450d4cdbabb7e6ca364cbccc"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-reopen-export.html",
+          "bytes": 460793,
+          "sha256": "f88cf9651f9d73d105e558bfe033c9c9bd5f4ae42104c0b26395b3d6ab3d4e13"
+        },
+        {
+          "label": "s8-multiselect-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/1600-s8-multiselect-export.html",
+          "bytes": 463821,
+          "sha256": "3667b1e99f7d209dc8566fb2a522832c6bdf13145bd649652e2cbfd4e1f0abe3"
+        },
+        {
+          "label": "s8-source",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s8/canonical-fixture-host-recheck/selection/s8-source.html"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

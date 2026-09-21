@@ -1,0 +1,16 @@
+{
+  "hostSandbox": null,
+  "selectionStarted": true,
+  "pgqStarted": true,
+  "supervisorPid": 90375,
+  "ownedRoot": "/private/tmp/aic-b-8392a526c6804d9dbe3dfd4e3da79780",
+  "readinessExit": 0,
+  "selectionExit": 0,
+  "pgqExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "sourcesMatchAfter": true,
+  "protectedMatchAfter": true
+}

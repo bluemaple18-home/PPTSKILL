@@ -88,8 +88,9 @@ test('export 只移除 control 對應 style，canonical component 不作 chrome 
   const removed = [], attrs = [], state = { textContent: '', setAttribute: (...a) => attrs.push(a) }, init = { hidden: false };
   const style = id => ({ getAttribute: () => id, remove: () => removed.push(id) });
   const root = { querySelectorAll(selector) {
-    if (selector === '.moveable-control-box[data-styled-id],.selecto-selection[data-styled-id]') return [
-      { getAttribute: () => 'rCS123' }, { getAttribute: () => 'selecto-test' },
+    if (selector === '.moveable-control-box,.selecto-selection') return [
+      { getAttribute: name => name === 'data-styled-id' ? 'rCS123' : 'moveable-control-box' },
+      { getAttribute: name => name === 'class' ? 'selecto-selection selecto-test' : null },
     ];
     if (selector === 'style[data-styled-id]') return [style('rCS123'), style('selecto-test'), style('rCS999')];
     if (selector === '[data-editor-selected]') return [{ removeAttribute: a => attrs.push(a) }];

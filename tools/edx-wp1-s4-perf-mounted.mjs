@@ -110,7 +110,7 @@ export function mountedEditor(input = fixture()) {
   class Selecto {
     constructor(options) {
       this.options = options; this.handlers = {}; this.selected = []; this.destroyed = false;
-      this.chrome = new Element('div', { class: 'selecto-selection', 'data-styled-id': 'selecto-test' });
+      this.chrome = new Element('div', { class: 'selecto-selection selecto-test' });
       this.styleNode = new Element('style', { 'data-styled-id': 'selecto-test' }, '.selecto-selection{}');
       body.append(this.styleNode); body.append(this.chrome); selectoVendor = this;
     }

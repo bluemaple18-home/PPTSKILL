@@ -1,5 +1,7 @@
 # EDX-WP1-S8 Mainline checkpoint
 
+> 歷史 checkpoint `a58cdfa`；後續 host acceptance 已完成，最新狀態與最終 ZIP 見 [mainline-receipt.md](mainline-receipt.md)。下列記錄保留原時點狀態。
+
 狀態：**IMPLEMENTATION_COMPLETE / NON_BROWSER_PASS / MANAGED_BROWSER_ROUTING_BLOCKED / REVIEW_CANDIDATE_PENDING**。
 
 Branch：`codex/edx-wp1-s8`；base：`9188b787ad964b92a129a5cff8f7067b08c0f4ea`。本 checkpoint 不宣稱 fresh browser、fresh PGQ、Independent Review GO；未 merge／push／deploy，未開下一 Slice。

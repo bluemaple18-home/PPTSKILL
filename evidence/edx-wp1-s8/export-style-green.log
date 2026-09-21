@@ -1,0 +1,11 @@
+✔ S8 plain/Shift click 與 marquee 共用單一 editor-local selection state (16.999125ms)
+✔ S8 export clone-only 清除 Selecto/selection chrome，live selection 保持 (6.175459ms)
+✔ S8 Escape/blur/mode teardown 清 selection，重複 destroy idempotent (4.732834ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147.357291

@@ -855,7 +855,7 @@ S2 已證明 Style portability，不得回退成把 Typography Hero 換色冒充
 
 # 10. Owner-approved post-generation direct editor upgrade — EDX-20260914
 
-**Status:** S7 COMPLETE；S8 SELECTO MULTI-SELECTION INPUT READY（stacked branch，尚未整合 main）
+**Status:** S7 COMPLETE；S8 SELECTO MULTI-SELECTION REVIEW CANDIDATE（stacked branch，尚未整合 main）
 **Priority:** AFTER P0-R11-R1 S3 AND EXISTING RELEASE CLOSURE；與 PGQ 依實際共享 schema / motion 依賴排序，不插隊目前 release blocker。  
 **Decision trace / prior art:** [research/editor-prior-art.md](research/editor-prior-art.md)。
 
@@ -988,4 +988,4 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 
 **S7 COMPLETE：** Product `c390d26`。8px單元件edge snap與motion reset窄修復完成；focused158/158、full non-browser337/337、1280＋1600完整pointer/motion驗收PASS，fresh affected PGQ串行2/2 PASS；ZIP lifecycle PASS，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`。主線複核原P2（1600完整pointer coverage）已由補驗commit `b68e04f` 關閉，Independent targeted re-review（Descartes，clean context）GO，無新增P0–P3。未merge/push/deploy；下一Slice另行開卡。
 
-**S8 CURRENT FRONTIER：** `tasks/edx-wp1-s8-selecto-multiselect-input.md`。Selecto `1.26.3` bounded multi-selection implementation 已完成；focused 172/172、full non-browser 377/377、mounted marquee perf、fresh ZIP lifecycle/hash 與 protected 4/4 均 PASS。Formal managed browser 因目前 task 為 `CODEX_SANDBOX=seatbelt` 被 AI Core 在 launch 前 fail-closed，未繞過；雙 viewport＋export/offline reopen與四支 export-seam affected PGQ仍 pending，因此尚不是 independent review candidate。多選batch mutation、align/distribute、group/lock、history仍blocked。Branch `codex/edx-wp1-s8`，base `9188b78`；不merge/push/deploy。
+**S8 CURRENT FRONTIER：** `tasks/edx-wp1-s8-selecto-multiselect-input.md`。Selecto `1.26.3` bounded multi-selection 已完成並進入 independent review candidate；host fresh browser 1280×720／1600×900 各 15 checks PASS、四支 export-seam affected PGQ 串行 16/16 PASS；focused 172/172、full non-browser 377/377、fresh ZIP lifecycle、source 20/20／protected 4/4 MATCH、managed cleanup 均 PASS。browser 發現的 Selecto class-to-style cleanup 已 bounded 修正，歷史 failure 保留於 `evidence/edx-wp1-s8/host-repair-history.md`。獨立 review 尚待執行，未 closure。多選 batch mutation、align/distribute、group/lock、history 仍 blocked。Branch `codex/edx-wp1-s8`，base `9188b78`；不 merge/push/deploy、不開 S9。

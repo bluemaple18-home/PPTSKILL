@@ -1,0 +1,18 @@
+{
+  "hostSandbox": null,
+  "sourceHashesMatch": true,
+  "protectedHashesMatch": true,
+  "selectionStarted": true,
+  "pgqStarted": false,
+  "supervisorPid": 85770,
+  "ownedRoot": "/private/tmp/aic-b-c7e5ea504c554990bf145c1e1178e3f5",
+  "readinessExit": 0,
+  "selectionExit": 1,
+  "error": "selection acceptance failed; PGQ not run",
+  "browserCloseExit": 1,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "sourcesMatchAfter": true,
+  "protectedMatchAfter": true
+}

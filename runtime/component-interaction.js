@@ -82,11 +82,13 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
 
 export const buildComponentInteractionRuntime = () => createComponentInteraction.toString();
 
-// css-styled@1.0.8 以 control 的 data-styled-id 精確對應注入 style；不能寬刪其他樣式。
+// Moveable 用 data-styled-id，Selecto 用同名 class；只清除可對應 editor control 的樣式。
 export function cleanupComponentInteractionClone(root) {
-  const ids = new Set([...root.querySelectorAll('.moveable-control-box[data-styled-id],.selecto-selection[data-styled-id]')].map(node => node.getAttribute('data-styled-id')));
+  const controls = [...root.querySelectorAll('.moveable-control-box,.selecto-selection')];
+  const ids = new Set(controls.map(node => node.getAttribute('data-styled-id')).filter(Boolean));
   for (const node of root.querySelectorAll('style[data-styled-id]')) {
-    if (ids.has(node.getAttribute('data-styled-id'))) node.remove();
+    const id = node.getAttribute('data-styled-id');
+    if (ids.has(id) || (id && controls.some(control => (control.getAttribute('class') || '').split(/\s+/).includes(id)))) node.remove();
   }
   root.querySelectorAll('[data-editor-selected]').forEach(node => node.removeAttribute('data-editor-selected'));
   const mode = root.querySelector('[data-action="layout"]');

@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { renderFullDeck } from '../runtime/full-deck-renderer.js';
+import { extractDeckSpec } from '../runtime/deck-spec.js';
 
 const componentSelector = '.slide[data-slide-id="portable"] [data-edit-target^="slides.portable.content.components."]';
 
@@ -25,7 +26,7 @@ async function buildSelectionFixture(outputDir) {
   assert.equal(rendered.status, 'pass');
   const path = resolve(outputDir, 's8-source.html');
   await writeFile(path, rendered.html);
-  return { path, spec: source };
+  return { path, spec: extractDeckSpec(rendered.html) };
 }
 
 export async function runSelectionBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport }) {
