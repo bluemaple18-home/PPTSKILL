@@ -108,6 +108,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   const initializeButton = document.querySelector('[data-action="initialize-layout"]');
   const snapButton = document.querySelector('[data-action="snap-layout"]');
   const alignToolbar = document.querySelector('[data-pptskill-context-toolbar]');
+  const distributeButtons = [...document.querySelectorAll('[data-distribute-control]')];
   if (!button || !initializeButton) return null;
   const resolve = target => {
     const spec = getSpec(), slide = spec.slides.find(s => s.id === target.slideId);
@@ -159,6 +160,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     selecto?.setSelectedTargets?.([]);
     initializeButton.hidden = true;
     if (alignToolbar) alignToolbar.hidden = true;
+    distributeButtons.forEach(control => { control.hidden = true; });
   };
   let selection;
   const applySelection = ids => {
@@ -169,6 +171,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     selectedNodes.forEach(node => node.setAttribute('data-editor-selected', 'true'));
     selecto?.setSelectedTargets?.(selectedNodes);
     if (alignToolbar) alignToolbar.hidden = ids.length <= 1;
+    distributeButtons.forEach(control => { control.hidden = ids.length < 3; });
     if (ids.length > 1) { notify('已選取 ' + ids.length + ' 個元件'); return; }
     const target = { slideId: slideNode.dataset.slideId, elementId: ids[0] };
     interaction.select(target);
@@ -322,6 +325,25 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       return false;
     }
   };
+  const distributeSelection = distribution => {
+    const selected = selection.getState().selected, slideNode = currentSlideNode();
+    if (!interaction.getState().enabled || !slideNode || selected.length < 3) {
+      notify('至少選取 3 個元件才能均分');
+      return false;
+    }
+    interaction.cancel(); moveable?.stopDrag();
+    try {
+      executeOperation({ operation: 'distribute-selection',
+        target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { distribution } });
+      applySelection(selected);
+      notify('已均分 ' + selected.length + ' 個元件');
+      return true;
+    } catch (error) {
+      applySelection(selected);
+      notify('未套用：' + error.message);
+      return false;
+    }
+  };
   const click = event => {
     const routed = routedControlClick === event; routedControlClick = null;
     // vendor stop/destroy 會移除 click 防護；只消耗本次取消的 pointer 尾隨事件。
@@ -331,6 +353,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const action = event.target.closest?.('[data-action]')?.dataset.action;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
     if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
+    if (action?.startsWith('distribute-')) { distributeSelection(action.slice('distribute-'.length)); return; }
     if (action === 'snap-layout') {
       if (!interaction.getState().enabled) return;
       interaction.cancel(); moveable?.stopDrag(); destroyVendor();
@@ -373,7 +396,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (!interaction.getState().gesturing) return;
     const node = event.target, action = node.closest?.('[data-action]')?.dataset.action;
     const selection = node.closest?.('.slide') && !node.closest?.('.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box');
-    if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !selection) return;
+    if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !action?.startsWith('distribute-') && !selection) return;
     // 比 gesture 才註冊的 vendor window capture 更早；stopDrag 解除 blocker，原事件仍走既有 handler。
     cancel(); routedControlClick = event;
   };

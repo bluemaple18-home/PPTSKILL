@@ -45,7 +45,7 @@ test('renderer 對 directly operable roots 輸出 slide-local unique element ide
 });
 
 test('edit-text descriptor 完整宣告 bounded metadata', () => {
-  assert.deepEqual(Object.keys(OPERATION_DESCRIPTORS), ['edit-text', 'move-element', 'resize-element', 'align-selection']);
+  assert.deepEqual(Object.keys(OPERATION_DESCRIPTORS), ['edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
   assert.deepEqual(OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles, ['title', 'subtitle', 'keyPoint']);
   for (const field of ['inputSchema', 'mutates', 'preserves', 'destructive', 'confirmation', 'undoable', 'qaInvalidation', 'portableSerialization', 'unsupportedReason']) {
     assert.ok(field in OPERATION_DESCRIPTORS['edit-text'], `descriptor 缺少 ${field}`);

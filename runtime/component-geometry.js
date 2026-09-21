@@ -4,6 +4,7 @@ export const COMPONENT_GEOMETRY = Object.freeze({
   defaultBox: Object.freeze({ x: 800, y: 280, width: 640, height: 480 }),
 });
 export const COMPONENT_ALIGNMENT_VALUES = Object.freeze(['left', 'center-x', 'right', 'top', 'center-y', 'bottom']);
+export const COMPONENT_DISTRIBUTION_VALUES = Object.freeze(['horizontal-centers', 'vertical-centers']);
 
 export function validateComponentGeometry(value, fields = ['x', 'y', 'width', 'height']) {
   if (!value || typeof value !== 'object' || Array.isArray(value)
@@ -64,6 +65,37 @@ export function alignComponentGeometries(slide, componentIds, alignment) {
   return next;
 }
 
+export function distributeComponentGeometries(slide, componentIds, distribution, stableElementIds = componentIds) {
+  if (!Array.isArray(componentIds) || componentIds.length < 3 || componentIds.some(id => typeof id !== 'string')
+    || new Set(componentIds).size !== componentIds.length) throw new Error('distribute-selection 至少需要三個唯一 component。');
+  if (!Array.isArray(stableElementIds) || stableElementIds.length !== componentIds.length
+    || stableElementIds.some(id => typeof id !== 'string') || new Set(stableElementIds).size !== stableElementIds.length) {
+    throw new Error('distribute-selection stable element identities 非法。');
+  }
+  if (!COMPONENT_DISTRIBUTION_VALUES.includes(distribution)) throw new Error('distribute-selection distribution 不支援。');
+  const available = new Set((slide?.content?.components || []).map(component => component.id));
+  const horizontal = distribution === 'horizontal-centers';
+  const entries = componentIds.map((id, index) => {
+    if (!available.has(id)) throw new Error('distribute-selection 找不到 component：' + id);
+    const box = getComponentGeometry(slide.composition, id);
+    if (!box) throw new Error('distribute-selection target 缺少 canonical geometry：' + id);
+    const valid = validateComponentGeometry(box);
+    return { id, stableElementId: stableElementIds[index], box: valid, center: horizontal ? valid.x + valid.width / 2 : valid.y + valid.height / 2 };
+  }).sort((a, b) => a.center - b.center || (a.stableElementId < b.stableElementId ? -1 : a.stableElementId > b.stableElementId ? 1 : 0));
+  const first = entries[0].center, last = entries[entries.length - 1].center;
+  const step = (last - first) / (entries.length - 1);
+  const next = Object.fromEntries(entries.map((entry, index) => {
+    if (index === 0 || index === entries.length - 1) return [entry.id, entry.box];
+    const targetCenter = first + step * index;
+    const distributed = { ...entry.box };
+    if (horizontal) distributed.x = Math.round(targetCenter - entry.box.width / 2);
+    else distributed.y = Math.round(targetCenter - entry.box.height / 2);
+    return [entry.id, validateComponentGeometry(distributed)];
+  }));
+  slide.composition.geometryOverrides = { ...slide.composition.geometryOverrides, ...next };
+  return next;
+}
+
 export function updateComponentGeometry(slide, componentId, operation, value) {
   const fields = operation === 'move-element' ? ['x', 'y'] : ['width', 'height'];
   const patch = validateComponentGeometry(value, fields);
@@ -101,7 +133,8 @@ export function projectComponentGeometryStyle(element, box) {
 export const buildComponentGeometryRuntime = () => [
   `const COMPONENT_GEOMETRY=${JSON.stringify(COMPONENT_GEOMETRY)};`,
   `const COMPONENT_ALIGNMENT_VALUES=${JSON.stringify(COMPONENT_ALIGNMENT_VALUES)};`,
+  `const COMPONENT_DISTRIBUTION_VALUES=${JSON.stringify(COMPONENT_DISTRIBUTION_VALUES)};`,
   validateComponentGeometry.toString(), sanitizeGeometryOverrides.toString(),
-  getComponentGeometry.toString(), alignComponentGeometries.toString(), updateComponentGeometry.toString(),
+  getComponentGeometry.toString(), alignComponentGeometries.toString(), distributeComponentGeometries.toString(), updateComponentGeometry.toString(),
   componentGeometryStyle.toString(), projectComponentGeometryStyle.toString(),
 ].join('\n');
