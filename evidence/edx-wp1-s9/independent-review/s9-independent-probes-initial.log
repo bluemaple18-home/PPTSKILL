@@ -1,0 +1,61 @@
+✔ 獨立：left revision / preserve / no-op / export (31.596584ms)
+✖ 獨立：center-x revision / preserve / no-op / export (11.301584ms)
+✔ 獨立：right revision / preserve / no-op / export (11.96725ms)
+✔ 獨立：top revision / preserve / no-op / export (12.825167ms)
+✖ 獨立：center-y revision / preserve / no-op / export (9.515625ms)
+✔ 獨立：bottom revision / preserve / no-op / export (12.915084ms)
+✔ 獨立：late missing geometry 原子拒絕，revision／selection 不變 (3.687416ms)
+✔ 獨立：multi-selection Arrow 不誤寫 single geometry；Escape 清除 (8.183167ms)
+✔ 獨立：toolbar focus 擁有鍵盤；失焦回 single 後 nudge 一次 (12.121875ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 7
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 239.810542
+
+✖ failing tests:
+
+test at ../../../../../../private/tmp/s9-independent-probes.mjs:14:78
+✖ 獨立：center-x revision / preserve / no-op / export (11.301584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> (file:///private/tmp/s9-independent-probes.mjs:20:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ../../../../../../private/tmp/s9-independent-probes.mjs:14:78
+✖ 獨立：center-y revision / preserve / no-op / export (9.515625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> (file:///private/tmp/s9-independent-probes.mjs:20:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

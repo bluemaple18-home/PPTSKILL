@@ -1,0 +1,17 @@
+✔ 獨立：left revision / preserve / no-op / export (28.887458ms)
+✔ 獨立：center-x revision / preserve / no-op / export (14.23775ms)
+✔ 獨立：right revision / preserve / no-op / export (12.412208ms)
+✔ 獨立：top revision / preserve / no-op / export (12.984833ms)
+✔ 獨立：center-y revision / preserve / no-op / export (13.188083ms)
+✔ 獨立：bottom revision / preserve / no-op / export (13.531833ms)
+✔ 獨立：late missing geometry 原子拒絕，revision／selection 不變 (3.477ms)
+✔ 獨立：multi-selection Arrow 不誤寫 single geometry；Escape 清除 (7.257791ms)
+✔ 獨立：toolbar focus 擁有鍵盤；失焦回 single 後 nudge 一次 (11.577084ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 235.821875

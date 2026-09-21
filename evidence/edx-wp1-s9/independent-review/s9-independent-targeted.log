@@ -1,0 +1,18 @@
+✔ S9 Node 六種 align-selection 使用 selection bbox 且保持尺寸 (6.94475ms)
+✔ S9 Node align-selection invalid / missing geometry 原子拒絕 (1.497917ms)
+✔ S9 Node align-selection canonical no-op 不改 state (1.290875ms)
+✔ S9 Node align-selection descriptor 深度 immutable (0.73275ms)
+✔ S9 portable browser runtime 六種 align-selection 使用 selection bbox 且保持尺寸 (22.563833ms)
+✔ S9 portable browser runtime align-selection invalid / missing geometry 原子拒絕 (6.559334ms)
+✔ S9 portable browser runtime align-selection canonical no-op 不改 state (2.278708ms)
+✔ S9 portable browser runtime align-selection descriptor 深度 immutable (1.486125ms)
+✔ S9 multi-selection 才顯示 align controls；align 後 selection 保留且 export 不洩漏 (27.669334ms)
+✔ S9 align UI 任一 target 缺 canonical geometry 時整筆不改且保留 selection (5.906584ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 167.916167

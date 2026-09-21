@@ -1,13 +1,17 @@
 # EDX-WP1-S9 — Bounded multi-selection alignment
 
-Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp1-s9-align-selection`
 Base: `f7537c4`
 Depends on: S8 COMPLETE；Product `3065bcb8745e3109531eb6f155e930a0b3c24c15` targeted independent re-review GO。
 traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.3 EDX-WP1`、`§10.4 Operation Registry`、`§10.5 portability`、`§10.8 product simplicity`。
 
 
-## Latest host acceptance — 2026-09-21
+## Closure — 2026-09-21
+
+Independent Reviewer Turing（clean native subagent）對 Product `c5c6dac53ba340cbc7ca05db874edd080f89adc8` 回 GO，P0/P1/P2/P3=0。Fresh targeted 10/10、focused 185/185、non-browser 390/390、獨立 mounted probes 9/9；source 11/11、protected 4/4、ZIP 與 bundled runtime bytes MATCH。browser／PGQ 為已提交 evidence 獨立核對，沒有 fresh browser rerun；PGQ 維持 8+8 unique16，首輪 scan-limit FAIL 保留。詳 `evidence/edx-wp1-s9/independent-review/s9-independent-review-receipt.md`。Owner 已在本輪授權 review 後整合並 push main；closure 不含 delivery 修改，實際整合／遠端確認由 Mainline 後續執行。不 deploy、不開 S10。
+
+## Historical host acceptance — 2026-09-21
 
 正式 host 已補齊 alignment 1280×720／1600×900 各 13 checks PASS（10 base + 3 S9）；affected PGQ 16 unique named PASS 精確為首輪 8 + bounded retry 8，非單輪 16/16。首輪 scan-limit supervisor stop 原始 evidence 完整保留；retry Browser.close／supervisor／cleanup 全 PASS，兩輪 owned roots 均已回收。Source 11/11、protected 4/4、ZIP hash MATCH；產品與 ZIP 相對 `c5c6dac` 未改。最新 receipt：`evidence/edx-wp1-s9/mainline-receipt.md`；handoff：`handoff_20260921_edx_wp1_s9_review.md`。目前待 Independent Review，不是 GO／closure。
 
