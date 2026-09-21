@@ -1,0 +1,8 @@
+{
+  "method": "Browser.close",
+  "portFile": "/private/tmp/aic-b-37985875ad0344a9938bdd8369f4b8d3/profile/DevToolsActivePort",
+  "sent": true,
+  "ack": true,
+  "socketClosed": true,
+  "error": "websocket error"
+}

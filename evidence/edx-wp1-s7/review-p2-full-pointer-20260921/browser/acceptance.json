@@ -1,0 +1,3975 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/source.html",
+  "sourceSha256": "b3ed4757bee64c14807ab2246b6f7325161c89835c605ceb6786e781c5910ea6",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 813,
+            "y": 293,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 647,
+            "height": 487
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "selection",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "stale",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "selection",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "stale",
+          "synthetic": true
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "drag",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "snap-layout"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "drag",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "edit"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "resize",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "snap-layout"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "resize",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "edit"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "bounds/minimum 原子拒絕",
+          "kind": "drag"
+        },
+        {
+          "s7": "bounds/minimum 原子拒絕",
+          "kind": "resize"
+        },
+        "S7 keyboard 1/10px；modifier/IME guardedEscape",
+        "S7 preview export/offline reopen，snap 重設 off 且重新啟用可拖曳",
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(0.99877, 0, 0, 0.99877, 0, 0)",
+            "opacity": "0.917996",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 150.01699998490503
+              },
+              {
+                "state": "running",
+                "time": 150.01699998490503
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(0.998769, 0, 0, 0.998769, 0, 0)",
+            "opacity": "0.917911",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 149.95600000750287
+              },
+              {
+                "state": "running",
+                "time": 149.95600000750287
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(1, 0, 0, 1, 0, 0.812408)",
+            "opacity": "0.917939",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 149.97599997911593
+              },
+              {
+                "state": "running",
+                "time": 149.97599997911593
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        "S7 重複 destroy 清理 proxy/control/overlay；owned target 由 S4 finally 關閉"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-legacy-selected.html",
+          "bytes": 375092,
+          "sha256": "4ba7a3ddbd2ad53bcfb2b39acc9a08d4633ea4e8e2bb24df657e1e34cfa057a3"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-preview-export.html",
+          "bytes": 375401,
+          "sha256": "e5c0f2028356df872d74fb379f754d305337a0e7fd2748cfef0ec794c2ea7b3a"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-cancel.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-noop.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-invalid.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-invalid-resize.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-play-mode.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-export.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-reopen-export.html",
+          "bytes": 375401,
+          "sha256": "81fc1a3893a5e2eda31f2534198700dfc005f892d59574c1a87d00540c1476da"
+        },
+        {
+          "label": "snap-false-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-false-drag-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-false-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-false-resize-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-true-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-true-drag-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-true-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-true-resize-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-offline-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-offline-preview.html",
+          "bytes": 375385,
+          "sha256": "baac488c8e1f3fe5ff92a21d4866c5b89dc67f3c6456621a4a88fc8cef8768e9"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-brand-device-accent-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-brand-device-accent-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-brand-device-accent-static-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-image-zoom-settle-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-image-zoom-settle-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-image-zoom-settle-static-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-restrained-fade-rise-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-restrained-fade-rise-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1280-snap-restrained-fade-rise-static-export.html"
+      ],
+      "snapHandleChecks": [
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        }
+      ],
+      "snapCancelDiagnostic": [
+        {
+          "phase": "installed",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerdown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 662.7743530273438,
+            "y": 417.1875,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mousedown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 1,
+            "x": 662,
+            "y": 417,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-start",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": true
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": false,
+            "target": {
+              "tag": "BUTTON",
+              "elementId": null,
+              "action": "snap-layout",
+              "chrome": true,
+              "editable": false,
+              "contenteditable": null,
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": -1,
+            "x": 0,
+            "y": 0,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-cancel-before-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 670.7743530273438,
+            "y": 425.1875,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mouseup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "x": 670,
+            "y": 425,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "pointerId": 1,
+            "x": 670,
+            "y": 425,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        }
+      ],
+      "snapControlFocus": [
+        {
+          "kind": "drag",
+          "action": "snap-layout",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "drag",
+          "action": "edit",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "resize",
+          "action": "snap-layout",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "resize",
+          "action": "edit",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        }
+      ],
+      "snapMotionResize": [
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1156.80615234375,
+              "y": 612.8062744140625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 612.8062744140625,
+              "right": 1167.99365234375,
+              "bottom": 623.9937744140625,
+              "left": 1156.80615234375
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1146.40625,
+              "y": 602.40625,
+              "width": 11.1875,
+              "height": 11.1875,
+              "top": 602.40625,
+              "right": 1157.59375,
+              "bottom": 613.59375,
+              "left": 1146.40625
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 813,
+            "y": 293,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 647,
+            "height": 487
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "selection",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "stale",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "selection",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "stale",
+          "synthetic": true
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "drag",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "snap-layout"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "drag",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "edit"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "resize",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "snap-layout"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "gesture-control",
+          "kind": "resize",
+          "activation": {
+            "trusted": true,
+            "detail": 0,
+            "action": "edit"
+          },
+          "focus": "programmatic；啟用使用真 Enter"
+        },
+        {
+          "s7": "bounds/minimum 原子拒絕",
+          "kind": "drag"
+        },
+        {
+          "s7": "bounds/minimum 原子拒絕",
+          "kind": "resize"
+        },
+        "S7 keyboard 1/10px；modifier/IME guardedEscape",
+        "S7 preview export/offline reopen，snap 重設 off 且重新啟用可拖曳",
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(0.998768, 0, 0, 0.998768, 0, 0)",
+            "opacity": "0.917862",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 149.92099997028728
+              },
+              {
+                "state": "running",
+                "time": 149.92099997028728
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(0.998769, 0, 0, 0.998769, 0, 0)",
+            "opacity": "0.917951",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 149.98499995041658
+              },
+              {
+                "state": "running",
+                "time": 149.98499995041658
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "start": {
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "matrix(1, 0, 0, 1, 0, 0.811196)",
+            "opacity": "0.918061",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": [
+              {
+                "state": "running",
+                "time": 150.06399990543738
+              },
+              {
+                "state": "running",
+                "time": 150.06399990543738
+              }
+            ]
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        {
+          "s7": "motion",
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "start": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "during": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "end": {
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "inline": "",
+            "animations": []
+          },
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 624,
+            "height": 464
+          }
+        },
+        "S7 重複 destroy 清理 proxy/control/overlay；owned target 由 S4 finally 關閉"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-legacy-selected.html",
+          "bytes": 375092,
+          "sha256": "4ba7a3ddbd2ad53bcfb2b39acc9a08d4633ea4e8e2bb24df657e1e34cfa057a3"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-preview-export.html",
+          "bytes": 375401,
+          "sha256": "e5c0f2028356df872d74fb379f754d305337a0e7fd2748cfef0ec794c2ea7b3a"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-cancel.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-noop.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-invalid.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-invalid-resize.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-play-mode.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-export.html",
+          "bytes": 375401,
+          "sha256": "065c57a2dd31bb47298ce97645228c720167b12b64479fa4b7bd99d86eef5166"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-reopen-export.html",
+          "bytes": 375401,
+          "sha256": "81fc1a3893a5e2eda31f2534198700dfc005f892d59574c1a87d00540c1476da"
+        },
+        {
+          "label": "snap-false-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-false-drag-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-false-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-false-resize-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-true-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-true-drag-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-true-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-true-resize-preview.html",
+          "bytes": 375401,
+          "sha256": "b420f56ddc76cc0b3f4acbf2d197c580b70843155455a55d1030812a967faa0a"
+        },
+        {
+          "label": "snap-offline-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-offline-preview.html",
+          "bytes": 375385,
+          "sha256": "baac488c8e1f3fe5ff92a21d4866c5b89dc67f3c6456621a4a88fc8cef8768e9"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-brand-device-accent-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-brand-device-accent-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-brand-device-accent-static-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-image-zoom-settle-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-image-zoom-settle-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-image-zoom-settle-static-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-restrained-fade-rise-normal-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-restrained-fade-rise-reduced-export.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/review-p2-full-pointer-20260921/browser/1600-snap-restrained-fade-rise-static-export.html"
+      ],
+      "snapHandleChecks": [
+        {
+          "enabled": false,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1440,
+            "y": 760,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        }
+      ],
+      "snapCancelDiagnostic": [
+        {
+          "phase": "installed",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerdown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 828.47998046875,
+            "y": 521.5,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mousedown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 1,
+            "x": 828,
+            "y": 521,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-start",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": true
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": false,
+            "target": {
+              "tag": "BUTTON",
+              "elementId": null,
+              "action": "snap-layout",
+              "chrome": true,
+              "editable": false,
+              "contenteditable": null,
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": -1,
+            "x": 0,
+            "y": 0,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-cancel-before-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 838.47998046875,
+            "y": 531.5,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mouseup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "x": 838,
+            "y": 531,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "pointerId": 1,
+            "x": 838,
+            "y": 531,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        }
+      ],
+      "snapControlFocus": [
+        {
+          "kind": "drag",
+          "action": "snap-layout",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "drag",
+          "action": "edit",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "resize",
+          "action": "snap-layout",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        },
+        {
+          "kind": "resize",
+          "action": "edit",
+          "focused": true,
+          "disabled": false,
+          "documentFocus": true
+        }
+      ],
+      "snapMotionResize": [
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "before": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1446,
+              "y": 766,
+              "width": 14,
+              "height": 14,
+              "top": 766,
+              "right": 1460,
+              "bottom": 780,
+              "left": 1446
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "preview": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": true
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          },
+          "after": {
+            "state": {
+              "enabled": true,
+              "target": {
+                "slideId": "portable",
+                "elementId": "component-portable-quote"
+              },
+              "gesturing": false
+            },
+            "rect": {
+              "x": 1433,
+              "y": 753,
+              "width": 14,
+              "height": 14,
+              "top": 753,
+              "right": 1447,
+              "bottom": 767,
+              "left": 1433
+            },
+            "visibility": "visible",
+            "hit": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "focus": "<body data-editor-mode=\"layout\"><main class=\"deck\" data-deck-id=\"pptskill-typography-world\" data-style-id=\"route-editorial-rail\" data-visual-world=\"typography-hero\" data-effect-lan"
+          }
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

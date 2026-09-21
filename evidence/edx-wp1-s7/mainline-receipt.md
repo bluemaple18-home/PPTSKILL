@@ -23,3 +23,7 @@ Fresh `dist/PPTSKILL-0.1.0.zip`：2,251,917 bytes；SHA-256 `f94e99eeac7627f5c8e
 ## 限制
 
 先前scan-limit、readiness與motion失敗均保留原始證據，不以後續PASS覆蓋。Fresh affected PGQ已關閉實際motion/visibility缺口；其餘PGQ authority沿既有review。四個既有untracked `.DS_Store`、`CLAUDE.md`、`HANDOFF-20260914-P0-R11-R1-S3.md`、`HANDOFF-20260914-PGQ-WP1.md` 不修改、不stage。下一步僅交獨立Reviewer；Mainline不得自行宣稱Independent GO。
+
+## Mainline review P2 supplement
+
+Mainline複核 `c390d26` 程式面GO，但指出task card要求1600×900也必須有完整pointer矩陣；舊1600證據只有三motion模式正常drag/resize/export，故列P2 evidence gap。補驗未改產品／verifier／ZIP，直接使用已提交 `edx-wp1-s4-browser-acceptance.mjs --snap-regression`：1280與1600各66 checks PASS；1600包含snap on/off drag/resize、Escape、pointercancel、bounds/minimum、preview export/offline reopen，errors全0、targetClosed=true。Readiness／Browser.close／managed lifecycle均exit0，post 14/14 source與4/4 protected hashes MATCH。詳 `review-p2-full-pointer-20260921/receipt.md`。等待targeted Independent re-review；不自行關閉review。

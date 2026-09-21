@@ -28,3 +28,17 @@
 - 四個protected untracked hash未變：`.DS_Store`、`CLAUDE.md`、`HANDOFF-20260914-P0-R11-R1-S3.md`、`HANDOFF-20260914-PGQ-WP1.md`。
 
 請回覆 reviewed SHA、GO／NO-GO、P0–P3 findings、具體位置與可重現證據，並區分 fresh verification、已提交evidence核對與未驗證部分。不要自行修復。
+
+## Targeted re-review supplement — 1600×900 pointer P2
+
+主線複核已對 `c390d26` 給程式面GO，但指出1600×900缺完整pointer驗收矩陣。產品candidate與ZIP未改；新增 evidence：`evidence/edx-wp1-s7/review-p2-full-pointer-20260921/`。
+
+請targeted核對：
+
+- `browser/acceptance.json` 整體PASS；1280與1600各66 checks、targetClosed=true。
+- 1600需確認snap off/on drag＋resize、Escape、pointercancel、bounds/minimum、preview export/offline reopen均實際存在於checks；console/page/network/HTTP/remote全0。
+- readiness、Browser.close、managed lifecycle皆exit0，launcher stderr空；post source14/14、protected4/4 MATCH。
+- `pointercancel`沿既有harness為browser內synthetic PointerEvent；主要drag/resize與Escape仍為CDP真input。本輪只補coverage，不更改驗收語意。
+- ZIP SHA仍為 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`。
+
+若此P2已關閉，請仍以 reviewed product SHA `c390d26899f5b3289ad5b46cae562ec54f8accf6` 回覆targeted GO／NO-GO；本補驗commit僅承載evidence/control docs，不改reviewed code或ZIP。
