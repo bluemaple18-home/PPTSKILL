@@ -1,0 +1,20 @@
+{
+  "status": "built",
+  "archivePath": "/private/tmp/PPTSKILL-S10-verify.zip",
+  "version": "0.1.0",
+  "sha256": "664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64",
+  "manifest": {
+    "schemaVersion": "1.0",
+    "name": "PPTSKILL",
+    "version": "0.1.0",
+    "corePath": "core",
+    "adapters": [
+      "codex",
+      "claude-code",
+      "gemini"
+    ],
+    "requiresGit": false,
+    "profilePath": "~/.pptskill/profile.json",
+    "skillPath": "skill/pptskill/SKILL.md"
+  }
+}

@@ -1,6 +1,6 @@
 # EDX-WP1-S10 — Bounded multi-selection distribution
 
-Status: IN_PROGRESS
+Status: CHECKPOINT / HOST_BROWSER_PENDING
 Branch: `codex/edx-wp1-s10-distribute-selection`
 Base: `cbe12a62a749d1c7cca67e3acb8de1b832995924`
 Depends on: S9 COMPLETE / Independent Review GO。
@@ -50,4 +50,16 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Prior-Art-First`、`§10.3 E
 
 ## Source decision
 
-本 session CodeGraph 無可用 tool entry，依 repo 規則降級 bounded `rg`。現有 `OPERATION_DESCRIPTORS` / `executeOperation`、`component-geometry.js`、S9 contextual toolbar 足以承接；不新增 registry、state model、renderer、dependency。
+本 session 起始時 CodeGraph 無可用 tool entry，依 repo 規則降級 bounded `rg`；後續 tool entry 恢復後查詢未解析到本卡新增 symbols，因此沒有拿不相關 graph 結果作 source authority。現有 `OPERATION_DESCRIPTORS` / `executeOperation`、`component-geometry.js`、S9 contextual toolbar 足以承接；不新增 registry、state model、renderer、dependency。
+
+## Mainline checkpoint — 2026-09-21
+
+- Product SHA：`902671238980941b321179a4df37e4d867733f14`。
+- `distribute-selection` 已完成 Node / portable runtime / contextual UI / browser harness 接線；同中心 tie-break 已修正為 **stable element identity**，不是 component id。
+- Fresh focused S3–S10 + export cleanup：**198/198 PASS**。
+- Fresh full non-browser（排除四支 browser-backed PGQ）：**403/403 PASS**。
+- Fresh ZIP lifecycle PASS；ZIP `2,282,450 bytes`，SHA-256 `664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64`。
+- Source **11/11** 已 freeze；四個 protected untracked 與 S9 baseline **4/4 MATCH**；`git diff --check` PASS。
+- Browser preflight：目前 task `CODEX_SANDBOX=seatbelt`，runner 是 attach-only，且沒有合法 managed `DevToolsActivePort`；因此 **HOST_BROWSER_PENDING**。沒有 unset sandbox、naked-launch Chrome 或繞過 AI Core gate。
+- 待正式 host runtime：雙 viewport 執行 `node tools/edx-wp1-s4-browser-acceptance.mjs <evidence-dir> --distribution-regression`，再以 `--test-concurrency=1` 跑四支 affected PGQ。完成前 **不是 Independent Review candidate**。
+- Evidence：`evidence/edx-wp1-s10/`。不 merge／push／deploy，不開 S11。

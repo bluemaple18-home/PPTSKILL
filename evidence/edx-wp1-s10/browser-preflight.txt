@@ -1,0 +1,9 @@
+status=HOST_BROWSER_PENDING
+CODEX_SANDBOX=seatbelt
+runner=tools/edx-wp1-s4-browser-acceptance.mjs --distribution-regression
+runner_mode=attach-only; no browser spawn
+chrome_devtools_connect=FAILED_NO_DEVTOOLS_ACTIVE_PORT
+ai_core_guard=/Users/matt/ai-core/scripts/tmp_session.py require_browser_runtime
+reason=current task is sandboxed and no legal managed DevToolsActivePort is attached
+action=no_unset_no_naked_launch_no_gate_bypass
+required_next=run distribution regression at 1280x720 and 1600x900 in allowed managed host runtime; then affected PGQ serially

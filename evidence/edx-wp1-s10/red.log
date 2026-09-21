@@ -1,0 +1,192 @@
+✖ S10 Node 3-item horizontal/vertical centers 頭尾固定 (12.29275ms)
+✖ S10 Node 4-item deterministic round 且只改主軸 (1.533625ms)
+✖ S10 Node equal-center tie 不依賴 target 輸入順序 (1.056292ms)
+✖ S10 Node invalid / missing geometry / safe-area 全部原子拒絕 (15.271375ms)
+✖ S10 Node canonical no-op 與 descriptor contract (0.955792ms)
+✖ S10 portable browser runtime 3-item horizontal/vertical centers 頭尾固定 (22.5185ms)
+✖ S10 portable browser runtime 4-item deterministic round 且只改主軸 (8.271208ms)
+✖ S10 portable browser runtime equal-center tie 不依賴 target 輸入順序 (5.891334ms)
+✖ S10 portable browser runtime invalid / missing geometry / safe-area 全部原子拒絕 (27.448375ms)
+✖ S10 portable browser runtime canonical no-op 與 descriptor contract (3.871ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 0
+ℹ fail 10
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 576.031708
+
+✖ failing tests:
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:44:3
+✖ S10 Node 3-item horizontal/vertical centers 頭尾固定 (12.29275ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:187:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:35:39)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:46:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:62:3
+✖ S10 Node 4-item deterministic round 且只改主軸 (1.533625ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:187:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:35:39)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:64:42)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:81:3
+✖ S10 Node equal-center tie 不依賴 target 輸入順序 (1.056292ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:187:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:35:39)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:88:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:93:3
+✖ S10 Node invalid / missing geometry / safe-area 全部原子拒絕 (15.271375ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /canonical geometry|geometry/u. Input:
+
+  'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: operation target 欄位必須恰為 slideId、elementId。
+        at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:70)
+        at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:187:42)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:35:39)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:39
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /canonical geometry|geometry/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:135:3
+✖ S10 Node canonical no-op 與 descriptor contract (0.955792ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:187:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:35:39)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:138:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:44:3
+✖ S10 portable browser runtime 3-item horizontal/vertical centers 頭尾固定 (22.5185ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (evalmachine.<anonymous>:234:1037)
+      at executeOperation (evalmachine.<anonymous>:285:42)
+      at Object.executeOperation (evalmachine.<anonymous>:724:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:39:44)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:46:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:62:3
+✖ S10 portable browser runtime 4-item deterministic round 且只改主軸 (8.271208ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (evalmachine.<anonymous>:234:1037)
+      at executeOperation (evalmachine.<anonymous>:285:42)
+      at Object.executeOperation (evalmachine.<anonymous>:724:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:39:44)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:64:42)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:81:3
+✖ S10 portable browser runtime equal-center tie 不依賴 target 輸入順序 (5.891334ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (evalmachine.<anonymous>:234:1037)
+      at executeOperation (evalmachine.<anonymous>:285:42)
+      at Object.executeOperation (evalmachine.<anonymous>:724:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:39:44)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:88:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:93:3
+✖ S10 portable browser runtime invalid / missing geometry / safe-area 全部原子拒絕 (27.448375ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /canonical geometry|geometry/u. Input:
+
+  'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: operation target 欄位必須恰為 slideId、elementId。
+        at validateOperationRequest (evalmachine.<anonymous>:234:1037)
+        at executeOperation (evalmachine.<anonymous>:285:42)
+        at Object.executeOperation (evalmachine.<anonymous>:724:130)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:39:44)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:39
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:118:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /canonical geometry|geometry/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s10-distribute-selection.test.mjs:135:3
+✖ S10 portable browser runtime canonical no-op 與 descriptor contract (3.871ms)
+  Error: operation target 欄位必須恰為 slideId、elementId。
+      at validateOperationRequest (evalmachine.<anonymous>:234:1037)
+      at executeOperation (evalmachine.<anonymous>:285:42)
+      at Object.executeOperation (evalmachine.<anonymous>:724:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:39:44)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s10-distribute-selection.test.mjs:138:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
