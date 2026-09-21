@@ -1,0 +1,15 @@
+node:internal/fs/promises:1281
+  return new FileHandle(await PromisePrototypeThen(
+                        ^
+
+Error: ENOENT: no such file or directory, open '/private/tmp/aic-b-cd040a7cfee245079836e6df46825036/profile/DevToolsActivePort'
+    at async open (node:internal/fs/promises:1281:25)
+    at async readFile (node:internal/fs/promises:1929:14)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:51:22 {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/private/tmp/aic-b-cd040a7cfee245079836e6df46825036/profile/DevToolsActivePort'
+}
+
+Node.js v25.9.0

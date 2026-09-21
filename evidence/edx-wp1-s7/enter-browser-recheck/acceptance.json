@@ -1,0 +1,21 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/enter-browser-recheck/source.html",
+  "sourceSha256": "096d19b452da5a63ae0351edcdde0b1f34cacef8afaa8f4bec281f633aaaa792",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [],
+      "artifacts": [],
+      "error": "TypeError: fetch failed"
+    }
+  ],
+  "error": "TypeError: fetch failed"
+}

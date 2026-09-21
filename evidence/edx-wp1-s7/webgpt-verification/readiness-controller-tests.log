@@ -1,0 +1,27 @@
+✔ logical-line：無末尾換行 (0.930416ms)
+✔ logical-line：有末尾換行 (0.096ms)
+✔ logical-line：CRLF (0.047458ms)
+✔ logical-line：空檔 (0.046541ms)
+✔ logical-line：只有port (0.050458ms)
+✔ logical-line：port超界 (0.047625ms)
+✔ logical-line：port零 (0.590583ms)
+✔ logical-line：endpoint空 (0.063459ms)
+✔ logical-line：endpoint錯誤 (0.057042ms)
+✔ logical-line：額外非空行 (0.091ms)
+✔ 慢讀取耗時計入deadline，sleep僅用剩餘budget (1.287834ms)
+✔ 剩餘時間小於interval時縮短sleep (0.104166ms)
+✔ deadline後才完成的有效檔案不能回ready (0.078291ms)
+✔ 延遲補第二行且無final newline可以ready (0.098083ms)
+✔ supervisor先退出不讀檔，exit27 (0.065625ms)
+✔ supervisor在讀取中退出，即使檔案有效仍exit27 (0.069209ms)
+✔ 持續read error維持bounded timeout (0.246333ms)
+✔ 真文字檔可直接使用，tmp於finally回收 (6.186542ms)
+✔ 永不完成的讀取在實際deadline被abort，沒有掛住controller (30.552125ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.094792

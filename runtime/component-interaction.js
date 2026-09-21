@@ -1,9 +1,9 @@
 import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
-export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {} }) {
+export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {} }) {
   let enabled = false, target = null, gesture = null, selectedToken = null;
-  const cancel = () => { gesture = null; restore(); };
+  const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
   const select = next => {
     cancel();
     const current = enabled && next && readTarget(next);
@@ -66,14 +66,14 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       gesture = null;
       if (!g) return false;
       try {
-        if (!enabled || !fresh(g)) { notify('元件已變更，已取消拖曳'); return false; }
+        if (!enabled || !fresh(g)) { onCancel(); notify('元件已變更，已取消拖曳'); return false; }
         const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
         if (fields.every(key => g.next[key] === g.base[key])) return false;
         executeOperation({ operation: g.kind === 'drag' ? 'move-element' : 'resize-element', target: g.target,
           value: Object.fromEntries(fields.map(key => [key, g.next[key]])) });
         notify('手動版面已更新');
         return true;
-      } catch (error) { notify('未套用：' + error.message); return false; }
+      } catch (error) { onCancel(); notify('未套用：' + error.message); return false; }
       finally { restore(); }
     },
   };
@@ -92,14 +92,18 @@ export function cleanupComponentInteractionClone(root) {
   if (mode) { mode.textContent = '編輯版面'; mode.setAttribute('aria-pressed', 'false'); }
   const initialize = root.querySelector('[data-action="initialize-layout"]');
   if (initialize) initialize.hidden = true;
+  root.querySelector('[data-action="snap-layout"]')?.setAttribute('aria-pressed', 'false');
 }
 
-// DOM 與 vendor 只負責呈現；pointer 座標來自 Moveable 原始 input event。
+// DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
   project, notify, setTextMode, selectSlide }) {
-  let moveable = null, overlay = null, observer = null, composing = false;
+  let moveable = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
+  let suppressPointerClick = false;
+  let routedControlClick = null;
   const button = document.querySelector('[data-action="layout"]');
   const initializeButton = document.querySelector('[data-action="initialize-layout"]');
+  const snapButton = document.querySelector('[data-action="snap-layout"]');
   if (!button || !initializeButton) return null;
   const resolve = target => {
     const spec = getSpec(), slide = spec.slides.find(s => s.id === target.slideId);
@@ -111,17 +115,27 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (!node?.isConnected) return null;
     return { node, slideNode, token: node, revision: getRevision(), rect: getComponentGeometry(slide.composition, slide.content.components[index].id) };
   };
-  const restore = () => { project(); };
+  const projectBox = (node, rect) => {
+    for (const key of ['x', 'y', 'width', 'height']) node.style[key === 'x' ? 'left' : key === 'y' ? 'top' : key] = rect[key] + 'px';
+  };
+  const restore = () => {
+    project();
+    const target = interaction.getState().target, rect = geometryTarget && target && resolve(target)?.rect;
+    if (rect) projectBox(geometryTarget, rect);
+  };
   const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
+    onCancel: () => { suppressPointerClick = true; },
     preview(target, rect) {
       const current = resolve(target);
       if (!current) return;
       // 預览允許超界，release 才由既有 validator 拒絕；不 secret clamp。
-      for (const key of ['x', 'y', 'width', 'height']) current.node.style[key === 'x' ? 'left' : key === 'y' ? 'top' : key] = rect[key] + 'px';
+      projectBox(current.node, rect);
+      if (geometryTarget) projectBox(geometryTarget, rect);
     },
   });
   const destroyVendor = () => {
     if (moveable) { moveable.destroy(); moveable = null; }
+    geometryTarget?.remove(); geometryTarget = null;
     overlay?.remove(); overlay = null;
     observer?.disconnect(); observer = null;
   };
@@ -130,7 +144,11 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     document.querySelectorAll('.slide [data-editor-selected]').forEach(node => node.removeAttribute('data-editor-selected'));
     initializeButton.hidden = true;
   };
-  const cancel = () => { interaction.cancel(); moveable?.stopDrag(); moveable?.updateRect(); };
+  const cancel = () => {
+    interaction.cancel(); moveable?.stopDrag();
+    if (snap) clearSelection();
+    else moveable?.updateRect();
+  };
   const point = event => ({ x: event.inputEvent?.clientX ?? event.clientX, y: event.inputEvent?.clientY ?? event.clientY });
   const bindVendor = () => {
     destroyVendor();
@@ -139,25 +157,60 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const Moveable = window.PPTSKILLMoveable?.default;
     if (!Moveable) { notify('版面編輯器未載入'); return; }
     overlay = document.createElement('div'); overlay.setAttribute('data-pptskill-editor-chrome', 'layout');
-    document.body.append(overlay);
-    moveable = new Moveable(overlay, { target: current.node, draggable: true, resizable: true,
-      renderDirections: ['se'], origin: false, rotatable: false, scalable: false, snappable: false,
+    (snap ? current.slideNode : document.body).append(overlay);
+    if (snap) {
+      geometryTarget = document.createElement('div');
+      geometryTarget.setAttribute('data-pptskill-editor-chrome', 'geometry-target');
+      Object.assign(geometryTarget.style, { position: 'absolute', boxSizing: 'border-box', pointerEvents: 'none' });
+      projectBox(geometryTarget, current.rect); current.slideNode.append(geometryTarget);
+    }
+    moveable = new Moveable(overlay, { target: geometryTarget || current.node, draggable: true, resizable: true,
+      ...(snap ? { dragTarget: current.node, container: current.slideNode, rootContainer: document.body,
+        snapContainer: current.slideNode, snapGridWidth: 8, snapGridHeight: 8,
+        snapDirections: { left: true, top: true, right: false, bottom: false, center: false, middle: false } } : {}),
+      renderDirections: ['se'], origin: false, rotatable: false, scalable: false, snappable: snap,
       hideDefaultLines: false, throttleDrag: 0, throttleResize: 0, checkInput: true,
       preventClickEventOnDrag: true });
+    const vendor = moveable;
     for (const [eventName, kind] of [['drag', 'drag'], ['resize', 'resize']]) {
+      let origin, base, scale;
       moveable.on(eventName + 'Start', event => {
+        if (moveable !== vendor) { event.stop(); return; }
         const live = resolve(target);
-        const scale = live?.slideNode.getBoundingClientRect().width / COMPONENT_GEOMETRY.slideWidth;
+        scale = live?.slideNode.getBoundingClientRect().width / COMPONENT_GEOMETRY.slideWidth;
+        origin = point(event); base = live?.rect;
+        if (snap) {
+          moveable.snapDirections = { left: kind === 'drag', top: kind === 'drag', right: kind === 'resize', bottom: kind === 'resize', center: false, middle: false };
+          if (kind === 'resize') event.setFixedDirection([-1, -1]);
+        }
         if (!interaction.begin(kind, point(event), scale)) { event.stop(); return; }
         if (kind === 'drag') event.set([0, 0]);
       });
-      moveable.on(eventName, event => { interaction.update(point(event)); });
-      moveable.on(eventName + 'End', () => { interaction.finish(); moveable?.updateRect(); });
+      moveable.on(eventName, event => {
+        if (moveable !== vendor || !interaction.getState().gesturing) return;
+        let next = point(event);
+        if (snap && Number.isFinite(next.x) && Number.isFinite(next.y) && !(next.x === origin.x && next.y === origin.y)) {
+          // vendor 已換算父層矩陣；轉成既有 controller 的輸入單位，不能再除 scale。
+          const dx = kind === 'drag' ? event.left - base.x : event.width - base.width;
+          const dy = kind === 'drag' ? event.top - base.y : event.height - base.height;
+          next = { x: origin.x + dx * scale, y: origin.y + dy * scale };
+        }
+        // 返回起點必須送回 base，不能略過而留下上一個 preview。
+        if (!interaction.update(next) && snap) clearSelection();
+      });
+      moveable.on(eventName + 'End', () => {
+        if (moveable !== vendor) return;
+        const committed = interaction.finish();
+        if (snap && !committed) clearSelection();
+        else moveable?.updateRect();
+      });
     }
     observer = new MutationObserver(() => {
       if (resolve(target)?.node !== current.node) { clearSelection(); notify('元件已移除，已取消選取'); }
     });
     observer.observe(document.querySelector('.deck'), { childList: true, subtree: true });
+    // explicit container 會略過 vendor mount 的第二次 render；ref 已掛載後量測，才會顯示首次 SE handle。
+    if (snap) vendor.updateRect();
   };
   const select = target => {
     clearSelection(); interaction.select(target);
@@ -180,8 +233,19 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     notify(on ? '點選單一元件以編輯版面' : '可直接播放');
   };
   const click = event => {
+    const routed = routedControlClick === event; routedControlClick = null;
+    // vendor stop/destroy 會移除 click 防護；只消耗本次取消的 pointer 尾隨事件。
+    if (suppressPointerClick && !routed && event.isTrusted && event.detail > 0) {
+      suppressPointerClick = false; event.preventDefault(); return;
+    }
     const action = event.target.closest?.('[data-action]')?.dataset.action;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
+    if (action === 'snap-layout') {
+      if (!interaction.getState().enabled) return;
+      interaction.cancel(); moveable?.stopDrag(); destroyVendor();
+      snap = !snap; snapButton?.setAttribute('aria-pressed', String(snap)); bindVendor();
+      return;
+    }
     if (action === 'initialize-layout') {
       try { if (interaction.initialize()) { initializeButton.hidden = true; bindVendor(); notify('已套用預設手動位置與尺寸'); } }
       catch (error) { notify(error.message); }
@@ -214,6 +278,20 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   };
   const pointerCancel = () => { if (interaction.getState().enabled) cancel(); };
   const viewportChanged = () => { if (interaction.getState().enabled) cancel(); };
+  const routeGestureControl = event => {
+    if (!interaction.getState().gesturing) return;
+    const node = event.target, action = node.closest?.('[data-action]')?.dataset.action;
+    const selection = node.closest?.('.slide') && !node.closest?.('.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box');
+    if (!['layout', 'snap-layout', 'edit'].includes(action) && !selection) return;
+    // 比 gesture 才註冊的 vendor window capture 更早；stopDrag 解除 blocker，原事件仍走既有 handler。
+    cancel(); routedControlClick = event;
+  };
+  const pointerDown = event => {
+    // 沒有尾隨 click（例如 pointercancel）時，新的有效 pointer 仍立即恢復操作。
+    if (event.isTrusted && event.isPrimary !== false && event.button === 0) { suppressPointerClick = false; routedControlClick = null; }
+  };
+  window.addEventListener('click', routeGestureControl, true);
+  document.addEventListener('pointerdown', pointerDown, true);
   document.addEventListener('click', click);
   document.addEventListener('keydown', keydown, true);
   document.addEventListener('compositionstart', compositionStart, true);
@@ -226,6 +304,10 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   return { setMode, clearSelection, cancel, getState: interaction.getState,
     destroy() {
       setMode(false);
+      suppressPointerClick = false;
+      routedControlClick = null;
+      window.removeEventListener('click', routeGestureControl, true);
+      document.removeEventListener('pointerdown', pointerDown, true);
       document.removeEventListener('click', click); document.removeEventListener('keydown', keydown, true);
       document.removeEventListener('compositionstart', compositionStart, true);
       document.removeEventListener('compositionend', compositionEnd, true);

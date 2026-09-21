@@ -1,6 +1,6 @@
 # EDX-WP1-S7 — 單一 component 8px 邊緣吸附
 
-Status: IN PROGRESS — clean native Worker implementation
+Status: REVIEW_CANDIDATE — 1280＋1600三模式PASS；fresh affected PGQ串行2/2 PASS；ZIP lifecycle PASS；Independent Review pending
 Depends on: S5 Independent GO dd74700／closure8dd76cc；S6 architecture evidence 5a937bf、9b0280d與gesture-boundary/decision.md。
 traces_to: BACKLOG.md §10.1 guided direct manipulation／invisible snap grid、§10.2 prior-art-first、§10.3 WP1、§10.4 Operation Registry、§10.5 portability。
 Trace preflight：上述refs存在；依賴已清；S7唯一ID；acceptance下列可重現；無Critical。
@@ -32,3 +32,15 @@ standard bounded Worker＋Mainline驗收，依當前native model能力做routing
 ## 開工路由
 
 Branch codex/edx-wp1-s7，base5b767e4；一名clean native Worker，繼承主對話模型/effort（工具無Terra lane，不自行override）。shared single writer，主線期間唯讀準備驗收；Worker freeze後主線接手。Preflight與短prompt見evidence/edx-wp1-s7，無新visible task。
+
+## Motion reset 窄修復
+
+主線完成單檔最小修復，詳 evidence/edx-wp1-s7/motion-reset-repair.md。CSS契約4/4、non-browser337/337；目前14/14 source與4/4 protected hashes仍與motion-reset-hashes.json一致。舊motion blocker計數不重置，motion seam已改，PGQ需fresh受影響驗證。
+
+歷史一次性host授權已消耗。AI Core fixed SHA `2d78d8e18d42156f43f12f0ebc6997914ec64328` 後，Mainline只補未完成的1600×900；`evidence/edx-wp1-s7/mainline-host-1600-after-aicore-20260921-r3/targeted/acceptance.json` 為PASS，normal/reduced/static各5 checks、errors0、Browser.close與lifecycle cleanup通過。1280沿既有fresh PASS，不重跑。
+
+Motion reset後的fresh affected PGQ縮到 `pgq-wp4-s3-content-integrity` 與 `pgq-wp4-s4-required-visibility`；sample-approval/full-deck authority seam未變，保留已review inherited evidence。最新focused S3/S4/S5/S7為158/158 PASS（`evidence/edx-wp1-s7/mainline-focused-after-motion.log`）；full non-browser 337/337仍對應相同14/14 source hashes。`git diff --check` PASS。
+
+Owner後續明示的一次fresh affected PGQ host授權已執行並消耗；readiness PASS後，兩支test因Node預設file concurrency平行執行，managed supervisor回 `NO_GO: resource observation unknown (scan limit)` 並fail-closed終止Chrome。PGQ收到空browser stdout後均以JSON parse error結束，不能判產品FAIL。lifecycle exit2、owned root已回收、post source/protected hashes仍MATCH。詳 `evidence/edx-wp1-s7/mainline-fresh-affected-pgq-attempt.md`。既有S4正式重現使用 `--test-concurrency=1`；下一次若Owner另行授權，只應串行跑同兩支，不改AI Core scanner或容量上限。
+
+Owner再授權一次後依既有正式模式加入 `--test-concurrency=1`：fresh affected PGQ 2/2 PASS；content-integrity約24.3s、required-visibility約136.0s，總約160.5s。Readiness／Browser.close／managed lifecycle均exit0，launcher stderr空，post 14/14 source與4/4 protected hashes MATCH；因此前次scan-limit不再重現，保留為環境歷史證據而非產品FAIL。Fresh ZIP 2,251,917 bytes，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`；install/smoke/uninstall lifecycle PASS，Gemini CLI缺席只列host capability partial。完整裁決見 `evidence/edx-wp1-s7/mainline-receipt.md`。

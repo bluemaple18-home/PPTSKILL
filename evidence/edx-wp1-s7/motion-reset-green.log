@@ -1,0 +1,12 @@
+✔ motion-ready 保留全體節點及 pseudo-element 的停動畫契約 (0.797666ms)
+✔ motion-ready transform reset 隔離 editor root／後代，並保留內容與 pseudo-element reset (0.095583ms)
+✔ motion-static 保留全體節點及 pseudo-element 的停動畫契約 (0.060375ms)
+✔ motion-static transform reset 隔離 editor root／後代，並保留內容與 pseudo-element reset (0.050416ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 91.670417

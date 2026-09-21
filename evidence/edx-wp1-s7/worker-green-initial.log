@@ -1,0 +1,17 @@
+✔ S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用 (13.984709ms)
+✔ S7 0.8 drag vendor canonical payload、preview/export、單次 release (10.091125ms)
+✔ S7 0.8 drag 零與返回原點不得採用 vendor 起始修正 (6.042125ms)
+✔ S7 0.8 resize vendor canonical payload、preview/export、單次 release (6.684084ms)
+✔ S7 0.8 resize 零與返回原點不得採用 vendor 起始修正 (5.954458ms)
+✔ S7 1 drag vendor canonical payload、preview/export、單次 release (6.572208ms)
+✔ S7 1 drag 零與返回原點不得採用 vendor 起始修正 (5.375417ms)
+✔ S7 1 resize vendor canonical payload、preview/export、單次 release (6.683959ms)
+✔ S7 1 resize 零與返回原點不得採用 vendor 起始修正 (5.875666ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 183.59925

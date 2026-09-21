@@ -1,0 +1,9 @@
+{
+  "files": {
+    "evidence/edx-wp1-s7/webgpt-verification/readiness-controller.mjs": "cd0750c9ffa6fac1217b309bc0897dc71618b20c3fe50f1321715e57ca346cf5",
+    "tests/edx-wp1-s7-readiness-controller.test.mjs": "5250130d9d6dc9948ba469ed5ade3ce0374c84679e983844096e9e93d6570700"
+  },
+  "productSourceHashesMatch": true,
+  "protectedHashesMatch": true,
+  "browserLaunched": false
+}

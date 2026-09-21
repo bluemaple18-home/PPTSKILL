@@ -1,3 +1,4 @@
+import { runSnapBrowserCases } from './edx-wp1-s7-browser-cases.mjs';
 import { runKeyboardBrowserCases } from './edx-wp1-s5-browser-cases.mjs';
 import { runMotionBrowserCases } from './edx-wp1-s3-motion-browser-cases.mjs';
 import assert from 'node:assert/strict';
@@ -167,6 +168,7 @@ try {
       run.checks.push('文字模式互斥');
       if (process.argv.includes('--keyboard-regression')) await runKeyboardBrowserCases({ cdp, evaluate, navigate, sourcePath, selector, run, click, startGesture, endGesture, assertExport, assertRect });
       if (process.argv.includes('--motion-regression')) await runMotionBrowserCases({ cdp, evaluate, navigate, outputDir, width, selector, run, click, startGesture, endGesture });
+      if (process.argv.includes('--snap-regression')) await runSnapBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, selector, run, click, position, mouse, settle, startGesture, endGesture, assertExport, assertRect });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';

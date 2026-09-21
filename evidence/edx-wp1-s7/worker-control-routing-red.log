@@ -1,0 +1,74 @@
+✖ S7 snap-layout 在 pinned window capture blocker 前取消，原 document handler 可達 (10.862916ms)
+✖ S7 edit 在 pinned window capture blocker 前取消，原 document handler 可達 (3.629ms)
+✖ S7 selection 在 pinned window capture blocker 前取消，原 document handler 可達 (2.764ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.195167
+
+✖ failing tests:
+
+test at tests/edx-wp1-s7-control-routing.test.mjs:42:60
+✖ S7 snap-layout 在 pinned window capture blocker 前取消，原 document handler 可達 (10.862916ms)
+  AssertionError [ERR_ASSERTION]: control click 必須在 release 前取消
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-control-routing.test.mjs:46:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s7-control-routing.test.mjs:42:60
+✖ S7 edit 在 pinned window capture blocker 前取消，原 document handler 可達 (3.629ms)
+  AssertionError [ERR_ASSERTION]: control click 必須在 release 前取消
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-control-routing.test.mjs:46:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s7-control-routing.test.mjs:42:60
+✖ S7 selection 在 pinned window capture blocker 前取消，原 document handler 可達 (2.764ms)
+  AssertionError [ERR_ASSERTION]: control click 必須在 release 前取消
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-control-routing.test.mjs:46:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

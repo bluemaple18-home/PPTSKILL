@@ -1,0 +1,3846 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/source.html",
+  "sourceSha256": "6d5cbce954fa6981b24fa09c7cb6d26312dcbfeae5468abfd0f53a537802a4d3",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "PERF readonly/noop/invalid/export 換 object 後真 pointer release",
+        "PERF stale 真 pointer public-text",
+        "PERF stale 真 pointer legacy-text",
+        "PERF stale 真 pointer legacy-component",
+        "PERF stale 真 pointer sync-export",
+        "PERF stale 真 pointer geometry",
+        "PERF stale 真 pointer asset-after-export",
+        "文字模式互斥",
+        "S5 play／無selection／legacy無geometry不提交",
+        "S5 真方向／Shift／repeat為1px或10px，尺寸與非geometry不變",
+        "S5 真修飾鍵／229及synthetic composition lifecycle避讓",
+        "S5 真input／textarea／select／contenteditable／textbox／chrome focus不挪動",
+        "S5 safe-area越界拒絕、不clamp",
+        "S5 真drag／resize途中按鍵不提交、release仍只提交pointer結果",
+        "S5 guarded Escape保留selection與drag/resize；普通Escape沿既有pointer cancel驗收",
+        "S5 離線export/reopen保留geometry且可繼續微調",
+        "S5 文字模式不微調",
+        "S5 已刪DOM target不提交",
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 309.89999771118164,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 329.90001678466797,
+              "width": 560,
+              "height": 360.00003814697266
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 329.90001678466797,
+              "width": 560,
+              "height": 360.00003814697266
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 813,
+            "y": 293,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 647,
+            "height": 487
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-legacy-selected.html",
+          "bytes": 372414,
+          "sha256": "55dc9587b2147fcb2f0532fea7105510379972e4a7adc5cadbca4a85a71986e7"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-preview-export.html",
+          "bytes": 372723,
+          "sha256": "95758426e5e5b82944e75009da30f9d591e98962a8f4fa4f8ec72345143e6182"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-cancel.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-noop.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-invalid.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-invalid-resize.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-play-mode.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-export.html",
+          "bytes": 372723,
+          "sha256": "30a1a8681242ab98ddb28daa440db39e71f4104d94e162df9cd635f8df456b35"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-reopen-export.html",
+          "bytes": 372723,
+          "sha256": "697e095c66d4d36eb83efaffdef9432fd860f870109b568c651bc0fdc6efb605"
+        },
+        {
+          "label": "perf-preview-readonly",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-preview-readonly.html",
+          "bytes": 372723,
+          "sha256": "95758426e5e5b82944e75009da30f9d591e98962a8f4fa4f8ec72345143e6182"
+        },
+        {
+          "label": "perf-stale-public-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-public-text.html",
+          "bytes": 372697,
+          "sha256": "c510c2b1e03c8fc70866ad9730f89c1cd26fb444293b8a97e8c1bc88d8ee665a"
+        },
+        {
+          "label": "perf-stale-legacy-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-legacy-text.html",
+          "bytes": 372631,
+          "sha256": "f002f1ee1a2424540bde005e2892f5520446af2f32be7f3f8db9d5dc00978b91"
+        },
+        {
+          "label": "perf-stale-legacy-component",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-legacy-component.html",
+          "bytes": 372715,
+          "sha256": "1ba99509208010c60aef7c65f102baf1f782652390d143948d8ea781d22378e7"
+        },
+        {
+          "label": "perf-stale-sync-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-sync-export.html",
+          "bytes": 372705,
+          "sha256": "106de5af9cf5c5d0236715c87bcd4f80ff04e91d58d60befbc03138e30f542cb"
+        },
+        {
+          "label": "perf-stale-geometry",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-geometry.html",
+          "bytes": 372723,
+          "sha256": "26fc2f78b3c2b7c9789985e179154f73521e23c44b83e3f050805b327f9c9173"
+        },
+        {
+          "label": "perf-stale-asset-after-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-perf-stale-asset-after-export.html",
+          "bytes": 372783,
+          "sha256": "1426efc2277469bc790b96abe5cee0a03e84ffcde258d9503358fdcb328fb416"
+        },
+        {
+          "label": "keyboard-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-keyboard-export.html",
+          "bytes": 372723,
+          "sha256": "542d877fb730ff5386c8494cbcd00c76e140352f7d71376f1c027ecc3589299c"
+        },
+        {
+          "label": "keyboard-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-keyboard-reopen.html",
+          "bytes": 372723,
+          "sha256": "929a9e5706177e6398288c5131fd5461695ef459a91e1ae5d7bbf50ba310ee0b"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-brand-device-accent-preview.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-brand-device-accent-normal.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-brand-device-accent-reduced.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-brand-device-accent-static.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-image-zoom-settle-preview.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-image-zoom-settle-normal.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-image-zoom-settle-reduced.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-image-zoom-settle-static.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-restrained-fade-rise-preview.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-restrained-fade-rise-normal.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-restrained-fade-rise-reduced.html",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-motion-restrained-fade-rise-static.html",
+        {
+          "label": "snap-false-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-snap-false-drag-preview.html",
+          "bytes": 372723,
+          "sha256": "0905cbf2ce9f7365d4db44a3cfb0be7972d0d4d0bf5c69483ea415b77e74c624"
+        },
+        {
+          "label": "snap-false-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-snap-false-resize-preview.html",
+          "bytes": 372723,
+          "sha256": "0905cbf2ce9f7365d4db44a3cfb0be7972d0d4d0bf5c69483ea415b77e74c624"
+        },
+        {
+          "label": "snap-true-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/mainline-browser/1280-snap-true-drag-preview.html",
+          "bytes": 372723,
+          "sha256": "0905cbf2ce9f7365d4db44a3cfb0be7972d0d4d0bf5c69483ea415b77e74c624"
+        }
+      ],
+      "keyboardDiagnostic": {
+        "keys": [],
+        "status": "未套用：geometry y 低於 minimum／safe area。"
+      },
+      "motionObservations": [
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "brand-device-accent",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "brand-device-accent",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 824.4999694824219,
+              "y": 302.99999237060547,
+              "width": 591.0000610351562,
+              "height": 393.9999771118164
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 844.1999816894531,
+              "y": 322.7000045776367,
+              "width": 551.6000366210938,
+              "height": 354.5999526977539
+            },
+            "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+            "opacity": "0",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "image-zoom-settle",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "image-zoom-settle",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 309.89999771118164,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "pointer-commit-cancel",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 329.90001678466797,
+              "width": 560,
+              "height": 360.00003814697266
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "normal",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 329.90001678466797,
+              "width": 560,
+              "height": 360.00003814697266
+            },
+            "transform": "matrix(1, 0, 0, 1, 0, 9.9)",
+            "opacity": "0",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 840,
+              "y": 320,
+              "width": 560,
+              "height": 360
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "reduced",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "phase": "public-operation",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        },
+        {
+          "treatment": "restrained-fade-rise",
+          "mode": "static",
+          "phase": "export-reopen",
+          "start": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          },
+          "end": {
+            "visibility": "visible",
+            "rootClasses": "slide primitive-component-focus motion-root variant-quote-monument is-visible",
+            "animations": [],
+            "rect": {
+              "x": 820,
+              "y": 300,
+              "width": 600,
+              "height": 400
+            },
+            "transform": "none",
+            "opacity": "1",
+            "treatment": "restrained-fade-rise",
+            "custom": "keep",
+            "color": "rgb(90, 40, 130)",
+            "priority": "important",
+            "inline": [
+              [
+                "transform",
+                "",
+                ""
+              ],
+              [
+                "translate",
+                "",
+                ""
+              ],
+              [
+                "rotate",
+                "",
+                ""
+              ],
+              [
+                "scale",
+                "",
+                ""
+              ]
+            ]
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 477,\n+   width: 637,\n-   height: 485,\n-   width: 645,\n    x: 803,\n    y: 283\n  }\n\n    at runSnapBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s7-browser-cases.mjs:59:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:171:55",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 477,\n+   width: 637,\n-   height: 485,\n-   width: 645,\n    x: 803,\n    y: 283\n  }\n\n    at runSnapBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s7-browser-cases.mjs:59:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:171:55"
+}

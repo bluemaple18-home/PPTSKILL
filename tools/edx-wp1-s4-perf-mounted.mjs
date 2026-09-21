@@ -79,7 +79,7 @@ export function mountedEditor(input = fixture()) {
   const state = sanitizeDeckSpec(input), root = new Element('html'), body = new Element('body'), deck = new Element('main', { class: 'deck' });
   root.append(body); body.append(deck);
   const tag = new Element('script', { id: 'deck-spec', type: 'application/json' }, JSON.stringify(state)); body.append(tag);
-  for (const action of ['layout', 'initialize-layout', 'edit', 'move-up', 'move-down', 'duplicate', 'delete']) body.append(new Element('button', { 'data-action': action }));
+  for (const action of ['layout', 'snap-layout', 'initialize-layout', 'edit', 'move-up', 'move-down', 'duplicate', 'delete']) body.append(new Element('button', { 'data-action': action }));
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
     const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);
@@ -101,19 +101,19 @@ export function mountedEditor(input = fixture()) {
     },
     stringify(value, ...args) { counts.serializations++; if (value?.slides) counts.wholeSpecSerializations++; return JSON.stringify(value, ...args); },
   };
-  let vendor;
+  let vendor; const observers = new Set();
   class Moveable {
-    constructor() { this.handlers = {}; vendor = this; }
+    constructor(overlay, options) { this.handlers = {}; this.options = options; this.destroyed = false; vendor = this; }
     on(name, fn) { this.handlers[name] = fn; }
-    destroy() {} stopDrag() {} updateRect() {}
+    destroy() { if (this.destroyed) throw new Error('重複 destroy'); this.destroyed = true; } stopDrag() {} updateRect() { if (this.destroyed) throw new Error('destroy 後 updateRect'); }
   }
   const document = Object.assign(root, { body, documentElement: root, readyState: 'complete', createElement: tag => new Element(tag) });
-  const window = { PPTSKILLMoveable: { default: Moveable }, addEventListener() {}, removeEventListener() {},
+  const window = { PPTSKILLMoveable: { default: Moveable }, listeners: {}, addEventListener: Element.prototype.addEventListener, removeEventListener: Element.prototype.removeEventListener,
     PPTSKILLSizeGuard: { prepare: html => ({ status: 'pass', html, report: {} }) },
     PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
   };
   vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, ''), {
-    document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { observe() {} disconnect() {} }, console,
+    document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
   });
   const api = window.PPTSKILLEditor;
   const click = node => { for (const fn of document.listeners.click || []) fn({ target: node, preventDefault() {} }); };
@@ -124,7 +124,7 @@ export function mountedEditor(input = fixture()) {
   const update = (x, y, kind = 'drag') => vendor.handlers[kind](event(x, y));
   const finish = (kind = 'drag') => vendor.handlers[kind + 'End']();
   const getSpec = () => JSON.parse(JSON.stringify(api.getDeckSpec()));
-  return { api, document, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
+  return { api, document, window, flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
     resetCounts() { for (const key of Object.keys(counts)) counts[key] = 0; },
     action(name) { click(document.querySelector(`[data-action="${name}"]`)); },
   };

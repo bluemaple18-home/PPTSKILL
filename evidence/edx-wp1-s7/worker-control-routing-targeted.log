@@ -1,0 +1,44 @@
+✔ S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復 (13.430625ms)
+✔ S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復 (4.788375ms)
+✔ S7 cancel 共用取消尾隨 click 防護 (3.441667ms)
+✔ S7 pointercancel 共用取消尾隨 click 防護 (3.37625ms)
+✔ S7 blur 共用取消尾隨 click 防護 (3.624625ms)
+✔ S7 scroll 共用取消尾隨 click 防護 (3.3175ms)
+✔ S7 resize 共用取消尾隨 click 防護 (3.319791ms)
+✔ S7 selection 共用取消尾隨 click 防護 (3.474459ms)
+✔ S7 mode 共用取消尾隨 click 防護 (3.710167ms)
+✔ S7 text 共用取消尾隨 click 防護 (4.000959ms)
+✔ S7 toggle 共用取消尾隨 click 防護 (3.433125ms)
+✔ S7 replacement 共用取消尾隨 click 防護 (3.281833ms)
+✔ S7 stale-update 共用取消尾隨 click 防護 (3.76975ms)
+✔ S7 stale-release 共用取消尾隨 click 防護 (3.865333ms)
+✔ S7 invalid 共用取消尾隨 click 防護 (3.937209ms)
+✔ S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取 (3.061ms)
+✔ S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響 (3.255291ms)
+✔ S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護 (3.678583ms)
+✔ S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor (3.091ms)
+✔ S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護 (3.003458ms)
+✔ S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護 (2.932834ms)
+✔ S7 非新有效 pointerdown {"button":2} 不解除本次取消防護 (2.739208ms)
+✔ S7 destroy 移除 pointerdown listener，重複 teardown 安全 (2.680708ms)
+✔ S7 snap-layout {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (12.788375ms)
+✔ S7 edit {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (4.773042ms)
+✔ S7 selection {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (3.812208ms)
+✔ S7 snap-layout {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (3.514917ms)
+✔ S7 edit {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (3.736208ms)
+✔ S7 selection {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達 (3.238042ms)
+✔ S7 snap-layout {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達 (3.351583ms)
+✔ S7 edit {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達 (3.521166ms)
+✔ S7 selection {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達 (3.669083ms)
+✔ S7 capture 不攔截非本卡路由 outside (3.02875ms)
+✔ S7 capture 不攔截非本卡路由 unrelated-action (2.596334ms)
+✔ S7 capture 不攔截非本卡路由 vendor-chrome (2.988833ms)
+✔ S7 routing listener 與 vendor blocker 在重複 destroy 後均清除 (2.972291ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 192.522042

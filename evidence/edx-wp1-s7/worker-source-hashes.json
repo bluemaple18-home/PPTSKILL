@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-09-20T16:32:18.261Z",
+  "head": "4cd4540a71aa7f94cc60e4495155c572034a57a4",
+  "branch": "codex/edx-wp1-s7",
+  "node": "v25.9.0",
+  "sources": {
+    "runtime/component-interaction.js": "07cf6ae5a45aa6828a03abae7306b5c1fa7f8e921ebd02b3c36c00824c4d6b55",
+    "runtime/deck-editor.js": "b98f7d01b86e1fb2ee869833958c3430a05ebb4e23025f780e313ad07726b4e5",
+    "tests/edx-wp1-s7-snap.test.mjs": "633485727d04a6e3f7e52e0beb650bb240f13e0932d3cbe28a443902c1655233",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "104dd0c4ab371ba24a6b5d13f2dafdc36f0a09138b17e7c51d4634056cdcc025",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "82ed554efa78e79ecf35ed3b4c197260f82d479c5d502c4f5ee62a2a63575d85",
+    "tools/edx-wp1-s7-browser-cases.mjs": "4bad3bd292a14f88b16701cff15b5e786b7880684d230d5c1b20a5ddb727fa90",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "3061dec10ac065f29dc57f7e49e992af22fe96ec1ac9a0bd67f9fa42afb423c0",
+    "tools/edx-wp1-s4-perf-probe.mjs": "d30f136bb6519678df8c5233f8482f9f35ae97a192c6914814b9d0de7483fdd1"
+  },
+  "vendor": {
+    "path": "runtime/vendor/moveable-0.53.0.iife.js",
+    "sha256": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053",
+    "matchesS6": true
+  },
+  "protectedFilesCurrentOnly": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "fixtureSha256": "88245bdb6617720da070147111a94e84725bc84d91d4d0965b3525c056e99d7f",
+  "receiptSha256": "850d105a5623abe7cc4196ba748ab4a82651232cd8f58a595c9a3e9989e6d9c7"
+}

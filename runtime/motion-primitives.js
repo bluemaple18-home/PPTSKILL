@@ -24,6 +24,9 @@ export function resolveMotionPreset(motion = {}) {
 
 export function buildMotionCss(motion = {}) {
   const preset = resolveMotionPreset(motion);
+  // Editor 定位 transform 不屬於簡報動效；停動畫仍涵蓋所有節點。
+  const staticTransformTarget = '*:not(:where([data-pptskill-editor-chrome],[data-pptskill-editor-chrome] *,.moveable-control-box,.moveable-control-box *))';
+  const staticTransformReset = root => ['', '::before', '::after'].map(pseudo => `${root} ${staticTransformTarget}${pseudo}`).join(',') + '{transform:none!important}';
   return `
 :root{--motion-duration:${preset.durationMs}ms;--motion-ease:${preset.easing};--motion-distance:${preset.distance}px;--motion-scale:${preset.scale};--motion-stagger:${preset.stagger}ms;--motion-overshoot:${preset.overshoot}}
 html.motion-ready .motion-root [data-effect-treatment="hard-cut-field"]{clip-path:inset(0 0 100% 0);transform:translateY(var(--motion-distance));transition:clip-path var(--motion-duration) var(--motion-ease),transform var(--motion-duration) var(--motion-ease)}
@@ -51,8 +54,8 @@ html.motion-ready .motion-root.is-visible [data-effect-treatment="staggered-sequ
 html.motion-ready .motion-root.is-visible [data-effect-treatment="staggered-sequence"]>article:nth-child(3),html.motion-ready .motion-root.is-visible [data-effect-treatment="progressive-reveal"]>article:nth-child(3){transition-delay:calc(var(--motion-stagger) * 2)}
 html.motion-ready .motion-root.is-visible [data-effect-treatment="staggered-sequence"]>article:nth-child(4),html.motion-ready .motion-root.is-visible [data-effect-treatment="progressive-reveal"]>article:nth-child(4){transition-delay:calc(var(--motion-stagger) * 3)}
 html.motion-ready .motion-root.is-visible [data-effect-treatment="staggered-sequence"]>article:nth-child(5),html.motion-ready .motion-root.is-visible [data-effect-treatment="progressive-reveal"]>article:nth-child(5){transition-delay:calc(var(--motion-stagger) * 4)}
-@media(prefers-reduced-motion:reduce){html.motion-ready .motion-root *,html.motion-ready .motion-root *::before,html.motion-ready .motion-root *::after{animation:none!important;transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}}
-html.motion-static .motion-root *,html.motion-static .motion-root *::before,html.motion-static .motion-root *::after{animation:none!important;transition:none!important;opacity:1!important;transform:none!important;clip-path:none!important}
+@media(prefers-reduced-motion:reduce){html.motion-ready .motion-root *,html.motion-ready .motion-root *::before,html.motion-ready .motion-root *::after{animation:none!important;transition:none!important;opacity:1!important;clip-path:none!important}${staticTransformReset('html.motion-ready .motion-root')}}
+html.motion-static .motion-root *,html.motion-static .motion-root *::before,html.motion-static .motion-root *::after{animation:none!important;transition:none!important;opacity:1!important;clip-path:none!important}${staticTransformReset('html.motion-static .motion-root')}
 `;
 }
 

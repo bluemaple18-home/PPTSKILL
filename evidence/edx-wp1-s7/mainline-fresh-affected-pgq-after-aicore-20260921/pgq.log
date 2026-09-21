@@ -1,0 +1,37 @@
+✖ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (29836.192458ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (32998.245042ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 33085.079125
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-content-integrity.test.mjs:13:1
+✖ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (29836.192458ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-content-integrity.test.mjs:30:28)
+      at expectedException (node:assert:578:17)
+      at expectsError (node:assert:703:21)
+      at strict.rejects (node:assert:769:3)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-content-integrity.test.mjs:27:3)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (32998.245042ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:57:28)
+      at expectedException (node:assert:578:17)
+      at expectsError (node:assert:703:21)
+      at strict.rejects (node:assert:769:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:54:3)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)

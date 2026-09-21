@@ -1,0 +1,37 @@
+✔ S7 cancel 取消 preview，proxy 與 vendor 清理 (13.128084ms)
+✔ S7 toggle 取消 preview，proxy 與 vendor 清理 (4.101125ms)
+✔ S7 mode 取消 preview，proxy 與 vendor 清理 (3.569917ms)
+✔ S7 text 取消 preview，proxy 與 vendor 清理 (3.079084ms)
+✔ S7 escape 取消 preview，proxy 與 vendor 清理 (3.137834ms)
+✔ S7 pointercancel 取消 preview，proxy 與 vendor 清理 (3.348708ms)
+✔ S7 blur 取消 preview，proxy 與 vendor 清理 (3.125291ms)
+✔ S7 scroll 取消 preview，proxy 與 vendor 清理 (2.729833ms)
+✔ S7 resize 取消 preview，proxy 與 vendor 清理 (2.923875ms)
+✔ S7 stale 取消 preview，proxy 與 vendor 清理 (3.715041ms)
+✔ S7 deleted 取消 preview，proxy 與 vendor 清理 (2.694583ms)
+✔ S7 replacement 取消 preview，proxy 與 vendor 清理 (2.631375ms)
+✔ S7 destroy 取消 preview，proxy 與 vendor 清理 (3.29975ms)
+✔ S7 drag bounds/minimum/finite 原子拒絕 (8.162792ms)
+✔ S7 resize bounds/minimum/finite 原子拒絕 (7.572959ms)
+✔ S7 keyboard 仍1/10px、guardedEscape／IME／input 不取消 snap gesture (4.009833ms)
+✔ S7 public begin/update/finish：preview 0筆、release 1筆、return/cancel/stale 0筆 (1.718583ms)
+✔ S7 mounted 1MiB snap preview 不序列化、不讀 payload (23.407542ms)
+✔ S7 mounted 6MiB snap preview 不序列化、不讀 payload (84.650125ms)
+✔ S7 mounted 12MiB snap preview 不序列化、不讀 payload (139.78025ms)
+✔ S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用 (3.169875ms)
+✔ S7 0.8 drag vendor canonical payload、preview/export、單次 release (6.883ms)
+✔ S7 0.8 drag 零與返回原點不得採用 vendor 起始修正 (5.767542ms)
+✔ S7 0.8 resize vendor canonical payload、preview/export、單次 release (6.374625ms)
+✔ S7 0.8 resize 零與返回原點不得採用 vendor 起始修正 (5.886583ms)
+✔ S7 1 drag vendor canonical payload、preview/export、單次 release (6.640334ms)
+✔ S7 1 drag 零與返回原點不得採用 vendor 起始修正 (6.067459ms)
+✔ S7 1 resize vendor canonical payload、preview/export、單次 release (6.675292ms)
+✔ S7 1 resize 零與返回原點不得採用 vendor 起始修正 (7.320209ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 499.396667

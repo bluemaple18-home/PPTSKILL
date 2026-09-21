@@ -1,0 +1,18 @@
+{
+  "supervisors": [
+    {
+      "root": "/private/tmp/aic-b-cd040a7cfee245079836e6df46825036",
+      "exitCode": 2,
+      "reason": "resource observation unknown (scan limit)",
+      "rootAbsent": true
+    },
+    {
+      "root": "/private/tmp/aic-b-ebf57d0dfdf440459f8e41b059b58934",
+      "exitCode": 2,
+      "reason": "resource observation unknown (scan limit)",
+      "rootAbsent": true
+    }
+  ],
+  "isolationMarkerAbsent": true,
+  "browserClose": "末輪 close 前 supervisor 已自行停損；未成功送出 Browser.close，不宣稱 normal exit"
+}

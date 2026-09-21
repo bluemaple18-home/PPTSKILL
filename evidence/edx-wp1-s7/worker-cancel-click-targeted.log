@@ -1,0 +1,31 @@
+✔ S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復 (13.609083ms)
+✔ S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復 (4.635458ms)
+✔ S7 cancel 共用取消尾隨 click 防護 (3.471333ms)
+✔ S7 pointercancel 共用取消尾隨 click 防護 (3.50475ms)
+✔ S7 blur 共用取消尾隨 click 防護 (3.440084ms)
+✔ S7 scroll 共用取消尾隨 click 防護 (3.221334ms)
+✔ S7 resize 共用取消尾隨 click 防護 (3.247ms)
+✔ S7 selection 共用取消尾隨 click 防護 (3.288875ms)
+✔ S7 mode 共用取消尾隨 click 防護 (3.4535ms)
+✔ S7 text 共用取消尾隨 click 防護 (3.726417ms)
+✔ S7 toggle 共用取消尾隨 click 防護 (3.21075ms)
+✔ S7 replacement 共用取消尾隨 click 防護 (2.967042ms)
+✔ S7 stale-update 共用取消尾隨 click 防護 (3.409625ms)
+✔ S7 stale-release 共用取消尾隨 click 防護 (4.642792ms)
+✔ S7 invalid 共用取消尾隨 click 防護 (6.386ms)
+✔ S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取 (4.232ms)
+✔ S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響 (4.0265ms)
+✔ S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護 (4.157083ms)
+✔ S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor (3.749292ms)
+✔ S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護 (3.786291ms)
+✔ S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護 (3.824208ms)
+✔ S7 非新有效 pointerdown {"button":2} 不解除本次取消防護 (4.137666ms)
+✔ S7 destroy 移除 pointerdown listener，重複 teardown 安全 (3.231667ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 205.78325

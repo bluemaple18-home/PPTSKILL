@@ -1,0 +1,38 @@
+✖ S7 首次 snap SE handle：pinned mount/render 重播，尚未 drag 即提交645×485 (12.724417ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.644166
+
+✖ failing tests:
+
+test at tests/edx-wp1-s7-first-handle.test.mjs:64:1
+✖ S7 首次 snap SE handle：pinned mount/render 重播，尚未 drag 即提交645×485 (12.724417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   height: 477,
+  +   width: 637,
+  -   height: 485,
+  -   width: 645,
+      x: 803,
+      y: 283
+    }
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-first-handle.test.mjs:76:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { x: 803, y: 283, width: 637, height: 477 },
+    expected: { x: 803, y: 283, width: 645, height: 485 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

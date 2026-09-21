@@ -1,0 +1,5 @@
+owner_scope=PPTSKILL Mainline only 1600x900; 1280 not rerun
+ai_core_fixed_sha=2d78d8e18d42156f43f12f0ebc6997914ec64328
+managed_child_path=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+CODEX_SANDBOX=None
+capacity=HostCapacity(total_bytes=494384795648, physical_available_bytes=72510279680, admission_available_bytes=83441218167, source='macos_foundation_important_usage')

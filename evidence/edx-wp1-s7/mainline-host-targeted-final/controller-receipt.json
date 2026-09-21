@@ -1,0 +1,15 @@
+{
+  "authorization": "Owner對重新授權啟動一次host Chrome、執行S7 targeted harness並清理明示：授權",
+  "hostSandbox": null,
+  "sourceHashesMatch": true,
+  "protectedHashesMatch": true,
+  "harnessStarted": true,
+  "supervisorPid": 34504,
+  "ownedRoot": "/private/tmp/aic-b-cb79bdeb5f514a4dad8094cefe0f9df0",
+  "readinessExit": 0,
+  "harnessExit": 1,
+  "supervisorExit": 2,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "protectedHashesMatchAfter": true
+}

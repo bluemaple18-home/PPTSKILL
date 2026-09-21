@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "runtime/component-interaction.js": "5760227c81bda1964621f94f01dda95995d22a6a872a519c2fd22eda8b0266b2",
+    "runtime/deck-editor.js": "b98f7d01b86e1fb2ee869833958c3430a05ebb4e23025f780e313ad07726b4e5",
+    "tools/edx-wp1-s7-browser-cases.mjs": "c93c8199f1186c3b28c98bdebd90b4b072de8bbc84a8a7481afdb6d8aa2cdd53",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "82ed554efa78e79ecf35ed3b4c197260f82d479c5d502c4f5ee62a2a63575d85",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "3061dec10ac065f29dc57f7e49e992af22fe96ec1ac9a0bd67f9fa42afb423c0",
+    "tools/edx-wp1-s4-perf-probe.mjs": "d30f136bb6519678df8c5233f8482f9f35ae97a192c6914814b9d0de7483fdd1",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "104dd0c4ab371ba24a6b5d13f2dafdc36f0a09138b17e7c51d4634056cdcc025",
+    "tests/edx-wp1-s7-cancel-diagnostic.test.mjs": "f1b2cd087f320cd9e37c9936f72690f6e846ff76c681af896786f4377e323c21",
+    "tests/edx-wp1-s7-first-handle.test.mjs": "644d9d233b5b9cb38550813b7a0d4c39defc7da5ecff48cc954ed50a27404825",
+    "tests/edx-wp1-s7-control-routing.test.mjs": "05dad47a12e8cb8e2c742b77942ca06956b71366099b993241fe993adbe6df2f",
+    "tests/edx-wp1-s7-cancel-click.test.mjs": "7f2a52230b7abff617afc1243523354f1569b0b006f1bba0189f47be153c706f",
+    "tests/edx-wp1-s7-snap.test.mjs": "633485727d04a6e3f7e52e0beb650bb240f13e0932d3cbe28a443902c1655233",
+    "runtime/motion-primitives.js": "9c83b17419de69c65b99c175949441d2d910888ddf0aa94a580d8bc8390d817d",
+    "tests/edx-wp1-s7-motion-reset.test.mjs": "03c35cdb9f2dcab730a032e9ee4a105fdb435b301159b1b23ce42942144078b0"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  }
+}

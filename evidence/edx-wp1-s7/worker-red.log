@@ -1,0 +1,150 @@
+✖ S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用 (11.417542ms)
+✖ S7 0.8 drag vendor canonical payload、preview/export、單次 release (4.336166ms)
+✖ S7 0.8 drag 零與返回原點不得採用 vendor 起始修正 (3.165ms)
+✖ S7 0.8 resize vendor canonical payload、preview/export、單次 release (3.995917ms)
+✖ S7 0.8 resize 零與返回原點不得採用 vendor 起始修正 (2.026667ms)
+✖ S7 1 drag vendor canonical payload、preview/export、單次 release (2.324625ms)
+✖ S7 1 drag 零與返回原點不得採用 vendor 起始修正 (2.254333ms)
+✖ S7 1 resize vendor canonical payload、preview/export、單次 release (2.544625ms)
+✖ S7 1 resize 零與返回原點不得採用 vendor 起始修正 (2.172583ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 149.294083
+
+✖ failing tests:
+
+test at tests/edx-wp1-s7-snap.test.mjs:17:1
+✖ S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用 (11.417542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:21:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s7-snap.test.mjs:31:3
+✖ S7 0.8 drag vendor canonical payload、preview/export、單次 release (4.336166ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.dragStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:33:5)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp1-s7-snap.test.mjs:48:3
+✖ S7 0.8 drag 零與返回原點不得採用 vendor 起始修正 (3.165ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.dragStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:50:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:31:3
+✖ S7 0.8 resize vendor canonical payload、preview/export、單次 release (3.995917ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.resizeStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:33:5)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:48:3
+✖ S7 0.8 resize 零與返回原點不得採用 vendor 起始修正 (2.026667ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.resizeStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:50:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:31:3
+✖ S7 1 drag vendor canonical payload、preview/export、單次 release (2.324625ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.dragStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:33:5)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:48:3
+✖ S7 1 drag 零與返回原點不得採用 vendor 起始修正 (2.254333ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.dragStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:50:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:31:3
+✖ S7 1 resize vendor canonical payload、preview/export、單次 release (2.544625ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.resizeStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:33:5)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s7-snap.test.mjs:48:3
+✖ S7 1 resize 零與返回原點不得採用 vendor 起始修正 (2.172583ms)
+  Error: 拒絕開始
+      at Object.stop (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:131)
+      at Object.resizeStart (evalmachine.<anonymous>:393:68)
+      at emit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:15:35)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:50:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)

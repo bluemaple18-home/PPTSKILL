@@ -1,0 +1,10 @@
+✔ S7 診斷區分 Escape 已取消後 click 重選，不改事件結果 (12.569042ms)
+✔ S7 診斷區分 guarded Escape 未取消，不改事件結果 (3.955791ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 125.480416

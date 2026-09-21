@@ -1,0 +1,10 @@
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (24291.503667ms)
+✔ 每張 canonical slide 的 required title 必須有 painted visibility (136049.767709ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160545.519167

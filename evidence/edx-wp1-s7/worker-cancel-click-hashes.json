@@ -1,0 +1,21 @@
+{
+  "createdAt": "2026-09-20T17:02:06.479Z",
+  "head": "4cd4540a71aa7f94cc60e4495155c572034a57a4",
+  "branch": "codex/edx-wp1-s7",
+  "sources": {
+    "runtime/component-interaction.js": "eabf7aabf2191e85cf843b114ef7a720d31591551fcddc8666ae3389d590bd00",
+    "tests/edx-wp1-s7-cancel-click.test.mjs": "7f2a52230b7abff617afc1243523354f1569b0b006f1bba0189f47be153c706f"
+  },
+  "evidence": {
+    "evidence/edx-wp1-s7/worker-cancel-click-fix.md": "6be2f736c3a00d5f7735ad3848e53b219dfac917e8a8e6e2daee806a295d4bff",
+    "evidence/edx-wp1-s7/worker-cancel-click-red.log": "1f70b3bc63437a9839d6d9d8825eb413d733f7c39a275bbeaa1c8b73cae0eeff",
+    "evidence/edx-wp1-s7/worker-cancel-click-green-initial.log": "43166b2f59c18465514d24f71d14f0f704cb527633c187f01a1bccfd2f656052",
+    "evidence/edx-wp1-s7/worker-cancel-click-targeted.log": "a0d8572a989b1bb97917baca207073ed3f22bdff4386684142d9edf7e1f62df2",
+    "evidence/edx-wp1-s7/worker-cancel-click-focused.log": "af40f3cc315dc432a08ecee1787b34c8588fe228f4d1ad4ef2693f9e5dd896a1"
+  },
+  "inputReceiptSha256": "dc5e46bd6d3d2ab0628ae6d9e706e990685ff0e0f3a692cd91f58323b9cec982",
+  "harnessUnchanged": true,
+  "protectedUntrackedUnchanged": true,
+  "vendorUnchanged": true,
+  "status": "IMPLEMENTATION_FROZEN_PENDING_FRESH_BROWSER"
+}

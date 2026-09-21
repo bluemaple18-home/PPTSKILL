@@ -1,0 +1,20 @@
+{
+  "status": "CLEANUP_VERIFIED",
+  "authorizationConsumed": true,
+  "attempt": "S7 formal host-runtime targeted browser retry",
+  "controllerExit": 28,
+  "browserStartingObserved": true,
+  "cdpListeningObservedInLifecycleStderr": true,
+  "harnessStarted": false,
+  "acceptanceExists": false,
+  "supervisorPid": 32761,
+  "supervisorAlive": false,
+  "ownedRoot": "/private/tmp/aic-b-736da995b25b4e2992f7b93f5fef4348",
+  "ownedRootExists": false,
+  "isolationMarkerExists": false,
+  "devtoolsActivePortExistsAfterCleanup": false,
+  "sourceHashMismatchesAfterAttempt": [],
+  "sourceHashCount": 14,
+  "protectedHashCount": 4,
+  "note": "DevToolsActivePort readiness was not observed by the bounded controller before its deadline; no product assertion ran. No second browser launch is authorized."
+}

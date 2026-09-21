@@ -1,0 +1,11 @@
+✔ S7 snap-layout 在 pinned window capture blocker 前取消，原 document handler 可達 (11.867584ms)
+✔ S7 edit 在 pinned window capture blocker 前取消，原 document handler 可達 (4.718791ms)
+✔ S7 selection 在 pinned window capture blocker 前取消，原 document handler 可達 (3.786708ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.407583

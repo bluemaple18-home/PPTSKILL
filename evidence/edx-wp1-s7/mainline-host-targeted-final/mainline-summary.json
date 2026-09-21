@@ -1,0 +1,21 @@
+{
+  "status": "TARGETED_PARTIAL_PASS_ENV_BUDGET_BLOCKED",
+  "readiness": "PASS",
+  "viewport1280": {
+    "status": "PASS",
+    "modes": [
+      "normal",
+      "reduced",
+      "static"
+    ],
+    "checks": 15,
+    "targetClosed": true
+  },
+  "viewport1600": "INCOMPLETE_CDP_TIMEOUT_AFTER_SUPERVISOR_STOP",
+  "supervisorExit": 2,
+  "supervisorReason": "runtime budget exceeded",
+  "rootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "sources14Protected4Match": true,
+  "authorizationConsumed": true
+}

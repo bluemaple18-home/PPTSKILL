@@ -985,3 +985,5 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 **S6 direction/target validation：** 36組fresh pointer採集、18對viewport與12組proxy invariant PASS；方向限制無法單獨隔離transform，無transform geometry target＋方向限制於本矩陣成立。Resize語意為right/bottom落格，非尺寸整除。仍mapping/architecture validation，非production candidate；見 `evidence/edx-wp1-s6/direction-target/decision.md`。
 
 **S6 architecture closure / S7 READY：** gesture-boundary48組fresh PASS，preview0提交、release1筆、zero/cancel0筆、proxy teardown無殘留。架構收斂為canonical投影geometry target＋vendor方向限制；非production GO。`tasks/edx-wp1-s7-component-grid-snap.md` 已開卡，待實作，停止泛化研究。
+
+**S7 REVIEW CANDIDATE：** 8px單元件edge snap與motion reset窄修復完成；focused158/158、full non-browser337/337、1280＋1600 normal/reduced/static targeted PASS，fresh affected PGQ以 `--test-concurrency=1` 串行2/2 PASS。Fresh ZIP lifecycle PASS，SHA-256 `f94e99eeac7627f5c8ef022ec6d600f7922cce87f0271a67beb5740c10adf5ae`；Independent Review pending，不merge/push/deploy、不開下一Slice。

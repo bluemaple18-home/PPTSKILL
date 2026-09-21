@@ -1,0 +1,942 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/source.html",
+  "sourceSha256": "096d19b452da5a63ae0351edcdde0b1f34cacef8afaa8f4bec281f633aaaa792",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        "S5 play／無selection／legacy無geometry不提交",
+        "S5 真方向／Shift／repeat為1px或10px，尺寸與非geometry不變",
+        "S5 真修飾鍵／229及synthetic composition lifecycle避讓",
+        "S5 真input／textarea／select／contenteditable／textbox／chrome focus不挪動",
+        "S5 safe-area越界拒絕、不clamp",
+        "S5 真drag／resize途中按鍵不提交、release仍只提交pointer結果",
+        "S5 guarded Escape保留selection與drag/resize；普通Escape沿既有pointer cancel驗收",
+        "S5 離線export/reopen保留geometry且可繼續微調",
+        "S5 文字模式不微調",
+        "S5 已刪DOM target不提交",
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 813,
+            "y": 293,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 793,
+            "y": 273,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 647,
+            "height": 487
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 627,
+            "height": 467
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": false,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 816,
+            "y": 296,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 792,
+            "y": 272,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "drag",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "positive",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 645,
+            "height": 485
+          }
+        },
+        {
+          "s7": "negative",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "multi",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 629,
+            "height": 469
+          }
+        },
+        {
+          "s7": "zero",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "return",
+          "enabled": true,
+          "kind": "resize",
+          "expected": {
+            "x": 803,
+            "y": 283,
+            "width": 637,
+            "height": 477
+          }
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "selection",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "drag",
+          "reason": "stale",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "escape",
+          "synthetic": false
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "pointercancel",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "toggle",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "blur",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "resize",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "scroll",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "text",
+          "synthetic": true
+        },
+        {
+          "s7": "cancel",
+          "kind": "resize",
+          "reason": "selection",
+          "synthetic": true
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-legacy-selected.html",
+          "bytes": 374135,
+          "sha256": "9917beb01c3459da7bb3d826e67cff18f0c60e8ee5ac949d9987025e76205a78"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-preview-export.html",
+          "bytes": 374444,
+          "sha256": "38573a87e4f794ff3763ccdb1a7db647db1dd6ee3939070c894956c5e5c4e2a8"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-cancel.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-noop.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-invalid.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-invalid-resize.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-play-mode.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-export.html",
+          "bytes": 374444,
+          "sha256": "be0135467b571e0d03e77107a9d7e777a14ff37f954e64d739c2f37fe04c366b"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-reopen-export.html",
+          "bytes": 374444,
+          "sha256": "2cd77dc969aac50474a294b22b7dcb1695f6f9c92582e6a7eb707f7d3e19c91e"
+        },
+        {
+          "label": "keyboard-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-keyboard-export.html",
+          "bytes": 374444,
+          "sha256": "9dd745090f6cd50f33ea16e4d514131d28a131206c719a8a2043d872c2a99483"
+        },
+        {
+          "label": "keyboard-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-keyboard-reopen.html",
+          "bytes": 374444,
+          "sha256": "f547293ec25d2daa1c8915497abdfc594b37cc64162494dd4247c561c93487ab"
+        },
+        {
+          "label": "snap-false-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-snap-false-drag-preview.html",
+          "bytes": 374444,
+          "sha256": "3a1baf1577a86ba6120a8821370b44775a1249d2c9640bcdb453d3c35bf062a8"
+        },
+        {
+          "label": "snap-false-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-snap-false-resize-preview.html",
+          "bytes": 374444,
+          "sha256": "3a1baf1577a86ba6120a8821370b44775a1249d2c9640bcdb453d3c35bf062a8"
+        },
+        {
+          "label": "snap-true-drag-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-snap-true-drag-preview.html",
+          "bytes": 374444,
+          "sha256": "3a1baf1577a86ba6120a8821370b44775a1249d2c9640bcdb453d3c35bf062a8"
+        },
+        {
+          "label": "snap-true-resize-preview",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp1-s7/routing-recheck/1280-snap-true-resize-preview.html",
+          "bytes": 374444,
+          "sha256": "3a1baf1577a86ba6120a8821370b44775a1249d2c9640bcdb453d3c35bf062a8"
+        }
+      ],
+      "keyboardDiagnostic": {
+        "keys": [],
+        "status": "未套用：geometry y 低於 minimum／safe area。"
+      },
+      "snapHandleChecks": [
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": false,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 14,
+            "height": 14
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        },
+        {
+          "enabled": true,
+          "point": {
+            "x": 1152,
+            "y": 608,
+            "width": 11.1875,
+            "height": 11.1875
+          },
+          "visibility": "visible",
+          "pointerEvents": "auto",
+          "hitHandle": true,
+          "hitClass": "moveable-control moveable-direction moveable-se moveable-resizable",
+          "gesturing": false
+        }
+      ],
+      "snapCancelDiagnostic": [
+        {
+          "phase": "installed",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerdown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 662.7743530273438,
+            "y": 417.1875,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": false
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mousedown",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 1,
+            "detail": 1,
+            "x": 662,
+            "y": 417,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-start",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-portable-quote"
+            },
+            "gesturing": true
+          },
+          "proxies": 1,
+          "controls": 1,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": false,
+            "target": {
+              "tag": "BUTTON",
+              "elementId": null,
+              "action": "snap-layout",
+              "chrome": true,
+              "editable": false,
+              "contenteditable": null,
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": -1,
+            "x": 0,
+            "y": 0,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-cancel-before-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "pointerup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 0,
+            "pointerId": 1,
+            "x": 670.7743530273438,
+            "y": 425.1875,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "mouseup",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "x": 670,
+            "y": 425,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "capture",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          },
+          "event": {
+            "type": "click",
+            "trusted": true,
+            "target": {
+              "tag": "BLOCKQUOTE",
+              "elementId": "component-portable-quote",
+              "action": null,
+              "chrome": false,
+              "editable": false,
+              "contenteditable": "false",
+              "role": null
+            },
+            "ctrl": false,
+            "meta": false,
+            "alt": false,
+            "shift": false,
+            "buttons": 0,
+            "detail": 1,
+            "pointerId": 1,
+            "x": 670,
+            "y": 425,
+            "defaultPreventedAtCapture": false
+          }
+        },
+        {
+          "phase": "after-release",
+          "state": {
+            "enabled": true,
+            "target": null,
+            "gesturing": false
+          },
+          "proxies": 0,
+          "controls": 0,
+          "active": {
+            "tag": "BODY",
+            "elementId": null,
+            "action": null,
+            "chrome": false,
+            "editable": false,
+            "contenteditable": null,
+            "role": null
+          }
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 485,\n+   width: 645,\n-   height: 477,\n-   width: 637,\n    x: 803,\n    y: 283\n  }\n\n    at runSnapBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s7-browser-cases.mjs:117:12)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:171:55",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 485,\n+   width: 645,\n-   height: 477,\n-   width: 637,\n    x: 803,\n    y: 283\n  }\n\n    at runSnapBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s7-browser-cases.mjs:117:12)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:171:55"
+}
