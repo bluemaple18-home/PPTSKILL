@@ -1,0 +1,88 @@
+✖ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (1549.001042ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522
+    if (!port) throw new Error('Chrome DevTools port 未就緒。');
+                     ^
+
+Error: Chrome DevTools port 未就緒。
+    at runAtViewport (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522:22)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:695:45
+
+Node.js v25.9.0
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at async collectRepresentativeQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:51:46)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-sample-approval.test.mjs:31:20
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s3-sample-approval.test.mjs (4366.490166ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522
+    if (!port) throw new Error('Chrome DevTools port 未就緒。');
+                     ^
+
+Error: Chrome DevTools port 未就緒。
+    at runAtViewport (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522:22)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:695:45
+
+Node.js v25.9.0
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at async collectFullDeckQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:95:56)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-full-deck-qa.test.mjs:17:18
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (4690.746833ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4193.601208ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15258.208125
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-content-integrity.test.mjs:13:1
+✖ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (1549.001042ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-content-integrity.test.mjs:30:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-content-integrity.test.mjs:27:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/pgq-wp4-s3-sample-approval.test.mjs:1:1
+✖ tests/pgq-wp4-s3-sample-approval.test.mjs (4366.490166ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-full-deck-qa.test.mjs:1:1
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (4690.746833ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4193.601208ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:26:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:23:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
