@@ -15,11 +15,13 @@
     "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
     "test": "node --test tests/*.test.mjs",
-    "build:interaction-vendor": "node tools/build-moveable-vendor.mjs"
+    "build:interaction-vendor": "node tools/build-moveable-vendor.mjs",
+    "build:selection-vendor": "node tools/build-selecto-vendor.mjs"
   },
   "dependencies": {
     "moveable": "0.53.0",
     "number-flow": "0.6.2",
+    "selecto": "1.26.3",
     "three": "0.134.0",
     "vanta": "0.5.24"
   },

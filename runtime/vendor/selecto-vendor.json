@@ -1,0 +1,247 @@
+{
+  "schemaVersion": "1.0",
+  "package": "selecto",
+  "version": "1.26.3",
+  "license": "MIT",
+  "registryIntegrity": "sha512-gZHgqMy5uyB6/2YDjv3Qqaf7bd2hTDOpPdxXlrez4R3/L0GiEWDCFaUfrflomgqdb3SxHF2IXY0Jw0EamZi7cw==",
+  "licenseSha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+  "bundleSha256": "dd4d7afb863b1e73803325f16c9e49706ad8fd2325f245d8ca3a39bcf925e2cf",
+  "bundleBytes": 63167,
+  "gzipBytes": 19807,
+  "metafileSha256": "3172197d5be7cb4bf4dff635cc19993c39761f79b2cf64c5f51f67a7a28fdde0",
+  "attributionSha256": "6c7a611e1e774b3f63467f29d303a6832ef19b5c5fc05367c0925df0f1796f60",
+  "inputs": [
+    {
+      "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+      "sha256": "686d95120e5701f19758b425e513d06fb229712e50b8e718a0758e697e6b5408",
+      "bytes": 39101
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+      "sha256": "8f6e99993320faee6811cb0042fcad1bdbedd8c4acfe52bb5c6a29163da57750",
+      "bytes": 6527
+    },
+    {
+      "path": "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js",
+      "sha256": "d6ac62f94e54527df5fa89f35c2d625426ffddf90208a779186d7edbde66954e",
+      "bytes": 30866
+    },
+    {
+      "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+      "sha256": "31758630daeb03a27663ee2e9061d9592097a4c8d7cbdcd3cf98d9ba022ce506",
+      "bytes": 1939
+    },
+    {
+      "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+      "sha256": "c5d28f268eeef25de5e236f9ee9cf4cb2190e8509a6d54ac918a1eac7426282a",
+      "bytes": 11345
+    },
+    {
+      "path": "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js",
+      "sha256": "ffbcb921345113d56a765a1685aae5309e091ade8c9112cf442e07a7b3997388",
+      "bytes": 4485
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js",
+      "sha256": "3b40a5ab65225049491cb8d5345b9200eef543292726f5fe0eca836748f1ab08",
+      "bytes": 10044
+    },
+    {
+      "path": "node_modules/.pnpm/keycon@1.4.0/node_modules/keycon/dist/keycon.esm.js",
+      "sha256": "8595e2404ce92cc76a4862ec7ea4bfec31c65384fe71b20e910da8105e7207e1",
+      "bytes": 30052
+    },
+    {
+      "path": "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js",
+      "sha256": "97560c2c35364e152d29e4e489f6314492897befebd427deb21dbc67cd2aeaf6",
+      "bytes": 19291
+    },
+    {
+      "path": "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js",
+      "sha256": "6970505daf038c51c6561bac11ddf1a7cdf0cf7b8a6c43269c96bb280df13531",
+      "bytes": 10177
+    },
+    {
+      "path": "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js",
+      "sha256": "c4098bf8486e5c79951b580a0e9278fa9ec67a63bdb51d61ec25cd205b6137d0",
+      "bytes": 7247
+    },
+    {
+      "path": "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js",
+      "sha256": "102fd35845496211fd537704d894ca0e1a609bd25eaa52df6f81fe97cf8e0f78",
+      "bytes": 3758
+    },
+    {
+      "path": "node_modules/.pnpm/selecto@1.26.3/node_modules/selecto/dist/selecto.esm.js",
+      "sha256": "4c56759faea825dc4f5608924780704f7ab0a604bb707a2801ab5c803ba98893",
+      "bytes": 57113
+    }
+  ],
+  "packages": [
+    {
+      "name": "@daybrush/utils",
+      "version": "1.13.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "07267d703fbfc8fbbd2586d0fef147303e0647bbc5e62d33f96ee8f23437fa59",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/event-emitter",
+      "version": "1.0.5",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "gesto",
+      "version": "1.19.4",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "framework-utils",
+      "version": "1.1.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@egjs/list-differ",
+      "version": "1.0.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "bfecc97e4888896b7acf08534372baf25796b98c087ba5a424b46ee25adec871",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@egjs/children-differ",
+      "version": "1.0.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "bfecc97e4888896b7acf08534372baf25796b98c087ba5a424b46ee25adec871",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/dragscroll",
+      "version": "1.4.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "keycon",
+      "version": "1.4.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "dist/keycon.esm.js notice + 標準 MIT permission",
+          "sha256": "d8bdc9666a0629d5ec89062f6f8052f1a98f510bd64a15b021f1a5dc1f4e6a71",
+          "source": "node_modules/.pnpm/keycon@1.4.0/node_modules/keycon/dist/keycon.esm.js",
+          "sourceSha256": "8595e2404ce92cc76a4862ec7ea4bfec31c65384fe71b20e910da8105e7207e1"
+        }
+      ]
+    },
+    {
+      "name": "overlap-area",
+      "version": "1.1.0",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "@scena/matrix",
+      "version": "1.1.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "css-to-mat",
+      "version": "1.1.1",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "css-styled",
+      "version": "1.0.8",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "官方 repository LICENSE（package 未附）",
+          "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e",
+          "source": "https://github.com/daybrush/css-styled/blob/51fb10e66da6c8e2ca3c121b614a54e527617f08/LICENSE"
+        }
+      ]
+    },
+    {
+      "name": "selecto",
+      "version": "1.26.3",
+      "license": "MIT",
+      "licenses": [
+        {
+          "file": "LICENSE",
+          "sha256": "f0a8acccf5e11935501025a8035e78c9d44007e68f17344783d44810075e92aa",
+          "source": "pinned package LICENSE"
+        }
+      ]
+    }
+  ],
+  "build": {
+    "tool": "esbuild",
+    "version": "0.28.2",
+    "platform": "browser",
+    "format": "iife",
+    "target": "es2022",
+    "minified": true
+  }
+}

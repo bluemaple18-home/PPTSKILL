@@ -88,12 +88,14 @@ test('export 只移除 control 對應 style，canonical component 不作 chrome 
   const removed = [], attrs = [], state = { textContent: '', setAttribute: (...a) => attrs.push(a) }, init = { hidden: false };
   const style = id => ({ getAttribute: () => id, remove: () => removed.push(id) });
   const root = { querySelectorAll(selector) {
-    if (selector === '.moveable-control-box[data-styled-id]') return [{ getAttribute: () => 'rCS123' }];
-    if (selector === 'style[data-styled-id]') return [style('rCS123'), style('rCS999')];
+    if (selector === '.moveable-control-box[data-styled-id],.selecto-selection[data-styled-id]') return [
+      { getAttribute: () => 'rCS123' }, { getAttribute: () => 'selecto-test' },
+    ];
+    if (selector === 'style[data-styled-id]') return [style('rCS123'), style('selecto-test'), style('rCS999')];
     if (selector === '[data-editor-selected]') return [{ removeAttribute: a => attrs.push(a) }];
     throw new Error(selector);
   }, querySelector: selector => selector.includes('initialize-layout') ? init : state };
   cleanupComponentInteractionClone(root);
-  assert.deepEqual(removed, ['rCS123']); assert.equal(init.hidden, true);
+  assert.deepEqual(removed, ['rCS123', 'selecto-test']); assert.equal(init.hidden, true);
   assert.ok(attrs.includes('data-editor-selected')); assert.equal(state.textContent, '編輯版面');
 });

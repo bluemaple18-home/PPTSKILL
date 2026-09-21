@@ -1,11 +1,22 @@
 # EDX-WP1-S8 — Selecto bounded multi-selection input
 
-Status: READY / NOT STARTED
+Status: IMPLEMENTED / NON_BROWSER_PASS / MANAGED_BROWSER_PENDING
 Branch: `codex/edx-wp1-s8`
 Base: `9188b787ad964b92a129a5cff8f7067b08c0f4ea`
 Depends on: S7 COMPLETE；Selecto `1.26.3` S1 adoption **GO / ADAPT**。
 traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Selecto`、`§10.3 EDX-WP1`、`§10.5 portability`、`§10.8 product simplicity`。
 Trace preflight: S7 closure已清；Selecto version/license/integrity/bundle evidence已存在；本卡有明確browser與export驗證；無Critical blocker。
+
+
+## Current checkpoint — 2026-09-21
+
+- Selecto `1.26.3` 已以 direct exact dependency 與正式 IIFE vendor 接入；bundle 63,167 bytes／gzip 19,807 bytes，SHA-256 `dd4d7afb863b1e73803325f16c9e49706ad8fd2325f245d8ca3a39bcf925e2cf`，MIT attribution／registry integrity gate PASS。
+- Selection-only runtime 已完成 plain／Shift click、marquee replace、Shift marquee toggle、0/1/>1 lifecycle、single Moveable handoff、clone-only export cleanup；mounted marquee path payload read／whole DeckSpec serialization 均為 0。
+- Focused S3–S8＋export cleanup **172/172 PASS**；full non-browser（排除四支真 browser-backed PGQ）**377/377 PASS**；`git diff --check` PASS。
+- Fresh ZIP 2,280,120 bytes，SHA-256 `2334e9b2337c718f1cdaebd12169ce629a291c670a9af506dcd8b0b859b123e0`；install/smoke/uninstall lifecycle PASS，低於 12 MiB warning／20 MiB hard fail。四個既有 protected untracked SHA 與 S7 baseline 4/4 MATCH。
+- Formal managed browser 尚未執行：本 task runtime 為 `CODEX_SANDBOX=seatbelt`，AI Core `2d78d8e18d42156f43f12f0ebc6997914ec64328` 的 `tmp_session.py browser` 會在 launch 前 fail-closed；未清除此旗標、未繞過 routing、未啟 Chrome。
+- 因此 Fresh browser C 與 export-seam affected PGQ 四支仍 **PENDING**：`pgq-wp4-s3-content-integrity`、`pgq-wp4-s3-sample-approval`、`pgq-wp4-s4-full-deck-qa`、`pgq-wp4-s4-required-visibility`。目前不是 independent review candidate。
+
 
 ## Objective
 

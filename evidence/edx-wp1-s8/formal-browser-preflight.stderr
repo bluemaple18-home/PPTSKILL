@@ -1,0 +1,1 @@
+NO_GO: browser_launch_blocked_in_codex_sandbox; Codex sandbox 請使用既有 Chrome extension / Codex Browser，standalone browser 請改到允許 browser process 的 host/runtime

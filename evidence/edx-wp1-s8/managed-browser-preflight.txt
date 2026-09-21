@@ -1,0 +1,9 @@
+status=MANAGED_BROWSER_ROUTING_BLOCKED_BEFORE_LAUNCH
+managed_browser_started=false
+CODEX_SANDBOX=seatbelt
+ai_core_sha=2d78d8e18d42156f43f12f0ebc6997914ec64328
+chrome_executable=present
+reason=ai-core tmp_session.py browser rejects non-empty CODEX_SANDBOX before capacity/lifecycle launch; flag not cleared or bypassed
+affected_pgq_pending=pgq-wp4-s3-content-integrity,pgq-wp4-s3-sample-approval,pgq-wp4-s4-full-deck-qa,pgq-wp4-s4-required-visibility
+formal_preflight_exit=2
+formal_preflight_evidence_dir_created=false

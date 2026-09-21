@@ -1,4 +1,5 @@
 import { runSnapBrowserCases } from './edx-wp1-s7-browser-cases.mjs';
+import { runSelectionBrowserCases } from './edx-wp1-s8-browser-cases.mjs';
 import { runKeyboardBrowserCases } from './edx-wp1-s5-browser-cases.mjs';
 import { runMotionBrowserCases } from './edx-wp1-s3-motion-browser-cases.mjs';
 import assert from 'node:assert/strict';
@@ -106,9 +107,9 @@ try {
         const expectedHtml = renderFullDeck(expectedSpec).html;
         const check = await evaluate(`(()=>{
           const actual=new DOMParser().parseFromString(${JSON.stringify(html)},'text/html'),expected=new DOMParser().parseFromString(${JSON.stringify(expectedHtml)},'text/html');
-          const ids=[...document.querySelectorAll('.moveable-control-box[data-styled-id]')].map(n=>n.getAttribute('data-styled-id'));
+          const ids=[...document.querySelectorAll('.moveable-control-box[data-styled-id],.selecto-selection[data-styled-id]')].map(n=>n.getAttribute('data-styled-id'));
           const normalize=slide=>{const clone=slide.cloneNode(true);clone.classList.remove('is-visible','motion-resetting');for(const node of [clone,...clone.querySelectorAll('*')]){if(node.hasAttribute('style'))node.setAttribute('style',node.style.cssText);for(const a of [...node.attributes])if(a.name==='contenteditable'||a.name==='data-editor-selected'||/^data-(motion-state|animation-starts|animation-finishes|replay-count)$/.test(a.name))node.removeAttribute(a.name);if(node.matches('[data-pptskill-background-layer]')){node.replaceChildren();node.removeAttribute('style');node.dataset.backgroundState='static'}if(node.matches('number-flow[data-pptskill-odometer]')){node.replaceChildren(document.createTextNode(node.dataset.finalDisplay||''));node.removeAttribute('aria-label')}}return clone.outerHTML};
-          return{canonical:normalize(actual.querySelector('.slide'))===normalize(expected.querySelector('.slide')),chrome:actual.querySelectorAll('[data-pptskill-editor-chrome],.moveable-control-box,[data-editor-selected]').length,styles:[...actual.querySelectorAll('style[data-styled-id]')].filter(n=>ids.includes(n.getAttribute('data-styled-id'))).length,mode:actual.body.dataset.editorMode};
+          return{canonical:normalize(actual.querySelector('.slide'))===normalize(expected.querySelector('.slide')),chrome:actual.querySelectorAll('[data-pptskill-editor-chrome],.moveable-control-box,.selecto-selection,[data-editor-selected]').length,styles:[...actual.querySelectorAll('style[data-styled-id]')].filter(n=>ids.includes(n.getAttribute('data-styled-id'))).length,mode:actual.body.dataset.editorMode};
         })()`);
         assert.deepEqual(check, { canonical: true, chrome: 0, styles: 0, mode: 'play' }, label + ' DOM');
         const path = resolve(outputDir, `${width}-${label}.html`); await writeFile(path, html);
@@ -169,6 +170,7 @@ try {
       if (process.argv.includes('--keyboard-regression')) await runKeyboardBrowserCases({ cdp, evaluate, navigate, sourcePath, selector, run, click, startGesture, endGesture, assertExport, assertRect });
       if (process.argv.includes('--motion-regression')) await runMotionBrowserCases({ cdp, evaluate, navigate, outputDir, width, selector, run, click, startGesture, endGesture });
       if (process.argv.includes('--snap-regression')) await runSnapBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, selector, run, click, position, mouse, settle, startGesture, endGesture, assertExport, assertRect });
+      if (process.argv.includes('--selection-regression')) await runSelectionBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';

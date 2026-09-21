@@ -1,0 +1,243 @@
+{
+  "inputs": {
+    "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js": {
+      "bytes": 39101,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js": {
+      "bytes": 6527,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js": {
+      "bytes": 30866,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js": {
+      "bytes": 1939,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js": {
+      "bytes": 11345,
+      "imports": [],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js": {
+      "bytes": 4485,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/list-differ"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js": {
+      "bytes": 10044,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/keycon@1.4.0/node_modules/keycon/dist/keycon.esm.js": {
+      "bytes": 30052,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js": {
+      "bytes": 19291,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js": {
+      "bytes": 10177,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js": {
+      "bytes": 7247,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/matrix"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js": {
+      "bytes": 3758,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        }
+      ],
+      "format": "esm"
+    },
+    "node_modules/.pnpm/selecto@1.26.3/node_modules/selecto/dist/selecto.esm.js": {
+      "bytes": 57113,
+      "imports": [
+        {
+          "path": "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/event-emitter"
+        },
+        {
+          "path": "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js",
+          "kind": "import-statement",
+          "original": "gesto"
+        },
+        {
+          "path": "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "framework-utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js",
+          "kind": "import-statement",
+          "original": "@daybrush/utils"
+        },
+        {
+          "path": "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js",
+          "kind": "import-statement",
+          "original": "@egjs/children-differ"
+        },
+        {
+          "path": "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js",
+          "kind": "import-statement",
+          "original": "@scena/dragscroll"
+        },
+        {
+          "path": "node_modules/.pnpm/keycon@1.4.0/node_modules/keycon/dist/keycon.esm.js",
+          "kind": "import-statement",
+          "original": "keycon"
+        },
+        {
+          "path": "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js",
+          "kind": "import-statement",
+          "original": "overlap-area"
+        },
+        {
+          "path": "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js",
+          "kind": "import-statement",
+          "original": "css-to-mat"
+        },
+        {
+          "path": "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js",
+          "kind": "import-statement",
+          "original": "css-styled"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "selecto-1.26.3.iife.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "node_modules/.pnpm/selecto@1.26.3/node_modules/selecto/dist/selecto.esm.js",
+      "inputs": {
+        "node_modules/.pnpm/selecto@1.26.3/node_modules/selecto/dist/selecto.esm.js": {
+          "bytesInOutput": 22262
+        },
+        "node_modules/.pnpm/@daybrush+utils@1.13.0/node_modules/@daybrush/utils/dist/utils.esm.js": {
+          "bytesInOutput": 5327
+        },
+        "node_modules/.pnpm/@scena+event-emitter@1.0.5/node_modules/@scena/event-emitter/dist/event-emitter.esm.js": {
+          "bytesInOutput": 1344
+        },
+        "node_modules/.pnpm/gesto@1.19.4/node_modules/gesto/dist/gesto.esm.js": {
+          "bytesInOutput": 13188
+        },
+        "node_modules/.pnpm/framework-utils@1.1.0/node_modules/framework-utils/dist/utils.esm.js": {
+          "bytesInOutput": 86
+        },
+        "node_modules/.pnpm/@egjs+list-differ@1.0.1/node_modules/@egjs/list-differ/dist/list-differ.esm.js": {
+          "bytesInOutput": 2334
+        },
+        "node_modules/.pnpm/@egjs+children-differ@1.0.1/node_modules/@egjs/children-differ/dist/children-differ.esm.js": {
+          "bytesInOutput": 160
+        },
+        "node_modules/.pnpm/@scena+dragscroll@1.4.0/node_modules/@scena/dragscroll/dist/dragscroll.esm.js": {
+          "bytesInOutput": 4198
+        },
+        "node_modules/.pnpm/keycon@1.4.0/node_modules/keycon/dist/keycon.esm.js": {
+          "bytesInOutput": 4454
+        },
+        "node_modules/.pnpm/overlap-area@1.1.0/node_modules/overlap-area/dist/overlap-area.esm.js": {
+          "bytesInOutput": 4115
+        },
+        "node_modules/.pnpm/@scena+matrix@1.1.1/node_modules/@scena/matrix/dist/matrix.esm.js": {
+          "bytesInOutput": 1655
+        },
+        "node_modules/.pnpm/css-to-mat@1.1.1/node_modules/css-to-mat/dist/css-to-mat.esm.js": {
+          "bytesInOutput": 2142
+        },
+        "node_modules/.pnpm/css-styled@1.0.8/node_modules/css-styled/dist/styled.esm.js": {
+          "bytesInOutput": 1430
+        }
+      },
+      "bytes": 63167
+    }
+  }
+}

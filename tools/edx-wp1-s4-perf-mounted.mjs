@@ -101,14 +101,25 @@ export function mountedEditor(input = fixture()) {
     },
     stringify(value, ...args) { counts.serializations++; if (value?.slides) counts.wholeSpecSerializations++; return JSON.stringify(value, ...args); },
   };
-  let vendor; const observers = new Set();
+  let vendor, selectoVendor; const observers = new Set();
   class Moveable {
     constructor(overlay, options) { this.handlers = {}; this.options = options; this.destroyed = false; vendor = this; }
     on(name, fn) { this.handlers[name] = fn; }
     destroy() { if (this.destroyed) throw new Error('重複 destroy'); this.destroyed = true; } stopDrag() {} updateRect() { if (this.destroyed) throw new Error('destroy 後 updateRect'); }
   }
+  class Selecto {
+    constructor(options) {
+      this.options = options; this.handlers = {}; this.selected = []; this.destroyed = false;
+      this.chrome = new Element('div', { class: 'selecto-selection', 'data-styled-id': 'selecto-test' });
+      this.styleNode = new Element('style', { 'data-styled-id': 'selecto-test' }, '.selecto-selection{}');
+      body.append(this.styleNode); body.append(this.chrome); selectoVendor = this;
+    }
+    on(name, fn) { this.handlers[name] = fn; return this; }
+    setSelectedTargets(nodes) { this.selected = [...nodes]; return this; }
+    destroy() { if (this.destroyed) return; this.destroyed = true; this.chrome.remove(); this.styleNode.remove(); }
+  }
   const document = Object.assign(root, { body, documentElement: root, readyState: 'complete', createElement: tag => new Element(tag) });
-  const window = { PPTSKILLMoveable: { default: Moveable }, listeners: {}, addEventListener: Element.prototype.addEventListener, removeEventListener: Element.prototype.removeEventListener,
+  const window = { PPTSKILLMoveable: { default: Moveable }, PPTSKILLSelecto: { default: Selecto }, listeners: {}, addEventListener: Element.prototype.addEventListener, removeEventListener: Element.prototype.removeEventListener,
     PPTSKILLSizeGuard: { prepare: html => ({ status: 'pass', html, report: {} }) },
     PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
   };
@@ -116,7 +127,7 @@ export function mountedEditor(input = fixture()) {
     document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
   });
   const api = window.PPTSKILLEditor;
-  const click = node => { for (const fn of document.listeners.click || []) fn({ target: node, preventDefault() {} }); };
+  const click = (node, fields = {}) => { for (const fn of document.listeners.click || []) fn({ target: node, shiftKey: false, preventDefault() {}, ...fields }); };
   const component = () => document.querySelector(`[data-pptskill-element-id="${target.elementId}"]`);
   const ready = () => { api.layout.setMode(true); click(component()); };
   const event = (x = 0, y = 0) => ({ inputEvent: { clientX: x, clientY: y }, set() {}, stop() { throw new Error('gesture 未啟動'); } });
@@ -124,7 +135,7 @@ export function mountedEditor(input = fixture()) {
   const update = (x, y, kind = 'drag') => vendor.handlers[kind](event(x, y));
   const finish = (kind = 'drag') => vendor.handlers[kind + 'End']();
   const getSpec = () => JSON.parse(JSON.stringify(api.getDeckSpec()));
-  return { api, document, window, flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
+  return { api, document, window, flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, get selecto() { return selectoVendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
     resetCounts() { for (const key of Object.keys(counts)) counts[key] = 0; },
     action(name) { click(document.querySelector(`[data-action="${name}"]`)); },
   };

@@ -1,4 +1,5 @@
 import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.js';
+import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
 export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {} }) {
@@ -83,7 +84,7 @@ export const buildComponentInteractionRuntime = () => createComponentInteraction
 
 // css-styled@1.0.8 以 control 的 data-styled-id 精確對應注入 style；不能寬刪其他樣式。
 export function cleanupComponentInteractionClone(root) {
-  const ids = new Set([...root.querySelectorAll('.moveable-control-box[data-styled-id]')].map(node => node.getAttribute('data-styled-id')));
+  const ids = new Set([...root.querySelectorAll('.moveable-control-box[data-styled-id],.selecto-selection[data-styled-id]')].map(node => node.getAttribute('data-styled-id')));
   for (const node of root.querySelectorAll('style[data-styled-id]')) {
     if (ids.has(node.getAttribute('data-styled-id'))) node.remove();
   }
@@ -98,7 +99,7 @@ export function cleanupComponentInteractionClone(root) {
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
   project, notify, setTextMode, selectSlide }) {
-  let moveable = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
+  let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
   const button = document.querySelector('[data-action="layout"]');
@@ -133,16 +134,82 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       if (geometryTarget) projectBox(geometryTarget, rect);
     },
   });
+  const currentSlideNode = () => document.querySelector('.slide[data-editor-selected="true"]');
+  const eligibleNodes = () => {
+    const slideNode = currentSlideNode();
+    if (!slideNode) return [];
+    return [...slideNode.querySelectorAll('[data-pptskill-element-id]')].filter(node => {
+      const target = { slideId: slideNode.dataset.slideId, elementId: node.dataset.pptskillElementId };
+      return Boolean(resolve(target));
+    });
+  };
+  const eligibleIds = () => eligibleNodes().map(node => node.dataset.pptskillElementId);
   const destroyVendor = () => {
     if (moveable) { moveable.destroy(); moveable = null; }
     geometryTarget?.remove(); geometryTarget = null;
     overlay?.remove(); overlay = null;
     observer?.disconnect(); observer = null;
   };
-  const clearSelection = () => {
+  const clearSelectionView = () => {
     interaction.select(null); destroyVendor();
     document.querySelectorAll('.slide [data-editor-selected]').forEach(node => node.removeAttribute('data-editor-selected'));
+    selecto?.setSelectedTargets?.([]);
     initializeButton.hidden = true;
+  };
+  let selection;
+  const applySelection = ids => {
+    clearSelectionView();
+    const slideNode = currentSlideNode();
+    if (!slideNode || !ids.length) { selecto?.setSelectedTargets?.([]); return; }
+    const selectedNodes = ids.map(id => slideNode.querySelector('[data-pptskill-element-id="' + CSS.escape(id) + '"]')).filter(Boolean);
+    selectedNodes.forEach(node => node.setAttribute('data-editor-selected', 'true'));
+    selecto?.setSelectedTargets?.(selectedNodes);
+    if (ids.length > 1) { notify('已選取 ' + ids.length + ' 個元件'); return; }
+    const target = { slideId: slideNode.dataset.slideId, elementId: ids[0] };
+    interaction.select(target);
+    const current = resolve(target);
+    if (!current) return;
+    const active = document.activeElement;
+    if (active?.closest?.('.pptskill-editor,[data-pptskill-editor-chrome]')) active.blur?.();
+    initializeButton.hidden = Boolean(current.rect);
+    notify(current.rect ? '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
+    bindVendor();
+  };
+  selection = createMultiSelectionState({ listTargets: eligibleIds, onChange: applySelection });
+  const clearSelection = () => { if (!selection.clear()) clearSelectionView(); };
+  const mutateSelection = (ids, mode) => {
+    interaction.cancel(); moveable?.stopDrag();
+    return mode === 'toggle' ? selection.toggle(ids) : selection.replace(ids);
+  };
+  const destroySelecto = () => { if (selecto) { selecto.destroy(); selecto = null; } };
+  const bindSelecto = () => {
+    destroySelecto();
+    if (!interaction.getState().enabled) return;
+    const Selecto = window.PPTSKILLSelecto?.default;
+    const deck = document.querySelector('.deck');
+    if (!Selecto || !deck) { notify('多選編輯器未載入'); return; }
+    selecto = new Selecto({
+      container: document.body,
+      dragContainer: deck,
+      selectableTargets: [eligibleNodes],
+      selectByClick: false,
+      selectFromInside: false,
+      continueSelect: false,
+      hitRate: 0,
+      checkInput: true,
+      preventDefault: false,
+      preventClickEventOnDrag: true,
+      dragCondition: event => {
+        const node = event.inputEvent?.target, slideNode = currentSlideNode();
+        return Boolean(node && slideNode && node.closest?.('.slide') === slideNode
+          && !node.closest?.('[data-pptskill-element-id],.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box,input,textarea,select,[contenteditable],[role="textbox"]'));
+      },
+    });
+    selecto.on('selectEnd', event => {
+      const ids = [...new Set((event.selected || []).map(node => node.dataset?.pptskillElementId).filter(Boolean))];
+      mutateSelection(ids, event.inputEvent?.shiftKey ? 'toggle' : 'replace');
+    });
+    selecto.setSelectedTargets(eligibleNodes().filter(node => selection.getState().selected.includes(node.dataset.pptskillElementId)));
   };
   const cancel = () => {
     interaction.cancel(); moveable?.stopDrag();
@@ -212,25 +279,24 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     // explicit container 會略過 vendor mount 的第二次 render；ref 已掛載後量測，才會顯示首次 SE handle。
     if (snap) vendor.updateRect();
   };
-  const select = target => {
-    clearSelection(); interaction.select(target);
-    const selected = interaction.getState().target, current = selected && resolve(selected);
-    if (!current) return;
-    // vendor 可能保留工具列焦點；明確選取元件後才釋放，避免方向鍵持續被 chrome guard 略過。
-    const active = document.activeElement;
-    if (active?.closest?.('.pptskill-editor,[data-pptskill-editor-chrome]')) active.blur?.();
-    current.node.setAttribute('data-editor-selected', 'true');
-    selectSlide(target.slideId);
-    initializeButton.hidden = Boolean(current.rect);
-    notify(current.rect ? '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
-    bindVendor();
+  const select = (target, toggle = false) => {
+    const currentSlideId = currentSlideNode()?.dataset.slideId;
+    if (currentSlideId !== target.slideId) { clearSelection(); selectSlide(target.slideId); toggle = false; }
+    const selected = selection.getState().selected;
+    if (!toggle && selected.length === 1 && selected[0] === target.elementId) {
+      // 單選再次點擊仍須重建短生命 Moveable，維持既有 S5/S7 選取與焦點契約。
+      applySelection(selected);
+      return;
+    }
+    mutateSelection([target.elementId], toggle ? 'toggle' : 'replace');
   };
   const setMode = on => {
-    composing = false; clearSelection(); interaction.setMode(on);
+    composing = false; clearSelection(); interaction.setMode(on); selection.setMode(on);
     if (on) setTextMode(false);
     document.body.dataset.editorMode = on ? 'layout' : 'play';
     button.textContent = on ? '完成版面' : '編輯版面'; button.setAttribute('aria-pressed', String(Boolean(on)));
-    notify(on ? '點選單一元件以編輯版面' : '可直接播放');
+    if (on) bindSelecto(); else destroySelecto();
+    notify(on ? '點選元件或拖曳空白區框選多個元件' : '可直接播放');
   };
   const click = event => {
     const routed = routedControlClick === event; routedControlClick = null;
@@ -255,7 +321,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const element = event.target.closest?.('[data-pptskill-element-id]'), slide = element?.closest('.slide');
     if (slide && element) {
       const target = { slideId: slide.dataset.slideId, elementId: element.dataset.pptskillElementId };
-      if (resolve(target)) { event.preventDefault(); select(target); return; }
+      if (resolve(target)) { event.preventDefault(); select(target, Boolean(event.shiftKey)); return; }
     }
     clearSelection();
   };
@@ -297,13 +363,15 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   document.addEventListener('compositionstart', compositionStart, true);
   document.addEventListener('compositionend', compositionEnd, true);
   document.addEventListener('pointercancel', pointerCancel, true);
-  const blur = () => { composing = false; pointerCancel(); };
+  const blur = () => { composing = false; pointerCancel(); clearSelection(); };
   window.addEventListener('blur', blur);
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
   return { setMode, clearSelection, cancel, getState: interaction.getState,
+    getSelectionState: selection.getState,
     destroy() {
       setMode(false);
+      destroySelecto();
       suppressPointerClick = false;
       routedControlClick = null;
       window.removeEventListener('click', routeGestureControl, true);
