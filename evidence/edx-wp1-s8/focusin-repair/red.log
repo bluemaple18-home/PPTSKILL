@@ -1,0 +1,45 @@
+✖ S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical (18.25175ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132.069708
+
+✖ failing tests:
+
+test at tests/edx-wp1-s8-mounted-selection.test.mjs:9:1
+✖ S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical (18.25175ms)
+  AssertionError [ERR_ASSERTION]: focusin 換頁後不得對舊頁做 canonical mutation
+  + actual - expected
+  ... Skipped lines
+
+    {
+      deckId: 'pptskill-typography-world',
+      language: 'zh-Hant',
+      schemaVersion: '1.0',
+      slides: [
+  ...
+                width: 640,
+  +             x: 801,
+  -             x: 800,
+                y: 280
+              }
+            },
+            primitive: 'component-focus',
+            slots: {
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s8-mounted-selection.test.mjs:21:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { schemaVersion: '1.0', deckId: 'pptskill-typography-world', title: '讓每個人用 AI 快速完成簡報', language: 'zh-Hant', style: { id: 'route-editorial-rail', name: 'Editorial Monument', layout: [Object], density: 'low', typography: [Object], palette: [Object], spacing: [Object], geometry: [Object], motion: [Object], assetTreatment: 'editorial chapter crops and quiet captions' }, slides: [ [Object], [Object] ] },
+    expected: { schemaVersion: '1.0', deckId: 'pptskill-typography-world', title: '讓每個人用 AI 快速完成簡報', language: 'zh-Hant', style: { id: 'route-editorial-rail', name: 'Editorial Monument', layout: [Object], density: 'low', typography: [Object], palette: [Object], spacing: [Object], geometry: [Object], motion: [Object], assetTreatment: 'editorial chapter crops and quiet captions' }, slides: [ [Object], [Object] ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

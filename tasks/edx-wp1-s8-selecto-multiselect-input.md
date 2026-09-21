@@ -1,6 +1,6 @@
 # EDX-WP1-S8 — Selecto bounded multi-selection input
 
-Status: REVIEW_CANDIDATE / FRESH_BROWSER_PGQ_ZIP_PASS / INDEPENDENT_REVIEW_PENDING
+Status: P1_REPAIR_CANDIDATE / TARGETED_REVIEW_PENDING
 Branch: `codex/edx-wp1-s8`
 Base: `9188b787ad964b92a129a5cff8f7067b08c0f4ea`
 Depends on: S7 COMPLETE；Selecto `1.26.3` S1 adoption **GO / ADAPT**。
@@ -8,7 +8,11 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Selecto`、`§10.3 EDX-WP1`�
 Trace preflight: S7 closure已清；Selecto version/license/integrity/bundle evidence已存在；本卡有明確browser與export驗證；無Critical blocker。
 
 
-## Latest acceptance — 2026-09-21
+## P1 targeted repair — 2026-09-21
+
+獨立 Reviewer 對 `fd7fc9a` 判 NO-GO：focusin 換頁未清 selection，方向鍵可寫入上一頁 geometry。共用 `select(id)` 現在只在 identity 改變時先 `layout?.clearSelection()`；同頁 focus 保留選取。Mounted RED 重現 canonical mutation；fresh S8 10/10、focused 174/174、non-browser 379/379、ZIP lifecycle PASS，protected 4/4 MATCH。本輪不重跑 browser／PGQ；既有 evidence 僅繼承，不代表新 candidate fresh browser。詳細 receipt：`evidence/edx-wp1-s8/focusin-repair/receipt.md`。P1 等 targeted independent re-review，未 closure。
+
+## Historical acceptance — 2026-09-21（fd7fc9a）
 
 Host runtime 已完成正式 managed browser：1280×720、1600×900 各 15 checks PASS（10 base + 5 S8 aggregated checks）；四支 affected PGQ 串行 16/16 PASS。fresh focused 172/172、full non-browser 377/377、ZIP lifecycle PASS；最終 ZIP 2,280,185 bytes，SHA-256 `f81efc729f17257a36802faa94c186742a07596dc7f36e90b75de6edab5e89c5`。Source 20/20、protected 4/4 MATCH，managed cleanup PASS。實測發現 Selecto style 殘留，已 bounded 修正；歷史 failure 與 fixture 校正詳見 `evidence/edx-wp1-s8/host-repair-history.md`。最新 evidence：`evidence/edx-wp1-s8/mainline-receipt.md`。Independent Review 待執行，不是 GO／closure。
 

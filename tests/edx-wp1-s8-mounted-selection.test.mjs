@@ -6,6 +6,41 @@ const componentNodes = h => h.document.querySelectorAll('[data-edit-target]').fi
 const ids = nodes => nodes.map(node => node.dataset.pptskillElementId);
 const selected = h => Array.from(h.api.layout.getSelectionState().selected);
 
+test('S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical', () => {
+  const input = fixture(0);
+  input.slides.push({ ...structuredClone(input.slides[0]), id: 'opening' });
+  const h = mountedEditor(input); h.ready();
+  const before = h.getSpec(), vendor = h.vendor;
+  const opening = h.document.querySelector('.slide[data-slide-id="opening"]');
+  const citation = h.document.createElement('a'); citation.setAttribute('href', 'https://example.com'); opening.append(citation);
+  for (const fn of opening.listeners.focusin || []) fn({ target: citation });
+  assert.equal(opening.dataset.editorSelected, 'true');
+  const event = { target: citation, key: 'ArrowRight', prevented: false, stopped: false,
+    preventDefault() { this.prevented = true; }, stopImmediatePropagation() { this.stopped = true; } };
+  for (const fn of h.document.listeners.keydown || []) { fn(event); if (event.stopped) break; }
+  assert.deepEqual(h.getSpec(), before, 'focusin 換頁後不得對舊頁做 canonical mutation');
+  assert.deepEqual(selected(h), []);
+  assert.equal(h.api.layout.getState().target, null);
+  assert.equal(vendor.destroyed, true);
+  assert.equal(event.prevented, false); assert.equal(event.stopped, false);
+});
+
+test('S8 同頁 focusin 保留 selection，跨頁 focusin 清除多選', () => {
+  const input = fixture(0);
+  input.slides.push({ ...structuredClone(input.slides[0]), id: 'opening' });
+  const h = mountedEditor(input); h.ready();
+  const portable = h.document.querySelector('.slide[data-slide-id="portable"]');
+  const opening = h.document.querySelector('.slide[data-slide-id="opening"]');
+  const initial = selected(h), vendor = h.vendor, before = h.getSpec();
+  for (const fn of portable.listeners.focusin || []) fn({ target: h.component() });
+  assert.deepEqual(selected(h), initial); assert.equal(h.vendor, vendor); assert.equal(vendor.destroyed, false);
+  h.click(portable.querySelectorAll('[data-edit-target]').find(node => node.dataset.editTarget.endsWith('.perf-image')), { shiftKey: true });
+  assert.equal(selected(h).length, 2);
+  for (const fn of opening.listeners.focusin || []) fn({ target: opening });
+  assert.deepEqual(selected(h), []); assert.equal(h.api.layout.getState().target, null);
+  assert.deepEqual(h.getSpec(), before);
+});
+
 test('S8 plain/Shift click 與 marquee 共用單一 editor-local selection state', () => {
   const h = mountedEditor(fixture(0));
   const before = h.getSpec();

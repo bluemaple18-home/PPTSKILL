@@ -1,0 +1,18 @@
+✔ S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical (15.345209ms)
+✔ S8 同頁 focusin 保留 selection，跨頁 focusin 清除多選 (6.9895ms)
+✔ S8 plain/Shift click 與 marquee 共用單一 editor-local selection state (4.880292ms)
+✔ S8 export clone-only 清除 Selecto/selection chrome，live selection 保持 (4.421209ms)
+✔ S8 Escape/blur/mode teardown 清 selection，重複 destroy idempotent (5.590916ms)
+✔ S8 selection replace/toggle 去重並依 DOM order 穩定 (1.666083ms)
+✔ S8 editor-local state 0/1/>1 lifecycle 不產生 canonical mutation (0.26775ms)
+✔ S8 disabled state 拒絕 selection mutation (0.074416ms)
+✔ S8 Selecto pinned vendor/hash/license/integrity 全部吻合 (3.91775ms)
+✔ S8 portable 內嵌 Selecto vendor/license 且無 CDN (14.770875ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 160.817666

@@ -1,5 +1,7 @@
 # S8 Mainline 驗收 receipt
 
+> 此為 `fd7fc9a` 的歷史驗收。後續 Independent Review 判 NO-GO（focusin wrong-slide mutation P1）；最新 bounded repair 與待重審狀態見 [focusin-repair/receipt.md](focusin-repair/receipt.md)。
+
 狀態：**REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING**。Branch `codex/edx-wp1-s8`；S8 base `9188b787ad964b92a129a5cff8f7067b08c0f4ea`；承接 checkpoint `a58cdfa5e963d7842aa7dfcf07dde181002c223d`。
 
 ## 本輪結果
