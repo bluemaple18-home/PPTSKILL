@@ -1,0 +1,119 @@
+{
+  "productSha": "c5c6dac53ba340cbc7ca05db874edd080f89adc8",
+  "sourcesMatched": 11,
+  "protectedMatched": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2281550,
+    "sha256": "b4ba66f24d6780d6899f6bc1c48f5d2f32cf03fb3878091d28636c2ec3e0db57"
+  },
+  "existingAlignmentArtifactHashAssertionsMatched": 20,
+  "alignmentArtifacts": {
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-legacy-selected.html": {
+      "bytes": 465927,
+      "sha256": "e4b39092c085b83a3e5fd005aecd9ecce41b64eadfd5aa1ef342e6c5fa04d034"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-preview-export.html": {
+      "bytes": 466236,
+      "sha256": "fdd8ca8b38a2b6650b6c4c36a55942483cf48e02e45e13cdd2b899221497b37a"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-cancel.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-noop.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-invalid.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-invalid-resize.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-play-mode.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-export.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-reopen-export.html": {
+      "bytes": 466236,
+      "sha256": "1f72c57ec5d00660edd60492b46f74a9546f8c086f506ce8bb1aff4059a05718"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1280-s9-align-export.html": {
+      "bytes": 467014,
+      "sha256": "bb561d35a476041706582b1403d741a61ca0cc8c3eda0b9ba44b7e79f4a03d2c"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/s9-source.html": {
+      "bytes": 467357,
+      "sha256": "7ffb1e6e1d3a30692cbe290bde79d3e8ce0fc24feae98b35c60177ffebe695a0"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-legacy-selected.html": {
+      "bytes": 465927,
+      "sha256": "e4b39092c085b83a3e5fd005aecd9ecce41b64eadfd5aa1ef342e6c5fa04d034"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-preview-export.html": {
+      "bytes": 466236,
+      "sha256": "fdd8ca8b38a2b6650b6c4c36a55942483cf48e02e45e13cdd2b899221497b37a"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-cancel.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-noop.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-invalid.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-invalid-resize.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-play-mode.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-export.html": {
+      "bytes": 466236,
+      "sha256": "b12364998a3fac55a1d27c092ea1a6476149cbe2277ad01d8e913b7cb708ef72"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-reopen-export.html": {
+      "bytes": 466236,
+      "sha256": "1f72c57ec5d00660edd60492b46f74a9546f8c086f506ce8bb1aff4059a05718"
+    },
+    "evidence/edx-wp1-s9/mainline-host-acceptance/alignment/1600-s9-align-export.html": {
+      "bytes": 467014,
+      "sha256": "bb561d35a476041706582b1403d741a61ca0cc8c3eda0b9ba44b7e79f4a03d2c"
+    }
+  },
+  "pgqUniqueNamedPass": 16,
+  "singleRun16Pass": false,
+  "pgqPassedNames": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "browserAttempts": 2,
+  "bothOwnedRootsAbsent": true
+}

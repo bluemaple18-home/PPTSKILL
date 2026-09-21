@@ -1,13 +1,17 @@
 # EDX-WP1-S9 — Bounded multi-selection alignment
 
-Status: IMPLEMENTED / NON_BROWSER_PASS / HOST_BROWSER_PENDING
+Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
 Branch: `codex/edx-wp1-s9-align-selection`
 Base: `f7537c4`
 Depends on: S8 COMPLETE；Product `3065bcb8745e3109531eb6f155e930a0b3c24c15` targeted independent re-review GO。
 traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.3 EDX-WP1`、`§10.4 Operation Registry`、`§10.5 portability`、`§10.8 product simplicity`。
 
 
-## Current checkpoint — 2026-09-21
+## Latest host acceptance — 2026-09-21
+
+正式 host 已補齊 alignment 1280×720／1600×900 各 13 checks PASS（10 base + 3 S9）；affected PGQ 16 unique named PASS 精確為首輪 8 + bounded retry 8，非單輪 16/16。首輪 scan-limit supervisor stop 原始 evidence 完整保留；retry Browser.close／supervisor／cleanup 全 PASS，兩輪 owned roots 均已回收。Source 11/11、protected 4/4、ZIP hash MATCH；產品與 ZIP 相對 `c5c6dac` 未改。最新 receipt：`evidence/edx-wp1-s9/mainline-receipt.md`；handoff：`handoff_20260921_edx_wp1_s9_review.md`。目前待 Independent Review，不是 GO／closure。
+
+## Historical checkpoint — 2026-09-21（c5c6dac）
 
 - 六種 `align-selection` 已進既有 Unified Operation Registry；Node／portable runtime 共用 geometry helper。任一 target 缺 canonical geometry、非法／重複／foreign target 皆整筆原子拒絕；no-op 保持 canonical state。
 - Multi-selection contextual alignment toolbar 只在 2+ selection 顯示；align 成功／失敗皆保留 selection；export clone 移除 toolbar／selection chrome。沒有新增第二 selection state、renderer、schema 或 dependency。

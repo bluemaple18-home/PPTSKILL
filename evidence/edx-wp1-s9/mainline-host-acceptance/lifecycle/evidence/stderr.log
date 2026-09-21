@@ -1,0 +1,17 @@
+
+DevTools listening on ws://127.0.0.1:62068/devtools/browser/ec0c51a1-8598-4708-aaee-365ca7f1de43
+Trying to load the allocator multiple times. This is *not* supported.
+[49308:17989584:0921/172658.270582:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49308:17989584:0921/172658.277786:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49308:17989584:0921/172658.277978:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49308:17989584:0921/172658.278090:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49308:17989584:0921/172658.278358:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49308:17989584:0921/172658.278483:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[49263:17989531:0921/172700.580858:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[49263:17989531:0921/172729.241372:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[49263:17989531:0921/172821.166635:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[49263:17989531:0921/173010.193046:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[49263:17989531:0921/173221.640075:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -2
+[49263:17989374:0921/173221.655385:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15
+[51684:17998020:0921/173221.739847:ERROR:base/apple/mach_port_rendezvous_mac.cc:256] bootstrap_look_up com.google.Chrome.MachPortRendezvousServer.1: Unknown service name (1102)
+[51684:17998020:0921/173221.740095:ERROR:base/memory/shared_memory_switch.cc:261] No rendezvous client, terminating process (parent died?)

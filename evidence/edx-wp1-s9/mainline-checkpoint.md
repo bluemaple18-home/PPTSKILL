@@ -1,5 +1,7 @@
 # EDX-WP1-S9 Mainline checkpoint
 
+> 歷史 checkpoint。正式 host acceptance 已接續完成；最新狀態見 [mainline-receipt.md](mainline-receipt.md)。以下保留原時點紀錄。
+
 狀態：**IMPLEMENTATION_COMPLETE / NON_BROWSER_PASS / HOST_BROWSER_ROUTING_BLOCKED / REVIEW_CANDIDATE_PENDING**。
 
 Branch：`codex/edx-wp1-s9-align-selection`；base：`f7537c4`。本 checkpoint 不宣稱 fresh browser、fresh PGQ 或 Independent Review GO；未 merge／push／deploy，未開 S10。
