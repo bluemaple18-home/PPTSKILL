@@ -1,6 +1,6 @@
 # EDX-WP1-S7 Mainline receipt
 
-狀態：REVIEW_CANDIDATE；Independent Review pending。Branch `codex/edx-wp1-s7`，base `4cd4540a71aa7f94cc60e4495155c572034a57a4`。未merge／push／deploy，未開下一Slice。
+狀態：REVIEW_CANDIDATE；Independent Review pending。Candidate `c390d26`，branch `codex/edx-wp1-s7`，base `4cd4540a71aa7f94cc60e4495155c572034a57a4`。未merge／push／deploy，未開下一Slice。
 
 ## 實作與修復
 
