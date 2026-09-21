@@ -1,6 +1,6 @@
 # EDX-WP1-S10 — Bounded multi-selection distribution
 
-Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp1-s10-distribute-selection`
 Base: `cbe12a62a749d1c7cca67e3acb8de1b832995924`
 Depends on: S9 COMPLETE / Independent Review GO。
@@ -72,3 +72,9 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Prior-Art-First`、`§10.3 E
 - `host-final-verification.json`：Product `902671238980941b321179a4df37e4d867733f14`，source **11/11 MATCH**、protected **4/4 MATCH**、ZIP `2,282,450 bytes` / SHA-256 `664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64`。
 - 早期 scan-limit FAIL、retry 與診斷 evidence 全保留；browser PASS 是工具修復前已完成的 fresh run，PGQ 16/16 是工具修復後 fresh single run，兩者不混稱同一輪。
 - Mainline 判定：**可交 Independent Review**。本狀態不是 Independent GO；不 merge／push／deploy，不開 S11。
+
+## Mainline closure — 2026-09-22
+
+Independent Review **GO**，reviewed SHA `902671238980941b321179a4df37e4d867733f14`，P0/P1/P2/P3 全 0。Reviewer fresh targeted 12/12、focused 198/198、full non-browser 403/403 PASS；browser 雙 viewport 各 13 checks 與 PGQ 單輪 16/16 屬已提交 evidence 獨立核對，非 Reviewer fresh browser rerun。
+
+Verdict：`evidence/edx-wp1-s10/independent-review.md`。主線核對 source 11/11、protected 4/4、ZIP bytes/hash MATCH，reviewed code／ZIP 未改，歷史 FAIL 保留。S10 正式關閉；未 merge／push／deploy，未開 S11。前述 checkpoint／candidate 段落保留為歷史。

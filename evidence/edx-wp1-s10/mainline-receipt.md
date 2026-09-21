@@ -1,6 +1,6 @@
 # S10 Mainline acceptance receipt
 
-狀態：**REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING**。
+狀態：**COMPLETE / INDEPENDENT_REVIEW_GO**（2026-09-22）。獨立 verdict 見 `independent-review.md`；下列驗收與 blocker 歷史保留。
 
 Product SHA：`902671238980941b321179a4df37e4d867733f14`；branch `codex/edx-wp1-s10-distribute-selection`；base `cbe12a62a749d1c7cca67e3acb8de1b832995924`。Host evidence commit：`70caf4e1b385502e354b38d022539053f3880aef`。從 Product SHA 到 host evidence commit 只有 evidence/control docs；delivery source、tests、harness、ZIP 沒有被 host 驗收線修改。
 
@@ -37,4 +37,4 @@ Product SHA：`902671238980941b321179a4df37e4d867733f14`；branch `codex/edx-wp1
 - ZIP：**2,282,450 bytes**；SHA-256 `664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64`。
 - 四個 protected untracked 維持：`.DS_Store`、`CLAUDE.md`、`HANDOFF-20260914-P0-R11-R1-S3.md`、`HANDOFF-20260914-PGQ-WP1.md`。
 
-Mainline 判定：S10 acceptance 已完整，可交 Independent Reviewer。本 receipt 不是 Independent GO。未 merge／push／deploy，不開 S11。
+Mainline 結案判定：已收到並保存 Independent Review GO（`independent-review.md`），P0/P1/P2/P3 全 0；S10 正式關閉。Reviewer fresh 與 evidence-only 界線依該 verdict 保存；reviewed code／ZIP 未改。未 merge／push／deploy，未開 S11。

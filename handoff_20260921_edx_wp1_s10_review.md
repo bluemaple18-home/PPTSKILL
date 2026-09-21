@@ -1,5 +1,7 @@
 # S10 Independent Review Handoff
 
+結案更新（2026-09-22）：**Independent Review GO / S10 COMPLETE**；verdict 見 `evidence/edx-wp1-s10/independent-review.md`。以下保留原 review 委託與證據範圍。
+
 你是 PPTSKILL 獨立 Reviewer。請唯讀審查 S10 bounded multi-selection distribution，回覆 reviewed SHA、GO／NO-GO、P0–P3 findings、具體重現證據與限制。不得修改 candidate、ZIP、四個 protected untracked，不 merge／push／deploy，不開 S11。
 
 - Repo：`<repo-root>` = `PPTSKILL-canonical`。
@@ -37,4 +39,4 @@ git diff --check cbe12a62a749d1c7cca67e3acb8de1b832995924 902671238980941b321179
 
 若 Reviewer 當前沒有合法 managed host browser，可 evidence-only 核對已提交 browser／PGQ artifacts，但必須明示哪些是 fresh verification、哪些只是 committed evidence review；不得 unset `CODEX_SANDBOX` 或裸啟 Chrome。
 
-S10 尚待 Independent Review；本 handoff 不自動 closure。
+原 handoff 不自動 closure；現已由獨立 GO 與 Mainline 結案更新為 COMPLETE。未 merge／push／deploy，未開 S11。
