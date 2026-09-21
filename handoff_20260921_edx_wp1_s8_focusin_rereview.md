@@ -30,3 +30,7 @@ git diff --check fd7fc9ae2c94d393d570550bf4292972910d3160 3065bcb8745e3109531eb6
 Fresh Mainline：S8 **10/10**、focused **174/174**、full non-browser **379/379**、ZIP lifecycle PASS。`evidence/edx-wp1-s8/focusin-repair/source-hashes.json` 記錄 20 source 與 protected 4 hashes。最終 ZIP **2,280,195 bytes**；SHA-256 **`ab59115c7f5c52d258af22021c8b57e8334fba0f5ac7ecee93622fbeb158061f`**。
 
 本輪未啟 browser／PGQ：原雙 viewport 各 15 checks、affected PGQ 16/16 是前候選繼承 evidence，不冒稱新 candidate fresh PASS。不必重做整套 S8；針對 P1 做獨立復現與修復核對。回覆 reviewed SHA、P0–P3、fresh 與 evidence-only 分列、GO／NO-GO；Mainline 等 verdict 才能 closure。
+
+## Closure
+
+Targeted independent re-review：**GO**。Reviewed product `3065bcb8745e3109531eb6f155e930a0b3c24c15`；P0/P1/P2/P3=0。Reviewer fresh 驗 S8 10/10、focused 174/174、non-browser 379/379、source 20/20、protected 4/4、ZIP bytes/SHA 與 `git diff --check`；原 focusin wrong-slide mutation P1 關閉。Browser／PGQ 本輪只核對既有 evidence，沒有 fresh rerun。Reviewed code／ZIP 未改，未 merge／push／deploy。

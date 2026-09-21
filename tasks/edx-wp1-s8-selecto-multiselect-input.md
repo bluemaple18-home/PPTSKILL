@@ -1,6 +1,6 @@
 # EDX-WP1-S8 — Selecto bounded multi-selection input
 
-Status: P1_REPAIR_CANDIDATE / TARGETED_REVIEW_PENDING
+Status: COMPLETE — Product `3065bcb8745e3109531eb6f155e930a0b3c24c15`; targeted independent re-review GO，P0/P1/P2/P3=0；S8 closed
 Branch: `codex/edx-wp1-s8`
 Base: `9188b787ad964b92a129a5cff8f7067b08c0f4ea`
 Depends on: S7 COMPLETE；Selecto `1.26.3` S1 adoption **GO / ADAPT**。
@@ -10,7 +10,7 @@ Trace preflight: S7 closure已清；Selecto version/license/integrity/bundle evi
 
 ## P1 targeted repair — 2026-09-21
 
-獨立 Reviewer 對 `fd7fc9a` 判 NO-GO：focusin 換頁未清 selection，方向鍵可寫入上一頁 geometry。共用 `select(id)` 現在只在 identity 改變時先 `layout?.clearSelection()`；同頁 focus 保留選取。Mounted RED 重現 canonical mutation；fresh S8 10/10、focused 174/174、non-browser 379/379、ZIP lifecycle PASS，protected 4/4 MATCH。本輪不重跑 browser／PGQ；既有 evidence 僅繼承，不代表新 candidate fresh browser。詳細 receipt：`evidence/edx-wp1-s8/focusin-repair/receipt.md`。P1 等 targeted independent re-review，未 closure。
+獨立 Reviewer 對 `fd7fc9a` 判 NO-GO：focusin 換頁未清 selection，方向鍵可寫入上一頁 geometry。共用 `select(id)` 現在只在 identity 改變時先 `layout?.clearSelection()`；同頁 focus 保留選取。Mounted RED 重現 canonical mutation；fresh S8 10/10、focused 174/174、non-browser 379/379、ZIP lifecycle PASS，protected 4/4 MATCH。本輪不重跑 browser／PGQ；既有 evidence 僅繼承，不代表新 candidate fresh browser。詳細 receipt：`evidence/edx-wp1-s8/focusin-repair/receipt.md`。Targeted independent re-review 已 GO：reviewed product `3065bcb8745e3109531eb6f155e930a0b3c24c15`，P0/P1/P2/P3=0；原 focusin wrong-slide mutation P1 關閉。Reviewer fresh 驗 S8 10/10、focused 174/174、non-browser 379/379、20/20 source 與 protected 4/4 hashes、ZIP 身分與 diff check；browser／PGQ 僅核對既有 evidence，未冒稱 fresh rerun。詳 `evidence/edx-wp1-s8/independent-rereview.md`。S8 closure 不改 reviewed product／ZIP。
 
 ## Historical acceptance — 2026-09-21（fd7fc9a）
 
