@@ -1,0 +1,45 @@
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (4.792667ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (1.051083ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (2.164041ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.301042ms)
+✔ sample content 或 composition 只使該頁失效 (1.50175ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.885125ms)
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (62746.647542ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 6
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 120193.565542
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-sample-approval.test.mjs:142:1
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (62746.647542ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /hard gate.*PASS|hard gate.*pass/iu. Input:
+
+  'PPTSKILL workflow：Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/tampered-visible-content.html --motion static\n' +
+    'Warning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695\n' +
+    'for (const viewport of viewports) runs.push(await runAtViewport(viewport));\n' +
+    '                                            ^\n' +
+    '\n' +
+    '\n' +
+    '\n' +
+    '\n'
+
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-sample-approval.test.mjs:162:12)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-sample-approval.test.mjs:160:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'PPTSKILL workflow：Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/tampered-visible-content.html --motion static\nWarning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-9LGRB0/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695\nfor (const viewport of viewports) runs.push(await runAtViewport(viewport));\n                                            ^\n\n\n\n\n',
+    expected: /hard gate.*PASS|hard gate.*pass/iu,
+    operator: 'match',
+    diff: 'simple'
+  }

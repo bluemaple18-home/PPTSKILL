@@ -1,0 +1,16 @@
+
+DevTools listening on ws://127.0.0.1:49365/devtools/browser/7e570b49-31f1-410d-8bcc-1876622eb888
+Trying to load the allocator multiple times. This is *not* supported.
+[18399:18182975:0921/184719.493717:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18399:18182975:0921/184719.494321:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18399:18182975:0921/184719.494419:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18399:18182975:0921/184719.494519:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18399:18182975:0921/184719.494599:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18399:18182975:0921/184719.494675:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18392:18182913:0921/184722.009550:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18392:18182913:0921/184750.898625:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18392:18182913:0921/184847.535095:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18392:18182913:0921/184914.716442:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -2
+[18392:18182856:0921/184914.733187:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15
+[20192:18189655:0921/184914.847578:ERROR:base/apple/mach_port_rendezvous_mac.cc:256] bootstrap_look_up com.google.Chrome.MachPortRendezvousServer.1: Unknown service name (1102)
+[20192:18189655:0921/184914.847775:ERROR:base/memory/shared_memory_switch.cc:261] No rendezvous client, terminating process (parent died?)

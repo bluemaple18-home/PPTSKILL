@@ -1,0 +1,10 @@
+test_browser_growth_after_stat_is_detected_on_next_scan (review_tests.TmpArtifactLifecycleTests.test_browser_growth_after_stat_is_detected_on_next_scan) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+OK
+Runtime diff unchanged: PASS
+SHA256: ead62efbf7da509762ed7a95333cc77ed488b339a8282946f73b784eb8471a18
+diff --check: PASS
+Closure verdict: GO / P2 CLOSED; targeted only; no browser

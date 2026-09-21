@@ -1,0 +1,282 @@
+--- harness python runtime
+[PASS] harness python runtime: /Users/matt/ai-core/.venv/bin/python (Python 3.11.14)
+--- harness python runtime
+[PASS] harness python runtime: /Users/matt/ai-core/.venv/bin/python (Python 3.11.14)
+--- active legacy pipeline guard
+[PASS] no active legacy migration pipeline paths
+--- shell syntax: sync
+--- shell syntax: devflow_entry
+--- shell syntax: devflow_completion_gate
+--- shell syntax: daily_evolution
+--- shell syntax: install_daily_evolution_launchd
+--- shell syntax: install_memory_sync_launchd
+--- shell syntax: install_project_memory_sweep_launchd
+--- shell syntax: memory sync common
+--- shell syntax: init_sync_repo
+--- shell syntax: air_start_sync
+--- shell syntax: air_end_sync
+--- shell syntax: mini_import_sync
+--- shell syntax: project_memory_sweep
+--- shell syntax: project_memory_publish
+--- shell syntax: project_git_push
+--- shell syntax: devflow_context_map_guard
+--- shell syntax: evidence_completion_guard
+--- shell syntax: eval_gate
+--- shell syntax: state_snapshot_guard
+--- shell syntax: memory_store
+--- shell syntax: memory_decision_gate
+--- shell syntax: memory_system_audit
+--- shell syntax: memory_recall_benchmark
+--- memory recall engine syntax
+--- shell syntax: codegraph
+--- shell syntax: worktree capability preflight
+--- shell syntax: codex preflight
+--- shell syntax: project_memory_publish
+--- shell syntax: project_memory_sweep
+--- shell syntax: install_project_memory_sweep_launchd
+--- shell syntax: install_codex_daily_conversation_archive_launchd
+--- shell syntax: install_runtime_supervisor_launchd
+--- rules bloat audit syntax
+--- manifest consistency gate syntax
+--- runtime diagnostics gate syntax
+--- rollback Runtime Supervisor syntax
+--- rollback Runtime Supervisor schedule plan syntax
+--- team status adapter syntax
+--- harness registry guard syntax
+--- agent architecture sync gate syntax
+--- harness run record guard syntax
+--- local automation run record adapter syntax
+--- runtime summary run record adapter syntax
+--- skill surface guard syntax
+--- work legacy inventory syntax
+--- project memory runtime syntax
+--- codex activity archive syntax
+--- webwright style browser syntax
+--- mini memory runtime syntax
+--- devflow context map guard
+[PASS] header 正確
+[PASS] general fallback 存在
+[PASS] devflow context map 一致
+---
+summary: PASS=3 FAIL=0
+--- agent architecture sync gate
+MAINLINE_GUARD_STATUS=pass
+{"failure_count": 0, "failures": [], "schema_version": "ai_core.agent_architecture_sync.v1", "status": "pass"}
+--- rules bloat audit
+[PASS] rules bloat audit passed
+--- manifest consistency gate
+[PASS] manifest consistency gate passed
+--- runtime diagnostics gate
+[PASS] runtime diagnostics gate self-test passed
+--- harness registry guard
+[PASS] harness registry guard passed
+--- harness run record guard
+[PASS] harness run record guard passed
+--- skill surface guard
+[PASS] skill surface registry guard passed
+--- mini memory contracts
+mini memory contracts validation OK
+--- eval gate quick
+[PASS] memory/memory_jsonl_integrity: records=737 duplicate_memory_ids_observed=0
+[PASS] memory/memory_sync_runtime_anchor: matches=['Air/mini memory sync repo and cron enabled', 'ai-memory-hub-private', 'mini_import_sync'] forbidden=[]
+[PASS] memory/mini_contracts_anchor: matches=['mini memory runtime contracts built', 'runtime/mini_memory', 'validate_contracts.py'] forbidden=[]
+[PASS] memory/daily_evolution_anchor: matches=['ai-core daily evolution automation', 'daily_evolution.sh', 'harness_audit --full'] forbidden=[]
+[PASS] task-evidence/evidence_first_done_requires_text_report: expected_pass=False actual_pass=False stderr=[FAIL] 缺少 required artifact：evidence/browser-acceptance.json
+[PASS] task-evidence/evidence_first_blocked_records_stop_reason: expected_pass=True actual_pass=True stderr=
+[PASS] task-evidence/browser_acceptance_structured_report_passes: expected_pass=True actual_pass=True stderr=
+summary: eval gate quick passed
+--- memory decision gate
+ACTION=local_snapshot
+LOCAL_SNAPSHOT=required
+MILESTONE_STORE=skip
+--- devflow entry tests
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 78.188s
+
+OK
+--- devflow completion gate tests
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 17.267s
+
+OK
+--- evidence completion guard tests
+................
+----------------------------------------------------------------------
+Ran 16 tests in 6.774s
+
+OK
+--- mini memory contract tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.377s
+
+OK
+--- state snapshot guard tests
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.687s
+
+OK
+--- codegraph wrapper tests
+........
+----------------------------------------------------------------------
+Ran 8 tests in 3.870s
+
+OK
+--- worktree capability preflight tests
+.............................
+----------------------------------------------------------------------
+Ran 29 tests in 12.998s
+
+OK
+--- rules bloat audit tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.075s
+
+OK
+--- manifest consistency gate tests
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.010s
+
+OK
+--- runtime diagnostics gate tests
+....................
+----------------------------------------------------------------------
+Ran 20 tests in 0.232s
+
+OK
+--- active external Runtime Supervisor tests
+[PASS] active external Runtime Supervisor tests discovered 13 test cases: /Users/matt/ai-core-runtime/runtime-supervisor/tests
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 1.503s
+
+OK
+--- rollback Runtime Supervisor tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.744s
+
+OK
+--- rollback Runtime Supervisor schedule plan tests
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.050s
+
+OK
+--- rollback Runtime Supervisor launchd installer tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.599s
+
+OK
+--- team status adapter tests
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.124s
+
+OK
+--- harness registry guard tests
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 0.026s
+
+OK
+--- agent architecture sync gate tests
+.................
+----------------------------------------------------------------------
+Ran 17 tests in 4.381s
+
+OK
+--- harness run record guard tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 0.052s
+
+OK
+--- local automation run record adapter tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.073s
+
+OK
+--- runtime summary run record adapter tests
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.037s
+
+OK
+--- harness python runtime tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.979s
+
+OK
+--- skill surface guard tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK
+--- work legacy inventory tests
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.008s
+
+OK
+--- memory agent model route tests
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK
+--- memory model gate contract tests
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.002s
+
+OK
+--- memory recall policy tests
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 0.394s
+
+OK
+--- dynamic harness runner tests
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.196s
+
+OK
+--- sequential batch controller tests
+.........
+----------------------------------------------------------------------
+Ran 9 tests in 2.624s
+
+OK
+--- project memory event tests
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.496s
+
+OK
+--- codex activity merge tests
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.181s
+
+OK
+--- webwright style browser tests
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.070s
+
+OK
+---
+summary: harness audit quick passed
+[main e155b3ab] fix: 修正受管 browser 掃描時間窗並保留精確停損診斷
+ 3 files changed, 129 insertions(+), 12 deletions(-)

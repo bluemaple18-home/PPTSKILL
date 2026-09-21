@@ -1,0 +1,15 @@
+{
+  "aiCoreScannerSha256": "c1e22aed91fed95b907315432ab06f59dccdc4ad568ee85a9c19b1a183ce5b82",
+  "hostSandbox": null,
+  "distributionStarted": false,
+  "pgqStarted": true,
+  "supervisorPid": 18386,
+  "ownedRoot": "/private/tmp/aic-b-90e7f5e83d1a40dea3a051dad99a3e85",
+  "readinessExit": 0,
+  "pgqExit": 1,
+  "supervisorExit": 2,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "sourcesMatchAfter": true,
+  "protectedMatchAfter": true
+}

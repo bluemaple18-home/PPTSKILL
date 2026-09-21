@@ -1,0 +1,28 @@
+EF.
+======================================================================
+ERROR: test_owned_browser_scan_accepts_measured_slow_small_profile (tests.test_tmp_artifact_lifecycle.TmpArtifactLifecycleTests.test_owned_browser_scan_accepts_measured_slow_small_profile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/ai-core/tests/test_tmp_artifact_lifecycle.py", line 210, in test_owned_browser_scan_accepts_measured_slow_small_profile
+    self.assertEqual((1, 1), MODULE.scan_resource_artifacts(root, limits))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py", line 1001, in scan_resource_artifacts
+    visit(fd, ())
+  File "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py", line 968, in visit
+    reject_scan(time.monotonic(), "before_stat")
+  File "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py", line 952, in reject_scan
+    raise LifecycleError(
+tmp_artifact_lifecycle.LifecycleError: NO_GO: resource observation unknown (scan limit; reasons=deadline; elapsed_ms=123.794; timeout_ms=100.000; entries=1/21024; bytes=0/67108864; files=0/10000; phase=before_stat)
+
+======================================================================
+FAIL: test_owned_browser_scan_still_rejects_expired_completion (tests.test_tmp_artifact_lifecycle.TmpArtifactLifecycleTests.test_owned_browser_scan_still_rejects_expired_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/ai-core/tests/test_tmp_artifact_lifecycle.py", line 219, in test_owned_browser_scan_still_rejects_expired_completion
+    self.assertIn("timeout_ms=5000.000", str(result.exception))
+AssertionError: 'timeout_ms=5000.000' not found in 'NO_GO: resource observation unknown (scan limit; reasons=deadline; elapsed_ms=5100.000; timeout_ms=100.000; entries=1/21024; bytes=1/67108864; files=1/10000; phase=completion)'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.341s
+
+FAILED (failures=1, errors=1)

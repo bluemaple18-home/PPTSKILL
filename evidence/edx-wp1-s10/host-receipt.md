@@ -1,5 +1,7 @@
 # S10 host-runtime acceptance evidence
 
+> 此為修復前停止 receipt。Owner 要求續處理後，已修復 AI Core 觀測窗並完成 PGQ；最新結果見 [host-final-receipt.md](host-final-receipt.md)。以下保留原始時點狀態。
+
 狀態：**BROWSER_PASS / PGQ_BLOCKED / STOP_LOCAL_CONTINUATION**。交回原 Mainline 裁決，不能標 Independent Review candidate。
 
 Product SHA：`902671238980941b321179a4df37e4d867733f14`。接手 checkpoint：`209ee3bcf8491d9db5a11d7b51f52c1879bad296`。Branch：`codex/edx-wp1-s10-distribute-selection`。本輪只新增 evidence，不改產品／測試／ZIP／task contract，不 merge／push／deploy、不開 S11。

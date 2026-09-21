@@ -1,0 +1,29 @@
+test_default_profile_scan_keeps_short_time_limit (review_tests.TmpArtifactLifecycleTests.test_default_profile_scan_keeps_short_time_limit) ... ok
+test_large_profile_scan_allows_bounded_slow_tree (review_tests.TmpArtifactLifecycleTests.test_large_profile_scan_allows_bounded_slow_tree) ... ok
+test_large_profile_scan_time_limit_remains_fail_closed (review_tests.TmpArtifactLifecycleTests.test_large_profile_scan_time_limit_remains_fail_closed) ... ok
+test_owned_browser_scan_accepts_measured_slow_small_profile (review_tests.TmpArtifactLifecycleTests.test_owned_browser_scan_accepts_measured_slow_small_profile) ... ok
+test_owned_browser_scan_keeps_byte_file_and_special_entry_guards (review_tests.TmpArtifactLifecycleTests.test_owned_browser_scan_keeps_byte_file_and_special_entry_guards) ... ok
+test_owned_browser_scan_still_rejects_expired_completion (review_tests.TmpArtifactLifecycleTests.test_owned_browser_scan_still_rejects_expired_completion) ... ok
+test_runtime_budget_both_dimensions_and_nested_entry (review_tests.TmpArtifactLifecycleTests.test_runtime_budget_both_dimensions_and_nested_entry) ... ok
+test_runtime_budget_reason_preserves_dimension_counts_and_entry (review_tests.TmpArtifactLifecycleTests.test_runtime_budget_reason_preserves_dimension_counts_and_entry) ... ok
+test_runtime_unknown_reasons_are_not_budget_diagnostics (review_tests.TmpArtifactLifecycleTests.test_runtime_unknown_reasons_are_not_budget_diagnostics) ... ok
+test_scan_accepts_completion_before_deadline (review_tests.TmpArtifactLifecycleTests.test_scan_accepts_completion_before_deadline) ... ok
+test_scan_completion_deadline_reports_completed_counts (review_tests.TmpArtifactLifecycleTests.test_scan_completion_deadline_reports_completed_counts) ... ok
+test_scan_deadline_reports_bounded_observation_details (review_tests.TmpArtifactLifecycleTests.test_scan_deadline_reports_bounded_observation_details) ... ok
+test_scan_entry_limit_is_distinct_from_deadline (review_tests.TmpArtifactLifecycleTests.test_scan_entry_limit_is_distinct_from_deadline) ... ok
+test_scan_rejects_expired_completion_after_final_io (review_tests.TmpArtifactLifecycleTests.test_scan_rejects_expired_completion_after_final_io) ... ok
+test_scan_without_limits_preserves_unbounded_completion (review_tests.TmpArtifactLifecycleTests.test_scan_without_limits_preserves_unbounded_completion) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 1.538s
+
+OK
+metadata_without_registration: NO_GO: resource observation unknown (scan limit; reasons=deadline; elapsed_ms=200.000; timeout_ms=100.000; entries=1/21024; bytes=0/67108864; files=0/10000; phase=before_stat)
+registered_browser_io_and_exact_deadline: PASS
+two_scan_detection_delay: {"onset": 0.0, "term": 10.649999999999995, "delay": 10.649999999999995, "scans": 2, "reason": "NO_GO: runtime budget exceeded (dimensions=max_bytes; bytes=2/1; files=1/10; entry=a)"}
+ALL REVIEW PROBES PASSED
+supervisor_ttl: {"code": 2, "signals": [[15, 4.95]], "elapsed": 4.95}
+supervisor_signal: {"code": 143, "signals": [[15, 0.0], [9, 5.9]], "elapsed": 5.9}
+supervisor_child_exit: {"code": 7, "signals": [], "elapsed": 4.9}
+registered_browser_final_close_io: PASS
+simultaneous_deadline_entry: NO_GO: resource observation unknown (scan limit; reasons=deadline,entries; elapsed_ms=5000.000; timeout_ms=5000.000; entries=1025/1024; bytes=0/1; files=0/0; phase=before_stat)

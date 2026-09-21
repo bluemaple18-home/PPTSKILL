@@ -1,0 +1,51 @@
+{
+  "status": "HOST_ACCEPTANCE_COMPLETE",
+  "productSha": "902671238980941b321179a4df37e4d867733f14",
+  "aiCoreCommit": "e155b3abeabe45c2442bcf86c30236237c84ffaa",
+  "sourcesMatched": 11,
+  "protectedMatched": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2282450,
+    "sha256": "664bc72f696e21d1d5ca891506411c737ff7f114c891658d7d5670e8b06ebd64"
+  },
+  "browserEvidence": "host-acceptance/distribution/acceptance.json",
+  "browserChecksPerViewport": 13,
+  "pgqSingleRunNamedPass": 16,
+  "pgqPassedNames": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "cleanup": {
+    "aiCoreCommit": "e155b3abeabe45c2442bcf86c30236237c84ffaa",
+    "aiCoreScannerSha256": "72781411d5082fb1c89b64a0d7c453ff6306009dbb1304910103cc98c5b72c97",
+    "hostSandbox": null,
+    "distributionStarted": false,
+    "pgqStarted": true,
+    "supervisorPid": 95837,
+    "ownedRoot": "/private/tmp/aic-b-190f0ea9d2764dcbb62d1793f8d9e17d",
+    "readinessExit": 0,
+    "pgqExit": 0,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsent": true,
+    "isolationMarkerAbsent": true,
+    "sourcesMatchAfter": true,
+    "protectedMatchAfter": true
+  },
+  "aiCorePreExistingLogsUnchanged": true
+}

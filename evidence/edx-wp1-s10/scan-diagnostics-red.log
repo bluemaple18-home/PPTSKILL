@@ -1,0 +1,29 @@
+FFF
+======================================================================
+FAIL: test_scan_deadline_reports_bounded_observation_details (tests.test_tmp_artifact_lifecycle.TmpArtifactLifecycleTests.test_scan_deadline_reports_bounded_observation_details)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/ai-core/tests/test_tmp_artifact_lifecycle.py", line 177, in test_scan_deadline_reports_bounded_observation_details
+    self.assertIn("reasons=deadline", reason)
+AssertionError: 'reasons=deadline' not found in 'NO_GO: resource observation unknown (scan limit)'
+
+======================================================================
+FAIL: test_scan_entry_limit_is_distinct_from_deadline (tests.test_tmp_artifact_lifecycle.TmpArtifactLifecycleTests.test_scan_entry_limit_is_distinct_from_deadline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/ai-core/tests/test_tmp_artifact_lifecycle.py", line 190, in test_scan_entry_limit_is_distinct_from_deadline
+    self.assertIn("reasons=entries", reason)
+AssertionError: 'reasons=entries' not found in 'NO_GO: resource observation unknown (scan limit)'
+
+======================================================================
+FAIL: test_scan_completion_deadline_reports_completed_counts (tests.test_tmp_artifact_lifecycle.TmpArtifactLifecycleTests.test_scan_completion_deadline_reports_completed_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/ai-core/tests/test_tmp_artifact_lifecycle.py", line 200, in test_scan_completion_deadline_reports_completed_counts
+    self.assertIn("phase=completion", str(result.exception))
+AssertionError: 'phase=completion' not found in 'NO_GO: resource observation unknown (scan limit)'
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.385s
+
+FAILED (failures=3)

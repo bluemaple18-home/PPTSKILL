@@ -1,0 +1,17 @@
+{
+  "aiCoreCommit": "e155b3abeabe45c2442bcf86c30236237c84ffaa",
+  "aiCoreScannerSha256": "72781411d5082fb1c89b64a0d7c453ff6306009dbb1304910103cc98c5b72c97",
+  "hostSandbox": null,
+  "distributionStarted": false,
+  "pgqStarted": true,
+  "supervisorPid": 95837,
+  "ownedRoot": "/private/tmp/aic-b-190f0ea9d2764dcbb62d1793f8d9e17d",
+  "readinessExit": 0,
+  "pgqExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "sourcesMatchAfter": true,
+  "protectedMatchAfter": true
+}

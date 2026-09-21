@@ -1,0 +1,35 @@
+.................................NO_GO: budget exceeded
+.......injected marker update failure
+............................NO_GO: runtime budget exceeded
+NO_GO: runtime budget exceeded
+.....usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: unrecognized arguments: --disable-features=Other
+usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: unrecognized arguments: -- --disable-gpu=false
+..............NO_GO: recovery failed: NO_GO: recovery evidence contains symlink
+.NO_GO: recovery failed: disk full
+.NO_GO: recovery failed: disk full
+.NO_GO: recovery failed: NO_GO: recovery manifest/session/marker identity mismatch
+..NO_GO: recovery failed: live
+.NO_GO: recovery failed: NO_GO: live process or PID reuse prevents recovery: [{'pid': 24425, 'ppid': 22185, 'pgid': 22185, 'state': 'S'}]
+..NO_GO: recovery failed: [Errno 62] Too many levels of symbolic links: 'stdout.log'
+.NO_GO: recovery failed: NO_GO: recovery manifest/session/marker identity mismatch
+.NO_GO: recovery failed: NO_GO: recovery marker changed; retained
+.NO_GO: recovery failed: NO_GO: recovery marker cleanup failed
+.NO_GO: recovery failed: [Errno 62] Too many levels of symbolic links: '.tmp-artifact-manifest.json'
+.NO_GO: recovery failed: NO_GO: recovery manifest/session/marker identity mismatch
+.NO_GO: recovery failed: NO_GO: explicit owner authorization reference required
+.NO_GO: recovery failed: partial delete
+.NO_GO: recovery failed: NO_GO: live process or PID reuse prevents recovery: [{'pid': 22185, 'ppid': 52978, 'pgid': 22185, 'state': 'Ss'}, {'pid': 24595, 'ppid': 22185, 'pgid': 22185, 'state': 'R'}]
+.NO_GO: recovery failed: ps denied
+.NO_GO: recovery failed: copy failed
+.NO_GO: recovery failed: NO_GO: registered worktree refusal
+..NO_GO: recovery failed: NO_GO: recovery requires canonical no-follow exact root
+.NO_GO: recovery failed: [Errno 20] Not a directory: 'evidence'
+.NO_GO: recovery failed: NO_GO: recovery manifest/session/marker identity mismatch
+.NO_GO: recovery failed: NO_GO: unable to observe registered worktrees
+.
+----------------------------------------------------------------------
+Ran 112 tests in 63.463s
+
+OK
