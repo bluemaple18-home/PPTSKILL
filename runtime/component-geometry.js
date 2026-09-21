@@ -4,7 +4,7 @@ export const COMPONENT_GEOMETRY = Object.freeze({
   defaultBox: Object.freeze({ x: 800, y: 280, width: 640, height: 480 }),
 });
 export const COMPONENT_ALIGNMENT_VALUES = Object.freeze(['left', 'center-x', 'right', 'top', 'center-y', 'bottom']);
-export const COMPONENT_DISTRIBUTION_VALUES = Object.freeze(['horizontal-centers', 'vertical-centers']);
+export const COMPONENT_DISTRIBUTION_VALUES = Object.freeze(['horizontal-centers', 'vertical-centers', 'horizontal-gaps', 'vertical-gaps']);
 
 export function validateComponentGeometry(value, fields = ['x', 'y', 'width', 'height']) {
   if (!value || typeof value !== 'object' || Array.isArray(value)
@@ -74,24 +74,50 @@ export function distributeComponentGeometries(slide, componentIds, distribution,
   }
   if (!COMPONENT_DISTRIBUTION_VALUES.includes(distribution)) throw new Error('distribute-selection distribution 不支援。');
   const available = new Set((slide?.content?.components || []).map(component => component.id));
-  const horizontal = distribution === 'horizontal-centers';
+  const horizontal = distribution.startsWith('horizontal-');
+  const equalGap = distribution.endsWith('-gaps');
   const entries = componentIds.map((id, index) => {
     if (!available.has(id)) throw new Error('distribute-selection 找不到 component：' + id);
     const box = getComponentGeometry(slide.composition, id);
     if (!box) throw new Error('distribute-selection target 缺少 canonical geometry：' + id);
     const valid = validateComponentGeometry(box);
-    return { id, stableElementId: stableElementIds[index], box: valid, center: horizontal ? valid.x + valid.width / 2 : valid.y + valid.height / 2 };
-  }).sort((a, b) => a.center - b.center || (a.stableElementId < b.stableElementId ? -1 : a.stableElementId > b.stableElementId ? 1 : 0));
-  const first = entries[0].center, last = entries[entries.length - 1].center;
-  const step = (last - first) / (entries.length - 1);
-  const next = Object.fromEntries(entries.map((entry, index) => {
-    if (index === 0 || index === entries.length - 1) return [entry.id, entry.box];
-    const targetCenter = first + step * index;
-    const distributed = { ...entry.box };
-    if (horizontal) distributed.x = Math.round(targetCenter - entry.box.width / 2);
-    else distributed.y = Math.round(targetCenter - entry.box.height / 2);
-    return [entry.id, validateComponentGeometry(distributed)];
-  }));
+    const start = horizontal ? valid.x : valid.y;
+    const size = horizontal ? valid.width : valid.height;
+    return { id, stableElementId: stableElementIds[index], box: valid, start, size, center: start + size / 2 };
+  }).sort((a, b) => (equalGap ? a.start - b.start : a.center - b.center)
+    || (a.stableElementId < b.stableElementId ? -1 : a.stableElementId > b.stableElementId ? 1 : 0));
+
+  let next;
+  if (equalGap) {
+    const firstStart = entries[0].start;
+    const lastEnd = entries[entries.length - 1].start + entries[entries.length - 1].size;
+    const totalSize = entries.reduce((sum, entry) => sum + entry.size, 0);
+    const freeSpace = lastEnd - firstStart - totalSize;
+    if (freeSpace < 0) throw new Error('distribute-selection equal gap 空間不足，無法在頭尾固定時建立非負間距。');
+    const gap = freeSpace / (entries.length - 1);
+    let priorSize = 0;
+    next = Object.fromEntries(entries.map((entry, index) => {
+      const consumedBefore = priorSize;
+      priorSize += entry.size;
+      if (index === 0 || index === entries.length - 1) return [entry.id, entry.box];
+      const distributed = { ...entry.box };
+      const targetStart = firstStart + consumedBefore + gap * index;
+      if (horizontal) distributed.x = Math.round(targetStart);
+      else distributed.y = Math.round(targetStart);
+      return [entry.id, validateComponentGeometry(distributed)];
+    }));
+  } else {
+    const first = entries[0].center, last = entries[entries.length - 1].center;
+    const step = (last - first) / (entries.length - 1);
+    next = Object.fromEntries(entries.map((entry, index) => {
+      if (index === 0 || index === entries.length - 1) return [entry.id, entry.box];
+      const targetCenter = first + step * index;
+      const distributed = { ...entry.box };
+      if (horizontal) distributed.x = Math.round(targetCenter - entry.box.width / 2);
+      else distributed.y = Math.round(targetCenter - entry.box.height / 2);
+      return [entry.id, validateComponentGeometry(distributed)];
+    }));
+  }
   slide.composition.geometryOverrides = { ...slide.composition.geometryOverrides, ...next };
   return next;
 }

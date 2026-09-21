@@ -2,6 +2,7 @@ import { runSnapBrowserCases } from './edx-wp1-s7-browser-cases.mjs';
 import { runSelectionBrowserCases } from './edx-wp1-s8-browser-cases.mjs';
 import { runAlignmentBrowserCases } from './edx-wp1-s9-browser-cases.mjs';
 import { runDistributionBrowserCases } from './edx-wp1-s10-browser-cases.mjs';
+import { runEqualGapBrowserCases } from './edx-wp1-s11-browser-cases.mjs';
 import { runKeyboardBrowserCases } from './edx-wp1-s5-browser-cases.mjs';
 import { runMotionBrowserCases } from './edx-wp1-s3-motion-browser-cases.mjs';
 import assert from 'node:assert/strict';
@@ -175,6 +176,7 @@ try {
       if (process.argv.includes('--selection-regression')) await runSelectionBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--alignment-regression')) await runAlignmentBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--distribution-regression')) await runDistributionBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
+      if (process.argv.includes('--equal-gap-regression')) await runEqualGapBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';
