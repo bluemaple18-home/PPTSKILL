@@ -1,5 +1,7 @@
 # S8 Independent Review Handoff
 
+> 此候選已收到 NO-GO（focusin P1）。最新 bounded repair 請改用 [Targeted Re-review Handoff](handoff_20260921_edx_wp1_s8_focusin_rereview.md)；下列原審查內容保留。
+
 你是 PPTSKILL 的獨立 Reviewer。唯讀審查下列候選，回覆 GO／NO-GO 與 P0–P3 findings；不得修改 candidate、ZIP、四個 protected untracked，不 merge／push／deploy，不開 S9。這是完整 S8 review，不能只把 Mainline PASS 當成獨立結論。
 
 - Repo：`<repo-root>` = `PPTSKILL-canonical`。
