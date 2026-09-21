@@ -1,5 +1,7 @@
 # S11 Mainline checkpoint
 
+後續更新（2026-09-22）：host acceptance 已 PASS，現為 REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING；見 `mainline-receipt.md`。以下保留當時 checkpoint 與 sandbox boundary。
+
 狀態：**CHECKPOINT / HOST_BROWSER_PENDING**。
 
 Product SHA：`5589217175c443f407785f3a3b2aac110896d5f2`。Branch：`codex/edx-wp1-s11-equal-gap`；base：`29c83fa415ad1424395f8d71612542c6a824f308`。本 checkpoint 不宣稱 browser / PGQ PASS，也不是 Independent Review candidate。

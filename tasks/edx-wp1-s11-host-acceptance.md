@@ -1,6 +1,6 @@
 # EDX-WP1-S11 — Host browser + PGQ acceptance
 
-Status: READY_FOR_HOST_RUNTIME
+Status: COMPLETE / HOST_ACCEPTANCE_PASS
 Parent: `tasks/edx-wp1-s11-equal-gap.md`
 Product SHA: `5589217175c443f407785f3a3b2aac110896d5f2`
 Branch: `codex/edx-wp1-s11-equal-gap`
@@ -53,3 +53,7 @@ node --test --test-concurrency=1 \
 ## Return contract
 
 回傳 browser acceptance、PGQ named case count、controller/cleanup receipt、source/protected/ZIP 前後核對，以及任何歷史 failure。Evidence 可寫入 `evidence/edx-wp1-s11/host-acceptance/`；不得 merge／push／deploy，不開 S12。由原 Mainline 做 review-candidate 裁決。
+
+## Return receipt — 2026-09-22
+
+已依本卡完成一次正式 host run：browser 雙 viewport 各 13 checks PASS；PGQ 單輪 16/16 unique named PASS；managed cleanup PASS。source/protected/ZIP 前後一致，產品未修改。參照 `evidence/edx-wp1-s11/mainline-receipt.md`、`host-final-verification.json` 與 `host-acceptance/controller-receipt.json`。Mainline 已裁定 review candidate；Independent Review 仍 pending。
