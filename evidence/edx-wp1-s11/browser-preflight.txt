@@ -1,0 +1,9 @@
+status=HOST_BROWSER_PENDING
+CODEX_SANDBOX=seatbelt
+PPTSKILL_DEVTOOLS_ACTIVE_PORT=absent
+ai_core_head=e155b3abeabe45c2442bcf86c30236237c84ffaa
+runner=tools/edx-wp1-s4-browser-acceptance.mjs --equal-gap-regression
+runner_mode=attach-only; no browser spawn
+reason=current task is sandboxed and no legal managed DevToolsActivePort is attached
+action=no_unset_no_naked_launch_no_gate_bypass
+required_next=run equal-gap regression at 1280x720 and 1600x900 in allowed managed host runtime; then affected PGQ serially

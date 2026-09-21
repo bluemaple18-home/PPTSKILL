@@ -1,6 +1,6 @@
 # EDX-WP1-S11 — Equal-gap distribution
 
-Status: IN_PROGRESS
+Status: CHECKPOINT / HOST_BROWSER_PENDING
 Branch: `codex/edx-wp1-s11-equal-gap`
 Base: `29c83fa415ad1424395f8d71612542c6a824f308`
 Depends on: S10 COMPLETE / Independent Review GO / merged main。
@@ -42,3 +42,12 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Prior-Art-First`、`§10.3 E
 ## Source decision
 
 本 task 無 CodeGraph tool entry，依 repo 規則降級 bounded `rg`。現有 `distribute-selection` helper / descriptor / contextual toolbar 已是唯一合適 seam；不新增第二套 mutation path。
+
+## Mainline checkpoint — 2026-09-22
+
+- Product SHA：`5589217175c443f407785f3a3b2aac110896d5f2`。
+- Fresh targeted **34/34**、focused **211/211**、full non-browser **416/416 PASS**。
+- ZIP lifecycle PASS；ZIP `2,282,817 bytes`，SHA-256 `388e2bfefbcc9d483760f21a51f0b18458ef975ffb68ad58ce6e06d04530c959`。
+- Source **8/8** freeze；protected **4/4 MATCH S10 baseline**；`git diff --check` PASS。
+- 本 task `CODEX_SANDBOX=seatbelt` 且無 managed `DevToolsActivePort`，所以 browser + affected PGQ 保留 pending；沒有繞 routing。
+- 剩餘 host scope 已切到 `tasks/edx-wp1-s11-host-acceptance.md`。完成前不是 Independent Review candidate；不 merge／push／deploy，不開 S12。

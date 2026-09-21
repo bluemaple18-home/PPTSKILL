@@ -1,0 +1,20 @@
+{
+  "status": "built",
+  "archivePath": "/private/tmp/PPTSKILL-S11-0.1.0.zip",
+  "version": "0.1.0",
+  "sha256": "388e2bfefbcc9d483760f21a51f0b18458ef975ffb68ad58ce6e06d04530c959",
+  "manifest": {
+    "schemaVersion": "1.0",
+    "name": "PPTSKILL",
+    "version": "0.1.0",
+    "corePath": "core",
+    "adapters": [
+      "codex",
+      "claude-code",
+      "gemini"
+    ],
+    "requiresGit": false,
+    "profilePath": "~/.pptskill/profile.json",
+    "skillPath": "skill/pptskill/SKILL.md"
+  }
+}

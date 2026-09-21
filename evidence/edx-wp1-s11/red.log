@@ -1,0 +1,217 @@
+✖ S11 Node horizontal/vertical equal-gap 頭尾固定且只改主軸 (3.062458ms)
+✖ S11 Node fractional gap 使用 deterministic Math.round (0.522459ms)
+✖ S11 Node same-start 以 stable element identity tie-break (0.425375ms)
+✖ S11 Node negative gap 與 invalid input 全部原子拒絕 (1.41125ms)
+✖ S11 Node equal-gap canonical no-op (0.963417ms)
+✖ S11 portable browser runtime horizontal/vertical equal-gap 頭尾固定且只改主軸 (6.969333ms)
+✖ S11 portable browser runtime fractional gap 使用 deterministic Math.round (1.86425ms)
+✖ S11 portable browser runtime same-start 以 stable element identity tie-break (1.770625ms)
+✖ S11 portable browser runtime negative gap 與 invalid input 全部原子拒絕 (2.648042ms)
+✖ S11 portable browser runtime equal-gap canonical no-op (2.075292ms)
+✖ S11 3+ selection 顯示 equal-gap controls，成功後保留 selection/export 清理 (16.210708ms)
+✖ S11 negative gap UI 原子拒絕且保留 selection (7.737166ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 0
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 159.530583
+
+✖ failing tests:
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:35:3
+✖ S11 Node horizontal/vertical equal-gap 頭尾固定且只改主軸 (3.062458ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:136)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:211:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:30:91)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:37:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:55:3
+✖ S11 Node fractional gap 使用 deterministic Math.round (0.522459ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:136)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:211:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:30:91)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:63:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:69:3
+✖ S11 Node same-start 以 stable element identity tie-break (0.425375ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:136)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:211:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:30:91)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:87:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:94:3
+✖ S11 Node negative gap 與 invalid input 全部原子拒絕 (1.41125ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /gap|間距|空間/u. Input:
+
+  'Error: distribute-selection distribution 不支援。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: distribute-selection distribution 不支援。
+        at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:136)
+        at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:211:42)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:30:91)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:32
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /gap|間距|空間/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:121:3
+✖ S11 Node equal-gap canonical no-op (0.963417ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:41:136)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:211:42)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:30:91)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:124:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:35:3
+✖ S11 portable browser runtime horizontal/vertical equal-gap 頭尾固定且只改主軸 (6.969333ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (evalmachine.<anonymous>:265:1124)
+      at executeOperation (evalmachine.<anonymous>:316:42)
+      at Object.executeOperation (evalmachine.<anonymous>:778:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:31:102)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:37:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:55:3
+✖ S11 portable browser runtime fractional gap 使用 deterministic Math.round (1.86425ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (evalmachine.<anonymous>:265:1124)
+      at executeOperation (evalmachine.<anonymous>:316:42)
+      at Object.executeOperation (evalmachine.<anonymous>:778:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:31:102)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:63:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:69:3
+✖ S11 portable browser runtime same-start 以 stable element identity tie-break (1.770625ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (evalmachine.<anonymous>:265:1124)
+      at executeOperation (evalmachine.<anonymous>:316:42)
+      at Object.executeOperation (evalmachine.<anonymous>:778:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:31:102)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:87:39)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:94:3
+✖ S11 portable browser runtime negative gap 與 invalid input 全部原子拒絕 (2.648042ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /gap|間距|空間/u. Input:
+
+  'Error: distribute-selection distribution 不支援。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: distribute-selection distribution 不支援。
+        at validateOperationRequest (evalmachine.<anonymous>:265:1124)
+        at executeOperation (evalmachine.<anonymous>:316:42)
+        at Object.executeOperation (evalmachine.<anonymous>:778:130)
+        at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:31:102)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:32
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:105:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /gap|間距|空間/u,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp1-s11-equal-gap.test.mjs:121:3
+✖ S11 portable browser runtime equal-gap canonical no-op (2.075292ms)
+  Error: distribute-selection distribution 不支援。
+      at validateOperationRequest (evalmachine.<anonymous>:265:1124)
+      at executeOperation (evalmachine.<anonymous>:316:42)
+      at Object.executeOperation (evalmachine.<anonymous>:778:130)
+      at Object.execute (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:31:102)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-equal-gap.test.mjs:124:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp1-s11-mounted-equal-gap.test.mjs:23:1
+✖ S11 3+ selection 顯示 equal-gap controls，成功後保留 selection/export 清理 (16.210708ms)
+  TypeError: Cannot read properties of null (reading 'hidden')
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-mounted-equal-gap.test.mjs:27:55)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp1-s11-mounted-equal-gap.test.mjs:43:1
+✖ S11 negative gap UI 原子拒絕且保留 selection (7.737166ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:320:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:133:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:143:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s11-mounted-equal-gap.test.mjs:46:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

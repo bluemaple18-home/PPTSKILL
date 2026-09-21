@@ -1,0 +1,42 @@
+✔ S10 Node 3-item horizontal/vertical centers 頭尾固定 (9.195416ms)
+✔ S10 Node 4-item deterministic round 且只改主軸 (1.691875ms)
+✔ S10 Node equal-center tie 依 stable element identity，不依賴 target 輸入順序 (0.869958ms)
+✔ S10 Node invalid / missing geometry / safe-area 全部原子拒絕 (1.828583ms)
+✔ S10 Node canonical no-op 與 descriptor contract (1.236541ms)
+✔ S10 portable browser runtime 3-item horizontal/vertical centers 頭尾固定 (14.231375ms)
+✔ S10 portable browser runtime 4-item deterministic round 且只改主軸 (7.266375ms)
+✔ S10 portable browser runtime equal-center tie 依 stable element identity，不依賴 target 輸入順序 (9.056125ms)
+✔ S10 portable browser runtime invalid / missing geometry / safe-area 全部原子拒絕 (15.909458ms)
+✔ S10 portable browser runtime canonical no-op 與 descriptor contract (3.436334ms)
+✔ S10 3+ selection 才顯示 distribute controls，均分後 selection 保留且 export 不洩漏 (44.052125ms)
+✔ S10 distribute UI 缺 canonical geometry 時整筆不改且保留 3-selection (11.942916ms)
+✔ S11 Node horizontal/vertical equal-gap 頭尾固定且只改主軸 (5.854709ms)
+✔ S11 Node fractional gap 使用 deterministic Math.round (1.468917ms)
+✔ S11 Node same-start 以 stable element identity tie-break (1.740583ms)
+✔ S11 Node negative gap 與 invalid input 全部原子拒絕 (0.957833ms)
+✔ S11 Node equal-gap canonical no-op (0.60825ms)
+✔ S11 portable browser runtime horizontal/vertical equal-gap 頭尾固定且只改主軸 (17.175667ms)
+✔ S11 portable browser runtime fractional gap 使用 deterministic Math.round (2.271625ms)
+✔ S11 portable browser runtime same-start 以 stable element identity tie-break (6.96725ms)
+✔ S11 portable browser runtime negative gap 與 invalid input 全部原子拒絕 (3.375541ms)
+✔ S11 portable browser runtime equal-gap canonical no-op (4.687042ms)
+✔ S11 3+ selection 顯示 equal-gap controls，成功後保留 selection/export 清理 (40.389167ms)
+✔ S11 negative gap UI 原子拒絕且保留 selection (12.842375ms)
+✔ S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn (187.827291ms)
+✔ S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (134.798458ms)
+✔ S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (145.922125ms)
+✔ S4 managed attach --keyboard-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (132.897958ms)
+✔ S4 managed attach --snap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (142.975792ms)
+✔ S4 managed attach --selection-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (138.341041ms)
+✔ S4 managed attach --alignment-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (163.652084ms)
+✔ S4 managed attach --distribution-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (145.999083ms)
+✔ S4 managed attach --equal-gap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn (139.359541ms)
+✔ S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn (97.769292ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1569.257875
