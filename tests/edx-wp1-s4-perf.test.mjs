@@ -41,7 +41,7 @@ const semanticCases = [
   ['sync text/export', h => { h.document.querySelector('[data-pptskill-element-id="role-title"]').textContent = 'DOM 新標題'; h.api.exportHtml(); }],
   ['asset replace', h => h.api.replaceImageFile({ dataUri: 'data:image/png;base64,BBBB' })],
   ['keyPoint', h => h.api.executeOperation(request('edit-text', '新重點', { ...target, elementId: 'point-key-point-01' }))],
-  ['sync component text', h => { h.component().textContent = 'DOM 元件新內容'; h.api.exportHtml(); }],
+  ['component text seam', h => h.api.applyLocalPatch({ slideId: target.slideId, region: 'content.components.portable-quote', value: { text: '元件新內容' } })],
   ['change then revert', h => { const old = h.getSpec().slides[0].content.title; h.api.executeOperation(request('edit-text', '暫時新標題', { ...target, elementId: 'role-title' })); h.api.executeOperation(request('edit-text', old, { ...target, elementId: 'role-title' })); }],
   ['duplicate', h => h.action('duplicate')],
 ];
