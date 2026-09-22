@@ -1,6 +1,6 @@
 # WP2-S9 — explicit File image insertion adapter
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base: 7c614603dc11b9276e73f3b916d25ad046118571（S8 closure，Independent GO；未merge/push）
 Main/origin-main: 74d63cc99e745b373adbcc3a56e9228576e74b22
 Branch: codex/edx-wp2-s9-insert-image-file
@@ -36,3 +36,7 @@ Mainline：明列full non-browser、build/probe ZIP／delta、source/protected4/
 strict/core-bounded：固定async adapter契約與零部分提交。單一clean native Worker/high，shared sequential product writer；主線只control/evidence直到Worker STOP。runtime限制未明示模型不可override，因此沿runtime inherited model，不降低主對話設定。1 Worker／1 planned Independent Review（Owner現有external review handoff，非本輪額外開Reviewer）／0 Repair。最大一個bounded實作循環，第二代Repair須Owner成本核准。
 
 允許product：runtime/deck-editor.js、runtime/image-insertion.js、新S9tests、新S9browser-cases、tools/edx-wp1-s4-browser-acceptance.mjs；只有證明必要才動tools/edx-wp1-s4-perf-mounted.mjs。禁止其他production、schema/dependency、control/evidence/task/BACKLOG、commit/branch、protected、AI Core、merge/push/deploy、subagent。Node /opt/homebrew/bin/node；先CodeGraph query，無結果rg。讀Owner bootstrap與rules05/11/24。logs/report寫/private/tmp/pptskill-wp2-s9-*；保留RED/中間FAIL、逐命令counts、changed paths/sourceSHA。STOP WRITING後交主線，不宣稱browser/candidate/GO。
+
+## Mainline acceptance
+
+Candidate `48fb928e6fe33056995621edfae77d16db6f655f`，scoped148/full586，browser18+18，PGQ單輪16/16、source5/protected4/ZIP/cleanup PASS。原RED／33/35中間FAIL保留，詳receipt。handoff_20260923_edx_wp2_s9_review.md待Independent Review；未merge/push/deploy。

@@ -1,0 +1,43 @@
+✔ S9 public insertImageFile 新增圖片並保留 optimizer result identity (15.979208ms)
+✔ S9 default 全 spec preservation／唯一 DOM (6.302667ms)
+✔ S9 contain 全 spec preservation／唯一 DOM (6.795667ms)
+✔ S9 cover 全 spec preservation／唯一 DOM (4.973167ms)
+✔ S9 cross-slide 全 spec preservation／唯一 DOM (4.3045ms)
+✔ S9 null-proto 全 spec preservation／唯一 DOM (4.442417ms)
+✔ S9 frozen 全 spec preservation／唯一 DOM (4.558333ms)
+✔ S9 non-enumerable 全 spec preservation／唯一 DOM (4.148125ms)
+✔ S9 invalid own-data／geometry／target：getter0 optimizer0，既有 gesture 不取消 (28.999791ms)
+✔ S9 falsy file 不讀 options／不呼叫 optimizer；missing optimizer 明確失敗 (4.759667ms)
+✔ S9 snapshot＋await 切頁／mode／export clone，保留等待中 content／geometry (10.216625ms)
+✔ S9 pending reject 零提交 (10.653834ms)
+✔ S9 pending null 零提交 (7.642709ms)
+✔ S9 pending missing-warnings 零提交 (7.09225ms)
+✔ S9 pending warnings-string 零提交 (6.7745ms)
+✔ S9 pending warnings-item 零提交 (9.414917ms)
+✔ S9 pending missing-optimized 零提交 (7.4925ms)
+✔ S9 pending optimized-string 零提交 (7.042666ms)
+✔ S9 pending no-data 零提交 (7.001166ms)
+✔ S9 pending unsafe 零提交 (7.7175ms)
+✔ S9 pending svg 零提交 (6.744708ms)
+✔ S9 pending missing-target 零提交 (7.205125ms)
+✔ S9 pending identity-collision 零提交 (7.117333ms)
+✔ S9 pending missing-dom 零提交 (6.888958ms)
+✔ S9 pending duplicate-dom 零提交 (7.113125ms)
+✔ S9 pending prepare-throw 零提交 (7.283667ms)
+✔ S9 pending append-before 零提交 (7.896666ms)
+✔ S9 pending append-after 零提交 (6.912459ms)
+✔ S9 preflight identity collision 在 optimizer 前拒絕 (3.195083ms)
+✔ S9 pending 競爭 same-id：完成次序決定，不覆蓋 (5.384042ms)
+✔ S9 pending 競爭 different-id：完成次序決定，不覆蓋 (5.156292ms)
+✔ S9 pending 競爭 cross-slide：完成次序決定，不覆蓋 (6.524167ms)
+✔ S9 drag pending 保留／成功才 cancel clear revision 一次 (9.116542ms)
+✔ S9 resize pending 保留／成功才 cancel clear revision 一次 (8.671ms)
+✔ S9 export／reparse／remount 恰一 root，新圖可選取與 fit (13.473958ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 403.572042

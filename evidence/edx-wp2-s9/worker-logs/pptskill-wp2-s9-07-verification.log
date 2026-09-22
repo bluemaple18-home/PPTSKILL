@@ -1,0 +1,37 @@
+✔ S7 native group 與裁邊說明由 bootstrap markup 提供 (1.228583ms)
+✔ S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation (26.347083ms)
+✔ S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri (10.166084ms)
+✔ S7 nonimage 隱藏／disable 並拒絕 stale target (10.148916ms)
+✔ S7 multi 隱藏／disable 並拒絕 stale target (9.218583ms)
+✔ S7 clear 隱藏／disable 並拒絕 stale target (7.742208ms)
+✔ S7 slide 隱藏／disable 並拒絕 stale target (8.909667ms)
+✔ S7 edit 隱藏／disable 並拒絕 stale target (9.520166ms)
+✔ S7 play 隱藏／disable 並拒絕 stale target (7.7155ms)
+✔ S7 delete 隱藏／disable 並拒絕 stale target (9.628167ms)
+✔ S7 destroy 隱藏／disable 並拒絕 stale target (8.203417ms)
+✔ S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize (141.170792ms)
+✔ S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消 (12.233042ms)
+✔ S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消 (11.219167ms)
+✔ S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消 (11.969667ms)
+✔ S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消 (13.741375ms)
+✔ S7 drag/pointer/snap=false 取消 preview 後只提交 fit (9.031ms)
+✔ S7 drag/keyboard/snap=false 取消 preview 後只提交 fit (9.312209ms)
+✔ S7 resize/pointer/snap=false 取消 preview 後只提交 fit (8.744667ms)
+✔ S7 resize/keyboard/snap=false 取消 preview 後只提交 fit (9.82575ms)
+✔ S7 drag/pointer/snap=true 取消 preview 後只提交 fit (9.14425ms)
+✔ S7 drag/keyboard/snap=true 取消 preview 後只提交 fit (9.825292ms)
+✔ S7 resize/pointer/snap=true 取消 preview 後只提交 fit (9.474833ms)
+✔ S7 resize/keyboard/snap=true 取消 preview 後只提交 fit (9.7105ms)
+✔ S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard (7.74925ms)
+✔ S7 default no-op 亦取消 preview 並保留 selection snap=false (8.749625ms)
+✔ S7 default no-op 亦取消 preview 並保留 selection snap=true (9.556292ms)
+✔ S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖 (8.135666ms)
+✔ S7 export 只保留 fit；從匯出 DeckSpec remount 可切換 (18.095875ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 545.929666

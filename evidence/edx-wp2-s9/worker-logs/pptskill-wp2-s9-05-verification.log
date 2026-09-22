@@ -1,0 +1,28 @@
+✔ WP2-S5 明示第二張 File target 不得取第一張 (16.642917ms)
+✔ WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip (8.950625ms)
+✔ WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip (6.299208ms)
+✔ WP2-S5 second、局部投影、完整欄位保留與 export roundtrip (6.399542ms)
+✔ WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip (5.193ms)
+✔ WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip (5.424958ms)
+✔ WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip (5.878875ms)
+✔ WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation (11.746917ms)
+✔ WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image (9.78725ms)
+✔ WP2-S5 pending reject 原子拒絕 (3.966958ms)
+✔ WP2-S5 pending unsafe 原子拒絕 (3.321375ms)
+✔ WP2-S5 pending null-result 原子拒絕 (3.15475ms)
+✔ WP2-S5 pending missing-warnings 原子拒絕 (3.935125ms)
+✔ WP2-S5 pending missing-slide 原子拒絕 (4.813167ms)
+✔ WP2-S5 pending missing-image 原子拒絕 (5.382084ms)
+✔ WP2-S5 pending type-change 原子拒絕 (3.649666ms)
+✔ WP2-S5 pending missing-dom 原子拒絕 (3.113041ms)
+✔ WP2-S5 explicit File same-value no-op gesture (10.85175ms)
+✔ WP2-S5 explicit File 真修改 stale gesture (8.756125ms)
+✔ WP2-S5 長 component ID 使用 resolved stable identity (3.589625ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 247.635

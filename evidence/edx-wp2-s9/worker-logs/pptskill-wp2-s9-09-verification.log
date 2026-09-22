@@ -1,0 +1,13 @@
+✔ export cleanup 只移除 bounded editor chrome roots (0.986666ms)
+✔ editor chrome contract 誤標 presentation truth 時 fail loud (0.349458ms)
+✔ editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth (0.078875ms)
+✔ export clone root 自己被標成 editor chrome 時也不可漏出 (0.091541ms)
+✔ 正式 browser exporter 共用同一 cleanup seam (0.866542ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 110.772459

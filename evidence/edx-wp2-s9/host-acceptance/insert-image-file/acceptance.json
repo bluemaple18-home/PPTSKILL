@@ -1,0 +1,355 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/source.html",
+  "sourceSha256": "6222a2805637b257974d7d937ad5300b1c02a0fe7876c3f5815bb8ff8a4fb92c",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s9": "async-captured-identity",
+          "realOptimizer": true,
+          "preserved": [
+            "content",
+            "geometry",
+            "mode",
+            "export-clone"
+          ]
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "insert-element slide 或 duplicate component ID 無效。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "insert-element slide 或 duplicate component ID 無效。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "geometry x 低於 minimum／safe area。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "real-optimizer-rejection",
+          "error": "The source image could not be decoded.",
+          "calls": 1,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "duplicate-race",
+          "calls": 2,
+          "loser": "insert-element slide 或 duplicate component ID 無效。",
+          "unchanged": true
+        },
+        {
+          "wp2s9": "decoded-file-and-controls",
+          "decoded": [
+            3,
+            2
+          ],
+          "insertion": "API-driven File/optimizer",
+          "interaction": "real-pointer",
+          "trusted": [
+            {
+              "trusted": true,
+              "target": ""
+            },
+            {
+              "trusted": true,
+              "target": "component-asset-second"
+            },
+            {
+              "trusted": true,
+              "target": ""
+            },
+            {
+              "trusted": true,
+              "target": "component-file-image"
+            },
+            {
+              "trusted": true,
+              "target": "cover"
+            },
+            {
+              "trusted": true,
+              "target": "contain"
+            }
+          ],
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-s9-inserted-file-controls.png"
+        },
+        {
+          "wp2s9": "export-offline-reopen",
+          "uniqueRoots": 4,
+          "status": "pass"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-legacy-selected.html",
+          "bytes": 519842,
+          "sha256": "cd0775aa01f2b091e1d5fbe9ae1e0e01d0292245d9ec140deaace119d7e0aa68"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-preview-export.html",
+          "bytes": 520129,
+          "sha256": "4a176b00c296ef9b3fa2a5564a3ee739a190601f128c569665fa360adeee10e2"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-cancel.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-noop.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-invalid.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-invalid-resize.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-play-mode.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-export.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-reopen-export.html",
+          "bytes": 520129,
+          "sha256": "3284e549d4fefe7aba42eb2f4665c52e6c2b4a045f0ff4666ac598979934b5a3"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-s9-inserted-file-controls.png",
+        {
+          "label": "s9-insert-image-file",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-s9-insert-image-file.html",
+          "bytes": 523834,
+          "sha256": "a820bfa0c1a15fda098df472637975a4d95c1bf13e24a2cf5af9daf0e7aa1bbf"
+        },
+        {
+          "label": "s9-insert-image-file-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1280-s9-insert-image-file-offline.html",
+          "bytes": 523830,
+          "sha256": "ac541ac596275ef77f4ef0489b2455e10c2ef8615b8b167eb91ae8b6bd3fefd2"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s9": "async-captured-identity",
+          "realOptimizer": true,
+          "preserved": [
+            "content",
+            "geometry",
+            "mode",
+            "export-clone"
+          ]
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "insert-element slide 或 duplicate component ID 無效。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "insert-element slide 或 duplicate component ID 無效。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "invalid-preflight",
+          "error": "geometry x 低於 minimum／safe area。",
+          "calls": 0,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "real-optimizer-rejection",
+          "error": "The source image could not be decoded.",
+          "calls": 1,
+          "unchanged": true
+        },
+        {
+          "wp2s9": "duplicate-race",
+          "calls": 2,
+          "loser": "insert-element slide 或 duplicate component ID 無效。",
+          "unchanged": true
+        },
+        {
+          "wp2s9": "decoded-file-and-controls",
+          "decoded": [
+            3,
+            2
+          ],
+          "insertion": "API-driven File/optimizer",
+          "interaction": "real-pointer",
+          "trusted": [
+            {
+              "trusted": true,
+              "target": ""
+            },
+            {
+              "trusted": true,
+              "target": "component-asset-second"
+            },
+            {
+              "trusted": true,
+              "target": ""
+            },
+            {
+              "trusted": true,
+              "target": "component-file-image"
+            },
+            {
+              "trusted": true,
+              "target": "cover"
+            },
+            {
+              "trusted": true,
+              "target": "contain"
+            }
+          ],
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-s9-inserted-file-controls.png"
+        },
+        {
+          "wp2s9": "export-offline-reopen",
+          "uniqueRoots": 4,
+          "status": "pass"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-legacy-selected.html",
+          "bytes": 519842,
+          "sha256": "cd0775aa01f2b091e1d5fbe9ae1e0e01d0292245d9ec140deaace119d7e0aa68"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-preview-export.html",
+          "bytes": 520129,
+          "sha256": "4a176b00c296ef9b3fa2a5564a3ee739a190601f128c569665fa360adeee10e2"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-cancel.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-noop.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-invalid.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-invalid-resize.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-play-mode.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-export.html",
+          "bytes": 520129,
+          "sha256": "f45973943ea542be054428c25f6e67cc51c2ebe88b575476e13d45c1f74a6de0"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-reopen-export.html",
+          "bytes": 520129,
+          "sha256": "3284e549d4fefe7aba42eb2f4665c52e6c2b4a045f0ff4666ac598979934b5a3"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-s9-inserted-file-controls.png",
+        {
+          "label": "s9-insert-image-file",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-s9-insert-image-file.html",
+          "bytes": 523834,
+          "sha256": "a820bfa0c1a15fda098df472637975a4d95c1bf13e24a2cf5af9daf0e7aa1bbf"
+        },
+        {
+          "label": "s9-insert-image-file-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s9/host-acceptance/insert-image-file/1600-s9-insert-image-file-offline.html",
+          "bytes": 523830,
+          "sha256": "ac541ac596275ef77f4ef0489b2455e10c2ef8615b8b167eb91ae8b6bd3fefd2"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

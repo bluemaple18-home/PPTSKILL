@@ -1,0 +1,33 @@
+✔ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (40.413042ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=false (14.405459ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=true (12.959208ms)
+✔ S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer (11.83525ms)
+✔ S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer (10.033208ms)
+✔ S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer (11.426292ms)
+✔ S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer (11.886416ms)
+✔ S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer (10.304208ms)
+✔ S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer (9.3785ms)
+✔ S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer (9.405833ms)
+✔ S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer (10.354791ms)
+✔ S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer (10.489292ms)
+✔ S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer (8.327542ms)
+✔ S6 cancel 重設 value，同檔可再次選取 (10.818792ms)
+✔ S6 empty 重設 value，同檔可再次選取 (12.408333ms)
+✔ S6 success 重設 value，同檔可再次選取 (11.120291ms)
+✔ S6 failure 重設 value，同檔可再次選取 (10.835708ms)
+✔ S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser (12.611958ms)
+✔ S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target (14.916208ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false (8.278916ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true (9.015375ms)
+✔ S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖 (14.653458ms)
+✔ S6 picker 等待檔案時唯讀 export 不取消 pending target (11.007792ms)
+✔ S6 async target 移除後失敗，零 asset mutation 且 input 可重選 (7.920334ms)
+✔ S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理 (8.320583ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 419.516625

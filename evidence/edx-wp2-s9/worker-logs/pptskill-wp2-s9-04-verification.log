@@ -1,0 +1,28 @@
+✔ S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation (6.759959ms)
+✔ S8 Node exact schema／政策／geometry 拒絕且 getter calls=0 (7.11175ms)
+✔ S8 Node null prototype own records 可用且輸入不受修改 (0.711583ms)
+✔ S8 Node long-ID collision 不改名；可穩定追加另一 collision (1.100625ms)
+✔ S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root (33.00625ms)
+✔ S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation (10.430208ms)
+✔ S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0 (35.59275ms)
+✔ S8 mounted null prototype own records 可用且輸入不受修改 (3.872959ms)
+✔ S8 mounted long-ID collision 不改名；可穩定追加另一 collision (7.76275ms)
+✔ S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root (24.714625ms)
+✔ S8 mounted missing 零 canonical／DOM／revision／selection 副作用 (7.465541ms)
+✔ S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用 (7.813125ms)
+✔ S8 mounted append-before 零 canonical／DOM／revision／selection 副作用 (7.318166ms)
+✔ S8 mounted append-after 零 canonical／DOM／revision／selection 副作用 (7.824792ms)
+✔ S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用 (6.664792ms)
+✔ S8 mounted snap=false 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId (10.277333ms)
+✔ S8 mounted snap=false 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId (8.14425ms)
+✔ S8 mounted snap=true 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId (8.852083ms)
+✔ S8 mounted snap=true 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId (8.480292ms)
+✔ S8 descriptor 精確 image-only slide target、無 history 宣稱 (2.514583ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 330.882834

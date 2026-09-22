@@ -1,0 +1,20 @@
+✖ S9 public insertImageFile 新增圖片並保留 optimizer result identity (12.029459ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 127.028
+
+✖ failing tests:
+
+test at tests/edx-wp2-s9-insert-image-file.test.mjs:7:1
+✖ S9 public insertImageFile 新增圖片並保留 optimizer result identity (12.029459ms)
+  TypeError: h.api.insertImageFile is not a function
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s9-insert-image-file.test.mjs:11:28)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
