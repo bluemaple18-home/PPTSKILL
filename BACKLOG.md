@@ -1031,3 +1031,5 @@ WP2-S6 closure：Independent GO，P0–P3全0；reviewer fresh30/502、browser19
 WP2-S7 candidate501da1b（runtime c2ba9e5）：scoped196/full531、browser35+35、PGQ單輪16/16、ZIP/hash/cleanup PASS。harness Enter首輪FAIL已保留，runtime/ZIP不改；handoff_20260922_edx_wp2_s7_review.md待獨立review。
 
 WP2-S7 closure：Independent GO，P0–P3全0；reviewer fresh59/531、browser35+35／PGQ16為committed evidence核對，reviewed code/ZIP未改。
+
+**WP2-S8 IN PROGRESS：** image-only insert-element，atomic canonical/live DOM/stable identity/export。卡tasks/edx-wp2-s8-insert-image-operation.md；不做File/picker/drag-in UI或crop。S7已推main74d63cc。
