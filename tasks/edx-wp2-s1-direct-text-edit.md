@@ -1,6 +1,6 @@
 # EDX-WP2-S1 — Direct text editing / IME bounded commit
 
-Status: PRODUCT_CANDIDATE / HOST_ACCEPTANCE_PENDING
+Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
 Branch: `codex/edx-wp2-s1-direct-text-edit`
 Base: `33a19464b7e6b0795974166cc15c77e68e984e04`
 Depends on: EDX-WP1 S11 COMPLETE / Independent Review GO / merged main。
@@ -49,3 +49,9 @@ traces_to: `BACKLOG.md §10.1 Decision 2/7/8`、`§10.2 Prior-Art-First`、`§10
 - ZIP lifecycle PASS；ZIP `2,283,305 bytes`，SHA-256 `7d1cbe050b61dab6fd31f4daa90290d298ee5c17509be7af363cd26446872929`。
 - Frozen integrity：source **6/6**、protected **4/4**；見 `evidence/edx-wp2-s1/source-hashes.json`。
 - `git diff --check` PASS。剩餘 scope 只在 `tasks/edx-wp2-s1-host-acceptance.md`；完成前不是 Independent Review candidate，不 merge／push／deploy，不開下一 Slice。
+
+## Host acceptance — 2026-09-22
+
+正式 host 雙 viewport 各 **14 checks PASS**；affected PGQ 串行 **單輪 16/16 unique named PASS**；errors/remote 全 0、targetClosed=true、managed cleanup PASS。Source 6/6、protected 4/4、ZIP bytes/hash 前後 MATCH；產品未改。IME 證據僅 browser CompositionEvent lifecycle，不宣稱原生 OS IME。
+
+Receipt：`evidence/edx-wp2-s1/mainline-receipt.md`；handoff：`handoff_20260922_edx_wp2_s1_review.md`。前述 pending 保留為 checkpoint 歷史；現為 review candidate，Independent Review 仍 pending。未 merge／push／deploy，未開下一 Slice。

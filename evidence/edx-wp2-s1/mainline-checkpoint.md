@@ -1,5 +1,7 @@
 # EDX-WP2-S1 Mainline checkpoint
 
+後續更新（2026-09-22）：host acceptance 已 PASS，現為 REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING，見 `mainline-receipt.md`；以下保留原 checkpoint 狀態。
+
 狀態：**PRODUCT_CANDIDATE / HOST_ACCEPTANCE_PENDING**，2026-09-22。
 
 Product SHA：`a33b05a1e8a07accd4c55f8f4643369d5b9efe3d`；branch `codex/edx-wp2-s1-direct-text-edit`；base `33a19464b7e6b0795974166cc15c77e68e984e04`。

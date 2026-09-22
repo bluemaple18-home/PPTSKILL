@@ -1,6 +1,6 @@
 # EDX-WP2-S1 — Host browser + affected PGQ acceptance
 
-Status: PENDING / HOST_ACCEPTANCE
+Status: COMPLETE / HOST_ACCEPTANCE_PASS
 Parent: `tasks/edx-wp2-s1-direct-text-edit.md`
 Product SHA: `a33b05a1e8a07accd4c55f8f4643369d5b9efe3d`
 Branch: `codex/edx-wp2-s1-direct-text-edit`
@@ -52,3 +52,7 @@ node --test --test-concurrency=1 \
 ## Return contract
 
 回傳雙 viewport browser acceptance、PGQ unique named case count、controller/cleanup receipt、source/protected/ZIP 前後核對與所有 failure history。Evidence 放 `evidence/edx-wp2-s1/host-acceptance/`；不得 merge／push／deploy，不開下一 Slice。由 Mainline 決定是否升為 Independent Review candidate。
+
+## Return receipt — 2026-09-22
+
+雙 viewport 各 14 checks PASS；四支 PGQ 單輪 16/16 unique named PASS；cleanup PASS，source/protected/ZIP 前後 MATCH。見 `evidence/edx-wp2-s1/mainline-receipt.md`、`host-final-verification.json`、`host-acceptance/controller-receipt.json`。Mainline 升為 Independent Review candidate，尚無 Independent GO。
