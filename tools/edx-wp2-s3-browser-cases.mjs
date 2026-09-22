@@ -18,9 +18,15 @@ export async function runStyleCopyBrowserCases({ cdp, evaluate, navigate, source
   const open = async (role = 'title', slide = 'portable') => {
     const css = selector(role, slide);
     await evaluate(`document.querySelector(${JSON.stringify(css)}).scrollIntoView({block:'center'})`); await settle();
-    const p = await position(css, 0.1, 0.5);
-    assert.ok(p.width > 0 && p.height > 0);
-    assert.equal(await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(css)}),hit=document.elementFromPoint(${p.x},${p.y});return hit===e||e.contains(hit)})()`), true);
+    let p, hit;
+    // scroll-snap 可能尚在跨頁定位；限 60 次雙 frame，僅在真實命中後點擊。
+    for (let attempt = 0; attempt < 60; attempt++) {
+      p = await position(css, 0.1, 0.5);
+      hit = await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(css)}),h=document.elementFromPoint(${p.x},${p.y});return {ok:h===e||e.contains(h),tag:h?.tagName,role:h?.getAttribute('data-pptskill-element-id'),slide:h?.closest('.slide')?.dataset.slideId,x:${p.x},y:${p.y},scrollY}})()`);
+      if (p.width > 0 && p.height > 0 && hit.ok) break;
+      await settle();
+    }
+    assert.equal(hit.ok, true, JSON.stringify({target:css,hit}));
     for (const type of ['mousePressed', 'mouseReleased']) await cdp.send('Input.dispatchMouseEvent', { type, x: p.x, y: p.y, button: 'left', buttons: type === 'mousePressed' ? 1 : 0, clickCount: 2 });
     await settle(); assert.equal(await evaluate('document.body.dataset.editorMode'), 'edit');
     assert.equal(await evaluate('document.querySelector("[data-pptskill-typography-toolbar]").hidden'), false);
