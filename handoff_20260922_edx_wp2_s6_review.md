@@ -1,6 +1,6 @@
 # WP2-S6 Independent Review Handoff
 
-Status: INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s6-selected-image-ui
 Base: `b704a1f50a9022b04a5f2b9f8f3fe67ea3d2a4c0`
 Reviewed product: `2ec39715f9c8595d58f084208a91e240cb65189e`
@@ -24,3 +24,7 @@ Reviewed product: `2ec39715f9c8595d58f084208a91e240cb65189e`
 CDP intercepted chooser與setFileInputFiles產生trusted change，屬browser automation，非人工OS dialog。naturalBlurCount=0；blur/cancel為synthetic。selected.png為base selection截圖，新UI靠rect/hit/event evidence驗收。缺managed attachment可只核對committed browser evidence，禁止裸啟/unset sandbox；fresh與evidence-only分列。
 
 獨立回GO/NO-GO、P0–P3及reviewed SHA。不改candidate/ZIP/protected、不merge/push/deploy、不開下一Slice。主線尚未宣稱Independent GO。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0。Reviewer fresh30/502；browser19+19與PGQ16為committed evidence獨立核對。主線fresh核對source6/protected4/ZIP及product→handoff control-only通過。reviewed code/ZIP未改；詳evidence/edx-wp2-s6/independent-review.md。

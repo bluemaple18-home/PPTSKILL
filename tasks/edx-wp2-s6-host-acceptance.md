@@ -1,6 +1,6 @@
 # WP2-S6 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Product SHA: `2ec39715f9c8595d58f084208a91e240cb65189e`
 Parent: tasks/edx-wp2-s6-selected-image-ui.md
 
@@ -13,3 +13,7 @@ Parent: tasks/edx-wp2-s6-selected-image-ui.md
 PASS後既有四支affected PGQ --test-concurrency=1明列檔；Browser.close/supervisor exit0、ownedroot absent、marker absent才cleanup PASS。保留FAIL，同類兩次無進展停triage，不任意重跑。Evidence evidence/edx-wp2-s6/host-acceptance。完成停review candidate、不merge/push/deploy。
 
 結果：初輪host-acceptance teardown FAIL且cleanup PASS；bounded marker修復後host-teardown-retry雙viewport19+19、PGQ單輪16/16、Browser.close/supervisor/root/marker cleanup PASS。詳evidence/edx-wp2-s6/mainline-receipt.md；自然blur未發生，synthetic blur/cancel明標。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0。Reviewer fresh30/502；browser19+19與PGQ16為committed evidence獨立核對。主線fresh核對source6/protected4/ZIP及product→handoff control-only通過。reviewed code/ZIP未改；詳evidence/edx-wp2-s6/independent-review.md。

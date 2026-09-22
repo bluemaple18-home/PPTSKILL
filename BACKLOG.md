@@ -1020,6 +1020,8 @@ WP2-S5 product3c20f85：Mainline67/477/browser12+12/PGQ16/ZIP/cleanup PASS；han
 WP2-S5正式closure：Independent Review GO，P0–P3全0；reviewer fresh67/477、browser12+12與PGQ16為committed evidence核對。Reviewed code/ZIP未改，未merge/push/deploy，未開下一Slice。
 
 S5已Owner授權merge/push main/S5至b704a1f。
-**WP2-S6 INDEPENDENT REVIEW PENDING：** selected-image replacement UI，沿既有selection→File adapter→replace-asset，卡tasks/edx-wp2-s6-selected-image-ui.md。無crop/insert/schema。
+**WP2-S6 COMPLETE / INDEPENDENT REVIEW GO：** selected-image replacement UI，沿既有selection→File adapter→replace-asset，卡tasks/edx-wp2-s6-selected-image-ui.md。無crop/insert/schema。
 
 WP2-S6 product2ec3971：repair30/30、full502/502、browser19+19、PGQ單輪16/16、ZIP/cleanup/source/protected PASS；首輪teardown FAIL與bounded修復保留。handoff_20260922_edx_wp2_s6_review.md待獨立review；CDP chooser非人工OS dialog、blur/cancel synthetic。S6未merge/push/deploy。
+
+WP2-S6 closure：Independent GO，P0–P3全0；reviewer fresh30/502、browser19+19／PGQ16為committed evidence核對，reviewed code/ZIP未改。

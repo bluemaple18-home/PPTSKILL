@@ -1,6 +1,6 @@
 # WP2-S6 — selected image replacement UI
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base: b704a1f50a9022b04a5f2b9f8f3fe67ea3d2a4c0（S5已merge/push）
 Branch: codex/edx-wp2-s6-selected-image-ui
 traces_to: BACKLOG §10.1 decisions3/4/8、§10.3 WP2、§10.4 replace-asset。
@@ -31,3 +31,7 @@ standard單一clean Worker/medium/shared sequential product writer；只改runti
 ## Mainline acceptance
 
 Product `2ec39715f9c8595d58f084208a91e240cb65189e`；repair30/30、full502/502、browser19+19、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。首輪teardown FAIL與repair保留；CDP chooser非人工OS dialog，blur/cancel synthetic。見handoff_20260922_edx_wp2_s6_review.md。Independent Review pending，未merge/push/deploy。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0。Reviewer fresh30/502；browser19+19與PGQ16為committed evidence獨立核對。主線fresh核對source6/protected4/ZIP及product→handoff control-only通過。reviewed code/ZIP未改；詳evidence/edx-wp2-s6/independent-review.md。
