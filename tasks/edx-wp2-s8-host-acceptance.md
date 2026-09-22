@@ -1,6 +1,6 @@
 # WP2-S8 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: PASS / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s8-insert-image-operation.md
 Product: 0b4c7bdf95211d0bb0587034cb899593e6b64d90；source9/protected4/ZIP已凍結，full551/551、ZIP lifecycle PASS。
 
@@ -13,3 +13,7 @@ Product: 0b4c7bdf95211d0bb0587034cb899593e6b64d90；source9/protected4/ZIP已凍
 Evidence：evidence/edx-wp2-s8/host-acceptance；完成回主線receipt／Independent Review handoff，未merge/push/deploy、未開下一Slice。
 
 Result：host-acceptance雙viewport50+50 PASS；同session PGQ I/O fail-closed exit2、root/marker清除；host-pgq-retry四檔串行單輪16/16 PASS，Browser.close/supervisor exit0，source9/protected4/ZIP/cleanup MATCH。底層I/O未定位，不宣稱修復；歷史FAIL保留。
+
+## Closure
+
+Owner交回Independent GO；reviewer fresh70/551，browser50+50與PGQ retry16為committed evidence核對。主線接受，詳evidence/edx-wp2-s8/independent-review.md。Reviewed code/ZIP未改；本輪未merge/push/deploy。

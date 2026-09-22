@@ -1,6 +1,6 @@
 # WP2-S8 Independent Review Handoff
 
-Status: INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s8-insert-image-operation
 Base/main: `74d63cc99e745b373adbcc3a56e9228576e74b22`
 Reviewed candidate: `0b4c7bdf95211d0bb0587034cb899593e6b64d90`
@@ -20,3 +20,7 @@ Reviewed candidate: `0b4c7bdf95211d0bb0587034cb899593e6b64d90`
 新圖插入無native chooser；不宣稱crop像素、自動避障、20MiB per-insert admission。mounted成功insert取消gesture與真browser invalid insert保持gesture的證據分開。缺managed attachment可核對committed browser evidence並明標非fresh；不得裸啟Chrome或unset sandbox。
 
 請回GO/NO-GO、P0–P3、reviewed SHA，fresh/evidence-only分列。不改candidate/ZIP/protected、不merge/push/deploy、不開下一Slice。Mainline尚未宣稱Independent GO。
+
+## Closure
+
+Owner交回Independent GO；reviewer fresh70/551，browser50+50與PGQ retry16為committed evidence核對。主線接受，詳evidence/edx-wp2-s8/independent-review.md。Reviewed code/ZIP未改；本輪未merge/push/deploy。

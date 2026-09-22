@@ -1032,6 +1032,8 @@ WP2-S7 candidate501da1b（runtime c2ba9e5）：scoped196/full531、browser35+35�
 
 WP2-S7 closure：Independent GO，P0–P3全0；reviewer fresh59/531、browser35+35／PGQ16為committed evidence核對，reviewed code/ZIP未改。
 
-**WP2-S8 INDEPENDENT REVIEW PENDING：** image-only insert-element，atomic canonical/live DOM/stable identity/export。卡tasks/edx-wp2-s8-insert-image-operation.md；不做File/picker/drag-in UI或crop。S7已推main74d63cc。
+**WP2-S8 COMPLETE / INDEPENDENT REVIEW GO：** image-only insert-element，atomic canonical/live DOM/stable identity/export。卡tasks/edx-wp2-s8-insert-image-operation.md；不做File/picker/drag-in UI或crop。S7已推main74d63cc。
 
 WP2-S8 candidate `0b4c7bd`：image-only API insert；scoped150/full551、browser50+50、PGQ-only retry單輪16/16、ZIP/hash/cleanup PASS。首輪PGQ環境I/O FAIL完整保留；未改AI Core、不宣稱根因修復。handoff_20260922_edx_wp2_s8_review.md待Independent Review，未merge/push/deploy。
+
+WP2-S8 closure：Independent GO，P0–P3全0；reviewer fresh70/551、browser50+50與PGQ retry16為committed evidence核對；底層I/O根因未知。Reviewed code/ZIP未改，本輪未merge/push/deploy。

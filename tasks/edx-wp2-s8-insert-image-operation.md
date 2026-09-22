@@ -1,6 +1,6 @@
 # WP2-S8 — image-only Safe Insert operation
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base: `74d63cc99e745b373adbcc3a56e9228576e74b22`（S7 closure／merge／push、remote main及branch MATCH）
 Branch: codex/edx-wp2-s8-insert-image-operation
 traces_to: BACKLOG §10.1 decisions3/7/8、§10.3 WP2、§10.4 insert-element。
@@ -41,3 +41,7 @@ log/report寫/private/tmp/pptskill-wp2-s8-*，保留RED／中間FAIL及逐命令
 ## Mainline acceptance
 
 Candidate `0b4c7bdf95211d0bb0587034cb899593e6b64d90`；Worker scoped150/150、Mainline full551/551、browser50+50、PGQ-only retry單輪16/16、ZIP/source9/protected4/cleanup PASS。Mainline同步一條motion變數名斷言（原FAIL保留），runtime未因該FAIL更改。首輪PGQ I/O fail-closed與retry依據完整保留；限制見receipt。handoff_20260922_edx_wp2_s8_review.md待Independent Review；S8未merge/push/deploy。
+
+## Closure
+
+Owner交回Independent GO；reviewer fresh70/551，browser50+50與PGQ retry16為committed evidence核對。主線接受，詳evidence/edx-wp2-s8/independent-review.md。Reviewed code/ZIP未改；本輪未merge/push/deploy。

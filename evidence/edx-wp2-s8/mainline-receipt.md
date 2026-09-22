@@ -1,6 +1,6 @@
 # WP2-S8 Mainline acceptance receipt
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Product: `0b4c7bdf95211d0bb0587034cb899593e6b64d90`
 Branch: codex/edx-wp2-s8-insert-image-operation
 Base/main/origin-main: `74d63cc99e745b373adbcc3a56e9228576e74b22`（S7 Independent GO closure 已依Owner授權合併／推送，遠端readback確認）
@@ -36,3 +36,7 @@ Source **9/9**、protected **4/4** MATCH。ZIP **2,293,334 bytes**，SHA-256 `82
 主線實際看過兩張新圖截圖：藍黃圖、selection輪廓／resize handle、既有fit/replace toolbar可見，controls無viewport clipping。fixture明示位置有與原文字重疊，這是geometry/preservation evidence，不宣稱自動避障、整頁視覺品質或crop像素驗收。3×2驗decode與computed object-fit；20MiB仍沿export gate，無每次insert前aggregate admission。
 
 全部命令logs以gzip保留原bytes/hash；可讀logs只正規化行尾空白。歷史Worker／Mainline／host FAIL均保留。主線acceptance不代替Independent GO。本S8未merge/push/deploy，未開下一Slice；候選→handoff僅control/evidence，原四個protected untracked未動。
+
+## Closure
+
+Owner交回Independent GO；reviewer fresh70/551，browser50+50與PGQ retry16為committed evidence核對。主線接受，詳evidence/edx-wp2-s8/independent-review.md。Reviewed code/ZIP未改；本輪未merge/push/deploy。
