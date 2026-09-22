@@ -1,10 +1,10 @@
 {
   "schemaVersion": "1.0",
-  "productSha": "8b0be659ea400862456f4ce0db5a0526d0623ce8",
+  "productSha": "6c9c02fc764ba36ac60ac026e0a6ea1953b526b5",
   "sources": {
     "runtime/deck-editor.js": "f4effb516c48acabcfa0cade8cf11a6885e2f81e16867e89d7f5393432741310",
     "tests/edx-wp2-s11-image-drop.test.mjs": "7f071091660c08071020f998c81cb7ad5072ce2f46e12d4a6d768caab3eb1b7c",
-    "tools/edx-wp2-s11-browser-cases.mjs": "6108f2c97e970253e1b61dd0b10efd85c5bda911e0f6828870330d132026ca09",
+    "tools/edx-wp2-s11-browser-cases.mjs": "25117b7040c5a3850acfe54dc24b1b54a84c9192ce7bfdd3b4fa3f5c2fe5e6b3",
     "tools/edx-wp1-s4-browser-acceptance.mjs": "0d16f8d81911eeab5011c5d805f45589b8d16f5fefb0a4f6a12671cd11855e21"
   },
   "protected": {

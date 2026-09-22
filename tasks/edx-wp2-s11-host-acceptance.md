@@ -1,6 +1,6 @@
 # WP2-S11 Host acceptance
 
-Status: REPLAN / SPLIT_ACCEPTANCE_PENDING
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Parent: tasks/edx-wp2-s11-image-drop.md
 Product: 1fdb3c275f9e174b7c8d506207c42c758aedb71a；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -13,3 +13,7 @@ Final code checkpoint6c9c02f，runtime/tests/ZIP仍1fdb3c2。三輪FAIL與event 
 ## 新契約執行
 
 依 split-acceptance-decision.md，僅在沒有 held component gesture 時送 trusted external CDP drop；active gesture 使用真 pointer＋明標 synthetic DOM drop，snap=false/true 各自取證。輸出 host-split-acceptance；前三輪保持原樣。沿原 managed lifecycle，雙 viewport 後才跑串行 PGQ，失敗即保存／停止後續；無 runtime／ZIP 修改。
+
+## 最終接續狀態
+
+Candidate 8b0be659ea400862456f4ce0db5a0526d0623ce8；runtime1fdb3c2未改。依Owner核定split acceptance，fresh targeted154/154、雙viewport59+59、PGQ單輪16/16、managed cleanup/source4/protected4/ZIP PASS。Full646與ZIP lifecycle為同卡既有證據，未混稱本輪fresh。詳evidence/edx-wp2-s11/receipt.md與handoff_20260923_edx_wp2_s11_review.md。前三輪FAIL保留，Independent Review pending；未merge/push/deploy，未開S12。

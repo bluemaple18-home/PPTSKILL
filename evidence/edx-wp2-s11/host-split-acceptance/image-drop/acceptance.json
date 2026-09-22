@@ -1,0 +1,5959 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/source.html",
+  "sourceSha256": "7052030cc371caf512c7ca2c852b2c624c2364da9b1af2e36230958d5fd1a985",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 724.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 961.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 463.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 536.203125,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 536.203125,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 867.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 867.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 841.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 47,
+          "before": {
+            "x": 557.9375,
+            "y": 675.203125,
+            "width": 100,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-selected-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 731.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 841.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "ui-lifecycle",
+          "naturalBlurCount": 0,
+          "trustedChange": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "syntheticBlur": true,
+          "syntheticCancel": true,
+          "syntheticFocusin": true,
+          "manualOSDialog": false
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 64,
+          "before": {
+            "x": 1208,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s11": "正常",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 144,
+            "y": 544,
+            "width": 128,
+            "height": 128
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "同檔",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "無圖頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          },
+          "point": {
+            "x": 640,
+            "y": 103.14218521118164,
+            "width": 1155.21875,
+            "height": 63.10936737060547
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "insert-empty",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "跨頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 174.75937271118164,
+            "width": 362.671875,
+            "height": 118.78124237060547
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": 1
+              }
+            ],
+            "calls": 4,
+            "settled": 4,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "export-offline",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "gesture-cancel",
+          "route": "synthetic gesture-cancel semantics",
+          "snap": false,
+          "geometry": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "gesturingBefore": true,
+          "canonicalUnchangedDuringPreview": true,
+          "beforePointerRelease": {
+            "isTrusted": false,
+            "prevented": true,
+            "gesturing": false
+          },
+          "optimizerCalls": 1,
+          "geometryAfterRelease": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "selectionEmpty": true
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "gesture-cancel",
+          "route": "synthetic gesture-cancel semantics",
+          "snap": true,
+          "geometry": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "gesturingBefore": true,
+          "canonicalUnchangedDuringPreview": true,
+          "beforePointerRelease": {
+            "isTrusted": false,
+            "prevented": true,
+            "gesturing": false
+          },
+          "optimizerCalls": 1,
+          "geometryAfterRelease": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "selectionEmpty": true
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "deferred",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "busy",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "busy-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "play",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "play-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "edit",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "edit-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "文字 URI 不接管",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": false
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": false
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "外部 target 不接管",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": false
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": false
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "directory empty files",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "multi",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "multi 未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "optimizer-reject",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          }
+        },
+        {
+          "wp2s11": "reject 不占 ID",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "insert-chooser",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "insert-chooser-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "replace-chooser",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "replace-chooser-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "界線",
+          "manualFinderDrag": false,
+          "cropPixelClaim": false,
+          "positiveApiFallback": false,
+          "mixedNativeGestureDropClaim": false,
+          "gestureCancellationEvidence": "real CDP pointer + synthetic DOM drop; snap=false/true"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-legacy-selected.html",
+          "bytes": 526198,
+          "sha256": "1631e9b42d01533fc8f8a303323d4651f5ef498963e20a3790a85ff3624d42e6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-preview-export.html",
+          "bytes": 526485,
+          "sha256": "5a2eec914471361d00ba4eae358f2d0dc4c6f6a3e54aaea3db6e41f5c51d89bd"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-cancel.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-noop.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-invalid.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-invalid-resize.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-play-mode.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-export.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-reopen-export.html",
+          "bytes": 526485,
+          "sha256": "e8212264852fb2ebcbdf002fbf1220c31f2c8c5fe4d66b1c3b93dbc09667664c"
+        },
+        {
+          "label": "insert-image-ui",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-insert-image-ui.html",
+          "bytes": 530261,
+          "sha256": "1eceef6a26d96f1ac8c9219f9d487f632aca5f9d873fd1820be97052fe1101fe"
+        },
+        {
+          "label": "insert-image-ui-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-insert-image-ui-offline.html",
+          "bytes": 531250,
+          "sha256": "f3e2529fd46f8f314fb1c12c5d2f33ba5b80eb07f5e80ba5146ed8a657758dae"
+        },
+        {
+          "label": "image-drop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-image-drop.html",
+          "bytes": 530188,
+          "sha256": "60b529883d5ac363b8bef1d90ac7adfe3efe5604dcc1720f084ad298f2bf7d3f"
+        },
+        {
+          "label": "image-drop-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-image-drop-offline.html",
+          "bytes": 531173,
+          "sha256": "7086eeca01fdc1df1c5a3469a0f7f1b44b9907cb287032d5ddb4cdecee5b34e6"
+        },
+        {
+          "label": "image-drop-pending",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-image-drop-pending.html",
+          "bytes": 526198,
+          "sha256": "1631e9b42d01533fc8f8a303323d4651f5ef498963e20a3790a85ff3624d42e6"
+        },
+        {
+          "label": "image-drop-deferred",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-image-drop-deferred.html",
+          "bytes": 527186,
+          "sha256": "ba7a2cacb84d7e01edc0edfb9bc9dbfcc1013ab5a3aa19b05de2622f2f06e589"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1044.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1281.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 783.9375,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 856.203125,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 856.203125,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1187.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1187.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1161.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 47,
+          "before": {
+            "x": 877.9375,
+            "y": 855.203125,
+            "width": 100,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-selected-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1051.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 1161.671875,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "ui-lifecycle",
+          "naturalBlurCount": 0,
+          "trustedChange": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "syntheticBlur": true,
+          "syntheticCancel": true,
+          "syntheticFocusin": true,
+          "manualOSDialog": false
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 64,
+          "before": {
+            "x": 1528,
+            "y": 855.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s11": "正常",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 180,
+            "y": 680,
+            "width": 160,
+            "height": 160
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "同檔",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "無圖頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          },
+          "point": {
+            "x": 800,
+            "y": 129.4375,
+            "width": 1444,
+            "height": 78.875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "insert-empty",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "跨頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 218.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": 1
+              }
+            ],
+            "calls": 4,
+            "settled": 4,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "export-offline",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "gesture-cancel",
+          "route": "synthetic gesture-cancel semantics",
+          "snap": false,
+          "geometry": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "gesturingBefore": true,
+          "canonicalUnchangedDuringPreview": true,
+          "beforePointerRelease": {
+            "isTrusted": false,
+            "prevented": true,
+            "gesturing": false
+          },
+          "optimizerCalls": 1,
+          "geometryAfterRelease": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "selectionEmpty": true
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "gesture-cancel",
+          "route": "synthetic gesture-cancel semantics",
+          "snap": true,
+          "geometry": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "gesturingBefore": true,
+          "canonicalUnchangedDuringPreview": true,
+          "beforePointerRelease": {
+            "isTrusted": false,
+            "prevented": true,
+            "gesturing": false
+          },
+          "optimizerCalls": 1,
+          "geometryAfterRelease": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          },
+          "selectionEmpty": true
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "deferred",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "busy",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 1,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "busy-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "play",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "play-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "edit",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "edit-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "文字 URI 不接管",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": false
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": false
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "外部 target 不接管",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": false
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": false
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "directory empty files",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "multi",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "multi 未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "optimizer-reject",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          }
+        },
+        {
+          "wp2s11": "reject 不占 ID",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": false,
+                "effect": "none",
+                "slideId": null,
+                "files": 1
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 0
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": false,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": 2
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": [
+              "不支援的圖片格式。"
+            ]
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "insert-chooser",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "insert-chooser-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1600-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "replace-chooser",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 304.6640625,
+            "y": 200.234375,
+            "width": 453.328125,
+            "height": 148.46875
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "none",
+              "slideId": "portable",
+              "files": null
+            }
+          ],
+          "optimizerCalls": 0,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 0
+          },
+          "trustedDropCount": 0,
+          "dropGuardObserved": false,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "none",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "replace-chooser-未投遞另驗 guard",
+          "route": "synthetic negative only",
+          "events": [
+            {
+              "type": "dragover",
+              "isTrusted": false,
+              "prevented": true
+            },
+            {
+              "type": "drop",
+              "isTrusted": false,
+              "prevented": true
+            }
+          ],
+          "optimizerCalls": 0
+        },
+        {
+          "wp2s11": "界線",
+          "manualFinderDrag": false,
+          "cropPixelClaim": false,
+          "positiveApiFallback": false,
+          "mixedNativeGestureDropClaim": false,
+          "gestureCancellationEvidence": "real CDP pointer + synthetic DOM drop; snap=false/true"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-legacy-selected.html",
+          "bytes": 526198,
+          "sha256": "1631e9b42d01533fc8f8a303323d4651f5ef498963e20a3790a85ff3624d42e6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-preview-export.html",
+          "bytes": 526485,
+          "sha256": "5a2eec914471361d00ba4eae358f2d0dc4c6f6a3e54aaea3db6e41f5c51d89bd"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-cancel.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-noop.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-invalid.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-invalid-resize.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-play-mode.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-export.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-reopen-export.html",
+          "bytes": 526485,
+          "sha256": "e8212264852fb2ebcbdf002fbf1220c31f2c8c5fe4d66b1c3b93dbc09667664c"
+        },
+        {
+          "label": "insert-image-ui",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-insert-image-ui.html",
+          "bytes": 530261,
+          "sha256": "57b7af7b8559da15718c638e359041ff2cfc0fe43a32239500af89057435a8d2"
+        },
+        {
+          "label": "insert-image-ui-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-insert-image-ui-offline.html",
+          "bytes": 531250,
+          "sha256": "936db160f8395ce8b4182bb6d3fc08692ed6d167af7ecf6f0b1e4f5c50ba02e2"
+        },
+        {
+          "label": "image-drop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-image-drop.html",
+          "bytes": 530188,
+          "sha256": "abe3592792dae6fd77b0d9c18d6c612f6be14d1de3758225e9c72c57589390c0"
+        },
+        {
+          "label": "image-drop-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-image-drop-offline.html",
+          "bytes": 531173,
+          "sha256": "ee9571b7c72c6257979189c85f3e0db160564f9d408af1362d8cc12cecb1118c"
+        },
+        {
+          "label": "image-drop-pending",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-image-drop-pending.html",
+          "bytes": 526198,
+          "sha256": "1631e9b42d01533fc8f8a303323d4651f5ef498963e20a3790a85ff3624d42e6"
+        },
+        {
+          "label": "image-drop-deferred",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-image-drop-deferred.html",
+          "bytes": 527186,
+          "sha256": "daa420dec2b0083c73fa3a4b0761e50f220c4658e1cb9ba0d4d039269771f1d0"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

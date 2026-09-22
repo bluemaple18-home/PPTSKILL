@@ -10,3 +10,7 @@ Code checkpoint: 6c9c02fc764ba36ac60ac026e0a6ea1953b526b5
 三輪正式host全部1280在gesture+file drop seam停止；初輪缺geometry，retry1補後有active gesture但CDP drop未投遞、rAF evaluate逾時；retry2前移mouseReleased也失敗，無optimizer呼叫。已有正常/同檔/無圖頁/跨頁/offline五種positive trusted drop，但不能稱整輪PASS。1600與PGQ都未跑，三輪cleanup已PASS，FAIL全部保存。
 
 目前不是review candidate。承接只做CDP混合input／rAF的唯讀隔離與觀測設計；不要直接第4次browser launch、重跑整套或把正向換成API/synthetic。先Mainline重判及鎖定可證偽新路線，維持原驗收契約。若需要改契約，明示原要求與新證據分界，不能用單次prefix PASS取代完整gate。禁止修改AI Core／runtime／ZIP／protected，禁止merge/push/deploy或開S12。
+
+## 後續更新（保留上述歷史）
+
+Owner已明示採split acceptance；詳evidence/edx-wp2-s11/split-acceptance-decision.md與receipt.md。新candidate 8b0be659ea400862456f4ce0db5a0526d0623ce8 雙viewport59+59、PGQ單輪16/16、cleanup PASS，已交handoff_20260923_edx_wp2_s11_review.md等待Independent Review。上述STOP僅是舊混合CDP路徑歷史，未改寫原FAIL。

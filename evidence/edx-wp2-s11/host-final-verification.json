@@ -1,0 +1,147 @@
+{
+  "status": "PASS",
+  "productSha": "8b0be659ea400862456f4ce0db5a0526d0623ce8",
+  "sources": 4,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2294654,
+    "sha256": "75901fa7a4e32e5c6a4bba84e246772b409a244b5fb0d6743a33b5ce3d4f89a8"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserInheritedPass": 646,
+  "freshSplitTargetedPass": 154,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checks": 59,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "s10": 13,
+        "s11": 36
+      },
+      "targetClosed": true,
+      "cdpAttempts": 14,
+      "trustedDeliveredDrops": 8,
+      "trustedSuccessfulInsertions": 7,
+      "trustedOptimizerRejection": 1,
+      "negativeNativeDropsObserved": [],
+      "negativeNativeDropsNotDelivered": [
+        "busy",
+        "play",
+        "edit",
+        "multi",
+        "insert-chooser",
+        "replace-chooser"
+      ],
+      "syntheticNegativeRecords": 9,
+      "syntheticGestureSemanticRecords": 2,
+      "gestureSnapStates": [
+        false,
+        true
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "checks": 59,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "s10": 13,
+        "s11": 36
+      },
+      "targetClosed": true,
+      "cdpAttempts": 14,
+      "trustedDeliveredDrops": 8,
+      "trustedSuccessfulInsertions": 7,
+      "trustedOptimizerRejection": 1,
+      "negativeNativeDropsObserved": [],
+      "negativeNativeDropsNotDelivered": [
+        "busy",
+        "play",
+        "edit",
+        "multi",
+        "insert-chooser",
+        "replace-chooser"
+      ],
+      "syntheticNegativeRecords": 9,
+      "syntheticGestureSemanticRecords": 2,
+      "gestureSnapStates": [
+        false,
+        true
+      ]
+    }
+  ],
+  "artifactHashesMatched": 30,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-image-drop.png",
+      "bytes": 48441,
+      "sha256": "8f3db49353dc7c8afb02825aad8f09f9ccc6a1498d3dc52c1b5723c4cfcceedf",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "evidence/edx-wp2-s11/host-split-acceptance/image-drop/1280-insert-image-ui.png",
+      "bytes": 59793,
+      "sha256": "9ba1a8742c21809ed5e88adb9dadc4ed29632aa9461bce28704533bb59a7a32f",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "path": "evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-image-drop.png",
+      "bytes": 59502,
+      "sha256": "2f378b92e0016d206511b4c72dc7df53c91f5af88f7c524e3aae366b1503a8a8",
+      "width": 1600,
+      "height": 900
+    },
+    {
+      "path": "evidence/edx-wp2-s11/host-split-acceptance/image-drop/1600-insert-image-ui.png",
+      "bytes": 72406,
+      "sha256": "62a978799148a0051f2077ab9a80cb05556f73deaea0dee542fb1e7f231c92b4",
+      "width": 1600,
+      "height": 900
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "workerSourceEntriesMatched": 14,
+  "workerSourceDelta": [
+    "tools/edx-wp2-s11-browser-cases.mjs"
+  ],
+  "failuresPreserved": [
+    "public RED27：3 PASS/24 FAIL；新detached測試預期依卡外部不接管修正，舊assertions不改",
+    "首輪browser1280於active gesture前置斷言FAIL；五次positive drop已通過，PGQ未開始；harness-only初始化修復，runtime/ZIP不變",
+    "retry1已建立active gesture，混合pointer/file drag在rAF等待逾時；harness-only調整release時序；原FAIL/cleanup保留",
+    "retry2 mouseReleased 在 external drag commands 之後，仍無 drop／optimizer0，rAF timeout；原 FAIL／cleanup 保留",
+    "前置讀取repo不存在config/toolchain_paths.sh exit1；後改讀AI Core位置"
+  ],
+  "limitations": [
+    "CDP external positive trusted drag/drop，非人工Finder拖檔",
+    "active gesture cancellation 為真 CDP pointer + synthetic DOM drop，snap=false/true；不宣稱 mixed native gesture + OS file drop",
+    "未投遞negative native drop不能冒稱guard實測，synthetic negative獨立標示",
+    "S10 chooser沿CDP；naturalBlurCount=0及synthetic blur/cancel/focusin邊界沿既有紀錄",
+    "固定geometry/File.name不等於自動避障/語意alt；3×2非crop pixel",
+    "S8 I/O根因仍未知，未修AI Core",
+    "Independent Review pending；S10/S11未merge/push/deploy"
+  ]
+}

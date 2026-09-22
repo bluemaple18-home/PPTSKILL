@@ -1,0 +1,52 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s11-image-drop.test.mjs": true,
+      "tools/edx-wp2-s11-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2294654,
+      "sha256": "75901fa7a4e32e5c6a4bba84e246772b409a244b5fb0d6743a33b5ce3d4f89a8"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 6290,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-1c27305fd234493c9cdbb0b98811e0c2",
+  "imageDropStarted": true,
+  "imageDropExit": 0,
+  "pgqStarted": true,
+  "pgqExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s11-image-drop.test.mjs": true,
+      "tools/edx-wp2-s11-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2294654,
+      "sha256": "75901fa7a4e32e5c6a4bba84e246772b409a244b5fb0d6743a33b5ce3d4f89a8"
+    }
+  },
+  "status": "PASS"
+}

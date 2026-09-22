@@ -1,6 +1,6 @@
 # WP2-S11 — 單張圖片 file drop
 
-Status: REPLAN / SPLIT_ACCEPTANCE_PENDING
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Base: da6c1229c02b5c0956f5ef6725be5e9216d98acd（S10 Independent GO closure，尚未merge/push）
 Branch: codex/edx-wp2-s11-image-drop
 Main/origin-main: d0b9aa05c50b09596920705bbbf4dd632c9137d4
@@ -37,3 +37,7 @@ Prior art DIRECT_REUSE內部S9/S10/S6/browser file primitives；無新dependency
 ## Owner 裁決後的新驗收
 
 2026-09-23：依 evidence/edx-wp2-s11/split-acceptance-decision.md 拆開 trusted external drop 與 synthetic active-gesture semantic seam（snap=false/true）。產品第5項契約不變；此段取代混合 CDP choreography，其他驗收不放寬。歷史 STOP／FAIL 保留，未重設失敗計數。
+
+## 最終接續狀態
+
+Candidate 8b0be659ea400862456f4ce0db5a0526d0623ce8；runtime1fdb3c2未改。依Owner核定split acceptance，fresh targeted154/154、雙viewport59+59、PGQ單輪16/16、managed cleanup/source4/protected4/ZIP PASS。Full646與ZIP lifecycle為同卡既有證據，未混稱本輪fresh。詳evidence/edx-wp2-s11/receipt.md與handoff_20260923_edx_wp2_s11_review.md。前三輪FAIL保留，Independent Review pending；未merge/push/deploy，未開S12。

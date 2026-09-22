@@ -34,3 +34,7 @@ Mainline full non-browser **646/646具名cases PASS**，68檔明列nonbrowser-fi
 下一範圍僅唯讀隔離CDP mixed input/native drag ownership與rAF等待：比較既有event arrays、Chromium Input handler文件、fixture與目前script；先提出可辨別產品／harness／protocol問題的最小觀測設計，再由Mainline裁決是否需要新browser或修正驗收方法。卡片仍要求真drop；若要改用不同驗證組合，必須明示契約及證據限制，不能偷偷降級。未開S12，沒有Independent Review candidate。
 
 限制：CDP automation不是Finder人工拖檔；negative synthetic與native未投遞須分開，且本輪尚未走到所有negative。S10自然blur仍0／synthetic lifecycle邊界沿既有證據。固定geometry非自動避障或crop pixel驗收；S8歷史I/O根因仍未知。未merge/push/deploy，四個protected untracked未動。
+
+## 後續更新（保留上述歷史）
+
+Owner已明示採split acceptance；詳evidence/edx-wp2-s11/split-acceptance-decision.md與receipt.md。新candidate 8b0be659ea400862456f4ce0db5a0526d0623ce8 雙viewport59+59、PGQ單輪16/16、cleanup PASS，已交handoff_20260923_edx_wp2_s11_review.md等待Independent Review。上述STOP僅是舊混合CDP路徑歷史，未改寫原FAIL。
