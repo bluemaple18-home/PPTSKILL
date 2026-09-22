@@ -1043,3 +1043,7 @@ WP2-S8 closure：Independent GO，P0–P3全0；reviewer fresh70/551、browser50
 WP2-S9 candidate `48fb928`：File insertion adapter；scoped148/full586、browser18+18、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。原RED與33/35測試fixtureFAIL保留；handoff_20260923_edx_wp2_s9_review.md待Independent Review。本輪S8/S9未merge/push/deploy。
 
 WP2-S9 closure：Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改；Owner明示授權S8/S9整合並push，未deploy。
+
+S8/S9已FF整合並push main `d0b9aa0`，遠端readback MATCH；詳evidence/edx-wp2-s9/integration-receipt.md。
+
+**WP2-S10 IN PROGRESS：** layout「插入圖片」chooser入口，沿S9 File adapter；固定初始geometry與slide-local首個空缺ID，無新mutation/schema。卡tasks/edx-wp2-s10-insert-image-ui.md。S10未merge/push/deploy。
