@@ -1,0 +1,127 @@
+[
+  {
+    "path": "build-dist.log",
+    "rawSha256": "23192af984a29f8e200c2eabee966be9292d3bd6c84c11babc6dafb040352d96",
+    "gzipSha256": "27297c73b6faa7251ae949b53484b032aebcde1ef96ba3b26bd4ed46a984097b"
+  },
+  {
+    "path": "distribution-probe.log",
+    "rawSha256": "cbeca8dd754014e7faf4e9e0d3df0fd87da91f37d3842e90ecc50b0ab01ce17c",
+    "gzipSha256": "e7b0dbe85c9cead01b407b599d50893209953a0680b95211f36c2face646dd44"
+  },
+  {
+    "path": "fixture-preflight.log",
+    "rawSha256": "2ad15ce8693853b4115e12ccd75ab677de52a3cca99f332a6fb3bc693c3bc3bd",
+    "gzipSha256": "55a6a4bad67544acbcc8ed8c6003f11bde1d848d9b5f3de87f051009f6ee4bf7"
+  },
+  {
+    "path": "fixture-ready.log",
+    "rawSha256": "64dd3405a3642e9e625579c9de7d5fccc374e1b54a4a93762add6a4e1d913830",
+    "gzipSha256": "da64b15ddde4d4169f96b16cef14cf7dddc5cdd5e48911bfaab7eac381a0d8b0"
+  },
+  {
+    "path": "host-acceptance/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/insertImageUI.log",
+    "rawSha256": "5dc9d88b9f9d93710a4c3d440b310c22525b3631ae505673620c2a8500014f41",
+    "gzipSha256": "8ea75c3decb024758b8e8f396105def52780be16c133a18ddeab8d47c7045031"
+  },
+  {
+    "path": "host-acceptance/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/launcher.stdout",
+    "rawSha256": "5db0c4fe7f1c4d46d06beb6c7fc26a3f95cf7670124eff5be0b6569c59660ef6",
+    "gzipSha256": "fd93b6b20f487b133b5ea4b5ce5811144b488bb7ec6d6243053233eff826eee4"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stderr.log",
+    "rawSha256": "d41af653d93eaeb3e8fd60f9939a2baf7fa67a7712f029ade99657baafd5aab6",
+    "gzipSha256": "b6035e727f2f1836455db9850fab52717adea09563af0956b8d1d9c81d02d96d"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/pgq.log",
+    "rawSha256": "1d82936678341613cef6e49e537935d8867a238e3c355acdc1fda345f3a38c77",
+    "gzipSha256": "cc506639c7ec39accf0646586f5b0d8836a885189f51d70a8e14da24b9a05b97"
+  },
+  {
+    "path": "nonbrowser.log",
+    "rawSha256": "425a4ea14267732649dfa128919135e6c40a25ccc40d403b4cd77f6ed387e27f",
+    "gzipSha256": "22445a6bc8e6888ce208bfd6286a8254d121ad8b19764f4729566a37a3242b6f"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-01-red.log",
+    "rawSha256": "784a80a0dd17f1ce004633ef7b72d074566262c7590a201d024754686a3a20a6",
+    "gzipSha256": "550da480aea087ddb7b8e7a18478dce95fd4f466d4c07ea527b765fe8464c51e"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-02-green.log",
+    "rawSha256": "af99e8bc9afef1b5df3adb410f2418e419053bd41291b155712bedcd88a5528d",
+    "gzipSha256": "5c5fa2ca6faf2e9ca25aa472d6104f4abdc809cf8a88628c687005f9d93f47ea"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-03-boundaries.log",
+    "rawSha256": "5a87a094b129a3dd53a68a0f57cff7c79c6e027c43d1dc67c36b334eae2ac58d",
+    "gzipSha256": "01cf2e96eacdb40ef874b955a87060a1bb3a8c6a81fe5f547e558639979ead48"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-04-scoped.log",
+    "rawSha256": "289169db5a322dda34b1b2a1994a74acd5eab351aacc1781519568a2619140c2",
+    "gzipSha256": "3fd7fb91269ab6aa2f48c27d1200673caa54a7480d90a654bccc59cee9758556"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-05-scoped-green.log",
+    "rawSha256": "96649a086673df71319f395932a6448d30b6baf2e4e934aa673542ac85d3fcf0",
+    "gzipSha256": "dbc710f450c7340a73cfecf254b7d41bf8374bc075a4aabca524397e16679313"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-06-final-s10.log",
+    "rawSha256": "08e43472033c609c05c4c7ce0e10e9b9ec700e344954384d22ce0977afe851ed",
+    "gzipSha256": "362774a5be5c63d920c5b6abcab87cd38d5d6d7a7e0d2a018613988e7549898e"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-1.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-2.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-3.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-4.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-5.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-07-syntax-6.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "worker/pptskill-wp2-s10-08-diff-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  }
+]

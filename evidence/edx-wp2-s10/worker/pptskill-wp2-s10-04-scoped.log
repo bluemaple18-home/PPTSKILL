@@ -1,0 +1,265 @@
+✔ export cleanup 只移除 bounded editor chrome roots (1.361458ms)
+✔ editor chrome contract 誤標 presentation truth 時 fail loud (0.417375ms)
+✔ editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth (0.085542ms)
+✔ export clone root 自己被標成 editor chrome 時也不可漏出 (0.104458ms)
+✔ 正式 browser exporter 共用同一 cleanup seam (1.745333ms)
+✔ S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y (10.742583ms)
+✔ S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp (7.920833ms)
+✔ S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏 (46.967ms)
+✔ S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理 (38.312916ms)
+✔ S5 mounted no mode／selection／geometry／deleted 與原子 bounds (51.701833ms)
+✔ S5 mounted drag 中按鍵不取消／不提交 gesture (16.02825ms)
+✔ S5 mounted resize 中按鍵不取消／不提交 gesture (19.866708ms)
+✔ S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓 (13.52675ms)
+✔ S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消 (17.784291ms)
+✔ S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消 (13.698458ms)
+✔ S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical (44.257ms)
+✔ S8 同頁 focusin 保留 selection，跨頁 focusin 清除多選 (30.604042ms)
+✔ S8 plain/Shift click 與 marquee 共用單一 editor-local selection state (32.700291ms)
+✔ S8 export clone-only 清除 Selecto/selection chrome，live selection 保持 (40.386875ms)
+✔ S8 Escape/blur/mode teardown 清 selection，重複 destroy idempotent (17.4275ms)
+✔ S8 selection replace/toggle 去重並依 DOM order 穩定 (33.669458ms)
+✔ S8 editor-local state 0/1/>1 lifecycle 不產生 canonical mutation (0.346083ms)
+✔ S8 disabled state 拒絕 selection mutation (0.079708ms)
+✔ WP2-S5 明示第二張 File target 不得取第一張 (31.910542ms)
+✔ WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip (31.39725ms)
+✔ WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip (10.706875ms)
+✔ WP2-S5 second、局部投影、完整欄位保留與 export roundtrip (13.280625ms)
+✔ WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip (24.601083ms)
+✔ WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip (25.095917ms)
+✔ WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip (18.126042ms)
+✔ WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation (20.909167ms)
+✔ WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image (20.732292ms)
+✔ WP2-S5 pending reject 原子拒絕 (7.570292ms)
+✔ WP2-S5 pending unsafe 原子拒絕 (5.786708ms)
+✔ WP2-S5 pending null-result 原子拒絕 (9.33575ms)
+✔ WP2-S5 pending missing-warnings 原子拒絕 (6.4425ms)
+✔ WP2-S5 pending missing-slide 原子拒絕 (6.033167ms)
+✔ WP2-S5 pending missing-image 原子拒絕 (5.647291ms)
+✔ WP2-S5 pending type-change 原子拒絕 (12.903708ms)
+✔ WP2-S5 pending missing-dom 原子拒絕 (4.18775ms)
+✔ WP2-S5 explicit File same-value no-op gesture (30.76075ms)
+✔ WP2-S5 explicit File 真修改 stale gesture (23.565333ms)
+✔ WP2-S5 長 component ID 使用 resolved stable identity (5.310083ms)
+✖ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (54.301375ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=false (37.537959ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=true (46.89425ms)
+✔ S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer (34.2885ms)
+✔ S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer (22.952333ms)
+✔ S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer (17.411209ms)
+✔ S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer (18.388709ms)
+✔ S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer (30.562208ms)
+✔ S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer (19.496458ms)
+✔ S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer (30.954959ms)
+✔ S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer (17.681291ms)
+✔ S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer (20.69675ms)
+✔ S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer (13.802ms)
+✔ S6 cancel 重設 value，同檔可再次選取 (15.647708ms)
+✔ S6 empty 重設 value，同檔可再次選取 (17.830916ms)
+✔ S6 success 重設 value，同檔可再次選取 (14.839542ms)
+✔ S6 failure 重設 value，同檔可再次選取 (16.37125ms)
+✔ S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser (20.549916ms)
+✔ S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target (22.238708ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false (13.234958ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true (12.042375ms)
+✔ S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖 (25.034791ms)
+✔ S6 picker 等待檔案時唯讀 export 不取消 pending target (14.476666ms)
+✔ S6 async target 移除後失敗，零 asset mutation 且 input 可重選 (11.612458ms)
+✔ S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理 (14.063916ms)
+✔ S7 native group 與裁邊說明由 bootstrap markup 提供 (1.392458ms)
+✔ S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation (70.863667ms)
+✔ S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri (21.64175ms)
+✔ S7 nonimage 隱藏／disable 並拒絕 stale target (35.522167ms)
+✔ S7 multi 隱藏／disable 並拒絕 stale target (26.127291ms)
+✔ S7 clear 隱藏／disable 並拒絕 stale target (16.36025ms)
+✔ S7 slide 隱藏／disable 並拒絕 stale target (22.474958ms)
+✔ S7 edit 隱藏／disable 並拒絕 stale target (23.330959ms)
+✔ S7 play 隱藏／disable 並拒絕 stale target (14.722667ms)
+✔ S7 delete 隱藏／disable 並拒絕 stale target (35.024083ms)
+✔ S7 destroy 隱藏／disable 並拒絕 stale target (32.226667ms)
+✔ S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize (203.578292ms)
+✖ S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消 (15.744541ms)
+✖ S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消 (11.571791ms)
+✖ S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消 (13.467542ms)
+✖ S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消 (11.131709ms)
+✔ S7 drag/pointer/snap=false 取消 preview 後只提交 fit (11.633708ms)
+✔ S7 drag/keyboard/snap=false 取消 preview 後只提交 fit (15.09625ms)
+✔ S7 resize/pointer/snap=false 取消 preview 後只提交 fit (13.442833ms)
+✔ S7 resize/keyboard/snap=false 取消 preview 後只提交 fit (10.234292ms)
+✔ S7 drag/pointer/snap=true 取消 preview 後只提交 fit (10.749833ms)
+✔ S7 drag/keyboard/snap=true 取消 preview 後只提交 fit (11.944708ms)
+✔ S7 resize/pointer/snap=true 取消 preview 後只提交 fit (11.298083ms)
+✔ S7 resize/keyboard/snap=true 取消 preview 後只提交 fit (10.452542ms)
+✔ S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard (9.016833ms)
+✔ S7 default no-op 亦取消 preview 並保留 selection snap=false (11.063042ms)
+✔ S7 default no-op 亦取消 preview 並保留 selection snap=true (10.063083ms)
+✔ S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖 (9.669792ms)
+✔ S7 export 只保留 fit；從匯出 DeckSpec remount 可切換 (19.954875ms)
+✔ S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation (7.451833ms)
+✔ S8 Node exact schema／政策／geometry 拒絕且 getter calls=0 (11.074666ms)
+✔ S8 Node null prototype own records 可用且輸入不受修改 (0.9775ms)
+✔ S8 Node long-ID collision 不改名；可穩定追加另一 collision (1.354666ms)
+✔ S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root (61.601875ms)
+✔ S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation (11.391292ms)
+✔ S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0 (58.928375ms)
+✔ S8 mounted null prototype own records 可用且輸入不受修改 (4.922ms)
+✔ S8 mounted long-ID collision 不改名；可穩定追加另一 collision (19.023708ms)
+✔ S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root (32.042417ms)
+✔ S8 mounted missing 零 canonical／DOM／revision／selection 副作用 (9.60875ms)
+✔ S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用 (9.63575ms)
+✔ S8 mounted append-before 零 canonical／DOM／revision／selection 副作用 (9.474542ms)
+✔ S8 mounted append-after 零 canonical／DOM／revision／selection 副作用 (8.756292ms)
+✔ S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用 (16.3095ms)
+✔ S8 mounted snap=false 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId (16.3975ms)
+✔ S8 mounted snap=false 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId (10.932459ms)
+✔ S8 mounted snap=true 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId (11.755333ms)
+✔ S8 mounted snap=true 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId (15.63775ms)
+✔ S8 descriptor 精確 image-only slide target、無 history 宣稱 (2.8815ms)
+✔ S9 public insertImageFile 新增圖片並保留 optimizer result identity (33.46325ms)
+✔ S9 default 全 spec preservation／唯一 DOM (10.036458ms)
+✔ S9 contain 全 spec preservation／唯一 DOM (13.757792ms)
+✔ S9 cover 全 spec preservation／唯一 DOM (6.427833ms)
+✔ S9 cross-slide 全 spec preservation／唯一 DOM (7.654125ms)
+✔ S9 null-proto 全 spec preservation／唯一 DOM (6.343541ms)
+✔ S9 frozen 全 spec preservation／唯一 DOM (5.24225ms)
+✔ S9 non-enumerable 全 spec preservation／唯一 DOM (5.789084ms)
+✔ S9 invalid own-data／geometry／target：getter0 optimizer0，既有 gesture 不取消 (37.115416ms)
+✔ S9 falsy file 不讀 options／不呼叫 optimizer；missing optimizer 明確失敗 (5.406291ms)
+✔ S9 snapshot＋await 切頁／mode／export clone，保留等待中 content／geometry (12.41275ms)
+✔ S9 pending reject 零提交 (16.2205ms)
+✔ S9 pending null 零提交 (12.441792ms)
+✔ S9 pending missing-warnings 零提交 (8.470084ms)
+✔ S9 pending warnings-string 零提交 (9.959958ms)
+✔ S9 pending warnings-item 零提交 (9.083583ms)
+✔ S9 pending missing-optimized 零提交 (12.440791ms)
+✔ S9 pending optimized-string 零提交 (10.698708ms)
+✔ S9 pending no-data 零提交 (8.179625ms)
+✔ S9 pending unsafe 零提交 (10.020875ms)
+✔ S9 pending svg 零提交 (13.354958ms)
+✔ S9 pending missing-target 零提交 (8.047292ms)
+✔ S9 pending identity-collision 零提交 (9.803584ms)
+✔ S9 pending missing-dom 零提交 (10.658709ms)
+✔ S9 pending duplicate-dom 零提交 (10.568917ms)
+✔ S9 pending prepare-throw 零提交 (13.725375ms)
+✔ S9 pending append-before 零提交 (13.170208ms)
+✔ S9 pending append-after 零提交 (9.28325ms)
+✔ S9 preflight identity collision 在 optimizer 前拒絕 (3.718625ms)
+✔ S9 pending 競爭 same-id：完成次序決定，不覆蓋 (5.9985ms)
+✔ S9 pending 競爭 different-id：完成次序決定，不覆蓋 (5.976125ms)
+✔ S9 pending 競爭 cross-slide：完成次序決定，不覆蓋 (7.378125ms)
+✔ S9 drag pending 保留／成功才 cancel clear revision 一次 (10.596042ms)
+✔ S9 resize pending 保留／成功才 cancel clear revision 一次 (10.744375ms)
+✔ S9 export／reparse／remount 恰一 root，新圖可選取與 fit (15.123459ms)
+ℹ tests 152
+ℹ suites 0
+ℹ pass 147
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1134.975917
+
+✖ failing tests:
+
+test at tests/edx-wp2-s6-selected-image-ui.test.mjs:26:1
+✖ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (54.301375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  null !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s6-selected-image-ui.test.mjs:29:48)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s7-selected-image-fit.test.mjs:85:65
+✖ S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消 (15.744541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'replace' !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'replace',
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s7-selected-image-fit.test.mjs:85:65
+✖ S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消 (11.571791ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'replace' !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'replace',
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s7-selected-image-fit.test.mjs:85:65
+✖ S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消 (13.467542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'replace' !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'replace',
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s7-selected-image-fit.test.mjs:85:65
+✖ S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消 (11.131709ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'replace' !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:87:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'replace',
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

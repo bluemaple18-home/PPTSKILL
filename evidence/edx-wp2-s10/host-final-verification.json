@@ -1,0 +1,131 @@
+{
+  "status": "PASS",
+  "productSha": "7f79b58bdd492c90fd1bf6d510c7692492c94a84",
+  "sources": 6,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2294310,
+    "sha256": "c8d5d55cb91e23f73d9696c852bbe3c1bbb81f0c805c5e956e63a1baf6af623a"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 617,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checks": 23,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "chooser": 12,
+        "ui-lifecycle": 1
+      },
+      "targetClosed": true,
+      "chooserMetrics": {
+        "wp2s10": "ui-lifecycle",
+        "naturalBlurCount": 0,
+        "trustedChange": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ],
+        "syntheticBlur": true,
+        "syntheticCancel": true,
+        "syntheticFocusin": true,
+        "manualOSDialog": false
+      }
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "checks": 23,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "chooser": 12,
+        "ui-lifecycle": 1
+      },
+      "targetClosed": true,
+      "chooserMetrics": {
+        "wp2s10": "ui-lifecycle",
+        "naturalBlurCount": 0,
+        "trustedChange": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          false,
+          true,
+          true
+        ],
+        "syntheticBlur": true,
+        "syntheticCancel": true,
+        "syntheticFocusin": true,
+        "manualOSDialog": false
+      }
+    }
+  ],
+  "artifactHashesMatched": 22,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s10/host-acceptance/insert-image-ui/1280-insert-image-ui.png",
+      "bytes": 59793,
+      "sha256": "9ba1a8742c21809ed5e88adb9dadc4ed29632aa9461bce28704533bb59a7a32f",
+      "width": 1280,
+      "height": 720,
+      "visualInspection": "主線已看實圖：插入圖片、替換所選圖片、fit controls可見，新圖selection/resize handle與pressed/focus正常，兩viewport無toolbar clipping。固定插入geometry不避開原內容，不宣稱自動排版或crop pixel驗收。"
+    },
+    {
+      "path": "evidence/edx-wp2-s10/host-acceptance/insert-image-ui/1600-insert-image-ui.png",
+      "bytes": 72406,
+      "sha256": "62a978799148a0051f2077ab9a80cb05556f73deaea0dee542fb1e7f231c92b4",
+      "width": 1600,
+      "height": 900,
+      "visualInspection": "主線已看實圖：插入圖片、替換所選圖片、fit controls可見，新圖selection/resize handle與pressed/focus正常，兩viewport無toolbar clipping。固定插入geometry不避開原內容，不宣稱自動排版或crop pixel驗收。"
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "workerSourceDelta": [
+    "tools/edx-wp1-s4-browser-acceptance.mjs"
+  ],
+  "failuresPreserved": [
+    "public UI RED0/1",
+    "scoped147/152：chooser kind傳入disabled，修boolean coercion；舊assertions未改",
+    "fixture-only FAIL：empty component保留舊slot，主線harness-only修正；未啟browser"
+  ],
+  "limitations": [
+    "CDP chooser automation，非人工OS dialog；blur/cancel/focusin明標synthetic",
+    "3×2 PNG驗decode/geometry/computed fit，非crop像素或自動避障",
+    "S8環境I/O errno未知，本輪無AI Core修補亦不宣稱根因已修復",
+    "20MiB沿既有export guard；未新增drop/clipboard/crop",
+    "Independent Review pending；Mainline acceptance非Independent GO"
+  ]
+}

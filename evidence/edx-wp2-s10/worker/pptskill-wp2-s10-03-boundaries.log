@@ -1,0 +1,37 @@
+✔ S10 public mounted layout 插圖：無 image、固定 geometry／fit／檔名、一次 revision (25.901459ms)
+✔ S10 empty selection 均可用；play/edit/teardown 關閉入口 (10.34525ms)
+✔ S10 text selection 均可用；play/edit/teardown 關閉入口 (13.06625ms)
+✔ S10 image selection 均可用；play/edit/teardown 關閉入口 (9.848709ms)
+✔ S10 multi selection 均可用；play/edit/teardown 關閉入口 (11.788916ms)
+✔ S10 gesture 取消不 commit，capture→blur→change，snap=false (11.489208ms)
+✔ S10 gesture 取消不 commit，capture→blur→change，snap=true (12.433833ms)
+✔ S10 slide 取消未 change snapshot (9.038709ms)
+✔ S10 focusin 取消未 change snapshot (9.117125ms)
+✔ S10 mode 取消未 change snapshot (9.252625ms)
+✔ S10 selection 取消未 change snapshot (11.302ms)
+✔ S10 same-selection 取消未 change snapshot (9.402209ms)
+✔ S10 marquee 取消未 change snapshot (9.181542ms)
+✔ S10 empty-marquee 取消未 change snapshot (8.707209ms)
+✔ S10 clear 取消未 change snapshot (8.197708ms)
+✔ S10 destroy 取消未 change snapshot (10.911709ms)
+✔ S10 delete 取消未 change snapshot (8.904ms)
+✔ S10 pointer 取消未 change snapshot (8.439333ms)
+✔ S10 cancel 不占用 ID，reset 可重選 (9.942875ms)
+✔ S10 empty 不占用 ID，reset 可重選 (10.251417ms)
+✔ S10 throw 不占用 ID，reset 可重選 (10.591166ms)
+✔ S10 無 pending／wrong input／互斥／busy 重入不跨送 (14.653084ms)
+✔ S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一次 (9.349875ms)
+✔ S10 async File 捕捉，export／切頁／mode／其他修改保留；finally 不覆寫新 S6 picker (17.550167ms)
+✔ S10 async removed 原子拒絕，不 rename/retry，busy 釋放 (7.473375ms)
+✔ S10 async collision 原子拒絕，不 rename/retry，busy 釋放 (7.4275ms)
+✔ S10 async invalid 原子拒絕，不 rename/retry，busy 釋放 (7.002ms)
+✔ S10 async reject 原子拒絕，不 rename/retry，busy 釋放 (7.494916ms)
+✔ S10 非唯一 DOM 不開 chooser；export cleanup／remount 不重複 input (15.16675ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 440.624542

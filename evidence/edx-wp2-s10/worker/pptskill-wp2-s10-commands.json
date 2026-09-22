@@ -1,0 +1,156 @@
+[
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "exitCode": 1,
+    "counts": {
+      "tests": 1,
+      "pass": 0,
+      "fail": 1,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-01-red.log",
+    "sha256": "784a80a0dd17f1ce004633ef7b72d074566262c7590a201d024754686a3a20a6"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "exitCode": 0,
+    "counts": {
+      "tests": 1,
+      "pass": 1,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-02-green.log",
+    "sha256": "af99e8bc9afef1b5df3adb410f2418e419053bd41291b155712bedcd88a5528d"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "exitCode": 0,
+    "counts": {
+      "tests": 29,
+      "pass": 29,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-03-boundaries.log",
+    "sha256": "5a87a094b129a3dd53a68a0f57cff7c79c6e027c43d1dc67c36b334eae2ac58d"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s9-insert-image-file.test.mjs tests/edx-wp2-s8-insert-image.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s7-selected-image-fit.test.mjs tests/edx-wp2-s5-targeted-image-file.test.mjs tests/edx-wp1-s1-export-cleanup.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s5-keyboard.test.mjs",
+    "exitCode": 1,
+    "counts": {
+      "tests": 152,
+      "pass": 147,
+      "fail": 5,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-04-scoped.log",
+    "sha256": "289169db5a322dda34b1b2a1994a74acd5eab351aacc1781519568a2619140c2"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s9-insert-image-file.test.mjs tests/edx-wp2-s8-insert-image.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s7-selected-image-fit.test.mjs tests/edx-wp2-s5-targeted-image-file.test.mjs tests/edx-wp1-s1-export-cleanup.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s5-keyboard.test.mjs",
+    "exitCode": 0,
+    "counts": {
+      "tests": 181,
+      "pass": 181,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-05-scoped-green.log",
+    "sha256": "96649a086673df71319f395932a6448d30b6baf2e4e934aa673542ac85d3fcf0"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "exitCode": 0,
+    "counts": {
+      "tests": 31,
+      "pass": 31,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-06-final-s10.log",
+    "sha256": "08e43472033c609c05c4c7ce0e10e9b9ec700e344954384d22ce0977afe851ed"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check runtime/deck-editor.js",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-1.log"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-2.log"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s10-browser-cases.mjs",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-3.log"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tools/edx-wp1-s4-browser-acceptance.mjs",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-4.log"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check runtime/component-interaction.js",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-5.log"
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tools/edx-wp1-s4-perf-mounted.mjs",
+    "exitCode": 0,
+    "counts": {
+      "files": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-07-syntax-6.log"
+  },
+  {
+    "command": "git diff --check",
+    "exitCode": 0,
+    "counts": {
+      "checks": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s10-08-diff-check.log"
+  }
+]

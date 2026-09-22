@@ -1,6 +1,6 @@
 # WP2-S10 — layout image insertion chooser
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base/main/origin-main: d0b9aa05c50b09596920705bbbf4dd632c9137d4（S8/S9 Independent GO closure已FF整合／push並遠端readback）
 Branch: codex/edx-wp2-s10-insert-image-ui
 traces_to: BACKLOG §10.1 decisions3/4/8、§10.3 WP2、§10.4 insert-element。
@@ -35,3 +35,7 @@ Mainline負責正式host雙viewport1280×720→1600×900、errors/HTTP/remote0/t
 
 standard固定UI glue；1 clean native Worker/medium/shared sequential product writer，主線平行只control/evidence。native runtime模型繼承（未獲Owner指定model override），不改主對話設定；1 planned Independent Review沿Owner現有外部review交回，非本輪另spawn。1 bounded implementation loop；同類兩次無進展/contract fork即回主線；不自行第二代repair或加subagent。
 允許：runtime/deck-editor.js、新tests/edx-wp2-s10-insert-image-ui.test.mjs、新tools/edx-wp2-s10-browser-cases.mjs、tools/edx-wp1-s4-browser-acceptance.mjs；證明必要才動runtime/component-interaction.js、tools/edx-wp1-s4-perf-mounted.mjs。禁止S8/S9契約/helper、schema/dependency、其他runtime、control/BACKLOG/task/evidence/protected/AI Core、commit/branch、full/browser/Chrome/attach/ZIP/build/probe、merge/push/deploy。先CodeGraph無相關則rg；讀Ownerbootstrap與rules05/11/24，Node /opt/homebrew/bin/node。logs/report寫/private/tmp/pptskill-wp2-s10-*，保留RED/FAIL與逐命令counts/sourcehash。完成STOP WRITING交主線，未宣稱candidate/GO。
+
+## Mainline acceptance
+
+Candidate `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。S10 31/scoped181（重疊不相加）/full617，browser23+23、PGQ單輪16、source6/protected4/ZIP/cleanup PASS。歷史FAIL保留，詳receipt。Independent Review pending；S10未merge/push/deploy、未開S11。
