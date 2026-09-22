@@ -14,6 +14,8 @@ export async function runTypographyBrowserCases({ cdp, evaluate, navigate, sourc
     await settle();
     assert.equal(await evaluate('document.body.dataset.editorMode'), 'edit');
     assert.equal(await evaluate('document.querySelector("[data-pptskill-typography-toolbar]").hidden'), false);
+    const button = await position('[data-action="apply-typography"]');
+    assert.ok(button.width > 0 && button.height > 0, '字級控制項必須真實可見與可點擊');
   };
   const fill = async value => {
     await click('[data-typography-size]');
@@ -27,7 +29,7 @@ export async function runTypographyBrowserCases({ cdp, evaluate, navigate, sourc
     for (const size of [16, 160]) {
       await apply(size); const state = await read(role);
       if (state.font !== size + 'px' || state.canonical !== size) {
-        const diagnostic = await evaluate(`(()=>{const b=document.querySelector('[data-action="apply-typography"]'),r=b.getBoundingClientRect();return {status:document.querySelector('[data-editor-status]')?.textContent,input:document.querySelector('[data-typography-size]')?.value,active:document.activeElement?.outerHTML,toolbarHidden:document.querySelector('[data-pptskill-typography-toolbar]')?.hidden,buttonRect:{x:r.x,y:r.y,width:r.width,height:r.height},hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.outerHTML}})()`);
+        const diagnostic = await evaluate(`(()=>{const b=document.querySelector('[data-action="apply-typography"]'),r=b.getBoundingClientRect();return {status:document.querySelector('[data-editor-status]')?.textContent,input:document.querySelector('[data-typography-size]')?.value,active:document.activeElement?.tagName,toolbarHidden:document.querySelector('[data-pptskill-typography-toolbar]')?.hidden,buttonRect:{x:r.x,y:r.y,width:r.width,height:r.height},hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.tagName}})()`);
         run.checks.push({wp2s2:'font-size-failure-diagnostic',role,size,state,diagnostic});
       }
       assert.equal(state.font, size + 'px', JSON.stringify({role,size,state})); assert.equal(state.canonical, size);
