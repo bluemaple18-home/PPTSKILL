@@ -83,6 +83,9 @@ export function mountedEditor(input = fixture()) {
   const alignToolbar = new Element('span', { 'data-pptskill-context-toolbar': '', hidden: '' }); alignToolbar.hidden = true; body.append(alignToolbar);
   for (const action of ['align-left', 'align-center-x', 'align-right', 'align-top', 'align-center-y', 'align-bottom']) alignToolbar.append(new Element('button', { 'data-action': action }));
   for (const action of ['distribute-horizontal-centers', 'distribute-vertical-centers', 'distribute-horizontal-gaps', 'distribute-vertical-gaps']) { const control = new Element('button', { 'data-action': action, 'data-distribute-control': '', hidden: '' }); control.hidden = true; alignToolbar.append(control); }
+  const typographyToolbar = new Element('span', { 'data-pptskill-typography-toolbar': '', hidden: '' }); typographyToolbar.hidden = true; body.append(typographyToolbar);
+  typographyToolbar.append(new Element('input', { 'data-typography-size': '', type: 'number' }));
+  for (const action of ['apply-typography', 'reset-typography']) typographyToolbar.append(new Element('button', { 'data-action': action }));
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
     const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);

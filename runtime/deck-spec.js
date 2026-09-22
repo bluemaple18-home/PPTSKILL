@@ -1,3 +1,4 @@
+import { roleTypography } from './role-typography.js';
 import { sanitizeGeometryOverrides } from './component-geometry.js';
 import { createHash } from 'node:crypto';
 import { sanitizeCompositionMotion } from './motion-capabilities.js';
@@ -90,7 +91,7 @@ const sanitizeSlide = (slide, index) => {
       keyPointIds,
       components,
     },
-    composition: sanitizeComposition(slide?.composition, components),
+    composition: sanitizeComposition(slide?.composition, components, slide?.content),
   };
 };
 
@@ -141,7 +142,8 @@ const sanitizeStyle = (style = {}) => ({
   assetTreatment: copyText(style.assetTreatment, defaultStyle.assetTreatment),
 });
 
-const sanitizeComposition = (composition = {}, components = []) => {
+const sanitizeComposition = (composition = {}, components = [], content = {}) => {
+  const typographyOverrides = roleTypography.sanitize(composition.typographyOverrides, content);
   const geometryOverrides = sanitizeGeometryOverrides(composition.geometryOverrides, components);
   const motion = sanitizeCompositionMotion(composition.motion);
   const backgroundEffect = sanitizeCompositionBackgroundEffect(composition.backgroundEffect);
@@ -153,6 +155,7 @@ const sanitizeComposition = (composition = {}, components = []) => {
     ...(motion ? { motion } : {}),
     ...(backgroundEffect ? { backgroundEffect } : {}),
     ...(geometryOverrides ? { geometryOverrides } : {}),
+    ...(typographyOverrides ? { typographyOverrides } : {}),
   };
 };
 
@@ -239,6 +242,7 @@ export function validateDeckSpec(spec) {
   const ids = spec?.slides?.map((slide) => slide.id) ?? [];
   if (ids.some((id) => !id) || new Set(ids).size !== ids.length) errors.push('slide ID 不可缺漏或重複。');
   for (const slide of spec?.slides ?? []) {
+    try { roleTypography.sanitize(slide.composition?.typographyOverrides, slide.content); } catch (error) { errors.push(error.message); }
     try { sanitizeGeometryOverrides(slide.composition?.geometryOverrides, slide.content?.components ?? []); } catch (error) { errors.push(error.message); }
     if (!slide.content?.title || !slide.content?.subtitle || !Array.isArray(slide.content?.keyPoints) || slide.content.keyPoints.length < 3 || slide.content.keyPoints.length > 5) errors.push(`${slide.id || 'unknown'} 缺少 title／subtitle／3～5 keyPoints。`);
     const elementIds = resolveSlideElementIds(slide);
@@ -277,7 +281,7 @@ export function patchComposition(spec, slideId, composition) {
   const sanitized = sanitizeDeckSpec(spec);
   const slide = sanitized.slides.find((item) => item.id === slideId);
   if (!slide) throw new Error(`找不到 slide：${slideId}`);
-  slide.composition = sanitizeComposition(composition);
+  slide.composition = sanitizeComposition(composition, slide.content.components, slide.content);
   return sanitized;
 }
 

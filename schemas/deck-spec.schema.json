@@ -103,6 +103,7 @@
       "additionalProperties": false,
       "required": ["primitive", "variant", "slots"],
       "properties": {
+        "typographyOverrides": {"type":"object","propertyNames":{"enum":["role-title","role-subtitle"]},"additionalProperties":{"type":"object","additionalProperties":false,"required":["fontSize"],"properties":{"fontSize":{"type":"integer","minimum":16,"maximum":160}}}},
         "geometryOverrides": {"type":"object","propertyNames":{"$ref":"#/$defs/id"},"additionalProperties":{"type":"object","additionalProperties":false,"required":["x","y","width","height"],"properties":{"x":{"type":"integer","minimum":80},"y":{"type":"integer","minimum":80},"width":{"type":"integer","minimum":80},"height":{"type":"integer","minimum":80}},"description":"1600×900 絕對座標；safe inset 80，x+width≤1520、y+height≤820，由共用 deterministic validator 驗證。"}},
         "primitive": { "$ref": "#/$defs/id" },
         "variant": { "$ref": "#/$defs/id" },

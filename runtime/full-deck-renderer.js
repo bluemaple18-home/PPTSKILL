@@ -29,10 +29,13 @@ const editable = (slide, field, tag, value, className = '') => {
   const motionIndex = slide.composition.motion?.effect === 'underline-sweep'
     ? slide.composition.motion.targets.findIndex(({ ref }) => ref === target)
     : -1;
+  const fontSize = slide.composition.typographyOverrides?.[ROLE_ELEMENT_IDS[field]]?.fontSize;
+  const styles = [motionIndex >= 0 ? `--pptskill-text-delay:${motionIndex * slide.composition.motion.staggerMs}ms` : '', fontSize !== undefined ? `font-size:${fontSize}px` : ''].filter(Boolean).join(';');
+  const typography = `${styles ? ` style="${styles}"` : ''}${fontSize !== undefined ? ' data-pptskill-font-default="" data-pptskill-font-priority=""' : ''}`;
   const motion = motionIndex >= 0
-    ? ` data-pptskill-text-entrance="${field}" style="--pptskill-text-delay:${motionIndex * slide.composition.motion.staggerMs}ms"`
+    ? ` data-pptskill-text-entrance="${field}"`
     : '';
-  return `<${tag} class="${className}" data-edit-kind="text" data-pptskill-element-id="${ROLE_ELEMENT_IDS[field]}" data-edit-target="slides.${attr(slide.id)}.content.${field}"${field === 'title' ? ' data-effect-title data-effect-role="title"' : ''}${field === 'subtitle' ? ' data-effect-role="supportingCopy"' : ''}${motion}>${escapeHtml(value)}</${tag}>`;
+  return `<${tag} class="${className}" data-edit-kind="text" data-pptskill-element-id="${ROLE_ELEMENT_IDS[field]}" data-edit-target="slides.${attr(slide.id)}.content.${field}"${field === 'title' ? ' data-effect-title data-effect-role="title"' : ''}${field === 'subtitle' ? ' data-effect-role="supportingCopy"' : ''}${motion}${typography}>${escapeHtml(value)}</${tag}>`;
 };
 const typographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(0, 2).join('');
 const trailingTypographyGlyphs = (title) => [...String(title)].filter((character) => /[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(-2).join('');

@@ -163,7 +163,7 @@ export async function smokeDistribution({ installRoot = defaultInstallRoot(), en
   const adapterIds = ['codex', 'claude-code', 'gemini'];
   const adapters = await Promise.all(adapterIds.map(async (id) => JSON.parse(await readFile(resolve(target, 'adapters', id, 'adapter.json'), 'utf8'))));
   const sharedCore = resolve(target, 'core');
-  const coreFiles = ['runtime/deck-spec.js', 'runtime/full-deck-renderer.js', 'runtime/local-profile.js'];
+  const coreFiles = ['runtime/role-typography.js', 'runtime/deck-spec.js', 'runtime/full-deck-renderer.js', 'runtime/local-profile.js'];
   const coreReady = (await Promise.all(coreFiles.map((file) => exists(resolve(sharedCore, file))))).every(Boolean);
   const oneSharedCore = adapters.every((adapter, index) => adapter.id === adapterIds[index]
       && adapter.coreRelativePath === '../../core'

@@ -21,6 +21,7 @@ function browserEditor(input) {
     const nodes = resolveSlideElementIdentities(sanitizeDeckSpec(input).slides.find(x => x.id === s.id));
     for (const id of [nodes.title, nodes.subtitle, ...nodes.keyPoints, ...nodes.components]) elements.set(s.id + '/' + id, {
       dataset: {}, textContent: '', style: {}, matches: () => false,
+      getAttribute(name) { return Object.hasOwn(this, name) ? String(this[name]) : null; },
       setAttribute(name, value) { this[name] = value; }, removeAttribute(name) { delete this[name]; },
     });
     return { dataset: { slideId: s.id }, addEventListener() {}, querySelector(selector) { return elements.get(s.id + '/' + selector.match(/="([^"]+)"/)?.[1]) || null; }, querySelectorAll() { return []; } };
@@ -65,7 +66,7 @@ for (const [lane, makeEditor] of [['Node', createDeckEditor], ['browser API VM',
   });
   test(`${lane} descriptors 深度 immutable 且 allowlist 無法擴權`, () => {
     const editor = makeEditor(fixture), d = editor.operationDescriptors;
-    assert.deepEqual(Object.keys(d), ['edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
+    assert.deepEqual(Object.keys(d), ['set-typography', 'edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
     assert.ok(Object.isFrozen(d));
     assert.ok(Object.isFrozen(d['move-element'].inputSchema.properties.value.properties));
     assert.throws(() => d['move-element'].allowedTargetRoles.push('title'));

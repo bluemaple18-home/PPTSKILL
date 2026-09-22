@@ -7,7 +7,7 @@ import { promisify } from 'node:util';
 import test from 'node:test';
 
 const run = promisify(execFile);
-for (const flags of [[], ['--perf-regression'], ['--motion-regression'], ['--keyboard-regression'], ['--snap-regression'], ['--selection-regression'], ['--alignment-regression'], ['--distribution-regression'], ['--equal-gap-regression'], ['--direct-text-regression']]) test('S4 managed attach ' + flags.join(' ') + ' 只建／關 owned target，navigation 失敗仍清理且不 spawn', async () => {
+for (const flags of [[], ['--perf-regression'], ['--motion-regression'], ['--keyboard-regression'], ['--snap-regression'], ['--selection-regression'], ['--alignment-regression'], ['--distribution-regression'], ['--equal-gap-regression'], ['--direct-text-regression'], ['--typography-regression']]) test('S4 managed attach ' + flags.join(' ') + ' 只建／關 owned target，navigation 失敗仍清理且不 spawn', async () => {
   const dir = await mkdtemp(resolve(tmpdir(), 's3-attach-probe-'));
   try {
     const port = resolve(dir, 'DevToolsActivePort'), log = resolve(dir, 'log.jsonl');
