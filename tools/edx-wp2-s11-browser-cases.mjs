@@ -113,8 +113,13 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
     await assertExport('image-drop-offline', expected);
   } finally { await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 }); }
 
-  await reset(); expected = await spec();
+  await reset();
+  assert.equal((await spec()).slides[0].composition.geometryOverrides?.['portable-quote'], undefined, 'fresh legacy fixture 尚未初始化');
   await click('[data-pptskill-element-id="component-portable-quote"]');
+  await click('[data-action="initialize-layout"]');
+  expected = await spec();
+  assert.deepEqual(expected.slides[0].composition.geometryOverrides['portable-quote'], { x: 800, y: 280, width: 640, height: 480 });
+  run.checks.push({ wp2s11: 'gesture-fixture-initialized', geometry: expected.slides[0].composition.geometryOverrides['portable-quote'] });
   const end = await startGesture('drag', 19, 12);
   assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), true);
   await nativeDrop('gesture-cancel', title('portable')); await mouse('mouseReleased', end); await settle();
