@@ -26,7 +26,7 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
   const snapshot = () => evaluate('({events:window.__s11.events,calls:window.__s11.calls,settled:window.__s11.settled,errors:window.__s11.errors})');
   const reset = async (layout = true) => { await navigate(sourcePath); await track(); if (layout) await click('[data-action="layout"]'); };
   // 每次先寫 receipt，再送命令；方法不存在直接失敗，不以 API／synthetic 替代正向。
-  const nativeDrop = async (label, css, files = [filePath], accepted = true) => {
+  const nativeDrop = async (label, css, files = [filePath], accepted = true, releaseHeldPointer = false) => {
     await evaluate(`document.querySelector(${JSON.stringify(css)}).scrollIntoView({block:'center'})`); await settle();
     const p = await position(css), before = await snapshot();
     const record = { wp2s11: label, route: 'CDP Input.dispatchDragEvent', commands: [], before, point: p };
@@ -37,6 +37,8 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
       assert.equal(hit, intended, 'drag point 必須命中指定 slide');
       const data = { items: [], files, dragOperationsMask: 1 };
       for (const type of ['dragEnter', 'dragOver', 'drop']) { await cdp.send('Input.dispatchDragEvent', { type, data, x: p.x, y: p.y }); record.commands.push(type); }
+      // 混合 pointer gesture 與 external drag 時，先釋放測試持有的滑鼠再等待 rAF；canonical 斷言仍可抓出意外提交。
+      if (releaseHeldPointer) { record.beforePointerRelease = await snapshot(); await mouse('mouseReleased', p); record.pointerReleasedBeforeSettle = true; }
       await settle();
       const after = await snapshot(); record.events = after.events.slice(before.events.length); record.optimizerCalls = after.calls - before.calls;
       record.eventCounts = Object.fromEntries(['dragenter', 'dragover', 'drop'].map(type => [type, record.events.filter(e => e.type === type).length]));
@@ -120,9 +122,9 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
   expected = await spec();
   assert.deepEqual(expected.slides[0].composition.geometryOverrides['portable-quote'], { x: 800, y: 280, width: 640, height: 480 });
   run.checks.push({ wp2s11: 'gesture-fixture-initialized', geometry: expected.slides[0].composition.geometryOverrides['portable-quote'] });
-  const end = await startGesture('drag', 19, 12);
+  await startGesture('drag', 19, 12);
   assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), true);
-  await nativeDrop('gesture-cancel', title('portable')); await mouse('mouseReleased', end); await settle();
+  await nativeDrop('gesture-cancel', title('portable'), [filePath], true, true);
   assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), false); await append('portable', 'inserted-image-1');
 
   await reset(); expected = await spec(); await evaluate('window.__s11.defer=true');
