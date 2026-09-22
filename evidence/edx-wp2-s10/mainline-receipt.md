@@ -1,6 +1,6 @@
 # WP2-S10 Mainline acceptance receipt
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT REVIEW GO
 Product: `7f79b58bdd492c90fd1bf6d510c7692492c94a84`
 Branch: codex/edx-wp2-s10-insert-image-ui
 Base/main/origin-main: `d0b9aa05c50b09596920705bbbf4dd632c9137d4`
@@ -38,3 +38,7 @@ Source **6/6**、protected **4/4 MATCH**。ZIP **2,294,310 bytes**，SHA256 `c8d
 主線實看雙viewport：插入／替換／fit controls可辨，pressed/focus與selection/resize handle可見，toolbar無viewport clipping。fixture固定geometry會覆蓋原內容，符合卡片不提供自動避障的範圍；不宣稱整頁自動排版、crop pixel或語意alt產生。20MiB仍由既有export gate，沒有新drop/clipboard/crop/history。
 
 raw logs以gzip＋hash保留，可讀logs只正規化行尾空白。歷史RED/FAIL未覆寫。Mainline acceptance不等於Independent GO；candidate→handoff只control/evidence，工作樹預期只原四protected untracked。
+
+## Independent Review closure
+
+Owner交回GO，P0–P3全0；reviewed SHA `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。Reviewer fresh targeted125/full617 PASS；browser23+23及PGQ單輪16為committed evidence核對。正式紀錄：`evidence/edx-wp2-s10/independent-review.md`。本節取代上文歷史pending狀態；產品與ZIP未變，未merge/push/deploy，S11未開。

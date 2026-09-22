@@ -1,6 +1,6 @@
 # WP2-S10 — layout image insertion chooser
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT REVIEW GO
 Base/main/origin-main: d0b9aa05c50b09596920705bbbf4dd632c9137d4（S8/S9 Independent GO closure已FF整合／push並遠端readback）
 Branch: codex/edx-wp2-s10-insert-image-ui
 traces_to: BACKLOG §10.1 decisions3/4/8、§10.3 WP2、§10.4 insert-element。
@@ -39,3 +39,7 @@ standard固定UI glue；1 clean native Worker/medium/shared sequential product w
 ## Mainline acceptance
 
 Candidate `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。S10 31/scoped181（重疊不相加）/full617，browser23+23、PGQ單輪16、source6/protected4/ZIP/cleanup PASS。歷史FAIL保留，詳receipt。Independent Review pending；S10未merge/push/deploy、未開S11。
+
+## Independent Review closure
+
+Owner交回GO，P0–P3全0；reviewed SHA `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。Reviewer fresh targeted125/full617 PASS；browser23+23及PGQ單輪16為committed evidence核對。正式紀錄：`evidence/edx-wp2-s10/independent-review.md`。本節取代上文歷史pending狀態；產品與ZIP未變，未merge/push/deploy，S11未開。

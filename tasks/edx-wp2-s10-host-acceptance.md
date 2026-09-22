@@ -1,6 +1,6 @@
 # S10 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: PASS / INDEPENDENT REVIEW GO
 Parent: tasks/edx-wp2-s10-insert-image-ui.md
 Product: 7f79b58bdd492c90fd1bf6d510c7692492c94a84；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -13,3 +13,7 @@ Traceback/console/page/network/HTTP/remote0、targetClosed；接四支PGQ --test
 FAIL保留，CDP chooser缺seam回Mainline、不API fallback。S8歷史I/O未解，本卡不改AI Core；同類兩次無進展停止triage，不盲重啟。Mainline全部通過才交Independent Review；不自封GO、S10不merge/push/deploy。
 
 Result：雙viewport各23 check records、errors0/targetClosed；PGQ單輪16/16，Browser.close/supervisor exit0、ownedroot/marker absent；source6/protected4/ZIP MATCH。naturalBlurCount=0，blur/cancel/focusin synthetic、CDP非人工OS dialog。
+
+## Independent Review closure
+
+Owner交回GO，P0–P3全0；reviewed SHA `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。Reviewer fresh targeted125/full617 PASS；browser23+23及PGQ單輪16為committed evidence核對。正式紀錄：`evidence/edx-wp2-s10/independent-review.md`。本節取代上文歷史pending狀態；產品與ZIP未變，未merge/push/deploy，S11未開。

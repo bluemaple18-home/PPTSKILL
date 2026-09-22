@@ -1,6 +1,6 @@
 # WP2-S10 Independent Review Handoff
 
-Status: INDEPENDENT_REVIEW_PENDING
+Status: CLOSED / INDEPENDENT REVIEW GO
 Branch: codex/edx-wp2-s10-insert-image-ui
 Reviewed candidate: `7f79b58bdd492c90fd1bf6d510c7692492c94a84`
 Base/main/origin-main: `d0b9aa05c50b09596920705bbbf4dd632c9137d4`（S8/S9已GO、closure、整合並push）
@@ -22,3 +22,7 @@ Review重點：click捕捉slide與bounded first-free ID、preview取消無commit
 限制：naturalBlurCount兩者0；blur/cancel/focusin synthetic，CDP automation非人工OS dialog。固定geometry不做自動避障、File.name不等於語意alt、3×2 PNG非crop pixel驗收。S8 I/O errno未知，未宣稱修復。缺managed attachment可核對committed evidence並明標非fresh；不可裸啟Chrome或unset sandbox。
 
 請回GO/NO-GO、P0–P3、reviewed SHA與fresh/evidence-only分界。不修改candidate/ZIP/protected，不merge/push/deploy、不開S11。Mainline尚未宣稱Independent GO。
+
+## Independent Review closure
+
+Owner交回GO，P0–P3全0；reviewed SHA `7f79b58bdd492c90fd1bf6d510c7692492c94a84`。Reviewer fresh targeted125/full617 PASS；browser23+23及PGQ單輪16為committed evidence核對。正式紀錄：`evidence/edx-wp2-s10/independent-review.md`。本節取代上文歷史pending狀態；產品與ZIP未變，未merge/push/deploy，S11未開。
