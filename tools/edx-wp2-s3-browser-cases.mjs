@@ -29,7 +29,7 @@ export async function runStyleCopyBrowserCases({ cdp, evaluate, navigate, source
   const apply = async value => {
     await visible('[data-typography-size]'); await click('[data-typography-size]');
     // 真實 number input 焦點與鍵盤選取，避免直接改 canonical API。
-    await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'a', code: 'KeyA', modifiers: process.platform === 'darwin' ? 4 : 2 });
+    await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'a', code: 'KeyA', modifiers: process.platform === 'darwin' ? 4 : 2, commands: ['selectAll'] });
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key: 'a', code: 'KeyA', modifiers: process.platform === 'darwin' ? 4 : 2 });
     await cdp.send('Input.insertText', { text: String(value) });
     assert.equal(await evaluate('document.querySelector("[data-typography-size]").value'), String(value));
