@@ -1,0 +1,42 @@
+[
+  {
+    "name": "pptskill-wp2-s7-browser-cases-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-browser-cases-final-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-diff-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-editor-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-green-1.log",
+    "sha256": "96e052131e2108cd4b310ec50902622ceb280a42a6dd319a29d7892d337c0b3f"
+  },
+  {
+    "name": "pptskill-wp2-s7-interaction-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-red.log",
+    "sha256": "9096429ddfb85fb577538db05ee768f960375e655773882ae7a9e69fd57c050e"
+  },
+  {
+    "name": "pptskill-wp2-s7-runner-check.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "pptskill-wp2-s7-scoped-1.log",
+    "sha256": "b66ebfd0358f661d4f99a7849a9e1d20a08c0168737a2efd10944fb098861621"
+  },
+  {
+    "name": "pptskill-wp2-s7-scoped-final.log",
+    "sha256": "204d518c12428990c0fd20e23fb2aa7ae886d67e63d47b82d9daf60a5fc61206"
+  }
+]

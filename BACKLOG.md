@@ -1026,4 +1026,6 @@ WP2-S6 product2ec3971：repair30/30、full502/502、browser19+19、PGQ單輪16/1
 
 WP2-S6 closure：Independent GO，P0–P3全0；reviewer fresh30/502、browser19+19／PGQ16為committed evidence核對，reviewed code/ZIP未改。
 
-**WP2-S7 IN PROGRESS：** 所選圖片contain/cover顯示方式，沿S6 toolbar與既有replace-asset。tasks/edx-wp2-s7-selected-image-fit.md；無crop model/insert/schema/dependency。S6已推main659e684。
+**WP2-S7 INDEPENDENT REVIEW PENDING：** 所選圖片contain/cover顯示方式，沿S6 toolbar與既有replace-asset。tasks/edx-wp2-s7-selected-image-fit.md；無crop model/insert/schema/dependency。S6已推main659e684。
+
+WP2-S7 candidate501da1b（runtime c2ba9e5）：scoped196/full531、browser35+35、PGQ單輪16/16、ZIP/hash/cleanup PASS。harness Enter首輪FAIL已保留，runtime/ZIP不改；handoff_20260922_edx_wp2_s7_review.md待獨立review。

@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "productSha": "501da1b701f253d943c2879cd32e5108f583cfa1",
+  "sources": 6,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2290712,
+    "sha256": "e29170ba98ec706ef53bfa19d67cf4fb7d91afae4565857397a6638d353ea40d"
+  },
+  "zipRuntimeByteMatch": true,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checks": 35,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "checks": 35,
+      "targetClosed": true
+    }
+  ],
+  "artifactHashesMatched": 24,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s7/host-keyboard-retry/image-fit/1280-s7-selected-image-fit.png",
+      "bytes": 53755,
+      "sha256": "1d5b239aab3a59bd72006cad3a242817aabd6fbcbe53431ff30f0ada9944e0cd",
+      "width": 1280,
+      "height": 720,
+      "visualInspection": "PASS：新控制可見，label/pressed/focus可辨，toolbar未溢出viewport"
+    },
+    {
+      "path": "evidence/edx-wp2-s7/host-keyboard-retry/image-fit/1600-s7-selected-image-fit.png",
+      "bytes": 64605,
+      "sha256": "788efcd562b43b49476deec6b85582fadaa116bcdffbf84e151526fbcb4e14f8",
+      "width": 1600,
+      "height": 900,
+      "visualInspection": "PASS：新控制可見，label/pressed/focus可辨，toolbar未溢出viewport"
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "initialFailurePreserved": true,
+  "limitations": [
+    "S6 CDP chooser automation，非人工 OS dialog；naturalBlurCount=0，blur/cancel synthetic",
+    "S7 圖片為既有1×1 fixture；fit以canonical/computed object-fit及保留不變量驗證，截圖驗新control顯示，非crop pixel驗收"
+  ]
+}

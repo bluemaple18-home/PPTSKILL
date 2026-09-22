@@ -1,6 +1,6 @@
 # WP2-S7 — 所選圖片顯示方式
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base: `659e68489b1fee23101499ee25599eb300a40cb4`（S6已closure／merge／push，remote main及branch MATCH）
 Branch: codex/edx-wp2-s7-selected-image-fit
 traces_to: BACKLOG §10.1 decisions3/7/8、§10.3 WP2、§10.4 replace-asset。
@@ -30,3 +30,7 @@ Worker true RED→最小GREEN。mounted cases：單選第二image、contain/cove
 standard、單一clean Worker/medium/shared sequential writer，runtime限制繼承目前model（未另指定模型）。主線在Worker期間只寫control/evidence，不碰產品。Worker允許runtime/deck-editor.js、runtime/component-interaction.js（必要時）、新tests S7、tools mounted helper／browser runner／新browser cases；其餘需要先帶measured原因回主線。
 禁止browser啟動/attach/runner或fixture runner、full tests glob、ZIP/build/probe、commit/branch、control/evidence/protected、AI Core、schema/vendor/API擴張、merge/push/deploy。只跑明列scoped node tests與node --check。log與report寫/private/tmp/pptskill-wp2-s7-*，保留RED及中間FAIL。改前CodeGraph query；無相關結果限域rg，不索引/安裝。讀使用者bootstrap／rules05/11/24。
 Worker完成stop writing，交changed paths、scoped counts、指令、失敗歷史、未驗範圍；Mainline讀diff並驗收。Independent reviewer另由Owner交付，未開下一Slice。
+
+## Mainline acceptance
+
+Candidate501da1b（runtime c2ba9e5；harness-only Enter修補）。Worker196/196、Mainline full531/531、browser雙viewport35+35、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。首輪FAIL保留；限制見receipt。handoff_20260922_edx_wp2_s7_review.md待Independent Review，未merge/push/deploy。

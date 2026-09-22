@@ -1,0 +1,56 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s7-selected-image-fit.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s7-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2290712,
+      "sha256": "e29170ba98ec706ef53bfa19d67cf4fb7d91afae4565857397a6638d353ea40d"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 74840,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-3c0da2a1d65043fb850226dba1ce030e",
+  "imageFitStarted": true,
+  "imageFitExit": 0,
+  "pgqStarted": true,
+  "pgqExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s7-selected-image-fit.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s7-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2290712,
+      "sha256": "e29170ba98ec706ef53bfa19d67cf4fb7d91afae4565857397a6638d353ea40d"
+    }
+  },
+  "status": "PASS"
+}

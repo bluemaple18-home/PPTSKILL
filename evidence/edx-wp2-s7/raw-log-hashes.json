@@ -1,0 +1,137 @@
+[
+  {
+    "path": "build-dist.log",
+    "rawSha256": "768cf23e79c8f11254a381f30eac1cab2854df22772b86ecff1cf6ca4822e150",
+    "gzipSha256": "df745507e74ab95a333b16ae9d18d99d8bdad81413bdc30cca8e86c74f8db7df"
+  },
+  {
+    "path": "distribution-probe.log",
+    "rawSha256": "25fc574d0dbb90097cc131498dc26cce3738ff24b1b08aa426a3d7aae951f9b9",
+    "gzipSha256": "ce26a334f9b14c1f55bfe32c14f3bf2a13f58339faaad1d42c98b30a4708499f"
+  },
+  {
+    "path": "host-acceptance/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/imageFit.log",
+    "rawSha256": "5a11ddc076e990a302941e8bb26c66ada41f121a2a544581a8d458867b612cbe",
+    "gzipSha256": "caf8bc5a2e703aa0eea3469005c7d5b1e449c1fa3d0c2672fe92a2cf8e5c4e69"
+  },
+  {
+    "path": "host-acceptance/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/launcher.stdout",
+    "rawSha256": "4dced2e5e7ea41312fbc7a00929e0db11143db58a35fe242b8249fa7d90612aa",
+    "gzipSha256": "85891eaa081b9e8ac6c3e4abf9d67cada5145032dbe6f1a9f236239c72b2f6c4"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stderr.log",
+    "rawSha256": "7fa961f9756c9eb4c9433fbb626b635ccdf4d3520719ce0203f23ca46593ca1b",
+    "gzipSha256": "dbc486c682b78689ccacc15ff6dc41b760a24b26fbde660e3b050a867ed6f7be"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-keyboard-retry/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-keyboard-retry/imageFit.log",
+    "rawSha256": "d2e00b631067019544ff732bd7d7ad611019147e9606603eb0845eb468275350",
+    "gzipSha256": "ac7fb4fa6dd9f4db89cfcb4e333e3c102e0dfe985c0bdb8de2e7b249e0439922"
+  },
+  {
+    "path": "host-keyboard-retry/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-keyboard-retry/launcher.stdout",
+    "rawSha256": "38077ebd752b2d53c90788864402d2bc17b0619d0ef5b60e80dc651b25a929d3",
+    "gzipSha256": "4ef04f5295ab9675d7b1185c23b5b8e309358fe9dc61e7c9098ef344a5c5dc28"
+  },
+  {
+    "path": "host-keyboard-retry/lifecycle/evidence/stderr.log",
+    "rawSha256": "6c976b281df0b537095b5c5f55008e88d5d57cc5825064191426f8413e629983",
+    "gzipSha256": "2c06f83e4d2bca3342b5b3c9f7c3e04ef34066102f225f74a8d258a8eff6240f"
+  },
+  {
+    "path": "host-keyboard-retry/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-keyboard-retry/pgq.log",
+    "rawSha256": "440da0a2b3226aef7fca448e200663baf67ea9c7cd847af4af23d83de92f69f9",
+    "gzipSha256": "cd54221acf0250be4613ed105c2b6a262b358b3f344b1c0e2d6da76fcc8e57d2"
+  },
+  {
+    "path": "keyboard-harness-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "nonbrowser.log",
+    "rawSha256": "7fcbfe4eb58187838334bb1e79abbccb4eb4b4ea19a1e98a3aa17431377d3ad9",
+    "gzipSha256": "484812bde41e06157cb32504e280fad817c79e95718c74948df7835e376947e9"
+  },
+  {
+    "path": "pptskill-wp2-s7-browser-cases-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-browser-cases-final-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-diff-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-editor-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-green-1.log",
+    "rawSha256": "96e052131e2108cd4b310ec50902622ceb280a42a6dd319a29d7892d337c0b3f",
+    "gzipSha256": "66fb94dd4c8e02c73e894aa5f1a04048b9fdc451220bba742c438aa2b03c8ce8"
+  },
+  {
+    "path": "pptskill-wp2-s7-interaction-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-red.log",
+    "rawSha256": "9096429ddfb85fb577538db05ee768f960375e655773882ae7a9e69fd57c050e",
+    "gzipSha256": "023b8c900006b2f603ce2ba5ddf0906fc9030b8fcf56cc20ec5f3fc4c3c94b83"
+  },
+  {
+    "path": "pptskill-wp2-s7-runner-check.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "pptskill-wp2-s7-scoped-1.log",
+    "rawSha256": "b66ebfd0358f661d4f99a7849a9e1d20a08c0168737a2efd10944fb098861621",
+    "gzipSha256": "b47b9214f6a909217d1905d1c919ce5b9e17d9a34a73f31c6ecf118f2ebd820c"
+  },
+  {
+    "path": "pptskill-wp2-s7-scoped-final.log",
+    "rawSha256": "204d518c12428990c0fd20e23fb2aa7ae886d67e63d47b82d9daf60a5fc61206",
+    "gzipSha256": "423a73f8b26bcfbfaabdf7817ef5a91b577efee1df7067f15e5be08178dcfa55"
+  }
+]

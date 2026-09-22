@@ -1,0 +1,143 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/source.html",
+  "sourceSha256": "651154887e0e9a690f2cfe15af6f603acaa2987e716ef3d7ab5f5bf41d7ab51e",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s7": "pointer-fit",
+          "fit": "contain",
+          "rect": {
+            "x": 648.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s7": "pointer-fit",
+          "fit": "cover",
+          "rect": {
+            "x": 713.9375,
+            "y": 675.203125,
+            "width": 48,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s7": "pointer-fit",
+          "fit": "cover",
+          "rect": {
+            "x": 713.9375,
+            "y": 675.203125,
+            "width": 48,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s7": "pointer-fit",
+          "fit": "contain",
+          "rect": {
+            "x": 648.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s7": "pointer-fit",
+          "fit": "contain",
+          "rect": {
+            "x": 648.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "hit": true
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-legacy-selected.html",
+          "bytes": 509070,
+          "sha256": "5ab044c82f853eacab24f6838c9b66e99600c84382f84e7d215fba7079a03d62"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-preview-export.html",
+          "bytes": 509357,
+          "sha256": "fc051c879a3d2db83f10bdd837afe11a4cef9cb951455bf6844140f22db6821b"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-cancel.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-noop.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-invalid.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-invalid-resize.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-play-mode.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-export.html",
+          "bytes": 509357,
+          "sha256": "1b62857bea45e465fff1e6ab36e9a5f70454d70843471fd6bdc62363f67e5593"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s7/host-acceptance/image-fit/1280-reopen-export.html",
+          "bytes": 509357,
+          "sha256": "e38eb69ad3b244ea7dd4af0f57f0865153f6ddaffa30acd2fb2e81bf46cd91c3"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: fit-only 全 DeckSpec preservation\n+ actual - expected\n... Skipped lines\n\n  {\n    deckId: 'pptskill-typography-world',\n    language: 'zh-Hant',\n    schemaVersion: '1.0',\n    slides: [\n...\n              dataUri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=',\n+             fit: 'contain',\n-             fit: 'cover',\n              id: 'asset-second',\n              type: 'image'\n            }\n          ],\n          keyPointIds: [\n\n    at verify (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s7-browser-cases.mjs:22:12)\n    at async runImageFitBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s7-browser-cases.mjs:57:25)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:197:60",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: fit-only 全 DeckSpec preservation\n+ actual - expected\n... Skipped lines\n\n  {\n    deckId: 'pptskill-typography-world',\n    language: 'zh-Hant',\n    schemaVersion: '1.0',\n    slides: [\n...\n              dataUri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=',\n+             fit: 'contain',\n-             fit: 'cover',\n              id: 'asset-second',\n              type: 'image'\n            }\n          ],\n          keyPointIds: [\n\n    at verify (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s7-browser-cases.mjs:22:12)\n    at async runImageFitBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s7-browser-cases.mjs:57:25)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:197:60"
+}

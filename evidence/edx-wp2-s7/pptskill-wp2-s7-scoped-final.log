@@ -1,0 +1,1186 @@
+TAP version 13
+# Subtest: export cleanup 只移除 bounded editor chrome roots
+ok 1 - export cleanup 只移除 bounded editor chrome roots
+  ---
+  duration_ms: 2.195917
+  type: 'test'
+  ...
+# Subtest: editor chrome contract 誤標 presentation truth 時 fail loud
+ok 2 - editor chrome contract 誤標 presentation truth 時 fail loud
+  ---
+  duration_ms: 1.084666
+  type: 'test'
+  ...
+# Subtest: editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+ok 3 - editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+  ---
+  duration_ms: 0.219083
+  type: 'test'
+  ...
+# Subtest: export clone root 自己被標成 editor chrome 時也不可漏出
+ok 4 - export clone root 自己被標成 editor chrome 時也不可漏出
+  ---
+  duration_ms: 0.267584
+  type: 'test'
+  ...
+# Subtest: 正式 browser exporter 共用同一 cleanup seam
+ok 5 - 正式 browser exporter 共用同一 cleanup seam
+  ---
+  duration_ms: 2.127416
+  type: 'test'
+  ...
+# Subtest: mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+ok 6 - mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+  ---
+  duration_ms: 19.946167
+  type: 'test'
+  ...
+# Subtest: scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+ok 7 - scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 4.531042
+  type: 'test'
+  ...
+# Subtest: scale 1 drag/SE resize preview ephemeral，release 至多一次
+ok 8 - scale 1 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 2.311625
+  type: 'test'
+  ...
+# Subtest: no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+ok 9 - no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+  ---
+  duration_ms: 24.877458
+  type: 'test'
+  ...
+# Subtest: SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+ok 10 - SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+  ---
+  duration_ms: 2.154459
+  type: 'test'
+  ...
+# Subtest: stale target 刪除不提交；切選取取消 preview
+ok 11 - stale target 刪除不提交；切選取取消 preview
+  ---
+  duration_ms: 5.555083
+  type: 'test'
+  ...
+# Subtest: export 只移除 control 對應 style，canonical component 不作 chrome root
+ok 12 - export 只移除 control 對應 style，canonical component 不作 chrome root
+  ---
+  duration_ms: 0.549209
+  type: 'test'
+  ...
+# Subtest: mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+ok 13 - mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 73.037334
+  type: 'test'
+  ...
+# Subtest: mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+ok 14 - mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 195.454417
+  type: 'test'
+  ...
+# Subtest: mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+ok 15 - mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 699.08825
+  type: 'test'
+  ...
+# Subtest: mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+ok 16 - mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+  ---
+  duration_ms: 152.979542
+  type: 'test'
+  ...
+# Subtest: mounted semantic public text 使 gesture stale，不覆寫新 state
+ok 17 - mounted semantic public text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 45.2445
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy text 使 gesture stale，不覆寫新 state
+ok 18 - mounted semantic legacy text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 48.318709
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy component 使 gesture stale，不覆寫新 state
+ok 19 - mounted semantic legacy component 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 53.519875
+  type: 'test'
+  ...
+# Subtest: mounted semantic geometry 使 gesture stale，不覆寫新 state
+ok 20 - mounted semantic geometry 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 55.179333
+  type: 'test'
+  ...
+# Subtest: mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+ok 21 - mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 51.86325
+  type: 'test'
+  ...
+# Subtest: mounted semantic asset replace 使 gesture stale，不覆寫新 state
+ok 22 - mounted semantic asset replace 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 16.762625
+  type: 'test'
+  ...
+# Subtest: mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+ok 23 - mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 42.840125
+  type: 'test'
+  ...
+# Subtest: mounted semantic component text seam 使 gesture stale，不覆寫新 state
+ok 24 - mounted semantic component text seam 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 35.747666
+  type: 'test'
+  ...
+# Subtest: mounted semantic change then revert 使 gesture stale，不覆寫新 state
+ok 25 - mounted semantic change then revert 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 66.957917
+  type: 'test'
+  ...
+# Subtest: mounted semantic duplicate 使 gesture stale，不覆寫新 state
+ok 26 - mounted semantic duplicate 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 51.985708
+  type: 'test'
+  ...
+# Subtest: mounted reorder/delete/unrelated slide mutation 取消 gesture
+ok 27 - mounted reorder/delete/unrelated slide mutation 取消 gesture
+  ---
+  duration_ms: 144.225209
+  type: 'test'
+  ...
+# Subtest: mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+ok 28 - mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+  ---
+  duration_ms: 61.953125
+  type: 'test'
+  ...
+# Subtest: mounted noop image/text、invalid component patch 不假 mutation
+ok 29 - mounted noop image/text、invalid component patch 不假 mutation
+  ---
+  duration_ms: 52.160625
+  type: 'test'
+  ...
+# Subtest: mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+ok 30 - mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+  ---
+  duration_ms: 61.263375
+  type: 'test'
+  ...
+# Subtest: mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+ok 31 - mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+  ---
+  duration_ms: 173.653
+  type: 'test'
+  ...
+# Subtest: S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y
+ok 32 - S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y
+  ---
+  duration_ms: 23.683834
+  type: 'test'
+  ...
+# Subtest: S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp
+ok 33 - S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp
+  ---
+  duration_ms: 5.3675
+  type: 'test'
+  ...
+# Subtest: S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏
+ok 34 - S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏
+  ---
+  duration_ms: 66.13075
+  type: 'test'
+  ...
+# Subtest: S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理
+ok 35 - S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理
+  ---
+  duration_ms: 40.178125
+  type: 'test'
+  ...
+# Subtest: S5 mounted no mode／selection／geometry／deleted 與原子 bounds
+ok 36 - S5 mounted no mode／selection／geometry／deleted 與原子 bounds
+  ---
+  duration_ms: 35.577334
+  type: 'test'
+  ...
+# Subtest: S5 mounted drag 中按鍵不取消／不提交 gesture
+ok 37 - S5 mounted drag 中按鍵不取消／不提交 gesture
+  ---
+  duration_ms: 11.109584
+  type: 'test'
+  ...
+# Subtest: S5 mounted resize 中按鍵不取消／不提交 gesture
+ok 38 - S5 mounted resize 中按鍵不取消／不提交 gesture
+  ---
+  duration_ms: 10.342084
+  type: 'test'
+  ...
+# Subtest: S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓
+ok 39 - S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓
+  ---
+  duration_ms: 31.193333
+  type: 'test'
+  ...
+# Subtest: S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消
+ok 40 - S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消
+  ---
+  duration_ms: 20.799
+  type: 'test'
+  ...
+# Subtest: S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消
+ok 41 - S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消
+  ---
+  duration_ms: 22.802583
+  type: 'test'
+  ...
+# Subtest: S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 42 - S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 78.023
+  type: 'test'
+  ...
+# Subtest: S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 43 - S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 29.011375
+  type: 'test'
+  ...
+# Subtest: S7 cancel 共用取消尾隨 click 防護
+ok 44 - S7 cancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 25.556375
+  type: 'test'
+  ...
+# Subtest: S7 pointercancel 共用取消尾隨 click 防護
+ok 45 - S7 pointercancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 35.717958
+  type: 'test'
+  ...
+# Subtest: S7 blur 共用取消尾隨 click 防護
+ok 46 - S7 blur 共用取消尾隨 click 防護
+  ---
+  duration_ms: 22.441333
+  type: 'test'
+  ...
+# Subtest: S7 scroll 共用取消尾隨 click 防護
+ok 47 - S7 scroll 共用取消尾隨 click 防護
+  ---
+  duration_ms: 13.949
+  type: 'test'
+  ...
+# Subtest: S7 resize 共用取消尾隨 click 防護
+ok 48 - S7 resize 共用取消尾隨 click 防護
+  ---
+  duration_ms: 14.010375
+  type: 'test'
+  ...
+# Subtest: S7 selection 共用取消尾隨 click 防護
+ok 49 - S7 selection 共用取消尾隨 click 防護
+  ---
+  duration_ms: 44.762209
+  type: 'test'
+  ...
+# Subtest: S7 mode 共用取消尾隨 click 防護
+ok 50 - S7 mode 共用取消尾隨 click 防護
+  ---
+  duration_ms: 24.141292
+  type: 'test'
+  ...
+# Subtest: S7 text 共用取消尾隨 click 防護
+ok 51 - S7 text 共用取消尾隨 click 防護
+  ---
+  duration_ms: 185.0795
+  type: 'test'
+  ...
+# Subtest: S7 toggle 共用取消尾隨 click 防護
+ok 52 - S7 toggle 共用取消尾隨 click 防護
+  ---
+  duration_ms: 163.373417
+  type: 'test'
+  ...
+# Subtest: S7 replacement 共用取消尾隨 click 防護
+ok 53 - S7 replacement 共用取消尾隨 click 防護
+  ---
+  duration_ms: 26.472125
+  type: 'test'
+  ...
+# Subtest: S7 stale-update 共用取消尾隨 click 防護
+ok 54 - S7 stale-update 共用取消尾隨 click 防護
+  ---
+  duration_ms: 25.940166
+  type: 'test'
+  ...
+# Subtest: S7 stale-release 共用取消尾隨 click 防護
+ok 55 - S7 stale-release 共用取消尾隨 click 防護
+  ---
+  duration_ms: 57.03375
+  type: 'test'
+  ...
+# Subtest: S7 invalid 共用取消尾隨 click 防護
+ok 56 - S7 invalid 共用取消尾隨 click 防護
+  ---
+  duration_ms: 22.034125
+  type: 'test'
+  ...
+# Subtest: S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+ok 57 - S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+  ---
+  duration_ms: 9.727583
+  type: 'test'
+  ...
+# Subtest: S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+ok 58 - S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+  ---
+  duration_ms: 62.04775
+  type: 'test'
+  ...
+# Subtest: S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+ok 59 - S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+  ---
+  duration_ms: 31.125542
+  type: 'test'
+  ...
+# Subtest: S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+ok 60 - S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+  ---
+  duration_ms: 42.376916
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+ok 61 - S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+  ---
+  duration_ms: 27.114959
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+ok 62 - S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+  ---
+  duration_ms: 15.194625
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+ok 63 - S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+  ---
+  duration_ms: 14.900584
+  type: 'test'
+  ...
+# Subtest: S7 destroy 移除 pointerdown listener，重複 teardown 安全
+ok 64 - S7 destroy 移除 pointerdown listener，重複 teardown 安全
+  ---
+  duration_ms: 17.64825
+  type: 'test'
+  ...
+# Subtest: S7 snap-layout {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 65 - S7 snap-layout {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 85.352417
+  type: 'test'
+  ...
+# Subtest: S7 edit {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 66 - S7 edit {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 18.489084
+  type: 'test'
+  ...
+# Subtest: S7 selection {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 67 - S7 selection {"isTrusted":false,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 12.918625
+  type: 'test'
+  ...
+# Subtest: S7 snap-layout {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 68 - S7 snap-layout {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 27.19525
+  type: 'test'
+  ...
+# Subtest: S7 edit {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 69 - S7 edit {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 19.277792
+  type: 'test'
+  ...
+# Subtest: S7 selection {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+ok 70 - S7 selection {"isTrusted":true,"detail":0} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 47.334625
+  type: 'test'
+  ...
+# Subtest: S7 snap-layout {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+ok 71 - S7 snap-layout {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 47.603625
+  type: 'test'
+  ...
+# Subtest: S7 edit {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+ok 72 - S7 edit {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 15.731917
+  type: 'test'
+  ...
+# Subtest: S7 selection {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+ok 73 - S7 selection {"isTrusted":true,"detail":1} 在 pinned blocker 前取消，原 handler 可達
+  ---
+  duration_ms: 16.51375
+  type: 'test'
+  ...
+# Subtest: S7 capture 不攔截非本卡路由 outside
+ok 74 - S7 capture 不攔截非本卡路由 outside
+  ---
+  duration_ms: 13.762792
+  type: 'test'
+  ...
+# Subtest: S7 capture 不攔截非本卡路由 unrelated-action
+ok 75 - S7 capture 不攔截非本卡路由 unrelated-action
+  ---
+  duration_ms: 10.884042
+  type: 'test'
+  ...
+# Subtest: S7 capture 不攔截非本卡路由 vendor-chrome
+ok 76 - S7 capture 不攔截非本卡路由 vendor-chrome
+  ---
+  duration_ms: 20.577416
+  type: 'test'
+  ...
+# Subtest: S7 routing listener 與 vendor blocker 在重複 destroy 後均清除
+ok 77 - S7 routing listener 與 vendor blocker 在重複 destroy 後均清除
+  ---
+  duration_ms: 28.315625
+  type: 'test'
+  ...
+# Subtest: S7 cancel 取消 preview，proxy 與 vendor 清理
+ok 78 - S7 cancel 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 60.307375
+  type: 'test'
+  ...
+# Subtest: S7 toggle 取消 preview，proxy 與 vendor 清理
+ok 79 - S7 toggle 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 21.152708
+  type: 'test'
+  ...
+# Subtest: S7 mode 取消 preview，proxy 與 vendor 清理
+ok 80 - S7 mode 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 17.865333
+  type: 'test'
+  ...
+# Subtest: S7 text 取消 preview，proxy 與 vendor 清理
+ok 81 - S7 text 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 19.696375
+  type: 'test'
+  ...
+# Subtest: S7 escape 取消 preview，proxy 與 vendor 清理
+ok 82 - S7 escape 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 20.270042
+  type: 'test'
+  ...
+# Subtest: S7 pointercancel 取消 preview，proxy 與 vendor 清理
+ok 83 - S7 pointercancel 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 9.983042
+  type: 'test'
+  ...
+# Subtest: S7 blur 取消 preview，proxy 與 vendor 清理
+ok 84 - S7 blur 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 15.825875
+  type: 'test'
+  ...
+# Subtest: S7 scroll 取消 preview，proxy 與 vendor 清理
+ok 85 - S7 scroll 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 49.046791
+  type: 'test'
+  ...
+# Subtest: S7 resize 取消 preview，proxy 與 vendor 清理
+ok 86 - S7 resize 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 27.958084
+  type: 'test'
+  ...
+# Subtest: S7 stale 取消 preview，proxy 與 vendor 清理
+ok 87 - S7 stale 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 29.88525
+  type: 'test'
+  ...
+# Subtest: S7 deleted 取消 preview，proxy 與 vendor 清理
+ok 88 - S7 deleted 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 12.187875
+  type: 'test'
+  ...
+# Subtest: S7 replacement 取消 preview，proxy 與 vendor 清理
+ok 89 - S7 replacement 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 15.406167
+  type: 'test'
+  ...
+# Subtest: S7 destroy 取消 preview，proxy 與 vendor 清理
+ok 90 - S7 destroy 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 84.54375
+  type: 'test'
+  ...
+# Subtest: S7 drag bounds/minimum/finite 原子拒絕
+ok 91 - S7 drag bounds/minimum/finite 原子拒絕
+  ---
+  duration_ms: 275.77775
+  type: 'test'
+  ...
+# Subtest: S7 resize bounds/minimum/finite 原子拒絕
+ok 92 - S7 resize bounds/minimum/finite 原子拒絕
+  ---
+  duration_ms: 83.496417
+  type: 'test'
+  ...
+# Subtest: S7 keyboard 仍1/10px、guardedEscape／IME／input 不取消 snap gesture
+ok 93 - S7 keyboard 仍1/10px、guardedEscape／IME／input 不取消 snap gesture
+  ---
+  duration_ms: 30.037917
+  type: 'test'
+  ...
+# Subtest: S7 public begin/update/finish：preview 0筆、release 1筆、return/cancel/stale 0筆
+ok 94 - S7 public begin/update/finish：preview 0筆、release 1筆、return/cancel/stale 0筆
+  ---
+  duration_ms: 6.768667
+  type: 'test'
+  ...
+# Subtest: S7 mounted 1MiB snap preview 不序列化、不讀 payload
+ok 95 - S7 mounted 1MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 123.461458
+  type: 'test'
+  ...
+# Subtest: S7 mounted 6MiB snap preview 不序列化、不讀 payload
+ok 96 - S7 mounted 6MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 168.520666
+  type: 'test'
+  ...
+# Subtest: S7 mounted 12MiB snap preview 不序列化、不讀 payload
+ok 97 - S7 mounted 12MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 220.329917
+  type: 'test'
+  ...
+# Subtest: S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用
+ok 98 - S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用
+  ---
+  duration_ms: 9.561291
+  type: 'test'
+  ...
+# Subtest: S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy
+ok 99 - S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy
+  ---
+  duration_ms: 10.879833
+  type: 'test'
+  ...
+# Subtest: S7 SE 固定左上 anchor；preview/cancel 不清 presentation transform
+ok 100 - S7 SE 固定左上 anchor；preview/cancel 不清 presentation transform
+  ---
+  duration_ms: 10.676083
+  type: 'test'
+  ...
+# Subtest: S7 0.8 drag vendor canonical payload、preview/export、單次 release
+ok 101 - S7 0.8 drag vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 32.80925
+  type: 'test'
+  ...
+# Subtest: S7 0.8 drag 零與返回原點不得採用 vendor 起始修正
+ok 102 - S7 0.8 drag 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 25.784166
+  type: 'test'
+  ...
+# Subtest: S7 0.8 resize vendor canonical payload、preview/export、單次 release
+ok 103 - S7 0.8 resize vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 21.454209
+  type: 'test'
+  ...
+# Subtest: S7 0.8 resize 零與返回原點不得採用 vendor 起始修正
+ok 104 - S7 0.8 resize 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 21.247
+  type: 'test'
+  ...
+# Subtest: S7 1 drag vendor canonical payload、preview/export、單次 release
+ok 105 - S7 1 drag vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 17.978709
+  type: 'test'
+  ...
+# Subtest: S7 1 drag 零與返回原點不得採用 vendor 起始修正
+ok 106 - S7 1 drag 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 20.736584
+  type: 'test'
+  ...
+# Subtest: S7 1 resize vendor canonical payload、preview/export、單次 release
+ok 107 - S7 1 resize vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 19.098042
+  type: 'test'
+  ...
+# Subtest: S7 1 resize 零與返回原點不得採用 vendor 起始修正
+ok 108 - S7 1 resize 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 20.301333
+  type: 'test'
+  ...
+# Subtest: WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export
+ok 109 - WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export
+  ---
+  duration_ms: 189.09275
+  type: 'test'
+  ...
+# Subtest: WP2-S4 Node strict payload 原子拒絕且不執行 getter
+ok 110 - WP2-S4 Node strict payload 原子拒絕且不執行 getter
+  ---
+  duration_ms: 179.937875
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export
+ok 111 - WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export
+  ---
+  duration_ms: 49.367875
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable strict payload 原子拒絕且不執行 getter
+ok 112 - WP2-S4 portable strict payload 原子拒絕且不執行 getter
+  ---
+  duration_ms: 34.820291
+  type: 'test'
+  ...
+# Subtest: WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省
+ok 113 - WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省
+  ---
+  duration_ms: 1.81825
+  type: 'test'
+  ...
+# Subtest: WP2-S4 registry metadata 與 Node/portable 一致
+ok 114 - WP2-S4 registry metadata 與 Node/portable 一致
+  ---
+  duration_ms: 9.187125
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable 局部 DOM、no-op revision、export/reparse
+ok 115 - WP2-S4 portable 局部 DOM、no-op revision、export/reparse
+  ---
+  duration_ms: 21.934833
+  type: 'test'
+  ...
+# Subtest: WP2-S4 DOM 投影例外還原 canonical 與原 attributes
+ok 116 - WP2-S4 DOM 投影例外還原 canonical 與原 attributes
+  ---
+  duration_ms: 13.298417
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留
+ok 117 - WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留
+  ---
+  duration_ms: 46.006542
+  type: 'test'
+  ...
+# Subtest: WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕
+ok 118 - WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕
+  ---
+  duration_ms: 41.226875
+  type: 'test'
+  ...
+# Subtest: WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale
+ok 119 - WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale
+  ---
+  duration_ms: 160.641958
+  type: 'test'
+  ...
+# Subtest: WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加
+ok 120 - WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加
+  ---
+  duration_ms: 7.639458
+  type: 'test'
+  ...
+# Subtest: WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失
+ok 121 - WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失
+  ---
+  duration_ms: 14.070667
+  type: 'test'
+  ...
+# Subtest: WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效
+ok 122 - WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效
+  ---
+  duration_ms: 17.924291
+  type: 'test'
+  ...
+# Subtest: WP2-S5 明示第二張 File target 不得取第一張
+ok 123 - WP2-S5 明示第二張 File target 不得取第一張
+  ---
+  duration_ms: 87.909333
+  type: 'test'
+  ...
+# Subtest: WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip
+ok 124 - WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 27.420625
+  type: 'test'
+  ...
+# Subtest: WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip
+ok 125 - WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 12.7635
+  type: 'test'
+  ...
+# Subtest: WP2-S5 second、局部投影、完整欄位保留與 export roundtrip
+ok 126 - WP2-S5 second、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 11.31125
+  type: 'test'
+  ...
+# Subtest: WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip
+ok 127 - WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 62.127583
+  type: 'test'
+  ...
+# Subtest: WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip
+ok 128 - WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 14.708833
+  type: 'test'
+  ...
+# Subtest: WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip
+ok 129 - WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 25.007583
+  type: 'test'
+  ...
+# Subtest: WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation
+ok 130 - WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation
+  ---
+  duration_ms: 49.621042
+  type: 'test'
+  ...
+# Subtest: WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image
+ok 131 - WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image
+  ---
+  duration_ms: 23.342583
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending reject 原子拒絕
+ok 132 - WP2-S5 pending reject 原子拒絕
+  ---
+  duration_ms: 6.622666
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending unsafe 原子拒絕
+ok 133 - WP2-S5 pending unsafe 原子拒絕
+  ---
+  duration_ms: 10.31725
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending null-result 原子拒絕
+ok 134 - WP2-S5 pending null-result 原子拒絕
+  ---
+  duration_ms: 3.86475
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-warnings 原子拒絕
+ok 135 - WP2-S5 pending missing-warnings 原子拒絕
+  ---
+  duration_ms: 8.378166
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-slide 原子拒絕
+ok 136 - WP2-S5 pending missing-slide 原子拒絕
+  ---
+  duration_ms: 8.338791
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-image 原子拒絕
+ok 137 - WP2-S5 pending missing-image 原子拒絕
+  ---
+  duration_ms: 5.350125
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending type-change 原子拒絕
+ok 138 - WP2-S5 pending type-change 原子拒絕
+  ---
+  duration_ms: 7.234083
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-dom 原子拒絕
+ok 139 - WP2-S5 pending missing-dom 原子拒絕
+  ---
+  duration_ms: 18.42525
+  type: 'test'
+  ...
+# Subtest: WP2-S5 explicit File same-value no-op gesture
+ok 140 - WP2-S5 explicit File same-value no-op gesture
+  ---
+  duration_ms: 32.286459
+  type: 'test'
+  ...
+# Subtest: WP2-S5 explicit File 真修改 stale gesture
+ok 141 - WP2-S5 explicit File 真修改 stale gesture
+  ---
+  duration_ms: 16.39225
+  type: 'test'
+  ...
+# Subtest: WP2-S5 長 component ID 使用 resolved stable identity
+ok 142 - WP2-S5 長 component ID 使用 resolved stable identity
+  ---
+  duration_ms: 6.069
+  type: 'test'
+  ...
+# Subtest: S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+ok 143 - S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+  ---
+  duration_ms: 122.299
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=false
+ok 144 - S6 capture → natural blur → change 保留第二圖，snap=false
+  ---
+  duration_ms: 31.835708
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=true
+ok 145 - S6 capture → natural blur → change 保留第二圖，snap=true
+  ---
+  duration_ms: 49.853
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+ok 146 - S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 34.202333
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+ok 147 - S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 17.169042
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+ok 148 - S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 21.804667
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+ok 149 - S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 16.718541
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+ok 150 - S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 19.258083
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+ok 151 - S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 19.303
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+ok 152 - S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 13.519083
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+ok 153 - S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 24.700334
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+ok 154 - S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 16.591458
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+ok 155 - S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 16.226916
+  type: 'test'
+  ...
+# Subtest: S6 cancel 重設 value，同檔可再次選取
+ok 156 - S6 cancel 重設 value，同檔可再次選取
+  ---
+  duration_ms: 23.759
+  type: 'test'
+  ...
+# Subtest: S6 empty 重設 value，同檔可再次選取
+ok 157 - S6 empty 重設 value，同檔可再次選取
+  ---
+  duration_ms: 27.0545
+  type: 'test'
+  ...
+# Subtest: S6 success 重設 value，同檔可再次選取
+ok 158 - S6 success 重設 value，同檔可再次選取
+  ---
+  duration_ms: 20.376583
+  type: 'test'
+  ...
+# Subtest: S6 failure 重設 value，同檔可再次選取
+ok 159 - S6 failure 重設 value，同檔可再次選取
+  ---
+  duration_ms: 16.545417
+  type: 'test'
+  ...
+# Subtest: S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+ok 160 - S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+  ---
+  duration_ms: 20.639875
+  type: 'test'
+  ...
+# Subtest: S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+ok 161 - S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+  ---
+  duration_ms: 23.653167
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+ok 162 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+  ---
+  duration_ms: 12.2185
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+ok 163 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+  ---
+  duration_ms: 14.740334
+  type: 'test'
+  ...
+# Subtest: S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+ok 164 - S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+  ---
+  duration_ms: 23.289708
+  type: 'test'
+  ...
+# Subtest: S6 picker 等待檔案時唯讀 export 不取消 pending target
+ok 165 - S6 picker 等待檔案時唯讀 export 不取消 pending target
+  ---
+  duration_ms: 18.323208
+  type: 'test'
+  ...
+# Subtest: S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+ok 166 - S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+  ---
+  duration_ms: 10.153416
+  type: 'test'
+  ...
+# Subtest: S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+ok 167 - S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+  ---
+  duration_ms: 13.423791
+  type: 'test'
+  ...
+# Subtest: S7 native group 與裁邊說明由 bootstrap markup 提供
+ok 168 - S7 native group 與裁邊說明由 bootstrap markup 提供
+  ---
+  duration_ms: 3.610209
+  type: 'test'
+  ...
+# Subtest: S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation
+ok 169 - S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation
+  ---
+  duration_ms: 54.767959
+  type: 'test'
+  ...
+# Subtest: S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri
+ok 170 - S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri
+  ---
+  duration_ms: 16.8805
+  type: 'test'
+  ...
+# Subtest: S7 nonimage 隱藏／disable 並拒絕 stale target
+ok 171 - S7 nonimage 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 32.110417
+  type: 'test'
+  ...
+# Subtest: S7 multi 隱藏／disable 並拒絕 stale target
+ok 172 - S7 multi 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 23.818041
+  type: 'test'
+  ...
+# Subtest: S7 clear 隱藏／disable 並拒絕 stale target
+ok 173 - S7 clear 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 13.444083
+  type: 'test'
+  ...
+# Subtest: S7 slide 隱藏／disable 並拒絕 stale target
+ok 174 - S7 slide 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 17.221542
+  type: 'test'
+  ...
+# Subtest: S7 edit 隱藏／disable 並拒絕 stale target
+ok 175 - S7 edit 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 12.878833
+  type: 'test'
+  ...
+# Subtest: S7 play 隱藏／disable 並拒絕 stale target
+ok 176 - S7 play 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 15.050208
+  type: 'test'
+  ...
+# Subtest: S7 delete 隱藏／disable 並拒絕 stale target
+ok 177 - S7 delete 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 13.818666
+  type: 'test'
+  ...
+# Subtest: S7 destroy 隱藏／disable 並拒絕 stale target
+ok 178 - S7 destroy 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 21.185166
+  type: 'test'
+  ...
+# Subtest: S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize
+ok 179 - S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize
+  ---
+  duration_ms: 231.280125
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消
+ok 180 - S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 15.797042
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消
+ok 181 - S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 14.396875
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消
+ok 182 - S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 22.823959
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消
+ok 183 - S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 22.886625
+  type: 'test'
+  ...
+# Subtest: S7 drag/pointer/snap=false 取消 preview 後只提交 fit
+ok 184 - S7 drag/pointer/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 15.319583
+  type: 'test'
+  ...
+# Subtest: S7 drag/keyboard/snap=false 取消 preview 後只提交 fit
+ok 185 - S7 drag/keyboard/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 10.924583
+  type: 'test'
+  ...
+# Subtest: S7 resize/pointer/snap=false 取消 preview 後只提交 fit
+ok 186 - S7 resize/pointer/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 12.668417
+  type: 'test'
+  ...
+# Subtest: S7 resize/keyboard/snap=false 取消 preview 後只提交 fit
+ok 187 - S7 resize/keyboard/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 12.407541
+  type: 'test'
+  ...
+# Subtest: S7 drag/pointer/snap=true 取消 preview 後只提交 fit
+ok 188 - S7 drag/pointer/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 11.988792
+  type: 'test'
+  ...
+# Subtest: S7 drag/keyboard/snap=true 取消 preview 後只提交 fit
+ok 189 - S7 drag/keyboard/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 11.201208
+  type: 'test'
+  ...
+# Subtest: S7 resize/pointer/snap=true 取消 preview 後只提交 fit
+ok 190 - S7 resize/pointer/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 11.525708
+  type: 'test'
+  ...
+# Subtest: S7 resize/keyboard/snap=true 取消 preview 後只提交 fit
+ok 191 - S7 resize/keyboard/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 12.213042
+  type: 'test'
+  ...
+# Subtest: S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard
+ok 192 - S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard
+  ---
+  duration_ms: 8.461375
+  type: 'test'
+  ...
+# Subtest: S7 default no-op 亦取消 preview 並保留 selection snap=false
+ok 193 - S7 default no-op 亦取消 preview 並保留 selection snap=false
+  ---
+  duration_ms: 11.804416
+  type: 'test'
+  ...
+# Subtest: S7 default no-op 亦取消 preview 並保留 selection snap=true
+ok 194 - S7 default no-op 亦取消 preview 並保留 selection snap=true
+  ---
+  duration_ms: 11.244208
+  type: 'test'
+  ...
+# Subtest: S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖
+ok 195 - S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖
+  ---
+  duration_ms: 9.235375
+  type: 'test'
+  ...
+# Subtest: S7 export 只保留 fit；從匯出 DeckSpec remount 可切換
+ok 196 - S7 export 只保留 fit；從匯出 DeckSpec remount 可切換
+  ---
+  duration_ms: 23.016084
+  type: 'test'
+  ...
+1..196
+# tests 196
+# suites 0
+# pass 196
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2388.192667
