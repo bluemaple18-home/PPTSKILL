@@ -1,3 +1,4 @@
+import { runStyleCopyBrowserCases } from './edx-wp2-s3-browser-cases.mjs';
 import { runTypographyBrowserCases } from './edx-wp2-s2-browser-cases.mjs';
 import { runSnapBrowserCases } from './edx-wp1-s7-browser-cases.mjs';
 import { runSelectionBrowserCases } from './edx-wp1-s8-browser-cases.mjs';
@@ -27,7 +28,7 @@ const input = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json
 input.slides = input.slides.filter(slide => slide.id === 'portable');
 input.slides[0].content.components[0].text = '座標保持一致';
 if (perfRegression) input.slides[0].content.components.push({ id: 'perf-image', type: 'image', alt: '成本回歸圖片', dataUri: 'data:image/svg+xml;base64,' + Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>').toString('base64') });
-if (process.argv.includes('--typography-regression')) {
+if (process.argv.includes('--typography-regression') || process.argv.includes('--style-copy-regression')) {
   input.slides[0].composition.motion = { effect: 'underline-sweep', role: 'text', replay: 'slide-visible', staggerMs: 90, targets: [{ ref: 'content.title' }, { ref: 'content.subtitle' }] };
   const other = structuredClone(input.slides[0]); other.id = 'typography-other'; input.slides.push(other);
 }
@@ -184,6 +185,7 @@ try {
       if (process.argv.includes('--distribution-regression')) await runDistributionBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--equal-gap-regression')) await runEqualGapBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--direct-text-regression')) await runDirectTextBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, position, settle, assertExport });
+      if (process.argv.includes('--style-copy-regression')) await runStyleCopyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--typography-regression')) await runTypographyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);

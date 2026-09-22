@@ -85,7 +85,7 @@ export function mountedEditor(input = fixture()) {
   for (const action of ['distribute-horizontal-centers', 'distribute-vertical-centers', 'distribute-horizontal-gaps', 'distribute-vertical-gaps']) { const control = new Element('button', { 'data-action': action, 'data-distribute-control': '', hidden: '' }); control.hidden = true; alignToolbar.append(control); }
   const typographyToolbar = new Element('span', { 'data-pptskill-typography-toolbar': '', hidden: '' }); typographyToolbar.hidden = true; body.append(typographyToolbar);
   typographyToolbar.append(new Element('input', { 'data-typography-size': '', type: 'number' }));
-  for (const action of ['apply-typography', 'reset-typography']) typographyToolbar.append(new Element('button', { 'data-action': action }));
+  for (const action of ['apply-typography', 'reset-typography', 'copy-style', 'paste-style']) typographyToolbar.append(new Element('button', { 'data-action': action }));
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
     const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);
@@ -129,7 +129,7 @@ export function mountedEditor(input = fixture()) {
     PPTSKILLSizeGuard: { prepare: html => ({ status: 'pass', html, report: {} }) },
     PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
   };
-  vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, ''), {
+  vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '').replace('window.PPTSKILLEditor={', 'window.__testRevision=()=>revision;window.PPTSKILLEditor={'), {
     document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
   });
   const api = window.PPTSKILLEditor;
@@ -141,7 +141,7 @@ export function mountedEditor(input = fixture()) {
   const update = (x, y, kind = 'drag') => vendor.handlers[kind](event(x, y));
   const finish = (kind = 'drag') => vendor.handlers[kind + 'End']();
   const getSpec = () => JSON.parse(JSON.stringify(api.getDeckSpec()));
-  return { api, document, window, flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, get selecto() { return selectoVendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
+  return { api, document, window, getRevision: () => window.__testRevision(), flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, get selecto() { return selectoVendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,
     resetCounts() { for (const key of Object.keys(counts)) counts[key] = 0; },
     action(name) { click(document.querySelector(`[data-action="${name}"]`)); },
   };

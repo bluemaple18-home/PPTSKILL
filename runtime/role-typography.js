@@ -4,10 +4,11 @@ export function createRoleTypographyContract() {
   const record = value => {
     if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
     const proto = Object.getPrototypeOf(value);
-    return proto === null || (Object.getPrototypeOf(proto) === null && Object.hasOwn(proto, 'constructor') && proto.constructor?.name === 'Object');
+    const ctor = proto && Object.getOwnPropertyDescriptor(proto, 'constructor');
+    return proto === null || (Object.getPrototypeOf(proto) === null && ctor?.value?.name === 'Object' && ctor.value.prototype === proto);
   };
   const exact = (value, keys) => record(value) && Reflect.ownKeys(value).length === keys.length
-    && keys.every(key => Object.hasOwn(value, key) && Object.getOwnPropertyDescriptor(value, key)?.get === undefined);
+    && keys.every(key => Object.hasOwn(value, key) && Object.hasOwn(Object.getOwnPropertyDescriptor(value, key), 'value'));
   const validSize = value => Number.isInteger(value) && value >= 16 && value <= 160;
   const validateValue = (value, reset = true) => {
     if (!exact(value, ['fontSize']) || !(validSize(value.fontSize) || (reset && value.fontSize === null))) throw new Error('fontSize 必須為 16..160 整數；null 僅供 reset。');
@@ -24,6 +25,24 @@ export function createRoleTypographyContract() {
       || typeof request.target.elementId !== 'string' || !Object.hasOwn(roles, request.target.elementId)) throw new Error('set-typography payload 或 target 無效。');
     validateValue(request.value);
     return request;
+  };
+  const validateStyleRequest = request => {
+    if (!exact(request, ['operation', 'target', 'value']) || !['copy-style', 'paste-style'].includes(request.operation)
+      || !exact(request.target, ['slideId', 'elementId']) || typeof request.target.slideId !== 'string' || !request.target.slideId
+      || typeof request.target.elementId !== 'string' || !Object.hasOwn(roles, request.target.elementId)
+      || !exact(request.value, [])) throw new Error('copy/paste 字級 payload 或 target 無效。');
+    return request;
+  };
+  const validateStyleTarget = (slide, request) => {
+    validateStyleRequest(request);
+    if (!slide || slide.id !== request.target.slideId) throw new Error('找不到 typography slide。');
+    targetRole(slide, request.target.elementId);
+  };
+  const copyStyle = (slide, request) => {
+    validateStyleTarget(slide, request);
+    const explicit = slide.composition?.typographyOverrides?.[request.target.elementId];
+    validateValue(explicit, false);
+    return { fontSize: explicit.fontSize };
   };
   const sanitize = (overrides, content) => {
     if (overrides === undefined) return undefined;
@@ -82,7 +101,15 @@ export function createRoleTypographyContract() {
     destructive: false, confirmation: 'none', undoable: false,
     qaInvalidation: ['typography', 'overflow', 'readability'], portableSerialization: 'json', unsupportedReason: null,
   };
-  return { validateRequest, sanitize, update, project, descriptor };
+  const styleDescriptor = operation => ({
+    ...descriptor,
+    inputSchema: { ...descriptor.inputSchema, properties: {
+      ...descriptor.inputSchema.properties, operation: { type: 'string', const: operation },
+      value: { type: 'object', additionalProperties: false, properties: {} },
+    } },
+    ...(operation === 'copy-style' ? { mutates: ['editor.clipboard'], preserves: ['canonicalSpec'], qaInvalidation: [] } : {}),
+  });
+  return { validateRequest, validateStyleRequest, validateStyleTarget, copyStyle, sanitize, update, project, descriptor, styleDescriptor };
 }
 
 export const roleTypography = createRoleTypographyContract();
