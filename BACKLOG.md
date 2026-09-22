@@ -1018,3 +1018,6 @@ WP2-S4已依Owner授權merge/push main/S4至20c9312。
 WP2-S5 product3c20f85：Mainline67/477/browser12+12/PGQ16/ZIP/cleanup PASS；handoff_20260922_edx_wp2_s5_review.md待獨立review。
 
 WP2-S5正式closure：Independent Review GO，P0–P3全0；reviewer fresh67/477、browser12+12與PGQ16為committed evidence核對。Reviewed code/ZIP未改，未merge/push/deploy，未開下一Slice。
+
+S5已Owner授權merge/push main/S5至b704a1f。
+**WP2-S6 IN PROGRESS：** selected-image replacement UI，沿既有selection→File adapter→replace-asset，卡tasks/edx-wp2-s6-selected-image-ui.md。無crop/insert/schema。
