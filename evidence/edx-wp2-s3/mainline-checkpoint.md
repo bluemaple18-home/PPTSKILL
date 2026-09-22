@@ -29,3 +29,7 @@ Worker scoped 59/59 PASS；full non-browser 初輪與最後各 441/441 PASS，�
 ## Evidence 限制
 
 IME 僅 synthetic CompositionEvent lifecycle，非原生 OS IME。獨立 Review 尚未開始。worker RED 與中間 fixture FAIL、所有browser FAIL完整保存；可讀log只去行尾空白，若有改動原bytes保存在 .gz 與 hash manifest。未清理四個protected untracked。
+
+## 後續修復已完成
+
+以上為08698cf時的歷史停損。Owner指定focus repair後，c43e480通過完整Mainline acceptance；最新依focus-repair-receipt.md、focus-repair-verification.json及review handoff。Independent Review pending，不把本輪Mainline驗收當獨立GO。

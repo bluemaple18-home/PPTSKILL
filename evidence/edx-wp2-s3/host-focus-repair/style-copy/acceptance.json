@@ -1,0 +1,243 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/source.html",
+  "sourceSha256": "0838fb6f27b3403954446648c7e6c1e04a42db012e9198022a9c2e08021a0346",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s3": "pointer-visible-title-subtitle-cross-slide-snapshot",
+          "rectAndHit": true,
+          "sourceChangedAndReset": true,
+          "repeatedPaste": true
+        },
+        {
+          "wp2s3": "ime-ui-api-atomic-and-focus-sync",
+          "syntheticCompositionEvent": true,
+          "nativeOsIme": false
+        },
+        {
+          "wp2s3": "title-layout-pointer-transition",
+          "afterMouseDown": {
+            "mode": "edit",
+            "toolbarHidden": false,
+            "focused": true,
+            "hit": true,
+            "rect": {
+              "x": 741.65625,
+              "y": 653.40625,
+              "width": 74,
+              "height": 33.59375
+            }
+          }
+        },
+        {
+          "wp2s3": "export-live-clipboard-source-delete-offline-empty",
+          "canonicalPreserved": true,
+          "chrome": 0,
+          "staleTargetsRejected": true
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-legacy-selected.html",
+          "bytes": 493127,
+          "sha256": "a74a08d3c69e978692c262345f7755c61bb10cb2f59bccea3886e52a0d551f21"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-preview-export.html",
+          "bytes": 493436,
+          "sha256": "1d71d94ba09626bce6c95058473139ad8bd961725b0b0d492714283b16f51392"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-cancel.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-noop.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-invalid.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-invalid-resize.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-play-mode.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-export.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-reopen-export.html",
+          "bytes": 493436,
+          "sha256": "0e11af99e8e6b512f130772df06f021ee8c12bc58ace11d4dc12a0801a38bf3f"
+        },
+        {
+          "label": "wp2-s3-style-copy-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1280-wp2-s3-style-copy-export.html",
+          "bytes": 493678,
+          "sha256": "39ecd26a9181c56c4e616d990925f4eb33737c1e1a621e3ab0ff549eec3575a7"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s3": "pointer-visible-title-subtitle-cross-slide-snapshot",
+          "rectAndHit": true,
+          "sourceChangedAndReset": true,
+          "repeatedPaste": true
+        },
+        {
+          "wp2s3": "ime-ui-api-atomic-and-focus-sync",
+          "syntheticCompositionEvent": true,
+          "nativeOsIme": false
+        },
+        {
+          "wp2s3": "title-layout-pointer-transition",
+          "afterMouseDown": {
+            "mode": "edit",
+            "toolbarHidden": false,
+            "focused": true,
+            "hit": true,
+            "rect": {
+              "x": 1061.65625,
+              "y": 833.40625,
+              "width": 74,
+              "height": 33.59375
+            }
+          }
+        },
+        {
+          "wp2s3": "export-live-clipboard-source-delete-offline-empty",
+          "canonicalPreserved": true,
+          "chrome": 0,
+          "staleTargetsRejected": true
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-legacy-selected.html",
+          "bytes": 493127,
+          "sha256": "a74a08d3c69e978692c262345f7755c61bb10cb2f59bccea3886e52a0d551f21"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-preview-export.html",
+          "bytes": 493436,
+          "sha256": "1d71d94ba09626bce6c95058473139ad8bd961725b0b0d492714283b16f51392"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-cancel.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-noop.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-invalid.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-invalid-resize.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-play-mode.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-export.html",
+          "bytes": 493436,
+          "sha256": "a5878e725ef2d399febbf1a42d8bf8d80e8df2bb9704e0c1060db2b181ec0340"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-reopen-export.html",
+          "bytes": 493436,
+          "sha256": "0e11af99e8e6b512f130772df06f021ee8c12bc58ace11d4dc12a0801a38bf3f"
+        },
+        {
+          "label": "wp2-s3-style-copy-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s3/host-focus-repair/style-copy/1600-wp2-s3-style-copy-export.html",
+          "bytes": 493678,
+          "sha256": "39ecd26a9181c56c4e616d990925f4eb33737c1e1a621e3ab0ff549eec3575a7"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

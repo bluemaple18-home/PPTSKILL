@@ -1,16 +1,16 @@
 {
   "schemaVersion": "1.0",
-  "productSha": "c43e480e9504f9b2da3ff6c1fdc31b30ee81c038",
+  "productSha": "c5897e81a79735f848f58e2c9ace04e4e769444b",
   "sources": {
-    "runtime/deck-editor.js": "266eb035abd831cb491a9460050a8deb1c38e256d314737c895ec53d13c6af97",
+    "runtime/deck-editor.js": "8f541520a9be93e936ba4a776a27a11fe9f1ef0516b1cff165a37362f06e9fc6",
     "runtime/role-typography.js": "bc6072e6992b0ceb02bc63a487bae2507fc2b7ef834e5ae4eb1d57f06673399e",
-    "tests/edx-wp2-s3-copy-font-size.test.mjs": "b64bba551da28148932e7b90ed0e35fb887e4b84c7c798dac4d5e074da181796",
+    "tests/edx-wp2-s3-copy-font-size.test.mjs": "fda215d7f6dfa1414c8dccc596b09f4e2ec445b10a49159343f19790e0e20295",
     "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "6da66980536f35ec06fd290c9f32eb1786ae4728404dfa77eda5d43ef104e771",
     "tests/edx-wp1-s3-bounded-geometry.test.mjs": "df6ffb7dc801bd2f5dccb61d0860212d75d2ee9c9e9456db3534ae1dfb3a6d4e",
     "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "ea7c8aa6b9da65829df201505f579c034b3be51a6850a62982b41a2ce2ced01b",
     "tools/edx-wp1-s4-browser-acceptance.mjs": "ec47cab9f8a79a394c0c6050561fd9df4b239443959ee2e5464f1c2a2555d1f0",
     "tools/edx-wp1-s4-perf-mounted.mjs": "26a7c85c1d9b83af3cc81be908a474e2bed8617234971525d38293b93dfb3093",
-    "tools/edx-wp2-s3-browser-cases.mjs": "dcd966ac71bcd0211004669dfe67f31453a624b7fc2777f9c802667b3906291e"
+    "tools/edx-wp2-s3-browser-cases.mjs": "acb85df6f045a8fafb4f1c5a58b503abd84e7d0fd593bd8453dae821861c7491"
   },
   "protected": {
     ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
@@ -20,7 +20,7 @@
   },
   "distribution": {
     "path": "dist/PPTSKILL-0.1.0.zip",
-    "bytes": 2287440,
-    "sha256": "da3d95777124daaf43f70ab7de6a898715d2e2cff28969634694f575ea3119a1"
+    "bytes": 2287435,
+    "sha256": "d8847ff6b72c6cb70d7f43d3e5372a0e75c7299a0cedad8fc9bf94128bbcdb4f"
   }
 }

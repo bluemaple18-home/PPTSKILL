@@ -1,0 +1,30 @@
+✖ WP2-S3 title → layout focusin 不提前隱藏 toolbar，click 才清 target (15.312208ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 119.46525
+
+✖ failing tests:
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:132:1
+✖ WP2-S3 title → layout focusin 不提前隱藏 toolbar，click 才清 target (15.312208ms)
+  AssertionError [ERR_ASSERTION]: focusin 不得讓控制列在 mouseup 前縮排
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:140:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,8 +1,8 @@
 # EDX-WP2-S3 — Host acceptance
 
-Status: BLOCKED_DELETE_VISIBILITY_DIAGNOSTIC_REQUIRED
+Status: PASS / INDEPENDENT_REVIEW_PENDING
 Parent: `tasks/edx-wp2-s3-copy-font-size.md`
-Product SHA: `c5897e81a79735f848f58e2c9ace04e4e769444b`
+Product SHA: `c43e480e9504f9b2da3ff6c1fdc31b30ee81c038`
 Branch: `codex/edx-wp2-s3-copy-font-size`
 
 ## Scope
@@ -28,3 +28,11 @@ Evidence：`evidence/edx-wp2-s3/host-acceptance/`。完成停review candidate，
 ## 本輪停損
 
 四輪 browser FAIL 均保留；最後兩輪 delete 可見尺寸同阻點無進展。停止重開 browser；先蒐集 bounded mode/hidden/disabled/display/rect/hit/selection 診斷，勿直接重跑。詳 evidence/edx-wp2-s3/mainline-checkpoint.md。PGQ 尚未開始。
+
+## Owner 指定 bounded focus repair
+
+假說：文字到 editor button 的 focusin 先隱藏字級 toolbar，造成 pointer release 位移；保留 editor 內 target 直到 click mode transition 後，症狀應消失。替代假說為 mode handler 本身沒有完成，須用 browser 中間 mode/rect/hit 證據分辨。先跑 mounted RED，僅修 focus ownership，再鎖真實 mousedown/focusin/mouseup/click 與 target cleanup。回退為 revert 本輪修復 commit；不改 AI Core/clipboard contract。
+
+## 本輪正式結果
+
+Owner指定focus repair已完成：mounted RED→GREEN、targeted10/10、full442/442、雙viewport各14checks、PGQ單輪16/16與完整cleanup PASS。詳focus-repair-receipt.md；歷史停損紀錄保留。

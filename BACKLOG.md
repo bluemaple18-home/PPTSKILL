@@ -1000,4 +1000,6 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 
 **EDX-WP2-S2 COMPLETE / INDEPENDENT REVIEW GO：** Reviewed product `14555d0499e1f07ec8fabf3deb5e33db90d4d608`，P0/P1/P2/P3 全 0。Title/subtitle 字級覆寫與 reset 完成。Reviewer fresh targeted **39/39**、full non-browser **431/431 PASS**；雙 viewport 各 **16 checks PASS**、PGQ **16/16 PASS** 與 cleanup 為已提交 evidence 獨立核對，非 fresh browser rerun。Source13/13、protected4/4、ZIP MATCH；reviewed code／ZIP 未改，歷史 FAIL 保留。IME 僅 browser synthetic CompositionEvent。Verdict：`evidence/edx-wp2-s2/independent-review.md`；receipt：`evidence/edx-wp2-s2/mainline-receipt.md`。2026-09-22 正式結案；未 merge／push／deploy，未開下一 Slice。
 
-**EDX-WP2-S3 IN PROGRESS：** Base `ed5b34e`（WP2-S2 已整合並推送 main）。只做 title/subtitle 明示字級複製貼上，copy snapshot 為 session-local，paste 走既有 set-typography；不新增 schema/樣式欄位/system clipboard。卡：`tasks/edx-wp2-s3-copy-font-size.md`；host：`tasks/edx-wp2-s3-host-acceptance.md`。未 merge/push/deploy 本 slice，不開下一 Slice。
+**EDX-WP2-S3 REVIEW PENDING：** Base `ed5b34e`（WP2-S2 已整合並推送 main）。只做 title/subtitle 明示字級複製貼上，copy snapshot 為 session-local，paste 走既有 set-typography；不新增 schema/樣式欄位/system clipboard。卡：`tasks/edx-wp2-s3-copy-font-size.md`；host：`tasks/edx-wp2-s3-host-acceptance.md`。未 merge/push/deploy 本 slice，不開下一 Slice。
+
+WP2-S3：focus repair `c43e480` 已通過 Mainline acceptance，Independent Review pending；見 `handoff_20260922_edx_wp2_s3_review.md`。未 merge/push/deploy。

@@ -1,0 +1,18 @@
+✔ WP2-S3 Node snapshot、跨頁、preservation、export/reopen (6.102333ms)
+✔ WP2-S3 Node invalid atomic，getter 不執行且舊 snapshot 保留 (2.99625ms)
+✔ WP2-S3 portable snapshot、跨頁、preservation、export/reopen (23.393208ms)
+✔ WP2-S3 portable invalid atomic，getter 不執行且舊 snapshot 保留 (16.077666ms)
+✔ WP2-S3 registry metadata 與 portable parity，僅字級 contract (1.788667ms)
+✔ WP2-S3 toolbar 狀態、sync text、IME、mode/slide stale target (15.794334ms)
+✔ WP2-S3 semantic revision：copy/invalid/no-op 為零，paste 真變更一次 (4.939333ms)
+✔ WP2-S3 Node source 刪除仍保留獨立 snapshot (0.598875ms)
+✔ WP2-S3 portable source 刪除仍保留獨立 snapshot (4.4925ms)
+✔ WP2-S3 title → layout focusin 不提前隱藏 toolbar，click 才清 target (5.939875ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 191.083792

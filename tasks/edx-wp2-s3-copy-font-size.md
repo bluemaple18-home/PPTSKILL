@@ -34,3 +34,7 @@ Meaningful RED→GREEN；Node/portable parity、invalid atomic、snapshot/no-op�
 ## Mainline checkpoint
 
 產品與 full non-browser441/441、ZIP lifecycle 已完成；正式browser目前 BLOCKED_DELETE_VISIBILITY，未達review candidate。詳 evidence/edx-wp2-s3/mainline-checkpoint.md。
+
+## Focus repair 完成
+
+最新狀態 READY_FOR_INDEPENDENT_REVIEW；產品c43e480，targeted10/10、full442/442、ZIP、雙viewport各14checks、PGQ單輪16/16、cleanup全PASS。歷史browser blocker已由本輪focus ownership修復與實測解除；Independent GO仍pending。
