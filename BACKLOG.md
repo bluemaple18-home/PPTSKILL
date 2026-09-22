@@ -1006,6 +1006,8 @@ WP2-S3：focus repair `c43e480` 已通過 Independent Review GO，P0–P3全0；
 
 WP2-S3 已依Owner授權合併並推送 main/S3 branch至28c1b37。
 
-**EDX-WP2-S4 REVIEW PENDING：** image-only replace-asset unified operation；只整合現有Node/portable替換路徑，保留預設alt/fit/geometry。卡：tasks/edx-wp2-s4-replace-asset.md。無crop/insert/新UI，停Independent Review candidate。
+**EDX-WP2-S4 COMPLETE / INDEPENDENT REVIEW GO：** image-only replace-asset unified operation；只整合現有Node/portable替換路徑，保留預設alt/fit/geometry。卡：tasks/edx-wp2-s4-replace-asset.md。無crop/insert/新UI，停Independent Review candidate。
 
 WP2-S4 candidate `ebc4dc2`，Mainline acceptance PASS；targeted111/full457/browser12+12/PGQ單輪16，獨立Review pending。見handoff_20260922_edx_wp2_s4_review.md。
+
+WP2-S4已Independent Review GO，P0–P3全0；reviewer fresh111/457、browser/PGQ evidence-only。Owner授權結案後merge/push再續下Slice。

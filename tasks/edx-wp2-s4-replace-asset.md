@@ -1,6 +1,6 @@
 # EDX-WP2-S4 — image-only replace-asset operation
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base: `28c1b373476ddf8fb6680cf883711f586ef08486`（WP2-S3已合併push main）
 Branch: `codex/edx-wp2-s4-replace-asset`
 traces_to: BACKLOG.md §10.1 decisions3/7/8、§10.3 WP2、§10.4 unified operation registry。
@@ -32,3 +32,5 @@ Worker只寫runtime/tests/tools，單一shared writer，無commit/branch/browser
 Owner bootstrap與config/devflow_context_map.tsv；rules05 coding；source decision先CodeGraph無關則rg；browser遵rules11/24與正式tmp_session入口，sandbox不unset、不裸launch。保護原4 untracked，依S3 source-hashes.json。遇同類兩次無進展停損；所有FAIL保留。
 
 Mainline結果：candidate ebc4dc2；worker targeted111/111、full457/457、雙viewport各12、PGQ單輪16/16、ZIP lifecycle/hash/cleanup PASS。Worker執行偏差與歷史FAIL詳receipt，不隱藏。未merge/push/deploy。
+
+Mainline closure：Independent Review GO，P0–P3全0；reviewed product/ZIP未改，source9/protected4/ZIP fresh核對MATCH。詳evidence/edx-wp2-s4/independent-review.md。Owner本輪已授權結案後合併push並繼續；此closure commit本身不含外部寫入。

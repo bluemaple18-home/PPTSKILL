@@ -1,6 +1,6 @@
 # WP2-S4 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Product SHA: `ebc4dc20ce393237480b3b1871199a29371befab`
 Branch: codex/edx-wp2-s4-replace-asset
 Parent: tasks/edx-wp2-s4-replace-asset.md
@@ -16,3 +16,5 @@ PASS後四支串行PGQ：`node --test --test-concurrency=1 tests/pgq-wp4-s3-cont
 Evidence: evidence/edx-wp2-s4/host-acceptance/。保留所有FAIL；同類兩次無進展停主線triage，不換名重置budget。完成停Independent Review candidate；不merge/push/deploy、不開下一Slice。
 
 首輪fixture image未渲染FAIL完整保留，補既有canonical geometry後retry雙viewport各12checks/PGQ單輪16PASS；兩輪cleanupPASS。詳evidence/edx-wp2-s4/mainline-receipt.md。
+
+Mainline closure：Independent Review GO，P0–P3全0；reviewed product/ZIP未改，source9/protected4/ZIP fresh核對MATCH。詳evidence/edx-wp2-s4/independent-review.md。Owner本輪已授權結案後合併push並繼續；此closure commit本身不含外部寫入。

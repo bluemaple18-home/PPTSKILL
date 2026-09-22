@@ -1,6 +1,6 @@
 # WP2-S4 Mainline receipt
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Candidate: `ebc4dc2`；runtime product: `a8999d61aca69a746162b4da7afdc813b63ac971`。
 Base main: `28c1b373476ddf8fb6680cf883711f586ef08486`（S3已merge/push並remote readback確認）。
 
@@ -27,3 +27,5 @@ Worker誤用tests/*.test.mjs，全測試452/458包含4browser環境FAIL及2regis
 主線唯讀host ps觀測沒有pptskill-geometry-* profile活Chrome；tmp仍有同prefix目錄，以及非本次managed ownership的pgq-chrome-ls-profile程序，未能從本輪證據辨識歷史歸屬，因此未刪除/停止、未冒稱Worker有managed cleanup receipt。詳worker-deviation-observation.json。本輪正式managed session另有明確owned root、before/after hash與cleanup證據，不把它倒填成Worker舊行為證據。
 
 source9/protected4與ZIP以前後manifest核對。歷史FAIL完整保存，可讀log去行尾空白時原bytes存.gz+hash。獨立Review pending；未merge/push/deploy S4，不開下一Slice。
+
+Mainline closure：Independent Review GO，P0–P3全0；reviewed product/ZIP未改，source9/protected4/ZIP fresh核對MATCH。詳evidence/edx-wp2-s4/independent-review.md。Owner本輪已授權結案後合併push並繼續；此closure commit本身不含外部寫入。

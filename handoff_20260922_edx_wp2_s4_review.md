@@ -1,6 +1,6 @@
 # WP2-S4 Independent Review Handoff
 
-Status: READY_FOR_INDEPENDENT_REVIEW / pending
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s4-replace-asset
 Base: `28c1b373476ddf8fb6680cf883711f586ef08486`
 Reviewed candidate: `ebc4dc20ce393237480b3b1871199a29371befab`
@@ -32,3 +32,5 @@ S4 browser案例是API-driven，不是新file picker/拖放/OS clipboard；optim
 Worker誤跑tests/*.test.mjs觸及4支browser與tmp ZIP，超出分工；詳細worker-result.md。這次不能宣稱Worker有managed cleanup receipt。主線read-only observation未見相應活Chrome，但既有tmp roots歸屬不明未刪；正式host另有自己owned root/cleanup，兩者不能混用。
 
 未merge/push/deploy S4。Mainline acceptance不代表Independent GO。
+
+Mainline closure：Independent Review GO，P0–P3全0；reviewed product/ZIP未改，source9/protected4/ZIP fresh核對MATCH。詳evidence/edx-wp2-s4/independent-review.md。Owner本輪已授權結案後合併push並繼續；此closure commit本身不含外部寫入。
