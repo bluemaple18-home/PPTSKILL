@@ -180,4 +180,5 @@ test('WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效', 
   const spec = fixture(0); spec.slides[0].content.components.pop(); addAssetReplacementFixture(spec);
   const rendered = renderFullDeck(spec); assert.equal(rendered.status, 'pass');
   assert.equal(extractDeckSpec(rendered.html).slides[0].content.components.filter(c => c.type === 'image').length, 2);
+  for (const id of ['asset-first', 'asset-second']) assert.match(rendered.html, new RegExp('<figure[^>]*data-pptskill-element-id="component-' + id + '"[^>]*><img '));
 });

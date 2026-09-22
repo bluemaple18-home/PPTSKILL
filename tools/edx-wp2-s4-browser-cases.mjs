@@ -8,6 +8,7 @@ export function addAssetReplacementFixture(input) {
     { id: 'asset-first', type: 'image', dataUri: assetReplacementPng, alt: '第一張保留', fit: 'cover' },
     { id: 'asset-second', type: 'image', dataUri: assetReplacementPng, alt: '第二張保留', fit: 'cover' },
   );
+  slide.composition.geometryOverrides = { ...slide.composition.geometryOverrides, 'asset-first': { x: 100, y: 600, width: 160, height: 160 }, 'asset-second': { x: 300, y: 600, width: 160, height: 160 } };
   slide.composition.typographyOverrides = { 'role-title': { fontSize: 64 } };
   const other = structuredClone(slide); other.id = 'asset-other'; input.slides.push(other);
 }
