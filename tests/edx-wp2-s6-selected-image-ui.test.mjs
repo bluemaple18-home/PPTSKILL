@@ -132,3 +132,11 @@ test('S6 async target 移除後失敗，零 asset mutation 且 input 可重選',
   assert.deepEqual(h.getSpec(), before); assert.equal(h.input.value, '');
   assert.match(h.document.querySelector('[data-editor-status]').textContent, /移除/);
 });
+
+
+test('S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理', () => {
+  const h = setup(); h.selectImage(); h.api.layout.setMode(false);
+  assert.equal(h.document.querySelectorAll('[data-pptskill-editor-chrome]').length, 0);
+  assert.equal(h.button.hidden, true);
+  assert.doesNotMatch(h.api.exportHtml().split('<body')[1], /data-pptskill-selected-image-toolbar|pptskill-selected-image-input/);
+});

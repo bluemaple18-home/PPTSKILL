@@ -158,6 +158,7 @@ export const EDITOR_CHROME_SELECTORS = Object.freeze([
   '.selecto-selection',
   '[data-pptskill-context-toolbar]',
   '[data-pptskill-typography-toolbar]',
+  '[data-pptskill-selected-image-toolbar]',
 ]);
 
 export const EDITOR_PRESENTATION_TRUTH_SELECTORS = Object.freeze([
@@ -341,7 +342,7 @@ body[data-editor-mode="edit"] .pptskill-editor>[data-pptskill-typography-toolbar
 @media print{[data-pptskill-editor-chrome],.moveable-control-box,.selecto-selection{display:none!important}.pptskill-editor{display:none!important}.slide[data-editor-selected="true"]{box-shadow:none}}
 `;
 
-const buildSelectedImageToolbarMarkup = () => `<span data-pptskill-selected-image-toolbar data-pptskill-editor-chrome><button type="button" data-action="replace-selected-image" hidden disabled>替換所選圖片</button><input class="pptskill-editor__file" id="pptskill-selected-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span>`;
+const buildSelectedImageToolbarMarkup = () => `<span data-pptskill-selected-image-toolbar><button type="button" data-action="replace-selected-image" hidden disabled>替換所選圖片</button><input class="pptskill-editor__file" id="pptskill-selected-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span>`;
 
 const buildTypographyToolbarMarkup = () => `<span data-pptskill-typography-toolbar hidden><label>字級 <input type="number" min="16" max="160" step="1" aria-label="字級（slide px）" data-typography-size></label><button type="button" data-action="apply-typography">套用字級</button><button type="button" data-action="reset-typography">還原字級</button><button type="button" data-action="copy-style" disabled>複製字級</button><button type="button" data-action="paste-style" disabled>貼上字級</button></span>`;
 
