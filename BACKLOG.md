@@ -1013,4 +1013,6 @@ WP2-S4 candidate `ebc4dc2`，Mainline acceptance PASS；targeted111/full457/brow
 WP2-S4已Independent Review GO，P0–P3全0；reviewer fresh111/457、browser/PGQ evidence-only。Owner授權結案後merge/push再續下Slice。
 
 WP2-S4已依Owner授權merge/push main/S4至20c9312。
-**WP2-S5 IN PROGRESS：** targeted File adapter，optional stable target→既有optimizer→replace-asset；保留單參數first-image，不新增UI/schema。卡tasks/edx-wp2-s5-targeted-image-file.md。
+**WP2-S5 REVIEW PENDING：** targeted File adapter，optional stable target→既有optimizer→replace-asset；保留單參數first-image，不新增UI/schema。卡tasks/edx-wp2-s5-targeted-image-file.md。
+
+WP2-S5 product3c20f85：Mainline67/477/browser12+12/PGQ16/ZIP/cleanup PASS；handoff_20260922_edx_wp2_s5_review.md待獨立review。

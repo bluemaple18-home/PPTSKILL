@@ -1,0 +1,50 @@
+✖ WP2-S5 明示第二張 File target 不得取第一張 (16.191167ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.643583
+
+✖ failing tests:
+
+test at tests/edx-wp2-s5-targeted-image-file.test.mjs:16:1
+✖ WP2-S5 明示第二張 File target 不得取第一張 (16.191167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+
+    {
+      deckId: 'pptskill-typography-world',
+      language: 'zh-Hant',
+      schemaVersion: '1.0',
+      slides: [
+  ...
+                alt: '成本探針',
+  +             dataUri: 'data:image/webp;base64,BB==',
+  -             dataUri: 'data:image/png;base64,AA==',
+                id: 'perf-image',
+                type: 'image'
+              },
+              {
+                alt: '保留第二張',
+  +             dataUri: 'data:image/png;base64,AA==',
+  -             dataUri: 'data:image/webp;base64,BB==',
+                fit: 'cover',
+                id: 'second-image',
+                type: 'image'
+              }
+            ],
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s5-targeted-image-file.test.mjs:20:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { schemaVersion: '1.0', deckId: 'pptskill-typography-world', title: '讓每個人用 AI 快速完成簡報', language: 'zh-Hant', style: { id: 'route-editorial-rail', name: 'Editorial Monument', layout: [Object], density: 'low', typography: [Object], palette: [Object], spacing: [Object], geometry: [Object], motion: [Object], assetTreatment: 'editorial chapter crops and quiet captions' }, slides: [ [Object], [Object] ] },
+    expected: { schemaVersion: '1.0', deckId: 'pptskill-typography-world', title: '讓每個人用 AI 快速完成簡報', language: 'zh-Hant', style: { id: 'route-editorial-rail', name: 'Editorial Monument', layout: [Object], density: 'low', typography: [Object], palette: [Object], spacing: [Object], geometry: [Object], motion: [Object], assetTreatment: 'editorial chapter crops and quiet captions' }, slides: [ [Object], [Object] ] },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

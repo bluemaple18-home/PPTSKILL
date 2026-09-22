@@ -1,0 +1,101 @@
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (72.076875ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (121.179708ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (332.68575ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (135.560292ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (36.350708ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (32.7955ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (32.24675ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (31.1025ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (29.9555ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (11.356875ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (29.52825ms)
+✔ mounted semantic component text seam 使 gesture stale，不覆寫新 state (27.52ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (38.120709ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (41.80075ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (146.833375ms)
+✔ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (68.172125ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (55.491209ms)
+✖ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (55.973208ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (171.470792ms)
+✔ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (63.504417ms)
+✔ WP2-S4 Node strict payload 原子拒絕且不執行 getter (4.262375ms)
+✔ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (26.086083ms)
+✔ WP2-S4 portable strict payload 原子拒絕且不執行 getter (18.255667ms)
+✔ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (1.069333ms)
+✔ WP2-S4 registry metadata 與 Node/portable 一致 (6.94575ms)
+✔ WP2-S4 portable 局部 DOM、no-op revision、export/reparse (12.131584ms)
+✔ WP2-S4 DOM 投影例外還原 canonical 與原 attributes (7.672458ms)
+✔ WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留 (16.448125ms)
+✔ WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕 (20.980458ms)
+✔ WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale (192.539333ms)
+✔ WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加 (16.445667ms)
+✔ WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失 (10.436041ms)
+✔ WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效 (11.218125ms)
+✔ WP2-S5 明示第二張 File target 不得取第一張 (33.788958ms)
+✔ WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip (20.871292ms)
+✔ WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip (17.475125ms)
+✔ WP2-S5 second、局部投影、完整欄位保留與 export roundtrip (13.927916ms)
+✔ WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip (9.971166ms)
+✔ WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip (16.354084ms)
+✔ WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip (10.4625ms)
+✔ WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation (14.855125ms)
+✔ WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image (15.430625ms)
+✔ WP2-S5 pending reject 原子拒絕 (6.657375ms)
+✔ WP2-S5 pending unsafe 原子拒絕 (3.660542ms)
+✔ WP2-S5 pending null-result 原子拒絕 (5.502792ms)
+✔ WP2-S5 pending missing-warnings 原子拒絕 (4.956916ms)
+✔ WP2-S5 pending missing-slide 原子拒絕 (8.028792ms)
+✔ WP2-S5 pending missing-image 原子拒絕 (7.831792ms)
+✔ WP2-S5 pending type-change 原子拒絕 (5.400833ms)
+✔ WP2-S5 pending missing-dom 原子拒絕 (15.305667ms)
+✔ WP2-S5 explicit File same-value no-op gesture (43.838583ms)
+✔ WP2-S5 explicit File 真修改 stale gesture (42.25375ms)
+✔ WP2-S5 長 component ID 使用 resolved stable identity (40.758417ms)
+✔ 01 單一 policy 鎖定 R10 閾值 (1.776ms)
+✔ 02 data URI 以 decoded bytes 計算 (0.825208ms)
+✔ 03 UTF-8 bytes 不等於 JS 字元數 (0.364209ms)
+✔ 04 大型單圖產生 warning (13.232958ms)
+✔ 05 oversized GIF 保留動畫並警告 (13.357417ms)
+✔ 06 SVG 仍是 vector MIME (0.297541ms)
+✔ 07 report 彙總 MIME bytes (0.463958ms)
+✔ 08 report 指出最大 slide/component (0.168292ms)
+✔ 09 deck warning 狀態成立 (0.128ms)
+✔ 10 hard limit 不回傳 release HTML (0.236292ms)
+✔ 11 PASS 會保留原始 HTML (0.088042ms)
+✔ 12 browser optimizer 明確 preserve SVG/GIF 與禁止 upscale (0.312542ms)
+✔ 13 full export 只有既有 editor export seam 且內建 optimizer/guard (23.512584ms)
+✔ 14 optimized portable HTML 仍可單檔回讀 DeckSpec 且 sanitizer 不洩漏 (11.348875ms)
+ℹ tests 67
+ℹ suites 0
+ℹ pass 66
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1749.400459
+
+✖ failing tests:
+
+test at tests/edx-wp1-s4-perf.test.mjs:85:1
+✖ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (55.973208ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /圖片元件已移除/. Input:
+
+  'Error: 圖片 target 必須是既有 image。'
+
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s4-perf.test.mjs:96:20)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: 圖片 target 必須是既有 image。
+        at requireImage (evalmachine.<anonymous>:555:234)
+        at Object.replaceImageFile (evalmachine.<anonymous>:556:95)
+        at async waitForActual (node:assert:621:5)
+        at async strict.rejects (node:assert:744:25)
+        at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s4-perf.test.mjs:96:20)
+        at async Test.run (node:internal/test_runner/test:1208:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /圖片元件已移除/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

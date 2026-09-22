@@ -1,0 +1,19 @@
+{
+  "pptskill-wp2-s5-green-minimal.log": "97a55434a45739ea910ff0cda47f3a8fd1629dafeccab6959ab465256626effc",
+  "pptskill-wp2-s5-targeted-final.log": "fcedd3a7bc9efac046970516d7be0991177a01404060e1d0fb0bc792ec81ba07",
+  "distribution-probe.log": "d97b68eaf43fc0f73ff11989a96c4027fd060c4a3ce6e2fe4b04e6e5881238ce",
+  "pptskill-wp2-s5-protected-before.log": "d03d0a8d7210fd47becbc2b7631a3ff41649b4f153866127e0c2c62525c9b456",
+  "build-dist.log": "b48802f3f359b6c0fc118839fa399b4a15dbb3b9c5cc78210c2df726d846ae8d",
+  "pptskill-wp2-s5-targeted.log": "f21ad84ca0eea27700689492b374e3e925d7014a60ac944a54c7c6c3779cf80d",
+  "pptskill-wp2-s5-red.log": "68f237543d266f119776a93f7002ba9b22c4900ea737ca614155ddadb2832472",
+  "pptskill-wp2-s5-final-check.log": "093ce69f10035d3399fae3bbcd2f8db20f8a4746aecddc490258539de1073e65",
+  "pptskill-wp2-s5-mounted.log": "61aa7f7a03d9843a236857b939982d4e5323081812d50cdc83896b97562603c8",
+  "nonbrowser.log": "80369f450a96f22a5a0a8edfa92abb3846e058a4288ccb808b1914875c0d3347",
+  "host-acceptance/launcher.stdout": "899a48151a5b9ae4710433c14c17031e865c43d88fb579cbaa304996ccd7b859",
+  "host-acceptance/targetedImageFile.log": "1edcda61a19409d6b4605591bdfcd852cbcc04154a4a2fa78a0e8d040b1498bb",
+  "host-acceptance/launcher.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "host-acceptance/browser-close.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "host-acceptance/pgq.log": "e88a71968076c70a80371adf596c5cd79f357483c95e211581941141f07df24c",
+  "host-acceptance/lifecycle/evidence/stderr.log": "474277ecca7c0e33136d58cc9e998f45c03f8c17214fa6796612bb91bd7eb73f",
+  "host-acceptance/lifecycle/evidence/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

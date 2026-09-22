@@ -1,6 +1,6 @@
 # WP2-S5 — explicit target image file adapter
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base: 20c93125edc396513d36324b03e4137c56fdcf4f（S4已merge/push）
 Branch: codex/edx-wp2-s5-targeted-image-file
 traces_to: BACKLOG.md §10.1 decisions3/7/8、§10.3 WP2、§10.4 replace-asset。
@@ -24,3 +24,5 @@ S4 replace-asset registry可指定第二image，但replaceImageFile只找current
 新增 `--targeted-image-file-regression`，沿existing runner base10pointer+S4fixture rendered image。真browser以File+真optimizer指定第二image，延遲結果前切頁/export/caller target改動仍correct；default第一image相容、invalid admission optimizer0、live DOM decode/alt/fit/geometry、export/offline。API-driven，不宣稱native file picker/OS clipboard。1280→1600，errors0/targetClosed；Mainline正式受管host後四支PGQ串行、ZIP/build/probe/hash/full nonbrowser。
 
 Worker禁止tests/*.test.mjs！只列明targeted檔；full/ZIP/browser由Mainline使用已知selection。歷史S4誤跑不得重演。先CodeGraph，無關fallback rg；讀source<=2000tokens；source decision前讀卡/rules05。原4protected保持hash。節省standard1worker/clean/medium/shared sequential，無fanout；不merge/push/deploy/下一Slice，停Independent Review candidate。同blocker兩次無進展停triage，失敗log保留。
+
+Mainline驗收完成：product3c20f85、targeted67/67、full477/477、ZIP lifecycle、browser12+12、PGQ單輪16、完整managed cleanup/hash全PASS；獨立Review pending，未merge/push/deploy。
