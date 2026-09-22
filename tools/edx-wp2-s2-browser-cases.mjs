@@ -26,7 +26,11 @@ export async function runTypographyBrowserCases({ cdp, evaluate, navigate, sourc
     await open(role);
     for (const size of [16, 160]) {
       await apply(size); const state = await read(role);
-      assert.equal(state.font, size + 'px'); assert.equal(state.canonical, size);
+      if (state.font !== size + 'px' || state.canonical !== size) {
+        const diagnostic = await evaluate(`(()=>{const b=document.querySelector('[data-action="apply-typography"]'),r=b.getBoundingClientRect();return {status:document.querySelector('[data-editor-status]')?.textContent,input:document.querySelector('[data-typography-size]')?.value,active:document.activeElement?.outerHTML,toolbarHidden:document.querySelector('[data-pptskill-typography-toolbar]')?.hidden,buttonRect:{x:r.x,y:r.y,width:r.width,height:r.height},hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.outerHTML}})()`);
+        run.checks.push({wp2s2:'font-size-failure-diagnostic',role,size,state,diagnostic});
+      }
+      assert.equal(state.font, size + 'px', JSON.stringify({role,size,state})); assert.equal(state.canonical, size);
       assert.equal(state.delay, defaults[role].delay);
     }
     const snapshot = await spec();
