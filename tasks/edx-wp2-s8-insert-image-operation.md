@@ -33,7 +33,7 @@ Worker明列scoped tests：新S8、S2 identity、S3 geometry、WP2-S4 asset、S5
 
 ## Worker / boundaries
 
-strict/core-bounded：新mutation API與atomic性規格已固定；一個clean Worker/high/shared sequential product writer，runtime要求繼承model（未另指定）。主線只control，Worker停寫後讀diff驗收，不另建Review／Repair。
+strict/core-bounded：新mutation API與atomic性規格已固定；一個clean Worker/high/shared sequential product writer，runtime要求繼承model（未另指定）。主線只control，Worker停寫後讀diff驗收；strict預留1條Independent Review責任線，沿Owner既有外部review交付流程，Worker不自啟Reviewer／Repair。主線acceptance後停候選等待該review，不以自驗代替GO。
 允許runtime/image-insertion.js（新）、runtime/deck-editor.js、新tests/edx-wp2-s8-insert-image.test.mjs、必要mounted helper／browser runner／新browser cases、既有descriptor snapshot test。原schema／identity resolver／asset-policy／renderer功能不改；若發現必要缺口先附證據回Mainline，不能順手擴scope。
 禁browser/Chrome/attach/fixture runner、full glob、ZIP/build/probe、commit/branch/control/evidence/protected/AI Core、dependency/schema/一般text/chart insertion、merge/push/deploy。Node /opt/homebrew/bin/node，先CodeGraph query，無相關結果限域rg，不自行index。讀Owner bootstrap與rules05/11/24。
 log/report寫/private/tmp/pptskill-wp2-s8-*，保留RED／中間FAIL及逐命令counts。最多一個bounded實作循環；同類兩次無進展／contract fork即回主線裁決。完成stop writing，交changed paths、source SHA、tests、未驗範圍；不宣稱candidate或GO。
