@@ -223,7 +223,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   };
   const cancel = (reason = 'clear') => {
     interaction.cancel(); moveable?.stopDrag();
-    if (snap && reason !== 'picker') clearSelection(reason);
+    if (snap && reason !== 'picker' && reason !== 'image-fit') clearSelection(reason);
     else moveable?.updateRect();
   };
   const point = event => ({ x: event.inputEvent?.clientX ?? event.clientX, y: event.inputEvent?.clientY ?? event.clientY });
@@ -276,7 +276,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         if (!interaction.update(next) && snap) clearSelection();
       });
       moveable.on(eventName + 'End', () => {
-        if (moveable !== vendor) return;
+        if (moveable !== vendor || !interaction.getState().gesturing) return;
         const committed = interaction.finish();
         if (snap && !committed) clearSelection();
         else moveable?.updateRect();
@@ -354,7 +354,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       suppressPointerClick = false; event.preventDefault(); return;
     }
     const action = event.target.closest?.('[data-action]')?.dataset.action;
-    if (action === 'replace-selected-image') return;
+    if (action === 'replace-selected-image' || action === 'set-selected-image-fit') return;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
     if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
     if (action?.startsWith('distribute-')) { distributeSelection(action.slice('distribute-'.length)); return; }
@@ -378,7 +378,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     clearSelection();
   };
   const inputOwnsKey = node => {
-    if (node?.closest?.('input,textarea,select,[role="textbox"],.pptskill-editor,[data-pptskill-editor-chrome]')) return true;
+    if (node?.closest?.('input,textarea,select,[role="textbox"],.pptskill-editor,[data-pptskill-editor-chrome],[data-pptskill-selected-image-toolbar]')) return true;
     const editable = node?.closest?.('[contenteditable]');
     return Boolean(node?.isContentEditable || (editable && editable.getAttribute('contenteditable') !== 'false'));
   };
@@ -400,12 +400,14 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (!interaction.getState().gesturing) return;
     const node = event.target, action = node.closest?.('[data-action]')?.dataset.action;
     const selection = node.closest?.('.slide') && !node.closest?.('.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box');
+    if (action === 'set-selected-image-fit') { cancel('image-fit'); routedControlClick = event; return; }
     if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !action?.startsWith('distribute-') && !selection) return;
     // 比 gesture 才註冊的 vendor window capture 更早；stopDrag 解除 blocker，原事件仍走既有 handler。
     cancel(); routedControlClick = event;
   };
   const pointerDown = event => {
     if (event.target.closest?.('[data-action="replace-selected-image"]')) cancel('picker');
+    else if (event.target.closest?.('[data-action="set-selected-image-fit"]')) cancel('image-fit');
     else if (interaction.getState().enabled && event.target.closest?.('.slide')) onSelectionChange('selection');
     // 沒有尾隨 click（例如 pointercancel）時，新的有效 pointer 仍立即恢復操作。
     if (event.isTrusted && event.isPrimary !== false && event.button === 0) { suppressPointerClick = false; routedControlClick = null; }

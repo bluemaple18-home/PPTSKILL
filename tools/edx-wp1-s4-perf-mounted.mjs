@@ -89,6 +89,9 @@ export function mountedEditor(input = fixture()) {
   const imageToolbar = new Element('span', { 'data-pptskill-selected-image-toolbar': '' });
   const imageButton = new Element('button', { 'data-action': 'replace-selected-image', hidden: '' }); imageButton.hidden = true;
   imageToolbar.append(imageButton);
+  const fitGroup = new Element('span', { 'data-selected-image-fit': '', role: 'group', 'aria-label': '所選圖片顯示方式' });
+  for (const fit of ['contain', 'cover']) fitGroup.append(new Element('button', { type: 'button', 'data-action': 'set-selected-image-fit', 'data-image-fit': fit }));
+  imageToolbar.append(fitGroup);
   imageToolbar.append(new Element('input', { id: 'pptskill-selected-image-input', type: 'file' })); body.append(imageToolbar);
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
@@ -143,9 +146,9 @@ export function mountedEditor(input = fixture()) {
   const click = (node, fields = {}) => { for (const fn of document.listeners.click || []) fn({ target: node, shiftKey: false, preventDefault() {}, ...fields }); };
   const component = () => document.querySelector(`[data-pptskill-element-id="${target.elementId}"]`);
   const ready = () => { api.layout.setMode(true); click(component()); };
-  const event = (x = 0, y = 0) => ({ inputEvent: { clientX: x, clientY: y }, set() {}, stop() { throw new Error('gesture 未啟動'); } });
+  const event = (x = 0, y = 0) => ({ inputEvent: { clientX: x, clientY: y }, set() {}, setFixedDirection() {}, stop() { throw new Error('gesture 未啟動'); } });
   const begin = (kind = 'drag') => vendor.handlers[kind + 'Start'](event());
-  const update = (x, y, kind = 'drag') => vendor.handlers[kind](event(x, y));
+  const update = (x, y, kind = 'drag', fields = {}) => vendor.handlers[kind]({ ...event(x, y), ...fields });
   const finish = (kind = 'drag') => vendor.handlers[kind + 'End']();
   const getSpec = () => JSON.parse(JSON.stringify(api.getDeckSpec()));
   return { api, document, window, getRevision: () => window.__testRevision(), flushMutations() { for (const observer of [...observers]) observer.fn(); }, get vendor() { return vendor; }, get selecto() { return selectoVendor; }, click, assets: window.PPTSKILLAssets, counts, component, ready, begin, update, finish, getSpec,

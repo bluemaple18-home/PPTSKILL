@@ -1,3 +1,4 @@
+import { runImageFitBrowserCases } from './edx-wp2-s7-browser-cases.mjs';
 import { runSelectedImageBrowserCases } from './edx-wp2-s6-browser-cases.mjs';
 import { addAssetReplacementFixture, runAssetReplacementBrowserCases } from './edx-wp2-s4-browser-cases.mjs';
 import { runTargetedImageFileBrowserCases } from './edx-wp2-s5-browser-cases.mjs';
@@ -35,7 +36,7 @@ if (process.argv.includes('--typography-regression') || process.argv.includes('-
   input.slides[0].composition.motion = { effect: 'underline-sweep', role: 'text', replay: 'slide-visible', staggerMs: 90, targets: [{ ref: 'content.title' }, { ref: 'content.subtitle' }] };
   const other = structuredClone(input.slides[0]); other.id = 'typography-other'; input.slides.push(other);
 }
-if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression')) addAssetReplacementFixture(input);
+if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression')) addAssetReplacementFixture(input);
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -193,6 +194,7 @@ try {
       if (process.argv.includes('--typography-regression')) await runTypographyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--asset-replacement-regression')) await runAssetReplacementBrowserCases({ cdp, evaluate, navigate, sourcePath, run, assertExport });
       if (process.argv.includes('--targeted-image-file-regression')) await runTargetedImageFileBrowserCases({ cdp, evaluate, navigate, sourcePath, run, assertExport });
+      if (process.argv.includes('--image-fit-regression')) await runImageFitBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--selected-image-regression')) await runSelectedImageBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
