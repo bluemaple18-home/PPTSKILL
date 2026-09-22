@@ -1,0 +1,78 @@
+✖ WP2-S2 Node：boundary/reset/preservation/invalid atomic (3.840834ms)
+✖ WP2-S2 portable：boundary/reset/preservation/invalid atomic (6.89375ms)
+✖ WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建 (0.89825ms)
+✖ WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export (8.675ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.558667
+
+✖ failing tests:
+
+test at tests/edx-wp2-s2-role-font-size.test.mjs:16:39
+✖ WP2-S2 Node：boundary/reset/preservation/invalid atomic (3.840834ms)
+  SyntaxError: "undefined" is not valid JSON
+      at JSON.parse (<anonymous>)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:20:25)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s2-role-font-size.test.mjs:16:39
+✖ WP2-S2 portable：boundary/reset/preservation/invalid atomic (6.89375ms)
+  SyntaxError: "undefined" is not valid JSON
+      at JSON.parse (<anonymous>)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:20:25)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp2-s2-role-font-size.test.mjs:44:1
+✖ WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建 (0.89825ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  undefined !== 160
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:46:49)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 160,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s2-role-font-size.test.mjs:58:1
+✖ WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export (8.675ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(toolbar)
+  
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:63:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

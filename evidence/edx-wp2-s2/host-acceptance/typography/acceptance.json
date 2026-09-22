@@ -1,0 +1,88 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/source.html",
+  "sourceSha256": "8cd1278be34f816ac2bf69aa6ef725b5d574d7c20da470f640cdb61b2a55fd6a",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-legacy-selected.html",
+          "bytes": 487221,
+          "sha256": "6cc3b2e1c8536ed0273a0ea07670af513e804d3182224704572d22a24c730af5"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-preview-export.html",
+          "bytes": 487530,
+          "sha256": "b244215821adcab5ce3dfde32d23cbd1c4488214facf299f249e13daecc56a1b"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-cancel.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-noop.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-invalid.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-invalid-resize.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-play-mode.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-export.html",
+          "bytes": 487530,
+          "sha256": "dd1d022f883fc224845e9127ae7c95ed840a2fefebc67721d0a5efafed859fd0"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s2/host-acceptance/typography/1280-reopen-export.html",
+          "bytes": 487530,
+          "sha256": "e1b6995614866d726125bcc5139a3a6591bf80be9a9cebeea654b7bae8b1de17"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'54px' !== '16px'\n\n    at runTypographyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s2-browser-cases.mjs:29:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:187:61",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'54px' !== '16px'\n\n    at runTypographyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s2-browser-cases.mjs:29:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:187:61"
+}

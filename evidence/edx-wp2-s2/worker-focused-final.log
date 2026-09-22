@@ -1,0 +1,406 @@
+TAP version 13
+# Subtest: export cleanup 只移除 bounded editor chrome roots
+ok 1 - export cleanup 只移除 bounded editor chrome roots
+  ---
+  duration_ms: 0.98725
+  type: 'test'
+  ...
+# Subtest: editor chrome contract 誤標 presentation truth 時 fail loud
+ok 2 - editor chrome contract 誤標 presentation truth 時 fail loud
+  ---
+  duration_ms: 0.453
+  type: 'test'
+  ...
+# Subtest: editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+ok 3 - editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+  ---
+  duration_ms: 0.106375
+  type: 'test'
+  ...
+# Subtest: export clone root 自己被標成 editor chrome 時也不可漏出
+ok 4 - export clone root 自己被標成 editor chrome 時也不可漏出
+  ---
+  duration_ms: 0.11375
+  type: 'test'
+  ...
+# Subtest: 正式 browser exporter 共用同一 cleanup seam
+ok 5 - 正式 browser exporter 共用同一 cleanup seam
+  ---
+  duration_ms: 0.880083
+  type: 'test'
+  ...
+# Subtest: legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+ok 6 - legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+  ---
+  duration_ms: 3.435459
+  type: 'test'
+  ...
+# Subtest: caller-supplied invalid identity 在 sanitizer 前 fail loud
+ok 7 - caller-supplied invalid identity 在 sanitizer 前 fail loud
+  ---
+  duration_ms: 0.618041
+  type: 'test'
+  ...
+# Subtest: renderer 對 directly operable roots 輸出 slide-local unique element identity
+ok 8 - renderer 對 directly operable roots 輸出 slide-local unique element identity
+  ---
+  duration_ms: 24.304375
+  type: 'test'
+  ...
+# Subtest: edit-text descriptor 完整宣告 bounded metadata
+ok 9 - edit-text descriptor 完整宣告 bounded metadata
+  ---
+  duration_ms: 0.3795
+  type: 'test'
+  ...
+# Subtest: executeOperation 只依 stable target pair 編輯文字並 fail loud
+ok 10 - executeOperation 只依 stable target pair 編輯文字並 fail loud
+  ---
+  duration_ms: 3.579208
+  type: 'test'
+  ...
+# Subtest: legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+ok 11 - legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+  ---
+  duration_ms: 7.523042
+  type: 'test'
+  ...
+# Subtest: 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+ok 12 - 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+  ---
+  duration_ms: 9.078834
+  type: 'test'
+  ...
+# Subtest: descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+ok 13 - descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+  ---
+  duration_ms: 6.492875
+  type: 'test'
+  ...
+# Subtest: legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+ok 14 - legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+  ---
+  duration_ms: 7.119834
+  type: 'test'
+  ...
+# Subtest: legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+ok 15 - legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+  ---
+  duration_ms: 6.54325
+  type: 'test'
+  ...
+# Subtest: mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+ok 16 - mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+  ---
+  duration_ms: 6.172333
+  type: 'test'
+  ...
+# Subtest: scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+ok 17 - scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 1.923208
+  type: 'test'
+  ...
+# Subtest: scale 1 drag/SE resize preview ephemeral，release 至多一次
+ok 18 - scale 1 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 1.345833
+  type: 'test'
+  ...
+# Subtest: no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+ok 19 - no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+  ---
+  duration_ms: 15.196833
+  type: 'test'
+  ...
+# Subtest: SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+ok 20 - SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+  ---
+  duration_ms: 2.588875
+  type: 'test'
+  ...
+# Subtest: stale target 刪除不提交；切選取取消 preview
+ok 21 - stale target 刪除不提交；切選取取消 preview
+  ---
+  duration_ms: 1.451625
+  type: 'test'
+  ...
+# Subtest: export 只移除 control 對應 style，canonical component 不作 chrome root
+ok 22 - export 只移除 control 對應 style，canonical component 不作 chrome root
+  ---
+  duration_ms: 0.442334
+  type: 'test'
+  ...
+# Subtest: S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 23 - S4 managed attach  只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 204.899959
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 24 - S4 managed attach --perf-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 157.73825
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 25 - S4 managed attach --motion-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 149.321041
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --keyboard-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 26 - S4 managed attach --keyboard-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 146.945792
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --snap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 27 - S4 managed attach --snap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 146.481417
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --selection-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 28 - S4 managed attach --selection-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 147.272417
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --alignment-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 29 - S4 managed attach --alignment-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 143.881041
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --distribution-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 30 - S4 managed attach --distribution-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 130.751
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --equal-gap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 31 - S4 managed attach --equal-gap-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 132.078
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --direct-text-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 32 - S4 managed attach --direct-text-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 131.362583
+  type: 'test'
+  ...
+# Subtest: S4 managed attach --typography-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+ok 33 - S4 managed attach --typography-regression 只建／關 owned target，navigation 失敗仍清理且不 spawn
+  ---
+  duration_ms: 137.692334
+  type: 'test'
+  ...
+# Subtest: S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn
+ok 34 - S4 focused browser script 缺 managed port 明確拒絕，不 fallback spawn
+  ---
+  duration_ms: 93.953208
+  type: 'test'
+  ...
+# Subtest: mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+ok 35 - mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 50.824875
+  type: 'test'
+  ...
+# Subtest: mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+ok 36 - mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 73.445042
+  type: 'test'
+  ...
+# Subtest: mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+ok 37 - mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 133.755042
+  type: 'test'
+  ...
+# Subtest: mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+ok 38 - mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+  ---
+  duration_ms: 78.494334
+  type: 'test'
+  ...
+# Subtest: mounted semantic public text 使 gesture stale，不覆寫新 state
+ok 39 - mounted semantic public text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 26.639167
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy text 使 gesture stale，不覆寫新 state
+ok 40 - mounted semantic legacy text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 28.38925
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy component 使 gesture stale，不覆寫新 state
+ok 41 - mounted semantic legacy component 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 28.693917
+  type: 'test'
+  ...
+# Subtest: mounted semantic geometry 使 gesture stale，不覆寫新 state
+ok 42 - mounted semantic geometry 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 32.224833
+  type: 'test'
+  ...
+# Subtest: mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+ok 43 - mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 28.122125
+  type: 'test'
+  ...
+# Subtest: mounted semantic asset replace 使 gesture stale，不覆寫新 state
+ok 44 - mounted semantic asset replace 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 6.724667
+  type: 'test'
+  ...
+# Subtest: mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+ok 45 - mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 33.50675
+  type: 'test'
+  ...
+# Subtest: mounted semantic component text seam 使 gesture stale，不覆寫新 state
+ok 46 - mounted semantic component text seam 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 26.334875
+  type: 'test'
+  ...
+# Subtest: mounted semantic change then revert 使 gesture stale，不覆寫新 state
+ok 47 - mounted semantic change then revert 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 37.792834
+  type: 'test'
+  ...
+# Subtest: mounted semantic duplicate 使 gesture stale，不覆寫新 state
+ok 48 - mounted semantic duplicate 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 39.315625
+  type: 'test'
+  ...
+# Subtest: mounted reorder/delete/unrelated slide mutation 取消 gesture
+ok 49 - mounted reorder/delete/unrelated slide mutation 取消 gesture
+  ---
+  duration_ms: 120.678875
+  type: 'test'
+  ...
+# Subtest: mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+ok 50 - mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+  ---
+  duration_ms: 43.899709
+  type: 'test'
+  ...
+# Subtest: mounted noop image/text、invalid component patch 不假 mutation
+ok 51 - mounted noop image/text、invalid component patch 不假 mutation
+  ---
+  duration_ms: 37.148125
+  type: 'test'
+  ...
+# Subtest: mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+ok 52 - mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+  ---
+  duration_ms: 50.714875
+  type: 'test'
+  ...
+# Subtest: mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+ok 53 - mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+  ---
+  duration_ms: 156.81625
+  type: 'test'
+  ...
+# Subtest: WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+ok 54 - WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+  ---
+  duration_ms: 16.182333
+  type: 'test'
+  ...
+# Subtest: WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+ok 55 - WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+  ---
+  duration_ms: 3.901125
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+ok 56 - WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+  ---
+  duration_ms: 13.38275
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+ok 57 - WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+  ---
+  duration_ms: 8.0385
+  type: 'test'
+  ...
+# Subtest: WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+ok 58 - WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+  ---
+  duration_ms: 7.799458
+  type: 'test'
+  ...
+# Subtest: WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+ok 59 - WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+  ---
+  duration_ms: 15.370167
+  type: 'test'
+  ...
+# Subtest: WP2-S2 Node：boundary/reset/preservation/invalid atomic
+ok 60 - WP2-S2 Node：boundary/reset/preservation/invalid atomic
+  ---
+  duration_ms: 12.524167
+  type: 'test'
+  ...
+# Subtest: WP2-S2 portable：boundary/reset/preservation/invalid atomic
+ok 61 - WP2-S2 portable：boundary/reset/preservation/invalid atomic
+  ---
+  duration_ms: 35.861708
+  type: 'test'
+  ...
+# Subtest: WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建
+ok 62 - WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建
+  ---
+  duration_ms: 8.045167
+  type: 'test'
+  ...
+# Subtest: WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export
+ok 63 - WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export
+  ---
+  duration_ms: 9.16125
+  type: 'test'
+  ...
+# Subtest: WP2-S2 no-op/invalid 不增 revision，真正改字級會使既有 gesture stale
+ok 64 - WP2-S2 no-op/invalid 不增 revision，真正改字級會使既有 gesture stale
+  ---
+  duration_ms: 20.617584
+  type: 'test'
+  ...
+# Subtest: WP2-S2 切頁/模式與非法 input 不留下可用 stale target
+ok 65 - WP2-S2 切頁/模式與非法 input 不留下可用 stale target
+  ---
+  duration_ms: 14.066083
+  type: 'test'
+  ...
+# Subtest: WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CSS default
+ok 66 - WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CSS default
+  ---
+  duration_ms: 8.128375
+  type: 'test'
+  ...
+1..66
+# tests 66
+# suites 0
+# pass 66
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1896.946

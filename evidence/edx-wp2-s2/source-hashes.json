@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1.0",
+  "productSha": "14555d0499e1f07ec8fabf3deb5e33db90d4d608",
+  "sources": {
+    "distribution/lib/lifecycle.mjs": "78bfa4815a6c585288859e18a7c5a9d2046e1c25252bb23421404c03b2a4989a",
+    "runtime/deck-editor.js": "b7978f5988c0806325b1a57c98a820dd5282253b4426b4643c2265aaf47e1149",
+    "runtime/deck-spec.js": "43c0ebf03b643217f35571b2af7320b89ce396e15a0af16541e3b75dbe71142c",
+    "runtime/full-deck-renderer.js": "df3a99188d27b6141bdfdd1fa10352f1d7459a3581feea2a6a2f6f1b26975062",
+    "runtime/role-typography.js": "16dfe3629a5bc67cea2eb65eea20ff1e04fe29ef978220a3017a11eb585cbd85",
+    "schemas/deck-spec.schema.json": "08a61d393935aa83b931a9cfd1d72ef6a26d93ddf7d3d4a50041cb5c90cf0d8b",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "71931873f76e6831ee5a37e68633e4a284d2b856b6904cbc62313d58965d8082",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": "a762754e52e6035f7d89cafc43480ac5746242540f058c85a4ccdee37d60ba2d",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "e63e652f7ee11c17cc05ad215f2fe0a274f87510882b708a6093144f8336944b",
+    "tests/edx-wp2-s2-role-font-size.test.mjs": "290cff594542e077cb54b11a979bb4b3cc1a1fb4b6ee02585fd3806ab4bf8d06",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "61f7cae5a708dfddfc327486c8731ea468a72a16cd761bd6c91a96c6c1e9f683",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "44a15b723379198ba3144d50198b638d9b855bd7347130781072495d2c1c2c35",
+    "tools/edx-wp2-s2-browser-cases.mjs": "2c02bed48e24c739b2c82a0142d9e35341823fbe7e34150c9c923198b1e05eb5"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2286500,
+    "sha256": "33fc2e5d44ac7a30ee130a8ecf4a8881125811a15d0bbba35c36b4f51936d10f"
+  }
+}

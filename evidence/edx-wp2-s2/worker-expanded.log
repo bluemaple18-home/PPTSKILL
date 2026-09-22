@@ -1,0 +1,72 @@
+TAP version 13
+# Subtest: WP2-S2 Node：boundary/reset/preservation/invalid atomic
+ok 1 - WP2-S2 Node：boundary/reset/preservation/invalid atomic
+  ---
+  duration_ms: 6.916958
+  type: 'test'
+  ...
+# Subtest: WP2-S2 portable：boundary/reset/preservation/invalid atomic
+ok 2 - WP2-S2 portable：boundary/reset/preservation/invalid atomic
+  ---
+  duration_ms: 17.515833
+  type: 'test'
+  ...
+# Subtest: WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建
+ok 3 - WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建
+  ---
+  duration_ms: 8.022083
+  type: 'test'
+  ...
+# Subtest: WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export
+ok 4 - WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export
+  ---
+  duration_ms: 7.948709
+  type: 'test'
+  ...
+# Subtest: WP2-S2 no-op/invalid 不增 revision，真正改字級會使既有 gesture stale
+ok 5 - WP2-S2 no-op/invalid 不增 revision，真正改字級會使既有 gesture stale
+  ---
+  duration_ms: 13.594833
+  type: 'test'
+  ...
+# Subtest: WP2-S2 切頁/模式與非法 input 不留下可用 stale target
+ok 6 - WP2-S2 切頁/模式與非法 input 不留下可用 stale target
+  ---
+  duration_ms: 6.450584
+  type: 'test'
+  ...
+# Subtest: WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CSS default
+not ok 7 - WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CSS default
+  ---
+  duration_ms: 1.134375
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:107:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    ["portable 的 CompositionSpec motion 不在 allowlist。"]
+    
+    'fail' !== 'pass'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'pass'
+  actual: 'fail'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s2-role-font-size.test.mjs:111:50)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+1..7
+# tests 7
+# suites 0
+# pass 6
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.114375

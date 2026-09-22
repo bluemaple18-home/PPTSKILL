@@ -1,6 +1,6 @@
 # EDX-WP2-S2 — Role font-size override
 
-Status: IN_PROGRESS
+Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
 Branch: `codex/edx-wp2-s2-role-font-size`
 Base: `4a1c0bb0fddff372253eaa3e4ea5f33a3204ea1e`
 Depends on: WP2-S1 COMPLETE / Independent GO / merged main。
@@ -36,3 +36,11 @@ Worker single writer：產品 runtime、bounded tests、`tools/edx-wp2-s2-browse
 - 新 `--typography-regression` attach-only flag：雙 viewport 真 title/subtitle UI 改字級、reset、IME guard、export/offline reopen，errors0、target closed；四支 affected PGQ 串行、managed cleanup。
 - 缺正式 host evidence 則只 checkpoint，不偽稱 review candidate。完成停在 Independent Review candidate，未 merge/push/deploy，不開下一 Slice。
 - 同一 blocker 兩次無進展回主線；不自行擴欄位或改安全閘門。
+
+## Mainline acceptance — 2026-09-22
+
+Product `14555d0499e1f07ec8fabf3deb5e33db90d4d608`。Worker scoped 66/66；完整 non-browser 最終 431/431 PASS；最新 ZIP lifecycle PASS。雙 viewport typography 各 16 checks PASS；affected PGQ 串行單輪 16/16 PASS；errors0、targetClosed、cleanup PASS。
+
+首輪 full 425/431 為 S3 snapshot/VM fixture，已 bounded 修正。Browser 前兩輪 FAIL 定位 toolbar CSS specificity，使按鈕 rect=0×0；產品補 edit-mode typography selector 後 PASS。歷史 FAIL 保留，非單輪全部成功。Source 13/13、protected 4/4、ZIP MATCH；IME 僅 synthetic CompositionEvent。
+
+Receipt：`evidence/edx-wp2-s2/mainline-receipt.md`；handoff：`handoff_20260922_edx_wp2_s2_review.md`。未 merge／push／deploy，未開下一 Slice。

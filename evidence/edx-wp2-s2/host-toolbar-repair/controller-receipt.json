@@ -1,0 +1,70 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "distribution/lib/lifecycle.mjs": true,
+      "runtime/deck-editor.js": true,
+      "runtime/deck-spec.js": true,
+      "runtime/full-deck-renderer.js": true,
+      "runtime/role-typography.js": true,
+      "schemas/deck-spec.schema.json": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tests/edx-wp1-s4-managed-browser-attach.test.mjs": true,
+      "tests/edx-wp2-s2-role-font-size.test.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp2-s2-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2286500,
+      "sha256": "33fc2e5d44ac7a30ee130a8ecf4a8881125811a15d0bbba35c36b4f51936d10f"
+    }
+  },
+  "aiCoreCommit": "e155b3abeabe45c2442bcf86c30236237c84ffaa",
+  "supervisorPid": 88170,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-deb3de85876a47918f253620a8a13a35",
+  "typographyStarted": true,
+  "typographyExit": 0,
+  "pgqStarted": true,
+  "pgqExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "distribution/lib/lifecycle.mjs": true,
+      "runtime/deck-editor.js": true,
+      "runtime/deck-spec.js": true,
+      "runtime/full-deck-renderer.js": true,
+      "runtime/role-typography.js": true,
+      "schemas/deck-spec.schema.json": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tests/edx-wp1-s4-managed-browser-attach.test.mjs": true,
+      "tests/edx-wp2-s2-role-font-size.test.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp2-s2-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2286500,
+      "sha256": "33fc2e5d44ac7a30ee130a8ecf4a8881125811a15d0bbba35c36b4f51936d10f"
+    }
+  },
+  "status": "PASS"
+}

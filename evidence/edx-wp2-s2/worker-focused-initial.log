@@ -1,0 +1,330 @@
+TAP version 13
+# Subtest: export cleanup 只移除 bounded editor chrome roots
+ok 1 - export cleanup 只移除 bounded editor chrome roots
+  ---
+  duration_ms: 0.966375
+  type: 'test'
+  ...
+# Subtest: editor chrome contract 誤標 presentation truth 時 fail loud
+ok 2 - editor chrome contract 誤標 presentation truth 時 fail loud
+  ---
+  duration_ms: 0.407917
+  type: 'test'
+  ...
+# Subtest: editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+ok 3 - editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+  ---
+  duration_ms: 0.088333
+  type: 'test'
+  ...
+# Subtest: export clone root 自己被標成 editor chrome 時也不可漏出
+ok 4 - export clone root 自己被標成 editor chrome 時也不可漏出
+  ---
+  duration_ms: 0.103375
+  type: 'test'
+  ...
+# Subtest: 正式 browser exporter 共用同一 cleanup seam
+ok 5 - 正式 browser exporter 共用同一 cleanup seam
+  ---
+  duration_ms: 0.994
+  type: 'test'
+  ...
+# Subtest: legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+ok 6 - legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+  ---
+  duration_ms: 3.128708
+  type: 'test'
+  ...
+# Subtest: caller-supplied invalid identity 在 sanitizer 前 fail loud
+ok 7 - caller-supplied invalid identity 在 sanitizer 前 fail loud
+  ---
+  duration_ms: 0.55325
+  type: 'test'
+  ...
+# Subtest: renderer 對 directly operable roots 輸出 slide-local unique element identity
+ok 8 - renderer 對 directly operable roots 輸出 slide-local unique element identity
+  ---
+  duration_ms: 11.950791
+  type: 'test'
+  ...
+# Subtest: edit-text descriptor 完整宣告 bounded metadata
+not ok 9 - edit-text descriptor 完整宣告 bounded metadata
+  ---
+  duration_ms: 3.283292
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s2-stable-identity-operation-path.test.mjs:47:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   'set-typography',
+        'edit-text',
+        'move-element',
+        'resize-element',
+        'align-selection',
+        'distribute-selection'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: 'edit-text'
+    1: 'move-element'
+    2: 'resize-element'
+    3: 'align-selection'
+    4: 'distribute-selection'
+  actual:
+    0: 'set-typography'
+    1: 'edit-text'
+    2: 'move-element'
+    3: 'resize-element'
+    4: 'align-selection'
+    5: 'distribute-selection'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s2-stable-identity-operation-path.test.mjs:48:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: executeOperation 只依 stable target pair 編輯文字並 fail loud
+ok 10 - executeOperation 只依 stable target pair 編輯文字並 fail loud
+  ---
+  duration_ms: 1.749917
+  type: 'test'
+  ...
+# Subtest: legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+ok 11 - legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+  ---
+  duration_ms: 6.6955
+  type: 'test'
+  ...
+# Subtest: 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+ok 12 - 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+  ---
+  duration_ms: 6.060167
+  type: 'test'
+  ...
+# Subtest: descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+ok 13 - descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+  ---
+  duration_ms: 5.546125
+  type: 'test'
+  ...
+# Subtest: legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+ok 14 - legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+  ---
+  duration_ms: 4.893
+  type: 'test'
+  ...
+# Subtest: legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+ok 15 - legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+  ---
+  duration_ms: 5.543167
+  type: 'test'
+  ...
+# Subtest: mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+ok 16 - mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+  ---
+  duration_ms: 5.753292
+  type: 'test'
+  ...
+# Subtest: scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+ok 17 - scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 1.518083
+  type: 'test'
+  ...
+# Subtest: scale 1 drag/SE resize preview ephemeral，release 至多一次
+ok 18 - scale 1 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 1.36425
+  type: 'test'
+  ...
+# Subtest: no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+ok 19 - no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+  ---
+  duration_ms: 5.528458
+  type: 'test'
+  ...
+# Subtest: SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+ok 20 - SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+  ---
+  duration_ms: 0.654041
+  type: 'test'
+  ...
+# Subtest: stale target 刪除不提交；切選取取消 preview
+ok 21 - stale target 刪除不提交；切選取取消 preview
+  ---
+  duration_ms: 2.158125
+  type: 'test'
+  ...
+# Subtest: export 只移除 control 對應 style，canonical component 不作 chrome root
+ok 22 - export 只移除 control 對應 style，canonical component 不作 chrome root
+  ---
+  duration_ms: 0.603042
+  type: 'test'
+  ...
+# Subtest: mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+ok 23 - mounted 1 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 32.175875
+  type: 'test'
+  ...
+# Subtest: mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+ok 24 - mounted 6 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 65.263459
+  type: 'test'
+  ...
+# Subtest: mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+ok 25 - mounted 12 MiB pointer update/preview 不讀 payload、不序列化
+  ---
+  duration_ms: 124.09925
+  type: 'test'
+  ...
+# Subtest: mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+ok 26 - mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen
+  ---
+  duration_ms: 72.373041
+  type: 'test'
+  ...
+# Subtest: mounted semantic public text 使 gesture stale，不覆寫新 state
+ok 27 - mounted semantic public text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 22.791667
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy text 使 gesture stale，不覆寫新 state
+ok 28 - mounted semantic legacy text 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 24.207167
+  type: 'test'
+  ...
+# Subtest: mounted semantic legacy component 使 gesture stale，不覆寫新 state
+ok 29 - mounted semantic legacy component 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 25.123625
+  type: 'test'
+  ...
+# Subtest: mounted semantic geometry 使 gesture stale，不覆寫新 state
+ok 30 - mounted semantic geometry 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 23.364291
+  type: 'test'
+  ...
+# Subtest: mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+ok 31 - mounted semantic sync text/export 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 25.211083
+  type: 'test'
+  ...
+# Subtest: mounted semantic asset replace 使 gesture stale，不覆寫新 state
+ok 32 - mounted semantic asset replace 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 6.109792
+  type: 'test'
+  ...
+# Subtest: mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+ok 33 - mounted semantic keyPoint 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 23.97725
+  type: 'test'
+  ...
+# Subtest: mounted semantic component text seam 使 gesture stale，不覆寫新 state
+ok 34 - mounted semantic component text seam 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 24.036417
+  type: 'test'
+  ...
+# Subtest: mounted semantic change then revert 使 gesture stale，不覆寫新 state
+ok 35 - mounted semantic change then revert 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 32.361792
+  type: 'test'
+  ...
+# Subtest: mounted semantic duplicate 使 gesture stale，不覆寫新 state
+ok 36 - mounted semantic duplicate 使 gesture stale，不覆寫新 state
+  ---
+  duration_ms: 35.470083
+  type: 'test'
+  ...
+# Subtest: mounted reorder/delete/unrelated slide mutation 取消 gesture
+ok 37 - mounted reorder/delete/unrelated slide mutation 取消 gesture
+  ---
+  duration_ms: 107.593375
+  type: 'test'
+  ...
+# Subtest: mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+ok 38 - mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale
+  ---
+  duration_ms: 42.231333
+  type: 'test'
+  ...
+# Subtest: mounted noop image/text、invalid component patch 不假 mutation
+ok 39 - mounted noop image/text、invalid component patch 不假 mutation
+  ---
+  duration_ms: 33.553042
+  type: 'test'
+  ...
+# Subtest: mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+ok 40 - mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity
+  ---
+  duration_ms: 51.71325
+  type: 'test'
+  ...
+# Subtest: mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+ok 41 - mounted target replacement/deletion/mode/cancel/invalid/noop 不提交
+  ---
+  duration_ms: 136.846958
+  type: 'test'
+  ...
+# Subtest: WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+ok 42 - WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+  ---
+  duration_ms: 17.358709
+  type: 'test'
+  ...
+# Subtest: WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+ok 43 - WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+  ---
+  duration_ms: 4.406417
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+ok 44 - WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+  ---
+  duration_ms: 6.595417
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+ok 45 - WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+  ---
+  duration_ms: 6.735125
+  type: 'test'
+  ...
+# Subtest: WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+ok 46 - WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+  ---
+  duration_ms: 3.248833
+  type: 'test'
+  ...
+# Subtest: WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+ok 47 - WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+  ---
+  duration_ms: 3.694208
+  type: 'test'
+  ...
+1..47
+# tests 47
+# suites 0
+# pass 46
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1042.101541
