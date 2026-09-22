@@ -86,6 +86,10 @@ export function mountedEditor(input = fixture()) {
   const typographyToolbar = new Element('span', { 'data-pptskill-typography-toolbar': '', hidden: '' }); typographyToolbar.hidden = true; body.append(typographyToolbar);
   typographyToolbar.append(new Element('input', { 'data-typography-size': '', type: 'number' }));
   for (const action of ['apply-typography', 'reset-typography', 'copy-style', 'paste-style']) typographyToolbar.append(new Element('button', { 'data-action': action }));
+  const imageToolbar = new Element('span', { 'data-pptskill-selected-image-toolbar': '', 'data-pptskill-editor-chrome': '' });
+  const imageButton = new Element('button', { 'data-action': 'replace-selected-image', hidden: '' }); imageButton.hidden = true;
+  imageToolbar.append(imageButton);
+  imageToolbar.append(new Element('input', { id: 'pptskill-selected-image-input', type: 'file' })); body.append(imageToolbar);
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
     const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);

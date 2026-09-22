@@ -100,7 +100,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide }) {
+  project, notify, setTextMode, selectSlide, onSelectionChange = () => {} }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -165,6 +165,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   let selection;
   const applySelection = ids => {
     clearSelectionView();
+    onSelectionChange('refresh');
     const slideNode = currentSlideNode();
     if (!slideNode || !ids.length) { selecto?.setSelectedTargets?.([]); return; }
     const selectedNodes = ids.map(id => slideNode.querySelector('[data-pptskill-element-id="' + CSS.escape(id) + '"]')).filter(Boolean);
@@ -184,8 +185,9 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     bindVendor();
   };
   selection = createMultiSelectionState({ listTargets: eligibleIds, onChange: applySelection });
-  const clearSelection = () => { if (!selection.clear()) clearSelectionView(); };
+  const clearSelection = (reason = 'clear') => { if (!selection.clear()) clearSelectionView(); onSelectionChange(reason); };
   const mutateSelection = (ids, mode) => {
+    onSelectionChange('selection');
     interaction.cancel(); moveable?.stopDrag();
     return mode === 'toggle' ? selection.toggle(ids) : selection.replace(ids);
   };
@@ -219,9 +221,9 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     });
     selecto.setSelectedTargets(eligibleNodes().filter(node => selection.getState().selected.includes(node.dataset.pptskillElementId)));
   };
-  const cancel = () => {
+  const cancel = (reason = 'clear') => {
     interaction.cancel(); moveable?.stopDrag();
-    if (snap) clearSelection();
+    if (snap && reason !== 'picker') clearSelection(reason);
     else moveable?.updateRect();
   };
   const point = event => ({ x: event.inputEvent?.clientX ?? event.clientX, y: event.inputEvent?.clientY ?? event.clientY });
@@ -288,6 +290,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (snap) vendor.updateRect();
   };
   const select = (target, toggle = false) => {
+    onSelectionChange('selection');
     const currentSlideId = currentSlideNode()?.dataset.slideId;
     if (currentSlideId !== target.slideId) { clearSelection(); selectSlide(target.slideId); toggle = false; }
     const selected = selection.getState().selected;
@@ -351,6 +354,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       suppressPointerClick = false; event.preventDefault(); return;
     }
     const action = event.target.closest?.('[data-action]')?.dataset.action;
+    if (action === 'replace-selected-image') return;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
     if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
     if (action?.startsWith('distribute-')) { distributeSelection(action.slice('distribute-'.length)); return; }
@@ -401,6 +405,8 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     cancel(); routedControlClick = event;
   };
   const pointerDown = event => {
+    if (event.target.closest?.('[data-action="replace-selected-image"]')) cancel('picker');
+    else if (interaction.getState().enabled && event.target.closest?.('.slide')) onSelectionChange('selection');
     // 沒有尾隨 click（例如 pointercancel）時，新的有效 pointer 仍立即恢復操作。
     if (event.isTrusted && event.isPrimary !== false && event.button === 0) { suppressPointerClick = false; routedControlClick = null; }
   };
@@ -411,7 +417,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   document.addEventListener('compositionstart', compositionStart, true);
   document.addEventListener('compositionend', compositionEnd, true);
   document.addEventListener('pointercancel', pointerCancel, true);
-  const blur = () => { composing = false; pointerCancel(); clearSelection(); };
+  const blur = () => { composing = false; if (interaction.getState().enabled) cancel('blur'); clearSelection('blur'); };
   window.addEventListener('blur', blur);
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
