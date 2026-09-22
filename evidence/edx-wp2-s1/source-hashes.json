@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "productSha": "a33b05a1e8a07accd4c55f8f4643369d5b9efe3d",
+  "sources": {
+    "runtime/deck-editor.js": "d4736472a02dba17b1fb44cca9c95ecb7b4f9dd1ef86a2f727d545eb4d843b7a",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "f07479880f8b7975cb45d686303e081719bdfcdc031115279ca0f69157dfb2de",
+    "tests/edx-wp1-s4-perf.test.mjs": "6093bd420094c58f0bf22cc9d72ee57b6cf76787de1f618b0ed58e282a7353fc",
+    "tests/edx-wp2-s1-direct-text-edit.test.mjs": "6448bbe916500afe7e9e9fdbc7c7e3ed93193cc7040148e5a2c9ba504d940176",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "7bfb1a6d1075b4df33c73ab2bbff6db558f813588630ea3a06b6438572fd383c",
+    "tools/edx-wp2-s1-browser-cases.mjs": "0276db03a9ecd66c4993d6d2375b236921e1a4e9cf63ccdee55ebca98529d0a4"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2283305,
+    "sha256": "7d1cbe050b61dab6fd31f4daa90290d298ee5c17509be7af363cd26446872929"
+  }
+}

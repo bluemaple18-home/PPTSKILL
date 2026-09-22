@@ -1,0 +1,6 @@
+2026-09-22 WP2-S1 browser preflight
+CODEX_SANDBOX=seatbelt
+PPTSKILL_DEVTOOLS_ACTIVE_PORT=unset
+Decision=HOST_ACCEPTANCE_PENDING
+BrowserLaunch=NOT_RUN
+原因=目前 task 沒有合法 managed browser attachment；未嘗試 sandbox bypass、直接啟動 Chrome 或繞過 routing。

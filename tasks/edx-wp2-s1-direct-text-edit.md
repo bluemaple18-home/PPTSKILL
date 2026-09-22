@@ -1,6 +1,6 @@
 # EDX-WP2-S1 — Direct text editing / IME bounded commit
 
-Status: IN_PROGRESS
+Status: PRODUCT_CANDIDATE / HOST_ACCEPTANCE_PENDING
 Branch: `codex/edx-wp2-s1-direct-text-edit`
 Base: `33a19464b7e6b0795974166cc15c77e68e984e04`
 Depends on: EDX-WP1 S11 COMPLETE / Independent Review GO / merged main。
@@ -38,3 +38,14 @@ traces_to: `BACKLOG.md §10.1 Decision 2/7/8`、`§10.2 Prior-Art-First`、`§10
 - Fresh browser：1280×720 / 1600×900 各至少 title direct edit + CJK composition lifecycle + Escape cancel + export/offline reopen；errors 0、managed cleanup PASS。若本 task 無合法 host runtime，保留 host acceptance pending，不繞 AI Core routing。
 - Fresh ZIP lifecycle / hash；source/protected hashes freeze。
 - 完成停在 Independent Review candidate；不 merge／push／deploy，不開下一 Slice。
+
+## Mainline checkpoint — 2026-09-22
+
+- Product SHA：`a33b05a1e8a07accd4c55f8f4643369d5b9efe3d`。
+- RED→GREEN：新 direct-text mounted cases **6/6 PASS**；過程中發現並修正 S5 listener ownership 與 S4-PERF component-DOM stale probe 兩個回歸，沒有保留繞過路徑。
+- Fresh focused EDX：**228/228 PASS**。
+- Fresh full non-browser：**423/423 PASS**。
+- Managed attach/no-spawn regression 含 `--direct-text-regression`：PASS；本 task `CODEX_SANDBOX=seatbelt` 且沒有 `PPTSKILL_DEVTOOLS_ACTIVE_PORT`，因此正式 browser/affected PGQ **HOST_ACCEPTANCE_PENDING**，未啟動或繞過 browser gate。
+- ZIP lifecycle PASS；ZIP `2,283,305 bytes`，SHA-256 `7d1cbe050b61dab6fd31f4daa90290d298ee5c17509be7af363cd26446872929`。
+- Frozen integrity：source **6/6**、protected **4/4**；見 `evidence/edx-wp2-s1/source-hashes.json`。
+- `git diff --check` PASS。剩餘 scope 只在 `tasks/edx-wp2-s1-host-acceptance.md`；完成前不是 Independent Review candidate，不 merge／push／deploy，不開下一 Slice。
