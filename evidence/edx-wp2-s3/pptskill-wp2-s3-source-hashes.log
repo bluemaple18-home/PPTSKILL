@@ -1,0 +1,9 @@
+8f541520a9be93e936ba4a776a27a11fe9f1ef0516b1cff165a37362f06e9fc6  runtime/deck-editor.js
+bc6072e6992b0ceb02bc63a487bae2507fc2b7ef834e5ae4eb1d57f06673399e  runtime/role-typography.js
+fda215d7f6dfa1414c8dccc596b09f4e2ec445b10a49159343f19790e0e20295  tests/edx-wp2-s3-copy-font-size.test.mjs
+6da66980536f35ec06fd290c9f32eb1786ae4728404dfa77eda5d43ef104e771  tests/edx-wp1-s2-stable-identity-operation-path.test.mjs
+df6ffb7dc801bd2f5dccb61d0860212d75d2ee9c9e9456db3534ae1dfb3a6d4e  tests/edx-wp1-s3-bounded-geometry.test.mjs
+ea7c8aa6b9da65829df201505f579c034b3be51a6850a62982b41a2ce2ced01b  tests/edx-wp1-s4-managed-browser-attach.test.mjs
+ec47cab9f8a79a394c0c6050561fd9df4b239443959ee2e5464f1c2a2555d1f0  tools/edx-wp1-s4-browser-acceptance.mjs
+26a7c85c1d9b83af3cc81be908a474e2bed8617234971525d38293b93dfb3093  tools/edx-wp1-s4-perf-mounted.mjs
+2825bff03018f90929d266a56ea993e150085ea98dd391fce4e2b4e0c33a3cfa  tools/edx-wp2-s3-browser-cases.mjs

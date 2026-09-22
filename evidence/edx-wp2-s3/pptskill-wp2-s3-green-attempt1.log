@@ -1,0 +1,37 @@
+✔ WP2-S2 Node：boundary/reset/preservation/invalid atomic (7.997791ms)
+✔ WP2-S2 portable：boundary/reset/preservation/invalid atomic (21.401125ms)
+✔ WP2-S2 sanitizer/renderer/export round-trip，空 map 消失且無 subtitle 不創建 (8.788917ms)
+✔ WP2-S2 mounted：focus toolbar sync、IME guard、reset 保留 default/motion、export (11.186542ms)
+✔ WP2-S2 no-op/invalid 不增 revision，真正改字級會使既有 gesture stale (15.725208ms)
+✔ WP2-S2 切頁/模式與非法 input 不留下可用 stale target (7.661166ms)
+✔ WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CSS default (6.932375ms)
+✔ WP2-S3 Node snapshot、跨頁、preservation、export/reopen (7.404791ms)
+✖ WP2-S3 Node invalid atomic，getter 不執行且舊 snapshot 保留 (2.872375ms)
+✔ WP2-S3 portable snapshot、跨頁、preservation、export/reopen (25.738209ms)
+✔ WP2-S3 portable invalid atomic，getter 不執行且舊 snapshot 保留 (18.489375ms)
+✔ WP2-S3 registry metadata 與 portable parity，僅字級 contract (1.901166ms)
+✔ WP2-S3 toolbar 狀態、sync text、IME、mode/slide stale target (18.039709ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 205.411166
+
+✖ failing tests:
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:44:3
+✖ WP2-S3 Node invalid atomic，getter 不執行且舊 snapshot 保留 (2.872375ms)
+  Error: portable 缺少 title／subtitle／3～5 keyPoints。
+      at commit (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:214:30)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:255:12)
+      at size (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:8:75)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:70:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

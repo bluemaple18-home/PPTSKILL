@@ -1,0 +1,62 @@
+[
+  {
+    "path": "host-acceptance",
+    "status": "fail",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'6488' !== '88'\n\n    at apply (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:35:12)\n    at async runStyleCopyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:56:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:188:61",
+    "runs": [
+      {
+        "width": 1280,
+        "checks": 10,
+        "status": "fail",
+        "targetClosed": true
+      }
+    ],
+    "cleanup": "PASS",
+    "pgqStarted": false
+  },
+  {
+    "path": "host-input-retry",
+    "status": "fail",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:23:12)\n    at async runStyleCopyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:58:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:188:61",
+    "runs": [
+      {
+        "width": 1280,
+        "checks": 10,
+        "status": "fail",
+        "targetClosed": true
+      }
+    ],
+    "cleanup": "PASS",
+    "pgqStarted": false
+  },
+  {
+    "path": "host-pointer-retry",
+    "status": "fail",
+    "error": "AssertionError [ERR_ASSERTION]: [data-action=\"delete\"] 必須有可見尺寸\n    at visible (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:12:12)\n    at async press (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:17:35)\n    at async runStyleCopyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:109:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:188:61",
+    "runs": [
+      {
+        "width": 1280,
+        "checks": 12,
+        "status": "fail",
+        "targetClosed": true
+      }
+    ],
+    "cleanup": "PASS",
+    "pgqStarted": false
+  },
+  {
+    "path": "host-final",
+    "status": "fail",
+    "error": "AssertionError [ERR_ASSERTION]: [data-action=\"delete\"] 必須有可見尺寸\n    at visible (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:12:12)\n    at async press (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:17:35)\n    at async runStyleCopyBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s3-browser-cases.mjs:109:40)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:188:61",
+    "runs": [
+      {
+        "width": 1280,
+        "checks": 12,
+        "status": "fail",
+        "targetClosed": true
+      }
+    ],
+    "cleanup": "PASS",
+    "pgqStarted": false
+  }
+]

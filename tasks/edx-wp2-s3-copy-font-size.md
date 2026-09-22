@@ -30,3 +30,7 @@ Worker single-writer：runtime/deck-editor.js、必要 role-typography helper；
 
 Meaningful RED→GREEN；Node/portable parity、invalid atomic、snapshot/no-op、IME/stale target、export round-trip。Focused/full non-browser PASS、ZIP lifecycle/source/protected hashes、git diff --check。新 `--style-copy-regression` attach-only；雙viewport真 UI 完整覆蓋固定契約，errors0、targetClosed；四支 affected PGQ 串行與managed cleanup。缺 host 就 checkpoint，不偽稱 review candidate。
 同類兩次無進展回主線。完成停 Independent Review candidate，未 merge/push/deploy、不開下一 Slice。
+
+## Mainline checkpoint
+
+產品與 full non-browser441/441、ZIP lifecycle 已完成；正式browser目前 BLOCKED_DELETE_VISIBILITY，未達review candidate。詳 evidence/edx-wp2-s3/mainline-checkpoint.md。

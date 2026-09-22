@@ -1,0 +1,96 @@
+✖ WP2-S3 Node snapshot、跨頁、preservation、export/reopen (4.081125ms)
+✖ WP2-S3 Node invalid atomic，getter 不執行且舊 snapshot 保留 (1.16225ms)
+✖ WP2-S3 portable snapshot、跨頁、preservation、export/reopen (9.812416ms)
+✖ WP2-S3 portable invalid atomic，getter 不執行且舊 snapshot 保留 (3.281042ms)
+✖ WP2-S3 registry metadata 與 portable parity，僅字級 contract (7.927292ms)
+✖ WP2-S3 toolbar 狀態、sync text、IME、mode/slide stale target (2.775041ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 137.917
+
+✖ failing tests:
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:18:3
+✖ WP2-S3 Node snapshot、跨頁、preservation、export/reopen (4.081125ms)
+  Error: 不支援的 operation：copy-style
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:217:28)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:25:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:44:3
+✖ WP2-S3 Node invalid atomic，getter 不執行且舊 snapshot 保留 (1.16225ms)
+  Error: 不支援的 operation：copy-style
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:217:28)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:47:24)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:18:3
+✖ WP2-S3 portable snapshot、跨頁、preservation、export/reopen (9.812416ms)
+  Error: 不支援的 operation。
+      at executeOperation (evalmachine.<anonymous>:436:528)
+      at Object.executeOperation (evalmachine.<anonymous>:905:130)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:25:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:44:3
+✖ WP2-S3 portable invalid atomic，getter 不執行且舊 snapshot 保留 (3.281042ms)
+  Error: 不支援的 operation。
+      at executeOperation (evalmachine.<anonymous>:436:528)
+      at Object.executeOperation (evalmachine.<anonymous>:905:130)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:47:24)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:77:1
+✖ WP2-S3 registry metadata 與 portable parity，僅字級 contract (7.927292ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(d)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:80:51)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s3-copy-font-size.test.mjs:91:1
+✖ WP2-S3 toolbar 狀態、sync text、IME、mode/slide stale target (2.775041ms)
+  TypeError: Cannot read properties of null (reading 'disabled')
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s3-copy-font-size.test.mjs:94:45)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
