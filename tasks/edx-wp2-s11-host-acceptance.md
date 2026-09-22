@@ -1,6 +1,6 @@
 # WP2-S11 Host acceptance
 
-Status: TARGETED_FAIL / PGQ_NOT_RUN / STOP_LOCAL_CONTINUATION
+Status: REPLAN / SPLIT_ACCEPTANCE_PENDING
 Parent: tasks/edx-wp2-s11-image-drop.md
 Product: 1fdb3c275f9e174b7c8d506207c42c758aedb71a；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -9,3 +9,7 @@ Product: 1fdb3c275f9e174b7c8d506207c42c758aedb71a；source/protected/ZIP frozen�
 四支affected PGQ明列 --test-concurrency=1：pgq-wp4-s3-content-integrity、pgq-wp4-s3-sample-approval、pgq-wp4-s4-full-deck-qa、pgq-wp4-s4-required-visibility。錯誤/remote0、targetClosed，Browser.close/supervisor exit0、exactowned root/marker absent、source/protected4/ZIP前後MATCH。失敗保留，方法缺失不得API fallback；S8歷史I/O未知，本卡不修AI Core。
 
 Final code checkpoint6c9c02f，runtime/tests/ZIP仍1fdb3c2。三輪FAIL與event arrays分別host-acceptance、host-retry-1、host-retry-2；每輪cleanup PASS。詳mainline-checkpoint.md，不直接第四次launch。
+
+## 新契約執行
+
+依 split-acceptance-decision.md，僅在沒有 held component gesture 時送 trusted external CDP drop；active gesture 使用真 pointer＋明標 synthetic DOM drop，snap=false/true 各自取證。輸出 host-split-acceptance；前三輪保持原樣。沿原 managed lifecycle，雙 viewport 後才跑串行 PGQ，失敗即保存／停止後續；無 runtime／ZIP 修改。

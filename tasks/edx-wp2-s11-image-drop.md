@@ -1,6 +1,6 @@
 # WP2-S11 — 單張圖片 file drop
 
-Status: BROWSER_ACCEPTANCE_BLOCKED / STOP_LOCAL_CONTINUATION
+Status: REPLAN / SPLIT_ACCEPTANCE_PENDING
 Base: da6c1229c02b5c0956f5ef6725be5e9216d98acd（S10 Independent GO closure，尚未merge/push）
 Branch: codex/edx-wp2-s11-image-drop
 Main/origin-main: d0b9aa05c50b09596920705bbbf4dd632c9137d4
@@ -33,3 +33,7 @@ Prior art DIRECT_REUSE內部S9/S10/S6/browser file primitives；無新dependency
 ## Mainline checkpoint
 
 詳evidence/edx-wp2-s11/mainline-checkpoint.md。scoped192/S11 29/full646/ZIP PASS；三輪1280 gesture+drop驗收未完成，1600及PGQ未跑，三輪cleanup PASS。runtime1fdb3c2，harness checkpoint6c9c02f；不做第4次盲重跑，不宣稱Independent Review candidate。
+
+## Owner 裁決後的新驗收
+
+2026-09-23：依 evidence/edx-wp2-s11/split-acceptance-decision.md 拆開 trusted external drop 與 synthetic active-gesture semantic seam（snap=false/true）。產品第5項契約不變；此段取代混合 CDP choreography，其他驗收不放寬。歷史 STOP／FAIL 保留，未重設失敗計數。

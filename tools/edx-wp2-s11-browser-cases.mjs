@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { writeFile } from 'node:fs/promises';
 import { resolve, basename } from 'node:path';
 
-// 僅由 Mainline 正式 host 執行；CDP 真事件，不宣稱 Finder 人工拖檔或 crop pixel。
+// 僅由 Mainline 正式 host 執行；trusted CDP file drop 與 synthetic gesture 語意分列，不宣稱 Finder 人工拖檔或 crop pixel。
 // schema：2026-09-23 唯讀核對 https://raw.githubusercontent.com/ChromeDevTools/devtools-protocol/master/pdl/domains/Input.pdl
 export async function runImageDropBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture }) {
   const button = '[data-action="insert-image"]';
@@ -26,7 +26,8 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
   const snapshot = () => evaluate('({events:window.__s11.events,calls:window.__s11.calls,settled:window.__s11.settled,errors:window.__s11.errors})');
   const reset = async (layout = true) => { await navigate(sourcePath); await track(); if (layout) await click('[data-action="layout"]'); };
   // 每次先寫 receipt，再送命令；方法不存在直接失敗，不以 API／synthetic 替代正向。
-  const nativeDrop = async (label, css, files = [filePath], accepted = true, releaseHeldPointer = false) => {
+  const nativeDrop = async (label, css, files = [filePath], accepted = true) => {
+    assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), false, 'external CDP drop 不可與 held component gesture 混用');
     await evaluate(`document.querySelector(${JSON.stringify(css)}).scrollIntoView({block:'center'})`); await settle();
     const p = await position(css), before = await snapshot();
     const record = { wp2s11: label, route: 'CDP Input.dispatchDragEvent', commands: [], before, point: p };
@@ -37,8 +38,6 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
       assert.equal(hit, intended, 'drag point 必須命中指定 slide');
       const data = { items: [], files, dragOperationsMask: 1 };
       for (const type of ['dragEnter', 'dragOver', 'drop']) { await cdp.send('Input.dispatchDragEvent', { type, data, x: p.x, y: p.y }); record.commands.push(type); }
-      // 混合 pointer gesture 與 external drag 時，先釋放測試持有的滑鼠再等待 rAF；canonical 斷言仍可抓出意外提交。
-      if (releaseHeldPointer) { record.beforePointerRelease = await snapshot(); await mouse('mouseReleased', p); record.pointerReleasedBeforeSettle = true; }
       await settle();
       const after = await snapshot(); record.events = after.events.slice(before.events.length); record.optimizerCalls = after.calls - before.calls;
       record.eventCounts = Object.fromEntries(['dragenter', 'dragover', 'drop'].map(type => [type, record.events.filter(e => e.type === type).length]));
@@ -115,17 +114,41 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
     await assertExport('image-drop-offline', expected);
   } finally { await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 }); }
 
-  await reset();
-  assert.equal((await spec()).slides[0].composition.geometryOverrides?.['portable-quote'], undefined, 'fresh legacy fixture 尚未初始化');
-  await click('[data-pptskill-element-id="component-portable-quote"]');
-  await click('[data-action="initialize-layout"]');
-  expected = await spec();
-  assert.deepEqual(expected.slides[0].composition.geometryOverrides['portable-quote'], { x: 800, y: 280, width: 640, height: 480 });
-  run.checks.push({ wp2s11: 'gesture-fixture-initialized', geometry: expected.slides[0].composition.geometryOverrides['portable-quote'] });
-  await startGesture('drag', 19, 12);
-  assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), true);
-  await nativeDrop('gesture-cancel', title('portable'), [filePath], true, true);
-  assert.equal(await evaluate('window.PPTSKILLEditor.layout.getState().gesturing'), false); await append('portable', 'inserted-image-1');
+  // CDP held mouse 與 external file drag 的 ownership 衝突；此段只驗產品 cancellation 語意，不算 native drop。
+  for (const snap of [false, true]) {
+    await reset();
+    assert.equal((await spec()).slides[0].composition.geometryOverrides?.['portable-quote'], undefined, 'fresh legacy fixture 尚未初始化');
+    await click('[data-pptskill-element-id="component-portable-quote"]');
+    await click('[data-action="initialize-layout"]');
+    if (snap) await click('[data-action="snap-layout"]');
+    assert.equal(await evaluate('document.querySelector(\'[data-action="snap-layout"]\').getAttribute("aria-pressed")'), String(snap));
+    expected = await spec();
+    const geometry = expected.slides[0].composition.geometryOverrides['portable-quote'];
+    assert.deepEqual(geometry, { x: 800, y: 280, width: 640, height: 480 });
+    const end = await startGesture('drag', 19, 12);
+    const record = { wp2s11: 'gesture-cancel', route: 'synthetic gesture-cancel semantics', snap, geometry, gesturingBefore: await evaluate('window.PPTSKILLEditor.layout.getState().gesturing') };
+    run.checks.push(record);
+    try {
+      assert.equal(record.gesturingBefore, true);
+      assert.deepEqual(await spec(), expected, 'preview 不可先寫 canonical');
+      record.canonicalUnchangedDuringPreview = true;
+      const before = await snapshot();
+      record.beforePointerRelease = await evaluate(`(()=>{
+        const dt=new DataTransfer(),bytes=Uint8Array.from(atob(${JSON.stringify(png.split(',')[1])}),c=>c.charCodeAt(0));
+        dt.items.add(new File([bytes],${JSON.stringify(basename(filePath))},{type:'image/png'}));
+        const e=new DragEvent('drop',{bubbles:true,cancelable:true,dataTransfer:dt});
+        document.querySelector(${JSON.stringify(title('portable'))}).dispatchEvent(e);
+        return{isTrusted:e.isTrusted,prevented:e.defaultPrevented,gesturing:window.PPTSKILLEditor.layout.getState().gesturing};
+      })()`);
+      assert.deepEqual(record.beforePointerRelease, { isTrusted: false, prevented: true, gesturing: false });
+      record.optimizerCalls = (await snapshot()).calls - before.calls;
+      assert.equal(record.optimizerCalls, 1, 'synthetic seam 仍須經真 optimizer 一次');
+    } finally { await mouse('mouseReleased', end); }
+    await settle(); await append('portable', 'inserted-image-1');
+    record.geometryAfterRelease = (await spec()).slides[0].composition.geometryOverrides['portable-quote'];
+    assert.deepEqual(record.geometryAfterRelease, geometry, 'drop cancel 後 release 不可提交 preview');
+    record.selectionEmpty = true;
+  }
 
   await reset(); expected = await spec(); await evaluate('window.__s11.defer=true');
   await nativeDrop('deferred', title('portable')); await wait('Boolean(window.__s11.release)');
@@ -179,5 +202,5 @@ export async function runImageDropBrowserCases({ cdp, evaluate, navigate, source
       }
     }
   } finally { await cdp.send('Page.setInterceptFileChooserDialog', { enabled: false }); }
-  run.checks.push({ wp2s11: '界線', manualFinderDrag: false, cropPixelClaim: false, positiveApiFallback: false });
+  run.checks.push({ wp2s11: '界線', manualFinderDrag: false, cropPixelClaim: false, positiveApiFallback: false, mixedNativeGestureDropClaim: false, gestureCancellationEvidence: 'real CDP pointer + synthetic DOM drop; snap=false/true' });
 }
