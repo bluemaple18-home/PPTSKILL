@@ -11,11 +11,15 @@ export function createAssetReplacementContract(inspectAsset) {
     && required.every(key => Object.hasOwn(value, key))
     && Reflect.ownKeys(value).every(key => [...required, ...optional].includes(key)
       && Object.hasOwn(Object.getOwnPropertyDescriptor(value, key), 'value'));
+  const validateTarget = target => {
+    if (!fields(target, ['slideId', 'elementId']) || typeof target.slideId !== 'string' || !target.slideId
+      || typeof target.elementId !== 'string' || !/^[a-z0-9][a-z0-9._-]{0,79}$/.test(target.elementId)) throw new Error('replace-asset target 無效。');
+    return { slideId: target.slideId, elementId: target.elementId };
+  };
   const validateRequest = request => {
     if (!fields(request, ['operation', 'target', 'value']) || request.operation !== 'replace-asset'
-      || !fields(request.target, ['slideId', 'elementId']) || typeof request.target.slideId !== 'string' || !request.target.slideId
-      || typeof request.target.elementId !== 'string' || !/^[a-z0-9][a-z0-9._-]{0,79}$/.test(request.target.elementId)
       || !fields(request.value, ['dataUri'], ['alt', 'fit'])) throw new Error('replace-asset payload 或 target 無效。');
+    validateTarget(request.target);
     const value = request.value;
     if (typeof value.dataUri !== 'string' || !/^data:image\/(png|jpeg|webp|gif|svg\+xml);base64,/.test(value.dataUri) || inspectAsset(value.dataUri).status === 'fail'
       || (Object.hasOwn(value, 'alt') && typeof value.alt !== 'string')
@@ -50,7 +54,7 @@ export function createAssetReplacementContract(inspectAsset) {
     destructive: false, confirmation: 'none', undoable: false, qaInvalidation: ['content', 'assets', 'readability', 'portableSize'],
     portableSerialization: 'json', unsupportedReason: null,
   };
-  return { validateRequest, update, project, descriptor };
+  return { validateTarget, validateRequest, update, project, descriptor };
 }
 
 export const assetReplacement = createAssetReplacementContract(inspectImageAsset);

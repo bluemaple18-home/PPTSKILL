@@ -132,7 +132,7 @@ export function mountedEditor(input = fixture()) {
     PPTSKILLSizeGuard: { prepare: html => ({ status: 'pass', html, report: {} }) },
     PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
   };
-  vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '').replace('window.PPTSKILLEditor={', 'window.__testRevision=()=>revision;window.PPTSKILLEditor={'), {
+  vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '').replace('window.PPTSKILLEditor={', 'window.__testRevision=()=>revision;window.__testMutateSpec=fn=>fn(spec);window.PPTSKILLEditor={'), {
     document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
   });
   const api = window.PPTSKILLEditor;
