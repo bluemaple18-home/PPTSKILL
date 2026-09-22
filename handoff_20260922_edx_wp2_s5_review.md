@@ -1,6 +1,6 @@
 # WP2-S5 Independent Review Handoff
 
-Status: READY_FOR_INDEPENDENT_REVIEW / pending
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s5-targeted-image-file
 Base: `20c93125edc396513d36324b03e4137c56fdcf4f`
 Reviewed product: `3c20f8593307f6661949fdd20cd03eb25ab94937`
@@ -26,3 +26,7 @@ optional explicit target File adapter，單參數/undefined相容first image；e
 browser File/optimizer為API-driven，不宣稱新native picker或OS clipboard；base10仍真pointer。Worker本輪沒有browser/full/ZIP執行偏差。Worker receipt中candidate只是交回標籤，Mainline gates與本handoff才決定ready。
 
 請核對source6/protected4/ZIP，以及product→handoff無runtime/tests/tools/ZIP drift，獨立回GO/NO-GO及P0–P3。不改candidate/ZIP/protected、不merge/push/deploy、不開下一Slice。Mainline acceptance不是Independent GO。
+
+## Mainline closure
+
+WP2-S5 COMPLETE / INDEPENDENT_REVIEW_GO，P0–P3全0。主線fresh核對source6/6、protected4/4、ZIP bytes/hash及product→handoff無delivery drift，reviewed code/ZIP未改。Reviewer fresh targeted67/67、nonbrowser477/477；browser/PGQ僅committed evidence獨立核對。完整verdict見evidence/edx-wp2-s5/independent-review.md。未merge/push/deploy，未開下一Slice。

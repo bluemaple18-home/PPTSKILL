@@ -1,6 +1,6 @@
 # WP2-S5 Mainline receipt
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Product: `3c20f8593307f6661949fdd20cd03eb25ab94937`
 Base: `20c93125edc396513d36324b03e4137c56fdcf4f`（S4已merge/push，remote readback一致）。
 
@@ -19,3 +19,7 @@ Mainline full nonbrowser477/477 PASS；selection明列nonbrowser-files.txt，排
 正式host實際AI Core commit為`1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5`（controller記錄），Mainline本輪未修改AI Core。歷史RED與error文案FAIL原bytes以.gz/hash保留，可讀log只去行尾空白。
 
 封存diff-check抓到final-check.log尾端多餘空行；可讀副本移除EOF空行，原bytes仍存同名.gz及raw-log-hashes.json，沒有改寫測試結果。
+
+## Mainline closure
+
+WP2-S5 COMPLETE / INDEPENDENT_REVIEW_GO，P0–P3全0。主線fresh核對source6/6、protected4/4、ZIP bytes/hash及product→handoff無delivery drift，reviewed code/ZIP未改。Reviewer fresh targeted67/67、nonbrowser477/477；browser/PGQ僅committed evidence獨立核對。完整verdict見evidence/edx-wp2-s5/independent-review.md。未merge/push/deploy，未開下一Slice。
