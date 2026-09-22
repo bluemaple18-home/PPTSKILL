@@ -1,6 +1,6 @@
 # WP2-S11 — 單張圖片 file drop
 
-Status: IN_PROGRESS
+Status: BROWSER_ACCEPTANCE_BLOCKED / STOP_LOCAL_CONTINUATION
 Base: da6c1229c02b5c0956f5ef6725be5e9216d98acd（S10 Independent GO closure，尚未merge/push）
 Branch: codex/edx-wp2-s11-image-drop
 Main/origin-main: d0b9aa05c50b09596920705bbbf4dd632c9137d4
@@ -29,3 +29,7 @@ Mainline平行只control/evidence/驗收準備；Worker STOP後審diff、full明
 standard / clean native Worker / medium，單一shared sequential product writer；tool要求model繼承，未改Owner主對話設定。1 planned Owner外部Independent Review、0新Reviewer agent、1 implementation loop；同類兩次無進展或contract fork回主線，不自行加repair generation。
 允許：runtime/deck-editor.js、新tests/edx-wp2-s11-image-drop.test.mjs、新tools/edx-wp2-s11-browser-cases.mjs、tools/edx-wp1-s4-browser-acceptance.mjs；證明必要才改tools/edx-wp1-s4-perf-mounted.mjs。禁止其他runtime/helper/schema/vendor/control/evidence/AI Core/protected、branch/commit、full/glob/browser/Chrome/ZIP/build/probe/PGQ、merge/push/deploy/subagent。log/report：/private/tmp/pptskill-wp2-s11-*。完成STOP WRITING交主線。
 Prior art DIRECT_REUSE內部S9/S10/S6/browser file primitives；無新dependency、無取代。Why not less：卡片明列圖片拖入尚無入口；why not more：單檔事件adapter足夠，不需要新asset pipeline或交互模型。回退本卡明列source與ZIP即可，不修改S10 closure。
+
+## Mainline checkpoint
+
+詳evidence/edx-wp2-s11/mainline-checkpoint.md。scoped192/S11 29/full646/ZIP PASS；三輪1280 gesture+drop驗收未完成，1600及PGQ未跑，三輪cleanup PASS。runtime1fdb3c2，harness checkpoint6c9c02f；不做第4次盲重跑，不宣稱Independent Review candidate。

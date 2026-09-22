@@ -1,0 +1,11 @@
+# WP2-S11 Host acceptance
+
+Status: TARGETED_FAIL / PGQ_NOT_RUN / STOP_LOCAL_CONTINUATION
+Parent: tasks/edx-wp2-s11-image-drop.md
+Product: 1fdb3c275f9e174b7c8d506207c42c758aedb71a；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
+
+正式AI Core managed host，CODEX_SANDBOX實際空；不unset／裸啟Chrome，原capacity/readiness/cleanup不變。跑 --image-drop-regression 雙viewport1280×720及1600×900，先沿S10 chooser regression再S11 CDP drop事件。記trusted drop、optimizer calls、mode/busy/invalid/cross-slide/capture/defaults/oldspec/export/offline與新圖UI screenshot；CDP automation非人工Finder拖檔，synthetic negative明標。
+
+四支affected PGQ明列 --test-concurrency=1：pgq-wp4-s3-content-integrity、pgq-wp4-s3-sample-approval、pgq-wp4-s4-full-deck-qa、pgq-wp4-s4-required-visibility。錯誤/remote0、targetClosed，Browser.close/supervisor exit0、exactowned root/marker absent、source/protected4/ZIP前後MATCH。失敗保留，方法缺失不得API fallback；S8歷史I/O未知，本卡不修AI Core。
+
+Final code checkpoint6c9c02f，runtime/tests/ZIP仍1fdb3c2。三輪FAIL與event arrays分別host-acceptance、host-retry-1、host-retry-2；每輪cleanup PASS。詳mainline-checkpoint.md，不直接第四次launch。

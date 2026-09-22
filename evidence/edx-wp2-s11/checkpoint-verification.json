@@ -1,0 +1,76 @@
+{
+  "status": "BROWSER_ACCEPTANCE_BLOCKED",
+  "decision": "STOP_LOCAL_CONTINUATION",
+  "runtimeProductSha": "1fdb3c275f9e174b7c8d506207c42c758aedb71a",
+  "checkpointCodeSha": "6c9c02fc764ba36ac60ac026e0a6ea1953b526b5",
+  "sourceMatches": 4,
+  "protectedMatches": 4,
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2294654,
+    "sha256": "75901fa7a4e32e5c6a4bba84e246772b409a244b5fb0d6743a33b5ce3d4f89a8"
+  },
+  "fullNonbrowser": 646,
+  "workerScoped": 192,
+  "workerS11": 29,
+  "runs": [
+    {
+      "folder": "host-acceptance",
+      "status": "FAIL",
+      "width": 1280,
+      "height": 720,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at runImageDropBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s11-browser-cases.mjs:119:10)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:212:61",
+      "positiveTrustedDropPrefixes": [
+        "正常",
+        "同檔",
+        "無圖頁",
+        "跨頁",
+        "export-offline"
+      ],
+      "remainingAcceptance": "NOT_RUN",
+      "pgq": "NOT_RUN",
+      "cleanup": "PASS",
+      "sourceIntegrity": "MATCH"
+    },
+    {
+      "folder": "host-retry-1",
+      "status": "FAIL",
+      "width": 1280,
+      "height": 720,
+      "error": "Error: CDP 逾時：Runtime.evaluate\n    at Timeout._onTimeout (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:70:70)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+      "positiveTrustedDropPrefixes": [
+        "正常",
+        "同檔",
+        "無圖頁",
+        "跨頁",
+        "export-offline"
+      ],
+      "remainingAcceptance": "NOT_RUN",
+      "pgq": "NOT_RUN",
+      "cleanup": "PASS",
+      "sourceIntegrity": "MATCH"
+    },
+    {
+      "folder": "host-retry-2",
+      "status": "FAIL",
+      "width": 1280,
+      "height": 720,
+      "error": "Error: CDP 逾時：Runtime.evaluate\n    at Timeout._onTimeout (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:70:70)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+      "positiveTrustedDropPrefixes": [
+        "正常",
+        "同檔",
+        "無圖頁",
+        "跨頁",
+        "export-offline"
+      ],
+      "remainingAcceptance": "NOT_RUN",
+      "pgq": "NOT_RUN",
+      "cleanup": "PASS",
+      "sourceIntegrity": "MATCH"
+    }
+  ],
+  "rootCause": "UNKNOWN：混合held pointer與external file CDP drag時未投遞drop，rAF等待逾時；release時序假說不足",
+  "nextScope": "唯讀隔離CDP混合事件與rAF；重判測試方法後才另行主線裁決，不自行第四次重跑",
+  "independentReviewCandidate": false,
+  "main": "d0b9aa05c50b09596920705bbbf4dd632c9137d4"
+}

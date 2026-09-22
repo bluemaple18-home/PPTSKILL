@@ -1,0 +1,1318 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/source.html",
+  "sourceSha256": "7052030cc371caf512c7ca2c852b2c624c2364da9b1af2e36230958d5fd1a985",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 724.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 961.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 463.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 536.203125,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 536.203125,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 867.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 867.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 841.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 47,
+          "before": {
+            "x": 557.9375,
+            "y": 675.203125,
+            "width": 100,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-selected-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 731.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 43,
+          "before": {
+            "x": 841.671875,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s10": "ui-lifecycle",
+          "naturalBlurCount": 0,
+          "trustedChange": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true
+          ],
+          "syntheticBlur": true,
+          "syntheticCancel": true,
+          "syntheticFocusin": true,
+          "manualOSDialog": false
+        },
+        {
+          "wp2s10": "chooser",
+          "backendNodeId": 63,
+          "before": {
+            "x": 1208,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "dedicatedInput": "#pptskill-insert-image-input"
+        },
+        {
+          "wp2s11": "正常",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 144,
+            "y": 544,
+            "width": 128,
+            "height": 128
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "同檔",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "無圖頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 2,
+            "settled": 2,
+            "errors": []
+          },
+          "point": {
+            "x": 640,
+            "y": 103.14218521118164,
+            "width": 1155.21875,
+            "height": 63.10936737060547
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "insert-empty",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "insert-empty",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "跨頁",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              }
+            ],
+            "calls": 3,
+            "settled": 3,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 174.75937271118164,
+            "width": 362.671875,
+            "height": 118.78124237060547
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "asset-other",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "insert-empty",
+                "files": 1
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "asset-other",
+                "files": 1
+              }
+            ],
+            "calls": 4,
+            "settled": 4,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "export-offline",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "events": [
+            {
+              "type": "dragenter",
+              "isTrusted": true,
+              "prevented": false,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "dragover",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": null
+            },
+            {
+              "type": "drop",
+              "isTrusted": true,
+              "prevented": true,
+              "effect": "copy",
+              "slideId": "portable",
+              "files": 1
+            }
+          ],
+          "optimizerCalls": 1,
+          "eventCounts": {
+            "dragenter": 1,
+            "dragover": 2,
+            "drop": 1
+          },
+          "trustedDropCount": 1,
+          "dropGuardObserved": true,
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "drop",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": 1
+              }
+            ],
+            "calls": 1,
+            "settled": 1,
+            "errors": []
+          }
+        },
+        {
+          "wp2s11": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "1280-drop-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s11": "gesture-fixture-initialized",
+          "geometry": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          }
+        },
+        {
+          "wp2s11": "gesture-cancel",
+          "route": "CDP Input.dispatchDragEvent",
+          "commands": [
+            "dragEnter",
+            "dragOver",
+            "drop"
+          ],
+          "before": {
+            "events": [],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          },
+          "point": {
+            "x": 243.7265625,
+            "y": 160.171875,
+            "width": 362.671875,
+            "height": 118.78125
+          },
+          "error": "CDP 逾時：Runtime.evaluate",
+          "after": {
+            "events": [
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragover",
+                "isTrusted": true,
+                "prevented": true,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              },
+              {
+                "type": "dragenter",
+                "isTrusted": true,
+                "prevented": false,
+                "effect": "copy",
+                "slideId": "portable",
+                "files": null
+              }
+            ],
+            "calls": 0,
+            "settled": 0,
+            "errors": []
+          }
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-legacy-selected.html",
+          "bytes": 526198,
+          "sha256": "1631e9b42d01533fc8f8a303323d4651f5ef498963e20a3790a85ff3624d42e6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-preview-export.html",
+          "bytes": 526485,
+          "sha256": "5a2eec914471361d00ba4eae358f2d0dc4c6f6a3e54aaea3db6e41f5c51d89bd"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-cancel.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-noop.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-invalid.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-invalid-resize.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-play-mode.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-export.html",
+          "bytes": 526485,
+          "sha256": "45354c5e72f6233f0537715fa0daeefc751af1c704adb3494298f5c3a469b18f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-reopen-export.html",
+          "bytes": 526485,
+          "sha256": "e8212264852fb2ebcbdf002fbf1220c31f2c8c5fe4d66b1c3b93dbc09667664c"
+        },
+        {
+          "label": "insert-image-ui",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-insert-image-ui.html",
+          "bytes": 530261,
+          "sha256": "1eceef6a26d96f1ac8c9219f9d487f632aca5f9d873fd1820be97052fe1101fe"
+        },
+        {
+          "label": "insert-image-ui-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-insert-image-ui-offline.html",
+          "bytes": 531250,
+          "sha256": "f3e2529fd46f8f314fb1c12c5d2f33ba5b80eb07f5e80ba5146ed8a657758dae"
+        },
+        {
+          "label": "image-drop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-image-drop.html",
+          "bytes": 530188,
+          "sha256": "60b529883d5ac363b8bef1d90ac7adfe3efe5604dcc1720f084ad298f2bf7d3f"
+        },
+        {
+          "label": "image-drop-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s11/host-retry-1/image-drop/1280-image-drop-offline.html",
+          "bytes": 531173,
+          "sha256": "7086eeca01fdc1df1c5a3469a0f7f1b44b9907cb287032d5ddb4cdecee5b34e6"
+        }
+      ],
+      "error": "Error: CDP 逾時：Runtime.evaluate\n    at Timeout._onTimeout (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:70:70)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)",
+      "targetClosed": true
+    }
+  ],
+  "error": "Error: CDP 逾時：Runtime.evaluate\n    at Timeout._onTimeout (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:70:70)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
+}

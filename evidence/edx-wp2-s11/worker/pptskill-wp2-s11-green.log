@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: S11 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+ok 1 - S11 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+  ---
+  duration_ms: 34.769625
+  type: 'test'
+  ...
+# Subtest: S11 cross-slide 無圖頁採事件 target，首個空缺 ID
+ok 2 - S11 cross-slide 無圖頁採事件 target，首個空缺 ID
+  ---
+  duration_ms: 10.110958
+  type: 'test'
+  ...
+# Subtest: S11 play file dragover/drop 預設攔截與 mode gate
+ok 3 - S11 play file dragover/drop 預設攔截與 mode gate
+  ---
+  duration_ms: 4.120042
+  type: 'test'
+  ...
+# Subtest: S11 edit file dragover/drop 預設攔截與 mode gate
+ok 4 - S11 edit file dragover/drop 預設攔截與 mode gate
+  ---
+  duration_ms: 4.020084
+  type: 'test'
+  ...
+# Subtest: S11 layout file dragover/drop 預設攔截與 mode gate
+ok 5 - S11 layout file dragover/drop 預設攔截與 mode gate
+  ---
+  duration_ms: 7.571209
+  type: 'test'
+  ...
+# Subtest: S11 destroy file dragover/drop 預設攔截與 mode gate
+ok 6 - S11 destroy file dragover/drop 預設攔截與 mode gate
+  ---
+  duration_ms: 5.672542
+  type: 'test'
+  ...
+# Subtest: S11 text/plain 不攔截、不讀內容／URL fallback
+ok 7 - S11 text/plain 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 7.659833
+  type: 'test'
+  ...
+# Subtest: S11 text/html 不攔截、不讀內容／URL fallback
+ok 8 - S11 text/html 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 6.651833
+  type: 'test'
+  ...
+# Subtest: S11 text/uri-list 不攔截、不讀內容／URL fallback
+ok 9 - S11 text/uri-list 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 6.416667
+  type: 'test'
+  ...
+# Subtest: S11 items.kind=file 可辨識；slide 外／無 transfer 不攔截
+ok 10 - S11 items.kind=file 可辨識；slide 外／無 transfer 不攔截
+  ---
+  duration_ms: 12.091167
+  type: 'test'
+  ...
+# Subtest: S11 duplicate-dom target 不提交
+ok 11 - S11 duplicate-dom target 不提交
+  ---
+  duration_ms: 7.928583
+  type: 'test'
+  ...
+# Subtest: S11 missing-id target 不提交
+ok 12 - S11 missing-id target 不提交
+  ---
+  duration_ms: 6.132958
+  type: 'test'
+  ...
+# Subtest: S11 duplicate-spec target 不提交
+ok 13 - S11 duplicate-spec target 不提交
+  ---
+  duration_ms: 6.564875
+  type: 'test'
+  ...
+# Subtest: S11 missing-spec target 不提交
+ok 14 - S11 missing-spec target 不提交
+  ---
+  duration_ms: 6.881
+  type: 'test'
+  ...
+# Subtest: S11 detached target 不提交
+ok 15 - S11 detached target 不提交
+  ---
+  duration_ms: 6.134459
+  type: 'test'
+  ...
+# Subtest: S11 0 files 拒絕且 status 提示
+ok 16 - S11 0 files 拒絕且 status 提示
+  ---
+  duration_ms: 9.21175
+  type: 'test'
+  ...
+# Subtest: S11 2 files 拒絕且 status 提示
+ok 17 - S11 2 files 拒絕且 status 提示
+  ---
+  duration_ms: 6.108459
+  type: 'test'
+  ...
+# Subtest: S11 insert chooser 保留 pending/input 且 drop 不提交
+ok 18 - S11 insert chooser 保留 pending/input 且 drop 不提交
+  ---
+  duration_ms: 9.639291
+  type: 'test'
+  ...
+# Subtest: S11 replace chooser 保留 pending/input 且 drop 不提交
+ok 19 - S11 replace chooser 保留 pending/input 且 drop 不提交
+  ---
+  duration_ms: 7.523583
+  type: 'test'
+  ...
+# Subtest: S11 active gesture 取消不 commit，snap=false
+ok 20 - S11 active gesture 取消不 commit，snap=false
+  ---
+  duration_ms: 10.712708
+  type: 'test'
+  ...
+# Subtest: S11 active gesture 取消不 commit，snap=true
+ok 21 - S11 active gesture 取消不 commit，snap=true
+  ---
+  duration_ms: 10.308416
+  type: 'test'
+  ...
+# Subtest: S11 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+ok 22 - S11 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+  ---
+  duration_ms: 18.602041
+  type: 'test'
+  ...
+# Subtest: S11 async removed 原子拒絕、零 partial／retry
+ok 23 - S11 async removed 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 7.541042
+  type: 'test'
+  ...
+# Subtest: S11 async collision 原子拒絕、零 partial／retry
+ok 24 - S11 async collision 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 7.404875
+  type: 'test'
+  ...
+# Subtest: S11 async reject 原子拒絕、零 partial／retry
+ok 25 - S11 async reject 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 10.376459
+  type: 'test'
+  ...
+# Subtest: S11 async invalid 原子拒絕、零 partial／retry
+ok 26 - S11 async invalid 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 10.471458
+  type: 'test'
+  ...
+# Subtest: S11 export canonical／remount 恢復 listener，無 transient 或重複插入
+ok 27 - S11 export canonical／remount 恢復 listener，無 transient 或重複插入
+  ---
+  duration_ms: 17.133208
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 380.876917

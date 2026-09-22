@@ -1,0 +1,126 @@
+{
+  "opening": "f835d9b",
+  "branch": "codex/edx-wp2-s11-image-drop",
+  "files": [
+    {
+      "path": "runtime/deck-editor.js",
+      "role": "changed-source",
+      "sha256": "f4effb516c48acabcfa0cade8cf11a6885e2f81e16867e89d7f5393432741310",
+      "bytes": 77982,
+      "openingSha256": "e680576f9b1a3b04557af0f7dccb5a0c6319671af10c5102a3f614f691d41a05",
+      "unchangedFromOpening": false
+    },
+    {
+      "path": "tests/edx-wp2-s11-image-drop.test.mjs",
+      "role": "changed-source",
+      "sha256": "7f071091660c08071020f998c81cb7ad5072ce2f46e12d4a6d768caab3eb1b7c",
+      "bytes": 11934,
+      "openingSha256": null,
+      "unchangedFromOpening": false
+    },
+    {
+      "path": "tools/edx-wp2-s11-browser-cases.mjs",
+      "role": "changed-source",
+      "sha256": "34ee730608cb57b05dae31f66a605ab772454efc54bc82cf959a1e1522a23a0a",
+      "bytes": 14694,
+      "openingSha256": null,
+      "unchangedFromOpening": false
+    },
+    {
+      "path": "tools/edx-wp1-s4-browser-acceptance.mjs",
+      "role": "changed-source",
+      "sha256": "0d16f8d81911eeab5011c5d805f45589b8d16f5fefb0a4f6a12671cd11855e21",
+      "bytes": 22654,
+      "openingSha256": "acf79164e0d32f192984b1ddfb197faa669352e36942e475b4e7ca43ef81fb4d",
+      "unchangedFromOpening": false
+    },
+    {
+      "path": "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "85bd21d612397e023027db9e34647d871557336adb34716e8ca65242f9df2246",
+      "bytes": 12097,
+      "openingSha256": "85bd21d612397e023027db9e34647d871557336adb34716e8ca65242f9df2246",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp2-s9-insert-image-file.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "6679583a323fd982041dff766fb9f5f467f3f018db84fa695cf2a51117f17c9c",
+      "bytes": 13752,
+      "openingSha256": "6679583a323fd982041dff766fb9f5f467f3f018db84fa695cf2a51117f17c9c",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp2-s8-insert-image.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "47dbc481f455fec8c2d56ed698a2da8b72b63ba91a1892c5bc3663253013d24d",
+      "bytes": 12426,
+      "openingSha256": "47dbc481f455fec8c2d56ed698a2da8b72b63ba91a1892c5bc3663253013d24d",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp2-s6-selected-image-ui.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "f3dc45bedeea8f1cf003100a27227b396e1bfc53eb87133ef18aa055e989cc24",
+      "bytes": 8947,
+      "openingSha256": "f3dc45bedeea8f1cf003100a27227b396e1bfc53eb87133ef18aa055e989cc24",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp2-s7-selected-image-fit.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "2664172d1f09e1704f555f63e4627d5c41776a9bc9deedf0616f938b14770843",
+      "bytes": 9402,
+      "openingSha256": "2664172d1f09e1704f555f63e4627d5c41776a9bc9deedf0616f938b14770843",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp1-s1-export-cleanup.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "2df2c5cfba995222d6d7ce8aa2d9013d5f849617e47fe4a4675e20f593ea13a9",
+      "bytes": 3201,
+      "openingSha256": "2df2c5cfba995222d6d7ce8aa2d9013d5f849617e47fe4a4675e20f593ea13a9",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp1-s5-keyboard.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "aca8d1105d345fa2c7913ee6db69714274d3106ca9d96f373838eedf9078e444",
+      "bytes": 9287,
+      "openingSha256": "aca8d1105d345fa2c7913ee6db69714274d3106ca9d96f373838eedf9078e444",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp1-s8-selection.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "a6722c70a331f8694cef3b8dded004f3eb23591b7a95ca6387e2936679f7d011",
+      "bytes": 2164,
+      "openingSha256": "a6722c70a331f8694cef3b8dded004f3eb23591b7a95ca6387e2936679f7d011",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "818a9b2390ab173a078dd4aeedb2500a66c700144b2f7f1e14895aa537312616",
+      "bytes": 5822,
+      "openingSha256": "818a9b2390ab173a078dd4aeedb2500a66c700144b2f7f1e14895aa537312616",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tools/edx-wp1-s4-perf-mounted.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "7bb9081e0b0d9a689eab3065acd50976a72181abd129cd94d920120972c4dfca",
+      "bytes": 14742,
+      "openingSha256": "7bb9081e0b0d9a689eab3065acd50976a72181abd129cd94d920120972c4dfca",
+      "unchangedFromOpening": true
+    },
+    {
+      "path": "tools/edx-wp2-s10-browser-cases.mjs",
+      "role": "unchanged-regression-input",
+      "sha256": "ec6218b1cf76607ceab7d8a4d850752d29247e00b0d1d6f2a4e635bdbfaf98da",
+      "bytes": 13378,
+      "openingSha256": "ec6218b1cf76607ceab7d8a4d850752d29247e00b0d1d6f2a4e635bdbfaf98da",
+      "unchangedFromOpening": true
+    }
+  ]
+}

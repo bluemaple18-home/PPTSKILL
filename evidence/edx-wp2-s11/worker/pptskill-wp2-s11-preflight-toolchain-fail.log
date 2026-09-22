@@ -1,0 +1,5 @@
+前置唯讀複合命令之最後一段：cat config/toolchain_paths.sh
+exit=1
+cat: config/toolchain_paths.sh: No such file or directory
+來源：本回合工具結果 chunk_id=3348fa；原始 rg stdout 已留對話，未重新執行失敗命令。
+其後改讀 /Users/matt/ai-core/config/toolchain_paths.sh 成功；未 source（避免其 mkdir 修改 AI Core）。node=/opt/homebrew/bin/node。

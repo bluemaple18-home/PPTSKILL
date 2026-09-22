@@ -1,0 +1,468 @@
+✖ S11 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection (22.613ms)
+✖ S11 cross-slide 無圖頁採事件 target，首個空缺 ID (8.628666ms)
+✖ S11 play file dragover/drop 預設攔截與 mode gate (3.185958ms)
+✖ S11 edit file dragover/drop 預設攔截與 mode gate (3.595959ms)
+✖ S11 layout file dragover/drop 預設攔截與 mode gate (5.228542ms)
+✖ S11 destroy file dragover/drop 預設攔截與 mode gate (6.023959ms)
+✔ S11 text/plain 不攔截、不讀內容／URL fallback (6.730625ms)
+✔ S11 text/html 不攔截、不讀內容／URL fallback (7.0675ms)
+✔ S11 text/uri-list 不攔截、不讀內容／URL fallback (6.912167ms)
+✖ S11 items.kind=file 可辨識；slide 外／無 transfer 不攔截 (7.675ms)
+✖ S11 duplicate-dom target 不提交 (6.803916ms)
+✖ S11 missing-id target 不提交 (6.734208ms)
+✖ S11 duplicate-spec target 不提交 (5.735292ms)
+✖ S11 missing-spec target 不提交 (6.061625ms)
+✖ S11 detached target 不提交 (6.17025ms)
+✖ S11 0 files 拒絕且 status 提示 (6.84275ms)
+✖ S11 2 files 拒絕且 status 提示 (9.037ms)
+✖ S11 insert chooser 保留 pending/input 且 drop 不提交 (6.520958ms)
+✖ S11 replace chooser 保留 pending/input 且 drop 不提交 (6.56875ms)
+✖ S11 active gesture 取消不 commit，snap=false (7.338167ms)
+✖ S11 active gesture 取消不 commit，snap=true (7.230666ms)
+✖ S11 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser (6.648125ms)
+✖ S11 async removed 原子拒絕、零 partial／retry (5.404458ms)
+✖ S11 async collision 原子拒絕、零 partial／retry (5.932708ms)
+✖ S11 async reject 原子拒絕、零 partial／retry (6.235167ms)
+✖ S11 async invalid 原子拒絕、零 partial／retry (5.619208ms)
+✖ S11 export canonical／remount 恢復 listener，無 transient 或重複插入 (12.751292ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 3
+ℹ fail 24
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 326.391792
+
+✖ failing tests:
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:39:1
+✖ S11 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection (22.613ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:44:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:54:1
+✖ S11 cross-slide 無圖頁採事件 target，首個空缺 ID (8.628666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'inserted-image-2'
+  - 'inserted-image-1'
+                    ^
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:60:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'inserted-image-2',
+    expected: 'inserted-image-1',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:64:59
+✖ S11 play file dragover/drop 預設攔截與 mode gate (3.185958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:73:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:64:59
+✖ S11 edit file dragover/drop 預設攔截與 mode gate (3.595959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:73:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:64:59
+✖ S11 layout file dragover/drop 預設攔截與 mode gate (5.228542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:73:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:64:59
+✖ S11 destroy file dragover/drop 預設攔截與 mode gate (6.023959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:73:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:85:1
+✖ S11 items.kind=file 可辨識；slide 外／無 transfer 不攔截 (7.675ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:91:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:95:102
+✖ S11 duplicate-dom target 不提交 (6.803916ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:103:59)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:95:102
+✖ S11 missing-id target 不提交 (6.734208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:103:59)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:95:102
+✖ S11 duplicate-spec target 不提交 (5.735292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:103:59)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:95:102
+✖ S11 missing-spec target 不提交 (6.061625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:103:59)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:95:102
+✖ S11 detached target 不提交 (6.17025ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:103:59)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:108:41
+✖ S11 0 files 拒絕且 status 提示 (6.84275ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /單張|一張|一個/. Input:
+
+  '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:111:75)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小',
+    expected: /單張|一張|一個/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:108:41
+✖ S11 2 files 拒絕且 status 提示 (9.037ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /單張|一張|一個/. Input:
+
+  '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:111:75)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小',
+    expected: /單張|一張|一個/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:114:46
+✖ S11 insert chooser 保留 pending/input 且 drop 不提交 (6.520958ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:119:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:114:46
+✖ S11 replace chooser 保留 pending/input 且 drop 不提交 (6.56875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'unset' !== 'none'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:119:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'unset',
+    expected: 'none',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:125:35
+✖ S11 active gesture 取消不 commit，snap=false (7.338167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:128:26)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:125:35
+✖ S11 active gesture 取消不 commit，snap=true (7.230666ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:128:26)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:132:1
+✖ S11 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser (6.648125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:135:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:147:70
+✖ S11 async removed 原子拒絕、零 partial／retry (5.404458ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:150:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:147:70
+✖ S11 async collision 原子拒絕、零 partial／retry (5.932708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:150:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:147:70
+✖ S11 async reject 原子拒絕、零 partial／retry (6.235167ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:150:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:147:70
+✖ S11 async invalid 原子拒絕、零 partial／retry (5.619208ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:150:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s11-image-drop.test.mjs:160:1
+✖ S11 export canonical／remount 恢復 listener，無 transient 或重複插入 (12.751292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s11-image-drop.test.mjs:165:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

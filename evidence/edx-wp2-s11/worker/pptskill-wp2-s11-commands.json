@@ -1,0 +1,237 @@
+[
+  {
+    "label": "preflight-toolchain-path",
+    "command": "cat",
+    "args": [
+      "config/toolchain_paths.sh"
+    ],
+    "exit": 1,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-preflight-toolchain-fail.log",
+    "note": "原複合唯讀命令末段，依 session output 記錄；非 test failure。"
+  },
+  {
+    "label": "red",
+    "command": "node",
+    "args": [
+      "--test",
+      "tests/edx-wp2-s11-image-drop.test.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 1,
+    "signal": null,
+    "counts": {
+      "tests": 27,
+      "suites": 0,
+      "pass": 3,
+      "fail": 24,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s11-red.log"
+  },
+  {
+    "label": "green",
+    "command": "node",
+    "args": [
+      "--test",
+      "--test-reporter=tap",
+      "tests/edx-wp2-s11-image-drop.test.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 27,
+      "suites": 0,
+      "pass": 27,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s11-green.log"
+  },
+  {
+    "label": "scoped",
+    "command": "node",
+    "args": [
+      "--test",
+      "--test-reporter=tap",
+      "tests/edx-wp2-s11-image-drop.test.mjs",
+      "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+      "tests/edx-wp2-s9-insert-image-file.test.mjs",
+      "tests/edx-wp2-s8-insert-image.test.mjs",
+      "tests/edx-wp2-s6-selected-image-ui.test.mjs",
+      "tests/edx-wp2-s7-selected-image-fit.test.mjs",
+      "tests/edx-wp1-s1-export-cleanup.test.mjs",
+      "tests/edx-wp1-s5-keyboard.test.mjs",
+      "tests/edx-wp1-s8-selection.test.mjs",
+      "tests/edx-wp1-s8-mounted-selection.test.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 191,
+      "suites": 0,
+      "pass": 191,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s11-scoped.log"
+  },
+  {
+    "label": "final-scoped",
+    "command": "node",
+    "args": [
+      "--test",
+      "--test-reporter=tap",
+      "tests/edx-wp2-s11-image-drop.test.mjs",
+      "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+      "tests/edx-wp2-s9-insert-image-file.test.mjs",
+      "tests/edx-wp2-s8-insert-image.test.mjs",
+      "tests/edx-wp2-s6-selected-image-ui.test.mjs",
+      "tests/edx-wp2-s7-selected-image-fit.test.mjs",
+      "tests/edx-wp1-s1-export-cleanup.test.mjs",
+      "tests/edx-wp1-s5-keyboard.test.mjs",
+      "tests/edx-wp1-s8-selection.test.mjs",
+      "tests/edx-wp1-s8-mounted-selection.test.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {
+      "tests": 192,
+      "suites": 0,
+      "pass": 192,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": "/private/tmp/pptskill-wp2-s11-final-scoped.log"
+  },
+  {
+    "label": "syntax-runtime",
+    "command": "node",
+    "args": [
+      "--check",
+      "runtime/deck-editor.js"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-syntax-runtime.log"
+  },
+  {
+    "label": "syntax-test",
+    "command": "node",
+    "args": [
+      "--check",
+      "tests/edx-wp2-s11-image-drop.test.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-syntax-test.log"
+  },
+  {
+    "label": "syntax-cases",
+    "command": "node",
+    "args": [
+      "--check",
+      "tools/edx-wp2-s11-browser-cases.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-syntax-cases.log"
+  },
+  {
+    "label": "syntax-runner",
+    "command": "node",
+    "args": [
+      "--check",
+      "tools/edx-wp1-s4-browser-acceptance.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-syntax-runner.log"
+  },
+  {
+    "label": "diff-check",
+    "command": "git",
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-diff-check.log"
+  },
+  {
+    "label": "syntax-cases-final",
+    "command": "node",
+    "args": [
+      "--check",
+      "tools/edx-wp2-s11-browser-cases.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-syntax-cases-final.log"
+  },
+  {
+    "label": "diff-check-final",
+    "command": "git",
+    "args": [
+      "diff",
+      "--check"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-diff-check-final.log"
+  },
+  {
+    "label": "final-diff",
+    "command": "git",
+    "args": [
+      "diff",
+      "--",
+      "runtime/deck-editor.js",
+      "tools/edx-wp1-s4-browser-acceptance.mjs"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-final-diff.log"
+  },
+  {
+    "label": "final-status",
+    "command": "git",
+    "args": [
+      "status",
+      "--short"
+    ],
+    "cwd": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "exit": 0,
+    "signal": null,
+    "counts": {},
+    "log": "/private/tmp/pptskill-wp2-s11-final-status.log"
+  }
+]

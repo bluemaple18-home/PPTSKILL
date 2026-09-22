@@ -1,0 +1,11 @@
+ M runtime/deck-editor.js
+ M tools/edx-wp1-s4-browser-acceptance.mjs
+?? .DS_Store
+?? CLAUDE.md
+?? HANDOFF-20260914-P0-R11-R1-S3.md
+?? HANDOFF-20260914-PGQ-WP1.md
+?? evidence/edx-wp2-s11/dispatch.md
+?? evidence/edx-wp2-s11/nonbrowser-files.txt
+?? tasks/edx-wp2-s11-host-acceptance.md
+?? tests/edx-wp2-s11-image-drop.test.mjs
+?? tools/edx-wp2-s11-browser-cases.mjs
