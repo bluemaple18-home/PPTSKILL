@@ -14,6 +14,21 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
     return required.every(key => Object.hasOwn(value, key)) && Reflect.ownKeys(value).every(key => [...required, ...optional].includes(key)
       && Object.hasOwn(Object.getOwnPropertyDescriptor(value, key), 'value'));
   };
+  const validateMetadata = (slideId, component, geometry) => {
+    if (typeof slideId !== 'string' || !slideId || typeof component.id !== 'string' || !idPattern.test(component.id)
+      || component.type !== 'image' || typeof component.alt !== 'string'
+      || (Object.hasOwn(component, 'fit') && !assets.descriptor.inputSchema.properties.value.properties.fit.enum.includes(component.fit))) throw new Error('insert-element image metadata 無效。');
+    validateGeometry(Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, geometry[key]])));
+  };
+  const snapshotFileOptions = options => {
+    if (!fields(options, ['slideId', 'componentId', 'alt', 'geometry'], ['fit'])
+      || !fields(options.geometry, ['x', 'y', 'width', 'height'])) throw new Error('insertImageFile options 欄位無效。');
+    const component = { id: options.componentId, type: 'image', alt: options.alt,
+      ...(Object.hasOwn(options, 'fit') ? { fit: options.fit } : {}) };
+    const geometry = Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, options.geometry[key]]));
+    validateMetadata(options.slideId, component, geometry);
+    return { operation: 'insert-element', target: { slideId: options.slideId }, value: { component, geometry } };
+  };
   const validateRequest = request => {
     if (!fields(request, ['operation', 'target', 'value']) || request.operation !== 'insert-element'
       || !fields(request.target, ['slideId']) || typeof request.target.slideId !== 'string' || !request.target.slideId
@@ -21,28 +36,31 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
       || !fields(request.value.component, ['id', 'type', 'dataUri', 'alt'], ['fit'])
       || !fields(request.value.geometry, ['x', 'y', 'width', 'height'])) throw new Error('insert-element payload 欄位無效。');
     const { component, geometry } = request.value;
-    if (typeof component.id !== 'string' || !idPattern.test(component.id) || component.type !== 'image'
-      || typeof component.alt !== 'string') throw new Error('insert-element 必須是有效 ID 的 image。');
+    validateMetadata(request.target.slideId, component, geometry);
     // 交給 S4 政策驗證，勿另造 MIME／bytes／SVG authority。
     assets.validateRequest({ operation: 'replace-asset', target: { slideId: request.target.slideId, elementId: 'role-title' }, value: {
       dataUri: component.dataUri, alt: component.alt, ...(Object.hasOwn(component, 'fit') ? { fit: component.fit } : {}),
     } });
-    validateGeometry(Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, geometry[key]])));
     return request;
   };
-  const update = (slide, request) => {
-    validateRequest(request);
-    const { component, geometry } = request.value;
-    if (slide.id !== request.target.slideId || slide.content.components.some(c => c.id === component.id)) throw new Error('insert-element slide 或 duplicate component ID 無效。');
-    const nextComponent = { id: component.id, type: 'image', dataUri: component.dataUri, alt: component.alt,
-      ...(Object.hasOwn(component, 'fit') ? { fit: component.fit } : {}) };
-    const components = [...slide.content.components, nextComponent];
+  const preflight = (slide, request) => {
+    const { component } = request.value;
+    if (!slide || slide.id !== request.target.slideId || slide.content.components.some(c => c.id === component.id)) throw new Error('insert-element slide 或 duplicate component ID 無效。');
+    const components = [...slide.content.components, component];
     const before = resolveIdentities(slide), after = resolveIdentities({ ...slide, content: { ...slide.content, components } });
     const oldIds = [before.title, before.subtitle, ...before.keyPoints, ...before.components];
     const retained = [after.title, after.subtitle, ...after.keyPoints, ...after.components.slice(0, -1)];
     const elementId = after.components.at(-1);
     if (oldIds.length !== retained.length || oldIds.some((id, i) => id !== retained[i])
       || !idPattern.test(elementId) || new Set([...retained, elementId]).size !== retained.length + 1) throw new Error('insert-element 會改變既有 identity；拒絕插入。');
+    return elementId;
+  };
+  const update = (slide, request) => {
+    validateRequest(request);
+    const elementId = preflight(slide, request), { component, geometry } = request.value;
+    const nextComponent = { id: component.id, type: 'image', dataUri: component.dataUri, alt: component.alt,
+      ...(Object.hasOwn(component, 'fit') ? { fit: component.fit } : {}) };
+    const components = [...slide.content.components, nextComponent];
     slide.content.components = components;
     slide.composition.geometryOverrides = { ...slide.composition.geometryOverrides,
       [component.id]: Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, geometry[key]])) };
@@ -66,7 +84,7 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
     destructive: false, confirmation: 'none', undoable: false, qaInvalidation: ['content', 'assets', 'geometry', 'overflow', 'portableSize'],
     portableSerialization: 'json', unsupportedReason: null,
   };
-  return { validateRequest, update, descriptor };
+  return { validateRequest, snapshotFileOptions, preflight, update, descriptor };
 }
 export const imageInsertion = createImageInsertionContract(assetReplacement, validateComponentGeometry, resolveSlideElementIdentities);
 export const buildImageInsertionRuntime = () => `const imageInsertion=(${createImageInsertionContract.toString()})(assetReplacement,validateComponentGeometry,resolveSlideElementIdentities);`;

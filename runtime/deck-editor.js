@@ -464,6 +464,13 @@ const requireImage=()=>{const slide=spec.slides.find(s=>s.id===target.slideId),i
 requireImage();status('正在最佳化圖片…');const result=await window.PPTSKILLAssets.optimizeFile(file);requireImage();
 const message=result.warnings.length?'圖片已替換（保留大型 GIF）':result.optimized?'圖片已最佳化並替換':'圖片已替換';
 executeOperation({operation:'replace-asset',target,value:{dataUri:result.dataUri}});status(message);return result};
+const insertImageFile=async(file,options)=>{
+if(!file)return null;if(typeof window.PPTSKILLAssets?.optimizeFile!=='function')throw new Error('Asset optimizer 未載入。');
+const request=imageInsertion.snapshotFileOptions(options);imageInsertion.preflight(spec.slides.find(s=>s.id===request.target.slideId),request);
+const result=await window.PPTSKILLAssets.optimizeFile(file);
+if(!result||typeof result!=='object'||typeof result.dataUri!=='string'||!Array.isArray(result.warnings)||result.warnings.some(w=>typeof w!=='string')||typeof result.optimized!=='boolean')throw new Error('Asset optimizer result 無效。');
+const message=result.warnings.length?'圖片已插入（保留大型 GIF）':result.optimized?'圖片已最佳化並插入':'圖片已插入';
+request.value.component.dataUri=result.dataUri;executeOperation(request);status(message);return result};
 const selectedImageInput=q('#pptskill-selected-image-input');
 const openSelectedImagePicker=()=>{if(imagePickerOpen)return;const target=selectedImageTarget();if(!target||!selectedImageInput)return;layout.cancel('picker');pendingImageTarget=target;imagePickerOpen=true;refreshSelectedImage('refresh');try{selectedImageInput.click()}catch(error){pendingImageTarget=null;imagePickerOpen=false;refreshSelectedImage('refresh');status(error.message)}};
 selectedImageInput?.addEventListener('cancel',()=>{pendingImageTarget=null;imagePickerOpen=false;selectedImageInput.value='';refreshSelectedImage('refresh')});
@@ -477,6 +484,6 @@ ${buildMultiSelectionRuntime()}
 ${buildComponentInteractionMount()}
 layout=mountComponentInteraction({document,window,getSpec:()=>spec,getRevision:()=>revision,resolveIdentities:resolveSlideElementIdentities,executeOperation,project:()=>projectComponentGeometry(document,spec),notify:status,setTextMode:setEdit,selectSlide:select,onSelectionChange:refreshSelectedImage});
 refreshSelectedImage('refresh');
-window.PPTSKILLEditor={layout,getDeckSpec:()=>clone(clean()),operationDescriptors:operationDescriptors,executeOperation:o=>clone(executeOperation(o)),applyLocalPatch:p=>{const out=applyPatch(p);status('已套用本機 AI patch');return clone(out)},replaceImageFile,prepareExport,exportHtml,getSizeReport:()=>prepareExport().report,download};
+window.PPTSKILLEditor={layout,getDeckSpec:()=>clone(clean()),operationDescriptors:operationDescriptors,executeOperation:o=>clone(executeOperation(o)),applyLocalPatch:p=>{const out=applyPatch(p);status('已套用本機 AI patch');return clone(out)},replaceImageFile,insertImageFile,prepareExport,exportHtml,getSizeReport:()=>prepareExport().report,download};
 };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot()})();</script>`;
 };
