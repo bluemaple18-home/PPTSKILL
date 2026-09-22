@@ -10,7 +10,7 @@ export async function runImageFitBrowserCases({ cdp, evaluate, navigate, sourceP
   const selected = () => evaluate('window.PPTSKILLEditor.layout.getSelectionState().selected');
   const visible = () => evaluate(`(()=>{const e=document.querySelector('${group}');return !e.hidden&&e.getBoundingClientRect().width>0&&getComputedStyle(e).display!=='none'})()`);
   const key = async (key, code, keyCode) => {
-    await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode: keyCode });
+    await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, windowsVirtualKeyCode: keyCode, ...(key === 'Enter' ? { text: '\r', unmodifiedText: '\r' } : {}) });
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyUp', key, code, windowsVirtualKeyCode: keyCode });
     await settle();
   };
@@ -53,7 +53,9 @@ export async function runImageFitBrowserCases({ cdp, evaluate, navigate, sourceP
   assert.equal(await evaluate("document.activeElement.dataset.imageFit"), 'cover');
   await key('ArrowRight', 'ArrowRight', 39); assert.deepEqual(await spec(), expected);
   await key(' ', 'Space', 32); second.fit = 'cover'; await verify('cover');
-  await pointerFit('contain'); await key('Tab', 'Tab', 9); await key('Enter', 'Enter', 13);
+  await pointerFit('contain'); await key('Tab', 'Tab', 9);
+  assert.equal(await evaluate("document.activeElement.dataset.imageFit"), 'cover');
+  await key('Enter', 'Enter', 13);
   second.fit = 'cover'; await verify('cover');
   const trusted = await evaluate('window.__s7Clicks');
   assert.ok(trusted.every(e => e.trusted)); assert.ok(trusted.some(e => e.detail === 0 && e.fit === 'cover'));
