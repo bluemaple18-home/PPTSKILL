@@ -1,0 +1,11 @@
+✔ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (35.28375ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=false (11.80225ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=true (11.298625ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 168.873459

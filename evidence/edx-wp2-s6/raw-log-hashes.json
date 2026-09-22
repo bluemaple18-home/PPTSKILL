@@ -1,0 +1,132 @@
+[
+  {
+    "path": "build-dist.log",
+    "rawSha256": "a4181ae10052ffdccf71c178f30a5354dff8df471b795077cb985ddab76d53a7",
+    "gzipSha256": "01eefcc03ae61eb2ea90b6dd4bf4f2847a4d07af1c75aa752f80a310eeb4afc6"
+  },
+  {
+    "path": "distribution-probe.log",
+    "rawSha256": "0966d4c47422fed2d66e949e0e0d2fe78ee089855b89b34c097e2a6f34ed5d9f",
+    "gzipSha256": "37f9b22e4aa709b61b08b7d284c89638251c465817a2f902648c2e10adadf67a"
+  },
+  {
+    "path": "host-acceptance/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-acceptance/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-acceptance/launcher.stdout",
+    "rawSha256": "6f37ff3ad12c3029284ffcf5bcc367d082c89966ba8f43a48637cef5a674f220",
+    "gzipSha256": "033efb6d4d3349e083494f231db1d05a4cb86079462c8068f5d4a4e34dc3b21f"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stderr.log",
+    "rawSha256": "0d6c69b5816ca8d33237f80a0c39f9c092b8e26cd550798cbc7097c4ee3521c8",
+    "gzipSha256": "7c4a4dffae1298464a60771f60adf5cc71bb2ff43c6c276f092fab97af5871c6"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-acceptance/selectedImage.log",
+    "rawSha256": "26b4e3836b91b8740b1b66e95e57f0bc9c85edacb6f4e8e4fb8f7842d9381f2f",
+    "gzipSha256": "e3b4621c131d63890b5489a3859e6e6719526049a00efb3bc41a4b22be1536b9"
+  },
+  {
+    "path": "host-teardown-retry/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-teardown-retry/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-teardown-retry/launcher.stdout",
+    "rawSha256": "51bdf821e86864d8f37920d3a1a24ed576476567af91e6fb404811b62d810799",
+    "gzipSha256": "5807659f03836aca44b3c9d7ec238477af368166578108530d8ccbc2157f4b37"
+  },
+  {
+    "path": "host-teardown-retry/lifecycle/evidence/stderr.log",
+    "rawSha256": "d049203f7afb9ac03adb0530f24aebed5d529fd63e78e23a47e2668e3a7a8468",
+    "gzipSha256": "0f08e95b109eb667574d02eed459d552cb1390b7ffc95c75e1d29e937343fa79"
+  },
+  {
+    "path": "host-teardown-retry/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64"
+  },
+  {
+    "path": "host-teardown-retry/pgq.log",
+    "rawSha256": "aabd007fa4a7434c6df84ca6d978f2859cf2614a5414edea3ee44454f428d584",
+    "gzipSha256": "b86201ed8784936f8146e1e5e800e92d0b619a00151d0858b7e7a384286e5f15"
+  },
+  {
+    "path": "host-teardown-retry/selectedImage.log",
+    "rawSha256": "f8c18e4dcbe94e4d720ed1983cf0415f2ba18f579a6fcd5fdccd6cfa204e2bd9",
+    "gzipSha256": "502c72129e8386ae402682388491a7d2b1f8b6f9dd3faf8c9246cd4dfc1c1db3"
+  },
+  {
+    "path": "nonbrowser.log",
+    "rawSha256": "b2bdaf3ec1d9f964f327eec4ba5c8f630b2d4054a1143e5284548b640d2f05ad",
+    "gzipSha256": "a28e9a138832ff3ad6d7435cad0aaf6a1350510b699f8079d3eef084f3b2484a"
+  },
+  {
+    "path": "pptskill-wp2-s6-expanded.log",
+    "rawSha256": "9e16da98350ebf91c157dc60c902bbbf5d2d723bd2d10fb2734f7a88fb13044f",
+    "gzipSha256": "033bf7cf72296ed22ed45958bc629125ff85c0b6072e5cc706aa564caa986a2d"
+  },
+  {
+    "path": "pptskill-wp2-s6-final-regression.log",
+    "rawSha256": "3e515ed5892ae9aabca90a664dacc208ea0539cd6053232774665531a896cc21",
+    "gzipSha256": "c1162c0a3542004d63231135c75083948204003f67868228a07720cdc259f365"
+  },
+  {
+    "path": "pptskill-wp2-s6-green.log",
+    "rawSha256": "97303af6ca1fe247ba5a170490313e69369b2a3c2cb630ffeaa13caa23d375c2",
+    "gzipSha256": "f621ed8578192d27907d861b01864954ee0deb9465b3efedb327c833b0d180e2"
+  },
+  {
+    "path": "pptskill-wp2-s6-red.log",
+    "rawSha256": "22bc2f56e94069c343e4f62b5d6357608fb2c76b87cc4823a3519c8ffbb33d43",
+    "gzipSha256": "97bca10098306eb97ae617f8530a07a7eee6d5e81743a83450d2ae2edf321570"
+  },
+  {
+    "path": "pptskill-wp2-s6-regression.log",
+    "rawSha256": "e25c810eb150afde9f59d128032124b2c356af47d53fd843ca173b048807bc55",
+    "gzipSha256": "3887d995fc03be763a221cdac6fac904b86e1792ab11272e9c8ff5562a852a4f"
+  },
+  {
+    "path": "teardown-build.log",
+    "rawSha256": "b61e5e0b4e00a2a6fbdc4d1ee87ca1e4803e9e06be39e822d7dbc415d895a2ea",
+    "gzipSha256": "62823fb256d63c9fd6c8df81d730871554550b72f756e6e1325062e51ab9f170"
+  },
+  {
+    "path": "teardown-green.log",
+    "rawSha256": "716410466d57600cbac1980711b0db5abe103e409b41aa711df5534773f2546d",
+    "gzipSha256": "22c64fe8b91b435ace66ba742d65751a09a099f23b461918ff6ea23010fd7b0e"
+  },
+  {
+    "path": "teardown-nonbrowser.log",
+    "rawSha256": "cd00006777638b725ebb6fcdcdf5fd86a8b4821d11a5a32e560cd128d46f46f9",
+    "gzipSha256": "1c101f8b02494203dc7ce48ffcfb5c1b9dfd29f7d7b993b2779ed53a00ddbfd6"
+  },
+  {
+    "path": "teardown-probe.log",
+    "rawSha256": "7fef74a8a6628286e74601831ffd59afa623269e50aaa71bce048f2013a17536",
+    "gzipSha256": "1777c3a1374754e099ed86232fe5120626e1c9a41a98b1096ae2d1a5eaf4a94d"
+  },
+  {
+    "path": "teardown-red.log",
+    "rawSha256": "1020a15217a31f2f2cdfcef3dfc645c0298b7aa4d326153bd69813449ddcf31e",
+    "gzipSha256": "434fdf5ffada5154ac4c45e04aa892c45dd0672e55a15d9b6878e922bcf80ccd"
+  }
+]

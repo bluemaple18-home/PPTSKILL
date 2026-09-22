@@ -1,6 +1,6 @@
 # WP2-S6 — selected image replacement UI
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base: b704a1f50a9022b04a5f2b9f8f3fe67ea3d2a4c0（S5已merge/push）
 Branch: codex/edx-wp2-s6-selected-image-ui
 traces_to: BACKLOG §10.1 decisions3/4/8、§10.3 WP2、§10.4 replace-asset。
@@ -27,3 +27,7 @@ true RED→最小GREEN；mounted單選image/nonimage/multi/clear/slide/mode、ca
 ## Worker與邊界
 
 standard單一clean Worker/medium/shared sequential product writer；只改runtime/tests/tools，主線只control，停寫後整合。禁止tests/*.test.mjs、browser/fixture runner/ZIP、commit/branch/control/evidence/protected。最多1bounded implementation loop，遇同blocker兩次無進展停triage。先CodeGraph無關fallback rg；讀Ownerbootstrap與rules05/11/24按需。所有log/private/tmp/pptskill-wp2-s6-*，report列來源SHA/改檔/測試/失敗/限制。不要聲稱Review candidate直到Mainline全部驗收通過。不merge/push/deploy/下一Slice。
+
+## Mainline acceptance
+
+Product `2ec39715f9c8595d58f084208a91e240cb65189e`；repair30/30、full502/502、browser19+19、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。首輪teardown FAIL與repair保留；CDP chooser非人工OS dialog，blur/cancel synthetic。見handoff_20260922_edx_wp2_s6_review.md。Independent Review pending，未merge/push/deploy。

@@ -1,0 +1,38 @@
+✔ export cleanup 只移除 bounded editor chrome roots (1.005625ms)
+✔ editor chrome contract 誤標 presentation truth 時 fail loud (0.373833ms)
+✔ editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth (0.08175ms)
+✔ export clone root 自己被標成 editor chrome 時也不可漏出 (0.105958ms)
+✔ 正式 browser exporter 共用同一 cleanup seam (0.885417ms)
+✔ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (39.133042ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=false (12.371667ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=true (11.396125ms)
+✔ S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer (8.909667ms)
+✔ S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer (8.718667ms)
+✔ S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer (10.385208ms)
+✔ S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer (9.269083ms)
+✔ S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer (9.354917ms)
+✔ S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer (9.393917ms)
+✔ S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer (8.818417ms)
+✔ S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer (12.386833ms)
+✔ S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer (8.382375ms)
+✔ S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer (7.614834ms)
+✔ S6 cancel 重設 value，同檔可再次選取 (8.15325ms)
+✔ S6 empty 重設 value，同檔可再次選取 (10.854791ms)
+✔ S6 success 重設 value，同檔可再次選取 (10.273125ms)
+✔ S6 failure 重設 value，同檔可再次選取 (9.738917ms)
+✔ S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser (10.194959ms)
+✔ S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target (12.464958ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false (8.297708ms)
+✔ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true (7.8745ms)
+✔ S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖 (14.919667ms)
+✔ S6 picker 等待檔案時唯讀 export 不取消 pending target (9.340583ms)
+✔ S6 async target 移除後失敗，零 asset mutation 且 input 可重選 (6.914459ms)
+✔ S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理 (8.309958ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 427.102708

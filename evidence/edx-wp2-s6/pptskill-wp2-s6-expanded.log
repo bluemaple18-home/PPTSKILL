@@ -1,0 +1,56 @@
+✔ S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical (36.506292ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=false (13.496125ms)
+✔ S6 capture → natural blur → change 保留第二圖，snap=true (11.319ms)
+✔ S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer (9.351625ms)
+✔ S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer (9.151625ms)
+✔ S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer (9.640666ms)
+✔ S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer (9.697333ms)
+✔ S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer (9.138791ms)
+✔ S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer (8.484041ms)
+✔ S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer (8.393167ms)
+✔ S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer (9.641041ms)
+✔ S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer (8.469792ms)
+✔ S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer (7.659833ms)
+✔ S6 cancel 重設 value，同檔可再次選取 (8.141708ms)
+✔ S6 empty 重設 value，同檔可再次選取 (8.569583ms)
+✔ S6 success 重設 value，同檔可再次選取 (11.311625ms)
+✔ S6 failure 重設 value，同檔可再次選取 (9.395584ms)
+✔ S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser (11.224833ms)
+✔ S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target (12.404292ms)
+✖ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false (6.390416ms)
+✖ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true (6.104417ms)
+✔ S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖 (13.720958ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 20
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 358.928541
+
+✖ failing tests:
+
+test at tests/edx-wp2-s6-selected-image-ui.test.mjs:103:35
+✖ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false (6.390416ms)
+  TypeError: event.set is not a function
+      at Object.dragStart (evalmachine.<anonymous>:850:36)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s6-selected-image-ui.test.mjs:105:21)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s6-selected-image-ui.test.mjs:103:35
+✖ S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true (6.104417ms)
+  TypeError: event.set is not a function
+      at Object.dragStart (evalmachine.<anonymous>:850:36)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s6-selected-image-ui.test.mjs:105:21)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)

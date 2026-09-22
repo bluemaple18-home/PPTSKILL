@@ -1,0 +1,55 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s6-selected-image-ui.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s6-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2290270,
+      "sha256": "2673aaadfd81af34e990f3709e5bb63097194fa82768b4165440bb5f1e1b1091"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 50835,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-af1c7092db124d84ab6723c2d4ef5ba4",
+  "selectedImageStarted": true,
+  "selectedImageExit": 1,
+  "error": "Traceback (most recent call last):\n  File \"/private/tmp/pptskill-wp2-s6-host-controller.py\", line 60, in <module>\n    if run.returncode: raise RuntimeError(key+' 驗收失敗；停止後續步驟')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: selectedImage 驗收失敗；停止後續步驟\n",
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s6-selected-image-ui.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s6-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2290270,
+      "sha256": "2673aaadfd81af34e990f3709e5bb63097194fa82768b4165440bb5f1e1b1091"
+    }
+  },
+  "status": "NOT_PASS"
+}
