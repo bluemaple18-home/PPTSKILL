@@ -97,6 +97,10 @@ export function mountedEditor(input = fixture()) {
   for (const fit of ['contain', 'cover']) fitGroup.append(new Element('button', { type: 'button', 'data-action': 'set-selected-image-fit', 'data-image-fit': fit }));
   imageToolbar.append(fitGroup);
   imageToolbar.append(new Element('input', { id: 'pptskill-selected-image-input', type: 'file' })); body.append(imageToolbar);
+  // mounted double 手工建立 chrome；只補 S10 的原生 controls，不代替 chooser／瀏覽器。
+  const insertToolbar = new Element('span', { 'data-pptskill-insert-image-toolbar': '' });
+  insertToolbar.append(new Element('button', { type: 'button', 'data-action': 'insert-image', hidden: '', disabled: '' }));
+  insertToolbar.append(new Element('input', { id: 'pptskill-insert-image-input', type: 'file' })); body.append(insertToolbar);
   body.append(new Element('span', { 'data-editor-status': '' }));
   for (const slide of state.slides) {
     const node = new Element('section', { class: 'slide', 'data-slide-id': slide.id }); deck.append(node);

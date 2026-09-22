@@ -1,3 +1,4 @@
+import { runInsertImageUIBrowserCases } from './edx-wp2-s10-browser-cases.mjs';
 import { runInsertImageFileBrowserCases } from './edx-wp2-s9-browser-cases.mjs';
 import { runInsertImageBrowserCases } from './edx-wp2-s8-browser-cases.mjs';
 import { runImageFitBrowserCases } from './edx-wp2-s7-browser-cases.mjs';
@@ -38,7 +39,13 @@ if (process.argv.includes('--typography-regression') || process.argv.includes('-
   input.slides[0].composition.motion = { effect: 'underline-sweep', role: 'text', replay: 'slide-visible', staggerMs: 90, targets: [{ ref: 'content.title' }, { ref: 'content.subtitle' }] };
   const other = structuredClone(input.slides[0]); other.id = 'typography-other'; input.slides.push(other);
 }
-if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || process.argv.includes('--insert-image-regression') || process.argv.includes('--insert-image-file-regression')) addAssetReplacementFixture(input);
+if (process.argv.includes('--insert-image-ui-regression')) {
+  const empty = structuredClone(input.slides[0]); empty.id = 'insert-empty';
+  empty.content.components = [];
+  empty.composition = { primitive: 'title-points', variant: 'default', slots: { title: 'content.title', subtitle: 'content.subtitle', points: 'content.keyPoints' } };
+  input.slides.push(empty);
+}
+if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || process.argv.includes('--insert-image-regression') || process.argv.includes('--insert-image-file-regression') || process.argv.includes('--insert-image-ui-regression')) addAssetReplacementFixture(input);
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -200,6 +207,7 @@ try {
       if (process.argv.includes('--insert-image-file-regression')) await runInsertImageFileBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--image-fit-regression')) await runImageFitBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--selected-image-regression')) await runSelectedImageBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
+      if (process.argv.includes('--insert-image-ui-regression')) await runInsertImageUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';

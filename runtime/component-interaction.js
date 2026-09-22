@@ -307,6 +307,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     document.body.dataset.editorMode = on ? 'layout' : 'play';
     button.textContent = on ? '完成版面' : '編輯版面'; button.setAttribute('aria-pressed', String(Boolean(on)));
     if (on) bindSelecto(); else destroySelecto();
+    onSelectionChange('mode');
     notify(on ? '點選元件或拖曳空白區框選多個元件' : '可直接播放');
   };
   const alignSelection = alignment => {
@@ -354,7 +355,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       suppressPointerClick = false; event.preventDefault(); return;
     }
     const action = event.target.closest?.('[data-action]')?.dataset.action;
-    if (action === 'replace-selected-image' || action === 'set-selected-image-fit') return;
+    if (action === 'insert-image' || action === 'replace-selected-image' || action === 'set-selected-image-fit') return;
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
     if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
     if (action?.startsWith('distribute-')) { distributeSelection(action.slice('distribute-'.length)); return; }
@@ -406,7 +407,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     cancel(); routedControlClick = event;
   };
   const pointerDown = event => {
-    if (event.target.closest?.('[data-action="replace-selected-image"]')) cancel('picker');
+    if (event.target.closest?.('[data-action="replace-selected-image"],[data-action="insert-image"]')) cancel('picker');
     else if (event.target.closest?.('[data-action="set-selected-image-fit"]')) cancel('image-fit');
     else if (interaction.getState().enabled && event.target.closest?.('.slide')) onSelectionChange('selection');
     // 沒有尾隨 click（例如 pointercancel）時，新的有效 pointer 仍立即恢復操作。
