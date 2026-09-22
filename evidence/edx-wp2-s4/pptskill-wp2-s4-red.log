@@ -1,0 +1,105 @@
+✖ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (2.65925ms)
+✖ WP2-S4 Node strict payload 原子拒絕且不執行 getter (0.35625ms)
+✖ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (8.503458ms)
+✖ WP2-S4 portable strict payload 原子拒絕且不執行 getter (13.962917ms)
+✖ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (0.343916ms)
+✖ WP2-S4 registry metadata 與 Node/portable 一致 (6.394375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 0
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 147.405333
+
+✖ failing tests:
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:23:3
+✖ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (2.65925ms)
+  Error: portable 的 CompositionSpec motion 不在 allowlist。 other 的 CompositionSpec motion 不在 allowlist。
+      at createDeckEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:200:67)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:24:73)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:37:3
+✖ WP2-S4 Node strict payload 原子拒絕且不執行 getter (0.35625ms)
+  Error: portable 的 CompositionSpec motion 不在 allowlist。 other 的 CompositionSpec motion 不在 allowlist。
+      at createDeckEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:200:67)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:38:73)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:23:3
+✖ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (8.503458ms)
+  Error: 不支援的 operation。
+      at executeOperation (evalmachine.<anonymous>:465:1257)
+      at Object.executeOperation (evalmachine.<anonymous>:934:165)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:27:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:37:3
+✖ WP2-S4 portable strict payload 原子拒絕且不執行 getter (13.962917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  3 !== 0
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:57:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 3,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:62:1
+✖ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (0.343916ms)
+  Error: portable 的 CompositionSpec motion 不在 allowlist。 other 的 CompositionSpec motion 不在 allowlist。
+      at createDeckEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:200:67)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:63:15)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:70:1
+✖ WP2-S4 registry metadata 與 Node/portable 一致 (6.394375ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(d)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:71:60)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

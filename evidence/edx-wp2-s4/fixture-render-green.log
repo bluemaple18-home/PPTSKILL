@@ -1,0 +1,22 @@
+✔ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (19.798166ms)
+✔ WP2-S4 Node strict payload 原子拒絕且不執行 getter (3.25875ms)
+✔ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (9.777833ms)
+✔ WP2-S4 portable strict payload 原子拒絕且不執行 getter (11.440917ms)
+✔ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (0.758834ms)
+✔ WP2-S4 registry metadata 與 Node/portable 一致 (2.174916ms)
+✔ WP2-S4 portable 局部 DOM、no-op revision、export/reparse (5.949541ms)
+✔ WP2-S4 DOM 投影例外還原 canonical 與原 attributes (3.161ms)
+✔ WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留 (8.115708ms)
+✔ WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕 (9.208959ms)
+✔ WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale (35.523833ms)
+✔ WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加 (3.134959ms)
+✔ WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失 (2.819875ms)
+✔ WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效 (5.857083ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 229.626833

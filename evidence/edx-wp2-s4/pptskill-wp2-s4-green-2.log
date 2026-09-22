@@ -1,0 +1,62 @@
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (29.866917ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (65.257917ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (125.350667ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (75.969667ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (23.769042ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (24.743417ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (24.98425ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (25.608583ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (24.762292ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (9.486542ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (29.489167ms)
+✔ mounted semantic component text seam 使 gesture stale，不覆寫新 state (22.89125ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (34.182917ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (35.207333ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (104.393167ms)
+✔ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (47.252333ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (38.742208ms)
+✖ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (45.929542ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (140.847625ms)
+✔ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (24.218542ms)
+✔ WP2-S4 Node strict payload 原子拒絕且不執行 getter (3.470625ms)
+✔ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (10.708625ms)
+✔ WP2-S4 portable strict payload 原子拒絕且不執行 getter (11.680042ms)
+✔ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (0.764ms)
+✔ WP2-S4 registry metadata 與 Node/portable 一致 (2.244917ms)
+✔ DeckSpec editor 支援文字、元件、圖片與 bounded local patch (4.942917ms)
+✔ 排序、複製、刪除維持唯一 ID 與 15 頁上限 (2.913125ms)
+✔ full-deck export 內建直接編輯器且只靠單一 HTML 可還原 DeckSpec (12.113ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 27
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1045.533
+
+✖ failing tests:
+
+test at tests/edx-wp1-s4-perf.test.mjs:85:1
+✖ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (45.929542ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /圖片元件已移除/. Input:
+
+  'Error: 找不到 slide。'
+
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s4-perf.test.mjs:96:20)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: 找不到 slide。
+        at executeOperation (evalmachine.<anonymous>:530:101)
+        at Object.replaceImageFile (evalmachine.<anonymous>:548:443)
+        at async waitForActual (node:assert:621:5)
+        at async strict.rejects (node:assert:744:25)
+        at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s4-perf.test.mjs:96:20)
+        at async Test.run (node:internal/test_runner/test:1208:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:831:7),
+    expected: /圖片元件已移除/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

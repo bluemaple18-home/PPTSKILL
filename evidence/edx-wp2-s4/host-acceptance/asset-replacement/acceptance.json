@@ -1,0 +1,88 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/source.html",
+  "sourceSha256": "8f6ecc3b248dca1ebcd2463878ba30887bd9e3271c47fc69d1107cbb41166210",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-legacy-selected.html",
+          "bytes": 500781,
+          "sha256": "8d5ac199f0013360efe5f358137cf19a475d13451a06036afa7837c62cfaa127"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-preview-export.html",
+          "bytes": 501090,
+          "sha256": "c26de5d59dc49182272bbfba98ed88af9dcac71d9e2ecf235365fbae1921858f"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-cancel.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-noop.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-invalid.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-invalid-resize.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-play-mode.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-export.html",
+          "bytes": 501090,
+          "sha256": "a011c5f199cf380a2dd441941e6b7123b2f6b6b0de61d425667263a640d28cdb"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s4/host-acceptance/asset-replacement/1280-reopen-export.html",
+          "bytes": 501090,
+          "sha256": "56c4332b977f7a6399910e61fc226f721bc54457411769b7426bd31bf32e56b4"
+        }
+      ],
+      "error": "Error: TypeError: Cannot read properties of null (reading 'decode')\n    at <anonymous>:1:150\n    at <anonymous>:1:292\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:88:44)\n    at async checkImage (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s4-browser-cases.mjs:20:20)\n    at async runAssetReplacementBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s4-browser-cases.mjs:24:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:192:68",
+      "targetClosed": true
+    }
+  ],
+  "error": "Error: TypeError: Cannot read properties of null (reading 'decode')\n    at <anonymous>:1:150\n    at <anonymous>:1:292\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:88:44)\n    at async checkImage (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s4-browser-cases.mjs:20:20)\n    at async runAssetReplacementBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s4-browser-cases.mjs:24:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:192:68"
+}

@@ -1,0 +1,62 @@
+✔ mounted 1 MiB pointer update/preview 不讀 payload、不序列化 (32.435875ms)
+✔ mounted 6 MiB pointer update/preview 不讀 payload、不序列化 (67.153791ms)
+✔ mounted 12 MiB pointer update/preview 不讀 payload、不序列化 (121.632667ms)
+✔ mounted readonly/noop/invalid/preview export 換 object 後 release 至多一次且可 reopen (75.141167ms)
+✔ mounted semantic public text 使 gesture stale，不覆寫新 state (23.875417ms)
+✔ mounted semantic legacy text 使 gesture stale，不覆寫新 state (26.642041ms)
+✔ mounted semantic legacy component 使 gesture stale，不覆寫新 state (24.890667ms)
+✔ mounted semantic geometry 使 gesture stale，不覆寫新 state (29.247875ms)
+✔ mounted semantic sync text/export 使 gesture stale，不覆寫新 state (26.032333ms)
+✔ mounted semantic asset replace 使 gesture stale，不覆寫新 state (9.090875ms)
+✔ mounted semantic keyPoint 使 gesture stale，不覆寫新 state (28.686958ms)
+✔ mounted semantic component text seam 使 gesture stale，不覆寫新 state (22.684708ms)
+✔ mounted semantic change then revert 使 gesture stale，不覆寫新 state (33.867709ms)
+✔ mounted semantic duplicate 使 gesture stale，不覆寫新 state (34.349959ms)
+✔ mounted reorder/delete/unrelated slide mutation 取消 gesture (101.559292ms)
+✔ mounted async asset 在 readonly export 換 object 後仍寫入 live canonical，同值不假 stale (46.291916ms)
+✔ mounted noop image/text、invalid component patch 不假 mutation (37.845167ms)
+✔ mounted async asset 刪除 captured target 不回寫；換頁仍只改 captured identity (48.833666ms)
+✔ mounted target replacement/deletion/mode/cancel/invalid/noop 不提交 (143.068833ms)
+✔ WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export (23.869125ms)
+✔ WP2-S4 Node strict payload 原子拒絕且不執行 getter (3.474458ms)
+✔ WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export (11.313333ms)
+✔ WP2-S4 portable strict payload 原子拒絕且不執行 getter (11.566333ms)
+✔ WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省 (0.739791ms)
+✔ WP2-S4 registry metadata 與 Node/portable 一致 (2.298417ms)
+✔ WP2-S4 portable 局部 DOM、no-op revision、export/reparse (6.661333ms)
+✖ WP2-S4 DOM 投影例外還原 canonical 與原 attributes (4.01375ms)
+✔ WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留 (9.11725ms)
+✔ WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕 (10.354083ms)
+✔ WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale (39.964458ms)
+✔ WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加 (3.423875ms)
+✔ DeckSpec editor 支援文字、元件、圖片與 bounded local patch (5.341042ms)
+✔ 排序、複製、刪除維持唯一 ID 與 15 頁上限 (3.841083ms)
+✔ full-deck export 內建直接編輯器且只靠單一 HTML 可還原 DeckSpec (11.198917ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 33
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1060.158792
+
+✖ failing tests:
+
+test at tests/edx-wp2-s4-replace-asset.test.mjs:96:1
+✖ WP2-S4 DOM 投影例外還原 canonical 與原 attributes (4.01375ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s4-replace-asset.test.mjs:99:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /投影失敗/,
+    operator: 'throws',
+    diff: 'simple'
+  }
