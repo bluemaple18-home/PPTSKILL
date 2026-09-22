@@ -444,7 +444,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:66:3
 ✖ Node descriptors 深度 immutable 且 allowlist 無法擴權 (7.635833ms)
   AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
   + actual - expected
-  
+
     [
   +   'set-typography',
       'edit-text',
@@ -452,7 +452,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:66:3
       'resize-element',
       'align-selection',
       'distribute-selection'
-  
+
       at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:68:12)
       at Test.runInAsyncScope (node:async_hooks:226:14)
       at Test.run (node:internal/test_runner/test:1201:25)
@@ -473,7 +473,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:39:3
   evalmachine.<anonymous>:207
       } else if (element.getAttribute(baseline) !== null) {
                          ^
-  
+
   TypeError: element.getAttribute is not a function
       at Object.project (evalmachine.<anonymous>:207:24)
       at projectRoleTypography (evalmachine.<anonymous>:405:308)
@@ -491,7 +491,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:51:3
   evalmachine.<anonymous>:207
       } else if (element.getAttribute(baseline) !== null) {
                          ^
-  
+
   TypeError: element.getAttribute is not a function
       at Object.project (evalmachine.<anonymous>:207:24)
       at projectRoleTypography (evalmachine.<anonymous>:405:308)
@@ -509,7 +509,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:66:3
   evalmachine.<anonymous>:207
       } else if (element.getAttribute(baseline) !== null) {
                          ^
-  
+
   TypeError: element.getAttribute is not a function
       at Object.project (evalmachine.<anonymous>:207:24)
       at projectRoleTypography (evalmachine.<anonymous>:405:308)
@@ -527,7 +527,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:117:3
   evalmachine.<anonymous>:207
       } else if (element.getAttribute(baseline) !== null) {
                          ^
-  
+
   TypeError: element.getAttribute is not a function
       at Object.project (evalmachine.<anonymous>:207:24)
       at projectRoleTypography (evalmachine.<anonymous>:405:308)
@@ -545,7 +545,7 @@ test at tests/edx-wp1-s3-bounded-geometry.test.mjs:135:3
   evalmachine.<anonymous>:207
       } else if (element.getAttribute(baseline) !== null) {
                          ^
-  
+
   TypeError: element.getAttribute is not a function
       at Object.project (evalmachine.<anonymous>:207:24)
       at projectRoleTypography (evalmachine.<anonymous>:405:308)

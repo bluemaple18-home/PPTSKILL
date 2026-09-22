@@ -35,3 +35,5 @@ Frozen sources **13**、protected **4**；ZIP **2,286,500 bytes**，SHA-256 `33f
 未 merge／push／deploy；未開下一 Slice。Mainline acceptance 不能代替 Independent Review GO。
 
 Mainline 判定：可交 Independent Review；verdict 尚 pending。Handoff：`handoff_20260922_edx_wp2_s2_review.md`。
+
+原始 failure log 的行尾空白使 evidence diff-check 失敗；可讀 `.log` 僅去除行尾空白，完整原始 bytes 另存同名 `.log.gz`，解壓後 SHA 見 `raw-log-archives.json`。未改寫任何 failure 結果。

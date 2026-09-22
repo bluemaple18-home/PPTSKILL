@@ -44,9 +44,9 @@ not ok 7 - WP2-S2 初次 render 同時保留 motion styles；reopen reset 回 CS
   failureType: 'testCodeFailure'
   error: |-
     ["portable 的 CompositionSpec motion 不在 allowlist。"]
-    
+
     'fail' !== 'pass'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected: 'pass'

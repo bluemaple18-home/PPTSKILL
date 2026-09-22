@@ -57,7 +57,7 @@ not ok 9 - edit-text descriptor 完整宣告 bounded metadata
   error: |-
     Expected values to be strictly deep-equal:
     + actual - expected
-    
+
       [
     +   'set-typography',
         'edit-text',
@@ -65,7 +65,7 @@ not ok 9 - edit-text descriptor 完整宣告 bounded metadata
         'resize-element',
         'align-selection',
         'distribute-selection'
-    
+
   code: 'ERR_ASSERTION'
   name: 'AssertionError'
   expected:
