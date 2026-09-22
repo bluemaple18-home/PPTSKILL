@@ -1,6 +1,6 @@
 # S11 Mainline acceptance receipt
 
-狀態：**REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING**；2026-09-22。
+狀態：**COMPLETE / INDEPENDENT_REVIEW_GO**；2026-09-22。獨立 verdict 見 `independent-review.md`；下列 host 驗收歷史保留。
 
 Product SHA：`5589217175c443f407785f3a3b2aac110896d5f2`；branch `codex/edx-wp1-s11-equal-gap`；base `29c83fa415ad1424395f8d71612542c6a824f308`。
 
@@ -30,4 +30,4 @@ Product SHA：`5589217175c443f407785f3a3b2aac110896d5f2`；branch `codex/edx-wp1
 
 ## Mainline decision / handoff
 
-Host blocker 已解除，可交 Independent Review；本 receipt **不是 Independent GO**。交 `handoff_20260922_edx_wp1_s11_review.md`。未 merge／push／deploy，未開 S12。
+Host blocker 已解除並完成 Independent Review。Reviewed SHA `5589217175c443f407785f3a3b2aac110896d5f2`，verdict **GO**，P0/P1/P2/P3 全 0。Reviewer fresh targeted **34/34**、focused **211/211**、full non-browser **416/416 PASS**；browser／PGQ 僅核對已提交 evidence，沒有冒稱 fresh rerun。主線結案核對 source 8/8、protected 4/4、ZIP bytes/hash MATCH，reviewed code／ZIP 未改。S11 正式關閉；未 merge／push／deploy，未開 S12。

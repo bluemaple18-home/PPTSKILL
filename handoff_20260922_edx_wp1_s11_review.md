@@ -1,6 +1,6 @@
-# S11 Independent Review Handoff
+# S11 Independent Review Handoff — CLOSED / GO
 
-狀態：**INDEPENDENT_REVIEW_PENDING**。請唯讀審查並回覆 reviewed SHA、GO／NO-GO、P0–P3 findings、重現證據與限制。不修改 candidate／ZIP／protected，不 merge／push／deploy，不開 S12。
+狀態：**COMPLETE / INDEPENDENT_REVIEW_GO**。2026-09-22 已完成獨立唯讀 review；下列原始 review brief 保留為歷史，已不再是待執行指令。Verdict：`evidence/edx-wp1-s11/independent-review.md`。
 
 - Repo：`<repo-root>` = `PPTSKILL-canonical`。
 - Branch：`codex/edx-wp1-s11-equal-gap`。
@@ -36,3 +36,12 @@ git diff --check 29c83fa415ad1424395f8d71612542c6a824f308 5589217175c443f407785f
 ```
 
 Reviewer 應自行 fresh 跑適當 targeted／non-browser verification。若沒有合法 managed browser，只核對已提交 evidence 並明示，不得冒稱 fresh browser/PGQ rerun。Mainline acceptance 不是 Independent GO。
+
+## Closure — 2026-09-22
+
+- Reviewed SHA：`5589217175c443f407785f3a3b2aac110896d5f2`。
+- Verdict：**GO**；P0/P1/P2/P3 = 0/0/0/0。
+- Reviewer fresh：targeted **34/34**、focused **211/211**、full non-browser **416/416 PASS**，`git diff --check` PASS。
+- Evidence-only verification：雙 viewport 各 **13 checks PASS**、affected PGQ **單輪 16/16 PASS**；Reviewer 本輪未 fresh 啟動 browser／PGQ。
+- Mainline closure 核對 source **8/8**、protected **4/4**、ZIP `2,282,817 bytes` / SHA-256 `388e2bfefbcc9d483760f21a51f0b18458ef975ffb68ad58ce6e06d04530c959` 全 MATCH；reviewed code／ZIP 未修改。
+- S11 正式關閉；未 merge／push／deploy，未開 S12。

@@ -1,6 +1,6 @@
 # EDX-WP1-S11 — Equal-gap distribution
 
-Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp1-s11-equal-gap`
 Base: `29c83fa415ad1424395f8d71612542c6a824f308`
 Depends on: S10 COMPLETE / Independent Review GO / merged main。
@@ -57,3 +57,9 @@ traces_to: `BACKLOG.md §10.1 Decision 4`、`§10.2 Prior-Art-First`、`§10.3 E
 正式 managed host：雙 viewport equal-gap 各 **13 checks PASS**，errors/remote 0、targetClosed=true；affected PGQ 串行 **單輪 16/16 named PASS**。readiness / Browser.close / supervisor / cleanup PASS；source 8/8、protected 4/4、ZIP bytes/hash 前後 MATCH。
 
 詳見 `evidence/edx-wp1-s11/mainline-receipt.md` 與 `host-final-verification.json`。前述 checkpoint pending 保留為歷史。現可交 Independent Review，尚無獨立 GO；產品與 ZIP 未修改，不 merge／push／deploy，不開 S12。
+
+## Mainline closure — 2026-09-22
+
+Independent Review **GO**，reviewed SHA `5589217175c443f407785f3a3b2aac110896d5f2`，P0/P1/P2/P3 全 0。Reviewer fresh targeted **34/34**、focused **211/211**、full non-browser **416/416 PASS**，`git diff --check` PASS；browser 雙 viewport 各 13 checks 與 PGQ 單輪 16/16 屬已提交 evidence 的獨立核對，非 Reviewer fresh browser/PGQ rerun。
+
+Verdict：`evidence/edx-wp1-s11/independent-review.md`。主線核對 source **8/8**、protected **4/4**、ZIP bytes/hash MATCH，reviewed product 到結案前 HEAD 僅 evidence/control 文件，reviewed code／ZIP 未改。S11 正式關閉；未 merge／push／deploy，未開 S12。前述 checkpoint／host acceptance 段落保留為歷史。
