@@ -1038,6 +1038,8 @@ WP2-S8 candidate `0b4c7bd`：image-only API insert；scoped150/full551、browser
 
 WP2-S8 closure：Independent GO，P0–P3全0；reviewer fresh70/551、browser50+50與PGQ retry16為committed evidence核對；底層I/O根因未知。Reviewed code/ZIP未改，本輪未merge/push/deploy。
 
-**WP2-S9 INDEPENDENT REVIEW PENDING：** 明示target/ID/alt/fit/geometry的File插入adapter，沿既有optimizer→S8 insert-element；無新UI/picker/auto-ID。卡tasks/edx-wp2-s9-insert-image-file.md；S8 closure7c61460，main仍74d63cc，未merge/push。
+**WP2-S9 COMPLETE / INDEPENDENT REVIEW GO：** 明示target/ID/alt/fit/geometry的File插入adapter，沿既有optimizer→S8 insert-element；無新UI/picker/auto-ID。卡tasks/edx-wp2-s9-insert-image-file.md；S8 closure7c61460，main仍74d63cc，未merge/push。
 
 WP2-S9 candidate `48fb928`：File insertion adapter；scoped148/full586、browser18+18、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。原RED與33/35測試fixtureFAIL保留；handoff_20260923_edx_wp2_s9_review.md待Independent Review。本輪S8/S9未merge/push/deploy。
+
+WP2-S9 closure：Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改；Owner明示授權S8/S9整合並push，未deploy。

@@ -1,6 +1,6 @@
 # WP2-S9 Mainline acceptance receipt
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Product: `48fb928e6fe33056995621edfae77d16db6f655f`
 Branch: codex/edx-wp2-s9-insert-image-file
 Base: `7c614603dc11b9276e73f3b916d25ad046118571`（S8 Independent GO closure）
@@ -39,3 +39,7 @@ Source **5/5**、protected **4/4 MATCH**。ZIP **2,293,729 bytes**，SHA256 `441
 主線實際看過雙viewport新圖截圖：藍黃image、selection/resize handle與既有fit/replace controls可見，toolbar無viewport clipping。fixture指定geometry與舊文字有重疊，不宣稱自動避障、整頁視覺品質或crop pixel驗收。API-driven File/optimizer不是native picker/OS clipboard，不新增插圖UI。20MiB沒有per-insert aggregate admission。
 
 raw logs gzip與hash保留；可讀logs僅正規化行尾空白。所有RED／中間FAIL未覆寫。主線acceptance非Independent GO；candidate→handoff只control/evidence，S9未merge/push/deploy、未開下一Slice。工作樹只剩原四protected untracked。
+
+## Closure
+
+Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改，詳evidence/edx-wp2-s9/independent-review.md。Owner本輪授權整合／push，執行結果另存integration receipt。

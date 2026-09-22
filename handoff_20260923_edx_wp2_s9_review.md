@@ -1,6 +1,6 @@
 # WP2-S9 Independent Review Handoff
 
-Status: INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s9-insert-image-file
 Reviewed candidate: `48fb928e6fe33056995621edfae77d16db6f655f`
 Base: `7c614603dc11b9276e73f3b916d25ad046118571`（S8 Independent GO closure，尚未merge）
@@ -21,3 +21,7 @@ Main/origin-main: `74d63cc99e745b373adbcc3a56e9228576e74b22`
 能力限制：API-driven File insertion；無native picker/drop/clipboard/auto-ID，3×2驗decode與computed fit非crop pixel／自動避障；20MiB沿export gate。切頁fixture為synthetic MouseEvent，圖片／fit操作為true pointer。缺managed attachment可核對committed browser evidence並明標非fresh，禁止裸啟Chrome或unset sandbox。
 
 請回GO/NO-GO、P0–P3、reviewed SHA、fresh/evidence-only來源。不修改candidate/ZIP/protected，不merge/push/deploy、不開下一Slice。主線尚未宣稱Independent GO。
+
+## Closure
+
+Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改，詳evidence/edx-wp2-s9/independent-review.md。Owner本輪授權整合／push，執行結果另存integration receipt。

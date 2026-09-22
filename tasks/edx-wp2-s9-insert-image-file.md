@@ -1,6 +1,6 @@
 # WP2-S9 — explicit File image insertion adapter
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base: 7c614603dc11b9276e73f3b916d25ad046118571（S8 closure，Independent GO；未merge/push）
 Main/origin-main: 74d63cc99e745b373adbcc3a56e9228576e74b22
 Branch: codex/edx-wp2-s9-insert-image-file
@@ -40,3 +40,7 @@ strict/core-bounded：固定async adapter契約與零部分提交。單一clean 
 ## Mainline acceptance
 
 Candidate `48fb928e6fe33056995621edfae77d16db6f655f`，scoped148/full586，browser18+18，PGQ單輪16/16、source5/protected4/ZIP/cleanup PASS。原RED／33/35中間FAIL保留，詳receipt。handoff_20260923_edx_wp2_s9_review.md待Independent Review；未merge/push/deploy。
+
+## Closure
+
+Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改，詳evidence/edx-wp2-s9/independent-review.md。Owner本輪授權整合／push，執行結果另存integration receipt。

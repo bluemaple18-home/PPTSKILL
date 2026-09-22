@@ -1,6 +1,6 @@
 # S9 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: PASS / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s9-insert-image-file.md
 Product: 48fb928e6fe33056995621edfae77d16db6f655f；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -13,3 +13,7 @@ Product: 48fb928e6fe33056995621edfae77d16db6f655f；source/protected/ZIP frozen�
 全部通過才交Independent Review；native picker/clipboard/auto-ID未提供，不宣稱。S8 I/O底層原因未知，本卡不修AI Core。本S9未merge/push/deploy。
 
 Result：雙viewport18+18、errors0/targetClosed；PGQ單輪16/16，Browser.close/supervisor exit0、ownedroot/marker absent；source5/protected4/ZIP MATCH。本S9無retry，不宣稱S8歷史I/O修復。
+
+## Closure
+
+Independent GO，P0–P3全0；reviewer fresh94/586，browser18+18與PGQ16為committed evidence核對。Reviewed code/ZIP未改，詳evidence/edx-wp2-s9/independent-review.md。Owner本輪授權整合／push，執行結果另存integration receipt。
