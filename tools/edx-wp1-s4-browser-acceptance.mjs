@@ -1,3 +1,4 @@
+import { addAssetReplacementFixture, runAssetReplacementBrowserCases } from './edx-wp2-s4-browser-cases.mjs';
 import { runStyleCopyBrowserCases } from './edx-wp2-s3-browser-cases.mjs';
 import { runTypographyBrowserCases } from './edx-wp2-s2-browser-cases.mjs';
 import { runSnapBrowserCases } from './edx-wp1-s7-browser-cases.mjs';
@@ -32,6 +33,7 @@ if (process.argv.includes('--typography-regression') || process.argv.includes('-
   input.slides[0].composition.motion = { effect: 'underline-sweep', role: 'text', replay: 'slide-visible', staggerMs: 90, targets: [{ ref: 'content.title' }, { ref: 'content.subtitle' }] };
   const other = structuredClone(input.slides[0]); other.id = 'typography-other'; input.slides.push(other);
 }
+if (process.argv.includes('--asset-replacement-regression')) addAssetReplacementFixture(input);
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -187,6 +189,7 @@ try {
       if (process.argv.includes('--direct-text-regression')) await runDirectTextBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, position, settle, assertExport });
       if (process.argv.includes('--style-copy-regression')) await runStyleCopyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--typography-regression')) await runTypographyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
+      if (process.argv.includes('--asset-replacement-regression')) await runAssetReplacementBrowserCases({ cdp, evaluate, navigate, sourcePath, run, assertExport });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';

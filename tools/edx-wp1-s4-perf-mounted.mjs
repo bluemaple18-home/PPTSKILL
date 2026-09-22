@@ -93,7 +93,10 @@ export function mountedEditor(input = fixture()) {
     const add = (id, field, value, kind = 'text') => node.append(new Element('blockquote', { 'data-pptskill-element-id': id, 'data-edit-target': `slides.${slide.id}.content.${field}`, ...(kind ? { 'data-edit-kind': kind } : {}) }, value));
     add(ids.title, 'title', slide.content.title); add(ids.subtitle, 'subtitle', slide.content.subtitle);
     slide.content.keyPoints.forEach((p, i) => add(ids.keyPoints[i], 'keyPoints.' + i, p));
-    slide.content.components.forEach((c, i) => add(ids.components[i], 'components.' + c.id, c.text || c.label || '', ['text', 'citation'].includes(c.type) ? 'text' : ''));
+    slide.content.components.forEach((c, i) => {
+      add(ids.components[i], 'components.' + c.id, c.text || c.label || '', ['text', 'citation'].includes(c.type) ? 'text' : '');
+      if (c.type === 'image') node.children.at(-1).append(new Element('img', { src: c.dataUri, alt: c.alt, style: 'object-fit:' + (c.fit || 'contain') }));
+    });
   }
   const counts = { payloadReads: 0, serializations: 0, wholeSpecSerializations: 0 };
   const observedJSON = {
