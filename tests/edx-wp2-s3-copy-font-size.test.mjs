@@ -127,3 +127,23 @@ for (const portable of [false, true]) test(`WP2-S3 ${portable ? 'portable' : 'No
   api.executeOperation(request('paste-style', 'role-title', 'other'));
   const result = h ? h.getSpec() : api.getSpec(); assert.equal(result.slides.length, 1); assert.equal(font(result), 56);
 });
+
+
+test('WP2-S3 title → layout focusin 不提前隱藏 toolbar，click 才清 target', () => {
+  const h = mountedEditor(fixtureTwo());
+  const nav = h.document.createElement('nav'); nav.setAttribute('class', 'pptskill-editor'); h.document.body.append(nav);
+  const layout = h.document.querySelector('[data-action="layout"]');
+  const toolbar = h.document.querySelector('[data-pptskill-typography-toolbar]');
+  nav.append(layout); nav.append(toolbar);
+  open(h); size(h.api, 48); h.action('copy-style'); const before = h.getSpec();
+  dispatch(h, 'mousedown', layout); dispatch(h, 'focusin', layout);
+  assert.equal(toolbar.hidden, false, 'focusin 不得讓控制列在 mouseup 前縮排');
+  assert.equal(h.document.body.dataset.editorMode, 'edit');
+  dispatch(h, 'mouseup', layout); h.click(layout);
+  assert.equal(h.document.body.dataset.editorMode, 'layout'); assert.equal(toolbar.hidden, true);
+  assert.throws(() => h.api.executeOperation(request('paste-style')));
+  assert.deepEqual(h.getSpec(), before);
+  open(h); dispatch(h, 'focusin', h.document.body);
+  assert.equal(toolbar.hidden, true, '離開 editor 與文字 target 仍應清除');
+  assert.throws(() => h.api.executeOperation(request('paste-style')));
+});

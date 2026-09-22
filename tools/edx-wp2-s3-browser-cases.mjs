@@ -106,7 +106,16 @@ export async function runStyleCopyBrowserCases({ cdp, evaluate, navigate, source
   const exported = await assertExport('wp2-s3-style-copy-export', committed);
   assert.equal(await evaluate(`(()=>{const d=new DOMParser().parseFromString(window.PPTSKILLEditor.exportHtml(),'text/html');return d.querySelectorAll('[data-pptskill-typography-toolbar],[contenteditable],[data-editor-selected]').length})()`), 0);
   // 匯出後仍用 live clipboard；source 刪除後 snapshot 也必須保持。
-  await open(); await press('layout'); await press('delete'); await open('title', 'typography-other'); await press('paste-style'); await checkFont('title', 'typography-other', 72);
+  await open();
+  const layoutPoint = await visible(control('layout'));
+  await cdp.send('Input.dispatchMouseEvent', {type:'mousePressed',x:layoutPoint.x,y:layoutPoint.y,button:'left',buttons:1,clickCount:1});
+  const transition = await evaluate(`(()=>{const b=document.querySelector('[data-action="layout"]'),r=b.getBoundingClientRect(),hit=document.elementFromPoint(${layoutPoint.x},${layoutPoint.y});return {mode:document.body.dataset.editorMode,toolbarHidden:document.querySelector('[data-pptskill-typography-toolbar]').hidden,focused:document.activeElement===b,hit:hit===b||b.contains(hit),rect:{x:r.x,y:r.y,width:r.width,height:r.height}}})()`);
+  run.checks.push({wp2s3:'title-layout-pointer-transition',afterMouseDown:transition});
+  assert.equal(transition.mode, 'edit'); assert.equal(transition.toolbarHidden, false); assert.equal(transition.focused, true); assert.equal(transition.hit, true);
+  await cdp.send('Input.dispatchMouseEvent', {type:'mouseReleased',x:layoutPoint.x,y:layoutPoint.y,button:'left',buttons:0,clickCount:1}); await settle();
+  assert.equal(await evaluate('document.body.dataset.editorMode'), 'layout');
+  assert.equal(await evaluate('document.querySelector("[data-pptskill-typography-toolbar]").hidden'), true);
+  await press('delete'); await open('title', 'typography-other'); await press('paste-style'); await checkFont('title', 'typography-other', 72);
   assert.equal((await spec()).slides.length, 1);
   await cdp.send('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: 0, uploadThroughput: 0 });
   await navigate(exported); assert.deepEqual(await spec(), committed);
