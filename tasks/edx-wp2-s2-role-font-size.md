@@ -1,6 +1,6 @@
 # EDX-WP2-S2 — Role font-size override
 
-Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp2-s2-role-font-size`
 Base: `4a1c0bb0fddff372253eaa3e4ea5f33a3204ea1e`
 Depends on: WP2-S1 COMPLETE / Independent GO / merged main。
@@ -44,3 +44,9 @@ Product `14555d0499e1f07ec8fabf3deb5e33db90d4d608`。Worker scoped 66/66；完�
 首輪 full 425/431 為 S3 snapshot/VM fixture，已 bounded 修正。Browser 前兩輪 FAIL 定位 toolbar CSS specificity，使按鈕 rect=0×0；產品補 edit-mode typography selector 後 PASS。歷史 FAIL 保留，非單輪全部成功。Source 13/13、protected 4/4、ZIP MATCH；IME 僅 synthetic CompositionEvent。
 
 Receipt：`evidence/edx-wp2-s2/mainline-receipt.md`；handoff：`handoff_20260922_edx_wp2_s2_review.md`。未 merge／push／deploy，未開下一 Slice。
+
+## Mainline closure — 2026-09-22
+
+Independent Review **GO**，reviewed SHA `14555d0499e1f07ec8fabf3deb5e33db90d4d608`，P0/P1/P2/P3 全 0。Reviewer fresh targeted 39/39、full non-browser 431/431 PASS。Browser 雙 viewport 各16 checks、PGQ 16/16 為已提交 evidence 獨立核對，非 reviewer fresh rerun；IME 僅 synthetic CompositionEvent lifecycle。
+
+Verdict：`evidence/edx-wp2-s2/independent-review.md`。Source13/13、protected4/4、ZIP MATCH；reviewed code／ZIP 未改，歷史 FAIL 保留。前述 candidate 段落保留為歷史。未 merge／push／deploy，未開下一 Slice。
