@@ -33,3 +33,7 @@ IME 僅 synthetic CompositionEvent lifecycle，非原生 OS IME。獨立 Review 
 ## 後續修復已完成
 
 以上為08698cf時的歷史停損。Owner指定focus repair後，c43e480通過完整Mainline acceptance；最新依focus-repair-receipt.md、focus-repair-verification.json及review handoff。Independent Review pending，不把本輪Mainline驗收當獨立GO。
+
+## Mainline closure
+
+WP2-S3 COMPLETE / INDEPENDENT_REVIEW_GO。Owner回傳獨立review：P0/P1/P2/P3全0，reviewer fresh targeted10/10、full442/442；browser/PGQ為已提交evidence獨立核對。主線fresh核對source9/9、protected4/4、ZIP bytes/hash與product→handoff無delivery drift；reviewed code/ZIP未改。完整verdict見independent-review.md。未merge/push/deploy，未開下一Slice。

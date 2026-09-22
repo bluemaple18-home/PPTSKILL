@@ -1,6 +1,6 @@
 # WP2-S3 focus/mode bounded repair
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Reviewed candidate 尚未裁決；product `c43e480e9504f9b2da3ff6c1fdc31b30ee81c038`。
 
 ## 根因與修改
@@ -18,3 +18,7 @@ Reviewed candidate 尚未裁決；product `c43e480e9504f9b2da3ff6c1fdc31b30ee81c
 source9、protected4 及ZIP以source-hashes.json鎖定。ZIP 2,287,440 bytes，SHA-256 `da3d95777124daaf43f70ab7de6a898715d2e2cff28969634694f575ea3119a1`。
 
 IME僅 browser synthetic CompositionEvent，非OS IME。四支affected PGQ串行單輪16/16 unique named PASS；readiness/browser/PGQ/Browser.close/supervisor全exit0，owned root與isolation marker均absent。source9/9、protected4/4、ZIP前後MATCH；詳focus-repair-verification.json。未 merge/push/deploy、未開下一Slice；Independent Review pending。
+
+## Mainline closure
+
+WP2-S3 COMPLETE / INDEPENDENT_REVIEW_GO。Owner回傳獨立review：P0/P1/P2/P3全0，reviewer fresh targeted10/10、full442/442；browser/PGQ為已提交evidence獨立核對。主線fresh核對source9/9、protected4/4、ZIP bytes/hash與product→handoff無delivery drift；reviewed code/ZIP未改。完整verdict見independent-review.md。未merge/push/deploy，未開下一Slice。

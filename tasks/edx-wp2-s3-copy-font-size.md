@@ -1,6 +1,6 @@
 # EDX-WP2-S3 — Bounded copy/paste font size
 
-Status: IN_PROGRESS
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp2-s3-copy-font-size`
 Base: `ed5b34ef357bf158dd1fbd379fda9156f23a1155`
 Depends on: WP2-S2 COMPLETE / Independent GO / merged main。
@@ -38,3 +38,5 @@ Meaningful RED→GREEN；Node/portable parity、invalid atomic、snapshot/no-op�
 ## Focus repair 完成
 
 最新狀態 READY_FOR_INDEPENDENT_REVIEW；產品c43e480，targeted10/10、full442/442、ZIP、雙viewport各14checks、PGQ單輪16/16、cleanup全PASS。歷史browser blocker已由本輪focus ownership修復與實測解除；Independent GO仍pending。
+
+最新裁決：Independent Review GO，P0–P3全0，WP2-S3正式結案。見 `evidence/edx-wp2-s3/independent-review.md`。歷史pending/stop紀錄保留作時間序列；未merge/push/deploy，未開下一Slice。
