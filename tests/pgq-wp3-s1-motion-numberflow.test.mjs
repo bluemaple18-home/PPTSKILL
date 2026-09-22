@@ -146,7 +146,7 @@ test('browser editor 注入正式 motion semantic validator，拒絕失配 targe
   assert.ok(context.result.some((message) => message.includes('ASCII metric token')));
   const rendered = renderFullDeck(deckSpec());
   assert.match(rendered.html, /data-metric-index="0" data-edit-target="slides\.metrics\.content\.keyPoints\.0"/);
-  assert.match(rendered.html, /const rawErrors=spec\.slides\.flatMap\(validateSlideMotion\)/);
+  assert.match(rendered.html, /const clean=\(source=spec\)=>\{const rawErrors=source\.slides\.flatMap\(validateSlideMotion\)/);
   assert.match(rendered.html, /const errors=cleaned\.slides\.flatMap\(validateSlideMotion\)/);
 });
 

@@ -71,7 +71,11 @@ class Element {
     const match = html.match(/^<([\w-]+)([^>]*)>([\s\S]*)<\/\1>$/);
     if (!match) throw new Error('DOM double 不支援此 markup');
     const attrs = Object.fromEntries([...match[2].matchAll(/([\w-]+)="([^"]*)"/g)].map(m => [m[1], m[2]]));
-    this.content = { firstElementChild: new Element(match[1], attrs, match[3].replace(/<[^>]*>/g, '')) };
+    const decode = value => value.replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>').replaceAll('&amp;', '&');
+    const node = new Element(match[1], Object.fromEntries(Object.entries(attrs).map(([key, value]) => [key, decode(value)])), decode(match[3].replace(/<[^>]*>/g, '')));
+    // 新插入 image 的真實結構；不模擬 decode／layout／browser pointer。
+    for (const image of match[3].matchAll(/<img\b([^>]*)>/g)) node.append(new Element('img', Object.fromEntries([...image[1].matchAll(/([\w-]+)="([^"]*)"/g)].map(m => [m[1], decode(m[2])]))));
+    this.content = { firstElementChild: node };
   }
 }
 
