@@ -1051,3 +1051,5 @@ S8/S9已FF整合並push main `d0b9aa0`，遠端readback MATCH；詳evidence/edx-
 WP2-S10 candidate `7f79b58`：layout插入圖片chooser，沿S9/S8；S10 31/full617、browser23+23、PGQ單輪16、ZIP/source6/protected4/cleanup PASS。原RED/scoped147-152/fixture-preflight FAIL保留；handoff_20260923_edx_wp2_s10_review.md已取得Independent Review GO。S10未merge/push/deploy，S11未開。
 
 WP2-S10 closure：Owner交回Independent GO，P0–P3全0；reviewed `7f79b58`，Reviewer fresh targeted125/125、full617/617；browser23+23／PGQ單輪16為committed evidence核對。Source6/protected4/ZIP MATCH，reviewed code與ZIP未動。紀錄：evidence/edx-wp2-s10/independent-review.md。可進整合；本輪未merge/push/deploy，S11未開。
+
+**WP2-S11 IN PROGRESS：** layout單張圖片file drop，沿S9 adapter/S10 defaults與busy；無clipboard/多檔/crop/schema。卡tasks/edx-wp2-s11-image-drop.md。Base S10 closure da6c122（未merge）；main/origin-main仍d0b9aa0。
