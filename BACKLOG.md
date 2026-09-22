@@ -1003,3 +1003,7 @@ EDX 不能建立第二 editor architecture、第二 renderer、第二 export、�
 **EDX-WP2-S3 COMPLETE / INDEPENDENT REVIEW GO：** Base `ed5b34e`（WP2-S2 已整合並推送 main）。只做 title/subtitle 明示字級複製貼上，copy snapshot 為 session-local，paste 走既有 set-typography；不新增 schema/樣式欄位/system clipboard。卡：`tasks/edx-wp2-s3-copy-font-size.md`；host：`tasks/edx-wp2-s3-host-acceptance.md`。未 merge/push/deploy 本 slice，不開下一 Slice。
 
 WP2-S3：focus repair `c43e480` 已通過 Independent Review GO，P0–P3全0；reviewer fresh targeted10/10、full442/442，browser雙viewport各14與PGQ單輪16為evidence-only核對；見 `handoff_20260922_edx_wp2_s3_review.md`。未 merge/push/deploy。
+
+WP2-S3 已依Owner授權合併並推送 main/S3 branch至28c1b37。
+
+**EDX-WP2-S4 IN PROGRESS：** image-only replace-asset unified operation；只整合現有Node/portable替換路徑，保留預設alt/fit/geometry。卡：tasks/edx-wp2-s4-replace-asset.md。無crop/insert/新UI，停Independent Review candidate。
