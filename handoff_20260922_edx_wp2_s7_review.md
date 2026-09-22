@@ -1,6 +1,6 @@
 # WP2-S7 Independent Review Handoff
 
-Status: INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: codex/edx-wp2-s7-selected-image-fit
 Base/main: `659e68489b1fee23101499ee25599eb300a40cb4`
 Reviewed candidate: `501da1b701f253d943c2879cd32e5108f583cfa1`
@@ -23,3 +23,7 @@ Runtime product: `c2ba9e565e18405ebd652fdf5786765c37e09f87`（到candidate只多
 S6 chooser非人工OS dialog，naturalBlurCount=0、blur/cancel synthetic；S7用既有1×1圖片fixture，以canonical/computed style驗fit，不是crop pixel驗證。缺managed host attachment只核對committed browser evidence，fresh與evidence-only分列；不得裸啟Chrome或unset sandbox。
 
 請回GO/NO-GO、P0–P3、reviewed SHA及fresh/evidence-only來源。不改candidate/ZIP/protected、不merge/push/deploy、不開下一Slice。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0；Reviewer fresh59/531，browser35+35／PGQ16為committed evidence核對。主線fresh source6/protected4/ZIP／control-only核對通過，reviewed code/ZIP未改；詳evidence/edx-wp2-s7/independent-review.md。

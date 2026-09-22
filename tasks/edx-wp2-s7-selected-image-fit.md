@@ -1,6 +1,6 @@
 # WP2-S7 — 所選圖片顯示方式
 
-Status: READY_FOR_INDEPENDENT_REVIEW
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base: `659e68489b1fee23101499ee25599eb300a40cb4`（S6已closure／merge／push，remote main及branch MATCH）
 Branch: codex/edx-wp2-s7-selected-image-fit
 traces_to: BACKLOG §10.1 decisions3/7/8、§10.3 WP2、§10.4 replace-asset。
@@ -34,3 +34,7 @@ Worker完成stop writing，交changed paths、scoped counts、指令、失敗歷
 ## Mainline acceptance
 
 Candidate501da1b（runtime c2ba9e5；harness-only Enter修補）。Worker196/196、Mainline full531/531、browser雙viewport35+35、PGQ單輪16/16、ZIP/source/protected/cleanup PASS。首輪FAIL保留；限制見receipt。handoff_20260922_edx_wp2_s7_review.md待Independent Review，未merge/push/deploy。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0；Reviewer fresh59/531，browser35+35／PGQ16為committed evidence核對。主線fresh source6/protected4/ZIP／control-only核對通過，reviewed code/ZIP未改；詳evidence/edx-wp2-s7/independent-review.md。

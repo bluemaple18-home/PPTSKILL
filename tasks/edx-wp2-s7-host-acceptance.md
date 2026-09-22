@@ -1,6 +1,6 @@
 # WP2-S7 Host acceptance
 
-Status: PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s7-selected-image-fit.md
 Product: `501da1b701f253d943c2879cd32e5108f583cfa1`；source6/protected4/ZIP frozen。
 
@@ -12,3 +12,7 @@ Product: `501da1b701f253d943c2879cd32e5108f583cfa1`；source6/protected4/ZIP fro
 Evidence：evidence/edx-wp2-s7/host-acceptance，主線receipt列測試/失敗/限制；全部通過才凍結review candidate，未merge/push/deploy、不開下一Slice。
 
 結果：初輪host-acceptance Enter harness FAIL、cleanup PASS；host-keyboard-retry雙viewport35+35、PGQ單輪16/16、errors0/targetClosed/managed cleanup PASS；source/protected/ZIP MATCH。完整限制及兩輪來源見evidence/edx-wp2-s7/mainline-receipt.md。
+
+## Mainline closure
+
+Independent Review GO，P0–P3全0；Reviewer fresh59/531，browser35+35／PGQ16為committed evidence核對。主線fresh source6/protected4/ZIP／control-only核對通過，reviewed code/ZIP未改；詳evidence/edx-wp2-s7/independent-review.md。
