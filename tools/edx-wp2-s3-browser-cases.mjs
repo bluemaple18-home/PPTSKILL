@@ -106,7 +106,7 @@ export async function runStyleCopyBrowserCases({ cdp, evaluate, navigate, source
   const exported = await assertExport('wp2-s3-style-copy-export', committed);
   assert.equal(await evaluate(`(()=>{const d=new DOMParser().parseFromString(window.PPTSKILLEditor.exportHtml(),'text/html');return d.querySelectorAll('[data-pptskill-typography-toolbar],[contenteditable],[data-editor-selected]').length})()`), 0);
   // 匯出後仍用 live clipboard；source 刪除後 snapshot 也必須保持。
-  await open(); await press('delete'); await open('title', 'typography-other'); await press('paste-style'); await checkFont('title', 'typography-other', 72);
+  await open(); await press('layout'); await press('delete'); await open('title', 'typography-other'); await press('paste-style'); await checkFont('title', 'typography-other', 72);
   assert.equal((await spec()).slides.length, 1);
   await cdp.send('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: 0, uploadThroughput: 0 });
   await navigate(exported); assert.deepEqual(await spec(), committed);
