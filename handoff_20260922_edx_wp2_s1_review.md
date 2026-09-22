@@ -1,6 +1,8 @@
 # EDX-WP2-S1 Independent Review Handoff
 
-狀態：**INDEPENDENT_REVIEW_PENDING**。請唯讀審查，回 reviewed SHA、GO／NO-GO、P0–P3 findings、重現證據與限制。不得修改 candidate／ZIP／protected，不 merge／push／deploy，不開下一 Slice。
+結案更新（2026-09-22）：**COMPLETE / INDEPENDENT_REVIEW_GO**。見 `evidence/edx-wp2-s1/independent-review.md`；以下保留原 review 委託與 evidence 範圍。
+
+請唯讀審查，回 reviewed SHA、GO／NO-GO、P0–P3 findings、重現證據與限制。不得修改 candidate／ZIP／protected，不 merge／push／deploy，不開下一 Slice。
 
 - Repo：`<repo-root>` = `PPTSKILL-canonical`。
 - Branch：`codex/edx-wp2-s1-direct-text-edit`。

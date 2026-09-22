@@ -1,6 +1,6 @@
 # EDX-WP2-S1 — Direct text editing / IME bounded commit
 
-Status: REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Branch: `codex/edx-wp2-s1-direct-text-edit`
 Base: `33a19464b7e6b0795974166cc15c77e68e984e04`
 Depends on: EDX-WP1 S11 COMPLETE / Independent Review GO / merged main。
@@ -55,3 +55,9 @@ traces_to: `BACKLOG.md §10.1 Decision 2/7/8`、`§10.2 Prior-Art-First`、`§10
 正式 host 雙 viewport 各 **14 checks PASS**；affected PGQ 串行 **單輪 16/16 unique named PASS**；errors/remote 全 0、targetClosed=true、managed cleanup PASS。Source 6/6、protected 4/4、ZIP bytes/hash 前後 MATCH；產品未改。IME 證據僅 browser CompositionEvent lifecycle，不宣稱原生 OS IME。
 
 Receipt：`evidence/edx-wp2-s1/mainline-receipt.md`；handoff：`handoff_20260922_edx_wp2_s1_review.md`。前述 pending 保留為 checkpoint 歷史；現為 review candidate，Independent Review 仍 pending。未 merge／push／deploy，未開下一 Slice。
+
+## Mainline closure — 2026-09-22
+
+Independent Review **GO**；reviewed SHA `a33b05a1e8a07accd4c55f8f4643369d5b9efe3d`；P0/P1/P2/P3 全 0。Reviewer fresh targeted 36/36、full non-browser 423/423 PASS。Browser 雙 viewport 各 14 checks 與 PGQ 單輪 16/16 為已提交 evidence 獨立核對，非 reviewer fresh rerun；IME 僅 synthetic CompositionEvent lifecycle。
+
+Verdict：`evidence/edx-wp2-s1/independent-review.md`。Source 6/6、protected 4/4、ZIP MATCH；reviewed code／ZIP 未改。前述 checkpoint／review pending 段落保留為歷史。未 merge／push／deploy，未開下一 Slice。

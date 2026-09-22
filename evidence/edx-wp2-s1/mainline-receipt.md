@@ -1,6 +1,6 @@
 # EDX-WP2-S1 Mainline acceptance receipt
 
-狀態：**REVIEW_CANDIDATE / INDEPENDENT_REVIEW_PENDING**；2026-09-22。
+狀態：**COMPLETE / INDEPENDENT_REVIEW_GO**；2026-09-22。
 
 Product：`a33b05a1e8a07accd4c55f8f4643369d5b9efe3d`；checkpoint：`338c4ab`；branch：`codex/edx-wp2-s1-direct-text-edit`；base：`33a19464b7e6b0795974166cc15c77e68e984e04`。
 
@@ -30,4 +30,4 @@ Source **6/6**、protected **4/4** 前後 MATCH；ZIP **2,283,305 bytes**，SHA-
 
 ## Mainline decision
 
-Host blocker 已解除，可交 Independent Review；本 receipt **不是 Independent GO**。交 `handoff_20260922_edx_wp2_s1_review.md`；未 merge／push／deploy，未開下一 Slice。
+已保存 Independent Review **GO**（`independent-review.md`），P0/P1/P2/P3 全 0，WP2-S1 正式結案。Reviewer fresh targeted 36/36、full non-browser 423/423 PASS；browser／PGQ 為既有 evidence 獨立核對。Reviewed code／ZIP 未改。未 merge／push／deploy，未開下一 Slice。
