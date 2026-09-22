@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check tools/edx-wp1-s4-browser-acceptance.mjs
+exit=0

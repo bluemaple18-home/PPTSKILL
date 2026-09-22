@@ -1,0 +1,62 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/image-insertion.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s8-insert-image.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tests/pgq-wp3-s1-motion-numberflow.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s8-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2293334,
+      "sha256": "82a16b7d962972df28d558dbfecc1d198858f686abe49e5acf4ce19d27795cf1"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 88375,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-2c47a1b99a8f42fe928b0b2751b1e5be",
+  "insertImageStarted": true,
+  "insertImageExit": 0,
+  "pgqStarted": true,
+  "pgqExit": 1,
+  "error": "Traceback (most recent call last):\n  File \"/private/tmp/pptskill-wp2-s8-host-controller.py\", line 60, in <module>\n    if run.returncode: raise RuntimeError(key+' 驗收失敗；停止後續步驟')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: pgq 驗收失敗；停止後續步驟\n",
+  "supervisorExit": 2,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/image-insertion.js": true,
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s8-insert-image.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tests/pgq-wp3-s1-motion-numberflow.test.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp2-s8-browser-cases.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2293334,
+      "sha256": "82a16b7d962972df28d558dbfecc1d198858f686abe49e5acf4ce19d27795cf1"
+    }
+  },
+  "status": "NOT_PASS"
+}

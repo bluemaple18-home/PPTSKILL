@@ -1,0 +1,5 @@
+修改腳本 /opt/homebrew/bin/node --input-type=module：exit 1。
+SyntaxError: missing ) after argument list at eval1:11。
+原因：s.replace 的 template literal 以雙引號收尾；腳本解析失敗，未執行 editor/helper/snapshot 寫入。
+當時 runtime/image-insertion.js 已由前一個 heredoc 寫入；後續測試因入口未接線仍 18 tests / 5 pass / 13 fail，完整輸出見 FAIL-edit-script-tests.log。
+修正：正確閉合 template literal 後執行同一 bounded 接線，不變更 scope。

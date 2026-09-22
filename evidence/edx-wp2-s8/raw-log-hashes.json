@@ -1,0 +1,254 @@
+[
+  {
+    "path": "build-dist.log",
+    "rawSha256": "4b50f1865c01e59412ebe5af74b4d17c8ee085f346a98a80792047f735d22304",
+    "gzipSha256": "174580cb386deba4d191bdaa709894b978e6f5bfe33465c610702f56d8f46980",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "distribution-probe.log",
+    "rawSha256": "1edf8effc1c1759efbbef903bde8a1c989755f7dcd75b9ebf13388ed05d152c2",
+    "gzipSha256": "3ecb92413d8ca052ef0cc161755d4141edeb6d2323c90f4474250bfbc8ad360b",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/insertImage.log",
+    "rawSha256": "3f57b4d0df3b8078389fa67aeea08ce101551c28ddc4e89a8a32a113d922e723",
+    "gzipSha256": "642f37a61a38ddfac5d2c90755aff2d498088f5c43e5340330ce3c07009a05c2",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/launcher.stderr",
+    "rawSha256": "84f0f1e8eb0a6511a0c111bc9a773dce201832230150c2aa0d91b0568514d9f2",
+    "gzipSha256": "235b7ab95f39be96b5f7096d9aa4c17e0d1d1fbc465d57b2b8ca0b0a7913a401",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/launcher.stdout",
+    "rawSha256": "be0fbb160ea77f395f4fb2839b2f5ccd2656e8dc433a9f9bbb8c64f0618dc2f8",
+    "gzipSha256": "1fdba91719328963ff2a385b6dc09d4f3c7c32844daeace59d391530ba5dc985",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stderr.log",
+    "rawSha256": "676f0b5a4342a36f492984be6a4d7fcb87c2f922a69f987ba6dd8cfec265cedd",
+    "gzipSha256": "6f1204538d051c2ba0c0c14f24c726b151413c048aa826b8caedd6dcca5241a2",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-acceptance/pgq.log",
+    "rawSha256": "d758fe4e5613f94d6b62e94aa67e0283d94d183dbd10a5d5707570792603960a",
+    "gzipSha256": "9aff8991ce98005da38d481f16ff4334b0a512f4c26e0b49852ea50be49d6206",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/launcher.stdout",
+    "rawSha256": "e61898d78734214b33c7bcb02ea6a62ccdc477ee669af3080513d77e5f33d8c1",
+    "gzipSha256": "a11ed3e5fc75519c2e1dbf2e0359017aa8c52540fbc9730fc3113727f93bca4d",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/lifecycle/evidence/stderr.log",
+    "rawSha256": "49704293b5f22f7483a81435bd05b52953c204084e8968d6ea6ccaa9ad474d65",
+    "gzipSha256": "be10a294f6ebb43bcd81cd450979d20a1cc7d3bc6884ada827feeba8b595e605",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "host-pgq-retry/pgq.log",
+    "rawSha256": "a59f4f749ca7fbfad61ebe104a1c5af2ee33326450c1ed25be127d6ddf916ec3",
+    "gzipSha256": "c99224075d19b7ff745a96e41626875a2d15d8cf99249b356815fd37cd2dc72e",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "mainline-motion-test.log",
+    "rawSha256": "1d23d96264167105564afe74e1d3e9451ae1f011881feda93b95259ebd35376d",
+    "gzipSha256": "d4bbfa4fb7aa362d2c7ab75970f743bcd9cdd02d4df2b017fda7aedd90822155",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "nonbrowser-initial-fail.log",
+    "rawSha256": "fc57e46bbedc02e40855ac2028c3492c5b9b111988bf8c45703823e7c585feb4",
+    "gzipSha256": "b28338b6c246c38bda4fd0e4becff17ab352c937c752020fbd5bbcf66c509129",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "nonbrowser.log",
+    "rawSha256": "65474cbff017366484057aaeb596f3114047687d1376a4f47b3c2e25652ecd1d",
+    "gzipSha256": "1871b4a3be13110d3e62fd58e2c8e2d10487419431e158e5537c981876db49aa",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-FAIL-edit-script-tests.log",
+    "rawSha256": "2af39922d7058279af5970c51d3eec40402f151d3ac8c56aadea5cc579c56d56",
+    "gzipSha256": "d79a41b93fcc77304155edca9e0cb275b857c95b9e419cb6ef375546444bd1d2",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-FAIL-edit-script.log",
+    "rawSha256": "f2525c6b962e18f6527503d42c55a00c137c28c00084834a2aa5571beff7ab63",
+    "gzipSha256": "9d89f267393fc34450508b3f3cc373701e43088ffbb5b87ba632423619873817",
+    "provenance": "Worker重述診斷，非當時shell原始capture"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-deck-editor.js.log",
+    "rawSha256": "5f135a00017f1b2961398605929a023e8196b211aca17848fda2ceb89d2d41f4",
+    "gzipSha256": "45cdbccd57bc7879e8750275182cf7fa04e37bd893db605ec59f3705979621b7",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp1-s2-stable-identity-operation-path.test.mjs.log",
+    "rawSha256": "ba723ee649b8fe5475403c4252922720ac00a33be68473cffadb3deb3cdd900d",
+    "gzipSha256": "52183f52e24e5664368c3571cc853a06d0da954b02db4bbdb5bccc710f4d0be7",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp1-s3-bounded-geometry.test.mjs.log",
+    "rawSha256": "900c9eaa570ca07b8fc0cd304faf60b1bf7392985b0d321f8ab4f9f8578af94f",
+    "gzipSha256": "d11e5e625edb558148d05e9ddf2b15f1f34884064ae5069fee72555c5f583607",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp1-s4-browser-acceptance.mjs.log",
+    "rawSha256": "423267aa18a5c38e40c504ff2af9af09437a8564a82f0d4873209c8cb9780227",
+    "gzipSha256": "14e19ea459195844633b6d2eecbd322075b5d49d400c815ef38074e249ab638e",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp1-s4-perf-mounted.mjs.log",
+    "rawSha256": "552d79f1d30de3696c604a5e63b721c3c8e02904f8773f11be70df887b4963f3",
+    "gzipSha256": "68b3d89a95beb2ea90709a697b14c904e8d56f9a041d581cbaeadf1988b9b903",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp2-s8-browser-cases.mjs.log",
+    "rawSha256": "323fe7b7b30cb05d0a902e147cf0974afc1ef63a3fb3d2fed8d3d43bde07f33a",
+    "gzipSha256": "cfc210c8f90dffa8f2602583ded5f8e0236de19482777031ddc6a7a62292a6ef",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-edx-wp2-s8-insert-image.test.mjs.log",
+    "rawSha256": "aad191a09462a0ca685f0e112ac522f2170bb4e1b63aeca562d24bd3a5fe419f",
+    "gzipSha256": "a69e9e241886e78325f79a5e7f438f2cf64152de5aa65191ae2dc873eef1c9fe",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-check-image-insertion.js.log",
+    "rawSha256": "631ee9aeab0c4b0b716835e79d5e969b21eaceac9dfb446487810bb2fe161222",
+    "gzipSha256": "de7d9ee5c9075f00aebaef4874a8bc73adbcf76078208ae1f45cb05a2b476ee1",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-diff-check.log",
+    "rawSha256": "724214dd0dc55f09aca532ad98b48749307cab8c647d0472a213b7cc8a0af4f1",
+    "gzipSha256": "3bc88d9e41356a135e82d4a59d2eb4761509473329999c47029b9481d622d10e",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp1-s1-export-cleanup.test.mjs.log",
+    "rawSha256": "cb8cb34fc9e82a2fa620bf0bedb1a04e34cb99c01984e94ea70ce331cf75979a",
+    "gzipSha256": "23ffbe35233d65bc2b04ad1b0ab46e65b6e1a1ad55652f6b8409db96b576b191",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp1-s2-stable-identity-operation-path.test.mjs.log",
+    "rawSha256": "94ecda5c28b613e2378878df08d84b0d4e291988a2c63743dcb444c867922f83",
+    "gzipSha256": "1fce790c034ba93b4fd5e81ca65917f4aeb1e2f7108cf89e4c6bf491edc5a4f8",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp1-s3-bounded-geometry.test.mjs.log",
+    "rawSha256": "a6914aecb61ca02723c970ca279527bd08b3fe26e5f8ba9397c97543c0654636",
+    "gzipSha256": "55e05ed8b14fe356e161c7c0b2008c7ad914e3618ca595d738c237718a863834",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp1-s4-interaction.test.mjs.log",
+    "rawSha256": "8b62aa81216736c4b1e6a2211fc12da245e7f58cca8b8f5485a8229e9014cf38",
+    "gzipSha256": "fa503f0b288f346a6687f75c277bae248c3c20c415209ac15cf06736aebf2526",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s1-direct-text-edit.test.mjs.log",
+    "rawSha256": "d1e7a813b7791a1fa9143526c409f77331c3413e9822cd7d6d64cc7f82141456",
+    "gzipSha256": "8208f7459ab010ada3b92f1a503687265559d897b0f38904682ea97f88d5db4b",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s4-replace-asset.test.mjs.log",
+    "rawSha256": "697d06bb828401e2b4a79548f728707bfe83524cdd0780bd70dcfde416d30bd6",
+    "gzipSha256": "a0c68457e1413fb929238ce30cca88047d19966832a63378a9c57a6da0046ef1",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s5-targeted-image-file.test.mjs.log",
+    "rawSha256": "3c6a493050e773b8c1236276ef5cfc9f1807463182685b8826f55fa6adabce38",
+    "gzipSha256": "0adf0d6156f4610ebd15a0d47f15d48419275895baa1a23b530a7087cf816d22",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s6-selected-image-ui.test.mjs.log",
+    "rawSha256": "91ac43654b1e08d8daf856b63db2585960cbf7569d795321900a87958cc56929",
+    "gzipSha256": "4b8ed15e5ff78d7e70fa5087f372d3cbb7d2138bec67e98fa379b44cdc37e847",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s7-selected-image-fit.test.mjs.log",
+    "rawSha256": "c4465bd0d71281afcdb0d0cd87006a69af83fb30a5567eb09bf715db63e50e12",
+    "gzipSha256": "a9a37d8a29b25d8cc744000c6c0c2ec1ece19ed1560e4c2f1362f78b8c1550bb",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-edx-wp2-s8-insert-image.test.mjs.log",
+    "rawSha256": "49ed321148534e60fa403a79841366afab50486afc617ce9bbae72f59d65252c",
+    "gzipSha256": "5cf74bd2f8ed6e67cba3bd2c4a08bc65cf368023c8862c03f0db39cf37074bec",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-final-status.log",
+    "rawSha256": "d0348bc1086737e8463ab626b40ad18378feb9274a8b4ef3ece9e61d06a31070",
+    "gzipSha256": "3c50c3e709382579ffd855a53a3fc892597621e3fe9c9daccf7f198b975e235a",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-initial-tests.log",
+    "rawSha256": "d26286d9a4c322baf80f0611b6850999217a01b64f7fa83761a2cea8b9f145ac",
+    "gzipSha256": "9429f61495fd89b772accec472cb76d2604443049573429280d6caed2479982b",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-GREEN-tracked-diff.log",
+    "rawSha256": "ea134ec1e918c5222a818c539561a6ef3a8f7d1e655ab206101038934967b160",
+    "gzipSha256": "620e8d040dec4c12f272b9e0fc10b4492f7b05463df8b82c678472d07378cd41",
+    "provenance": "命令輸出原始bytes"
+  },
+  {
+    "path": "worker-logs/pptskill-wp2-s8-RED-tests.log",
+    "rawSha256": "6f0f54297b444f0d2e0fa45e015e844c61a6905f6fc2fa4dae47193ef7b16b41",
+    "gzipSha256": "9568ee914682c872346716deb0aa7ea0cc81c8fa5fe12b691adf0605b0766121",
+    "provenance": "命令輸出原始bytes"
+  }
+]

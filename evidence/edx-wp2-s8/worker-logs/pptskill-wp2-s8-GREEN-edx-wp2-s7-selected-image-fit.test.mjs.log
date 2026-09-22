@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: S7 native group 與裁邊說明由 bootstrap markup 提供
+ok 1 - S7 native group 與裁邊說明由 bootstrap markup 提供
+  ---
+  duration_ms: 1.147167
+  type: 'test'
+  ...
+# Subtest: S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation
+ok 2 - S7 第二圖 default contain no-op、往返、pressed、revision 與完整 preservation
+  ---
+  duration_ms: 27.776541
+  type: 'test'
+  ...
+# Subtest: S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri
+ok 3 - S7 無 target／未知 fit 拒絕且不 fallback；使用 click 當下 live dataUri
+  ---
+  duration_ms: 10.175834
+  type: 'test'
+  ...
+# Subtest: S7 nonimage 隱藏／disable 並拒絕 stale target
+ok 4 - S7 nonimage 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 10.722959
+  type: 'test'
+  ...
+# Subtest: S7 multi 隱藏／disable 並拒絕 stale target
+ok 5 - S7 multi 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.966458
+  type: 'test'
+  ...
+# Subtest: S7 clear 隱藏／disable 並拒絕 stale target
+ok 6 - S7 clear 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.235083
+  type: 'test'
+  ...
+# Subtest: S7 slide 隱藏／disable 並拒絕 stale target
+ok 7 - S7 slide 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.816458
+  type: 'test'
+  ...
+# Subtest: S7 edit 隱藏／disable 並拒絕 stale target
+ok 8 - S7 edit 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.633333
+  type: 'test'
+  ...
+# Subtest: S7 play 隱藏／disable 並拒絕 stale target
+ok 9 - S7 play 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.5545
+  type: 'test'
+  ...
+# Subtest: S7 delete 隱藏／disable 並拒絕 stale target
+ok 10 - S7 delete 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.817084
+  type: 'test'
+  ...
+# Subtest: S7 destroy 隱藏／disable 並拒絕 stale target
+ok 11 - S7 destroy 隱藏／disable 並拒絕 stale target
+  ---
+  duration_ms: 8.914416
+  type: 'test'
+  ...
+# Subtest: S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize
+ok 12 - S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize
+  ---
+  duration_ms: 139.322709
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消
+ok 13 - S7 picker pending fit disabled；cancel 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 9.945708
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消
+ok 14 - S7 picker pending fit disabled；empty 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 12.32625
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消
+ok 15 - S7 picker pending fit disabled；change 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 10.834542
+  type: 'test'
+  ...
+# Subtest: S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消
+ok 16 - S7 picker pending fit disabled；blur-change 恢復且 pending 不被 fit 取消
+  ---
+  duration_ms: 14.863875
+  type: 'test'
+  ...
+# Subtest: S7 drag/pointer/snap=false 取消 preview 後只提交 fit
+ok 17 - S7 drag/pointer/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.094333
+  type: 'test'
+  ...
+# Subtest: S7 drag/keyboard/snap=false 取消 preview 後只提交 fit
+ok 18 - S7 drag/keyboard/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.072958
+  type: 'test'
+  ...
+# Subtest: S7 resize/pointer/snap=false 取消 preview 後只提交 fit
+ok 19 - S7 resize/pointer/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.483083
+  type: 'test'
+  ...
+# Subtest: S7 resize/keyboard/snap=false 取消 preview 後只提交 fit
+ok 20 - S7 resize/keyboard/snap=false 取消 preview 後只提交 fit
+  ---
+  duration_ms: 8.840208
+  type: 'test'
+  ...
+# Subtest: S7 drag/pointer/snap=true 取消 preview 後只提交 fit
+ok 21 - S7 drag/pointer/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 10.118375
+  type: 'test'
+  ...
+# Subtest: S7 drag/keyboard/snap=true 取消 preview 後只提交 fit
+ok 22 - S7 drag/keyboard/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.519791
+  type: 'test'
+  ...
+# Subtest: S7 resize/pointer/snap=true 取消 preview 後只提交 fit
+ok 23 - S7 resize/pointer/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.625667
+  type: 'test'
+  ...
+# Subtest: S7 resize/keyboard/snap=true 取消 preview 後只提交 fit
+ok 24 - S7 resize/keyboard/snap=true 取消 preview 後只提交 fit
+  ---
+  duration_ms: 9.443791
+  type: 'test'
+  ...
+# Subtest: S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard
+ok 25 - S7 toolbar focus 擁有 arrows；modifier／IME 沿原 keyboard guard
+  ---
+  duration_ms: 7.912208
+  type: 'test'
+  ...
+# Subtest: S7 default no-op 亦取消 preview 並保留 selection snap=false
+ok 26 - S7 default no-op 亦取消 preview 並保留 selection snap=false
+  ---
+  duration_ms: 8.936792
+  type: 'test'
+  ...
+# Subtest: S7 default no-op 亦取消 preview 並保留 selection snap=true
+ok 27 - S7 default no-op 亦取消 preview 並保留 selection snap=true
+  ---
+  duration_ms: 9.444041
+  type: 'test'
+  ...
+# Subtest: S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖
+ok 28 - S7 target DOM 移除與 observer refresh 後隱藏，不套到其他圖
+  ---
+  duration_ms: 8.267333
+  type: 'test'
+  ...
+# Subtest: S7 export 只保留 fit；從匯出 DeckSpec remount 可切換
+ok 29 - S7 export 只保留 fit；從匯出 DeckSpec remount 可切換
+  ---
+  duration_ms: 18.959167
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 545.660417

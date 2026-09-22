@@ -1,0 +1,79 @@
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (22864.31ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer normal 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion normal
+Warning: Detected unsettled top-level await at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:695
+for (const viewport of viewports) runs.push(await runAtViewport(viewport));
+                                            ^
+
+
+
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at async collectRepresentativeQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:51:46)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s3-sample-approval.test.mjs:31:20
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s3-sample-approval.test.mjs (33399.76375ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+[TypeError: fetch failed] {
+  [cause]: Error: connect ECONNREFUSED 127.0.0.1:58310
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1705:16) {
+    errno: -61,
+    code: 'ECONNREFUSED',
+    syscall: 'connect',
+    address: '127.0.0.1',
+    port: 58310
+  }
+}
+
+Node.js v25.9.0
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at async collectFullDeckQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:95:56)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-full-deck-qa.test.mjs:17:18
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (237.673167ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4209.6775ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 60899.221291
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-sample-approval.test.mjs:1:1
+✖ tests/pgq-wp4-s3-sample-approval.test.mjs (33399.76375ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-full-deck-qa.test.mjs:1:1
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (237.673167ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4209.6775ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:26:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:23:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

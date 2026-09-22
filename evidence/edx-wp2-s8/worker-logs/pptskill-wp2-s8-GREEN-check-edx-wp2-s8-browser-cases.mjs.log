@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check tools/edx-wp2-s8-browser-cases.mjs
+exit=0

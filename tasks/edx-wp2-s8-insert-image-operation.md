@@ -1,6 +1,6 @@
 # WP2-S8 — image-only Safe Insert operation
 
-Status: IN_PROGRESS
+Status: READY_FOR_INDEPENDENT_REVIEW
 Base: `74d63cc99e745b373adbcc3a56e9228576e74b22`（S7 closure／merge／push、remote main及branch MATCH）
 Branch: codex/edx-wp2-s8-insert-image-operation
 traces_to: BACKLOG §10.1 decisions3/7/8、§10.3 WP2、§10.4 insert-element。
@@ -37,3 +37,7 @@ strict/core-bounded：新mutation API與atomic性規格已固定；一個clean W
 允許runtime/image-insertion.js（新）、runtime/deck-editor.js、新tests/edx-wp2-s8-insert-image.test.mjs、必要mounted helper／browser runner／新browser cases、既有descriptor snapshot test。原schema／identity resolver／asset-policy／renderer功能不改；若發現必要缺口先附證據回Mainline，不能順手擴scope。
 禁browser/Chrome/attach/fixture runner、full glob、ZIP/build/probe、commit/branch/control/evidence/protected/AI Core、dependency/schema/一般text/chart insertion、merge/push/deploy。Node /opt/homebrew/bin/node，先CodeGraph query，無相關結果限域rg，不自行index。讀Owner bootstrap與rules05/11/24。
 log/report寫/private/tmp/pptskill-wp2-s8-*，保留RED／中間FAIL及逐命令counts。最多一個bounded實作循環；同類兩次無進展／contract fork即回主線裁決。完成stop writing，交changed paths、source SHA、tests、未驗範圍；不宣稱candidate或GO。
+
+## Mainline acceptance
+
+Candidate `0b4c7bdf95211d0bb0587034cb899593e6b64d90`；Worker scoped150/150、Mainline full551/551、browser50+50、PGQ-only retry單輪16/16、ZIP/source9/protected4/cleanup PASS。Mainline同步一條motion變數名斷言（原FAIL保留），runtime未因該FAIL更改。首輪PGQ I/O fail-closed與retry依據完整保留；限制見receipt。handoff_20260922_edx_wp2_s8_review.md待Independent Review；S8未merge/push/deploy。

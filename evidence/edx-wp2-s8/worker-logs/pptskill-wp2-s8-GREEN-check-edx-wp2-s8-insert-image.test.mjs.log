@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check tests/edx-wp2-s8-insert-image.test.mjs
+exit=0

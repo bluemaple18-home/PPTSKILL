@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check tests/edx-wp1-s2-stable-identity-operation-path.test.mjs
+exit=0

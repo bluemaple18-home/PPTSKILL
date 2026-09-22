@@ -1,0 +1,118 @@
+TAP version 13
+# Subtest: S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+ok 1 - S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 7.103833
+  type: 'test'
+  ...
+# Subtest: S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+ok 2 - S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 6.844208
+  type: 'test'
+  ...
+# Subtest: S8 Node null prototype own records 可用且輸入不受修改
+ok 3 - S8 Node null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 0.683166
+  type: 'test'
+  ...
+# Subtest: S8 Node long-ID collision 不改名；可穩定追加另一 collision
+ok 4 - S8 Node long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 1.039875
+  type: 'test'
+  ...
+# Subtest: S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+ok 5 - S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 34.057416
+  type: 'test'
+  ...
+# Subtest: S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+ok 6 - S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 11.164625
+  type: 'test'
+  ...
+# Subtest: S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+ok 7 - S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 41.536333
+  type: 'test'
+  ...
+# Subtest: S8 mounted null prototype own records 可用且輸入不受修改
+ok 8 - S8 mounted null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 4.709375
+  type: 'test'
+  ...
+# Subtest: S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+ok 9 - S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 9.158125
+  type: 'test'
+  ...
+# Subtest: S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+ok 10 - S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 25.192459
+  type: 'test'
+  ...
+# Subtest: S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+ok 11 - S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.985083
+  type: 'test'
+  ...
+# Subtest: S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+ok 12 - S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 6.807375
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+ok 13 - S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.710167
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+ok 14 - S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.154791
+  type: 'test'
+  ...
+# Subtest: S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+ok 15 - S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 8.181666
+  type: 'test'
+  ...
+# Subtest: S8 mounted 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+ok 16 - S8 mounted 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 8.964333
+  type: 'test'
+  ...
+# Subtest: S8 mounted 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+ok 17 - S8 mounted 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 9.414083
+  type: 'test'
+  ...
+# Subtest: S8 descriptor 精確 image-only slide target、無 history 宣稱
+ok 18 - S8 descriptor 精確 image-only slide target、無 history 宣稱
+  ---
+  duration_ms: 0.1505
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 18
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 328.138167

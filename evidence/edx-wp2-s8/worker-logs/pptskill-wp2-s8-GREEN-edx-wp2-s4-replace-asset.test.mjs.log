@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export
+ok 1 - WP2-S4 Node 第二張 stable target、缺省保留、明示覆寫及 export
+  ---
+  duration_ms: 22.35575
+  type: 'test'
+  ...
+# Subtest: WP2-S4 Node strict payload 原子拒絕且不執行 getter
+ok 2 - WP2-S4 Node strict payload 原子拒絕且不執行 getter
+  ---
+  duration_ms: 3.201916
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export
+ok 3 - WP2-S4 portable 第二張 stable target、缺省保留、明示覆寫及 export
+  ---
+  duration_ms: 12.3505
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable strict payload 原子拒絕且不執行 getter
+ok 4 - WP2-S4 portable strict payload 原子拒絕且不執行 getter
+  ---
+  duration_ms: 13.263292
+  type: 'test'
+  ...
+# Subtest: WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省
+ok 5 - WP2-S4 Node compat wrapper 只取 canonical 欄位並保留缺省
+  ---
+  duration_ms: 0.813417
+  type: 'test'
+  ...
+# Subtest: WP2-S4 registry metadata 與 Node/portable 一致
+ok 6 - WP2-S4 registry metadata 與 Node/portable 一致
+  ---
+  duration_ms: 2.405916
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable 局部 DOM、no-op revision、export/reparse
+ok 7 - WP2-S4 portable 局部 DOM、no-op revision、export/reparse
+  ---
+  duration_ms: 8.764542
+  type: 'test'
+  ...
+# Subtest: WP2-S4 DOM 投影例外還原 canonical 與原 attributes
+ok 8 - WP2-S4 DOM 投影例外還原 canonical 與原 attributes
+  ---
+  duration_ms: 5.222584
+  type: 'test'
+  ...
+# Subtest: WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留
+ok 9 - WP2-S4 portable async 鎖定原 stable image，readonly export／換頁／warnings 保留
+  ---
+  duration_ms: 11.382875
+  type: 'test'
+  ...
+# Subtest: WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕
+ok 10 - WP2-S4 optimizer failure／unsafe result／removed target 原子拒絕
+  ---
+  duration_ms: 13.216958
+  type: 'test'
+  ...
+# Subtest: WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale
+ok 11 - WP2-S4 operation／wrapper no-op 保留 gesture，真修改讓 gesture stale
+  ---
+  duration_ms: 41.623875
+  type: 'test'
+  ...
+# Subtest: WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加
+ok 12 - WP2-S4 長 component ID 用 resolved stable identity；無 fit 不添加
+  ---
+  duration_ms: 3.861625
+  type: 'test'
+  ...
+# Subtest: WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失
+ok 13 - WP2-S4 data properties 含 non-enumerable 欄位也不能靜默遺失
+  ---
+  duration_ms: 3.736458
+  type: 'test'
+  ...
+# Subtest: WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效
+ok 14 - WP2-S4 browser fixture PNG 結構、CRC、scanline 與 render 均有效
+  ---
+  duration_ms: 7.902
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 269.349417

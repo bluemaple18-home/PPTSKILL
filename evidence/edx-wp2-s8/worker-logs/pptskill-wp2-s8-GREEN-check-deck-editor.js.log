@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check runtime/deck-editor.js
+exit=0

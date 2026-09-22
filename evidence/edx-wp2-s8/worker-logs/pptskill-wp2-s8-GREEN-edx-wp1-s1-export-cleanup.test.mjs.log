@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: export cleanup 只移除 bounded editor chrome roots
+ok 1 - export cleanup 只移除 bounded editor chrome roots
+  ---
+  duration_ms: 0.924292
+  type: 'test'
+  ...
+# Subtest: editor chrome contract 誤標 presentation truth 時 fail loud
+ok 2 - editor chrome contract 誤標 presentation truth 時 fail loud
+  ---
+  duration_ms: 0.359083
+  type: 'test'
+  ...
+# Subtest: editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+ok 3 - editor chrome 可位於 presentation 容器內，但不得自己承載 presentation truth
+  ---
+  duration_ms: 0.079084
+  type: 'test'
+  ...
+# Subtest: export clone root 自己被標成 editor chrome 時也不可漏出
+ok 4 - export clone root 自己被標成 editor chrome 時也不可漏出
+  ---
+  duration_ms: 0.118375
+  type: 'test'
+  ...
+# Subtest: 正式 browser exporter 共用同一 cleanup seam
+ok 5 - 正式 browser exporter 共用同一 cleanup seam
+  ---
+  duration_ms: 0.957958
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 110.364291

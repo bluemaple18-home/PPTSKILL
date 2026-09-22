@@ -1,0 +1,2 @@
+/opt/homebrew/bin/node --check tests/edx-wp1-s3-bounded-geometry.test.mjs
+exit=0

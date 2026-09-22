@@ -1,0 +1,356 @@
+TAP version 13
+# Subtest: S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+not ok 1 - S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 4.115958
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:35:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:51:70)
+    Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:224:42)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:39:33)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.start (node:internal/test_runner/test:1096:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+  ...
+# Subtest: S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+not ok 2 - S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 6.750834
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:47:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+
+    1 !== 0
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:78:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+  ...
+# Subtest: S8 Node null prototype own records 可用且輸入不受修改
+not ok 3 - S8 Node null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 0.560041
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:80:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:51:70)
+    Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:224:42)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:83:9)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 Node long-ID collision 不改名；可穩定追加另一 collision
+not ok 4 - S8 Node long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 1.202084
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /identity|識別/. Input:
+
+    'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  stack: |-
+    validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:51:70)
+    Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:224:42)
+    file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:29
+    getActual (node:assert:586:5)
+    strict.throws (node:assert:734:24)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+not ok 5 - S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 0.860916
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:99:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:51:70)
+    Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:224:42)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:100:51)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+not ok 6 - S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 9.778083
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:35:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:39:33)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+not ok 7 - S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 36.235875
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:47:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+
+    1 !== 0
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 0
+  actual: 1
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:78:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted null prototype own records 可用且輸入不受修改
+not ok 8 - S8 mounted null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 2.245541
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:80:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:83:9)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+not ok 9 - S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 3.199583
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:85:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /identity|識別/. Input:
+
+    'Error: operation target 欄位必須恰為 slideId、elementId。'
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:29
+    getActual (node:assert:586:5)
+    strict.throws (node:assert:734:24)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:89:12)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+not ok 10 - S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 2.486666
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:99:3'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:100:51)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+ok 11 - S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.437667
+  type: 'test'
+  ...
+# Subtest: S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+ok 12 - S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.262334
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+ok 13 - S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 8.1315
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+ok 14 - S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 6.64775
+  type: 'test'
+  ...
+# Subtest: S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+ok 15 - S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 7.720041
+  type: 'test'
+  ...
+# Subtest: S8 mounted 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+not ok 16 - S8 mounted 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 6.582583
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:139:40'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:144:9)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 mounted 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+not ok 17 - S8 mounted 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 7.619792
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:139:40'
+  failureType: 'testCodeFailure'
+  error: 'operation target 欄位必須恰為 slideId、elementId。'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateOperationRequest (evalmachine.<anonymous>:473:1837)
+    executeOperation (evalmachine.<anonymous>:539:42)
+    Object.executeOperation (evalmachine.<anonymous>:1034:202)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:144:9)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S8 descriptor 精確 image-only slide target、無 history 宣稱
+not ok 18 - S8 descriptor 精確 image-only slide target、無 history 宣稱
+  ---
+  duration_ms: 4.6925
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:156:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The expression evaluated to a falsy value:
+
+      assert.ok(d)
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: '=='
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s8-insert-image.test.mjs:157:61)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 5
+# fail 13
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 263.350625

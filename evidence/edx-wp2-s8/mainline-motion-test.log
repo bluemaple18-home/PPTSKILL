@@ -1,0 +1,15 @@
+✔ plan-new 暴露 pinned motion capability 並產生 bounded NumberFlow odometer proposal (12.230875ms)
+✔ motion planner 對格式、primitive、rhythm 與自報欄位 fail loud (2.092083ms)
+✔ CompositionSpec motion 可攜 round-trip，未知欄位在 Node sanitizer/editor 被移除 (9.625ms)
+✔ renderer 只將核准 target 轉為 bundled NumberFlow，保留靜態 metric 與色彩字型 token (4.8455ms)
+✔ unsupported persisted motion 不得被 sanitizer 靜默吞掉 (0.170875ms)
+✔ browser editor 注入正式 motion semantic validator，拒絕失配 target content (4.363875ms)
+✔ installed plan-new 與 render-new 穿透 motion；legacy request 維持 null (639.476167ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 784.256667

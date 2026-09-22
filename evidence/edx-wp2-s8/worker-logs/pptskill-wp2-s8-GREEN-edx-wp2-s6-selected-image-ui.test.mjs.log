@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+ok 1 - S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+  ---
+  duration_ms: 39.463083
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=false
+ok 2 - S6 capture → natural blur → change 保留第二圖，snap=false
+  ---
+  duration_ms: 14.569083
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=true
+ok 3 - S6 capture → natural blur → change 保留第二圖，snap=true
+  ---
+  duration_ms: 12.687416
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+ok 4 - S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 11.43425
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+ok 5 - S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 9.93325
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+ok 6 - S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 11.331291
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+ok 7 - S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 11.441375
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+ok 8 - S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 10.402666
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+ok 9 - S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 9.65125
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+ok 10 - S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 9.695458
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+ok 11 - S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 10.216667
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+ok 12 - S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 10.077916
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+ok 13 - S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 8.322291
+  type: 'test'
+  ...
+# Subtest: S6 cancel 重設 value，同檔可再次選取
+ok 14 - S6 cancel 重設 value，同檔可再次選取
+  ---
+  duration_ms: 10.4145
+  type: 'test'
+  ...
+# Subtest: S6 empty 重設 value，同檔可再次選取
+ok 15 - S6 empty 重設 value，同檔可再次選取
+  ---
+  duration_ms: 12.424375
+  type: 'test'
+  ...
+# Subtest: S6 success 重設 value，同檔可再次選取
+ok 16 - S6 success 重設 value，同檔可再次選取
+  ---
+  duration_ms: 11.011792
+  type: 'test'
+  ...
+# Subtest: S6 failure 重設 value，同檔可再次選取
+ok 17 - S6 failure 重設 value，同檔可再次選取
+  ---
+  duration_ms: 10.756333
+  type: 'test'
+  ...
+# Subtest: S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+ok 18 - S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+  ---
+  duration_ms: 12.605833
+  type: 'test'
+  ...
+# Subtest: S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+ok 19 - S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+  ---
+  duration_ms: 13.967458
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+ok 20 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+  ---
+  duration_ms: 8.595
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+ok 21 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+  ---
+  duration_ms: 9.255292
+  type: 'test'
+  ...
+# Subtest: S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+ok 22 - S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+  ---
+  duration_ms: 14.872625
+  type: 'test'
+  ...
+# Subtest: S6 picker 等待檔案時唯讀 export 不取消 pending target
+ok 23 - S6 picker 等待檔案時唯讀 export 不取消 pending target
+  ---
+  duration_ms: 10.810375
+  type: 'test'
+  ...
+# Subtest: S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+ok 24 - S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+  ---
+  duration_ms: 8.565584
+  type: 'test'
+  ...
+# Subtest: S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+ok 25 - S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+  ---
+  duration_ms: 8.716166
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 418.226875

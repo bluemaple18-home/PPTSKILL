@@ -1,0 +1,130 @@
+TAP version 13
+# Subtest: WP2-S5 明示第二張 File target 不得取第一張
+ok 1 - WP2-S5 明示第二張 File target 不得取第一張
+  ---
+  duration_ms: 16.224542
+  type: 'test'
+  ...
+# Subtest: WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip
+ok 2 - WP2-S5 omitted、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 8.381084
+  type: 'test'
+  ...
+# Subtest: WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip
+ok 3 - WP2-S5 undefined、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 6.155916
+  type: 'test'
+  ...
+# Subtest: WP2-S5 second、局部投影、完整欄位保留與 export roundtrip
+ok 4 - WP2-S5 second、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 6.066
+  type: 'test'
+  ...
+# Subtest: WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip
+ok 5 - WP2-S5 cross-slide、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 5.799417
+  type: 'test'
+  ...
+# Subtest: WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip
+ok 6 - WP2-S5 null-proto、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 5.487667
+  type: 'test'
+  ...
+# Subtest: WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip
+ok 7 - WP2-S5 non-enumerable、局部投影、完整欄位保留與 export roundtrip
+  ---
+  duration_ms: 5.849417
+  type: 'test'
+  ...
+# Subtest: WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation
+ok 8 - WP2-S5 嚴格 admission：invalid getter0／optimizer0／零 mutation
+  ---
+  duration_ms: 11.304334
+  type: 'test'
+  ...
+# Subtest: WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image
+ok 9 - WP2-S5 caller target 變動／export 換物件／切頁仍投遞 captured stable image
+  ---
+  duration_ms: 9.871917
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending reject 原子拒絕
+ok 10 - WP2-S5 pending reject 原子拒絕
+  ---
+  duration_ms: 3.291208
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending unsafe 原子拒絕
+ok 11 - WP2-S5 pending unsafe 原子拒絕
+  ---
+  duration_ms: 2.998125
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending null-result 原子拒絕
+ok 12 - WP2-S5 pending null-result 原子拒絕
+  ---
+  duration_ms: 3.368625
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-warnings 原子拒絕
+ok 13 - WP2-S5 pending missing-warnings 原子拒絕
+  ---
+  duration_ms: 3.870041
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-slide 原子拒絕
+ok 14 - WP2-S5 pending missing-slide 原子拒絕
+  ---
+  duration_ms: 4.536792
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-image 原子拒絕
+ok 15 - WP2-S5 pending missing-image 原子拒絕
+  ---
+  duration_ms: 3.242
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending type-change 原子拒絕
+ok 16 - WP2-S5 pending type-change 原子拒絕
+  ---
+  duration_ms: 3.905291
+  type: 'test'
+  ...
+# Subtest: WP2-S5 pending missing-dom 原子拒絕
+ok 17 - WP2-S5 pending missing-dom 原子拒絕
+  ---
+  duration_ms: 4.544917
+  type: 'test'
+  ...
+# Subtest: WP2-S5 explicit File same-value no-op gesture
+ok 18 - WP2-S5 explicit File same-value no-op gesture
+  ---
+  duration_ms: 12.051083
+  type: 'test'
+  ...
+# Subtest: WP2-S5 explicit File 真修改 stale gesture
+ok 19 - WP2-S5 explicit File 真修改 stale gesture
+  ---
+  duration_ms: 9.530416
+  type: 'test'
+  ...
+# Subtest: WP2-S5 長 component ID 使用 resolved stable identity
+ok 20 - WP2-S5 長 component ID 使用 resolved stable identity
+  ---
+  duration_ms: 3.644791
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 245.294125
