@@ -1,6 +1,6 @@
 # EDX-WP2-S12 — Clipboard paste-event 單張圖片插入
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: 8b9ee5bceb1ab6d762f3f370f95f9f248943e446（S10/S11 GO已FF並push）
 Branch: codex/edx-wp2-s12-image-paste
 traces_to: BACKLOG §10.1 decision3圖片clipboard paste、decision2文字/IME、decision7 identity、decision8單一operation；§10.3 WP2；§10.4 insert-element。
@@ -36,3 +36,7 @@ standard／1 clean native Worker／medium／shared sequential single product wri
 ## Mainline acceptance
 
 Candidate 09c7d29253a5235b12ac58b5fef3f13cd5c70acb；Worker66/scoped236、full712、ZIP lifecycle、1280×720：111 records、1600×900：111 records、PGQ單輪16、managed cleanup/source4/protected4/hash PASS。S12只驗synthetic ClipboardEvent File adapter，不冒稱OSclipboard；詳receipt與review handoff。未merge/push/deploy S12，未開S13。
+
+## Closure
+
+Owner交回Independent Review GO，reviewed09c7d29253a5235b12ac58b5fef3f13cd5c70acb，P0–P3全0。Reviewer fresh236/712；browser111+111與PGQ16為committed evidence核對。Mainline source4/protected4/ZIP與delivery無drift再核對一致。synthetic paste adapter／OS clipboard未驗邊界維持；詳evidence/edx-wp2-s12/independent-review.md。Reviewed code/ZIP不改；未merge/push/deploy，未開S13。

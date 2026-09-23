@@ -1062,6 +1062,8 @@ WP2-S11 closure：Owner交回Independent GO，reviewed8b0be65、P0–P3全0；Re
 
 S10/S11已FF整合push main `8b9ee5b`，遠端readback MATCH；詳evidence/edx-wp2-s11/integration-receipt.md。
 
-**WP2-S12 INDEPENDENT REVIEW PENDING：** ClipboardEvent單張image File adapter，沿S9/S10/S11插入與busy；input/IME預設保留，無rich-text/asyncclipboard/OSclipboard claim。卡tasks/edx-wp2-s12-image-paste.md；事件synthetic browser驗收邊界開卡先鎖定。
+**WP2-S12 COMPLETE / INDEPENDENT REVIEW GO：** ClipboardEvent單張image File adapter，沿S9/S10/S11插入與busy；input/IME預設保留，無rich-text/asyncclipboard/OSclipboard claim。卡tasks/edx-wp2-s12-image-paste.md；事件synthetic browser驗收邊界開卡先鎖定。
 
 WP2-S12 candidate `09c7d29`：ClipboardEvent File adapter；S12 66/scoped236/full712、1280×720：111 records、1600×900：111 records、PGQ單輪16、ZIP/source4/protected4/cleanup PASS。synthetic事件與OSclipboard未驗邊界保留；handoff_20260923_edx_wp2_s12_review.md待Independent Review。S10/S11已push main8b9ee5b，本輪S12未merge/push/deploy。
+
+WP2-S12 closure：Independent GO，reviewed09c7d29，P0–P3全0；Reviewer fresh scoped236/full712、browser111+111與PGQ單輪16為committed evidence核對。Mainline source4/protected4/ZIP MATCH，reviewed code/ZIP未改；synthetic ClipboardEvent File adapter邊界不擴張為OS clipboard實測。詳evidence/edx-wp2-s12/independent-review.md。可進整合gate；本輪未merge/push/deploy，未開S13。

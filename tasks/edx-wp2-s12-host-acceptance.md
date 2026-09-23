@@ -1,6 +1,6 @@
 # WP2-S12 Host acceptance
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s12-image-paste.md
 Product: 09c7d29253a5235b12ac58b5fef3f13cd5c70acb；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -15,3 +15,7 @@ Product: 09c7d29253a5235b12ac58b5fef3f13cd5c70acb；source/protected/ZIP frozen�
 ## Mainline acceptance
 
 Candidate 09c7d29253a5235b12ac58b5fef3f13cd5c70acb；Worker66/scoped236、full712、ZIP lifecycle、1280×720：111 records、1600×900：111 records、PGQ單輪16、managed cleanup/source4/protected4/hash PASS。S12只驗synthetic ClipboardEvent File adapter，不冒稱OSclipboard；詳receipt與review handoff。未merge/push/deploy S12，未開S13。
+
+## Closure
+
+Owner交回Independent Review GO，reviewed09c7d29253a5235b12ac58b5fef3f13cd5c70acb，P0–P3全0。Reviewer fresh236/712；browser111+111與PGQ16為committed evidence核對。Mainline source4/protected4/ZIP與delivery無drift再核對一致。synthetic paste adapter／OS clipboard未驗邊界維持；詳evidence/edx-wp2-s12/independent-review.md。Reviewed code/ZIP不改；未merge/push/deploy，未開S13。
