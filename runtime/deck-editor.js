@@ -384,6 +384,7 @@ export const buildDeckEditorRuntimeScript = (componentTreatments = {}) => {
   const backgroundContractRuntime = buildBackgroundBrowserContractRuntime();
   const editorChromeCleanupRuntime = cleanupEditorChromeFromExportClone.toString();
   return String.raw`<script data-pptskill-editor-runtime>(()=>{const boot=()=>{
+if(window.PPTSKILLEditor)return;
 const q=(s,r=document)=>r.querySelector(s),qa=(s,r=document)=>[...r.querySelectorAll(s)],clone=v=>JSON.parse(JSON.stringify(v));
 ${buildComponentGeometryRuntime()}
 ${buildRoleTypographyRuntime()}
@@ -542,7 +543,13 @@ const openComponentEditor=()=>{syncText();const component=spec.slides[currentInd
 const applyComponentEditor=()=>{try{const value=JSON.parse(q('[data-component-json]').value);applyPatch({slideId:currentId,region:'content.components.'+editingComponentId,value});q('[data-component-dialog]').close();status('元件已更新')}catch(error){status(error.message)}};
 document.addEventListener('click',e=>{const slide=e.target.closest?.('.slide');if(slide)select(slide.dataset.slideId);const action=e.target.closest?.('[data-action]')?.dataset.action;if(!action)return;if(action==='insert-text')openInsertText();if(action==='edit-selected-text')openEditText();if(action==='submit-insert-text')submitInsertText();if(action==='cancel-insert-text'&&!textInsertionComposing)closeInsertText();if(action==='insert-image')openInsertImagePicker();if(action==='replace-selected-image')openSelectedImagePicker();if(action==='set-selected-image-fit')setSelectedImageFit(e.target.closest('[data-image-fit]')?.dataset.imageFit);if(action==='copy-style'||action==='paste-style')applyStyle(action);if(action==='apply-typography'||action==='reset-typography')applyTypography(action==='reset-typography');if(action==='edit')setEdit(!editMode);if(action==='edit-component')openComponentEditor();if(action==='apply-component')applyComponentEditor();if(action==='cancel-component')q('[data-component-dialog]').close();if(action==='move-up')move(-1);if(action==='move-down')move(1);if(action==='duplicate')duplicate();if(action==='delete')remove();if(action==='save')download()});
 const textEventRoot=document.body?.addEventListener?document.body:document;
-textEventRoot.addEventListener('dblclick',e=>{const target=resolveDirectTextTarget(e.target);if(!target)return;select(target.slideId);setEdit(true);target.element.contentEditable='true';target.element.focus?.();setTypographyTarget(target);e.preventDefault?.()});
+textEventRoot.addEventListener('dblclick',e=>{
+const target=resolveDirectTextTarget(e.target);if(target){select(target.slideId);setEdit(true);target.element.contentEditable='true';target.element.focus?.();setTypographyTarget(target);e.preventDefault?.();return}
+// component 僅將目前 canonical node 的事件送往 S16；不沿舊 selection 誤開其他物件。
+if(e.defaultPrevented||e.isComposing||e.shiftKey||e.ctrlKey||e.altKey||e.metaKey||(e.button!==undefined&&e.button!==0)||editMode||composingText||textInsertionComposing)return;
+const component=selectedTextTarget();if(!component||e.target!==component.node||component.node.closest('[data-pptskill-editor-chrome],[data-pptskill-editor],.pptskill-editor,.moveable-control-box,.selecto-selection'))return;
+openEditText();if(textInsertionDialog.open)e.preventDefault?.()
+});
 textEventRoot.addEventListener('focusin',e=>{const target=resolveDirectTextTarget(e.target);if(!editMode)return;if(target){select(target.slideId);setTypographyTarget(target)}else if(!e.target.closest?.('.pptskill-editor,[data-pptskill-typography-toolbar]'))clearTypographyTarget()});
 textEventRoot.addEventListener('compositionstart',e=>{const target=resolveDirectTextTarget(e.target);if(editMode&&target)composingText=target.element});
 textEventRoot.addEventListener('compositionend',e=>{const target=resolveDirectTextTarget(e.target);if(!target||composingText!==target.element)return;composingText=null;commitTextElement(target.element);status('文字已更新')});
