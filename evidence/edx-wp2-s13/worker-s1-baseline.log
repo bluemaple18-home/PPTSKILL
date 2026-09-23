@@ -1,0 +1,14 @@
+✔ WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority (16.788584ms)
+✔ WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes (5.477791ms)
+✔ WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字 (6.140292ms)
+✔ WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical (4.690583ms)
+✔ WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode (3.886042ms)
+✔ WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable (4.987375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.666834

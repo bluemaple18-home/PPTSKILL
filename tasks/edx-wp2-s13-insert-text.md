@@ -1,6 +1,6 @@
 # EDX-WP2-S13 — API-driven 安全新增文字元件
 
-Status: IN_PROGRESS
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Base/main/origin-main: 18b1029c13444f6b40989f421098a9496ef7db0d（S12 GO closure 已 FF／push；遠端實測一致）
 Branch: codex/edx-wp2-s13-insert-text
 traces_to: BACKLOG §10.1 decision3 Safe Insert 文字、decision7 identity、decision8 共用 operation；§10.3 WP2；§10.4 insert-element。
@@ -15,15 +15,15 @@ Dependencies: S8 shared canonical insertion、WP2-S1 direct text editing 與 S12
 1. 公開 Node／portable executeOperation 同一 payload：`{operation:'insert-element',target:{slideId},value:{component:{id,type:'text',text},geometry:{x,y,width,height}}}`。component 只允許 id/type/text；既有 image variant 完整保留。沿既有 ID／geometry／data-descriptor validation，拒絕 getter（讀取 0）、symbols、hidden/unknown/missing fields、非法 prototype、text/image 混搭；descriptor 精確 oneOf 兩 variant，Node／portable 一致。
 2. text 嚴格 string，依現有 schemas/deck-spec.schema.json nonEmptyText 的 1–500 Unicode code points；不 trim、不轉型、不 truncate。保留換行、Unicode、空白；HTML-like 內容只作文字 escape，不產生 script/img/link 或執行。schema 不新增格式或容量政策。
 3. 共用既有 imageInsertion preflight/update（可保留名稱以免無效 refactor），唯一 stable ID、geometryOverrides、append-before/after-throw rollback；拒絕不得 partial mutation。現有元件 identity／DOM roots／內容／style／typography／motion／其他頁不變；成功一次 revision，cancel gesture 不 commit preview、清 selection；跨頁明確 target 不誤切 current slide。
-4. detached render 按 component.type 驗證：image 仍必須 img 並沿 asset projector；text 為既有 text renderer／data-edit-kind=text，沿 geometry projector，edit mode 成功插入即可直接編輯，layout/play 不新增 editable。既有文字 sync、mode transition、keyboard、typography／selection seam 不另造一套。
-5. export／offline reopen 保留文字、ID、geometry與既有內容，清 editor transient；reopened 可再次操作／編輯。Node render 與 mounted／browser escaped text 一致。沿原 20 MiB export gate。
+4. detached render 按 component.type 驗證：image 仍必須 img 並沿 asset projector；text 為既有 text renderer／data-edit-kind=text，沿 geometry projector，新舊 text component 均保留 S1 不可直接編輯的現行邊界；新 node 明設 contentEditable=false，不能因祖先可編輯而繼承。role title/subtitle/keyPoint 的 sync／keyboard／typography 不改。component 仍可沿既有 layout selection／geometry 操作。
+5. export／offline reopen 保留文字、ID、geometry與既有內容，清 editor transient；reopened 可再次插入及操作 geometry，text component 仍不可直接編輯。Node render 與 mounted／browser escaped text 一致。沿原 20 MiB export gate。
 
 ## 工作與驗收
 
 Worker 先 RED 新 text payload，再 bounded implementation／scoped tests；Mainline 審實際 diff、full explicit non-browser、build ZIP lifecycle、host 雙 viewport、affected PGQ 串行。舊 S8 descriptor image-only assertion 可按新契約改成精確 image+text oneOf，保留所有 image validation assertions。
 允許 product files：runtime/image-insertion.js、runtime/deck-editor.js；tests/edx-wp2-s13-insert-text.test.mjs；tests/edx-wp2-s8-insert-image.test.mjs（descriptor only）；tools/edx-wp2-s13-browser-cases.mjs、tools/edx-wp1-s4-browser-acceptance.mjs。若需其他檔案先附 measured gap 回 Mainline。Mainline owns task/evidence/ZIP/control。
 Fresh scoped：S13＋S8 canonical/image regression＋S9 File adapter＋S1 direct text（按實體檔案清單）；full = S12 已驗 69 explicit non-browser files + S13。空 filtered file 不算具名 case。
-Browser：新增 --insert-text-regression，1280×720／1600×900；base acceptance + existing S8 image insertion + S13 text cases。至少 API text insertion／escaping／跨頁／非法拒絕／geometry／文字可編輯（edit mode 直接插入及切模式）／export offline reopen。API-driven 插入，不宣稱文字 toolbar、OS clipboard、native IME；real pointer／keyboard 與 evaluate fixture 分清楚。screenshots 實際核對。
+Browser：新增 --insert-text-regression，1280×720／1600×900；base acceptance + existing S8 image insertion + S13 text cases。至少 API text insertion／escaping／跨頁／非法拒絕／geometry／edit/layout/play 模式不繼承 editable、layout 選取與幾何操作／export offline reopen。API-driven 插入，不宣稱文字 toolbar、OS clipboard、native IME；real pointer／keyboard 與 evaluate fixture 分清楚。screenshots 實際核對。
 PGQ：既有 content-integrity／sample-approval／full-deck-qa／required-visibility 四支 --test-concurrency=1，一輪16具名 cases。任一 FAIL 保留並分析，不盲 retry。
 Source／protected4 hashes、ZIP SHA／bytes、diff --check、managed readiness／Browser.close／supervisor／owned-root marker cleanup 全核對。無 host 則 checkpoint HOST_BROWSER_PENDING，不裸開／unset sandbox。
 
@@ -31,3 +31,15 @@ Source／protected4 hashes、ZIP SHA／bytes、diff --check、managed readiness�
 
 節省模式，一名 clean native Worker fork_context=false，shared sequential single product writer；Mainline 同時只準備 control／驗收腳本。標準 bounded extension，medium；工具僅提供 inherited lane 且禁止未指定的 model override，故不冒稱 Terra，無額外 Reviewer agent。Worker 不跑 browser／PGQ／full／ZIP、不 commit／push／merge、不開子 agent。同類兩次無進展停止回報；Repair 2 需 Owner 成本裁決。
 收工停 Independent Review pending；本輪新 slice 禁 merge／push／deploy。回退可整段 revert S13 commits；S12 main 已整合不重寫。
+
+## Mainline 契約裁決（Worker RED 後、runtime 尚未變更）
+
+Worker 查得 S1 Node/browser 明確排除 text component direct editing；Mainline 原先「renderer 存在即有 direct-text 支援」假設錯誤。保留 /private/tmp/pptskill-s13-worker-red.log 及原 receipt，3/3 RED；S1 baseline6/6。此 Slice 只擴 insert-element，不擴 edit-text／directTextTarget authority；上述立即可編輯條款撤回，改鎖不可 editable、geometry 可操作及 offline reinsert。新 S13 tests 依裁決調整，不修改任何 S1 assertions。全 type=text direct editing 留後續候選，未開卡。此為開發初期契約修正，非驗收失敗後放寬通過門檻。
+
+## Mainline 接續進度
+
+Worker 因 usage limit 中断後已 close。Mainline fresh scoped 82/83抓到S9 hidden options regression，限縮text enumerable gate後83/83；full734/734、ZIP lifecycle PASS。Runtime product d4d83ac，harness-only candidate9b7767d。兩viewport各63records（10+40+13）PASS；PGQ進行中，不先宣稱完成。首輪I/O fail與第二輪Escape observer fail完整保留，詳host-triage.md。
+
+## Final acceptance
+
+Candidate 9b7767d88411e9e9a14e72d011726d67f74371a6；scoped83/full734、雙viewport各63（10+40+13）、PGQ單輪16、ZIP/source6/protected4/cleanup PASS。歷史FAIL完整保留；詳receipt／review handoff。S13未merge/push/deploy，未開S14，Independent Review pending。

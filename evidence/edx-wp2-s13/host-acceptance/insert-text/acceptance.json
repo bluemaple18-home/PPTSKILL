@@ -1,0 +1,21 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s13/host-acceptance/insert-text/source.html",
+  "sourceSha256": "a30317b033962263680247ce27baa7203dabd65f2a31ea5f973d11f662895ed3",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [],
+      "artifacts": [],
+      "error": "Error: CDP 逾時：Runtime.evaluate\n    at Timeout._onTimeout (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:72:70)\n    at listOnTimeout (node:internal/timers:605:17)\n    at process.processTimers (node:internal/timers:541:7)"
+    }
+  ],
+  "error": "TypeError: fetch failed"
+}

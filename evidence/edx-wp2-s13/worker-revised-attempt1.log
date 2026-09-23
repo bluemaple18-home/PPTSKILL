@@ -1,0 +1,53 @@
+✔ S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (6.067958ms)
+✔ S13 Node exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (6.115084ms)
+✔ S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋 (0.723542ms)
+✔ S13 Node long-ID identity collision 拒絕且舊 identity 不變 (0.566959ms)
+✔ S13 Node escape／geometry／export reopen／再插入，既有內容完整保留 (33.936167ms)
+✔ S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (11.014125ms)
+✔ S13 mounted exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (34.222292ms)
+✔ S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋 (5.572916ms)
+✔ S13 mounted long-ID identity collision 拒絕且舊 identity 不變 (2.954958ms)
+✖ S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留 (18.619583ms)
+✔ S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority (6.834583ms)
+✔ S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority (6.341291ms)
+✔ S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority (7.202084ms)
+✔ S13 mounted missing atomic canonical／DOM／revision／selection rollback (6.9735ms)
+✔ S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback (7.015375ms)
+✔ S13 mounted append-before atomic canonical／DOM／revision／selection rollback (6.922458ms)
+✔ S13 mounted append-after atomic canonical／DOM／revision／selection rollback (6.865083ms)
+✔ S13 mounted detached-project atomic canonical／DOM／revision／selection rollback (6.696667ms)
+✔ S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (8.668084ms)
+✔ S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (8.662625ms)
+✔ S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (8.578667ms)
+✔ S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (8.530667ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 21
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 322.299042
+
+✖ failing tests:
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:89:3
+✖ S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留 (18.619583ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(output.includes('&lt;script&gt;保留純文字&lt;/script&gt;'))
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:97:14)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

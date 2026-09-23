@@ -1067,3 +1067,9 @@ S10/S11已FF整合push main `8b9ee5b`，遠端readback MATCH；詳evidence/edx-w
 WP2-S12 candidate `09c7d29`：ClipboardEvent File adapter；S12 66/scoped236/full712、1280×720：111 records、1600×900：111 records、PGQ單輪16、ZIP/source4/protected4/cleanup PASS。synthetic事件與OSclipboard未驗邊界保留；handoff_20260923_edx_wp2_s12_review.md待Independent Review。S10/S11已push main8b9ee5b，本輪S12未merge/push/deploy。
 
 WP2-S12 closure：Independent GO，reviewed09c7d29，P0–P3全0；Reviewer fresh scoped236/full712、browser111+111與PGQ單輪16為committed evidence核對。Mainline source4/protected4/ZIP MATCH，reviewed code/ZIP未改；synthetic ClipboardEvent File adapter邊界不擴張為OS clipboard實測。詳evidence/edx-wp2-s12/independent-review.md。可進整合gate；本輪未merge/push/deploy，未開S13。
+
+WP2-S12 已依 Owner「推上去後繼續」整合：main/origin-main 實測 `18b1029`，reviewed code／ZIP 原樣；詳 evidence/edx-wp2-s12/mainline-integration.md。
+
+**WP2-S13 IN_PROGRESS：** API-driven 安全新增文字元件；tasks/edx-wp2-s13-insert-text.md。沿既有 insert-element／identity／geometry／text renderer，text 精確 variant；無文字 UI／auto-ID／rich text／history。開卡前鎖雙 viewport（base＋S8 image＋S13 text）與四支 affected PGQ；source／protected／ZIP／cleanup 待 fresh 驗收。
+
+WP2-S13 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：candidate `9b7767d`，runtime `d4d83ac`；API text insertion，scoped83/full734、雙viewport63+63、PGQ單輪16、ZIP/source6/protected4/cleanup PASS；歷史I/O／harness observer FAIL與S9兼容修正保留。文字元件direct editing未納入。handoff_20260923_edx_wp2_s13_review.md；S13未merge/push/deploy，未開S14。

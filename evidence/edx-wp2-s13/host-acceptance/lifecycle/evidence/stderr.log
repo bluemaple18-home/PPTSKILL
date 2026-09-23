@@ -1,0 +1,10 @@
+
+DevTools listening on ws://127.0.0.1:59298/devtools/browser/6c9a00f0-8e19-40c8-9231-6b886c4a00c6
+Trying to load the allocator multiple times. This is *not* supported.
+[55435:20940667:0923/160156.438683:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55435:20940667:0923/160156.439216:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55435:20940667:0923/160156.439315:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55435:20940667:0923/160156.439397:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55435:20940667:0923/160156.439496:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55435:20940667:0923/160156.439572:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55396:20940126:0923/160157.060795:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15

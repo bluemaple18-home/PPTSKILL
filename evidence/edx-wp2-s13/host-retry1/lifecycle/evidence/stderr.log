@@ -1,0 +1,10 @@
+
+DevTools listening on ws://127.0.0.1:59905/devtools/browser/92973174-fe5f-4ea7-bcd1-abfd81195e4d
+Trying to load the allocator multiple times. This is *not* supported.
+[55852:20943942:0923/160325.061808:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55852:20943942:0923/160325.062770:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55852:20943942:0923/160325.062845:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55852:20943942:0923/160325.062929:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55852:20943942:0923/160325.063005:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55852:20943942:0923/160325.063084:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[55843:20943883:0923/160327.048667:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

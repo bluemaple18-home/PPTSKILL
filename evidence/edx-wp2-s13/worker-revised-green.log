@@ -1,0 +1,30 @@
+✔ S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (6.364792ms)
+✔ S13 Node exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (6.265958ms)
+✔ S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋 (0.688041ms)
+✔ S13 Node long-ID identity collision 拒絕且舊 identity 不變 (0.562542ms)
+✔ S13 Node escape／geometry／export reopen／再插入，既有內容完整保留 (34.973125ms)
+✔ S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (10.375958ms)
+✔ S13 mounted exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (34.872125ms)
+✔ S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋 (5.911125ms)
+✔ S13 mounted long-ID identity collision 拒絕且舊 identity 不變 (3.327ms)
+✔ S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留 (29.207375ms)
+✔ S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority (6.665542ms)
+✔ S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority (7.877167ms)
+✔ S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority (8.891875ms)
+✔ S13 mounted missing atomic canonical／DOM／revision／selection rollback (42.044417ms)
+✔ S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback (26.174792ms)
+✔ S13 mounted append-before atomic canonical／DOM／revision／selection rollback (27.174416ms)
+✔ S13 mounted append-after atomic canonical／DOM／revision／selection rollback (25.285125ms)
+✔ S13 mounted detached-project atomic canonical／DOM／revision／selection rollback (15.935042ms)
+✔ S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (12.230292ms)
+✔ S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (10.3075ms)
+✔ S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (8.959458ms)
+✔ S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (9.891917ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 450.927958

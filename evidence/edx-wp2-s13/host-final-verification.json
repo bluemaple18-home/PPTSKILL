@@ -1,0 +1,417 @@
+{
+  "status": "PASS",
+  "productSha": "9b7767d88411e9e9a14e72d011726d67f74371a6",
+  "sources": 6,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2295428,
+    "sha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 734,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 63,
+      "groups": {
+        "base": 10,
+        "wp2s8": 40,
+        "wp2s13": 13
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s13Records": [
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "inserted-text",
+          "slideId": "portable"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "play-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "layout-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-escape-cross-slide-modes",
+          "textComponentDirectEditing": false,
+          "inheritedEditable": false
+        },
+        {
+          "wp2s13": "API-fixture-invalid-atomic",
+          "calls": 0,
+          "rejected": 10,
+          "total": 10,
+          "unchanged": true
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": false
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": true
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "drag",
+          "actual": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 420,
+            "height": 160
+          }
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "resize",
+          "actual": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 443.984375,
+            "height": 175.99609375
+          }
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "cancel-preview",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "real-pointer-keyboard-preview-cancel",
+          "trusted": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "keydown",
+              "trusted": true,
+              "key": "Escape"
+            }
+          ]
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "offline-reinsert",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-export-offline-reinsert",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-inserted-text-controls.png",
+          "geometry": true,
+          "directEditable": false
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 63,
+      "groups": {
+        "base": 10,
+        "wp2s8": 40,
+        "wp2s13": 13
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s13Records": [
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "inserted-text",
+          "slideId": "portable"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "play-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "layout-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-escape-cross-slide-modes",
+          "textComponentDirectEditing": false,
+          "inheritedEditable": false
+        },
+        {
+          "wp2s13": "API-fixture-invalid-atomic",
+          "calls": 0,
+          "rejected": 10,
+          "total": 10,
+          "unchanged": true
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": false
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": true
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "drag",
+          "actual": {
+            "x": 574,
+            "y": 616,
+            "width": 420,
+            "height": 160
+          }
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "resize",
+          "actual": {
+            "x": 574,
+            "y": 616,
+            "width": 444,
+            "height": 176
+          }
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "cancel-preview",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "real-pointer-keyboard-preview-cancel",
+          "trusted": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "keydown",
+              "trusted": true,
+              "key": "Escape"
+            }
+          ]
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "offline-reinsert",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-export-offline-reinsert",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-inserted-text-controls.png",
+          "geometry": true,
+          "directEditable": false
+        }
+      ]
+    }
+  ],
+  "artifactHashesMatched": 26,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-inserted-text-controls.png",
+      "sha256": "bfa175f2a4b1c23494bc16b2ae6a9a7aa9c3f7f7501407aeb0553f9d7571eb3e",
+      "bytes": 64356,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-inserted-image-controls.png",
+      "sha256": "217a04c2e1ee98c911451c4a6538a2a9fd8347093450328f620e611dc6e553b0",
+      "bytes": 45828,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-selected.png",
+      "sha256": "c7632085640d3021dbf2c736e1f69b327c3cca4851d8477af40ef9f5a1c7a746",
+      "bytes": 46862,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-inserted-text-controls.png",
+      "sha256": "ac5e079bba553b7ffa2316721086e3c631d69876dc8fa9f0f2fab9d676faa32c",
+      "bytes": 78864,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-inserted-image-controls.png",
+      "sha256": "a385c32900a092e351efa2d491565323fbf4d6cd2e848b3e93b82647fa7b9ca3",
+      "bytes": 54752,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-selected.png",
+      "sha256": "75435796aac8099952341bc9bfc0d99aae4591a1988d8b82756e2a98801681b8",
+      "bytes": 56854,
+      "dimensions": [
+        1600,
+        900
+      ]
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "limitations": [
+    "API-driven text insertion；非新增文字 toolbar、OS clipboard 或原生 IME驗收",
+    "固定插入geometry非自動避障；S8歷史I/O根因未知",
+    "Independent Review pending，未merge/push/deploy S13"
+  ]
+}

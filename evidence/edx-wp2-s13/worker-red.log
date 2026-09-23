@@ -1,0 +1,53 @@
+✖ S13 Node 精確 text payload 保留文字、幾何與既有內容 (4.030542ms)
+✖ S13 mounted edit mode 插入後立即 editable，完成編輯沿既有 sync (10.642583ms)
+✖ S13 mounted export/reopen 保留文字與幾何且可再次編輯 (3.610167ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.592125
+
+✖ failing tests:
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:16:1
+✖ S13 Node 精確 text payload 保留文字、幾何與既有內容 (4.030542ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:37:80)
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:34:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:228:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:20:24)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:24:1
+✖ S13 mounted edit mode 插入後立即 editable，完成編輯沿既有 sync (10.642583ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:27:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:39:1
+✖ S13 mounted export/reopen 保留文字與幾何且可再次編輯 (3.610167ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:41:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)

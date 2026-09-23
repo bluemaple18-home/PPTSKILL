@@ -1,0 +1,429 @@
+✖ S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (3.557959ms)
+✔ S13 Node exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (7.033666ms)
+✖ S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋 (0.4695ms)
+✖ S13 Node long-ID identity collision 拒絕且舊 identity 不變 (1.398583ms)
+✖ S13 Node escape／geometry／export reopen／再插入，既有內容完整保留 (0.375459ms)
+✖ S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (10.798917ms)
+✔ S13 mounted exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用 (38.53975ms)
+✖ S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋 (2.992459ms)
+✖ S13 mounted long-ID identity collision 拒絕且舊 identity 不變 (2.93075ms)
+✖ S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留 (2.697792ms)
+✖ S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority (2.371083ms)
+✖ S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority (2.925666ms)
+✖ S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority (4.250875ms)
+✖ S13 mounted missing atomic canonical／DOM／revision／selection rollback (8.054833ms)
+✖ S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback (11.426ms)
+✖ S13 mounted append-before atomic canonical／DOM／revision／selection rollback (8.602125ms)
+✖ S13 mounted append-after atomic canonical／DOM／revision／selection rollback (7.835958ms)
+✖ S13 mounted detached-project atomic canonical／DOM／revision／selection rollback (7.302958ms)
+✖ S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (7.47025ms)
+✖ S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (7.708958ms)
+✖ S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (7.001416ms)
+✖ S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (7.135875ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 2
+ℹ fail 20
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 278.61975
+
+✖ failing tests:
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:35:3
+✖ S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (3.557959ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:37:80)
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:34:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:228:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:38:64)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:75:3
+✖ S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋 (0.4695ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:37:80)
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:34:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:228:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:78:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:82:3
+✖ S13 Node long-ID identity collision 拒絕且舊 identity 不變 (1.398583ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /identity|識別/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:37:80)
+        at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:34:70)
+        at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:228:42)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18),
+    expected: /identity|識別/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:89:3
+✖ S13 Node escape／geometry／export reopen／再插入，既有內容完整保留 (0.375459ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:37:80)
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:34:70)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:228:42)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:90:51)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:35:3
+✖ S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation (10.798917ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:38:64)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:75:3
+✖ S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋 (2.992459ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:78:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:82:3
+✖ S13 mounted long-ID identity collision 拒絕且舊 identity 不變 (2.93075ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /identity|識別/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:86:12)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /identity|識別/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:89:3
+✖ S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留 (2.697792ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:90:51)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:111:48
+✖ S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority (2.371083ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:115:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:111:48
+✖ S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority (2.925666ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:115:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:111:48
+✖ S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority (4.250875ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:115:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:122:104
+✖ S13 mounted missing atomic canonical／DOM／revision／selection rollback (8.054833ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /DOM/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /DOM/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:122:104
+✖ S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback (11.426ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /DOM/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /DOM/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:122:104
+✖ S13 mounted append-before atomic canonical／DOM／revision／selection rollback (8.602125ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /append-before/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /append-before/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:122:104
+✖ S13 mounted append-after atomic canonical／DOM／revision／selection rollback (7.835958ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /append-after/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /append-after/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:122:104
+✖ S13 mounted detached-project atomic canonical／DOM／revision／selection rollback (7.302958ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /detached-project/. Input:
+
+  'Error: insert-element payload 欄位無效。'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: insert-element payload 欄位無效。
+        at Object.validateRequest (evalmachine.<anonymous>:504:80)
+        at validateOperationRequest (evalmachine.<anonymous>:557:234)
+        at executeOperation (evalmachine.<anonymous>:625:42)
+        at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:29
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:129:10)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25),
+    expected: /detached-project/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:133:74
+✖ S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (7.47025ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:138:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:133:74
+✖ S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (7.708958ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:138:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:133:74
+✖ S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved (7.001416ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:138:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s13-insert-text.test.mjs:133:74
+✖ S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved (7.135875ms)
+  Error: insert-element payload 欄位無效。
+      at Object.validateRequest (evalmachine.<anonymous>:504:80)
+      at validateOperationRequest (evalmachine.<anonymous>:557:234)
+      at executeOperation (evalmachine.<anonymous>:625:42)
+      at Object.executeOperation (evalmachine.<anonymous>:1155:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s13-insert-text.test.mjs:138:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
