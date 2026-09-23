@@ -1052,8 +1052,10 @@ WP2-S10 candidate `7f79b58`：layout插入圖片chooser，沿S9/S8；S10 31/full
 
 WP2-S10 closure：Owner交回Independent GO，P0–P3全0；reviewed `7f79b58`，Reviewer fresh targeted125/125、full617/617；browser23+23／PGQ單輪16為committed evidence核對。Source6/protected4/ZIP MATCH，reviewed code與ZIP未動。紀錄：evidence/edx-wp2-s10/independent-review.md。可進整合；本輪未merge/push/deploy，S11未開。
 
-**WP2-S11 INDEPENDENT REVIEW PENDING：** layout單張圖片file drop，沿S9 adapter/S10 defaults與busy；無clipboard/多檔/crop/schema。卡tasks/edx-wp2-s11-image-drop.md。Base S10 closure da6c122（未merge）；main/origin-main仍d0b9aa0。
+**WP2-S11 COMPLETE / INDEPENDENT REVIEW GO：** layout單張圖片file drop，沿S9 adapter/S10 defaults與busy；無clipboard/多檔/crop/schema。卡tasks/edx-wp2-s11-image-drop.md。Base S10 closure da6c122（未merge）；main/origin-main仍d0b9aa0。
 
 WP2-S11 checkpoint6c9c02f（runtime1fdb3c2）：scoped192/full646/ZIP PASS；三輪1280 gesture＋file-drop seam未完成，1600/PGQ未跑，cleanup全部PASS。STOP_LOCAL_CONTINUATION，先唯讀隔離CDP混合input/rAF，不直接第四次launch；非Independent Review candidate。handoff_20260923_edx_wp2_s11_checkpoint.md。
 
 WP2-S11 split acceptance candidate `8b0be65`（runtime仍1fdb3c2）：Owner明示拆開trusted external drop與synthetic active-gesture cancellation；fresh154、雙viewport各59 records、PGQ單輪16、cleanup/source4/protected4/ZIP PASS。Full646與ZIP lifecycle延用已提交證據；三輪FAIL完整保留。handoff_20260923_edx_wp2_s11_review.md待Independent Review，未merge/push/deploy，未開S12。
+
+WP2-S11 closure：Owner交回Independent GO，reviewed8b0be65、P0–P3全0；Reviewer fresh154/646，browser59+59與PGQ16為committed evidence核對。Runtime/ZIP不改，synthetic gesture與trusted drop邊界保持。Owner授權S10/S11整合push後續作；詳evidence/edx-wp2-s11/independent-review.md。

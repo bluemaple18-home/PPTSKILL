@@ -1,6 +1,6 @@
 # WP2-S11 Host acceptance
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s11-image-drop.md
 Product: 1fdb3c275f9e174b7c8d506207c42c758aedb71a；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -17,3 +17,7 @@ Final code checkpoint6c9c02f，runtime/tests/ZIP仍1fdb3c2。三輪FAIL與event 
 ## 最終接續狀態
 
 Candidate 8b0be659ea400862456f4ce0db5a0526d0623ce8；runtime1fdb3c2未改。依Owner核定split acceptance，fresh targeted154/154、雙viewport59+59、PGQ單輪16/16、managed cleanup/source4/protected4/ZIP PASS。Full646與ZIP lifecycle為同卡既有證據，未混稱本輪fresh。詳evidence/edx-wp2-s11/receipt.md與handoff_20260923_edx_wp2_s11_review.md。前三輪FAIL保留，Independent Review pending；未merge/push/deploy，未開S12。
+
+## Closure
+
+Owner交回Independent GO，reviewed8b0be659ea400862456f4ce0db5a0526d0623ce8，P0–P3全0。Reviewer fresh154/646；browser59+59、PGQ16為committed evidence核對。reviewed code/ZIP/protected不改；詳evidence/edx-wp2-s11/independent-review.md。已授權主線FF整合及push，實際結果另記integration-receipt。
