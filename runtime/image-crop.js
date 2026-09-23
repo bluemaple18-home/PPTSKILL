@@ -96,33 +96,53 @@ export function createCropProjection({contract,window}) {
   const records=new Map(),properties=['position','display','max-width','max-height','object-fit','width','height','left','top','clip-path'];
   const snapshot=(node,keys)=>keys.map(k=>[k,node.style.getPropertyValue(k),node.style.getPropertyPriority?.(k)||'']);
   const restore=(node,values)=>values.forEach(([k,v,p])=>v?node.style.setProperty(k,v,p):node.style.removeProperty(k));
-  const release=img=>{const r=records.get(img);if(!r)return;r.observer?.disconnect();img.removeEventListener('load',r.draw);img.removeEventListener('error',r.error);restore(img,r.styles);restore(r.frame,r.frameStyles);records.delete(img);};
-  const render=(img,frame,p)=>{
+  const release=img=>{const r=records.get(img);if(!r)return;reconcile(img,r,false);try{restore(img,r.styles);restore(r.frame,r.frameStyles);}finally{records.delete(img);}};
+  const render=(img,frame,p,size)=>{
     if(img.getAttribute('src')===null)return;
     for(const [k,v] of Object.entries({'object-fit':'contain',position:'static',width:'100%',height:'100%','clip-path':'none'}))img.style.setProperty(k,v);
     if(!p.rect)return;
-    const box=contract.projectRect(p.rect,img.naturalWidth,img.naturalHeight,frame.clientWidth,frame.clientHeight,p.fit);
+    const box=contract.projectRect(p.rect,img.naturalWidth,img.naturalHeight,size?.width??frame.clientWidth,size?.height??frame.clientHeight,p.fit);
     if(!img.complete||!box)return;
     const position=window.getComputedStyle?.(frame)?.position||frame.style.getPropertyValue('position');
     if(!position||position==='static')frame.style.setProperty('position','relative');
     frame.style.setProperty('overflow','hidden');
     for(const [k,v] of Object.entries({position:'absolute',display:'block','max-width':'none','max-height':'none','object-fit':'fill',width:box.width+'px',height:box.height+'px',left:box.left+'px',top:box.top+'px','clip-path':box.clip}))img.style.setProperty(k,v);
   };
+  // observer/listener 與已提交 snapshot 同屬既有 record；失敗不可留下半建 ownership。
+  const reconcile=(img,r,active)=>{
+    if(active){
+      if(!r.observer&&window.ResizeObserver)r.observer=new window.ResizeObserver(r.draw);
+      if(r.observer&&!r.observing){try{r.observer.observe(r.frame);r.observing=true;}catch(error){r.observer.disconnect();r.observing=false;throw error;}}
+      if(!r.listening){try{img.addEventListener('load',r.draw);img.addEventListener('error',r.error);r.listening=true;}catch(error){img.removeEventListener('load',r.draw);img.removeEventListener('error',r.error);throw error;}}
+    }else{r.observer?.disconnect();r.observing=false;img.removeEventListener('load',r.draw);img.removeEventListener('error',r.error);r.listening=false;}
+  };
+  const checkpoint=img=>{const r=records.get(img);return r?{record:r,projection:r.projection}:null;};
+  const rollback=(img,before)=>{
+    const r=records.get(img);
+    if(!before){if(r){reconcile(img,r,false);records.delete(img);}return;}
+    if(r&&r!==before.record)reconcile(img,r,false);
+    const previous=before.record;previous.projection=before.projection;records.set(img,previous);reconcile(img,previous,Boolean(previous.projection.rect));
+  };
   const sync=(img,c)=>{
     if(!c.crop&&!c.imageSafety){release(img);return;}
-    const p=contract.prepare(c);let r=records.get(img);
-    // 先投影，再發布 observer snapshot；throw 時仍只持有上一個 committed snapshot。
-    const frame=img.parentElement,oldStyles=snapshot(img,properties),oldFrame=snapshot(frame,['position','overflow']);
-    try{render(img,frame,p);if(p.status==='none'&&!c.crop){restore(img,r?.styles||oldStyles);restore(frame,r?.frameStyles||oldFrame);img.style.setProperty('object-fit',p.fit);}}catch(error){try{restore(img,oldStyles);restore(frame,oldFrame);}catch{}throw error;}
+    const p=contract.prepare(c),before=checkpoint(img),frame=img.parentElement,oldStyles=snapshot(img,properties),oldFrame=snapshot(frame,['position','overflow']);
+    let r=records.get(img);
     if(!r){
-      r={frame,styles:oldStyles,frameStyles:oldFrame};
-      r.draw=()=>{if(img.isConnected===false){release(img);return;}render(img,frame,r.projection);};
-      r.error=()=>render(img,frame,{rect:null,fit:'contain'});records.set(img,r);
+      r={frame,styles:oldStyles,frameStyles:oldFrame,projection:null};
+      r.draw=()=>{if(img.isConnected===false){release(img);return;}if(r.projection)render(img,frame,r.projection);};
+      r.error=()=>render(img,frame,{rect:null,fit:'contain'});
     }
-    r.projection=p;
-    if(p.rect&&!r.observer&&window.ResizeObserver){r.observer=new window.ResizeObserver(r.draw);r.observer.observe(r.frame);}
-    if(p.rect&&!r.listening){img.addEventListener('load',r.draw);img.addEventListener('error',r.error);r.listening=true;}
-    if(!p.rect){r.observer?.disconnect();r.observer=null;if(r.listening){img.removeEventListener('load',r.draw);img.removeEventListener('error',r.error);r.listening=false;}}
+    try{
+      render(img,frame,p);
+      if(p.status==='none'&&!c.crop){restore(img,r.styles);restore(frame,r.frameStyles);img.style.setProperty('object-fit',p.fit);}
+      reconcile(img,r,Boolean(p.rect));
+      r.projection=p;records.set(img,r);
+    }catch(error){
+      if(!before)reconcile(img,r,false);
+      rollback(img,before);
+      try{restore(img,oldStyles);restore(frame,oldFrame);}catch{}
+      throw error;
+    }
   };
   const prune=()=>{for(const [img]of records)if(!img.isConnected)release(img);};
   const destroy=()=>{for(const [img]of records)release(img);};
@@ -130,8 +150,6 @@ export function createCropProjection({contract,window}) {
     const r=records.get(live);if(r){restore(img,r.styles);restore(img.parentElement,r.frameStyles);}
     const p=contract.prepare(c);img.style.setProperty('object-fit',p.rect||p.status==='pending'?'contain':p.fit);
   };
-  const checkpoint=img=>records.get(img)?.projection;
-  const rollback=(img,before)=>{const r=records.get(img);if(!r)return;if(before){r.projection=before;}else{r.observer?.disconnect();img.removeEventListener('load',r.draw);img.removeEventListener('error',r.error);records.delete(img);}};
   const expectedFit=(img,c)=>{if(!c.crop&&!c.imageSafety)return c.fit||'contain';const p=contract.prepare(c);return p.rect&&img.complete&&contract.projectRect(p.rect,img.naturalWidth,img.naturalHeight,img.parentElement.clientWidth,img.parentElement.clientHeight,p.fit)?'fill':p.rect?'contain':p.fit;};
   return {sync,render,release,prune,destroy,copyClean,checkpoint,rollback,expectedFit};
 }
@@ -139,10 +157,10 @@ export const buildImageCropRuntime=()=>`${buildCropHashRuntime()};const imageCro
 
 export function buildCropDialogMarkup(){
  const group=(name,title)=>`<fieldset data-crop-group="${name}"><legend>${title}</legend>${[['x','左'],['y','上'],['width','寬'],['height','高']].map(([key,label])=>`<label class="pptskill-crop-field">${label}<input type="number" min="0" max="1" step="0.01" data-crop-field="${name}-${key}" aria-label="${title}${label}" value="${key==='width'||key==='height'?1:0}"><input type="range" min="0" max="1" step="0.01" data-crop-range="${name}-${key}" aria-label="${title}${label}滑桿" value="${key==='width'||key==='height'?1:0}"></label>`).join('')}</fieldset>`;
- return `<dialog class="pptskill-component-dialog pptskill-crop-dialog" data-crop-dialog aria-labelledby="pptskill-crop-label"><h2 id="pptskill-crop-label">裁切圖片</h2><label>圖片用途 <select data-crop-classification aria-label="圖片用途"><option value="">請選擇用途</option><option value="evidence">Evidence／含重要資訊</option><option value="decorative">裝飾圖片</option></select></label><div class="pptskill-crop-previews"><section><h3>完整原圖與保護範圍</h3><div data-crop-original-frame><img data-crop-original alt="完整原圖"><span data-crop-protection aria-hidden="true"></span></div></section><section><h3>裁切結果</h3><div data-crop-preview-frame><img data-crop-preview alt="裁切預覽"></div></section></div>${group('rect','裁切範圍')}${group('protected','重要內容保護範圍')}<p>保護範圍請包含座標軸、標籤、圖例及來源註記；程式不判斷圖片真實性或是否漏標。</p><label><input type="checkbox" data-crop-confirm>我已檢視完整原圖與結果，確認重要上下文仍完整。</label><p data-crop-status role="status" aria-live="polite"></p><menu><button type="button" data-action="reset-image-crop">還原完整原圖</button><button type="button" data-action="cancel-crop">取消</button><button type="button" data-action="confirm-crop" disabled>確認裁切</button></menu></dialog>`;
+ return `<dialog class="pptskill-component-dialog pptskill-crop-dialog" data-crop-dialog aria-labelledby="pptskill-crop-label"><h2 id="pptskill-crop-label">裁切圖片</h2><label>圖片用途 <select data-crop-classification aria-label="圖片用途"><option value="">請選擇用途</option><option value="evidence">Evidence／含重要資訊</option><option value="decorative">裝飾圖片</option></select></label><div class="pptskill-crop-previews"><section><h3>完整原圖與保護範圍</h3><div data-crop-original-frame><img data-crop-original alt="完整原圖"><span data-crop-protection aria-hidden="true"></span></div></section><section><h3>裁切結果</h3><div data-crop-preview-stage><div data-crop-preview-frame><img data-crop-preview alt="裁切預覽"></div></div></section></div>${group('rect','裁切範圍')}${group('protected','重要內容保護範圍')}<p>保護範圍請包含座標軸、標籤、圖例及來源註記；程式不判斷圖片真實性或是否漏標。</p><label><input type="checkbox" data-crop-confirm>我已檢視完整原圖與結果，確認重要上下文仍完整。</label><p data-crop-status role="status" aria-live="polite"></p><menu><button type="button" data-action="reset-image-crop">還原完整原圖</button><button type="button" data-action="cancel-crop">取消</button><button type="button" data-action="confirm-crop" disabled>確認裁切</button></menu></dialog>`;
 }
 export const buildCropDialogCss=()=>`
-.pptskill-crop-dialog{box-sizing:border-box;width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto}.pptskill-crop-dialog h2{margin:0 0 12px;font-size:20px;line-height:1.3;font-weight:700}.pptskill-crop-dialog h3{font-size:13px;margin:8px 0}.pptskill-crop-dialog input,.pptskill-crop-dialog select{font:inherit;color:inherit;background:#242424;border:1px solid #ffffff40;border-radius:4px;padding:4px}.pptskill-crop-dialog :focus-visible{outline:2px solid #9ed7ff;outline-offset:2px}.pptskill-crop-previews{display:grid;grid-template-columns:1fr 1fr;gap:12px}.pptskill-crop-previews [data-crop-original-frame],.pptskill-crop-previews [data-crop-preview-frame]{position:relative;height:170px;overflow:hidden;background:#eee}.pptskill-crop-previews img{display:block;width:100%;height:100%;object-fit:contain}.pptskill-crop-dialog fieldset{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;border:1px solid #ffffff30}.pptskill-crop-dialog [hidden]{display:none!important}.pptskill-crop-field{display:grid;grid-template-columns:1em 5em minmax(40px,1fr);gap:6px;align-items:center}.pptskill-crop-field input{min-width:0;width:100%;box-sizing:border-box}.pptskill-crop-dialog [data-crop-protection]{position:absolute;border:2px solid #d32f2f;box-sizing:border-box;pointer-events:none}.pptskill-crop-dialog [data-crop-status]{min-height:1.5em;color:#ffd6a0}.pptskill-crop-dialog button:disabled{opacity:.45;cursor:default}.pptskill-editor [data-pptskill-selected-image-toolbar]{flex-wrap:wrap}.pptskill-crop-dialog menu{flex-wrap:wrap}
+.pptskill-crop-dialog{box-sizing:border-box;width:min(720px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto}.pptskill-crop-dialog h2{margin:0 0 12px;font-size:20px;line-height:1.3;font-weight:700}.pptskill-crop-dialog h3{font-size:13px;margin:8px 0}.pptskill-crop-dialog input,.pptskill-crop-dialog select{font:inherit;color:inherit;background:#242424;border:1px solid #ffffff40;border-radius:4px;padding:4px}.pptskill-crop-dialog :focus-visible{outline:2px solid #9ed7ff;outline-offset:2px}.pptskill-crop-previews{display:grid;grid-template-columns:1fr 1fr;gap:12px}.pptskill-crop-previews [data-crop-original-frame],.pptskill-crop-previews [data-crop-preview-frame]{position:relative;height:170px;overflow:hidden;background:#eee}.pptskill-crop-previews section{min-width:0}.pptskill-crop-previews [data-crop-preview-stage]{height:170px;display:flex;align-items:center;justify-content:center}.pptskill-crop-previews img{display:block;width:100%;height:100%;object-fit:contain}.pptskill-crop-dialog fieldset{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0;border:1px solid #ffffff30}.pptskill-crop-dialog [hidden]{display:none!important}.pptskill-crop-field{display:grid;grid-template-columns:1em 5em minmax(40px,1fr);gap:6px;align-items:center}.pptskill-crop-field input{min-width:0;width:100%;box-sizing:border-box}.pptskill-crop-dialog [data-crop-protection]{position:absolute;border:2px solid #d32f2f;box-sizing:border-box;pointer-events:none}.pptskill-crop-dialog [data-crop-status]{min-height:1.5em;color:#ffd6a0}.pptskill-crop-dialog button:disabled{opacity:.45;cursor:default}.pptskill-editor [data-pptskill-selected-image-toolbar]{flex-wrap:wrap}.pptskill-crop-dialog menu{flex-wrap:wrap}
 `;
 
 export function mountCropDialog({document,window,contract,projection,getTarget,getComponent,getRevision,getCurrentSlide,getBusy,cancelGesture,execute,notify,refresh}){
@@ -163,7 +181,10 @@ export function mountCropDialog({document,window,contract,projection,getTarget,g
      const rect=readRect('rect'),protectedRect=evidence?readRect('protected'):undefined;
      const value={...rect,classification,...(protectedRect?{protectedRect}:{}),confirm:true};
      // 草稿只驗 shape／幾何；不呼叫 prepare/digest，不序列化 source 或 DeckSpec。
-     projection.render(preview,q('[data-crop-preview-frame]'),{rect,fit:evidence?'contain':p.fit});
+     const stage=q('[data-crop-preview-stage]'),frame=q('[data-crop-preview-frame]'),target=p.node.parentElement;
+     const W=target.clientWidth,H=target.clientHeight,scale=Math.min((stage.clientWidth||frame.clientWidth)/W,(stage.clientHeight||170)/H);
+     if(W>0&&H>0&&Number.isFinite(scale)&&scale>0){frame.style.setProperty('width',W*scale+'px');frame.style.setProperty('height',H*scale+'px');}
+     projection.render(preview,frame,{rect,fit:evidence?'contain':p.fit},W>0&&H>0&&Number.isFinite(scale)&&scale>0?{width:W*scale,height:H*scale}:undefined);
      if(evidence){
        const f=q('[data-crop-original-frame]'),W=original.naturalWidth,H=original.naturalHeight,k=Math.min(f.clientWidth/W,f.clientHeight/H),overlay=q('[data-crop-protection]');
        for(const [key,n]of Object.entries({left:(f.clientWidth-W*k)/2+protectedRect.x*W*k,top:(f.clientHeight-H*k)/2+protectedRect.y*H*k,width:protectedRect.width*W*k,height:protectedRect.height*H*k}))if(Number.isFinite(n))overlay.style.setProperty(key,n+'px');
@@ -190,7 +211,7 @@ export function mountCropDialog({document,window,contract,projection,getTarget,g
      await Promise.all([original.decode(),preview.decode()]);
      if(!valid(p)){if(pending===p){close();notify('裁切目標已失效，請重新開啟。');}return;}
      if(!original.naturalWidth||!original.naturalHeight)throw Error('圖片尺寸無效。');
-     p.ready=true;update();if(window.ResizeObserver){previewObserver=new window.ResizeObserver(update);previewObserver.observe(q('[data-crop-preview-frame]'));}
+     p.ready=true;update();if(window.ResizeObserver){previewObserver=new window.ResizeObserver(update);previewObserver.observe(q('[data-crop-preview-stage]'));previewObserver.observe(node.parentElement);}
    }catch(error){if(pending===p){close();notify(error.message);}}
  };
  const submit=reset=>{

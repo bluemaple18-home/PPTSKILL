@@ -73,3 +73,20 @@ test('Crop duplicate保留canonical但重建projection ownership，刪頁清理l
  Object.assign(copy,{complete:true,naturalWidth:240,naturalHeight:160});Object.assign(copy.parentElement,{clientWidth:500,clientHeight:200});for(const fn of copy.listeners.load||[])fn();assert.match(copy.style.getPropertyValue('clip-path'),/^inset/);
  assert.doesNotThrow(()=>h.api.exportHtml());h.action('delete');assert.equal(copy.isConnected,false);assert.equal((copy.listeners.load||[]).length,0);assert.equal(original.isConnected,true);assert.equal(original.getAttribute('src'),source);
 });
+
+test('Repair1 F5 decorative cover預覽沿target aspect，portrait/landscape可見區域等同commit',async()=>{
+ const {imageCrop}=await import('../runtime/image-crop.js');
+ const visible=(r,w,h)=>{const p=imageCrop.projectRect(r,240,160,w,h,'cover');return [Math.max(r.x,-p.left/p.width),Math.max(r.y,-p.top/p.height),Math.min(r.x+r.width,(w-p.left)/p.width),Math.min(r.y+r.height,(h-p.top)/p.height)];};
+ const r={x:.2,y:.15,width:.5,height:.6};
+ for(const [width,height] of [[250,400],[500,200]]){
+  const h=make(),targetFrame=h.q('[data-pptskill-element-id="component-perf-image"]'),frame=h.q('[data-crop-preview-frame]');Object.assign(targetFrame,{clientWidth:width,clientHeight:height});
+  // mounted DOM不做layout；由實際寫入CSS尺寸回讀，保持測試與browser client dimensions一致。
+  for(const [name,key,fallback] of [['clientWidth','width',300],['clientHeight','height',170]])Object.defineProperty(frame,name,{configurable:true,get:()=>parseFloat(frame.style.getPropertyValue(key))||fallback});
+  h.api.executeOperation({operation:'replace-asset',target,value:{dataUri:h.getSpec().slides[0].content.components[1].dataUri,fit:'cover'}});
+  await h.open();h.input('[data-crop-classification]','decorative');for(const [k,v] of Object.entries(r))h.input('[data-crop-field="rect-'+k+'"]',String(v));
+  assert.ok(Math.abs(frame.clientWidth/frame.clientHeight-width/height)<1e-9);
+  const a=visible(r,frame.clientWidth,frame.clientHeight),b=visible(r,width,height);a.forEach((n,i)=>assert.ok(Math.abs(n-b[i])<1e-9));
+  const style=h.q('[data-crop-preview]').style,iw=parseFloat(style.getPropertyValue('width')),ih=parseFloat(style.getPropertyValue('height')),left=parseFloat(style.getPropertyValue('left')),top=parseFloat(style.getPropertyValue('top'));const actual=[Math.max(r.x,-left/iw),Math.max(r.y,-top/ih),Math.min(r.x+r.width,(frame.clientWidth-left)/iw),Math.min(r.y+r.height,(frame.clientHeight-top)/ih)];actual.forEach((n,i)=>assert.ok(Math.abs(n-b[i])<1e-9));
+  assert.equal(h.q('[data-crop-original]').style.getPropertyValue('clip-path'),'');h.input('[data-crop-confirm]',undefined,true);h.action('confirm-crop');assert.deepEqual(h.getSpec().slides[0].content.components[1].crop,r);
+ }
+});

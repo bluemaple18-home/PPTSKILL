@@ -43,8 +43,8 @@ export async function runCropBrowserCases({cdp,evaluate,navigate,sourcePath,outp
  const execute=r=>evaluate('window.PPTSKILLEditor.executeOperation('+JSON.stringify(r)+')');
  const rect={x:.2,y:.15,width:.5,height:.6},protectedRect={x:.25,y:.2,width:.2,height:.2};
  const crop=(id='crop-landscape',classification='evidence')=>({operation:'crop-image',target:target(id),value:{...rect,classification,...(classification==='evidence'?{protectedRect}:{}),confirm:true}});
- const pixels=async(id,label,expectedCrop=null,fit='contain')=>{
-  const css=selector(id);
+ const pixels=async(id,label,expectedCrop=null,fit='contain',preview=false)=>{
+  const css=preview?'[data-crop-preview-frame]':selector(id);
   // 背景只是 oracle 的固定底色，之後移除；不改 source、geometry 或產品 projector。
   await evaluate(`(async()=>{const f=document.querySelector(${JSON.stringify(css)});f.style.setProperty('background-color','rgb(240,240,240)');await f.querySelector('img').decode();})()`);await settle();
   const shot=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false});
@@ -62,10 +62,12 @@ export async function runCropBrowserCases({cdp,evaluate,navigate,sourcePath,outp
     else if(Math.min(Math.abs(x-crop.x*W),Math.abs(x-(crop.x+crop.width)*W),Math.abs(y-crop.y*H),Math.abs(y-(crop.y+crop.height)*H))<3){excluded.push('clip-edge');continue;}
     const actual=Array.from(ctx.getImageData(px,py,1,1).data);checks.push({px,py,inside,expected,actual,pass:actual.every((n,i)=>Math.abs(n-expected[i])<=4)});
    }
-   return{checks,excluded,sourceUnchanged:img.getAttribute('src')===c.dataUri,natural:[img.naturalWidth,img.naturalHeight],frame:[r.width,r.height]};
+   const geometry=getComputedStyle(img),iw=parseFloat(geometry.width),ih=parseFloat(geometry.height),left=parseFloat(geometry.left),top=parseFloat(geometry.top),fw=parseFloat(getComputedStyle(f).width),fh=parseFloat(getComputedStyle(f).height);
+   const visible=expectedVisible();function expectedVisible(){return Number.isFinite(left)&&Number.isFinite(top)?[Math.max(crop.x,-left/iw),Math.max(crop.y,-top/ih),Math.min(crop.x+crop.width,(fw-left)/iw),Math.min(crop.y+crop.height,(fh-top)/ih)]:null;}
+   return{checks,excluded,sourceUnchanged:img.getAttribute('src')===c.dataUri,natural:[img.naturalWidth,img.naturalHeight],frame:[r.width,r.height],visible};
   })()`);}finally{await evaluate(`document.querySelector(${JSON.stringify(css)}).style.removeProperty('background-color')`);}
   assert.ok(result.sourceUnchanged);assert.ok(result.checks.length>=15,JSON.stringify(result));assert.ok(result.checks.every(c=>c.pass),JSON.stringify({label,...result}));
-  run.artifacts.push({label:'crop-'+label,path,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});run.checks.push({crop:label,kind:'真 CDP screenshot pixel oracle',...result});
+  run.artifacts.push({label:'crop-'+label,path,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});run.checks.push({crop:label,kind:'真 CDP screenshot pixel oracle',...result});return result;
  };
  const field=async(name,value)=>evaluate(`(()=>{const e=document.querySelector('[data-crop-field="'+${JSON.stringify(name)}+'"]');e.value=${JSON.stringify(String(value))};e.dispatchEvent(new Event('input',{bubbles:true}));})()`);
  const classification=async value=>evaluate(`(()=>{const e=document.querySelector('[data-crop-classification]');e.value=${JSON.stringify(value)};e.dispatchEvent(new Event('input',{bubbles:true}));})()`);
@@ -117,4 +119,44 @@ export async function runCropBrowserCases({cdp,evaluate,navigate,sourcePath,outp
  await assertExport('crop-after-delete',deleted);
  run.checks.push({crop:'reset保Evidence／S7+replace+patch cover拒絕／換圖與raw pending／S18晚到提交',kind:'產品 API＋UI＋真 decoder，僅PNG格式'});
  assert.ok(original.slides[0].content.components.some(c=>c.dataUri===cropFixturePng()));
+ // Repair1 額外案例重新載入同一隔離fixture，不改動前述既有26 records。
+ await navigate(sourcePath);
+ const dialogShot=async(label,actions=false)=>{
+  await evaluate(actions?"document.querySelector('[data-crop-dialog] menu').scrollIntoView({block:'nearest'})":"document.querySelector('[data-crop-dialog]').scrollTop=0");await settle();
+  const state=await evaluate(`(()=>{const dialog=document.querySelector('[data-crop-dialog]'),r=dialog.getBoundingClientRect();return{open:dialog.open,viewport:[innerWidth,innerHeight],dialog:[r.x,r.y,r.width,r.height],actions:[...dialog.querySelectorAll('menu button')].map(b=>{const x=b.getBoundingClientRect();return{label:b.textContent,visible:x.left>=0&&x.right<=innerWidth&&x.top>=Math.max(0,r.top)&&x.bottom<=Math.min(innerHeight,r.bottom)}})}})()`);
+  assert.equal(state.open,true);if(actions)assert.ok(state.actions.every(a=>a.visible),JSON.stringify(state));
+  const shot=await cdp.send('Page.captureScreenshot',{format:'png',captureBeyondViewport:false}),bytes=Buffer.from(shot.data,'base64'),path=resolve(outputDir,width+'-crop-'+label+'.png');await writeFile(path,bytes);
+  run.artifacts.push({label:'crop-'+label,path,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});run.checks.push({crop:label,kind:'dialog/action screenshot；視覺品質待主線評分',...state});
+ };
+ await execute({operation:'replace-asset',target:target('crop-landscape'),value:{dataUri:cropFixturePng(),fit:'cover'}});
+ await click('[data-action="layout"]');
+ for(const [name,w,h] of [['portrait',250,400],['landscape',500,200]]){
+  await execute({operation:'resize-element',target:target('crop-landscape'),value:{width:w,height:h}});await open();await classification('decorative');
+  for(const [key,value] of Object.entries(rect))await field('rect-'+key,value);
+  await dialogShot('preview-'+name+'-open');const preview=await pixels('crop-landscape','preview-'+name,rect,'cover',true);
+  await click('[data-crop-confirm]');await dialogShot('preview-'+name+'-actions',true);await click('[data-action="confirm-crop"]');
+  await evaluate('window.PPTSKILLEditor.layout.clearSelection()');
+  const final=await pixels('crop-landscape','preview-'+name+'-committed',rect,'cover');
+  assert.ok(preview.visible&&final.visible);preview.visible.forEach((n,i)=>assert.ok(Math.abs(n-final.visible[i])<0.0002,JSON.stringify({preview,final})));
+  assert.ok(Math.abs(preview.frame[0]/preview.frame[1]-w/h)<0.001);
+  run.checks.push({crop:'preview-'+name+'-matches-final',kind:'目標比例＋實際CSS可見原圖區域＋兩端pixel oracle',preview:preview.visible,committed:final.visible});
+ }
+ // synthetic lifecycle只驗事件恢復，未導航／未宣稱真正BFCache命中。
+ await execute(crop());
+ const lifecycle=await evaluate(`(()=>{const api=window.PPTSKILLEditor,before=JSON.stringify(api.getDeckSpec()),img=document.querySelector('${selector('crop-landscape')} img'),style=img.getAttribute('style');dispatchEvent(new PageTransitionEvent('pagehide',{persisted:true}));dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));return{canonicalSame:before===JSON.stringify(api.getDeckSpec()),styleSame:style===img.getAttribute('style'),sourceSame:img.getAttribute('src')===api.getDeckSpec().slides[0].content.components.find(c=>c.id==='crop-landscape').dataUri}})()`);
+ assert.ok(Object.values(lifecycle).every(Boolean));await execute({operation:'resize-element',target:target('crop-landscape'),value:{width:600,height:280}});await pixels('crop-landscape','synthetic-persisted-restored',rect);
+ await evaluate(`document.querySelector('${selector('crop-landscape')} img').dispatchEvent(new Event('load'))`);await pixels('crop-landscape','synthetic-persisted-load',rect);
+ run.checks.push({crop:'synthetic persisted pagehide/pageshow',kind:'synthetic event，非真BFCache命中',...lifecycle});
+ for(const fault of ['raw-observe','reset-refresh']){
+  if(fault==='raw-observe')await open();
+  const outcome=await evaluate(`(()=>{const api=window.PPTSKILLEditor,root=document.querySelector('${selector('crop-landscape')}'),img=root.querySelector('img'),before=JSON.stringify(api.getDeckSpec()),style=img.getAttribute('style'),selection=JSON.stringify(api.layout.getSelectionState()),dialog=document.querySelector('[data-crop-dialog]'),Observer=window.ResizeObserver,query=document.querySelector;let error='',once=true;
+   try{if('${fault}'==='raw-observe'){window.ResizeObserver=class extends Observer{observe(node){super.observe(node);throw Error('repair raw observe')}};api.applyLocalPatch({slideId:'portable',region:'content.components.crop-landscape',value:{alt:'失敗候選'}});}else{document.querySelector=function(s){if(once&&s==='[data-action="crop-selected-image"]'){once=false;throw Error('repair reset refresh')}return query.call(this,s)};api.executeOperation({operation:'reset-image-crop',target:${JSON.stringify(target('crop-landscape'))},value:{confirm:true}});}}catch(e){error=e.message}finally{window.ResizeObserver=Observer;document.querySelector=query}
+   return{error,canonicalSame:before===JSON.stringify(api.getDeckSpec()),nodeSame:img===document.querySelector('${selector('crop-landscape')} img'),styleSame:style===img.getAttribute('style'),selectionSame:selection===JSON.stringify(api.layout.getSelectionState()),dialogOpen:dialog.open};})()`);
+  assert.match(outcome.error,/repair/);for(const key of ['canonicalSame','nodeSame','styleSame','selectionSame'])assert.equal(outcome[key],true,JSON.stringify(outcome));
+  assert.equal(outcome.dialogOpen,fault==='raw-observe');if(outcome.dialogOpen)await click('[data-action="cancel-crop"]');await evaluate('window.PPTSKILLEditor.layout.clearSelection()');await execute({operation:'resize-element',target:target('crop-landscape'),value:{width:550,height:300}});await pixels('crop-landscape','repair-'+fault+'-resize',rect);
+  await evaluate(`document.querySelector('${selector('crop-landscape')} img').dispatchEvent(new Event('load'))`);await pixels('crop-landscape','repair-'+fault+'-load',rect);
+  await execute({operation:'resize-element',target:target('crop-landscape'),value:{width:600,height:280}});run.checks.push({crop:fault,kind:'synthetic fault injection＋後續真resize pixel',...outcome});
+ }
+ await execute({operation:'delete-element',target:target('crop-landscape'),value:{confirm:true}});assert.equal(await evaluate(`Boolean(document.querySelector('${selector('crop-landscape')}'))`),false);
+
 }
