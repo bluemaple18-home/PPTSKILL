@@ -2,7 +2,7 @@ import { assetReplacement } from './asset-replacement.js';
 import { validateComponentGeometry } from './component-geometry.js';
 import { resolveSlideElementIdentities } from './deck-spec.js';
 
-// 僅負責 image insertion 的 bounded glue；Node 與 portable 序列化同一契約。
+// 共用 image／text insertion；Node 與 portable 序列化同一契約。
 export function createImageInsertionContract(assets, validateGeometry, resolveIdentities) {
   const idPattern = /^[a-z0-9][a-z0-9._-]{0,79}$/;
   const fields = (value, required, optional = []) => {
@@ -16,7 +16,10 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
   };
   const validateMetadata = (slideId, component, geometry) => {
     if (typeof slideId !== 'string' || !slideId || typeof component.id !== 'string' || !idPattern.test(component.id)
-      || component.type !== 'image' || typeof component.alt !== 'string'
+      || !['image', 'text'].includes(component.type)) throw new Error('insert-element metadata 無效。');
+    if (component.type === 'text') {
+      if (typeof component.text !== 'string' || [...component.text].length < 1 || [...component.text].length > 500) throw new Error('insert-element text 必須為 1–500 Unicode code points。');
+    } else if (typeof component.alt !== 'string'
       || (Object.hasOwn(component, 'fit') && !assets.descriptor.inputSchema.properties.value.properties.fit.enum.includes(component.fit))) throw new Error('insert-element image metadata 無效。');
     validateGeometry(Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, geometry[key]])));
   };
@@ -33,12 +36,18 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
     if (!fields(request, ['operation', 'target', 'value']) || request.operation !== 'insert-element'
       || !fields(request.target, ['slideId']) || typeof request.target.slideId !== 'string' || !request.target.slideId
       || !fields(request.value, ['component', 'geometry'])
-      || !fields(request.value.component, ['id', 'type', 'dataUri', 'alt'], ['fit'])
+      || !(fields(request.value.component, ['id', 'type', 'dataUri', 'alt'], ['fit'])
+        || fields(request.value.component, ['id', 'type', 'text']))
       || !fields(request.value.geometry, ['x', 'y', 'width', 'height'])) throw new Error('insert-element payload 欄位無效。');
     const { component, geometry } = request.value;
+    // S13 text payload 不接受隱藏欄位；保留既有 image／File options 的 data-descriptor 契約。
+    if (component.type === 'text' && [request, request.target, request.value, component, geometry]
+      .some(value => Reflect.ownKeys(value).some(key => !Object.getOwnPropertyDescriptor(value, key).enumerable))) throw new Error('insert-element text payload 不接受隱藏欄位。');
+    if (!(component.type === 'text' ? fields(component, ['id', 'type', 'text'])
+      : component.type === 'image' && fields(component, ['id', 'type', 'dataUri', 'alt'], ['fit']))) throw new Error('insert-element component variant 無效。');
     validateMetadata(request.target.slideId, component, geometry);
     // 交給 S4 政策驗證，勿另造 MIME／bytes／SVG authority。
-    assets.validateRequest({ operation: 'replace-asset', target: { slideId: request.target.slideId, elementId: 'role-title' }, value: {
+    if (component.type === 'image') assets.validateRequest({ operation: 'replace-asset', target: { slideId: request.target.slideId, elementId: 'role-title' }, value: {
       dataUri: component.dataUri, alt: component.alt, ...(Object.hasOwn(component, 'fit') ? { fit: component.fit } : {}),
     } });
     return request;
@@ -58,7 +67,8 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
   const update = (slide, request) => {
     validateRequest(request);
     const elementId = preflight(slide, request), { component, geometry } = request.value;
-    const nextComponent = { id: component.id, type: 'image', dataUri: component.dataUri, alt: component.alt,
+    const nextComponent = component.type === 'text' ? { id: component.id, type: 'text', text: component.text }
+      : { id: component.id, type: 'image', dataUri: component.dataUri, alt: component.alt,
       ...(Object.hasOwn(component, 'fit') ? { fit: component.fit } : {}) };
     const components = [...slide.content.components, nextComponent];
     slide.content.components = components;
@@ -71,10 +81,13 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
       operation: { type: 'string', const: 'insert-element' },
       target: { type: 'object', required: ['slideId'], additionalProperties: false, properties: { slideId: { type: 'string', minLength: 1 } } },
       value: { type: 'object', required: ['component', 'geometry'], additionalProperties: false, properties: {
-        component: { type: 'object', required: ['id', 'type', 'dataUri', 'alt'], additionalProperties: false, properties: {
+        component: { oneOf: [{ type: 'object', required: ['id', 'type', 'dataUri', 'alt'], additionalProperties: false, properties: {
           id: { type: 'string', pattern: idPattern.source }, type: { type: 'string', const: 'image' },
           dataUri: assets.descriptor.inputSchema.properties.value.properties.dataUri, alt: { type: 'string' }, fit: { type: 'string', enum: ['contain', 'cover'] },
-        } },
+        } }, { type: 'object', required: ['id', 'type', 'text'], additionalProperties: false, properties: {
+          id: { type: 'string', pattern: idPattern.source }, type: { type: 'string', const: 'text' },
+          text: { type: 'string', minLength: 1, maxLength: 500 },
+        } }] },
         geometry: { type: 'object', required: ['x', 'y', 'width', 'height'], additionalProperties: false,
           properties: Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, { type: 'integer', minimum: 80 }])) },
       } },

@@ -438,8 +438,8 @@ const roots=qa('.slide[data-slide-id="'+CSS.escape(slide.id)+'"]'),root=roots[0]
 const target='slides.'+slide.id+'.content.components.'+component.id;
 if(qa('[data-pptskill-element-id]',root).some(node=>node.dataset.pptskillElementId===elementId)||qa('[data-edit-target]',root).some(node=>node.dataset.editTarget===target))throw new Error('insert-element DOM identity 已存在。');
 const template=document.createElement('template');template.innerHTML=renderComponent(component,candidateSlide);const node=template.content.firstElementChild;
-if(!node||node.dataset.pptskillElementId!==elementId||!q('img',node))throw new Error('insert-element detached DOM 無效。');
-assetReplacement.project(q('img',node),component);projectComponentGeometryStyle(node,getComponentGeometry(candidateSlide.composition,component.id));
+if(!node||node.dataset.pptskillElementId!==elementId||(component.type==='image'?!q('img',node):node.dataset.editKind!=='text'))throw new Error('insert-element detached DOM 無效。');
+if(component.type==='image')assetReplacement.project(q('img',node),component);else node.contentEditable='false';projectComponentGeometryStyle(node,getComponentGeometry(candidateSlide.composition,component.id));
 // append 可能先插入再 throw；此時只移除本次 detached root，既有 DOM／gesture 完全保留。
 try{root.append(node)}catch(error){node.remove();throw error}
 spec=cleaned;revision++;layout?.cancel();layout?.clearSelection();return spec}

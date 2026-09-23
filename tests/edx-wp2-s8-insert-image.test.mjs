@@ -153,10 +153,19 @@ for (const snap of [false, true]) for (const kind of ['drag', 'resize']) test(`S
   assert.equal(node.dataset.pptskillGeometry, 'canonical'); assert.equal(node.dataset.effectTreatment, 'none');
   assert.equal(image.getAttribute('src'), png); assert.equal(image.getAttribute('alt'), request().value.component.alt); assert.equal(image.style.getPropertyValue('object-fit'), 'cover');
 });
-test('S8 descriptor 精確 image-only slide target、無 history 宣稱', () => {
+test('S8 descriptor 精確 image＋text oneOf slide target、無 history 宣稱', () => {
   const d = OPERATION_DESCRIPTORS['insert-element']; assert.ok(d);
   assert.deepEqual(d.allowedTargetRoles, ['slide']); assert.equal(d.undoable, false); assert.equal(d.destructive, false); assert.equal(d.confirmation, 'none');
   assert.deepEqual(json(mountedEditor(input()).api.operationDescriptors['insert-element']), d);
-  assert.equal(d.inputSchema.properties.value.properties.component.properties.type.const, 'image');
+  const variants = d.inputSchema.properties.value.properties.component.oneOf;
+  assert.equal(variants.length, 2);
+  assert.deepEqual(variants.map(v => v.properties.type.const), ['image', 'text']);
+  assert.deepEqual(variants[0].required, ['id', 'type', 'dataUri', 'alt']);
+  assert.deepEqual(Object.keys(variants[0].properties), ['id', 'type', 'dataUri', 'alt', 'fit']);
+  assert.deepEqual(variants[0].properties.fit.enum, ['contain', 'cover']);
+  assert.deepEqual(variants[1].required, ['id', 'type', 'text']);
+  assert.deepEqual(Object.keys(variants[1].properties), ['id', 'type', 'text']);
+  assert.deepEqual(variants[1].properties.text, { type: 'string', minLength: 1, maxLength: 500 });
+  for (const variant of variants) { assert.equal(variant.type, 'object'); assert.equal(variant.additionalProperties, false); assert.equal(variant.properties.id.pattern, '^[a-z0-9][a-z0-9._-]{0,79}$'); }
   for (const field of ['content', 'assets', 'geometry', 'overflow', 'portableSize']) assert.ok(d.qaInvalidation.includes(field));
 });
