@@ -34,3 +34,5 @@ S18保留固定candidate及待審卡，產品程式／ZIP不改；等待既有�
 ## 2026-09-24 接續裁決
 
 S18 Mainline產品review GO、正式host21+21／PGQ16／cleanup全PASS，diagnostic Repair1原Reviewer複審GO。詳evidence/edx-wp2-s18/mainline-closure.md；歷史內容不改寫。下一frontier為第1張Crop＋Evidence安全裁切，六張數目不變。未merge/push/deploy。
+
+第一張已啟動：tasks/edx-core-1-crop-evidence.md；branch codex/edx-core-crop-evidence，base01e89d1。只在同一卡先完成Crop/Evidence契約mapping，不把它算第七張。
