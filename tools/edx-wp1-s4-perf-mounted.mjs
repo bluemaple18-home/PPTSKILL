@@ -35,6 +35,21 @@ class Element {
     this.tag = tag; this.attrs = { ...attrs }; this.children = []; this.text = text; this.style = elementStyle(this); this.listeners = {};
     this.dataset = new Proxy({}, { get: (_, key) => this.attrs[attrName(key)], set: (_, key, value) => { this.attrs[attrName(key)] = String(value); return true; } });
   }
+  get open() { return 'open' in this.attrs; }
+  focus() { let root = this; while (root.parentElement) root = root.parentElement; root.activeElement = this; }
+  showModal() { if (!this.isConnected) throw new Error('dialog 未連接'); this.setAttribute('open', ''); }
+  close() { if (!this.open) return; this.removeAttribute('open'); for (const fn of this.listeners.close || []) fn({ target: this }); }
+  insertAdjacentHTML(position, html) {
+    if (position !== 'beforeend') throw new Error('替身僅支援 beforeend');
+    const stack = [this];
+    for (const token of html.match(/<[^>]+>|[^<]+/g) || []) {
+      if (token.startsWith('</')) { stack.pop(); continue; }
+      if (token.startsWith('<')) {
+        const tag = token.match(/^<([\w-]+)/)[1], attrs = Object.fromEntries([...token.matchAll(/([\w-]+)(?:="([^"]*)")?/g)].slice(1).map(m => [m[1], m[2] ?? '']));
+        const node = new Element(tag, attrs); stack.at(-1).append(node); if (!['input', 'br', 'img'].includes(tag)) stack.push(node);
+      } else stack.at(-1).text += token;
+    }
+  }
   get textContent() { return this.text + this.children.map(c => c.textContent).join(''); }
   set textContent(value) { this.text = String(value); this.children = []; }
   setAttribute(k, v) { this.attrs[k] = String(v); }
@@ -82,6 +97,7 @@ class Element {
 export function mountedEditor(input = fixture()) {
   const state = sanitizeDeckSpec(input), root = new Element('html'), body = new Element('body'), deck = new Element('main', { class: 'deck' });
   root.append(body); body.append(deck);
+  body.append(new Element('nav', { class: 'pptskill-editor', 'data-pptskill-editor': '' }));
   const tag = new Element('script', { id: 'deck-spec', type: 'application/json' }, JSON.stringify(state)); body.append(tag);
   for (const action of ['layout', 'snap-layout', 'initialize-layout', 'edit', 'move-up', 'move-down', 'duplicate', 'delete']) body.append(new Element('button', { 'data-action': action }));
   const alignToolbar = new Element('span', { 'data-pptskill-context-toolbar': '', hidden: '' }); alignToolbar.hidden = true; body.append(alignToolbar);

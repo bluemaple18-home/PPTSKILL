@@ -13,7 +13,7 @@ function setup(spec) {
   if (!spec) { spec = fixture(0); spec.slides.push({ ...structuredClone(spec.slides[0]), id: 'other' }); }
   const h = mountedEditor(spec);
   // 本測試補足實際 chrome 父容器；不改共用 mounted helper。
-  const toolbar = h.document.createElement('nav'); toolbar.setAttribute('data-pptskill-editor', ''); h.document.body.append(toolbar);
+  const toolbar = h.document.querySelector('[data-pptskill-editor]');
   for (const node of [...h.document.body.children]) if (node !== toolbar && (node.matches('button,span'))) toolbar.append(node);
   h.calls = 0; h.opens = 0;
   h.assets.optimizeFile = async f => { h.calls++; assert.equal(f, file); return result(); };
