@@ -1075,3 +1075,7 @@ WP2-S12 已依 Owner「推上去後繼續」整合：main/origin-main 實測 `18
 WP2-S13 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：candidate `9b7767d`，runtime `d4d83ac`；API text insertion，scoped83/full734、雙viewport63+63、PGQ單輪16、ZIP/source6/protected4/cleanup PASS；歷史I/O／harness observer FAIL與S9兼容修正保留。文字元件direct editing未納入。handoff_20260923_edx_wp2_s13_review.md；S13未merge/push/deploy，未開S14。
 
 WP2-S13 closure：clean native Independent GO，reviewed9b7767d，P0–P3全0；Reviewer fresh83／full兩批734／probe8，browser63+63及PGQ16為committed evidence核對。Source6/protected4/ZIP MATCH、reviewed code無drift；原始報告evidence/edx-wp2-s13/independent-review-evidence/review.md，Mainline closure見independent-review.md。S13可進整合gate；未merge/push/deploy，未開S14。main/origin-main仍18b1029。
+
+WP2-S13已依Owner授權FF/push main `b08c4d3`，遠端readback MATCH；詳evidence/edx-wp2-s13/mainline-integration.md。
+
+**WP2-S14 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** API-driven text-component edit-text；task tasks/edx-wp2-s14-edit-text-component.md。沿同一operation／stableID／S13文字政策／原renderer，保留S1 UI邊界；fresh scoped122/full763、ZIP、雙viewport各69、affected PGQ單輪16 PASS；candidate e595b84，source6/protected4/cleanup MATCH。harness-only geometry fixture修復與歷史FAIL完整保留；handoff_20260923_edx_wp2_s14_review.md。未merge/push/deploy S14、未開S15。

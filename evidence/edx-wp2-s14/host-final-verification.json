@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "productSha": "e595b84638da36fc73c2e6c7cc31ff1f05f57962",
+  "sources": 6,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2296447,
+    "sha256": "0749990f26a6f65619d23744802d38e67428a4c90ce99e52fd4891b65b27c74b"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 763,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 69,
+      "groups": {
+        "base": 10,
+        "wp2s8": 40,
+        "wp2s13": 13,
+        "wp2s14": 6
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s14Records": [
+        {
+          "wp2s14": "real-pointer-initialize-geometry",
+          "canonical": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          }
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": false,
+          "kind": "drag",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": false,
+          "kind": "resize",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": true,
+          "kind": "drag",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": true,
+          "kind": "resize",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "API-fixture-existing-new-crossslide-escape-setter-IME-offline",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1280-s14-edit-text-component.png",
+          "directEditable": false
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 69,
+      "groups": {
+        "base": 10,
+        "wp2s8": 40,
+        "wp2s13": 13,
+        "wp2s14": 6
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s14Records": [
+        {
+          "wp2s14": "real-pointer-initialize-geometry",
+          "canonical": {
+            "x": 800,
+            "y": 280,
+            "width": 640,
+            "height": 480
+          }
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": false,
+          "kind": "drag",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": false,
+          "kind": "resize",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": true,
+          "kind": "drag",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "real-pointer-preview-cancel",
+          "snap": true,
+          "kind": "resize",
+          "noOpPreserved": true,
+          "invalidPreserved": true
+        },
+        {
+          "wp2s14": "API-fixture-existing-new-crossslide-escape-setter-IME-offline",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1600-s14-edit-text-component.png",
+          "directEditable": false
+        }
+      ]
+    }
+  ],
+  "artifactHashesMatched": 30,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1280-s13-inserted-text-controls.png",
+      "sha256": "bfa175f2a4b1c23494bc16b2ae6a9a7aa9c3f7f7501407aeb0553f9d7571eb3e",
+      "bytes": 64356,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1280-s14-edit-text-component.png",
+      "sha256": "6f62a1f40685f84291dc5abc7ce1297ea115ff7b0c69929aea398ee3cde09946",
+      "bytes": 77548,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1280-s8-inserted-image-controls.png",
+      "sha256": "217a04c2e1ee98c911451c4a6538a2a9fd8347093450328f620e611dc6e553b0",
+      "bytes": 45828,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1280-selected.png",
+      "sha256": "c7632085640d3021dbf2c736e1f69b327c3cca4851d8477af40ef9f5a1c7a746",
+      "bytes": 46862,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1600-s13-inserted-text-controls.png",
+      "sha256": "ac5e079bba553b7ffa2316721086e3c631d69876dc8fa9f0f2fab9d676faa32c",
+      "bytes": 78864,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1600-s14-edit-text-component.png",
+      "sha256": "610568d6379669582c097280286dc8d65e29ce803f5e1acc542b3368a427d540",
+      "bytes": 94607,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1600-s8-inserted-image-controls.png",
+      "sha256": "a385c32900a092e351efa2d491565323fbf4d6cd2e848b3e93b82647fa7b9ca3",
+      "bytes": 54752,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s14/host-harness-repair/edit-text-component/1600-selected.png",
+      "sha256": "75435796aac8099952341bc9bfc0d99aae4591a1988d8b82756e2a98801681b8",
+      "bytes": 56854,
+      "dimensions": [
+        1600,
+        900
+      ]
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "limitations": [
+    "API-driven text-component edit-text；非新增contenteditable、文字toolbar、OSclipboard或原生IME驗收",
+    "固定插入geometry非自動避障；S8歷史I/O根因未知",
+    "Independent Review pending，未merge/push/deploy S14"
+  ]
+}

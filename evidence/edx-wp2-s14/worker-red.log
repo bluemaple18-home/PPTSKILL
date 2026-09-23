@@ -1,0 +1,288 @@
+✖ S14 Node existing／new／cross-slide text 精確保留與 shared codepoint policy (3.521667ms)
+✖ S14 Node exact data descriptors／getter0／hidden／symbol／prototype 拒絕 (2.094708ms)
+✖ S14 Node null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策 (0.364417ms)
+✖ S14 Node 無 geometry／非文字 type guard／reorder long IDs (0.466459ms)
+✖ S14 Node descriptor 僅 text component authority (1.85425ms)
+✖ S14 mounted existing／new／cross-slide text 精確保留與 shared codepoint policy (9.519333ms)
+✖ S14 mounted exact data descriptors／getter0／hidden／symbol／prototype 拒絕 (3.712625ms)
+✖ S14 mounted null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策 (2.382792ms)
+✖ S14 mounted 無 geometry／非文字 type guard／reorder long IDs (3.165042ms)
+✖ S14 mounted descriptor 僅 text component authority (2.587083ms)
+✖ S14 mounted snap=false drag invalid/noop 保留 preview；成功取消一次 revision (11.526416ms)
+✖ S14 mounted snap=false resize invalid/noop 保留 preview；成功取消一次 revision (8.61825ms)
+✖ S14 mounted snap=true drag invalid/noop 保留 preview；成功取消一次 revision (7.718041ms)
+✖ S14 mounted snap=true resize invalid/noop 保留 preview；成功取消一次 revision (6.878416ms)
+✔ S14 mounted missing failure canonical／DOM／root／revision／gesture rollback (8.327333ms)
+✔ S14 mounted duplicate-root failure canonical／DOM／root／revision／gesture rollback (7.546917ms)
+✔ S14 mounted duplicate-slide failure canonical／DOM／root／revision／gesture rollback (6.799666ms)
+✔ S14 mounted duplicate-target failure canonical／DOM／root／revision／gesture rollback (6.694833ms)
+✔ S14 mounted detached failure canonical／DOM／root／revision／gesture rollback (6.428459ms)
+✔ S14 mounted mismatch-text failure canonical／DOM／root／revision／gesture rollback (6.3655ms)
+✔ S14 mounted mismatch-target failure canonical／DOM／root／revision／gesture rollback (8.09175ms)
+✔ S14 mounted nested-element failure canonical／DOM／root／revision／gesture rollback (6.171083ms)
+✔ S14 mounted setter-before failure canonical／DOM／root／revision／gesture rollback (6.426375ms)
+✔ S14 mounted setter-after failure canonical／DOM／root／revision／gesture rollback (8.057166ms)
+✔ S14 mounted clean failure canonical／DOM／root／revision／gesture rollback (7.198458ms)
+✖ S14 mounted IME guard／未提交 role DOM 保留／component 不 directeditable／export reopen (3.661084ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 11
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 267.504167
+
+✖ failing tests:
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:16:3
+✖ S14 Node existing／new／cross-slide text 精確保留與 shared codepoint policy (3.521667ms)
+  Error: operation 不支援 target role：component
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:266:62)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:20:33)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:27:3
+✖ S14 Node exact data descriptors／getter0／hidden／symbol／prototype 拒絕 (2.094708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  4 !== 0
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:40:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:42:3
+✖ S14 Node null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策 (0.364417ms)
+  Error: operation 不支援 target role：component
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:266:62)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:44:119)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:49:3
+✖ S14 Node 無 geometry／非文字 type guard／reorder long IDs (0.466459ms)
+  Error: operation 不支援 target role：component
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:266:62)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:55:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:59:3
+✖ S14 Node descriptor 僅 text component authority (1.85425ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'title',
+      'subtitle',
+      'keyPoint',
+  -   'component'
+    ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:61:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'title', 'subtitle', 'keyPoint' ],
+    expected: [ 'title', 'subtitle', 'keyPoint', 'component' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:16:3
+✖ S14 mounted existing／new／cross-slide text 精確保留與 shared codepoint policy (9.519333ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:20:33)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:27:3
+✖ S14 mounted exact data descriptors／getter0／hidden／symbol／prototype 拒絕 (3.712625ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  4 !== 0
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:40:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 4,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:42:3
+✖ S14 mounted null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策 (2.382792ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:44:119)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:49:3
+✖ S14 mounted 無 geometry／非文字 type guard／reorder long IDs (3.165042ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:55:9)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:59:3
+✖ S14 mounted descriptor 僅 text component authority (2.587083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+
+    [
+      'title',
+      'subtitle',
+      'keyPoint',
+  -   'component'
+    ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:61:12)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'title', 'subtitle', 'keyPoint' ],
+    expected: [ 'title', 'subtitle', 'keyPoint', 'component' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:66:74
+✖ S14 mounted snap=false drag invalid/noop 保留 preview；成功取消一次 revision (11.526416ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:69:63)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:66:74
+✖ S14 mounted snap=false resize invalid/noop 保留 preview；成功取消一次 revision (8.61825ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:69:63)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:66:74
+✖ S14 mounted snap=true drag invalid/noop 保留 preview；成功取消一次 revision (7.718041ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:69:63)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:66:74
+✖ S14 mounted snap=true resize invalid/noop 保留 preview；成功取消一次 revision (6.878416ms)
+  Error: operation 不支援 target role：component
+      at executeOperation (evalmachine.<anonymous>:658:2404)
+      at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:69:63)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s14-edit-text-component.test.mjs:94:1
+✖ S14 mounted IME guard／未提交 role DOM 保留／component 不 directeditable／export reopen (3.661084ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /IME|組字/. Input:
+
+  'Error: operation 不支援 target role：component'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:97:38)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: operation 不支援 target role：component
+        at executeOperation (evalmachine.<anonymous>:658:2404)
+        at Object.executeOperation (evalmachine.<anonymous>:1168:202)
+        at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:97:57
+        at getActual (node:assert:586:5)
+        at strict.throws (node:assert:734:24)
+        at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s14-edit-text-component.test.mjs:97:38)
+        at Test.runInAsyncScope (node:async_hooks:226:14)
+        at Test.run (node:internal/test_runner/test:1201:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+        at Test.postRun (node:internal/test_runner/test:1330:19),
+    expected: /IME|組字/,
+    operator: 'throws',
+    diff: 'simple'
+  }

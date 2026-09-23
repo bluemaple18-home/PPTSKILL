@@ -1,0 +1,695 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/source.html",
+  "sourceSha256": "f5a45e67c59de9885c9a1db1c7620e6f182cc7f86b48f9f8df9d22d5c01e67a5",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s8": "API-driven-insert",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "fit": "contain"
+        },
+        {
+          "wp2s8": "API-driven-insert",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "fit": "cover"
+        },
+        {
+          "wp2s8": "API-driven-insert",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "fit": "cover"
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "contain",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": ".slide[data-slide-id=\"portable\"] [data-pptskill-element-id=\"component-inserted-image\"]",
+          "rect": {
+            "x": 536,
+            "y": 544,
+            "width": 192,
+            "height": 128
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": "[data-image-fit=\"cover\"]",
+          "rect": {
+            "x": 713.9375,
+            "y": 675.203125,
+            "width": 48,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": "[data-image-fit=\"contain\"]",
+          "rect": {
+            "x": 648.9375,
+            "y": 675.203125,
+            "width": 74,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "contain",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "invalid-zero-side-effects",
+          "error": "insert-element slide 或 duplicate component ID 無效。"
+        },
+        {
+          "wp2s8": "invalid-zero-side-effects",
+          "error": "找不到 slide。"
+        },
+        {
+          "wp2s8": "invalid-zero-side-effects",
+          "error": "geometry x 低於 minimum／safe area。"
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": ".slide[data-slide-id=\"portable\"] [data-pptskill-element-id=\"component-inserted-image\"]",
+          "rect": {
+            "x": 536,
+            "y": 544,
+            "width": 192,
+            "height": 128
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "invalid-zero-side-effects",
+          "error": "geometry x 低於 minimum／safe area。"
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "contain",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "real-pointer-geometry",
+          "kind": "drag",
+          "canonical": {
+            "x": 574,
+            "y": 616,
+            "width": 240,
+            "height": 160
+          },
+          "rect": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 240,
+            "height": 160
+          }
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": ".moveable-se",
+          "rect": {
+            "x": 651.2000122070312,
+            "y": 620.7999877929688,
+            "width": 14,
+            "height": 14
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "invalid-zero-side-effects",
+          "error": "geometry x 低於 minimum／safe area。"
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "contain",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "real-pointer-geometry",
+          "kind": "resize",
+          "canonical": {
+            "x": 574,
+            "y": 616,
+            "width": 264,
+            "height": 176
+          },
+          "rect": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 263.984375,
+            "height": 175.99609375
+          }
+        },
+        {
+          "wp2s8": "trusted-pointer",
+          "events": [
+            {
+              "trusted": true,
+              "target": ""
+            },
+            {
+              "trusted": true,
+              "target": "component-asset-second"
+            },
+            {
+              "trusted": true,
+              "target": "component-inserted-image"
+            },
+            {
+              "trusted": true,
+              "target": "cover"
+            },
+            {
+              "trusted": true,
+              "target": "contain"
+            },
+            {
+              "trusted": true,
+              "target": "component-inserted-image"
+            },
+            {
+              "trusted": true,
+              "target": "component-inserted-image"
+            },
+            {
+              "trusted": true,
+              "target": "component-inserted-image"
+            },
+            {
+              "trusted": true,
+              "target": "moveable-control moveable-direction moveable-se moveable-resizable"
+            }
+          ]
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "contain",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": ".slide[data-slide-id=\"portable\"] [data-pptskill-element-id=\"component-inserted-image\"]",
+          "rect": {
+            "x": 564.78125,
+            "y": 563.1953125,
+            "width": 211.1875,
+            "height": 140.796875
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "pointer-hit",
+          "selector": "[data-image-fit=\"cover\"]",
+          "rect": {
+            "x": 1228,
+            "y": 675.203125,
+            "width": 48,
+            "height": 33.59375
+          },
+          "hit": true
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-second",
+          "slideId": "portable",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "decoded-image",
+          "id": "inserted-image",
+          "slideId": "asset-other",
+          "decoded": [
+            3,
+            2
+          ],
+          "fit": "cover",
+          "roots": 1
+        },
+        {
+          "wp2s8": "export-offline-reopen",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s8-inserted-image-controls.png",
+          "uniqueRoot": true,
+          "insertion": "API-driven",
+          "interaction": "real-pointer",
+          "preserved": [
+            "old-nodes",
+            "first-image",
+            "other-slide",
+            "typography",
+            "motion",
+            "slots",
+            "style"
+          ]
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "inserted-text",
+          "slideId": "portable"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "play-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "layout-text",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-escape-cross-slide-modes",
+          "textComponentDirectEditing": false,
+          "inheritedEditable": false
+        },
+        {
+          "wp2s13": "API-fixture-invalid-atomic",
+          "calls": 0,
+          "rejected": 10,
+          "total": 10,
+          "unchanged": true
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": false
+        },
+        {
+          "wp2s13": "API-fixture-append-rollback",
+          "after": true
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "drag",
+          "actual": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 420,
+            "height": 160
+          }
+        },
+        {
+          "wp2s13": "real-pointer-geometry",
+          "kind": "resize",
+          "actual": {
+            "x": 573.984375,
+            "y": 615.99609375,
+            "width": 443.984375,
+            "height": 175.99609375
+          }
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "cancel-preview",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "real-pointer-keyboard-preview-cancel",
+          "trusted": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "key": ""
+            },
+            {
+              "type": "keydown",
+              "trusted": true,
+              "key": "Escape"
+            }
+          ]
+        },
+        {
+          "wp2s13": "API-fixture-insert",
+          "id": "offline-reinsert",
+          "slideId": "asset-other"
+        },
+        {
+          "wp2s13": "API-fixture-export-offline-reinsert",
+          "screenshot": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s13-inserted-text-controls.png",
+          "geometry": true,
+          "directEditable": false
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-legacy-selected.html",
+          "bytes": 531776,
+          "sha256": "c29cdb756df5d5a8c5075174aa52032c5c084d2753d7d5d41462d02122ffeb11"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-preview-export.html",
+          "bytes": 532063,
+          "sha256": "74db47065f1aeeaeaef0566dd619b921e1bc367ab176b6ccbc45b2022b5ff767"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-cancel.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-noop.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-invalid.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-invalid-resize.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-play-mode.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-export.html",
+          "bytes": 532063,
+          "sha256": "bb47b3cae881454d476ce7d2236c1a12e1c7f9efdd05d2568fc296fbd5d5dc3a"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-reopen-export.html",
+          "bytes": 532063,
+          "sha256": "cb221a68d37643d1301b6ad104d10b1f80b917d86e91eb92d385b61dd73db0db"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s8-inserted-image-controls.png",
+        {
+          "label": "s8-insert-image",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s8-insert-image.html",
+          "bytes": 534785,
+          "sha256": "7049761ff60b05800a3b3d1a0280e8a43a115900ef5dc3d1ef64d49a5d7b3f2b"
+        },
+        {
+          "label": "s8-insert-image-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s8-insert-image-offline.html",
+          "bytes": 534781,
+          "sha256": "543d145afff3a09c10564242c138963f3687da94665039c9fda9dda501a0ea39"
+        },
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s13-inserted-text-controls.png",
+        {
+          "label": "s13-insert-text",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s13-insert-text.html",
+          "bytes": 535157,
+          "sha256": "679a5000d1af351f84dc79908325abb49351442ca104490e0b3975580f51313f"
+        },
+        {
+          "label": "s13-insert-text-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s14/host-acceptance/edit-text-component/1280-s13-insert-text-offline.html",
+          "bytes": 536020,
+          "sha256": "f05140cfafeac57131a56556183d3d722108dc2b2846dcd84d0dc2c2c75d455c"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at start (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s14-browser-cases.mjs:48:28)\n    at async runEditTextComponentBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s14-browser-cases.mjs:55:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:212:70",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at start (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s14-browser-cases.mjs:48:28)\n    at async runEditTextComponentBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s14-browser-cases.mjs:55:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:212:70"
+}

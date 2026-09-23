@@ -1,6 +1,6 @@
 # EDX-WP2-S14 — API-driven 文字元件 edit-text
 
-Status: IN_PROGRESS
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Base/main/origin-main: b08c4d34cb7ff950a6bf0ab70f4fe172f270f186（S13 GO closure已FF/push/readback MATCH）
 Branch: codex/edx-wp2-s14-edit-text-component
 traces_to: BACKLOG §10.1 decisions2/3/7/8、§10.3 WP2、§10.4 edit-text。
@@ -30,3 +30,7 @@ PGQ四支content-integrity/sample-approval/full-deck-qa/required-visibility串�
 ## Routing／交付
 
 標準bounded extension，單一clean native Worker fork_context=false、medium inherited model（工具無指定低階lane，不冒稱Terra）；shared sequential product writer。Mainline同步備驗收/control，不平行改product。Worker只scoped，不跑browser/PGQ/full/ZIP、不commit/merge/push/deploy/子agent。同類兩次無進展停、Repair2回Owner成本裁決。最後停review candidate，不把Mainline驗收稱IndependentGO。回退可revertS14 commits，S13主線不改寫。
+
+## 驗收交付
+
+Candidate `e595b84638da36fc73c2e6c7cc31ff1f05f57962`；scoped122/full763、雙viewport各69、PGQ單輪16、source6/protected4/ZIP/cleanup PASS。首輪fixture FAIL與harness-only修復完整保留。詳evidence/edx-wp2-s14/receipt.md與handoff_20260923_edx_wp2_s14_review.md。尚非Independent GO；未merge/push/deploy、未開S15。
