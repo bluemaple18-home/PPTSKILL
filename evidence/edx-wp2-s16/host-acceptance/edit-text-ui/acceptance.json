@@ -1,0 +1,200 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/source.html",
+  "sourceSha256": "3132d1d7c391f2969c98f108c719f1e6a45ea649bc70e0572963968a45f42cc9",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s16": "play/edit/空選/role/image不顯示action",
+          "kind": "真 pointer；S13 API 建立 fixture"
+        },
+        {
+          "wp2s16": "多選隱藏action",
+          "kind": "真 Shift pointer"
+        },
+        {
+          "wp2s16": "精確預填、draft不改canonical/DOM、無contenteditable",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "儲存只改text、保留root/node/geometry與其他欄位、HTML-like純文字",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "same-value no-op保留selection/DOM",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "cancel清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "Escape清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 0 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "500 emoji不以UTF16截短",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "真Enter換行、不自動提交",
+          "kind": "CDP keyboard"
+        },
+        {
+          "wp2s16": "IME submit/Escape guard",
+          "kind": "synthetic CompositionEvent lifecycle＋真 keyboard；非OS IME"
+        },
+        {
+          "wp2s16": "另一operation改text使舊draft失效",
+          "kind": "S14 API synthetic競態 fixture"
+        },
+        {
+          "wp2s16": "geometry更新保留、UI edit不覆蓋",
+          "kind": "API move fixture＋真UI save"
+        },
+        {
+          "wp2s16": "node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "離開layout清draft",
+          "kind": "programmatic mode invalidation"
+        },
+        {
+          "wp2s16": "focusin跨頁不寫舊draft",
+          "kind": "synthetic focusin"
+        },
+        {
+          "wp2s16": "showModal failure回收可重開",
+          "kind": "synthetic fault＋真UI"
+        },
+        {
+          "wp2s16": "同步重入只投影一次",
+          "kind": "synthetic setter＋真UI submit"
+        },
+        {
+          "wp2s16": "共用dialog edit→insert mode復原及modal互斥",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "image chooser互斥",
+          "kind": "真CDP chooser＋synthetic cancel／disabled click"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-legacy-selected.html",
+          "bytes": 542888,
+          "sha256": "1758dded006ddf4b07b2fe1cb3473f83a54e782b2128eb2899b821c1e8d26568"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-preview-export.html",
+          "bytes": 543175,
+          "sha256": "c3ba4b918bef5be77c46a6266257ec3eefe4333a301c796cefc000dfc3786c07"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-cancel.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-noop.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-invalid.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-invalid-resize.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-play-mode.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-export.html",
+          "bytes": 543175,
+          "sha256": "7b6e33c38f2c16895f52d0e6b247605c8c8cef32581c8b7e03afacd7168c97e7"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-reopen-export.html",
+          "bytes": 543175,
+          "sha256": "d9325b8f5a8c7548e2f2e7455b2abcf3fa6fedeb8eef24dd4518a7a4f3119de6"
+        },
+        {
+          "label": "s16-toolbar",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-s16-toolbar.png",
+          "bytes": 66822,
+          "sha256": "5aa4c6744d84d883312cfa9e66126b6eb8dbaa7e8ae11b26c32af80c23fdc7be"
+        },
+        {
+          "label": "s16-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-acceptance/edit-text-ui/1280-s16-dialog.png",
+          "bytes": 65104,
+          "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at runEditTextUIBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s16-browser-cases.mjs:70:72)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:221:63",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at runEditTextUIBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s16-browser-cases.mjs:70:72)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:221:63"
+}

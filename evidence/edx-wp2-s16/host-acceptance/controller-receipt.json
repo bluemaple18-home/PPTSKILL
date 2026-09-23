@@ -1,0 +1,51 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s16-edit-text-ui.test.mjs": true,
+      "tools/edx-wp2-s16-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2298456,
+      "sha256": "0750c11795e19c0ec6d9653ba787a0e2cecabca84514a7ca3eb6b510cd55d6f9"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 93818,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-735e7807dc04493e9a25fe8458a6777b",
+  "editTextUiStarted": true,
+  "editTextUiExit": 1,
+  "error": "Traceback (most recent call last):\n  File \"/private/tmp/pptskill-s16-host-controller.py\", line 60, in <module>\n    if run.returncode: raise RuntimeError(key+' 驗收失敗；停止後續步驟')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: editTextUi 驗收失敗；停止後續步驟\n",
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s16-edit-text-ui.test.mjs": true,
+      "tools/edx-wp2-s16-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2298456,
+      "sha256": "0750c11795e19c0ec6d9653ba787a0e2cecabca84514a7ca3eb6b510cd55d6f9"
+    }
+  },
+  "status": "NOT_PASS"
+}

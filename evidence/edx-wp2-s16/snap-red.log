@@ -1,0 +1,130 @@
+✔ S16 markup 單一 shared dialog 與 context action (1.133291ms)
+✔ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (49.677625ms)
+✔ S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留 (18.576375ms)
+✔ S16 same-value no-op 保留 revision DOM selection (13.266875ms)
+✔ S16 invalid empty 保留 draft 可 retry (15.199542ms)
+✔ S16 invalid 501字 保留 draft 可 retry (14.687333ms)
+✔ S16 invalid 501� 保留 draft 可 retry (14.62925ms)
+✔ S16 500 emoji codepoints 不以 UTF16 截短 (14.001625ms)
+✔ S16 cancel button 清 draft 保留 selection focus (11.695792ms)
+✔ S16 cancel escape 清 draft 保留 selection focus (11.128625ms)
+✔ S16 cancel native 清 draft 保留 selection focus (10.719375ms)
+✔ S16 stale text 不寫舊 draft (13.078291ms)
+✔ S16 stale node 不寫舊 draft (13.200875ms)
+✔ S16 stale root 不寫舊 draft (11.921875ms)
+✔ S16 stale removed 不寫舊 draft (12.077584ms)
+✔ S16 stale duplicate-node 不寫舊 draft (13.265542ms)
+✔ S16 stale duplicate-root 不寫舊 draft (12.21525ms)
+✔ S16 stale identity 不寫舊 draft (13.334708ms)
+✔ S16 stale selection 不寫舊 draft (13.350208ms)
+✔ S16 stale mode 不寫舊 draft (13.01025ms)
+✔ S16 stale slide 不寫舊 draft (13.606125ms)
+✔ S16 geometry 更新不失效且 save 不覆蓋 (14.196ms)
+✔ S16 synthetic IME submit／Escape guard 與 Enter 不提交 (13.1485ms)
+✔ S16 showModal throw 回收並可 retry (11.663625ms)
+✔ S16 insert→edit→insert mode 復原及重入拒絕 (18.58975ms)
+✔ S16 同步 reentrant projection 只提交一次 (15.275291ms)
+✔ S16 chooser 互斥與 pointerdown 取消 gesture (22.8885ms)
+✔ S16 export draft 不提交／offline UI edit／remount 不重複 (30.415875ms)
+✖ S16 snap=false gesture=false 開啟保留編輯identity且release不commit (12.349583ms)
+✖ S16 snap=false gesture=true 開啟保留編輯identity且release不commit (11.46525ms)
+✖ S16 snap=true gesture=false 開啟保留編輯identity且release不commit (10.876292ms)
+✖ S16 snap=true gesture=true 開啟保留編輯identity且release不commit (12.091541ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 28
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 613.46
+
+✖ failing tests:
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:61:72
+✖ S16 snap=false gesture=false 開啟保留編輯identity且release不commit (12.349583ms)
+  AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:
+
+  [
+    'component-s16-text'
+  ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:66:45)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'component-s16-text' ],
+    expected: [ 'component-s16-text' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:61:72
+✖ S16 snap=false gesture=true 開啟保留編輯identity且release不commit (11.46525ms)
+  AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:
+
+  [
+    'component-s16-text'
+  ]
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:66:45)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'component-s16-text' ],
+    expected: [ 'component-s16-text' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:61:72
+✖ S16 snap=true gesture=false 開啟保留編輯identity且release不commit (10.876292ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:66:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:61:72
+✖ S16 snap=true gesture=true 開啟保留編輯identity且release不commit (12.091541ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:66:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

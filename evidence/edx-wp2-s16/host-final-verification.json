@@ -1,0 +1,465 @@
+{
+  "status": "PASS",
+  "productSha": "f5db0c03b61bbcbb2285f95562d8a3ef986a9ee0",
+  "sources": 4,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2298511,
+    "sha256": "a26d5bc80044afb2c2cd9c00eb31b715d38fdf704846b9670761e1a404d101bd"
+  },
+  "zipRuntimeByteMatch": true,
+  "scopedPass": 260,
+  "fullNonbrowserPass": 821,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 42,
+      "groups": {
+        "base": 10,
+        "wp2s16": 32
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s16Records": [
+        {
+          "wp2s16": "play/edit/空選/role/image不顯示action",
+          "kind": "真 pointer；S13 API 建立 fixture"
+        },
+        {
+          "wp2s16": "多選隱藏action",
+          "kind": "真 Shift pointer"
+        },
+        {
+          "wp2s16": "精確預填、draft不改canonical/DOM、無contenteditable",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "儲存只改text、保留root/node/geometry與其他欄位、HTML-like純文字",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "same-value no-op保留selection/DOM",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "cancel清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "Escape清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 0 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "500 emoji不以UTF16截短",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "真Enter換行、不自動提交",
+          "kind": "CDP keyboard"
+        },
+        {
+          "wp2s16": "IME submit/Escape guard",
+          "kind": "synthetic CompositionEvent lifecycle＋真 keyboard；非OS IME"
+        },
+        {
+          "wp2s16": "另一operation改text使舊draft失效",
+          "kind": "S14 API synthetic競態 fixture"
+        },
+        {
+          "wp2s16": "geometry更新保留、UI edit不覆蓋",
+          "kind": "API move fixture＋真UI save"
+        },
+        {
+          "wp2s16": "node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "離開layout清draft",
+          "kind": "programmatic mode invalidation"
+        },
+        {
+          "wp2s16": "focusin跨頁不寫舊draft",
+          "kind": "synthetic focusin"
+        },
+        {
+          "wp2s16": "showModal failure回收可重開",
+          "kind": "synthetic fault＋真UI"
+        },
+        {
+          "wp2s16": "同步重入只投影一次",
+          "kind": "synthetic setter＋真UI submit"
+        },
+        {
+          "wp2s16": "共用dialog edit→insert mode復原及modal互斥",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "image chooser互斥",
+          "kind": "真CDP chooser＋synthetic cancel／disabled click"
+        },
+        {
+          "wp2s16": "snap=false gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=false dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "snap=true gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=true dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "export不commit／不漏draft或dialog",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline重開以同UI編輯",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline remount單一dialog/action與再次匯出",
+          "kind": "real CDP pointer／Input.insertText"
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 42,
+      "groups": {
+        "base": 10,
+        "wp2s16": 32
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s16Records": [
+        {
+          "wp2s16": "play/edit/空選/role/image不顯示action",
+          "kind": "真 pointer；S13 API 建立 fixture"
+        },
+        {
+          "wp2s16": "多選隱藏action",
+          "kind": "真 Shift pointer"
+        },
+        {
+          "wp2s16": "精確預填、draft不改canonical/DOM、無contenteditable",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "儲存只改text、保留root/node/geometry與其他欄位、HTML-like純文字",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "same-value no-op保留selection/DOM",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "cancel清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "Escape清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 0 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "500 emoji不以UTF16截短",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "真Enter換行、不自動提交",
+          "kind": "CDP keyboard"
+        },
+        {
+          "wp2s16": "IME submit/Escape guard",
+          "kind": "synthetic CompositionEvent lifecycle＋真 keyboard；非OS IME"
+        },
+        {
+          "wp2s16": "另一operation改text使舊draft失效",
+          "kind": "S14 API synthetic競態 fixture"
+        },
+        {
+          "wp2s16": "geometry更新保留、UI edit不覆蓋",
+          "kind": "API move fixture＋真UI save"
+        },
+        {
+          "wp2s16": "node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "離開layout清draft",
+          "kind": "programmatic mode invalidation"
+        },
+        {
+          "wp2s16": "focusin跨頁不寫舊draft",
+          "kind": "synthetic focusin"
+        },
+        {
+          "wp2s16": "showModal failure回收可重開",
+          "kind": "synthetic fault＋真UI"
+        },
+        {
+          "wp2s16": "同步重入只投影一次",
+          "kind": "synthetic setter＋真UI submit"
+        },
+        {
+          "wp2s16": "共用dialog edit→insert mode復原及modal互斥",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "image chooser互斥",
+          "kind": "真CDP chooser＋synthetic cancel／disabled click"
+        },
+        {
+          "wp2s16": "snap=false gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=false dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "snap=true gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=true dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "export不commit／不漏draft或dialog",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline重開以同UI編輯",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline remount單一dialog/action與再次匯出",
+          "kind": "real CDP pointer／Input.insertText"
+        }
+      ]
+    }
+  ],
+  "artifactHashesMatched": 26,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-s16-toolbar.png",
+      "sha256": "5aa4c6744d84d883312cfa9e66126b6eb8dbaa7e8ae11b26c32af80c23fdc7be",
+      "bytes": 66822,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-s16-dialog.png",
+      "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6",
+      "bytes": 65104,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-s16-toolbar.png",
+      "sha256": "1b76c543bc4c15b21f3302a5336de2a0cc30a3848b4a8b23b439b0507471af07",
+      "bytes": 81800,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-s16-dialog.png",
+      "sha256": "8f4b7831106b7f84db6f7efa60795d73cb9a3f9367acba36dc7fd0b3a24e34b7",
+      "bytes": 81477,
+      "dimensions": [
+        1600,
+        900
+      ]
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "limitations": [
+    "context dialog編輯，不是direct inline/contenteditable；IME僅synthetic CompositionEvent lifecycle，非OS IME",
+    "固定geometry不提供自動縮字／避障",
+    "Independent Review pending，未merge/push/deploy S16"
+  ],
+  "history": [
+    "Worker usage limit中止，主線接續；原RED與中間FAIL保留",
+    "首輪1280在35records後gesture synthetic click FAIL；harness真pointer retry雙viewport39 PASS，但主線發現snap-on產品缺口後主動中止PGQ，cleanup PASS",
+    "snap regression RED及VM Array fixture scoped256/260、full817/821 FAIL保留；新產品修復後fresh260/821及final browser/PGQ驗收"
+  ]
+}

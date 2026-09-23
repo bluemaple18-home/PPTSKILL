@@ -1,0 +1,177 @@
+[
+  {
+    "path": "before-snap-build-dist.log",
+    "rawSha256": "b2f7b91117e0643981df216549493c8adb7675de3b0515dd705451318c767ebe",
+    "gzipSha256": "11ec240b33522156444033e22c9e79f1fbe2153bb77d1282e0fbb62a604962cb"
+  },
+  {
+    "path": "before-snap-distribution-probe.log",
+    "rawSha256": "06d747434cbbd05b1a1b85bcb6adeb40e4eafbf290660a332da5dcd698505de2",
+    "gzipSha256": "48260c47b95cc61374cf9a0805470d0a104a3b12d856f56a6ae75c22a38e7fc8"
+  },
+  {
+    "path": "before-snap-nonbrowser.log",
+    "rawSha256": "61417b56448062a06b40dc4fea0174797d3d773f006044ba43d11bc75e9ca626",
+    "gzipSha256": "c64b892d1b5146b982cc58f1f6095fc38643ffbe87c7ca6bec1ab7a0973c6de5"
+  },
+  {
+    "path": "build-dist.log",
+    "rawSha256": "d8983127043af3d3be6b9361c8de78d0d41700597c068f5bfdfaadce695a560e",
+    "gzipSha256": "3abb57db5a9b80486248a46b78444c3e542a811e541eaf70afd808b30e8bfb1b"
+  },
+  {
+    "path": "distribution-probe.log",
+    "rawSha256": "74f7e41870194a4fed5fba1d91bcf4634ca7b8ee564f077b82fb3662ecefbf1c",
+    "gzipSha256": "9752fb0a158bcd5f693e00e970a4fe792675614df175d12e5a4390e6829bbc15"
+  },
+  {
+    "path": "host-acceptance/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/editTextUi.log",
+    "rawSha256": "766ecb56d84043174d75a24effd3b385653b106ed4bcd5a2696467f211ce398e",
+    "gzipSha256": "430f5e3fbead949826713c5671240ca33f64152ec2351925b406c437408e068b"
+  },
+  {
+    "path": "host-acceptance/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-acceptance/launcher.stdout",
+    "rawSha256": "dd2384ed18b70ab9c9aa3a7097c8ebaffec5a627ae5a66e56744da0ba77202f8",
+    "gzipSha256": "cddd7468e12a3e8575fad5fbd7a02cf03ceacfb8344885efb6dd81fb8ab8377d"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stderr.log",
+    "rawSha256": "14866bd6de8466352da00788d922638a25c7e39c65e148c787b1e3aed61eb6da",
+    "gzipSha256": "db77a0de2f6cd7b85097c54b99489f39ec8a0be59a770779d2d0a90564dc48f5"
+  },
+  {
+    "path": "host-acceptance/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-pointer-retry/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-pointer-retry/editTextUi.log",
+    "rawSha256": "bd4b2ca0390fc25b9b906c4d642005cf3b615203bdf1642c9ce4cd0c1c21e073",
+    "gzipSha256": "5cde46180e1afb7482c440809156ef63cc57ca4006449791e04b90b8506c269a"
+  },
+  {
+    "path": "host-pointer-retry/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-pointer-retry/launcher.stdout",
+    "rawSha256": "f54b45dba395effaa6fde5b3161eba04fd9efe5ea752deadc0b6ec1799575fd9",
+    "gzipSha256": "a89b94ca57023a4ea6f4fda3172aad630a3972e0a893d451128ce6c50eb62ed7"
+  },
+  {
+    "path": "host-pointer-retry/lifecycle/evidence/stderr.log",
+    "rawSha256": "7854857a4561ad71eed2a6f1f4af473714ddf000be75bf7b4742b7a8dd57e346",
+    "gzipSha256": "3b833bdf2c1c7ff28f5d50288fa5ae7f148919f17b38fae396f6df5227577a00"
+  },
+  {
+    "path": "host-pointer-retry/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-pointer-retry/pgq.log",
+    "rawSha256": "ad5c5753d8fc1960c4028590d84819946d614a080ef4ca8380b53d640c488f26",
+    "gzipSha256": "902302b0291a4ffb312427bbc48daa7ed0a7835966b811ba779a63e7256b633f"
+  },
+  {
+    "path": "host-snap-repair/browser-close.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-snap-repair/editTextUi.log",
+    "rawSha256": "f210201dcac262a49e4ad74ec050ea8e38d8fab26cf6df676bc1d34016bb7f13",
+    "gzipSha256": "72fcb3e7aafbb277e10fe6245701f9a0998176b383e438929b98c1a11c1406e8"
+  },
+  {
+    "path": "host-snap-repair/launcher.stderr",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-snap-repair/launcher.stdout",
+    "rawSha256": "ad0d3e632f4b6836b5abbcb3cbd5281586eb2969c18e1117580499a7140e83ab",
+    "gzipSha256": "b766a53797bb3f43dd86bb37d3ce8995c407e8fa9d3375fdc634754920d6ec97"
+  },
+  {
+    "path": "host-snap-repair/lifecycle/evidence/stderr.log",
+    "rawSha256": "dd5619466d51c1c7aa2ba1eab3786347531a530213bf01903dcd5337eae6ee23",
+    "gzipSha256": "1e216de5b04ebb0326d7e517872314e2169da4cf3045e7b292b842b457a920e6"
+  },
+  {
+    "path": "host-snap-repair/lifecycle/evidence/stdout.log",
+    "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "gzipSha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+  },
+  {
+    "path": "host-snap-repair/pgq.log",
+    "rawSha256": "6e6ad54f9d9d0f345f3f02b7a27198db7177c280cab616365c25d1abaa501abe",
+    "gzipSha256": "2e93ef6c2ca4d5413f7809fd71a0ea030bfaaacc8761cbd5446ed2214ba775e5"
+  },
+  {
+    "path": "nonbrowser-snap-fixture-fail.log",
+    "rawSha256": "6e939c16faa8de0ce768e0a53b74eb2cf048f6908316c85e632257bb07e94fde",
+    "gzipSha256": "165673dc7391075d37f4e5196ddd91fb907a285bddde1b6f58bb196fa97d6c85"
+  },
+  {
+    "path": "nonbrowser.log",
+    "rawSha256": "8fb54b1c70b3b3da09f8110bbcdaaad107a379ae813efb37bc610fca1e5ed191",
+    "gzipSha256": "f133f6c9264c2a95fb4e7c0927f502888674917ee64967402647ac9752a5cf5c"
+  },
+  {
+    "path": "scoped-snap-fixture-fail.log",
+    "rawSha256": "015d39d723615929d1d59beb7f7658ce0f0cfe87786947c1dd84614517c88bf1",
+    "gzipSha256": "a870ebf479fbc9fba9cb68a871520af06ba3f1f27a15f5f536a6e82c32627c4d"
+  },
+  {
+    "path": "scoped-snap-repair.log",
+    "rawSha256": "e82ea98d71201bcb8e8360803bf5dee5c52b482643bfa67121872cc373a2a1fc",
+    "gzipSha256": "d3cc3866384fe66d43f58cfa389c3419766bbf36f25e385bc851d454ac2fc9d6"
+  },
+  {
+    "path": "scoped.log",
+    "rawSha256": "e6b74609899e04dd4f32bee3f6b6db8026359950e7a9e51c78f0004c708986ef",
+    "gzipSha256": "5b9812f4b65879c8452f73e3c73cd9c843e7eef2f037e1432eada0a9df5b2a65"
+  },
+  {
+    "path": "snap-red.log",
+    "rawSha256": "18dd7e912cadb7483182deded6ff01f8cd6dfc0480831899f1b0160fd162a885",
+    "gzipSha256": "080c8bab3d5a42a794ff6c113a6108ab7ecd6ee3910b23efb50514ae0ccbaea1"
+  },
+  {
+    "path": "worker-green-attempt1.log",
+    "rawSha256": "9e529c0dea524d9cc0fd76f503a0c43694536e1c3d4aac447e5703009e02f34f",
+    "gzipSha256": "405d513753f1c2469c2a33cf69d72ac06a7278739bbe386727c59ec77a8d64f5"
+  },
+  {
+    "path": "worker-green-attempt2.log",
+    "rawSha256": "94a0492202db9ccc16e5aec358903ba6baae2347ae2cc13ce40a8228b7202441",
+    "gzipSha256": "673ea3e48364cc7a834cfb369f006d12e0a905fde8bdc9128ca7edd13417d1eb"
+  },
+  {
+    "path": "worker-green.log",
+    "rawSha256": "7c33f44dabcfa40fce58d087b24068222d08100b3205e2581edc56217f7e89cb",
+    "gzipSha256": "889a194b16c2c74f8210d940bed4384ae6ddc8b3380763b075f887d2426e1743"
+  },
+  {
+    "path": "worker-red.log",
+    "rawSha256": "a4797abe7b18fec4e251b82d491be52ac02ce2449fddf6da0c9fc7d67aeb1f49",
+    "gzipSha256": "863c8dd64e3b521bbe5c62253502b145c7a7b735a4ec5fb4ee1a03e4f3e42b31"
+  }
+]

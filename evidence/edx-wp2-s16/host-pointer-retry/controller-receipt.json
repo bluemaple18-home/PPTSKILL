@@ -1,0 +1,52 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s16-edit-text-ui.test.mjs": true,
+      "tools/edx-wp2-s16-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2298456,
+      "sha256": "0750c11795e19c0ec6d9653ba787a0e2cecabca84514a7ca3eb6b510cd55d6f9"
+    }
+  },
+  "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+  "supervisorPid": 96840,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-a451c6f764724060a70fd534245520d3",
+  "editTextUiStarted": true,
+  "editTextUiExit": 0,
+  "pgqStarted": true,
+  "error": "Traceback (most recent call last):\n  File \"/private/tmp/pptskill-s16-host-pointer-retry.py\", line 57, in <module>\n    run=subprocess.run(args,cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,timeout=limit)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matt/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 550, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matt/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 1209, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matt/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 2141, in _communicate\n    self.wait(timeout=self._remaining_time(endtime))\n  File \"/Users/matt/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 1264, in wait\n    return self._wait(timeout=timeout)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/matt/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/lib/python3.11/subprocess.py\", line 2047, in _wait\n    time.sleep(delay)\nKeyboardInterrupt\n",
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s16-edit-text-ui.test.mjs": true,
+      "tools/edx-wp2-s16-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2298456,
+      "sha256": "0750c11795e19c0ec6d9653ba787a0e2cecabca84514a7ca3eb6b510cd55d6f9"
+    }
+  },
+  "status": "NOT_PASS"
+}

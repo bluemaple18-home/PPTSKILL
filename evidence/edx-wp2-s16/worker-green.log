@@ -1,0 +1,36 @@
+✔ S16 markup 單一 shared dialog 與 context action (1.064958ms)
+✔ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (52.907291ms)
+✔ S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留 (18.37575ms)
+✔ S16 same-value no-op 保留 revision DOM selection (13.572959ms)
+✔ S16 invalid empty 保留 draft 可 retry (15.11875ms)
+✔ S16 invalid 501字 保留 draft 可 retry (15.284791ms)
+✔ S16 invalid 501� 保留 draft 可 retry (14.938834ms)
+✔ S16 500 emoji codepoints 不以 UTF16 截短 (17.424042ms)
+✔ S16 cancel button 清 draft 保留 selection focus (15.046333ms)
+✔ S16 cancel escape 清 draft 保留 selection focus (11.5555ms)
+✔ S16 cancel native 清 draft 保留 selection focus (18.178209ms)
+✔ S16 stale text 不寫舊 draft (18.699042ms)
+✔ S16 stale node 不寫舊 draft (14.498917ms)
+✔ S16 stale root 不寫舊 draft (11.702625ms)
+✔ S16 stale removed 不寫舊 draft (12.772625ms)
+✔ S16 stale duplicate-node 不寫舊 draft (13.195125ms)
+✔ S16 stale duplicate-root 不寫舊 draft (13.008333ms)
+✔ S16 stale identity 不寫舊 draft (11.356792ms)
+✔ S16 stale selection 不寫舊 draft (13.543625ms)
+✔ S16 stale mode 不寫舊 draft (14.64425ms)
+✔ S16 stale slide 不寫舊 draft (15.293208ms)
+✔ S16 geometry 更新不失效且 save 不覆蓋 (14.162667ms)
+✔ S16 synthetic IME submit／Escape guard 與 Enter 不提交 (13.36075ms)
+✔ S16 showModal throw 回收並可 retry (11.426292ms)
+✔ S16 insert→edit→insert mode 復原及重入拒絕 (19.932542ms)
+✔ S16 同步 reentrant projection 只提交一次 (14.935625ms)
+✔ S16 chooser 互斥與 pointerdown 取消 gesture (27.554417ms)
+✔ S16 export draft 不提交／offline UI edit／remount 不重複 (33.077834ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 597.259459

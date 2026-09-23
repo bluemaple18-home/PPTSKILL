@@ -1,0 +1,80 @@
+✔ S16 markup 單一 shared dialog 與 context action (1.075875ms)
+✖ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (27.420416ms)
+✔ S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留 (20.122167ms)
+✔ S16 same-value no-op 保留 revision DOM selection (13.330084ms)
+✔ S16 invalid empty 保留 draft 可 retry (16.110458ms)
+✔ S16 invalid 501字 保留 draft 可 retry (14.995375ms)
+✔ S16 invalid 501� 保留 draft 可 retry (15.046ms)
+✔ S16 500 emoji codepoints 不以 UTF16 截短 (15.422833ms)
+✔ S16 cancel button 清 draft 保留 selection focus (11.548916ms)
+✔ S16 cancel escape 清 draft 保留 selection focus (12.6605ms)
+✔ S16 cancel native 清 draft 保留 selection focus (11.376416ms)
+✔ S16 stale text 不寫舊 draft (14.045291ms)
+✔ S16 stale node 不寫舊 draft (15.788125ms)
+✔ S16 stale root 不寫舊 draft (13.437958ms)
+✔ S16 stale removed 不寫舊 draft (13.029958ms)
+✔ S16 stale duplicate-node 不寫舊 draft (11.33225ms)
+✔ S16 stale duplicate-root 不寫舊 draft (11.495875ms)
+✔ S16 stale identity 不寫舊 draft (11.813625ms)
+✔ S16 stale selection 不寫舊 draft (12.529792ms)
+✖ S16 stale mode 不寫舊 draft (13.636917ms)
+✔ S16 stale slide 不寫舊 draft (13.980834ms)
+✔ S16 geometry 更新不失效且 save 不覆蓋 (14.452125ms)
+✔ S16 synthetic IME submit／Escape guard 與 Enter 不提交 (15.475584ms)
+✔ S16 showModal throw 回收並可 retry (14.133ms)
+✔ S16 insert→edit→insert mode 復原及重入拒絕 (19.097291ms)
+✔ S16 同步 reentrant projection 只提交一次 (14.565542ms)
+✔ S16 chooser 互斥與 pointerdown 取消 gesture (22.466917ms)
+✔ S16 export draft 不提交／offline UI edit／remount 不重複 (31.209167ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 26
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 544.214667
+
+✖ failing tests:
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:21:1
+✖ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (27.420416ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:24:171)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:38:136
+✖ S16 stale mode 不寫舊 draft (13.636917ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /失效/. Input:
+
+  '可直接播放'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:50:217)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '可直接播放',
+    expected: /失效/,
+    operator: 'match',
+    diff: 'simple'
+  }

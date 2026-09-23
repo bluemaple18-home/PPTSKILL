@@ -1,0 +1,51 @@
+✔ S16 markup 單一 shared dialog 與 context action (1.612209ms)
+✖ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (27.596292ms)
+✔ S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留 (22.759625ms)
+✔ S16 same-value no-op 保留 revision DOM selection (12.849459ms)
+✔ S16 invalid empty 保留 draft 可 retry (15.306417ms)
+✔ S16 invalid 501字 保留 draft 可 retry (14.771166ms)
+✔ S16 invalid 501� 保留 draft 可 retry (14.2555ms)
+✔ S16 500 emoji codepoints 不以 UTF16 截短 (13.735959ms)
+✔ S16 cancel button 清 draft 保留 selection focus (11.388833ms)
+✔ S16 cancel escape 清 draft 保留 selection focus (12.218417ms)
+✔ S16 cancel native 清 draft 保留 selection focus (12.105959ms)
+✔ S16 stale text 不寫舊 draft (13.497334ms)
+✔ S16 stale node 不寫舊 draft (14.431042ms)
+✔ S16 stale root 不寫舊 draft (12.602834ms)
+✔ S16 stale removed 不寫舊 draft (14.096834ms)
+✔ S16 stale duplicate-node 不寫舊 draft (12.372083ms)
+✔ S16 stale duplicate-root 不寫舊 draft (10.216ms)
+✔ S16 stale identity 不寫舊 draft (12.229459ms)
+✔ S16 stale selection 不寫舊 draft (12.980833ms)
+✔ S16 stale mode 不寫舊 draft (11.946708ms)
+✔ S16 stale slide 不寫舊 draft (12.875167ms)
+✔ S16 geometry 更新不失效且 save 不覆蓋 (15.874084ms)
+✔ S16 synthetic IME submit／Escape guard 與 Enter 不提交 (15.047625ms)
+✔ S16 showModal throw 回收並可 retry (15.942584ms)
+✔ S16 insert→edit→insert mode 復原及重入拒絕 (23.585042ms)
+✔ S16 同步 reentrant projection 只提交一次 (21.308292ms)
+✔ S16 chooser 互斥與 pointerdown 取消 gesture (38.68475ms)
+✔ S16 export draft 不提交／offline UI edit／remount 不重複 (33.352709ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 27
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 617.076042
+
+✖ failing tests:
+
+test at tests/edx-wp2-s16-edit-text-ui.test.mjs:21:1
+✖ S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit (27.596292ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:746:60
+      at Object.click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:170:91)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s16-edit-text-ui.test.mjs:24:109)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

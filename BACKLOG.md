@@ -1089,3 +1089,5 @@ WP2-S14已依Owner授權FF/push main `8dcc3a0`，遠端readback MATCH；詳evide
 WP2-S15 closure：Owner交回Independent GO，reviewed a181982，P0–P3全0；Reviewer fresh252/789，browser48+48及PGQ單輪16為committed evidence核對。Mainline source6/protected4/ZIP MATCH，delivery無drift；reviewed code／ZIP未改。詳evidence/edx-wp2-s15/independent-review.md。Owner明示授權整合push後繼續。
 
 WP2-S15已FF/push main3cebfaf，遠端readback MATCH。S16開卡：已選text component的context dialog編輯UI，沿S14 edit-text與S15 dialog；tasks/edx-wp2-s16-edit-text-ui.md，direct inline editing不在此Slice。
+
+WP2-S16 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：candidate f5db0c0；已選text component context dialog UI，沿S14 edit-text/S15dialog。Fresh scoped260/full821、雙viewport42+42、PGQ單輪16、ZIP/source4/protected4/cleanup PASS；snap-on selection缺口已修，歷史FAIL／中止保留。handoff_20260923_edx_wp2_s16_review.md。S15main已push3cebfaf；S16未merge/push/deploy，未開S17。

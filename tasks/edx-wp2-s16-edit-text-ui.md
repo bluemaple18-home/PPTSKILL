@@ -1,6 +1,6 @@
 # EDX-WP2-S16 — 已選文字元件編輯 UI
 
-Status: IMPLEMENTATION
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Base/main/origin-main: 3cebfafddcbd070d28fae23de24e52a88163b778
 Branch: codex/edx-wp2-s16-edit-text-ui
 traces_to: BACKLOG §10.1 decisions2/7/8、§10.3 WP2、§10.4 edit-text。
@@ -8,9 +8,9 @@ Blocking edges: S14 edit-text、S15 native text dialog已GO並整合；frontier�
 
 ## 最小裁決
 
-Measured gap：已插入text component只有API可修改文字，一般使用者無UI。沿S15 native dialog加「編輯文字」context action，以S14 edit-text提交。CodeGraph query未命中相關symbols，限域rg核對deck-editor的refreshSelectedImage、pendingTextInsertion、submitInsertText及editComponentText。少於此仍須API；更多direct contenteditable/dblclick/typography/history/AI/auto-layout不吸收。本Slice是context dialog edit，不能宣稱完成direct inline editing。
+Measured gap：已插入text component只有API可修改文字，一般使用者無UI。沿S15 native dialog加「編輯所選文字」context action，以S14 edit-text提交。CodeGraph query未命中相關symbols，限域rg核對deck-editor的refreshSelectedImage、pendingTextInsertion、submitInsertText及editComponentText。少於此仍須API；更多direct contenteditable/dblclick/typography/history/AI/auto-layout不吸收。本Slice是context dialog edit，不能宣稱完成direct inline editing。
 Prior Art：S15 native HTML dialog/textarea + S14 operation；DIRECT_REUSE，瀏覽器原生與repo自有code，無新增license/vendor/version依賴，portable增量由freshZIP量測。Why Custom僅selected-target與operation薄mapping，不造通用editor primitive。
-Visual Route：沿S15既有toolbar與modal、原字體/色彩/spacing；僅單選type=text時顯示「編輯文字」，同一dialog按mode顯示「編輯文字／儲存」或原「插入文字／插入」，有label/textarea/取消/status。雙viewport檢查toolbar/dialog clipping、focus與keyboard。無新增動效材料。
+Visual Route：沿S15既有toolbar與modal、原字體/色彩/spacing；僅單選type=text時顯示「編輯所選文字」，同一dialog按mode顯示「編輯文字／儲存」或原「插入文字／插入」，有label/textarea/取消/status。雙viewport檢查toolbar/dialog clipping、focus與keyboard。無新增動效材料。
 
 ## 契約
 
@@ -30,3 +30,13 @@ Worker先行真RED→GREEN，scoped明列S16/S15/S14/S13/S10/S6/S1/S12/WP1S7（�
 ## Mainline／Routing／停止點
 
 standard既有primitive/operation的UI glue，1 clean native Worker fork_context=false、medium inherited model（runtime無較低模型lane，不冒稱Terra），無Reviewer fanout。Mainline驗diff、explicit full nonbrowser、freshZIP lifecycle、正式managed host雙viewport1280×720/1600×900與四支affectedPGQ串行、source/protected4/hash/cleanup。原FAIL保留，同類兩次無進展停重判；新candidate未獨立review前不merge/push/deploy，不開S17。目前外部write授權只涵已GO S15整合。
+
+Visual clarification：Mainline實看S15 1280 toolbar截圖，既有role action已叫「編輯文字」；新selected component action固定「編輯所選文字」，dialog仍「編輯文字／儲存」，避免相同toolbar label混淆。
+
+## Routing continuation
+
+原Worker因runtime usage limit終止（不是product failure），已close。Owner再次明示繼續；Mainline回收其28/28 unit與partial runtime，同一卡接續剩餘harness／驗收。未開第二Worker或Repair generation，原FAIL保留。
+
+## Mainline acceptance
+
+Candidate f5db0c03b61bbcbb2285f95562d8a3ef986a9ee0；fresh scoped260/full821/ZIP、雙viewport42+42、PGQ單輪16、source4/protected4/cleanup PASS；首輪FAIL、中止及snap修復證據完整保留。詳evidence/edx-wp2-s16/receipt.md及handoff_20260923_edx_wp2_s16_review.md。S16未merge/push/deploy，未開S17。

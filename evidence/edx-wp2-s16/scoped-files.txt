@@ -1,0 +1,9 @@
+tests/edx-wp2-s16-edit-text-ui.test.mjs
+tests/edx-wp2-s15-insert-text-ui.test.mjs
+tests/edx-wp2-s14-edit-text-component.test.mjs
+tests/edx-wp2-s13-insert-text.test.mjs
+tests/edx-wp2-s10-insert-image-ui.test.mjs
+tests/edx-wp2-s6-selected-image-ui.test.mjs
+tests/edx-wp2-s1-direct-text-edit.test.mjs
+tests/edx-wp2-s12-image-paste.test.mjs
+tests/edx-wp1-s7-cancel-click.test.mjs

@@ -1,0 +1,675 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/source.html",
+  "sourceSha256": "5b4c435c02a32a315de20afeecd86d3bbf8aa70a1071b9ef022906810c3f5d4c",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s16": "play/edit/空選/role/image不顯示action",
+          "kind": "真 pointer；S13 API 建立 fixture"
+        },
+        {
+          "wp2s16": "多選隱藏action",
+          "kind": "真 Shift pointer"
+        },
+        {
+          "wp2s16": "精確預填、draft不改canonical/DOM、無contenteditable",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "儲存只改text、保留root/node/geometry與其他欄位、HTML-like純文字",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "same-value no-op保留selection/DOM",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "cancel清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "Escape清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 0 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "500 emoji不以UTF16截短",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "真Enter換行、不自動提交",
+          "kind": "CDP keyboard"
+        },
+        {
+          "wp2s16": "IME submit/Escape guard",
+          "kind": "synthetic CompositionEvent lifecycle＋真 keyboard；非OS IME"
+        },
+        {
+          "wp2s16": "另一operation改text使舊draft失效",
+          "kind": "S14 API synthetic競態 fixture"
+        },
+        {
+          "wp2s16": "geometry更新保留、UI edit不覆蓋",
+          "kind": "API move fixture＋真UI save"
+        },
+        {
+          "wp2s16": "node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "離開layout清draft",
+          "kind": "programmatic mode invalidation"
+        },
+        {
+          "wp2s16": "focusin跨頁不寫舊draft",
+          "kind": "synthetic focusin"
+        },
+        {
+          "wp2s16": "showModal failure回收可重開",
+          "kind": "synthetic fault＋真UI"
+        },
+        {
+          "wp2s16": "同步重入只投影一次",
+          "kind": "synthetic setter＋真UI submit"
+        },
+        {
+          "wp2s16": "共用dialog edit→insert mode復原及modal互斥",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "image chooser互斥",
+          "kind": "真CDP chooser＋synthetic cancel／disabled click"
+        },
+        {
+          "wp2s16": "snap=false gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=false dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "snap=true gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=true dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "export不commit／不漏draft或dialog",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline重開以同UI編輯",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline remount單一dialog/action與再次匯出",
+          "kind": "real CDP pointer／Input.insertText"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-legacy-selected.html",
+          "bytes": 542988,
+          "sha256": "02c6598833b8da2b804188f85f9cf28cc128263dbc6d6d707863444bdb0f88fa"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-preview-export.html",
+          "bytes": 543275,
+          "sha256": "33633c5fa2d0f1c02eba5f10152ed2d21add9e3a8c2ddf1fb577d71bd801102c"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-cancel.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-noop.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-invalid.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-invalid-resize.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-play-mode.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-export.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-reopen-export.html",
+          "bytes": 543275,
+          "sha256": "762a82de9bbdbfa0b03879614c06afe2b0cc92fb6fdb102de28ce63f35511ecb"
+        },
+        {
+          "label": "s16-toolbar",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-s16-toolbar.png",
+          "bytes": 66822,
+          "sha256": "5aa4c6744d84d883312cfa9e66126b6eb8dbaa7e8ae11b26c32af80c23fdc7be"
+        },
+        {
+          "label": "s16-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-s16-dialog.png",
+          "bytes": 65104,
+          "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6"
+        },
+        {
+          "label": "edit-text-ui-draft",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-edit-text-ui-draft.html",
+          "bytes": 544240,
+          "sha256": "d415b43b2584ba0afd53089c5e63b2da25e548f8581cdf3278ba035e4679f677"
+        },
+        {
+          "label": "edit-text-ui-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1280-edit-text-ui-offline.html",
+          "bytes": 544236,
+          "sha256": "ff14fac6cdfe0d0190ef2aab1d8469622ca8c2e3d9d89c1473f0593756438684"
+        }
+      ],
+      "gestureProbe": {
+        "before": {
+          "enabled": true,
+          "target": {
+            "slideId": "portable",
+            "elementId": "component-s16-text"
+          },
+          "gesturing": true
+        },
+        "after": {
+          "open": true,
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-s16-text"
+            },
+            "gesturing": false
+          },
+          "inputs": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        }
+      },
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s16": "play/edit/空選/role/image不顯示action",
+          "kind": "真 pointer；S13 API 建立 fixture"
+        },
+        {
+          "wp2s16": "多選隱藏action",
+          "kind": "真 Shift pointer"
+        },
+        {
+          "wp2s16": "精確預填、draft不改canonical/DOM、無contenteditable",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "儲存只改text、保留root/node/geometry與其他欄位、HTML-like純文字",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "same-value no-op保留selection/DOM",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "cancel清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "Escape清draft保留canonical並復原focus",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 0 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "invalid 501 codepoints零partial commit並可重送",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "500 emoji不以UTF16截短",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "真Enter換行、不自動提交",
+          "kind": "CDP keyboard"
+        },
+        {
+          "wp2s16": "IME submit/Escape guard",
+          "kind": "synthetic CompositionEvent lifecycle＋真 keyboard；非OS IME"
+        },
+        {
+          "wp2s16": "另一operation改text使舊draft失效",
+          "kind": "S14 API synthetic競態 fixture"
+        },
+        {
+          "wp2s16": "geometry更新保留、UI edit不覆蓋",
+          "kind": "API move fixture＋真UI save"
+        },
+        {
+          "wp2s16": "node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-node身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "duplicate-root身份失效不提交",
+          "kind": "synthetic DOM fixture＋真UI submit"
+        },
+        {
+          "wp2s16": "離開layout清draft",
+          "kind": "programmatic mode invalidation"
+        },
+        {
+          "wp2s16": "focusin跨頁不寫舊draft",
+          "kind": "synthetic focusin"
+        },
+        {
+          "wp2s16": "showModal failure回收可重開",
+          "kind": "synthetic fault＋真UI"
+        },
+        {
+          "wp2s16": "同步重入只投影一次",
+          "kind": "synthetic setter＋真UI submit"
+        },
+        {
+          "wp2s16": "共用dialog edit→insert mode復原及modal互斥",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "image chooser互斥",
+          "kind": "真CDP chooser＋synthetic cancel／disabled click"
+        },
+        {
+          "wp2s16": "snap=false gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=false dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "snap=true gesture preview取消、release不commit",
+          "kind": "真CDP held pointer＋真button pointerdown/click",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        },
+        {
+          "wp2s16": "snap=true dialog正常儲存",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "export不commit／不漏draft或dialog",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline重開以同UI編輯",
+          "kind": "real CDP pointer／Input.insertText"
+        },
+        {
+          "wp2s16": "offline remount單一dialog/action與再次匯出",
+          "kind": "real CDP pointer／Input.insertText"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-legacy-selected.html",
+          "bytes": 542988,
+          "sha256": "02c6598833b8da2b804188f85f9cf28cc128263dbc6d6d707863444bdb0f88fa"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-preview-export.html",
+          "bytes": 543275,
+          "sha256": "33633c5fa2d0f1c02eba5f10152ed2d21add9e3a8c2ddf1fb577d71bd801102c"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-cancel.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-noop.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-invalid.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-invalid-resize.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-play-mode.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-export.html",
+          "bytes": 543275,
+          "sha256": "339c7641d1c7d48cc6020c16926d5c48ad2cd226a4bb90f099c427dd0c4dbf35"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-reopen-export.html",
+          "bytes": 543275,
+          "sha256": "762a82de9bbdbfa0b03879614c06afe2b0cc92fb6fdb102de28ce63f35511ecb"
+        },
+        {
+          "label": "s16-toolbar",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-s16-toolbar.png",
+          "bytes": 81800,
+          "sha256": "1b76c543bc4c15b21f3302a5336de2a0cc30a3848b4a8b23b439b0507471af07"
+        },
+        {
+          "label": "s16-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-s16-dialog.png",
+          "bytes": 81477,
+          "sha256": "8f4b7831106b7f84db6f7efa60795d73cb9a3f9367acba36dc7fd0b3a24e34b7"
+        },
+        {
+          "label": "edit-text-ui-draft",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-edit-text-ui-draft.html",
+          "bytes": 544240,
+          "sha256": "d415b43b2584ba0afd53089c5e63b2da25e548f8581cdf3278ba035e4679f677"
+        },
+        {
+          "label": "edit-text-ui-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s16/host-snap-repair/edit-text-ui/1600-edit-text-ui-offline.html",
+          "bytes": 544236,
+          "sha256": "ff14fac6cdfe0d0190ef2aab1d8469622ca8c2e3d9d89c1473f0593756438684"
+        }
+      ],
+      "gestureProbe": {
+        "before": {
+          "enabled": true,
+          "target": {
+            "slideId": "portable",
+            "elementId": "component-s16-text"
+          },
+          "gesturing": true
+        },
+        "after": {
+          "open": true,
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementId": "component-s16-text"
+            },
+            "gesturing": false
+          },
+          "inputs": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": null
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            },
+            {
+              "type": "pointerup",
+              "trusted": true,
+              "action": "edit-selected-text"
+            }
+          ]
+        }
+      },
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}
