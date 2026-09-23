@@ -1059,3 +1059,7 @@ WP2-S11 checkpoint6c9c02f（runtime1fdb3c2）：scoped192/full646/ZIP PASS；三
 WP2-S11 split acceptance candidate `8b0be65`（runtime仍1fdb3c2）：Owner明示拆開trusted external drop與synthetic active-gesture cancellation；fresh154、雙viewport各59 records、PGQ單輪16、cleanup/source4/protected4/ZIP PASS。Full646與ZIP lifecycle延用已提交證據；三輪FAIL完整保留。handoff_20260923_edx_wp2_s11_review.md待Independent Review，未merge/push/deploy，未開S12。
 
 WP2-S11 closure：Owner交回Independent GO，reviewed8b0be65、P0–P3全0；Reviewer fresh154/646，browser59+59與PGQ16為committed evidence核對。Runtime/ZIP不改，synthetic gesture與trusted drop邊界保持。Owner授權S10/S11整合push後續作；詳evidence/edx-wp2-s11/independent-review.md。
+
+S10/S11已FF整合push main `8b9ee5b`，遠端readback MATCH；詳evidence/edx-wp2-s11/integration-receipt.md。
+
+**WP2-S12 IMPLEMENTATION：** ClipboardEvent單張image File adapter，沿S9/S10/S11插入與busy；input/IME預設保留，無rich-text/asyncclipboard/OSclipboard claim。卡tasks/edx-wp2-s12-image-paste.md；事件synthetic browser驗收邊界開卡先鎖定。
