@@ -1,3 +1,4 @@
+import { imageCrop } from './image-crop.js';
 import { roleTypography } from './role-typography.js';
 import { sanitizeGeometryOverrides } from './component-geometry.js';
 import { createHash } from 'node:crypto';
@@ -114,7 +115,7 @@ const sanitizeComponent = (component) => {
   if (!base.id) return null;
   if (base.type === 'text') return { ...base, text: copyText(component.text) };
   if (base.type === 'image' && /^data:image\/(png|jpeg|webp|gif|svg\+xml);/.test(copyText(component.dataUri))) {
-    return { ...base, alt: copyText(component.alt), dataUri: component.dataUri, ...(component.fit === 'contain' || component.fit === 'cover' ? { fit: component.fit } : {}) };
+    return { ...base, alt: copyText(component.alt), dataUri: component.dataUri, ...imageCrop.sanitize(component), ...(component.fit === 'contain' || component.fit === 'cover' ? { fit: component.fit } : {}) };
   }
   if (base.type === 'table') return { ...base, headers: copyStringArray(component.headers, 1, 12), rows: Array.isArray(component.rows) ? component.rows.slice(0, 30).map((row) => Array.isArray(row) ? row.slice(0, 12).map((cell) => ['string', 'number', 'boolean'].includes(typeof cell) || cell === null ? cell : '') : []) : [] };
   if (base.type === 'chart') return { ...base, chartType: copyText(component.chartType), labels: copyStringArray(component.labels), series: Array.isArray(component.series) ? component.series.map((series) => ({ name: copyText(series?.name), values: Array.isArray(series?.values) ? series.values.filter((value) => typeof value === 'number') : [] })) : [] };

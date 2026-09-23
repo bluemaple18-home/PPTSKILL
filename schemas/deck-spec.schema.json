@@ -181,12 +181,8 @@
       "required": ["id", "type", "text"],
       "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "text" }, "text": { "$ref": "#/$defs/nonEmptyText" } }
     },
-    "imageComponent": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["id", "type", "alt", "dataUri"],
-      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "image" }, "alt": { "type": "string", "maxLength": 300 }, "dataUri": { "type": "string", "pattern": "^data:image/(png|jpeg|webp|gif|svg\\+xml);" }, "fit": { "enum": ["contain", "cover"] } }
-    },
+    "cropRect": {"type":"object","additionalProperties":false,"required":["x","y","width","height"],"properties":{"x":{"type":"number","minimum":0,"maximum":1},"y":{"type":"number","minimum":0,"maximum":1},"width":{"type":"number","exclusiveMinimum":0,"maximum":1},"height":{"type":"number","exclusiveMinimum":0,"maximum":1}}},
+    "imageComponent": {"type":"object","additionalProperties":false,"required":["id","type","alt","dataUri"],"properties":{"id":{"$ref":"#/$defs/id"},"type":{"const":"image"},"alt":{"type":"string","maxLength":300},"dataUri":{"type":"string","pattern":"^data:image/(png|jpeg|webp|gif|svg\\+xml);"},"fit":{"enum":["contain","cover"]},"crop":{"$ref":"#/$defs/cropRect"},"imageSafety":{"type":"object","additionalProperties":false,"required":["classification","reviewDigest"],"properties":{"classification":{"enum":["decorative","evidence"]},"protectedRect":{"$ref":"#/$defs/cropRect"},"reviewDigest":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"allOf":[{"if":{"properties":{"classification":{"const":"evidence"}}},"then":{"required":["protectedRect"]}}]}},"dependentRequired":{"crop":["imageSafety"]},"allOf":[{"if":{"required":["imageSafety"],"properties":{"imageSafety":{"properties":{"classification":{"const":"evidence"}}}}},"then":{"properties":{"fit":{"const":"contain"}}}}]},
     "tableComponent": {
       "type": "object",
       "additionalProperties": false,

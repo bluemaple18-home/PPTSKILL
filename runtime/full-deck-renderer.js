@@ -1,3 +1,4 @@
+import { imageCrop } from './image-crop.js';
 import { buildMoveableVendorScript } from './moveable-vendor.js';
 import { buildSelectoVendorScript } from './selecto-vendor.js';
 import { componentGeometryStyle, getComponentGeometry } from './component-geometry.js';
@@ -61,7 +62,7 @@ const renderComponent = (component, slide) => {
   const box = getComponentGeometry(slide.composition, component.id);
   const identity = ` data-pptskill-element-id="${attr(resolveSlideElementIdentities(slide).components[componentIndex])}"`;
   const geometry = box ? ` data-pptskill-geometry="canonical" style="${componentGeometryStyle(box)}"` : '';
-  if (component.type === 'image') return `<figure class="asset image-asset" data-effect-role="image"${identity} data-edit-target="${target}"${geometry}><img src="${attr(component.dataUri)}" alt="${attr(component.alt)}" style="object-fit:${component.fit || 'contain'}"></figure>`;
+  if (component.type === 'image') return `<figure class="asset image-asset" data-effect-role="image"${identity} data-edit-target="${target}"${geometry}><img src="${attr(component.dataUri)}" alt="${attr(component.alt)}" style="object-fit:${component.crop || component.imageSafety ? (imageCrop.prepare(component).status === 'active' ? 'contain' : imageCrop.prepare(component).fit) : component.fit || 'contain'}"></figure>`;
   if (component.type === 'text') return `<blockquote class="asset text-asset" data-effect-role="visualAnchor" data-edit-kind="text"${identity} data-edit-target="${target}"${geometry}>${escapeHtml(component.text)}</blockquote>`;
   if (component.type === 'citation') return `<p class="asset citation-asset" data-edit-kind="text"${identity} data-edit-target="${target}"${geometry}>${component.url ? `<a href="${attr(component.url)}">${escapeHtml(component.label)}</a>` : escapeHtml(component.label)}</p>`;
   if (component.type === 'table') return `<div class="asset table-asset" data-effect-role="diagram"${identity} data-edit-target="${target}"${geometry}><table><thead><tr>${component.headers.map((header) => `<th>${escapeHtml(header)}</th>`).join('')}</tr></thead><tbody>${component.rows.map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;

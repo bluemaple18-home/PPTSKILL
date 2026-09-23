@@ -1,0 +1,30 @@
+import { build, version as esbuildVersion } from 'esbuild';
+import { createHash } from 'node:crypto';
+import { mkdir, readFile, writeFile, realpath } from 'node:fs/promises';
+import { resolve, relative } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const root=fileURLToPath(new URL('..',import.meta.url));
+const flag=process.argv.indexOf('--package-root');
+const packageRoot=await realpath(resolve(flag<0?resolve(root,'node_modules/@noble/hashes'):process.argv[flag+1]));
+const output=resolve(root,'runtime/vendor');
+const hash=b=>createHash('sha256').update(b).digest('hex');
+const pkg=JSON.parse(await readFile(resolve(packageRoot,'package.json'),'utf8'));
+if(pkg.name!=='@noble/hashes'||pkg.version!=='2.0.1'||pkg.license!=='MIT')throw Error('SHA256 package identity 不符合 pin。');
+const entry=`import {sha256} from ${JSON.stringify(resolve(packageRoot,'sha2.js'))};export const digest=text=>Array.from(sha256(new TextEncoder().encode(text)),b=>b.toString(16).padStart(2,'0')).join('');`;
+const result=await build({stdin:{contents:entry,resolveDir:packageRoot,sourcefile:'crop-hash-entry.js'},bundle:true,platform:'browser',format:'iife',globalName:'PPTSKILLCropHash',target:'es2022',minify:true,legalComments:'none',write:false,metafile:true});
+const bundle=result.outputFiles[0].contents,text=new TextDecoder().decode(bundle);
+if(/<\/script|https?:\/\/|fetch\(|XMLHttpRequest|WebSocket|localStorage|sessionStorage|getRandomValues|randomUUID|eval\(/.test(text))throw Error('SHA256 bundle 含禁止 surface。');
+const inputs=[];
+for(const input of Object.keys(result.metafile.inputs)){
+ if(input.endsWith('crop-hash-entry.js')||input==='<stdin>')continue;
+ const path=resolve(input),name=relative(packageRoot,path);if(name.startsWith('..'))throw Error('SHA256 input 越界。');
+ const bytes=await readFile(path);inputs.push({path:name,bytes:bytes.length,sha256:hash(bytes)});
+}
+inputs.sort((a,b)=>a.path.localeCompare(b.path));
+const license=await readFile(resolve(packageRoot,'LICENSE'));
+const metadata={schemaVersion:'1.0',package:pkg.name,version:pkg.version,license:pkg.license,registryIntegrity:'sha512-XlOlEbQcE9fmuXxrVTXCTlG2nlRXa9Rj3rr5Ue/+tX+nmkgbX720YHh0VR3hBF9xDvwnb8D2shVGOwNx+ulArw==',inputs,entrySha256:hash(entry.replaceAll(packageRoot,'<package-root>')),licenseSha256:hash(license),bundleSha256:hash(bundle),bundleBytes:bundle.length,build:{tool:'esbuild',version:esbuildVersion,platform:'browser',format:'iife',target:'es2022',minified:true}};
+await mkdir(output,{recursive:true});
+await writeFile(resolve(output,'crop-hash-2.0.1.iife.js'),bundle);
+await writeFile(resolve(output,'crop-hash-LICENSE.md'),license);
+await writeFile(resolve(output,'crop-hash-vendor.json'),JSON.stringify(metadata,null,2)+'\n');
+console.log(JSON.stringify(metadata));

@@ -96,7 +96,7 @@ class Element {
   }
 }
 
-export function mountedEditor(input = fixture()) {
+export function mountedEditor(input = fixture(), browserApis = {}) {
   const state = sanitizeDeckSpec(input), root = new Element('html'), body = new Element('body'), deck = new Element('main', { class: 'deck' });
   root.append(body); body.append(deck);
   body.append(new Element('nav', { class: 'pptskill-editor', 'data-pptskill-editor': '' }));
@@ -166,7 +166,7 @@ export function mountedEditor(input = fixture()) {
     PPTSKILLAssets: { optimizeFile: async file => ({ dataUri: file.dataUri, warnings: [], optimized: false }) },
   };
   vm.runInNewContext(buildDeckEditorRuntimeScript().replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '').replace('window.PPTSKILLEditor={', 'window.__testRevision=()=>revision;window.__testMutateSpec=fn=>fn(spec);window.PPTSKILLEditor={'), {
-    document, window, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
+    document, window, TextEncoder: browserApis.TextEncoder || TextEncoder, JSON: observedJSON, CSS: { escape: v => v }, MutationObserver: class { constructor(fn) { this.fn = fn; } observe() { observers.add(this); } disconnect() { observers.delete(this); } }, console,
   });
   const api = window.PPTSKILLEditor;
   const click = (node, fields = {}) => { for (const fn of document.listeners.click || []) fn({ target: node, shiftKey: false, preventDefault() {}, ...fields }); };

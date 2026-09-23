@@ -1,3 +1,4 @@
+import { addCropFixture, runCropBrowserCases } from './edx-core-crop-browser-cases.mjs';
 import { runTextDoubleClickBrowserCases } from './edx-wp2-s17-browser-cases.mjs';
 import { runDeleteElementBrowserCases } from './edx-wp2-s18-browser-cases.mjs';
 import { runEditTextUIBrowserCases } from './edx-wp2-s16-browser-cases.mjs';
@@ -34,6 +35,8 @@ import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 
 // 僅 attach Mainline owned browser；絕不 spawn，finally 只清自己的 target。
 const outputDir = resolve(process.argv[2] || (process.argv.includes('--perf-regression') ? 'evidence/edx-wp1-s4-perf/worker-browser' : 'evidence/edx-wp1-s4/browser'));
+const cropRegression=process.argv.includes('--crop-regression');
+if(cropRegression&&process.argv.some(arg=>/^--.*-regression$/.test(arg)&&arg!=='--crop-regression'))throw Error('crop regression 僅允許 base10+Crop。');
 const fixtureOnly = process.argv.includes('--fixture-only');
 const perfRegression = process.argv.includes('--perf-regression');
 const deleteElementRegression = process.argv.includes('--delete-element-regression');
@@ -57,6 +60,7 @@ if (process.argv.includes('--text-double-click-regression') || process.argv.incl
   input.slides.push(empty);
 }
 if (process.argv.includes('--text-double-click-regression') || process.argv.includes('--edit-text-ui-regression') || process.argv.includes('--insert-text-ui-regression') || process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || (process.argv.includes('--insert-image-regression') || (process.argv.includes('--insert-text-regression') || process.argv.includes('--edit-text-component-regression'))) || process.argv.includes('--insert-image-file-regression') || process.argv.includes('--insert-image-ui-regression') || process.argv.includes('--image-drop-regression') || process.argv.includes('--image-paste-regression')) addAssetReplacementFixture(input);
+if(cropRegression)addCropFixture(input);
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -227,6 +231,7 @@ try {
       if (deleteElementRegression) await runDeleteElementBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--edit-text-ui-regression')) await runEditTextUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--insert-text-ui-regression')) await runInsertTextUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
+      if(cropRegression)await runCropBrowserCases({cdp,evaluate,navigate,sourcePath,outputDir,width,run,click,position,mouse,settle,assertExport});
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';
