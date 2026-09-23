@@ -1,0 +1,318 @@
+{
+  "task": "EDX-WP2-S15",
+  "status": "STOP WRITING / Worker delivery; NOT Independent GO",
+  "opening": "983d7e92650bdf502a8c0d01d836b459cddaea74",
+  "head": "983d7e92650bdf502a8c0d01d836b459cddaea74",
+  "branch": "codex/edx-wp2-s15-insert-text-ui",
+  "product_files": [
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/runtime/deck-editor.js",
+      "sha256": "d1f5ca61e2cededd8f31c08caab525cb947a19b17a5990199f0622d53703ff35"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "sha256": "0f3460311815863b85c6e8016f65aa7a457b9e2a5cfc7f7b7e64d0c7d6e7f1c1"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/edx-wp2-s15-browser-cases.mjs",
+      "sha256": "64fbb17dd778c6e02b592fa40ae923abea8080784fe26f32dac313424b95b05c"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs",
+      "sha256": "08ce88510ecb37dccd503209937ad8aa35cc4a16360d488daf52583de5a681cb"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs",
+      "sha256": "7cdfa94aaacba160ff93b3afe5b0ed02209cd7e0fda4dff58774b79ad9f5a8f4"
+    },
+    {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs",
+      "sha256": "20aa73a6bcb122a8044019ed083b6b8dde0bd19a57ed72de9464ee5f3b86259f"
+    }
+  ],
+  "commands": [
+    {
+      "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "log": "/private/tmp/pptskill-s15-red.log",
+      "counts": {
+        "tests": 22,
+        "pass": 0,
+        "fail": 22,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 1
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "log": "/private/tmp/pptskill-s15-green1.log",
+      "counts": {
+        "tests": 22,
+        "pass": 22,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "log": "/private/tmp/pptskill-s15-scoped1.log",
+      "counts": {
+        "tests": 145,
+        "pass": 144,
+        "fail": 1,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 1
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "log": "/private/tmp/pptskill-s15-scoped2.log",
+      "counts": {
+        "tests": 145,
+        "pass": 144,
+        "fail": 1,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 1
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "log": "/private/tmp/pptskill-s15-scoped3.log",
+      "counts": {
+        "tests": 145,
+        "pass": 145,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "log": "/private/tmp/pptskill-s15-scoped4.log",
+      "counts": {
+        "tests": 149,
+        "pass": 149,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s15-browser-cases.mjs",
+      "log": "/private/tmp/pptskill-s15-browser-syntax.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp1-s4-browser-acceptance.mjs",
+      "log": "/private/tmp/pptskill-s15-runner-syntax.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s15-browser-cases.mjs",
+      "log": "/private/tmp/pptskill-s15-browser-syntax-final.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp1-s4-browser-acceptance.mjs",
+      "log": "/private/tmp/pptskill-s15-runner-syntax-final.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check runtime/deck-editor.js",
+      "log": "/private/tmp/pptskill-s15-runtime-syntax-final.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s15-browser-cases.mjs",
+      "log": "/private/tmp/pptskill-s15-browser-syntax-delivery.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "git diff --check",
+      "log": "/private/tmp/pptskill-s15-diff-check.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "git diff --check",
+      "log": "/private/tmp/pptskill-s15-diff-check-delivery.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "log": "/private/tmp/pptskill-s15-ime-red.log",
+      "counts": {
+        "tests": 26,
+        "pass": 25,
+        "fail": 1,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 1
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs",
+      "log": "/private/tmp/pptskill-s15-scoped-ime-green.log",
+      "counts": {
+        "tests": 149,
+        "pass": 149,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s15-browser-cases.mjs",
+      "log": "/private/tmp/pptskill-s15-browser-syntax-ime.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "git diff --check",
+      "log": "/private/tmp/pptskill-s15-diff-check-ime.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s15-browser-cases.mjs",
+      "log": "/private/tmp/pptskill-s15-browser-syntax-artifact.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "git diff --check",
+      "log": "/private/tmp/pptskill-s15-diff-check-artifact.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp1-s3-bounded-geometry.test.mjs tests/edx-wp1-s7-cancel-click.test.mjs tests/edx-wp2-s12-image-paste.test.mjs",
+      "log": "/private/tmp/pptskill-s15-repair1-red.log",
+      "counts": {
+        "tests": 103,
+        "pass": 96,
+        "fail": 7,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 1
+    },
+    {
+      "command": "/opt/homebrew/bin/node --test --test-reporter=tap tests/edx-wp2-s15-insert-text-ui.test.mjs tests/edx-wp2-s14-edit-text-component.test.mjs tests/edx-wp2-s13-insert-text.test.mjs tests/edx-wp2-s10-insert-image-ui.test.mjs tests/edx-wp2-s6-selected-image-ui.test.mjs tests/edx-wp2-s1-direct-text-edit.test.mjs tests/edx-wp1-s8-vendor.test.mjs tests/edx-wp1-s8-selection.test.mjs tests/edx-wp1-s8-mounted-selection.test.mjs tests/edx-wp1-s3-bounded-geometry.test.mjs tests/edx-wp1-s7-cancel-click.test.mjs tests/edx-wp2-s12-image-paste.test.mjs",
+      "log": "/private/tmp/pptskill-s15-repair1-green.log",
+      "counts": {
+        "tests": 252,
+        "pass": 252,
+        "fail": 0,
+        "skipped": 0,
+        "cancelled": 0
+      },
+      "test_exit_code": 0
+    },
+    {
+      "command": "git diff --check",
+      "log": "/private/tmp/pptskill-s15-repair1-diff-check.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    },
+    {
+      "command": "/opt/homebrew/bin/node --check runtime/deck-editor.js",
+      "log": "/private/tmp/pptskill-s15-repair1-runtime-syntax.log",
+      "exit_code": 0,
+      "checks": 1,
+      "tests": 0
+    }
+  ],
+  "scoped_test_files": [
+    "tests/edx-wp2-s15-insert-text-ui.test.mjs",
+    "tests/edx-wp2-s14-edit-text-component.test.mjs",
+    "tests/edx-wp2-s13-insert-text.test.mjs",
+    "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "tests/edx-wp2-s6-selected-image-ui.test.mjs",
+    "tests/edx-wp2-s1-direct-text-edit.test.mjs",
+    "tests/edx-wp1-s8-vendor.test.mjs",
+    "tests/edx-wp1-s8-selection.test.mjs",
+    "tests/edx-wp1-s8-mounted-selection.test.mjs"
+  ],
+  "known_limits": [
+    "未啟動／attach browser；desktop1280/1600、native inert/focus、CDP chooser、offline UI、真 pointer move/resize 待 Mainline 執行。",
+    "CompositionEvent/KeyboardEvent 為 synthetic；不宣稱 OS IME。mounted double 僅邏輯，不模擬原生 inert、完整事件傳播或排版。",
+    "未跑 full/build/probe/fresh ZIP/PGQ/Independent review；固定 geometry 不保證避障或自動縮字。",
+    "20MiB authority 未修改；本 Worker 未重跑真大型 HTML size gate。",
+    "非獨立 GO；shared tree 的 Mainline control/evidence 不屬 Worker 交付。"
+  ],
+  "context_evidence": [
+    "實體 S15 task、Owner bootstrap、ai-core compiled_lite、rules05/11 已讀；任務卡授權優先於通用 browser 執行／flight-recorder 外寫要求。",
+    "CodeGraph bounded query insertionSlide refreshSelectedImage imagePickerOpen deck-editor 未命中 editor；已依卡限域 rg 查實際 source。",
+    "opening branch/HEAD 核對符合；未 branch/commit/merge/push/deploy/子agent/browser/full/build/probe。"
+  ],
+  "failure_progress": [
+    "RED 22 fail：S15 markup/control 尚不存在。",
+    "scoped1 S6 marker teardown fail：新 dialog 永久 chrome marker 不符既有 play cleanup；改為 layout lifecycle ownership。",
+    "scoped2 S6 已過、S15 cancel selection 新失敗：close 當場移除 marker 讓尾隨 click 清 selection；layout 期間保留 ownership，play 再清。",
+    "scoped3 145/145；增加四個邊界測試後 scoped4 149/149。",
+    "Mainline IME 契約核對：ime-red 25/26，移除 keydown preventDefault/stopImmediatePropagation；保留 dialog cancel guard，scoped-ime-green 149/149。"
+  ],
+  "artifact_correction": "PNG object artifacts 補齊 label/path/bytes/sha256；未新增 runtime 改動。",
+  "repair1": {
+    "status": "STOP WRITING / bounded repair1 已交付；非 Independent GO",
+    "opening_failure": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/nonbrowser-initial-fail.log",
+    "red_counts": {
+      "tests": 103,
+      "pass": 96,
+      "fail": 7
+    },
+    "green_counts": {
+      "tests": 252,
+      "pass": 252,
+      "fail": 0
+    },
+    "changed_files": [
+      "runtime/deck-editor.js",
+      "tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "tests/edx-wp2-s12-image-paste.test.mjs"
+    ],
+    "affected_test_files": [
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+      "tests/edx-wp1-s7-cancel-click.test.mjs",
+      "tests/edx-wp2-s12-image-paste.test.mjs"
+    ],
+    "changes": [
+      "dialog bootstrap 以既有 editor DOM 為前提，不為純 API VM 引入 UI 需求。",
+      "pointerdown 僅綁 insert-text button；未增加 document listener；S15 synthetic event 改由 button 發送，原 gesture/canonical assertions 保留。",
+      "S12 fixture 沿用 mounted toolbar；既有 assertions 全保留。"
+    ],
+    "limits": [
+      "未 full/browser/build/probe/ZIP。",
+      "button pointerdown 真瀏覽器事件順序與 native modal 仍待 Mainline browser acceptance。",
+      "此輪未改其他 runtime／helper／control／evidence 檔案。"
+    ]
+  }
+}

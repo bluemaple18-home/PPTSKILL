@@ -1,0 +1,744 @@
+TAP version 13
+# Subtest: Node absolute move/resize 僅改 canonical override，content edit 保留
+ok 1 - Node absolute move/resize 僅改 canonical override，content edit 保留
+  ---
+  duration_ms: 5.545709
+  type: 'test'
+  ...
+# Subtest: Node invalid 全部 fail loud 且 state 原子性
+ok 2 - Node invalid 全部 fail loud 且 state 原子性
+  ---
+  duration_ms: 10.601209
+  type: 'test'
+  ...
+# Subtest: Node descriptors 深度 immutable 且 allowlist 無法擴權
+ok 3 - Node descriptors 深度 immutable 且 allowlist 無法擴權
+  ---
+  duration_ms: 1.039958
+  type: 'test'
+  ...
+# Subtest: browser API VM absolute move/resize 僅改 canonical override，content edit 保留
+not ok 4 - browser API VM absolute move/resize 僅改 canonical override，content edit 保留
+  ---
+  duration_ms: 16.817041
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:40:3'
+  failureType: 'testCodeFailure'
+  error: 'document.body.insertAdjacentHTML is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    boot (evalmachine.<anonymous>:330:50)
+    evalmachine.<anonymous>:1234:106
+    evalmachine.<anonymous>:1234:114
+    Script.runInContext (node:vm:149:12)
+    Script.runInNewContext (node:vm:154:17)
+    Object.runInNewContext (node:vm:310:38)
+    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:41:20)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+  ...
+# Subtest: browser API VM invalid 全部 fail loud 且 state 原子性
+not ok 5 - browser API VM invalid 全部 fail loud 且 state 原子性
+  ---
+  duration_ms: 4.089917
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:52:3'
+  failureType: 'testCodeFailure'
+  error: 'document.body.insertAdjacentHTML is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    boot (evalmachine.<anonymous>:330:50)
+    evalmachine.<anonymous>:1234:106
+    evalmachine.<anonymous>:1234:114
+    Script.runInContext (node:vm:149:12)
+    Script.runInNewContext (node:vm:154:17)
+    Object.runInNewContext (node:vm:310:38)
+    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:53:20)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+  ...
+# Subtest: browser API VM descriptors 深度 immutable 且 allowlist 無法擴權
+not ok 6 - browser API VM descriptors 深度 immutable 且 allowlist 無法擴權
+  ---
+  duration_ms: 4.14
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:67:3'
+  failureType: 'testCodeFailure'
+  error: 'document.body.insertAdjacentHTML is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    boot (evalmachine.<anonymous>:330:50)
+    evalmachine.<anonymous>:1234:106
+    evalmachine.<anonymous>:1234:114
+    Script.runInContext (node:vm:149:12)
+    Script.runInNewContext (node:vm:154:17)
+    Object.runInNewContext (node:vm:310:38)
+    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:68:20)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+  ...
+# Subtest: legacy sanitizer/render/export/recipient 不引入 optional 欄位
+ok 7 - legacy sanitizer/render/export/recipient 不引入 optional 欄位
+  ---
+  duration_ms: 11.448875
+  type: 'test'
+  ...
+# Subtest: canonical geometry renderer/recipient round-trip 與 viewport 無關
+ok 8 - canonical geometry renderer/recipient round-trip 與 viewport 無關
+  ---
+  duration_ms: 7.352834
+  type: 'test'
+  ...
+# Subtest: sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享
+ok 9 - sanitizer 拒絕非法 geometry，cleanup orphan，duplicate/delete 不共享
+  ---
+  duration_ms: 2.904625
+  type: 'test'
+  ...
+# Subtest: Node 合法 constructor ID 與非 slot component 走 own-property override
+ok 10 - Node 合法 constructor ID 與非 slot component 走 own-property override
+  ---
+  duration_ms: 11.598042
+  type: 'test'
+  ...
+# Subtest: Node safe-area 精確邊界／integer 非 grid 值不 clamp
+ok 11 - Node safe-area 精確邊界／integer 非 grid 值不 clamp
+  ---
+  duration_ms: 1.07975
+  type: 'test'
+  ...
+# Subtest: browser API VM 合法 constructor ID 與非 slot component 走 own-property override
+not ok 12 - browser API VM 合法 constructor ID 與非 slot component 走 own-property override
+  ---
+  duration_ms: 4.689375
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:118:3'
+  failureType: 'testCodeFailure'
+  error: 'document.body.insertAdjacentHTML is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    boot (evalmachine.<anonymous>:330:50)
+    evalmachine.<anonymous>:1234:106
+    evalmachine.<anonymous>:1234:114
+    Script.runInContext (node:vm:149:12)
+    Script.runInNewContext (node:vm:154:17)
+    Object.runInNewContext (node:vm:310:38)
+    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:121:20)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+  ...
+# Subtest: browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp
+not ok 13 - browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp
+  ---
+  duration_ms: 4.138
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:136:3'
+  failureType: 'testCodeFailure'
+  error: 'document.body.insertAdjacentHTML is not a function'
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    boot (evalmachine.<anonymous>:330:50)
+    evalmachine.<anonymous>:1234:106
+    evalmachine.<anonymous>:1234:114
+    Script.runInContext (node:vm:149:12)
+    Script.runInNewContext (node:vm:154:17)
+    Object.runInNewContext (node:vm:310:38)
+    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:137:20)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+  ...
+# Subtest: legacy component patch 保留 geometry；sanitizer 移除失效 component override
+ok 14 - legacy component patch 保留 geometry；sanitizer 移除失效 component override
+  ---
+  duration_ms: 1.252625
+  type: 'test'
+  ...
+# Subtest: S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 15 - S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 51.734958
+  type: 'test'
+  ...
+# Subtest: S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 16 - S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 17.030083
+  type: 'test'
+  ...
+# Subtest: S7 cancel 共用取消尾隨 click 防護
+ok 17 - S7 cancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 14.1405
+  type: 'test'
+  ...
+# Subtest: S7 pointercancel 共用取消尾隨 click 防護
+ok 18 - S7 pointercancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 14.546958
+  type: 'test'
+  ...
+# Subtest: S7 blur 共用取消尾隨 click 防護
+ok 19 - S7 blur 共用取消尾隨 click 防護
+  ---
+  duration_ms: 11.669209
+  type: 'test'
+  ...
+# Subtest: S7 scroll 共用取消尾隨 click 防護
+ok 20 - S7 scroll 共用取消尾隨 click 防護
+  ---
+  duration_ms: 14.292166
+  type: 'test'
+  ...
+# Subtest: S7 resize 共用取消尾隨 click 防護
+ok 21 - S7 resize 共用取消尾隨 click 防護
+  ---
+  duration_ms: 11.390125
+  type: 'test'
+  ...
+# Subtest: S7 selection 共用取消尾隨 click 防護
+ok 22 - S7 selection 共用取消尾隨 click 防護
+  ---
+  duration_ms: 10.724166
+  type: 'test'
+  ...
+# Subtest: S7 mode 共用取消尾隨 click 防護
+ok 23 - S7 mode 共用取消尾隨 click 防護
+  ---
+  duration_ms: 12.119
+  type: 'test'
+  ...
+# Subtest: S7 text 共用取消尾隨 click 防護
+ok 24 - S7 text 共用取消尾隨 click 防護
+  ---
+  duration_ms: 15.32125
+  type: 'test'
+  ...
+# Subtest: S7 toggle 共用取消尾隨 click 防護
+ok 25 - S7 toggle 共用取消尾隨 click 防護
+  ---
+  duration_ms: 10.381833
+  type: 'test'
+  ...
+# Subtest: S7 replacement 共用取消尾隨 click 防護
+ok 26 - S7 replacement 共用取消尾隨 click 防護
+  ---
+  duration_ms: 10.961291
+  type: 'test'
+  ...
+# Subtest: S7 stale-update 共用取消尾隨 click 防護
+ok 27 - S7 stale-update 共用取消尾隨 click 防護
+  ---
+  duration_ms: 11.213917
+  type: 'test'
+  ...
+# Subtest: S7 stale-release 共用取消尾隨 click 防護
+ok 28 - S7 stale-release 共用取消尾隨 click 防護
+  ---
+  duration_ms: 10.900125
+  type: 'test'
+  ...
+# Subtest: S7 invalid 共用取消尾隨 click 防護
+ok 29 - S7 invalid 共用取消尾隨 click 防護
+  ---
+  duration_ms: 13.030875
+  type: 'test'
+  ...
+# Subtest: S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+ok 30 - S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+  ---
+  duration_ms: 13.652292
+  type: 'test'
+  ...
+# Subtest: S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+ok 31 - S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+  ---
+  duration_ms: 12.100417
+  type: 'test'
+  ...
+# Subtest: S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+ok 32 - S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+  ---
+  duration_ms: 13.175541
+  type: 'test'
+  ...
+# Subtest: S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+ok 33 - S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+  ---
+  duration_ms: 12.196333
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+ok 34 - S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+  ---
+  duration_ms: 9.919208
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+ok 35 - S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+  ---
+  duration_ms: 11.296125
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+ok 36 - S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+  ---
+  duration_ms: 11.846292
+  type: 'test'
+  ...
+# Subtest: S7 destroy 移除 pointerdown listener，重複 teardown 安全
+not ok 37 - S7 destroy 移除 pointerdown listener，重複 teardown 安全
+  ---
+  duration_ms: 7.177125
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:105:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+
+    2 !== 1
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 1
+  actual: 2
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:106:29)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+ok 38 - S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+  ---
+  duration_ms: 58.258625
+  type: 'test'
+  ...
+# Subtest: S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+ok 39 - S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+  ---
+  duration_ms: 15.007209
+  type: 'test'
+  ...
+# Subtest: S12 text/plain 不攔截、不讀內容／URL fallback
+ok 40 - S12 text/plain 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 9.215166
+  type: 'test'
+  ...
+# Subtest: S12 text/html 不攔截、不讀內容／URL fallback
+ok 41 - S12 text/html 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 10.3515
+  type: 'test'
+  ...
+# Subtest: S12 text/uri-list 不攔截、不讀內容／URL fallback
+ok 42 - S12 text/uri-list 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 14.645625
+  type: 'test'
+  ...
+# Subtest: S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+ok 43 - S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+  ---
+  duration_ms: 14.058958
+  type: 'test'
+  ...
+# Subtest: S12 0 files 拒絕且 status 提示
+ok 44 - S12 0 files 拒絕且 status 提示
+  ---
+  duration_ms: 9.276208
+  type: 'test'
+  ...
+# Subtest: S12 2 files 拒絕且 status 提示
+ok 45 - S12 2 files 拒絕且 status 提示
+  ---
+  duration_ms: 9.037875
+  type: 'test'
+  ...
+# Subtest: S12 insert chooser 保留 pending/input 且 paste 不提交
+ok 46 - S12 insert chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 11.642708
+  type: 'test'
+  ...
+# Subtest: S12 replace chooser 保留 pending/input 且 paste 不提交
+ok 47 - S12 replace chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 12.507459
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=false
+ok 48 - S12 active gesture 取消不 commit，snap=false
+  ---
+  duration_ms: 13.528583
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=true
+ok 49 - S12 active gesture 取消不 commit，snap=true
+  ---
+  duration_ms: 15.554792
+  type: 'test'
+  ...
+# Subtest: S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+ok 50 - S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+  ---
+  duration_ms: 22.71125
+  type: 'test'
+  ...
+# Subtest: S12 async removed 原子拒絕、零 partial／retry
+ok 51 - S12 async removed 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 11.764666
+  type: 'test'
+  ...
+# Subtest: S12 async collision 原子拒絕、零 partial／retry
+ok 52 - S12 async collision 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 10.608458
+  type: 'test'
+  ...
+# Subtest: S12 async reject 原子拒絕、零 partial／retry
+ok 53 - S12 async reject 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 12.317417
+  type: 'test'
+  ...
+# Subtest: S12 async invalid 原子拒絕、零 partial／retry
+ok 54 - S12 async invalid 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 12.886
+  type: 'test'
+  ...
+# Subtest: S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+ok 55 - S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+  ---
+  duration_ms: 21.082042
+  type: 'test'
+  ...
+# Subtest: S12 body 採 currentId
+ok 56 - S12 body 採 currentId
+  ---
+  duration_ms: 13.196416
+  type: 'test'
+  ...
+# Subtest: S12 document 採 currentId
+ok 57 - S12 document 採 currentId
+  ---
+  duration_ms: 13.212833
+  type: 'test'
+  ...
+# Subtest: S12 deck 採 currentId
+ok 58 - S12 deck 採 currentId
+  ---
+  duration_ms: 13.368458
+  type: 'test'
+  ...
+# Subtest: S12 toolbar 採 currentId
+not ok 59 - S12 toolbar 採 currentId
+  ---
+  duration_ms: 9.489125
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:139:68'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+
+    false !== true
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:142:10)
+    async Test.run (node:internal/test_runner/test:1208:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: S12 play 不接管且不取消 gesture
+ok 60 - S12 play 不接管且不取消 gesture
+  ---
+  duration_ms: 9.029291
+  type: 'test'
+  ...
+# Subtest: S12 edit 不接管且不取消 gesture
+ok 61 - S12 edit 不接管且不取消 gesture
+  ---
+  duration_ms: 9.036208
+  type: 'test'
+  ...
+# Subtest: S12 destroy 不接管且不取消 gesture
+ok 62 - S12 destroy 不接管且不取消 gesture
+  ---
+  duration_ms: 9.686
+  type: 'test'
+  ...
+# Subtest: S12 defaultPrevented 不接管且不取消 gesture
+ok 63 - S12 defaultPrevented 不接管且不取消 gesture
+  ---
+  duration_ms: 8.058083
+  type: 'test'
+  ...
+# Subtest: S12 isComposing 不接管且不取消 gesture
+ok 64 - S12 isComposing 不接管且不取消 gesture
+  ---
+  duration_ms: 8.604542
+  type: 'test'
+  ...
+# Subtest: S12 composingText 不接管且不取消 gesture
+ok 65 - S12 composingText 不接管且不取消 gesture
+  ---
+  duration_ms: 9.603917
+  type: 'test'
+  ...
+# Subtest: S12 external 不接管且不取消 gesture
+ok 66 - S12 external 不接管且不取消 gesture
+  ---
+  duration_ms: 7.109916
+  type: 'test'
+  ...
+# Subtest: S12 detached 不接管且不取消 gesture
+ok 67 - S12 detached 不接管且不取消 gesture
+  ---
+  duration_ms: 7.355
+  type: 'test'
+  ...
+# Subtest: S12 other-deck 不接管且不取消 gesture
+ok 68 - S12 other-deck 不接管且不取消 gesture
+  ---
+  duration_ms: 7.585
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-dom 不接管且不取消 gesture
+ok 69 - S12 duplicate-dom 不接管且不取消 gesture
+  ---
+  duration_ms: 7.690375
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-spec 不接管且不取消 gesture
+ok 70 - S12 duplicate-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 7.421416
+  type: 'test'
+  ...
+# Subtest: S12 missing-id 不接管且不取消 gesture
+ok 71 - S12 missing-id 不接管且不取消 gesture
+  ---
+  duration_ms: 7.49625
+  type: 'test'
+  ...
+# Subtest: S12 missing-spec 不接管且不取消 gesture
+ok 72 - S12 missing-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 7.258916
+  type: 'test'
+  ...
+# Subtest: S12 null 不接管且不取消 gesture
+ok 73 - S12 null 不接管且不取消 gesture
+  ---
+  duration_ms: 7.153542
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=false
+ok 74 - S12 ownership input active=false
+  ---
+  duration_ms: 7.880458
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=true
+ok 75 - S12 ownership input active=true
+  ---
+  duration_ms: 6.714625
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=false
+ok 76 - S12 ownership textarea active=false
+  ---
+  duration_ms: 7.236875
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=true
+ok 77 - S12 ownership textarea active=true
+  ---
+  duration_ms: 7.208458
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=false
+ok 78 - S12 ownership select active=false
+  ---
+  duration_ms: 7.206833
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=true
+ok 79 - S12 ownership select active=true
+  ---
+  duration_ms: 7.0615
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=false
+ok 80 - S12 ownership textbox active=false
+  ---
+  duration_ms: 7.744791
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=true
+ok 81 - S12 ownership textbox active=true
+  ---
+  duration_ms: 7.470292
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=false
+ok 82 - S12 ownership editable active=false
+  ---
+  duration_ms: 7.190709
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=true
+ok 83 - S12 ownership editable active=true
+  ---
+  duration_ms: 6.943583
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=false
+ok 84 - S12 ownership nestededitable active=false
+  ---
+  duration_ms: 7.606375
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=true
+ok 85 - S12 ownership nestededitable active=true
+  ---
+  duration_ms: 7.537375
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=false
+ok 86 - S12 ownership invalid-inherited active=false
+  ---
+  duration_ms: 7.21025
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=true
+ok 87 - S12 ownership invalid-inherited active=true
+  ---
+  duration_ms: 7.27375
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=false
+ok 88 - S12 ownership false active=false
+  ---
+  duration_ms: 9.914875
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=true
+ok 89 - S12 ownership false active=true
+  ---
+  duration_ms: 10.096042
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=false
+ok 90 - S12 ownership false-inside-true active=false
+  ---
+  duration_ms: 10.085792
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=true
+ok 91 - S12 ownership false-inside-true active=true
+  ---
+  duration_ms: 10.263458
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=false
+ok 92 - S12 ownership true-inside-false active=false
+  ---
+  duration_ms: 7.529417
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=true
+ok 93 - S12 ownership true-inside-false active=true
+  ---
+  duration_ms: 7.862083
+  type: 'test'
+  ...
+# Subtest: S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+ok 94 - S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+  ---
+  duration_ms: 12.621541
+  type: 'test'
+  ...
+# Subtest: S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+ok 95 - S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+  ---
+  duration_ms: 9.347208
+  type: 'test'
+  ...
+# Subtest: S12 既有 drop busy 拒絕 paste，不清 pending
+ok 96 - S12 既有 drop busy 拒絕 paste，不清 pending
+  ---
+  duration_ms: 10.082208
+  type: 'test'
+  ...
+# Subtest: S12 external 拒絕保留進行中 gesture
+ok 97 - S12 external 拒絕保留進行中 gesture
+  ---
+  duration_ms: 8.406375
+  type: 'test'
+  ...
+# Subtest: S12 duplicate 拒絕保留進行中 gesture
+ok 98 - S12 duplicate 拒絕保留進行中 gesture
+  ---
+  duration_ms: 7.347791
+  type: 'test'
+  ...
+# Subtest: S12 text 拒絕保留進行中 gesture
+ok 99 - S12 text 拒絕保留進行中 gesture
+  ---
+  duration_ms: 8.226542
+  type: 'test'
+  ...
+# Subtest: S12 input 拒絕保留進行中 gesture
+ok 100 - S12 input 拒絕保留進行中 gesture
+  ---
+  duration_ms: 7.678708
+  type: 'test'
+  ...
+# Subtest: S12 IME 拒絕保留進行中 gesture
+ok 101 - S12 IME 拒絕保留進行中 gesture
+  ---
+  duration_ms: 7.963542
+  type: 'test'
+  ...
+# Subtest: S12 async edit 不取消、不改 captured slide
+ok 102 - S12 async edit 不取消、不改 captured slide
+  ---
+  duration_ms: 17.857459
+  type: 'test'
+  ...
+# Subtest: S12 async play 不取消、不改 captured slide
+ok 103 - S12 async play 不取消、不改 captured slide
+  ---
+  duration_ms: 15.753459
+  type: 'test'
+  ...
+1..103
+# tests 103
+# suites 0
+# pass 96
+# fail 7
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 882.376833

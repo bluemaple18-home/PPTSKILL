@@ -1,0 +1,194 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html",
+  "sourceSha256": "e0a99709ee36e4d6a35dc571eafbf992875c77bc97962888b424404a0c53bb18",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s15": "play/edit 隱藏、layout 顯示",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "open 取消真 pointer preview，canonical 不提交",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "native showModal focus 與背景 inert",
+          "kind": "native browser"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-1",
+          "codepoints": 57
+        },
+        {
+          "wp2s15": "舊 roots／內容保留、HTML-like 不執行",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty inline validation 可見可 focus／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "Enter 換行不提交",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "501 codepoints invalid 保留／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-3",
+          "codepoints": 500
+        },
+        {
+          "wp2s15": "invalid→修正→500 emoji 成功",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "cancel 清 draft／selection canonical no-op",
+          "kind": "real pointer"
+        },
+        {
+          "wp2s15": "Escape 清 draft／selection canonical no-op",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-4",
+          "codepoints": 2
+        },
+        {
+          "wp2s15": "IME keydown 未 preventDefault／cancel guard／submit guard",
+          "kind": "synthetic CompositionEvent＋real Escape；非 OS IME"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-1",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty slide 可插入",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "noimage slide 可再次插入",
+          "kind": "real-pointer/Input.insertText"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-legacy-selected.html",
+          "bytes": 539132,
+          "sha256": "6ab27f8e21325d4d3f15f57ff4844f37a6bc0113b7596d35ce41d6085c75580a"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-preview-export.html",
+          "bytes": 539419,
+          "sha256": "636fa6f33139eea6af302ed3fd9f38cbf5f0e983f135d06381794799f83125ad"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-cancel.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-noop.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-invalid.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-invalid-resize.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-play-mode.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-export.html",
+          "bytes": 539419,
+          "sha256": "62346aabf3e022a1d0f35362216bcc95afaee4b33d67d0e11a32efa7f217ae47"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-reopen-export.html",
+          "bytes": 539419,
+          "sha256": "afa6f4aba67c6c62a2cce36533da867d60ee873be55f1cf3524e1d3efc221a2a"
+        },
+        {
+          "label": "s15-toolbar",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-s15-toolbar.png",
+          "bytes": 48601,
+          "sha256": "25520ca47734a3977d304560d2e2e319184664e03ca1e81033d39977c1065169"
+        },
+        {
+          "label": "s15-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/1280-s15-dialog.png",
+          "bytes": 41321,
+          "sha256": "d8db00a4ac3b67bad767d78370a57047b976ed6e2dbd2d45adbcf99626495c94"
+        }
+      ],
+      "error": "Error: Error: geometry x 低於 minimum／safe area。\n    at validateComponentGeometry (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:404:122)\n    at validateMetadata (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:897:5)\n    at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:921:5)\n    at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:976:325)\n    at executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:1094:42)\n    at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:1624:130)\n    at <anonymous>:1:23\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:105:44)\n    at async runInsertTextUIBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s15-browser-cases.mjs:53:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:220:65",
+      "targetClosed": true
+    }
+  ],
+  "error": "Error: Error: geometry x 低於 minimum／safe area。\n    at validateComponentGeometry (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:404:122)\n    at validateMetadata (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:897:5)\n    at Object.validateRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:921:5)\n    at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:976:325)\n    at executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:1094:42)\n    at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-wp2-s15/host-acceptance/insert-text-ui/source.html:1624:130)\n    at <anonymous>:1:23\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:105:44)\n    at async runInsertTextUIBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s15-browser-cases.mjs:53:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:220:65"
+}

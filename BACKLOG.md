@@ -1084,4 +1084,4 @@ WP2-S14 closure：Owner轉交Independent GO，reviewed `e595b84`，P0–P3全0�
 
 WP2-S14已依Owner授權FF/push main `8dcc3a0`，遠端readback MATCH；詳evidence/edx-wp2-s14/mainline-integration.md。
 
-**WP2-S15 IN_PROGRESS：** 安全插入文字UI，沿S13 insert-element與native dialog/textarea；task tasks/edx-wp2-s15-insert-text-ui.md。無新mutation authority、無component direct contenteditable／auto-layout；fresh scoped/full/ZIP/browser/PGQ待驗。
+**WP2-S15 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** 安全插入文字UI，沿S13 insert-element與native dialog/textarea；task tasks/edx-wp2-s15-insert-text-ui.md。無新mutation authority、無component direct contenteditable／auto-layout；修復scoped252/full789、ZIP、雙viewport48／48與PGQ單輪16 PASS；candidate a181982，詳細handoff_20260923_edx_wp2_s15_review.md，未merge/push/deploy新slice。

@@ -1,0 +1,356 @@
+✖ S15 markup／bootstrap 有 label、focusable status、無 UTF16 maxlength (1.920833ms)
+✖ S15 mounted 精確文字／empty=false／固定 geometry／一次 revision／舊 root 保留 (18.308334ms)
+✖ S15 mounted 精確文字／empty=true／固定 geometry／一次 revision／舊 root 保留 (3.478125ms)
+✖ S15 cancel 為 no-op、清 draft、focus 與重開 (10.946875ms)
+✖ S15 escape 為 no-op、清 draft、focus 與重開 (6.697875ms)
+✖ S15 close 為 no-op、清 draft、focus 與重開 (7.046083ms)
+✖ S15 invalid 保留 draft/status/focus；500 emoji 與空白可修正再提交 (6.462042ms)
+✖ S15 synthetic composition 不搶 submit/Escape，Enter 不提交，focusout 不提交 (6.240375ms)
+✖ S15 target invalidation page 不插入錯頁 (5.911333ms)
+✖ S15 target invalidation focusin 不插入錯頁 (6.286584ms)
+✖ S15 target invalidation mode 不插入錯頁 (5.991792ms)
+✖ S15 target invalidation selection 不插入錯頁 (7.088833ms)
+✖ S15 target invalidation clear 不插入錯頁 (6.593166ms)
+✖ S15 target invalidation destroy 不插入錯頁 (5.86725ms)
+✖ S15 target invalidation removed 不插入錯頁 (5.355417ms)
+✖ S15 target invalidation rebuilt 不插入錯頁 (5.91075ms)
+✖ S15 target invalidation duplicate-root 不插入錯頁 (6.220208ms)
+✖ S15 target invalidation duplicate-slide 不插入錯頁 (10.453208ms)
+✖ S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化 (6.200625ms)
+✖ S15 showModal throw 回收、reentrant submit 只一次、gesture cancel 不 commit (7.409708ms)
+✖ S15 chooser 互斥、busy 與 dialog 期間 image controls 禁用 (7.215167ms)
+✖ S15 export 不提交 draft、無 dialog/transient；offline mounted bootstrap 可再插／S14 edit (6.442125ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 0
+ℹ fail 22
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 272.578209
+
+✖ failing tests:
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:19:1
+✖ S15 markup／bootstrap 有 label、focusable status、無 UTF16 maxlength (1.920833ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /data-insert-text-dialog/. Input:
+
+  '<nav class="pptskill-editor" data-pptskill-editor aria-label="簡報編輯器"><button type="button" data-action="edit">編輯文字</button><button type="button" data-action="layout" aria-pressed="false">編輯版面</button><button type="button" data-action="snap-layout" aria-pressed="false">8px吸附</button><button type="button" data-action="initialize-layout" hidden>套用手動版面</button><span data-pptskill-insert-image-toolbar><button type="button" data-action="insert-image" hidden disabled>插入圖片</button><input class="pptskill-editor__file" id="pptskill-insert-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span><span data-pptskill-typography-toolbar hidden><label>字級 <input type="number" min="16" max="160" step="1" aria-label="字級（slide px）" data-typography-size></label><button type="button" data-action="apply-typography">套用字級</button><button type="button" data-action="reset-typography">還原字級</button><button type="button" data-action="copy-style" disabled>複製字級</button><button type="button" data-action="paste-style" disabled>貼上字級</button></span><span data-pptskill-selected-image-toolbar><button type="button" data-action="replace-selected-image" hidden disabled>替換所選圖片</button><span data-selected-image-fit role="group" aria-label="所選圖片顯示方式" hidden><button type="button" data-action="set-selected-image-fit" data-image-fit="contain" aria-label="完整顯示所選圖片" aria-pressed="false" disabled>完整顯示</button><button type="button" data-action="set-selected-image-fit" data-image-fit="cover" aria-label="填滿所選圖片框" title="填滿圖片框，可能裁去邊緣" aria-pressed="false" disabled>填滿</button></span><input class="pptskill-editor__file" id="pptskill-selected-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span><span data-pptskill-context-toolbar hidden aria-label="多選排列"><button type="button" data-action="align-left">左對齊</button><button type="button" data-action="align-center-x">水平置中</button><button type="button" data-action="align-right">右對齊</button><button type="button" data-action="align-top">上對齊</button><button type="button" data-action="align-center-y">垂直置中</button><button type="button" data-action="align-bottom">下對齊</button><button type="button" data-action="distribute-horizontal-centers" data-distribute-control hidden>水平均分</button><button type="button" data-action="distribute-vertical-centers" data-distribute-control hidden>垂直均分</button><button type="button" data-action="distribute-horizontal-gaps" data-distribute-control hidden>水平等間距</button><button type="button" data-action="distribute-vertical-gaps" data-distribute-control hidden>垂直等間距</button></span><button type="button" data-action="edit-component">編輯元件</button><button type="button" data-action="move-up">上移</button><button type="button" data-action="move-down">下移</button><button type="button" data-action="duplicate">複製</button><button type="button" data-action="delete">刪除</button><label for="pptskill-image-input">替換圖片</label><input class="pptskill-editor__file" id="pptskill-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml"><button type="button" data-action="save">另存 HTML</button><span class="pptskill-editor__status" data-editor-status aria-live="polite">可直接播放</span></nav><dialog class="pptskill-component-dialog" data-component-dialog><strong>編輯目前頁面的支援元件</strong><p>只接受 DeckSpec allowlist 內的 text、image、table、chart 或 public citation。</p><textarea data-component-json spellcheck="false"></textarea><menu><button type="button" data-action="cancel-component">取消</button><button type="button" data-action="apply-component">套用</button></menu></dialog>'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:20:50)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<nav class="pptskill-editor" data-pptskill-editor aria-label="簡報編輯器"><button type="button" data-action="edit">編輯文字</button><button type="button" data-action="layout" aria-pressed="false">編輯版面</button><button type="button" data-action="snap-layout" aria-pressed="false">8px吸附</button><button type="button" data-action="initialize-layout" hidden>套用手動版面</button><span data-pptskill-insert-image-toolbar><button type="button" data-action="insert-image" hidden disabled>插入圖片</button><input class="pptskill-editor__file" id="pptskill-insert-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span><span data-pptskill-typography-toolbar hidden><label>字級 <input type="number" min="16" max="160" step="1" aria-label="字級（slide px）" data-typography-size></label><button type="button" data-action="apply-typography">套用字級</button><button type="button" data-action="reset-typography">還原字級</button><button type="button" data-action="copy-style" disabled>複製字級</button><button type="button" data-action="paste-style" disabled>貼上字級</button></span><span data-pptskill-selected-image-toolbar><button type="button" data-action="replace-selected-image" hidden disabled>替換所選圖片</button><span data-selected-image-fit role="group" aria-label="所選圖片顯示方式" hidden><button type="button" data-action="set-selected-image-fit" data-image-fit="contain" aria-label="完整顯示所選圖片" aria-pressed="false" disabled>完整顯示</button><button type="button" data-action="set-selected-image-fit" data-image-fit="cover" aria-label="填滿所選圖片框" title="填滿圖片框，可能裁去邊緣" aria-pressed="false" disabled>填滿</button></span><input class="pptskill-editor__file" id="pptskill-selected-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml" hidden></span><span data-pptskill-context-toolbar hidden aria-label="多選排列"><button type="button" data-action="align-left">左對齊</button><button type="button" data-action="align-center-x">水平置中</button><button type="button" data-action="align-right">右對齊</button><button type="button" data-action="align-top">上對齊</button><button type="button" data-action="align-center-y">垂直置中</button><button type="button" data-action="align-bottom">下對齊</button><button type="button" data-action="distribute-horizontal-centers" data-distribute-control hidden>水平均分</button><button type="button" data-action="distribute-vertical-centers" data-distribute-control hidden>垂直均分</button><button type="button" data-action="distribute-horizontal-gaps" data-distribute-control hidden>水平等間距</button><button type="button" data-action="distribute-vertical-gaps" data-distribute-control hidden>垂直等間距</button></span><button type="button" data-action="edit-component">編輯元件</button><button type="button" data-action="move-up">上移</button><button type="button" data-action="move-down">下移</button><button type="button" data-action="duplicate">複製</button><button type="button" data-action="delete">刪除</button><label for="pptskill-image-input">替換圖片</label><input class="pptskill-editor__file" id="pptskill-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml"><button type="button" data-action="save">另存 HTML</button><span class="pptskill-editor__status" data-editor-status aria-live="polite">可直接播放</span></nav><dialog class="pptskill-component-dialog" data-component-dialog><strong>編輯目前頁面的支援元件</strong><p>只接受 DeckSpec allowlist 內的 text、image、table、chart 或 public citation。</p><textarea data-component-json spellcheck="false"></textarea><menu><button type="button" data-action="cancel-component">取消</button><button type="button" data-action="apply-component">套用</button></menu></dialog>',
+    expected: /data-insert-text-dialog/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:22:36
+✖ S15 mounted 精確文字／empty=false／固定 geometry／一次 revision／舊 root 保留 (18.308334ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(h.button)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:23:34)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:22:36
+✖ S15 mounted 精確文字／empty=true／固定 geometry／一次 revision／舊 root 保留 (3.478125ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+    assert.ok(h.button)
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:23:34)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: null,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:32:50
+✖ S15 cancel 為 no-op、清 draft、focus 與重開 (10.946875ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:33:125)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:32:50
+✖ S15 escape 為 no-op、清 draft、focus 與重開 (6.697875ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:33:125)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:32:50
+✖ S15 close 為 no-op、清 draft、focus 與重開 (7.046083ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:33:125)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:38:1
+✖ S15 invalid 保留 draft/status/focus；500 emoji 與空白可修正再提交 (6.462042ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:39:125)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:43:1
+✖ S15 synthetic composition 不搶 submit/Escape，Enter 不提交，focusout 不提交 (6.240375ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:44:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation page 不插入錯頁 (5.911333ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation focusin 不插入錯頁 (6.286584ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation mode 不插入錯頁 (5.991792ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation selection 不插入錯頁 (7.088833ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation clear 不插入錯頁 (6.593166ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation destroy 不插入錯頁 (5.86725ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation removed 不插入錯頁 (5.355417ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation rebuilt 不插入錯頁 (5.91075ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation duplicate-root 不插入錯頁 (6.220208ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:47:142
+✖ S15 target invalidation duplicate-slide 不插入錯頁 (10.453208ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:48:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:57:1
+✖ S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化 (6.200625ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:58:52)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:63:1
+✖ S15 showModal throw 回收、reentrant submit 只一次、gesture cancel 不 commit (7.409708ms)
+  TypeError: Cannot read properties of null (reading 'showModal')
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:64:112)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:68:1
+✖ S15 chooser 互斥、busy 與 dialog 期間 image controls 禁用 (7.215167ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:70:31)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-wp2-s15-insert-text-ui.test.mjs:73:1
+✖ S15 export 不提交 draft、無 dialog/transient；offline mounted bootstrap 可再插／S14 edit (6.442125ms)
+  TypeError: Cannot read properties of null (reading 'closest')
+      at evalmachine.<anonymous>:699:60
+      at click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:154:91)
+      at Object.action (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-perf-mounted.mjs:164:20)
+      at h.open (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:16:20)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:74:35)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
