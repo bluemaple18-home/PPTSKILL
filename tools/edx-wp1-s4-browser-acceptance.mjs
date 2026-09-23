@@ -1,4 +1,5 @@
 import { runTextDoubleClickBrowserCases } from './edx-wp2-s17-browser-cases.mjs';
+import { runDeleteElementBrowserCases } from './edx-wp2-s18-browser-cases.mjs';
 import { runEditTextUIBrowserCases } from './edx-wp2-s16-browser-cases.mjs';
 import { runInsertTextUIBrowserCases } from './edx-wp2-s15-browser-cases.mjs';
 import { runEditTextComponentBrowserCases } from './edx-wp2-s14-browser-cases.mjs';
@@ -35,12 +36,15 @@ import { renderFullDeck } from '../runtime/full-deck-renderer.js';
 const outputDir = resolve(process.argv[2] || (process.argv.includes('--perf-regression') ? 'evidence/edx-wp1-s4-perf/worker-browser' : 'evidence/edx-wp1-s4/browser'));
 const fixtureOnly = process.argv.includes('--fixture-only');
 const perfRegression = process.argv.includes('--perf-regression');
+const deleteElementRegression = process.argv.includes('--delete-element-regression');
+if (deleteElementRegression && process.argv.some(arg => /^--.*-regression$/.test(arg) && arg !== '--delete-element-regression')) throw new Error('delete-element regression 僅允許 base10+S18。');
 const portFile = process.env.PPTSKILL_DEVTOOLS_ACTIVE_PORT;
 if (!fixtureOnly && !portFile) throw new Error('必須提供 PPTSKILL_DEVTOOLS_ACTIVE_PORT；本工具不啟動 browser。');
 await mkdir(outputDir, { recursive: true });
 const input = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
 input.slides = input.slides.filter(slide => slide.id === 'portable');
 input.slides[0].content.components[0].text = '座標保持一致';
+if (deleteElementRegression) addAssetReplacementFixture(input);
 if (perfRegression) input.slides[0].content.components.push({ id: 'perf-image', type: 'image', alt: '成本回歸圖片', dataUri: 'data:image/svg+xml;base64,' + Buffer.from('<svg xmlns="http://www.w3.org/2000/svg" width="1" height="1"/>').toString('base64') });
 if (process.argv.includes('--typography-regression') || process.argv.includes('--style-copy-regression')) {
   input.slides[0].composition.motion = { effect: 'underline-sweep', role: 'text', replay: 'slide-visible', staggerMs: 90, targets: [{ ref: 'content.title' }, { ref: 'content.subtitle' }] };
@@ -220,6 +224,7 @@ try {
       if (process.argv.includes('--image-drop-regression') || process.argv.includes('--image-paste-regression')) await runImageDropBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
       if (process.argv.includes('--image-paste-regression')) await runImagePasteBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
       if (process.argv.includes('--text-double-click-regression')) await runTextDoubleClickBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
+      if (deleteElementRegression) await runDeleteElementBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--edit-text-ui-regression')) await runEditTextUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--insert-text-ui-regression')) await runInsertTextUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);

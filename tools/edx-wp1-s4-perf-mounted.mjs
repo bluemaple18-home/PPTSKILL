@@ -57,11 +57,13 @@ class Element {
   removeAttribute(k) { delete this.attrs[k]; }
   get isConnected() { return this.tag === 'html' || Boolean(this.parentElement?.isConnected); }
   get parentNode() { return this.parentElement; }
+  get nextSibling() { return this.parentElement?.children[this.parentElement.children.indexOf(this) + 1] || null; }
   append(node) { node.remove(); this.children.push(node); node.parentElement = this; }
   remove() { if (this.parentElement) { const p = this.parentElement; p.children.splice(p.children.indexOf(this), 1); this.parentElement = null; } }
   after(node) { const p = this.parentElement; node.remove(); p.children.splice(p.children.indexOf(this) + 1, 0, node); node.parentElement = p; }
   replaceWith(node) { this.after(node); this.remove(); }
-  insertBefore(node, other) { node.remove(); this.children.splice(this.children.indexOf(other), 0, node); node.parentElement = this; }
+  // DOM rollback 需保留原位置；原生 insertBefore 不會呼叫可被覆寫的 node.remove。
+  insertBefore(node, other) { if (other !== null && !this.children.includes(other)) throw new Error('insertBefore reference 不在 parent'); if (node === other) return node; Element.prototype.remove.call(node); this.children.splice(other === null ? this.children.length : this.children.indexOf(other), 0, node); node.parentElement = this; return node; }
   get nextElementSibling() { return this.parentElement?.children[this.parentElement.children.indexOf(this) + 1]; }
   get previousElementSibling() { return this.parentElement?.children[this.parentElement.children.indexOf(this) - 1]; }
   matches(selector) {
