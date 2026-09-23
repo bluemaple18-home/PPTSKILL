@@ -1,6 +1,6 @@
 # EDX-WP2-S17 — 文字元件雙擊編輯入口
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: df584eb920292be2a517ac72721c02455ddb0505
 Branch: codex/edx-wp2-s17-text-double-click
 traces_to: BACKLOG §10.1 decisions 2/7/8、§10.3 WP2、§10.4 edit-text。
@@ -32,3 +32,7 @@ Mainline：驗 diff、fresh explicit nonbrowser、build/probe ZIP、正式 manag
 ## Mainline acceptance
 
 Product candidate 8c0781083ea21cdd365e5f9e1f91f4b7057cdc70；runtime/ZIP ca4f4d70d5e466adc8e7588c637d83ee34aac9e4。Fresh scoped313/full874、雙viewport26+26、affected PGQ單輪16、ZIP lifecycle/source4/protected4/cleanup PASS。首輪空白點命中失敗已限域修正harness並保留原FAIL；runtime/ZIP未因修復改動。詳細 evidence/edx-wp2-s17/receipt.md、host-final-verification.json 與 handoff_20260923_edx_wp2_s17_review.md。停 Independent Review pending，未 merge/push/deploy，未開S18。
+
+## Independent Review closure
+
+Owner交回GO，reviewed8c0781083ea21cdd365e5f9e1f91f4b7057cdc70，P0–P3全0；Reviewer fresh focused53/scoped313/full874，browser26+26與PGQ16為committed evidence核對。詳evidence/edx-wp2-s17/independent-review.md。Owner授權整合推送，完成停止，不開S18。
