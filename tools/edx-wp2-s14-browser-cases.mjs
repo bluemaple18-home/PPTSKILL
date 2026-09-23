@@ -29,6 +29,12 @@ export async function runEditTextComponentBrowserCases({ cdp, evaluate, navigate
   // 元件 API 不提交其他 role 的待編輯 DOM；IME fixture 明確拒絕。
   assert.equal(await evaluate(`(()=>{const n=document.querySelector('.slide[data-slide-id="portable"] [data-pptskill-element-id="role-title"]'),before=window.PPTSKILLEditor.getDeckSpec();const old=n.textContent;n.textContent='未提交';n.dispatchEvent(new CompositionEvent('compositionstart',{bubbles:true}));let rejected=false;try{window.PPTSKILLEditor.executeOperation(${JSON.stringify(request('IME 拒絕'))})}catch(e){rejected=/IME/.test(e.message)}const unchanged=JSON.stringify(before)===JSON.stringify(window.PPTSKILLEditor.getDeckSpec())&&n.textContent==='未提交';n.textContent=old;n.dispatchEvent(new CompositionEvent('compositionend',{bubbles:true}));return rejected&&unchanged})()`), true);
   await click('[data-action="layout"]');
+  // asset fixture 未給舊 quote geometry；沿既有 UI 初始化後才驗證 pointer gesture。
+  await click(selector()); await click('[data-action="initialize-layout"]');
+  const initializedBox = { x: 800, y: 280, width: 640, height: 480 };
+  expected.slides[0].composition.geometryOverrides = { ...expected.slides[0].composition.geometryOverrides, 'portable-quote': initializedBox };
+  assert.deepEqual(await spec(), expected);
+  run.checks.push({ wp2s14: 'real-pointer-initialize-geometry', canonical: initializedBox });
   const insert = { operation: 'insert-element', target: { slideId: 'asset-other' }, value: { component: { id: 's14-new', type: 'text', text: '新元件' }, geometry: { x: 600, y: 400, width: 240, height: 160 } } };
   await evaluate(`window.PPTSKILLEditor.executeOperation(${JSON.stringify(insert)})`);
   const other = expected.slides.find(s => s.id === 'asset-other'); other.content.components.push(insert.value.component); other.composition.geometryOverrides = { ...other.composition.geometryOverrides, 's14-new': insert.value.geometry };
