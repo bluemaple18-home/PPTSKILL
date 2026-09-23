@@ -1,0 +1,122 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/source.html",
+  "sourceSha256": "79efffa9599dbc8f3cf1e4acec2c38f0bd2365490a7cfd60306ba93ffd3abaea",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s17": "單擊只選取；雙擊預填同一 dialog，保留 canonical／node／geometry",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Escape 清 draft 且不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "取消按鈕不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=false 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=true 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "play／edit mode 不開 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Shift 雙擊拒絕 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-legacy-selected.html",
+          "bytes": 543593,
+          "sha256": "29c7aad99162f270a9902f1dfd60d3cc4a7508b37399143ebed5925a7b78a770"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-preview-export.html",
+          "bytes": 543880,
+          "sha256": "0c98e1655083ef6ec8687d94d9f5cf42a19f6d4e865197100b4ce0e364a42385"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-cancel.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-noop.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-invalid.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-invalid-resize.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-play-mode.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-export.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-reopen-export.html",
+          "bytes": 543880,
+          "sha256": "84826c63815cc7ad8f920e7a5055fc6e7788981794b6b93316316adfc86c0a2e"
+        },
+        {
+          "label": "s17-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-acceptance/text-double-click/1280-s17-dialog.png",
+          "bytes": 65104,
+          "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: pointer 必須命中目標\n\nfalse !== true\n\n    at doubleClick (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s17-browser-cases.mjs:30:12)\n    at async runTextDoubleClickBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s17-browser-cases.mjs:106:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:222:68",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: pointer 必須命中目標\n\nfalse !== true\n\n    at doubleClick (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s17-browser-cases.mjs:30:12)\n    at async runTextDoubleClickBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp2-s17-browser-cases.mjs:106:17)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:222:68"
+}

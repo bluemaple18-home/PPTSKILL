@@ -1,0 +1,86 @@
+{
+  "status": "PASS",
+  "source": "host-pointer-repair/text-double-click/acceptance.json",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 26,
+      "s17Cases": 16,
+      "errors": {
+        "console": 0,
+        "pageErrors": 0,
+        "networkFailures": 0,
+        "httpErrors": 0,
+        "remoteRequests": 0
+      },
+      "targetClosed": true,
+      "screenshots": [
+        {
+          "label": "s17-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-dialog.png",
+          "bytes": 65104,
+          "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6"
+        },
+        {
+          "label": "s17-text-double-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-text-double-click.html",
+          "bytes": 544284,
+          "sha256": "4d07042eda5b13bd76f7f2c3fbdb5514914260ebe0fffe82f9edf7902aeb1c73"
+        },
+        {
+          "label": "s17-offline-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-offline-dialog.png",
+          "bytes": 68181,
+          "sha256": "dab255c74d7de6e7ba91041e623303f1f34ec0727e3b0c054899e4e3909ff9bd"
+        },
+        {
+          "label": "s17-text-double-click-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-text-double-click-offline.html",
+          "bytes": 544283,
+          "sha256": "a8b3b51d37a929647576a1e050c485cb4dc7dd445ae919839b6bfb46595bd411"
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 26,
+      "s17Cases": 16,
+      "errors": {
+        "console": 0,
+        "pageErrors": 0,
+        "networkFailures": 0,
+        "httpErrors": 0,
+        "remoteRequests": 0
+      },
+      "targetClosed": true,
+      "screenshots": [
+        {
+          "label": "s17-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-dialog.png",
+          "bytes": 81477,
+          "sha256": "8f4b7831106b7f84db6f7efa60795d73cb9a3f9367acba36dc7fd0b3a24e34b7"
+        },
+        {
+          "label": "s17-text-double-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-text-double-click.html",
+          "bytes": 544284,
+          "sha256": "4d07042eda5b13bd76f7f2c3fbdb5514914260ebe0fffe82f9edf7902aeb1c73"
+        },
+        {
+          "label": "s17-offline-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-offline-dialog.png",
+          "bytes": 84727,
+          "sha256": "f5735be533e06ff22ab4fa9f50868356ef5e10183e73a6ff78748f1565fda323"
+        },
+        {
+          "label": "s17-text-double-click-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-text-double-click-offline.html",
+          "bytes": 544283,
+          "sha256": "a8b3b51d37a929647576a1e050c485cb4dc7dd445ae919839b6bfb46595bd411"
+        }
+      ]
+    }
+  ]
+}

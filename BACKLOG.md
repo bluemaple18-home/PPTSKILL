@@ -1093,3 +1093,7 @@ WP2-S15已FF/push main3cebfaf，遠端readback MATCH。S16開卡：已選text co
 WP2-S16 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：candidate f5db0c0；已選text component context dialog UI，沿S14 edit-text/S15dialog。Fresh scoped260/full821、雙viewport42+42、PGQ單輪16、ZIP/source4/protected4/cleanup PASS；snap-on selection缺口已修，歷史FAIL／中止保留。handoff_20260923_edx_wp2_s16_review.md。S15main已push3cebfaf；S16未merge/push/deploy，未開S17。
 
 WP2-S16 COMPLETE / INDEPENDENT_REVIEW_GO：Owner交回GO，reviewed f5db0c0，P0–P3全0；Reviewer fresh scoped260/full821（223+235+363），browser42+42／PGQ單輪16為committed evidence核對。Mainline source4/protected4/ZIP MATCH，reviewed delivery無drift；詳evidence/edx-wp2-s16/independent-review.md。Owner明示「推上去就好」，整合推送後停止，不開S17。
+
+WP2-S16 已整合推送，Owner 回報遠端 readback MATCH；本輪本地 main/origin-main 均為 df584eb920292be2a517ac72721c02455ddb0505，S16 source4/protected4/ZIP fresh MATCH。Owner 隨後明示「繼續開發」。
+
+**WP2-S17 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** 文字元件雙擊開啟既有 S16 編輯視窗，沿同一 selected-target／edit-text 契約。Product 8c07810，runtime/ZIP ca4f4d7；fresh scoped313/full874、雙viewport26+26、affected PGQ單輪16、ZIP/source4/protected4/cleanup PASS。首輪空白點hit-test FAIL已以實測定位修正harness，歷史證據保留；不新增inline contenteditable。卡 tasks/edx-wp2-s17-text-double-click.md；交接 handoff_20260923_edx_wp2_s17_review.md。停Independent Review，不 merge/push/deploy、不開S18。

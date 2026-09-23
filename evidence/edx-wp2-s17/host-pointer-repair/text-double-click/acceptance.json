@@ -1,0 +1,397 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/source.html",
+  "sourceSha256": "79efffa9599dbc8f3cf1e4acec2c38f0bd2365490a7cfd60306ba93ffd3abaea",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s17": "單擊只選取；雙擊預填同一 dialog，保留 canonical／node／geometry",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Escape 清 draft 且不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "取消按鈕不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=false 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=true 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "play／edit mode 不開 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Shift 雙擊拒絕 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "image／空白／chrome／舊 selection 不誤開",
+          "kind": "真 image／空白 pointer；synthetic chrome／選錯物件 dblclick"
+        },
+        {
+          "wp2s17": "保留多選時拒絕 dblclick",
+          "kind": "真 Shift pointer 建立多選；synthetic dblclick 避免先改選"
+        },
+        {
+          "wp2s17": "duplicate／偽造 node 拒絕",
+          "kind": "synthetic clone 與 dblclick fault"
+        },
+        {
+          "wp2s17": "showModal failure 回收且下一次雙擊可開",
+          "kind": "真 pointer；synthetic showModal throw"
+        },
+        {
+          "wp2s17": "pending 重入不覆蓋 draft，IME 阻擋 save／Escape",
+          "kind": "synthetic dblclick／CompositionEvent；真 Input.insertText／儲存／Escape，非 OS IME"
+        },
+        {
+          "wp2s17": "S1 role 雙擊 direct editing 與 Escape 保留",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "export 不提交或洩漏 component draft",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "offline reopen 後雙擊並再次儲存",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "remount／bootstrap 保留單一 editor／dialog 入口",
+          "kind": "真 pointer；synthetic 同 document runtime bootstrap"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-legacy-selected.html",
+          "bytes": 543593,
+          "sha256": "29c7aad99162f270a9902f1dfd60d3cc4a7508b37399143ebed5925a7b78a770"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-preview-export.html",
+          "bytes": 543880,
+          "sha256": "0c98e1655083ef6ec8687d94d9f5cf42a19f6d4e865197100b4ce0e364a42385"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-cancel.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-noop.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-invalid.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-invalid-resize.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-play-mode.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-export.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-reopen-export.html",
+          "bytes": 543880,
+          "sha256": "84826c63815cc7ad8f920e7a5055fc6e7788981794b6b93316316adfc86c0a2e"
+        },
+        {
+          "label": "s17-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-dialog.png",
+          "bytes": 65104,
+          "sha256": "721370cafad0e0dad2bf31cc9a3db8e3c44a83592434ebba71f11df28dac93b6"
+        },
+        {
+          "label": "s17-text-double-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-text-double-click.html",
+          "bytes": 544284,
+          "sha256": "4d07042eda5b13bd76f7f2c3fbdb5514914260ebe0fffe82f9edf7902aeb1c73"
+        },
+        {
+          "label": "s17-offline-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-offline-dialog.png",
+          "bytes": 68181,
+          "sha256": "dab255c74d7de6e7ba91041e623303f1f34ec0727e3b0c054899e4e3909ff9bd"
+        },
+        {
+          "label": "s17-text-double-click-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1280-s17-text-double-click-offline.html",
+          "bytes": 544283,
+          "sha256": "a8b3b51d37a929647576a1e050c485cb4dc7dd445ae919839b6bfb46595bd411"
+        }
+      ],
+      "pointerEvidence": [
+        {
+          "scenario": "blank-slide",
+          "fx": 0.04,
+          "fy": 0.5,
+          "probes": [
+            {
+              "fx": 0.96,
+              "fy": 0.95,
+              "x": 1228.8,
+              "y": 684,
+              "visible": true,
+              "hit": "NAV",
+              "valid": false
+            },
+            {
+              "fx": 0.04,
+              "fy": 0.5,
+              "x": 51.2,
+              "y": 360,
+              "visible": true,
+              "hit": "SECTION",
+              "valid": true
+            }
+          ]
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "wp2s17": "單擊只選取；雙擊預填同一 dialog，保留 canonical／node／geometry",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Escape 清 draft 且不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "取消按鈕不提交",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=false 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "snap=true 雙擊並純文字儲存，只改指定 text",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "play／edit mode 不開 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "真 Shift 雙擊拒絕 component dialog",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "image／空白／chrome／舊 selection 不誤開",
+          "kind": "真 image／空白 pointer；synthetic chrome／選錯物件 dblclick"
+        },
+        {
+          "wp2s17": "保留多選時拒絕 dblclick",
+          "kind": "真 Shift pointer 建立多選；synthetic dblclick 避免先改選"
+        },
+        {
+          "wp2s17": "duplicate／偽造 node 拒絕",
+          "kind": "synthetic clone 與 dblclick fault"
+        },
+        {
+          "wp2s17": "showModal failure 回收且下一次雙擊可開",
+          "kind": "真 pointer；synthetic showModal throw"
+        },
+        {
+          "wp2s17": "pending 重入不覆蓋 draft，IME 阻擋 save／Escape",
+          "kind": "synthetic dblclick／CompositionEvent；真 Input.insertText／儲存／Escape，非 OS IME"
+        },
+        {
+          "wp2s17": "S1 role 雙擊 direct editing 與 Escape 保留",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "export 不提交或洩漏 component draft",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "offline reopen 後雙擊並再次儲存",
+          "kind": "真 CDP pointer／Input.insertText／keyboard"
+        },
+        {
+          "wp2s17": "remount／bootstrap 保留單一 editor／dialog 入口",
+          "kind": "真 pointer；synthetic 同 document runtime bootstrap"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-legacy-selected.html",
+          "bytes": 543593,
+          "sha256": "29c7aad99162f270a9902f1dfd60d3cc4a7508b37399143ebed5925a7b78a770"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-preview-export.html",
+          "bytes": 543880,
+          "sha256": "0c98e1655083ef6ec8687d94d9f5cf42a19f6d4e865197100b4ce0e364a42385"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-cancel.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-noop.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-invalid.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-invalid-resize.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-play-mode.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-export.html",
+          "bytes": 543880,
+          "sha256": "1129ba6bc79a51c2b607d1a58a2ef21bf4b88f0408be61767aa6c3a10309160f"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-reopen-export.html",
+          "bytes": 543880,
+          "sha256": "84826c63815cc7ad8f920e7a5055fc6e7788981794b6b93316316adfc86c0a2e"
+        },
+        {
+          "label": "s17-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-dialog.png",
+          "bytes": 81477,
+          "sha256": "8f4b7831106b7f84db6f7efa60795d73cb9a3f9367acba36dc7fd0b3a24e34b7"
+        },
+        {
+          "label": "s17-text-double-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-text-double-click.html",
+          "bytes": 544284,
+          "sha256": "4d07042eda5b13bd76f7f2c3fbdb5514914260ebe0fffe82f9edf7902aeb1c73"
+        },
+        {
+          "label": "s17-offline-dialog",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-offline-dialog.png",
+          "bytes": 84727,
+          "sha256": "f5735be533e06ff22ab4fa9f50868356ef5e10183e73a6ff78748f1565fda323"
+        },
+        {
+          "label": "s17-text-double-click-offline",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s17/host-pointer-repair/text-double-click/1600-s17-text-double-click-offline.html",
+          "bytes": 544283,
+          "sha256": "a8b3b51d37a929647576a1e050c485cb4dc7dd445ae919839b6bfb46595bd411"
+        }
+      ],
+      "pointerEvidence": [
+        {
+          "scenario": "blank-slide",
+          "fx": 0.04,
+          "fy": 0.5,
+          "probes": [
+            {
+              "fx": 0.96,
+              "fy": 0.95,
+              "x": 1536,
+              "y": 855,
+              "visible": true,
+              "hit": "SPAN",
+              "valid": false
+            },
+            {
+              "fx": 0.04,
+              "fy": 0.5,
+              "x": 64,
+              "y": 450,
+              "visible": true,
+              "hit": "SECTION",
+              "valid": true
+            }
+          ]
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}
