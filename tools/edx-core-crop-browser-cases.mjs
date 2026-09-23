@@ -25,8 +25,8 @@ export function cropFixturePng(width=240,height=160,variant=0){
 export function addCropFixture(spec){
  const slide=spec.slides.find(s=>s.id==='portable');
  slide.content.components.push({id:'crop-landscape',type:'image',alt:'六色 AXIS 橫圖',dataUri:cropFixturePng(),fit:'contain'},{id:'crop-portrait',type:'image',alt:'六色 AXIS 直圖',dataUri:cropFixturePng(120,240),fit:'cover'});
- // 保留 base pointer 案例的右半頁，避免 no-op click 選到 Crop fixture。
- slide.composition.geometryOverrides={...slide.composition.geometryOverrides,'crop-landscape':{x:120,y:220,width:600,height:280},'crop-portrait':{x:120,y:520,width:250,height:280}};
+ // 避開 base pointer 位置，亦與橫圖最大 resize 測試範圍分離。
+ slide.composition.geometryOverrides={...slide.composition.geometryOverrides,'crop-landscape':{x:120,y:220,width:600,height:280},'crop-portrait':{x:1260,y:100,width:250,height:400}};
  const other=structuredClone(slide);other.id='crop-other';spec.slides.push(other);
 }
 

@@ -28,8 +28,10 @@ test('Crop projection math 横／直／兩frame比例、contain與cover；不冒
 });
 test('Crop harness fixture render/reparse與exact bounded branch',()=>{
  const s=fixture(0);addCropFixture(s);const rendered=renderFullDeck(s);assert.equal(rendered.status,'pass');assert.deepEqual(extractDeckSpec(rendered.html),rendered.spec);
- // base10 文字元件初始化後的 pointer 區域始於 x=800；Crop fixture 不可遮擋。
- for(const id of ['crop-landscape','crop-portrait']){const r=s.slides[0].composition.geometryOverrides[id];assert.ok(r.x+r.width<800);assert.ok(r.y+r.height<=820);}
+ // 保留 base 點擊/拖曳起點，並讓橫圖最大 resize 範圍不被直圖遮住。
+ const regions=['crop-landscape','crop-portrait'].map(id=>s.slides[0].composition.geometryOverrides[id]);
+ for(const r of regions)for(const [x,y]of [[1120,520],[1140,500],[864,500],[1440,700],[1440,760]])assert.ok(!(x>=r.x&&x<=r.x+r.width&&y>=r.y&&y<=r.y+r.height));
+ const portrait=regions[1];assert.ok(portrait.x>=720||portrait.y>=620);assert.ok(portrait.x+portrait.width<=1520&&portrait.y+portrait.height<=820);
  const harness=readFileSync(new URL('../tools/edx-wp1-s4-browser-acceptance.mjs',import.meta.url),'utf8');assert.match(harness,/--crop-regression/);assert.match(harness,/if\(cropRegression\)await runCropBrowserCases/);
  const cases=readFileSync(new URL('../tools/edx-core-crop-browser-cases.mjs',import.meta.url),'utf8');assert.match(cases,/Page.captureScreenshot/);assert.match(cases,/Input.dispatchKeyEvent/);assert.match(cases,/same-size-replace-pending/);assert.match(cases,/offline-reopen/);assert.match(cases,/delete-element/);
 });
