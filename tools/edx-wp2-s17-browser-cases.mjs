@@ -103,7 +103,20 @@ export async function runTextDoubleClickBrowserCases({ cdp, evaluate, navigate, 
   assert.deepEqual(await spec(), expected); record('真 Shift 雙擊拒絕 component dialog');
 
   await doubleClick(image); assert.equal(await isOpen(), false);
-  assert.equal((await doubleClick(root, 0, 0.96, 0.95)).elementId, null, '必須命中 slide 空白');
+  // 固定右下角可能被 viewport／工具列遮住；先量測可見空白，再送同一真 pointer。
+  const blank = await evaluate(`(()=>{
+    const slide=document.querySelector(${JSON.stringify(root)}),r=slide.getBoundingClientRect(),probes=[];
+    for(const [fx,fy] of [[.96,.95],[.04,.5],[.96,.5],[.5,.04],[.04,.1],[.96,.1]]){
+      const x=r.left+r.width*fx,y=r.top+r.height*fy,hit=document.elementFromPoint(x,y);
+      const visible=x>=0&&y>=0&&x<innerWidth&&y<innerHeight;
+      const valid=visible&&hit?.closest('.slide')===slide&&!hit.closest('[data-pptskill-element-id],[data-pptskill-editor-chrome],.pptskill-editor,.moveable-control-box,.selecto-selection');
+      probes.push({fx,fy,x,y,visible,hit:hit?.tagName||null,valid:Boolean(valid)});
+      if(valid)return{fx,fy,probes};
+    }
+    throw Error('找不到可命中的 slide 空白：'+JSON.stringify(probes));
+  })()`);
+  (run.pointerEvidence ||= []).push({ scenario: 'blank-slide', ...blank });
+  assert.equal((await doubleClick(root, 0, blank.fx, blank.fy)).elementId, null, '必須命中 slide 空白');
   assert.equal(await isOpen(), false); await click(selector);
   await syntheticDoubleClick(image); assert.equal(await isOpen(), false);
   await syntheticDoubleClick('[data-pptskill-editor]'); assert.equal(await isOpen(), false);
