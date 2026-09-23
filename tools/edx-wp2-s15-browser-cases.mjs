@@ -85,7 +85,18 @@ export async function runInsertTextUIBrowserCases({ cdp, evaluate, navigate, sou
     await navigate(exported); await click('[data-action="layout"]'); assert.equal(await evaluate(`document.querySelectorAll('${dialog}').length`), 1); await open(); await click(cancel); await open(); await type('offline UI'); const id = await inserted('offline UI');
     await evaluate(`window.PPTSKILLEditor.executeOperation({operation:'edit-text',target:{slideId:'portable',elementId:'component-${id}'},value:'offline S14'})`); expected.slides[0].content.components.find(c => c.id === id).text = 'offline S14'; assert.deepEqual(await spec(), expected); record('offline UI insert/cancel 與 S14 API edit', 'real UI＋明列 S14 API');
     await click(selector(id)); const p = await position(selector(id), 0.1, 0.1), scale = await evaluate('document.querySelector(".slide").getBoundingClientRect().width/1600'); await mouse('mouseMoved', p); await mouse('mousePressed', p, true); for (let n = 1; n <= 6; n++) await mouse('mouseMoved', { x: p.x + 24 * scale * n / 6, y: p.y + 16 * scale * n / 6 }, true); await mouse('mouseReleased', { x: p.x + 24 * scale, y: p.y + 16 * scale }); await settle(); expected.slides[0].composition.geometryOverrides[id] = { x: 584, y: 304, width: 480, height: 320 }; assert.deepEqual(await spec(), expected); record('offline 新文字真 pointer move');
-    const handle = await position('.moveable-se'); await mouse('mouseMoved', handle); await mouse('mousePressed', handle, true); for (let n = 1; n <= 6; n++) await mouse('mouseMoved', { x: handle.x + 32 * scale * n / 6, y: handle.y + 24 * scale * n / 6 }, true); await mouse('mouseReleased', { x: handle.x + 32 * scale, y: handle.y + 24 * scale }); await settle(); expected.slides[0].composition.geometryOverrides[id] = { x: 584, y: 304, width: 512, height: 344 }; assert.deepEqual(await spec(), expected); record('offline 新文字真 pointer resize');
+    // 0.8 scale 下使用整數 screen-pixel 起點與位移，避免把 CDP 小數像素取整誤算為產品尺寸。
+    const rawHandle = await position('.moveable-se'), handle = { x: Math.round(rawHandle.x), y: Math.round(rawHandle.y) }, delta = 40 * scale;
+    assert.equal(Number.isInteger(delta), true);
+    await evaluate(`window.__s15ResizePointer=[];for(const type of ['pointerdown','pointerup'])window.addEventListener(type,e=>window.__s15ResizePointer.push({type,x:e.clientX,y:e.clientY,trusted:e.isTrusted}),true)`);
+    await mouse('mouseMoved', handle); await mouse('mousePressed', handle, true);
+    for (let n = 1; n <= 8; n++) await mouse('mouseMoved', { x: handle.x + delta * n / 8, y: handle.y + delta * n / 8 }, true);
+    await mouse('mouseReleased', { x: handle.x + delta, y: handle.y + delta }); await settle();
+    const pointerEvidence = await evaluate('window.__s15ResizePointer');
+    assert.deepEqual(pointerEvidence.map(e=>e.type), ['pointerdown','pointerup']); assert.ok(pointerEvidence.every(e=>e.trusted));
+    assert.equal(pointerEvidence[1].x-pointerEvidence[0].x,delta); assert.equal(pointerEvidence[1].y-pointerEvidence[0].y,delta);
+    expected.slides[0].composition.geometryOverrides[id] = { x: 584, y: 304, width: 520, height: 360 };
+    assert.deepEqual(await spec(), expected); record('offline 新文字真 pointer resize', 'integer screen-pixel real pointer', { pointerEvidence, scale, delta });
     await click('[data-action="layout"]'); await click('[data-action="layout"]'); assert.equal(await evaluate(`document.querySelectorAll('${dialog}').length`), 1); await assertExport('insert-text-ui-offline', expected); record('offline remount／再次匯出');
   } finally { await cdp.send('Network.emulateNetworkConditions', { offline: false, latency: 0, downloadThroughput: -1, uploadThroughput: -1 }); }
 }
