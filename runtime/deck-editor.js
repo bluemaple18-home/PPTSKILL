@@ -440,10 +440,11 @@ const slide=insertionSlide(),root=slide&&currentNode();if(!slide||!root?.isConne
 layout.cancel('insert-text');setTextDialogMode('insert');pendingTextInsertion={mode:'insert',slideId:slide.id,root,focus:q('[data-action="insert-text"]')};textInsertionInput.value='';textInsertionStatus.textContent='';refreshSelectedImage('refresh');
 try{textInsertionDialog.setAttribute('data-pptskill-editor-chrome','');textInsertionDialog.showModal();textInsertionInput.focus()}catch(error){closeInsertText();status(error.message)}
 };
+// 文字 dialog 沿既有 picker cancellation 保留 selection identity，吸附開啟時亦可送出。
 const openEditText=()=>{
 if(pendingTextInsertion||textInsertionBusy||insertionBusy||imagePickerOpen||!textInsertionDialog)return;
 const target=selectedTextTarget();if(!target)return;
-layout.cancel('edit-text');setTextDialogMode('edit');pendingTextInsertion={...target,mode:'edit',focus:q('[data-action="edit-selected-text"]')};textInsertionInput.value=target.text;textInsertionStatus.textContent='';refreshSelectedImage('refresh');
+layout.cancel('picker');setTextDialogMode('edit');pendingTextInsertion={...target,mode:'edit',focus:q('[data-action="edit-selected-text"]')};textInsertionInput.value=target.text;textInsertionStatus.textContent='';refreshSelectedImage('refresh');
 try{textInsertionDialog.setAttribute('data-pptskill-editor-chrome','');textInsertionDialog.showModal();textInsertionInput.focus()}catch(error){closeInsertText();status(error.message)}
 };
 const submitInsertText=()=>{
@@ -458,7 +459,7 @@ catch(error){textInsertionStatus.textContent=error.message;textInsertionStatus.f
 finally{textInsertionBusy=false;refreshSelectedImage('refresh')}
 };
 q('[data-action="insert-text"]')?.addEventListener('pointerdown',()=>layout?.cancel('insert-text'));
-q('[data-action="edit-selected-text"]')?.addEventListener('pointerdown',()=>layout?.cancel('edit-text'));
+q('[data-action="edit-selected-text"]')?.addEventListener('pointerdown',()=>layout?.cancel('picker'));
 textInsertionInput?.addEventListener('compositionstart',()=>{textInsertionComposing=true});
 textInsertionInput?.addEventListener('compositionend',()=>{textInsertionComposing=false});
 // IME keydown 保留原生預設處理；只在 dialog cancel 邊界阻止組字期間關閉。
