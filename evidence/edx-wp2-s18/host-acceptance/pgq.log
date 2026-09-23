@@ -46,11 +46,11 @@ test at tests/pgq-wp4-s3-sample-approval.test.mjs:142:1
   Warning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695
   for (const viewport of viewports) runs.push(await runAtViewport(viewport));
                                               ^
-  
-  
-  
-  
-  
+
+
+
+
+
       at genericNodeError (node:internal/errors:998:15)
       at wrappedFn (node:internal/errors:543:14)
       at ChildProcess.exithandler (node:child_process:417:12)

@@ -1,0 +1,8 @@
+{
+  "rawArchive": "pgq.log.gz",
+  "rawBytes": 6526,
+  "rawSha256": "4ae321abf08916af6d1bc1978a1d91ba42cc0a21815deee9a9dfa382ffd61c23",
+  "displayLog": "pgq.log",
+  "displaySha256": "0311ecd3a82a4588b49b1b435dc8413d41f8486a860ea58d284525df7e04fdde",
+  "note": "原始FAIL位元完整保存於gzip；display log僅移除行尾空白，未改測試內容或結果。closure首次staged diff-check發現5行舊原始log空白，命令串未阻擋commit；以本follow-up修正，未跳hook，保留原commit歷史。"
+}
