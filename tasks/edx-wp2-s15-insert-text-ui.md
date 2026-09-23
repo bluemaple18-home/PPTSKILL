@@ -1,6 +1,6 @@
 # EDX-WP2-S15 — 安全插入文字 UI
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: 8dcc3a0db58df98e58f717e106d12c2cf1bb7d42（S14 GO已FF/push/readback MATCH）
 Branch: codex/edx-wp2-s15-insert-text-ui
 traces_to: BACKLOG §10.1 decisions3/7/8、§10.3 WP2、§10.4 insert-element。
@@ -36,3 +36,7 @@ Full初輪782/789，7fail集中3因：WP1-S3 VM body無insertAdjacentHTML（5）
 ## 驗收交付
 
 Candidate `a181982396eb4f282574f70b93a6c4ef2cfa9c62`；scoped修復252/full789、雙viewport48／48、PGQ單輪16、source/protected/ZIP/cleanup PASS。歷史FAIL完整保留，詳receipt與handoff_20260923_edx_wp2_s15_review.md。未merge/push/deploy S15，未開S16。
+
+## Closure
+
+Owner交回Independent GO，P0–P3全0；詳evidence/edx-wp2-s15/independent-review.md。Reviewed code／ZIP未改，可依明示授權進整合gate。

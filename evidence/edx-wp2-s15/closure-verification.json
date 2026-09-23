@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-23T11:03:42.796264+00:00",
+  "reviewedSha": "a181982396eb4f282574f70b93a6c4ef2cfa9c62",
+  "handoffHead": "03e57be967c51086ebd973cafbb4097151080800",
+  "sourceMatched": 6,
+  "protectedMatched": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2297769,
+    "sha256": "98a46007088d1a076f5cea6cacec4b1bc5812ad30f855bc0072a9a4b832ca239"
+  },
+  "deliveryDrift": [],
+  "diffCheck": "PASS",
+  "freshTestsRerun": false,
+  "freshBrowserRerun": false
+}
