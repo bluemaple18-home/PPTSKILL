@@ -1070,6 +1070,8 @@ WP2-S12 closure：Independent GO，reviewed09c7d29，P0–P3全0；Reviewer fres
 
 WP2-S12 已依 Owner「推上去後繼續」整合：main/origin-main 實測 `18b1029`，reviewed code／ZIP 原樣；詳 evidence/edx-wp2-s12/mainline-integration.md。
 
-**WP2-S13 IN_PROGRESS：** API-driven 安全新增文字元件；tasks/edx-wp2-s13-insert-text.md。沿既有 insert-element／identity／geometry／text renderer，text 精確 variant；無文字 UI／auto-ID／rich text／history。開卡前鎖雙 viewport（base＋S8 image＋S13 text）與四支 affected PGQ；source／protected／ZIP／cleanup 待 fresh 驗收。
+**WP2-S13 COMPLETE / INDEPENDENT_REVIEW_GO：** API-driven 安全新增文字元件；tasks/edx-wp2-s13-insert-text.md。沿既有 insert-element／identity／geometry／text renderer，text 精確 variant；無文字 UI／auto-ID／rich text／history。開卡前鎖雙 viewport（base＋S8 image＋S13 text）與四支 affected PGQ；source／protected／ZIP／cleanup 待 fresh 驗收。
 
 WP2-S13 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：candidate `9b7767d`，runtime `d4d83ac`；API text insertion，scoped83/full734、雙viewport63+63、PGQ單輪16、ZIP/source6/protected4/cleanup PASS；歷史I/O／harness observer FAIL與S9兼容修正保留。文字元件direct editing未納入。handoff_20260923_edx_wp2_s13_review.md；S13未merge/push/deploy，未開S14。
+
+WP2-S13 closure：clean native Independent GO，reviewed9b7767d，P0–P3全0；Reviewer fresh83／full兩批734／probe8，browser63+63及PGQ16為committed evidence核對。Source6/protected4/ZIP MATCH、reviewed code無drift；原始報告evidence/edx-wp2-s13/independent-review-evidence/review.md，Mainline closure見independent-review.md。S13可進整合gate；未merge/push/deploy，未開S14。main/origin-main仍18b1029。

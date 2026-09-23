@@ -1,6 +1,6 @@
 # EDX-WP2-S13 — API-driven 安全新增文字元件
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: 18b1029c13444f6b40989f421098a9496ef7db0d（S12 GO closure 已 FF／push；遠端實測一致）
 Branch: codex/edx-wp2-s13-insert-text
 traces_to: BACKLOG §10.1 decision3 Safe Insert 文字、decision7 identity、decision8 共用 operation；§10.3 WP2；§10.4 insert-element。
@@ -43,3 +43,13 @@ Worker 因 usage limit 中断後已 close。Mainline fresh scoped 82/83抓到S9 
 ## Final acceptance
 
 Candidate 9b7767d88411e9e9a14e72d011726d67f74371a6；scoped83/full734、雙viewport各63（10+40+13）、PGQ單輪16、ZIP/source6/protected4/cleanup PASS。歷史FAIL完整保留；詳receipt／review handoff。S13未merge/push/deploy，未開S14，Independent Review pending。
+
+## Owner 繼續後的獨立審查路由
+
+2026-09-23，Owner續做S13 scope，Mainline裁決接唯一未完成gate。原「無額外Reviewer agent」限開發／驗收階段不疊加reviewer，現進入已列明的獨立review階段：一名未參與實作的clean native Reviewer，fork_context=false，medium inherited lane；非Claude/Gemini外部review，不冒稱跨provider獨立性。Mainline只核對integrity/control，不以自己author驗收取代Reviewer verdict。
+
+Review plan：固定base18b1029→candidate9b7767d，API contract/regression中風險；單一Reviewer覆蓋correctness/security/regression/test-gap，沒有authority/部署/供應鏈變更，無需多視角fanout。fresh scoped83與explicit70檔nonbrowser、source6/protected4/ZIP、evidence-only browser/PGQ及截图；findings須severity/category/path:line/trigger/repro/risk/fix，輸出GO/NO-GO。沒有repo product write、build或browser launch；logs/report只在/private/tmp，Mainline收件後歸檔。禁止merge/push/deploy/開S14；本輪closure需真實Reviewer verdict。
+
+## Closure
+
+Clean native Independent Reviewer GO，reviewed9b7767d，P0–P3全0；fresh83、full兩批641＋93＝734、probe8；browser63+63／PGQ16為committed evidence核對。詳evidence/edx-wp2-s13/independent-review.md與原始報告。Mainline只control/evidence closure，reviewed code／ZIP／protected4不變。未merge/push/deploy，未開S14；main/origin-main18b1029。

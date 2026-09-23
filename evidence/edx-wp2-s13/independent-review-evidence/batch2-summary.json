@@ -1,0 +1,17 @@
+{
+  "files": 12,
+  "status": 0,
+  "signal": null,
+  "summary": [
+    "ℹ tests 93",
+    "ℹ suites 0",
+    "ℹ pass 93",
+    "ℹ fail 0",
+    "ℹ cancelled 0",
+    "ℹ skipped 0",
+    "ℹ todo 0",
+    "ℹ duration_ms 9737.792458"
+  ],
+  "namedPasses": 93,
+  "log": "/private/tmp/pptskill-s13-independent-batch2.log"
+}

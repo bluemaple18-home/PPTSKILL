@@ -1,6 +1,6 @@
 # WP2-S13 Host acceptance
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Parent: tasks/edx-wp2-s13-insert-text.md
 Product: 9b7767d88411e9e9a14e72d011726d67f74371a6（runtime d4d83ac，僅harness observer修正）；source/protected/ZIP frozen，full nonbrowser及ZIP lifecycle PASS。
 
@@ -15,3 +15,7 @@ Browser.close／supervisor exit0、owned root／isolation marker absent、source
 ## Final acceptance
 
 Candidate 9b7767d88411e9e9a14e72d011726d67f74371a6；scoped83/full734、雙viewport各63（10+40+13）、PGQ單輪16、ZIP/source6/protected4/cleanup PASS。歷史FAIL完整保留；詳receipt／review handoff。S13未merge/push/deploy，未開S14，Independent Review pending。
+
+## Closure
+
+Clean native Independent Reviewer GO，reviewed9b7767d，P0–P3全0；fresh83、full兩批641＋93＝734、probe8；browser63+63／PGQ16為committed evidence核對。詳evidence/edx-wp2-s13/independent-review.md與原始報告。Mainline只control/evidence closure，reviewed code／ZIP／protected4不變。未merge/push/deploy，未開S14；main/origin-main18b1029。

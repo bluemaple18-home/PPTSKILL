@@ -1,0 +1,1030 @@
+{
+  "base": "18b1029c13444f6b40989f421098a9496ef7db0d",
+  "candidate": "9b7767d88411e9e9a14e72d011726d67f74371a6",
+  "expectedHead": "26d784e76f6df54dc0b281f7964719554f854293",
+  "actualHead": "26d784e76f6df54dc0b281f7964719554f854293",
+  "status": "M tasks/edx-wp2-s13-insert-text.md\n?? .DS_Store\n?? CLAUDE.md\n?? HANDOFF-20260914-P0-R11-R1-S3.md\n?? HANDOFF-20260914-PGQ-WP1.md",
+  "hashes": {
+    "sources": [
+      {
+        "path": "runtime/deck-editor.js",
+        "expected": "ad313e062782e1e0647bcd722d7e3193f322fd640edd2866e2dec8e55ef0accf",
+        "actual": "ad313e062782e1e0647bcd722d7e3193f322fd640edd2866e2dec8e55ef0accf",
+        "match": true,
+        "candidateMatch": true
+      },
+      {
+        "path": "tests/edx-wp2-s13-insert-text.test.mjs",
+        "expected": "4cbc6b2d8af14845c8e81ccb8c58ce6bb6cb71961ca3fac997852934a530826e",
+        "actual": "4cbc6b2d8af14845c8e81ccb8c58ce6bb6cb71961ca3fac997852934a530826e",
+        "match": true,
+        "candidateMatch": true
+      },
+      {
+        "path": "tools/edx-wp2-s13-browser-cases.mjs",
+        "expected": "f261c5077ad959c7d7bf6dbc8cb43744bc2ddf657670f33743d40413d56104cd",
+        "actual": "f261c5077ad959c7d7bf6dbc8cb43744bc2ddf657670f33743d40413d56104cd",
+        "match": true,
+        "candidateMatch": true
+      },
+      {
+        "path": "tools/edx-wp1-s4-browser-acceptance.mjs",
+        "expected": "2abc4f1f3a872c74e401e8b868802a357458d59815d654544c8c597d1d8a2666",
+        "actual": "2abc4f1f3a872c74e401e8b868802a357458d59815d654544c8c597d1d8a2666",
+        "match": true,
+        "candidateMatch": true
+      },
+      {
+        "path": "runtime/image-insertion.js",
+        "expected": "1d82afb8eaad24fc96b9d86408e9ebea14eff12b5e57ab24fe14333a9b2e781e",
+        "actual": "1d82afb8eaad24fc96b9d86408e9ebea14eff12b5e57ab24fe14333a9b2e781e",
+        "match": true,
+        "candidateMatch": true
+      },
+      {
+        "path": "tests/edx-wp2-s8-insert-image.test.mjs",
+        "expected": "360797ad1288850ede8c5acdd74e4fa695c98e95446093f4659b83c487ec8983",
+        "actual": "360797ad1288850ede8c5acdd74e4fa695c98e95446093f4659b83c487ec8983",
+        "match": true,
+        "candidateMatch": true
+      }
+    ],
+    "protected": [
+      {
+        "path": ".DS_Store",
+        "expected": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+        "actual": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+        "match": true
+      },
+      {
+        "path": "CLAUDE.md",
+        "expected": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+        "actual": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+        "match": true
+      },
+      {
+        "path": "HANDOFF-20260914-P0-R11-R1-S3.md",
+        "expected": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+        "actual": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+        "match": true
+      },
+      {
+        "path": "HANDOFF-20260914-PGQ-WP1.md",
+        "expected": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4",
+        "actual": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4",
+        "match": true
+      }
+    ]
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2295428,
+    "sha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd",
+    "actualBytes": 2295428,
+    "actualSha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd",
+    "manifest": {
+      "schemaVersion": "1.0",
+      "name": "PPTSKILL",
+      "version": "0.1.0",
+      "corePath": "core",
+      "adapters": [
+        "codex",
+        "claude-code",
+        "gemini"
+      ],
+      "requiresGit": false,
+      "profilePath": "~/.pptskill/profile.json",
+      "skillPath": "skill/pptskill/SKILL.md"
+    },
+    "entries": 105,
+    "duplicates": [],
+    "unsafe": [],
+    "runtimeMatches": [
+      {
+        "path": "PPTSKILL/core/runtime/asset-policy.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/asset-replacement.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/background-effects-runtime.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/background-effects-vendor.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/background-effects.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/browser-asset-optimizer.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/capability-probe.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/company-style-pack.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/component-geometry.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/component-interaction.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/composition-primitives.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/deck-editor.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/deck-rhythm-planner.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/deck-spec.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/deck.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/design-grammar.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/full-deck-qa.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/full-deck-renderer.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/full-deck-variants.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/generation-capabilities.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/generation-plan.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/golden-reference-router.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/grill-outline.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/image-insertion.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/layout-repair-policy.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/local-profile.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/motion-capabilities.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/motion-primitives.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/moveable-vendor.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/multi-selection.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/number-flow-vendor.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/portable-size-guard.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/preflight-brief.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/representative-qa-evidence.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/representative-qa-gate.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/representative-sample-identity.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/representative-sample-planner.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/role-typography.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/sample-approval.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/selecto-vendor.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/semantic-composition-planner.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/style-candidates.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/theme-preview.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/moveable-0.53.0.iife.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/moveable-LICENSE.md",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/moveable-licenses/css-styled-LICENSE",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/moveable-metafile.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/moveable-vendor.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/number-flow-0.6.2.iife.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/number-flow-LICENSE.md",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/number-flow-vendor.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/selecto-1.26.3.iife.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/selecto-LICENSE.md",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/selecto-metafile.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/selecto-vendor.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/three-LICENSE.md",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/vanta-LICENSE.md",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/vanta-three-0.5.24-r134.iife.js",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/vendor/vanta-vendor.json",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/workflow-cli.mjs",
+        "match": true
+      },
+      {
+        "path": "PPTSKILL/core/runtime/workflow-entry.js",
+        "match": true
+      }
+    ]
+  },
+  "drift": "",
+  "history": [
+    "BACKLOG.md",
+    "evidence/edx-wp2-s13/build-dist.log",
+    "evidence/edx-wp2-s13/build-dist.log.gz",
+    "evidence/edx-wp2-s13/candidate-drift.txt",
+    "evidence/edx-wp2-s13/distribution-lifecycle.json",
+    "evidence/edx-wp2-s13/distribution-probe.log",
+    "evidence/edx-wp2-s13/distribution-probe.log.gz",
+    "evidence/edx-wp2-s13/host-acceptance/controller-receipt.json",
+    "evidence/edx-wp2-s13/host-acceptance/insert-text/acceptance.json",
+    "evidence/edx-wp2-s13/host-acceptance/insert-text/source.html",
+    "evidence/edx-wp2-s13/host-acceptance/insertText.log",
+    "evidence/edx-wp2-s13/host-acceptance/insertText.log.gz",
+    "evidence/edx-wp2-s13/host-acceptance/launcher.stderr",
+    "evidence/edx-wp2-s13/host-acceptance/launcher.stderr.gz",
+    "evidence/edx-wp2-s13/host-acceptance/launcher.stdout",
+    "evidence/edx-wp2-s13/host-acceptance/launcher.stdout.gz",
+    "evidence/edx-wp2-s13/host-acceptance/lifecycle/evidence/session.json",
+    "evidence/edx-wp2-s13/host-acceptance/lifecycle/evidence/stderr.log",
+    "evidence/edx-wp2-s13/host-acceptance/lifecycle/evidence/stderr.log.gz",
+    "evidence/edx-wp2-s13/host-acceptance/lifecycle/evidence/stdout.log",
+    "evidence/edx-wp2-s13/host-acceptance/lifecycle/evidence/stdout.log.gz",
+    "evidence/edx-wp2-s13/host-controller.py",
+    "evidence/edx-wp2-s13/host-final-verification.json",
+    "evidence/edx-wp2-s13/host-harness-repair.py",
+    "evidence/edx-wp2-s13/host-harness-repair/browser-close.log",
+    "evidence/edx-wp2-s13/host-harness-repair/browser-close.log.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/controller-receipt.json",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-cancel.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-invalid-resize.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-invalid.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-legacy-selected.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-noop.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-play-mode.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-preview-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-reopen-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-insert-text-offline.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-insert-text.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-inserted-text-controls.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-insert-image-offline.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-insert-image.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-inserted-image-controls.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-selected.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-cancel.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-invalid-resize.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-invalid.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-legacy-selected.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-noop.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-play-mode.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-preview-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-reopen-export.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-insert-text-offline.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-insert-text.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-inserted-text-controls.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-insert-image-offline.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-insert-image.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-inserted-image-controls.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-selected.png",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/acceptance.json",
+    "evidence/edx-wp2-s13/host-harness-repair/insert-text/source.html",
+    "evidence/edx-wp2-s13/host-harness-repair/insertText.log",
+    "evidence/edx-wp2-s13/host-harness-repair/insertText.log.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/launcher.stderr",
+    "evidence/edx-wp2-s13/host-harness-repair/launcher.stderr.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/launcher.stdout",
+    "evidence/edx-wp2-s13/host-harness-repair/launcher.stdout.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/lifecycle/evidence/session.json",
+    "evidence/edx-wp2-s13/host-harness-repair/lifecycle/evidence/stderr.log",
+    "evidence/edx-wp2-s13/host-harness-repair/lifecycle/evidence/stderr.log.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/lifecycle/evidence/stdout.log",
+    "evidence/edx-wp2-s13/host-harness-repair/lifecycle/evidence/stdout.log.gz",
+    "evidence/edx-wp2-s13/host-harness-repair/pgq.log",
+    "evidence/edx-wp2-s13/host-harness-repair/pgq.log.gz",
+    "evidence/edx-wp2-s13/host-retry1.py",
+    "evidence/edx-wp2-s13/host-retry1/browser-close.log",
+    "evidence/edx-wp2-s13/host-retry1/browser-close.log.gz",
+    "evidence/edx-wp2-s13/host-retry1/controller-receipt.json",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-cancel.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-export.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-invalid-resize.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-invalid.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-legacy-selected.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-noop.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-play-mode.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-preview-export.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-reopen-export.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-s8-insert-image-offline.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-s8-insert-image.html",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-s8-inserted-image-controls.png",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/1280-selected.png",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/acceptance.json",
+    "evidence/edx-wp2-s13/host-retry1/insert-text/source.html",
+    "evidence/edx-wp2-s13/host-retry1/insertText.log",
+    "evidence/edx-wp2-s13/host-retry1/insertText.log.gz",
+    "evidence/edx-wp2-s13/host-retry1/launcher.stderr",
+    "evidence/edx-wp2-s13/host-retry1/launcher.stderr.gz",
+    "evidence/edx-wp2-s13/host-retry1/launcher.stdout",
+    "evidence/edx-wp2-s13/host-retry1/launcher.stdout.gz",
+    "evidence/edx-wp2-s13/host-retry1/lifecycle/evidence/session.json",
+    "evidence/edx-wp2-s13/host-retry1/lifecycle/evidence/stderr.log",
+    "evidence/edx-wp2-s13/host-retry1/lifecycle/evidence/stderr.log.gz",
+    "evidence/edx-wp2-s13/host-retry1/lifecycle/evidence/stdout.log",
+    "evidence/edx-wp2-s13/host-retry1/lifecycle/evidence/stdout.log.gz",
+    "evidence/edx-wp2-s13/host-triage.md",
+    "evidence/edx-wp2-s13/mainline-recovery.md",
+    "evidence/edx-wp2-s13/mainline-scoped-repair.log",
+    "evidence/edx-wp2-s13/mainline-scoped-repair.log.gz",
+    "evidence/edx-wp2-s13/mainline-scoped.log",
+    "evidence/edx-wp2-s13/mainline-scoped.log.gz",
+    "evidence/edx-wp2-s13/nonbrowser-files.txt",
+    "evidence/edx-wp2-s13/nonbrowser-summary.json",
+    "evidence/edx-wp2-s13/nonbrowser.log",
+    "evidence/edx-wp2-s13/nonbrowser.log.gz",
+    "evidence/edx-wp2-s13/raw-log-hashes.json",
+    "evidence/edx-wp2-s13/receipt.md",
+    "evidence/edx-wp2-s13/source-hashes-initial.json",
+    "evidence/edx-wp2-s13/source-hashes.json",
+    "evidence/edx-wp2-s13/visual-check.md",
+    "evidence/edx-wp2-s13/worker-contract-gap.md",
+    "evidence/edx-wp2-s13/worker-initial-red.log",
+    "evidence/edx-wp2-s13/worker-initial-red.log.gz",
+    "evidence/edx-wp2-s13/worker-red.log",
+    "evidence/edx-wp2-s13/worker-red.log.gz",
+    "evidence/edx-wp2-s13/worker-revised-attempt1.log",
+    "evidence/edx-wp2-s13/worker-revised-attempt1.log.gz",
+    "evidence/edx-wp2-s13/worker-revised-green.log",
+    "evidence/edx-wp2-s13/worker-revised-green.log.gz",
+    "evidence/edx-wp2-s13/worker-revised-red.log",
+    "evidence/edx-wp2-s13/worker-revised-red.log.gz",
+    "evidence/edx-wp2-s13/worker-s1-baseline.log",
+    "evidence/edx-wp2-s13/worker-s1-baseline.log.gz",
+    "handoff_20260923_edx_wp2_s13_review.md",
+    "tasks/edx-wp2-s13-host-acceptance.md",
+    "tasks/edx-wp2-s13-insert-text.md"
+  ],
+  "workingTrackedDrift": "tasks/edx-wp2-s13-insert-text.md | 6 ++++++\n 1 file changed, 6 insertions(+)",
+  "diffChecks": [
+    {
+      "name": "base-candidate",
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "name": "candidate-head",
+      "status": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-legacy-selected.html",
+      "expected": "9d329e7439dd4f7b03b5697ada51dd3e0a46948afc00c4b3300f6b2a23740155",
+      "actual": "9d329e7439dd4f7b03b5697ada51dd3e0a46948afc00c4b3300f6b2a23740155",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-preview-export.html",
+      "expected": "2dfeff420aaaca09ab9b86a8fde4d22df82a95914348138cd5be0dd48932a37e",
+      "actual": "2dfeff420aaaca09ab9b86a8fde4d22df82a95914348138cd5be0dd48932a37e",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-cancel.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-noop.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-invalid.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-invalid-resize.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-play-mode.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-export.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-reopen-export.html",
+      "expected": "a431f6053a3fa9d6e5d4c7ac1104f8f0a3f0a32d7c62ea93c239bd771780c6e8",
+      "actual": "a431f6053a3fa9d6e5d4c7ac1104f8f0a3f0a32d7c62ea93c239bd771780c6e8",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-insert-image.html",
+      "expected": "6b4cfd5d7add3d27505124879ed0f9571688605e4b3b579f679dd3ac7d958d1a",
+      "actual": "6b4cfd5d7add3d27505124879ed0f9571688605e4b3b579f679dd3ac7d958d1a",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-insert-image-offline.html",
+      "expected": "08f4ec8d690f7625f045f0a87c94166b03b39a3a3213b6c1c7332d31adb8afe0",
+      "actual": "08f4ec8d690f7625f045f0a87c94166b03b39a3a3213b6c1c7332d31adb8afe0",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-insert-text.html",
+      "expected": "2ab2aee30b943fd5e9b618526d0f4a0bc87365ebeb9b227488dfb8c61aabd1e1",
+      "actual": "2ab2aee30b943fd5e9b618526d0f4a0bc87365ebeb9b227488dfb8c61aabd1e1",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-insert-text-offline.html",
+      "expected": "fba51493d91881ea1c1b46ab948b6966280309237896038c067eaa0b0db9551f",
+      "actual": "fba51493d91881ea1c1b46ab948b6966280309237896038c067eaa0b0db9551f",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-legacy-selected.html",
+      "expected": "9d329e7439dd4f7b03b5697ada51dd3e0a46948afc00c4b3300f6b2a23740155",
+      "actual": "9d329e7439dd4f7b03b5697ada51dd3e0a46948afc00c4b3300f6b2a23740155",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-preview-export.html",
+      "expected": "2dfeff420aaaca09ab9b86a8fde4d22df82a95914348138cd5be0dd48932a37e",
+      "actual": "2dfeff420aaaca09ab9b86a8fde4d22df82a95914348138cd5be0dd48932a37e",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-cancel.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-noop.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-invalid.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-invalid-resize.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-play-mode.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-export.html",
+      "expected": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "actual": "bc6d8538bdcb53874f82aba56eb014c99ac1df0b750b0d60bbb18fe77429bee9",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-reopen-export.html",
+      "expected": "a431f6053a3fa9d6e5d4c7ac1104f8f0a3f0a32d7c62ea93c239bd771780c6e8",
+      "actual": "a431f6053a3fa9d6e5d4c7ac1104f8f0a3f0a32d7c62ea93c239bd771780c6e8",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-insert-image.html",
+      "expected": "6b4cfd5d7add3d27505124879ed0f9571688605e4b3b579f679dd3ac7d958d1a",
+      "actual": "6b4cfd5d7add3d27505124879ed0f9571688605e4b3b579f679dd3ac7d958d1a",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-insert-image-offline.html",
+      "expected": "08f4ec8d690f7625f045f0a87c94166b03b39a3a3213b6c1c7332d31adb8afe0",
+      "actual": "08f4ec8d690f7625f045f0a87c94166b03b39a3a3213b6c1c7332d31adb8afe0",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-insert-text.html",
+      "expected": "2ab2aee30b943fd5e9b618526d0f4a0bc87365ebeb9b227488dfb8c61aabd1e1",
+      "actual": "2ab2aee30b943fd5e9b618526d0f4a0bc87365ebeb9b227488dfb8c61aabd1e1",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-insert-text-offline.html",
+      "expected": "fba51493d91881ea1c1b46ab948b6966280309237896038c067eaa0b0db9551f",
+      "actual": "fba51493d91881ea1c1b46ab948b6966280309237896038c067eaa0b0db9551f",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s13-inserted-text-controls.png",
+      "expected": "bfa175f2a4b1c23494bc16b2ae6a9a7aa9c3f7f7501407aeb0553f9d7571eb3e",
+      "actual": "bfa175f2a4b1c23494bc16b2ae6a9a7aa9c3f7f7501407aeb0553f9d7571eb3e",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-s8-inserted-image-controls.png",
+      "expected": "217a04c2e1ee98c911451c4a6538a2a9fd8347093450328f620e611dc6e553b0",
+      "actual": "217a04c2e1ee98c911451c4a6538a2a9fd8347093450328f620e611dc6e553b0",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1280-selected.png",
+      "expected": "c7632085640d3021dbf2c736e1f69b327c3cca4851d8477af40ef9f5a1c7a746",
+      "actual": "c7632085640d3021dbf2c736e1f69b327c3cca4851d8477af40ef9f5a1c7a746",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s13-inserted-text-controls.png",
+      "expected": "ac5e079bba553b7ffa2316721086e3c631d69876dc8fa9f0f2fab9d676faa32c",
+      "actual": "ac5e079bba553b7ffa2316721086e3c631d69876dc8fa9f0f2fab9d676faa32c",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-s8-inserted-image-controls.png",
+      "expected": "a385c32900a092e351efa2d491565323fbf4d6cd2e848b3e93b82647fa7b9ca3",
+      "actual": "a385c32900a092e351efa2d491565323fbf4d6cd2e848b3e93b82647fa7b9ca3",
+      "match": true,
+      "bytesMatch": true
+    },
+    {
+      "path": "evidence/edx-wp2-s13/host-harness-repair/insert-text/1600-selected.png",
+      "expected": "75435796aac8099952341bc9bfc0d99aae4591a1988d8b82756e2a98801681b8",
+      "actual": "75435796aac8099952341bc9bfc0d99aae4591a1988d8b82756e2a98801681b8",
+      "match": true,
+      "bytesMatch": true
+    }
+  ],
+  "rawLogs": [
+    {
+      "path": "build-dist.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "distribution-probe.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-acceptance/insertText.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-acceptance/launcher.stderr",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-acceptance/launcher.stdout",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-acceptance/lifecycle/evidence/stderr.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-acceptance/lifecycle/evidence/stdout.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/browser-close.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/insertText.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/launcher.stderr",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/launcher.stdout",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/lifecycle/evidence/stderr.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/lifecycle/evidence/stdout.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-harness-repair/pgq.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/browser-close.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/insertText.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/launcher.stderr",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/launcher.stdout",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/lifecycle/evidence/stderr.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "host-retry1/lifecycle/evidence/stdout.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "mainline-scoped-repair.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "mainline-scoped.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "nonbrowser.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-initial-red.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-red.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-revised-attempt1.log",
+      "rawMatch": false,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-revised-green.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-revised-red.log",
+      "rawMatch": false,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    },
+    {
+      "path": "worker-s1-baseline.log",
+      "rawMatch": true,
+      "gzipMatch": true,
+      "decompressedMatch": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "records": 63,
+      "groups": {
+        "base": 10,
+        "s8": 40,
+        "s13": 13
+      },
+      "errors": [
+        {
+          "kind": "console",
+          "count": 0
+        },
+        {
+          "kind": "pageErrors",
+          "count": 0
+        },
+        {
+          "kind": "networkFailures",
+          "count": 0
+        },
+        {
+          "kind": "httpErrors",
+          "count": 0
+        },
+        {
+          "kind": "remoteRequests",
+          "count": 0
+        }
+      ],
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "records": 63,
+      "groups": {
+        "base": 10,
+        "s8": 40,
+        "s13": 13
+      },
+      "errors": [
+        {
+          "kind": "console",
+          "count": 0
+        },
+        {
+          "kind": "pageErrors",
+          "count": 0
+        },
+        {
+          "kind": "networkFailures",
+          "count": 0
+        },
+        {
+          "kind": "httpErrors",
+          "count": 0
+        },
+        {
+          "kind": "remoteRequests",
+          "count": 0
+        }
+      ],
+      "targetClosed": true
+    }
+  ],
+  "controller": {
+    "hostSandbox": null,
+    "before": {
+      "sources": {
+        "runtime/deck-editor.js": true,
+        "tests/edx-wp2-s13-insert-text.test.mjs": true,
+        "tools/edx-wp2-s13-browser-cases.mjs": true,
+        "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+        "runtime/image-insertion.js": true,
+        "tests/edx-wp2-s8-insert-image.test.mjs": true
+      },
+      "protected": {
+        ".DS_Store": true,
+        "CLAUDE.md": true,
+        "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+        "HANDOFF-20260914-PGQ-WP1.md": true
+      },
+      "zip": {
+        "bytes": 2295428,
+        "sha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd"
+      }
+    },
+    "aiCoreCommit": "1d66afe3de4d5974e82ce8af82c0f9d7de5bfeb5",
+    "supervisorPid": 56052,
+    "readinessExit": 0,
+    "ownedRoot": "/private/tmp/aic-b-cdc7bbe170994b12a3f4dd0f5d4c9fff",
+    "insertTextStarted": true,
+    "insertTextExit": 0,
+    "pgqStarted": true,
+    "pgqExit": 0,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsent": true,
+    "isolationMarkerAbsent": true,
+    "after": {
+      "sources": {
+        "runtime/deck-editor.js": true,
+        "tests/edx-wp2-s13-insert-text.test.mjs": true,
+        "tools/edx-wp2-s13-browser-cases.mjs": true,
+        "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+        "runtime/image-insertion.js": true,
+        "tests/edx-wp2-s8-insert-image.test.mjs": true
+      },
+      "protected": {
+        ".DS_Store": true,
+        "CLAUDE.md": true,
+        "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+        "HANDOFF-20260914-PGQ-WP1.md": true
+      },
+      "zip": {
+        "bytes": 2295428,
+        "sha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd"
+      }
+    },
+    "status": "PASS"
+  }
+}

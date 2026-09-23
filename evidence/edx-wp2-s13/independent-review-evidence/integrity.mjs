@@ -1,0 +1,26 @@
+import {readFileSync,writeFileSync,statSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {execFileSync,spawnSync} from 'node:child_process';
+import {gunzipSync} from 'node:zlib';
+const root='/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical';process.chdir(root);
+const p='/private/tmp/pptskill-s13-independent-';
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const read=f=>readFileSync(f);const json=f=>JSON.parse(read(f));const git=(...a)=>execFileSync('git',a,{encoding:'utf8'}).trim();
+const candidate='9b7767d88411e9e9a14e72d011726d67f74371a6',base='18b1029c13444f6b40989f421098a9496ef7db0d',head='26d784e76f6df54dc0b281f7964719554f854293';
+const expected=json('evidence/edx-wp2-s13/source-hashes.json');
+const hashes=Object.fromEntries(['sources','protected'].map(k=>[k,Object.entries(expected[k]).map(([path,expected])=>({path,expected,actual:sha(read(path)),match:sha(read(path))===expected,...(k==='sources'?{candidateMatch:sha(execFileSync('git',['show',candidate+':'+path]))===expected}:{})}))]));
+const zip=expected.distribution.path;
+const entries=execFileSync('unzip',['-Z1',zip],{encoding:'utf8'}).trim().split('\n');
+const zipRead=e=>execFileSync('unzip',['-p',zip,e],{maxBuffer:32*1024*1024});
+const runtimeEntries=entries.filter(e=>e.startsWith('PPTSKILL/core/runtime/')&&!e.endsWith('/'));
+const manifest=JSON.parse(zipRead('PPTSKILL/package-manifest.json'));
+const distribution={...expected.distribution,actualBytes:statSync(zip).size,actualSha256:sha(read(zip)),manifest,entries:entries.length,duplicates:entries.filter((e,i)=>entries.indexOf(e)!==i),unsafe:entries.filter(e=>e.startsWith('/')||e.split('/').includes('..')),runtimeMatches:runtimeEntries.map(e=>({path:e,match:sha(zipRead(e))===sha(read(e.replace('PPTSKILL/core/','')))}))};
+const evidence='evidence/edx-wp2-s13/';const acceptance=json(evidence+'host-harness-repair/insert-text/acceptance.json');
+const artifacts=[];function walk(v){if(!v||typeof v!=='object')return;if(v.path&&v.sha256){const path=v.path.startsWith(root+'/')?v.path.slice(root.length+1):v.path;artifacts.push({path,expected:v.sha256,actual:sha(read(path)),match:sha(read(path))===v.sha256,bytesMatch:v.bytes===undefined||statSync(path).size===v.bytes});}for(const x of Object.values(v))walk(x);}walk(acceptance);walk({screenshots:json(evidence+'host-final-verification.json').screenshots});
+const rawLogs=json(evidence+'raw-log-hashes.json').map(x=>({path:x.path,rawMatch:sha(read(evidence+x.path))===x.rawSha256,gzipMatch:sha(read(evidence+x.path+'.gz'))===x.gzipSha256,decompressedMatch:sha(gunzipSync(read(evidence+x.path+'.gz')))===x.rawSha256}));
+const viewports=acceptance.runs.map(r=>({width:r.width,height:r.height,status:r.status,records:r.checks.length,groups:{base:r.checks.filter(x=>typeof x==='string').length,s8:r.checks.filter(x=>x.wp2s8).length,s13:r.checks.filter(x=>x.wp2s13).length},errors:['console','pageErrors','networkFailures','httpErrors','remoteRequests'].map(k=>({kind:k,count:r[k].length})),targetClosed:r.targetClosed}));
+const history=git('diff','--name-only',candidate,head).split('\n');
+const output={base,candidate,expectedHead:head,actualHead:git('rev-parse','HEAD'),status:git('status','--short'),hashes,distribution,drift:git('diff','--name-only',candidate,head,'--','runtime','tests','tools','dist'),history,workingTrackedDrift:git('diff','HEAD','--stat'),diffChecks:[['base-candidate',base,candidate],['candidate-head',candidate,head]].map(([name,...args])=>{const r=spawnSync('git',['diff','--check',...args],{encoding:'utf8'});return {name,status:r.status,stdout:r.stdout,stderr:r.stderr}}),artifacts,rawLogs,viewports,controller:json(evidence+'host-harness-repair/controller-receipt.json')};
+for(const name of ['scoped','nonbuild']){const log=read(p+name+'.log').toString();const old=json(p+name+'-summary.json');old.summary=log.split('\n').filter(x=>/^[ℹ#] (tests|suites|pass|fail|cancelled|skipped|todo|duration_ms)/.test(x));old.namedPasses=(log.match(/^✔ /gm)||[]).length;writeFileSync(p+name+'-summary.json',JSON.stringify(old,null,2));}
+writeFileSync(p+'integrity.json',JSON.stringify(output,null,2));
+console.log(JSON.stringify({head:output.actualHead,source:hashes.sources.every(x=>x.match&&x.candidateMatch),protected:hashes.protected.every(x=>x.match),zip:distribution.actualSha256===distribution.sha256,runtimeEntries:runtimeEntries.length,runtimeMatch:distribution.runtimeMatches.every(x=>x.match),drift:output.drift,artifacts:artifacts.length,artifactsPass:artifacts.every(x=>x.match&&x.bytesMatch),rawLogs:rawLogs.length,rawLogsPass:rawLogs.every(x=>x.rawMatch&&x.gzipMatch&&x.decompressedMatch),viewports,diffChecks:output.diffChecks}));

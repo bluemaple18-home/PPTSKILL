@@ -1,0 +1,109 @@
+[
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-scoped.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/scoped.log",
+    "rawSha256": "b5a0b5bbed52010bc6c52a9992a48e5827cf919ea2b2065e7f012e7f571202e8",
+    "gzipSha256": "fcd08cfe8e967101fa6ba430f61109521d86c8971ab3d6145496760caf4e55c1",
+    "plainSha256": "b5a0b5bbed52010bc6c52a9992a48e5827cf919ea2b2065e7f012e7f571202e8"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-nonbuild.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/nonbuild.log",
+    "rawSha256": "ad03cdfd805c16f6ecbd2c55ba1b734a624968f102584b35b71f248f3a7fa2ec",
+    "gzipSha256": "387cfd6f2716cf6aac6e1391cabaa773bb8fce16464062a704b37462b08f69cc",
+    "plainSha256": "ad03cdfd805c16f6ecbd2c55ba1b734a624968f102584b35b71f248f3a7fa2ec"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-batch2.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/batch2.log",
+    "rawSha256": "008c4427d41b2461a19c4838d36e820f169708fbb7de8dafc669437fe8a5a19c",
+    "gzipSha256": "fcc1bf9fd202f27423d1f186e8ff5408303b19cd3084633cb3256571fe100608",
+    "plainSha256": "008c4427d41b2461a19c4838d36e820f169708fbb7de8dafc669437fe8a5a19c"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-probe.mjs",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/probe.mjs",
+    "rawSha256": "da7e9a16bd8088932c213f2a7cef7c188ec79f49ef025f70c89fce304790afa3"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-probe.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/probe.log",
+    "rawSha256": "b999fc8002bef032e52810c2cc71186b124556ebf4d67ba27a0de5331c7b2c49",
+    "gzipSha256": "899165bcf6ada8cb7d89727cbbdf447e32e491f863e74435f06161db1f44b3ee",
+    "plainSha256": "b999fc8002bef032e52810c2cc71186b124556ebf4d67ba27a0de5331c7b2c49"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-run.mjs",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/run.mjs",
+    "rawSha256": "7e210c6325df1081ce34f0aeace2b02e32daf8829f31b68421f168690f820720"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-batch2.mjs",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/batch2.mjs",
+    "rawSha256": "e4dd8f2a945ba0b28e30576b6a41fb0ed0f40a6374421aa561c093ea5e1f4959"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-test-plan.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/test-plan.json",
+    "rawSha256": "8ac172e77830daa6e4bd0ac4041cff7f65ca04699c2c0eaad444db3bdd24e11a"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-scoped-summary.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/scoped-summary.json",
+    "rawSha256": "c4ef655a518a07d63dde7f2f62fb89e8d9d16923647b931ea523a7dd5c62b8cf"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-nonbuild-summary.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/nonbuild-summary.json",
+    "rawSha256": "4f8786a85d80b1aab24f01bf97359e5e1853c2bee4404039cf6be84286b0e762"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-batch2-summary.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/batch2-summary.json",
+    "rawSha256": "12548062f98b5e14dba48891d1040157ab414ef2d84659132de7332452bf4430"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-integrity-before.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/integrity-before.json",
+    "rawSha256": "e4c46046ebdc8eefb91adec29328391456b2261f7284ec3b7162e8300bcea441"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-integrity.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/integrity.json",
+    "rawSha256": "e4c46046ebdc8eefb91adec29328391456b2261f7284ec3b7162e8300bcea441"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-integrity.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/integrity.log",
+    "rawSha256": "d7365fb32748057900ee9d9bda5b43879cdc1e06307fc8a28fdf8a958b304659",
+    "gzipSha256": "69216ecb6c8f91c7397eab24b92eb857f4ff3e33ca706da47665c8637e7c1190",
+    "plainSha256": "d7365fb32748057900ee9d9bda5b43879cdc1e06307fc8a28fdf8a958b304659"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-integrity.mjs",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/integrity.mjs",
+    "rawSha256": "0735909b03c68adb2b52f52ca07d6ca867427bcd5dde5cc4ce6bd344149eee33"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-final-summary.json",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/final-summary.json",
+    "rawSha256": "b2eccf75dbd794b629863953f05f90930c225424b9b2169cb21a40c18e7b4ff6"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-zip-test.log",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/zip-test.log",
+    "rawSha256": "357b6fd018e4c81af9b1595bf29c3672c315101b9e0313910bc7e384fd115fae",
+    "gzipSha256": "d9daa3e12ce7d79addcff3e890ff596260f56c512b9e24a656cb265ef1e692f8",
+    "plainSha256": "357b6fd018e4c81af9b1595bf29c3672c315101b9e0313910bc7e384fd115fae"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-review.md",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/review.md",
+    "rawSha256": "4aaaae73709b838fe763edb7e6922dcbb5a5f86b8dfd21dda2f3759bb2078032"
+  },
+  {
+    "originalPath": "/private/tmp/pptskill-s13-independent-report.mjs",
+    "storedPath": "evidence/edx-wp2-s13/independent-review-evidence/report.mjs",
+    "rawSha256": "078df7698af0f45e00485b8f4534c2213672ff1fec9bec25f066a2ea5fbdf6f6"
+  }
+]

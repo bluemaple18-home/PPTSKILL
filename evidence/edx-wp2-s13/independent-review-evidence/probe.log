@@ -1,0 +1,9 @@
+PASS Node 非 NFC／空白／換行／HTML-like canonical 與 export 保真
+PASS Node 新文字 S1 authority 邊界
+PASS Node 非 throw getter 仍拒絕／讀取 0
+PASS Node combining 500／501 code-point 邊界
+PASS mounted 非 NFC／空白／換行／HTML-like canonical 與 export 保真
+PASS mounted 新文字 S1 authority 邊界
+PASS mounted 非 throw getter 仍拒絕／讀取 0
+PASS mounted combining 500／501 code-point 邊界
+{"passed":8,"failed":0,"scope":"Node 及 mounted DOM double；非 fresh browser"}
