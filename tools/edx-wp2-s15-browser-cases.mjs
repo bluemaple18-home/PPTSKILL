@@ -50,8 +50,8 @@ export async function runInsertTextUIBrowserCases({ cdp, evaluate, navigate, sou
   await selectSlide('insert-empty'); assert.equal(expected.slides.find(s => s.id === 'insert-empty').content.components.length, 0); await open(); await type('空頁新增'); await inserted('空頁新增', 'insert-empty'); record('empty slide 可插入');
   await open(); await type('無圖片頁'); await inserted('無圖片頁', 'insert-empty'); record('noimage slide 可再次插入');
   // API 僅作 type collision fixture；hole 的填補必須從 UI。
-  await evaluate(`window.PPTSKILLEditor.executeOperation({operation:'insert-element',target:{slideId:'insert-empty'},value:{component:{id:'inserted-text-3',type:'image',dataUri:${JSON.stringify(assetReplacementPng)},alt:'占用',fit:'contain'},geometry:{x:40,y:40,width:80,height:80}}})`);
-  await evaluate(`window.PPTSKILLEditor.executeOperation({operation:'insert-element',target:{slideId:'insert-empty'},value:{component:{id:'inserted-text-5',type:'text',text:'占用'},geometry:{x:40,y:140,width:80,height:80}}})`); expected = await spec();
+  await evaluate(`window.PPTSKILLEditor.executeOperation({operation:'insert-element',target:{slideId:'insert-empty'},value:{component:{id:'inserted-text-3',type:'image',dataUri:${JSON.stringify(assetReplacementPng)},alt:'占用',fit:'contain'},geometry:{x:1200,y:600,width:80,height:80}}})`);
+  await evaluate(`window.PPTSKILLEditor.executeOperation({operation:'insert-element',target:{slideId:'insert-empty'},value:{component:{id:'inserted-text-5',type:'text',text:'占用'},geometry:{x:1320,y:700,width:80,height:80}}})`); expected = await spec();
   await selectSlide('insert-empty'); await open(); await type('hole 4'); assert.equal(await inserted('hole 4', 'insert-empty'), 'inserted-text-4'); record('first-free hole 4／跨 type namespace', 'API fixture＋real UI insert');
   // 修改 target 的事件只作 fixture，提交仍真 pointer；每例都核對 canonical no-op。
   for (const stale of ['page', 'mode', 'selection', 'removed', 'rebuilt', 'duplicate']) {
