@@ -1,0 +1,10 @@
+{
+  "scope": "S18 診斷 bounded Repair 1；產品候選不變，未啟browser",
+  "candidate": "84ea9381cb438491449b6d871fbaeedea5e55b98",
+  "files": {
+    "evidence/edx-wp2-s18/host-controller-diagnostic.py": "d339a78ad099a0d09f061686673cbb7f9da007e5564e6854835396df86886365",
+    "evidence/edx-wp2-s18/resource-observer.py": "2b8749de7ea497d3158752b44fb244510fa18588c1d760dcee2e8489db4c6902",
+    "evidence/edx-wp2-s18/diagnostic-repair-probe.py": "d075b737ba02aa71013443685cf072442d4b71d04179f4ff4550bbd07b993996"
+  },
+  "freshProbe": 26
+}

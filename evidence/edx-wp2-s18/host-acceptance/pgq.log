@@ -1,0 +1,85 @@
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (28937.551167ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (10.1865ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (3.07125ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (5.613917ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (3.7075ms)
+✔ sample content 或 composition 只使該頁失效 (5.530583ms)
+✔ style 或 contract version 變更使全部 sample 失效 (6.438792ms)
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (12110.661833ms)
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39
+    throw new Error(`Trusted browser producer ${mode} 執行失敗：${error.message}`);
+          ^
+
+Error: Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522
+    if (!port) throw new Error('Chrome DevTools port 未就緒。');
+                     ^
+
+Error: Chrome DevTools port 未就緒。
+    at runAtViewport (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:522:22)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/browser-geometry-qa.mjs:695:45
+
+Node.js v25.9.0
+
+    at runProducer (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:39:11)
+    at async collectFullDeckQaEvidence (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/representative-qa-evidence.js:95:56)
+    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-full-deck-qa.test.mjs:17:18
+
+Node.js v25.9.0
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (4964.706459ms)
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4632.153542ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 7
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 123700.7545
+
+✖ failing tests:
+
+test at tests/pgq-wp4-s3-sample-approval.test.mjs:142:1
+✖ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (12110.661833ms)
+  Error: Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/runtime/workflow-cli.mjs approve-sample --request /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/approval-request.json --artifact /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html
+  PPTSKILL workflow：Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static
+  Warning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695
+  for (const viewport of viewports) runs.push(await runAtViewport(viewport));
+                                              ^
+  
+  
+  
+  
+  
+      at genericNodeError (node:internal/errors:998:15)
+      at wrappedFn (node:internal/errors:543:14)
+      at ChildProcess.exithandler (node:child_process:417:12)
+      at ChildProcess.emit (node:events:509:20)
+      at maybeClose (node:internal/child_process:1108:16)
+      at Socket.<anonymous> (node:internal/child_process:480:11)
+      at Socket.emit (node:events:509:20)
+      at Pipe.<anonymous> (node:net:350:12) {
+    code: 1,
+    killed: false,
+    signal: null,
+    cmd: '/opt/homebrew/Cellar/node/25.9.0_3/bin/node /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/runtime/workflow-cli.mjs approve-sample --request /var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/approval-request.json --artifact /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html',
+    stdout: '',
+    stderr: 'PPTSKILL workflow：Trusted browser producer static 執行失敗：Command failed: /opt/homebrew/Cellar/node/25.9.0_3/bin/node /private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/fixtures/full-deck.html --motion static\nWarning: Detected unsettled top-level await at file:///private/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/pptskill-pgq-wp4-s3-lArp4g/user/.pptskill/runtime/core/tools/browser-geometry-qa.mjs:695\nfor (const viewport of viewports) runs.push(await runAtViewport(viewport));\n                                            ^\n\n\n\n\n'
+  }
+
+test at tests/pgq-wp4-s4-full-deck-qa.test.mjs:1:1
+✖ tests/pgq-wp4-s4-full-deck-qa.test.mjs (4964.706459ms)
+  'test failed'
+
+test at tests/pgq-wp4-s4-required-visibility.test.mjs:15:1
+✖ 每張 canonical slide 的 required title 必須有 painted visibility (4632.153542ms)
+  SyntaxError: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at Object.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:26:28)
+      at expectedException (node:assert:553:17)
+      at expectsError (node:assert:678:21)
+      at strict.rejects (node:assert:744:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/pgq-wp4-s4-required-visibility.test.mjs:23:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)

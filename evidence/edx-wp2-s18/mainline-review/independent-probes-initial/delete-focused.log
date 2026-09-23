@@ -1,0 +1,21 @@
+✔ S18 mounted remove-before 原子拒絕保住 canonical/DOM/selection/gesture (33.805292ms)
+✔ S18 mounted remove-after 原子拒絕保住 canonical/DOM/selection/gesture (14.878167ms)
+✔ S18 mounted remove 同步重入不得提交另一 operation (7.476208ms)
+✔ S18 reentry applyLocalPatch/before 拒絕 image patch，單次 revision 與 DOM/canonical 一致 (8.161542ms)
+✔ S18 reentry applyLocalPatch/after 拒絕 image patch，單次 revision 與 DOM/canonical 一致 (8.064375ms)
+✔ S18 reentry prepareExport/before 在 syncText 前拒絕，不匯出半完成 DOM (12.168042ms)
+✔ S18 reentry prepareExport/after 在 syncText 前拒絕，不匯出半完成 DOM (11.761833ms)
+✔ S18 reentry exportHtml/before 在 syncText 前拒絕，不匯出半完成 DOM (9.859333ms)
+✔ S18 reentry exportHtml/after 在 syncText 前拒絕，不匯出半完成 DOM (12.66825ms)
+✔ S18 reentry getSizeReport/before 在 syncText 前拒絕，不匯出半完成 DOM (9.338917ms)
+✔ S18 reentry getSizeReport/after 在 syncText 前拒絕，不匯出半完成 DOM (9.48275ms)
+✔ S18 reentry download/before 在 syncText 前拒絕，不匯出半完成 DOM (8.482667ms)
+✔ S18 reentry download/after 在 syncText 前拒絕，不匯出半完成 DOM (8.595708ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 284.683417

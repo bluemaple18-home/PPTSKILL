@@ -1,0 +1,17 @@
+{
+  "status": "FAIL",
+  "scope": "開發中未提交診斷，非固定candidate驗收",
+  "scenario": "node.remove 同步呼叫 applyLocalPatch 修改另一圖片 alt",
+  "observed": {
+    "nested": "accepted",
+    "revisionDelta": 2,
+    "canonicalAlt": "成本探針",
+    "domAlt": "S18_REENTRY_PROBE"
+  },
+  "expected": {
+    "nested": "rejected",
+    "revisionDelta": 1,
+    "canonicalDomMatch": true
+  },
+  "workerNotified": true
+}

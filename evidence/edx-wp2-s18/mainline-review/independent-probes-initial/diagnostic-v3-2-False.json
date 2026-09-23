@@ -1,0 +1,9 @@
+{
+  "status": "NO_IO_ERROR_OBSERVED",
+  "scanner": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "scannerSha256Before": "3d200b37bde357eb86000ba57c36ab0e115ea119f82bc8bfcba90882876a38b6",
+  "scannerSha256After": "3d200b37bde357eb86000ba57c36ab0e115ea119f82bc8bfcba90882876a38b6",
+  "scanCallsObserved": 0,
+  "errors": [],
+  "lineAndOpcodeTracing": false
+}

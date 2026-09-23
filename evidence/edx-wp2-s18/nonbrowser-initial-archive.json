@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "archive": "nonbrowser-mainline.tap.gz",
+  "rawSha256": "ffcdd65c837a8823fe2d65955565dc1ba87a3fe7f8e42e54e71c494e9e20076a",
+  "archiveSha256": "06f9313bf627432e100aff92c74a9b4d31ece7aa765b766ca0ef0dbc6c56be92",
+  "rawBytes": 195545,
+  "archiveBytes": 34886,
+  "roundTripByteMatch": true,
+  "originalResult": {
+    "tests": 945,
+    "pass": 943,
+    "fail": 2,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  }
+}

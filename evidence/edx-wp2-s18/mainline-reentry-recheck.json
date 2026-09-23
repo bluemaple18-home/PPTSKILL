@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "Mainline 開發中探針；固定candidate仍待完整驗收",
+  "sourceHash": "f5d74e8b1e04b7ef0027d113b4cf4ecd222c2dfab773c3eaa036ba3fe3c68b0d",
+  "results": [
+    {
+      "kind": "patch",
+      "nestedRejected": true,
+      "revisionDelta": 1,
+      "canonicalDomMatch": true
+    },
+    {
+      "kind": "export",
+      "nestedRejected": true,
+      "revisionDelta": 1,
+      "canonicalDomMatch": true
+    }
+  ]
+}

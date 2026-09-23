@@ -1,0 +1,60 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "runtime/component-deletion.js": true,
+      "tests/edx-wp2-s18-delete-element.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/edx-wp2-s18-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2301572,
+      "sha256": "5ccedbc43af3f23f9582ed989c635479be10065752d231fefa4bf2104ff3ec74"
+    }
+  },
+  "aiCoreCommit": "81c80ffa349c58b0bb5006f7430ca1624b337774",
+  "supervisorPid": 95580,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-219f42f1944846a7b332dc82f78a1462",
+  "deleteElementStarted": true,
+  "deleteElementExit": 0,
+  "pgqStarted": true,
+  "pgqExit": 1,
+  "error": "Traceback (most recent call last):\n  File \"/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-wp2-s18/host-controller.py\", line 60, in <module>\n    if run.returncode: raise RuntimeError(key+' 驗收失敗；停止後續步驟')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: pgq 驗收失敗；停止後續步驟\n",
+  "supervisorExit": 2,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "runtime/component-deletion.js": true,
+      "tests/edx-wp2-s18-delete-element.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/edx-wp2-s18-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2301572,
+      "sha256": "5ccedbc43af3f23f9582ed989c635479be10065752d231fefa4bf2104ff3ec74"
+    }
+  },
+  "status": "NOT_PASS"
+}

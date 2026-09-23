@@ -1,0 +1,191 @@
+{
+  "status": "PASS",
+  "cases": 26,
+  "controllerEntryExecuted": false,
+  "tmpSessionEntryExecuted": false,
+  "browserLaunches": 0,
+  "results": [
+    {
+      "case": "F1:close_timeout",
+      "pass": true,
+      "waitCalls": 1,
+      "receipt": {
+        "browserCloseError": "TimeoutExpired('mock', 10)",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "F1:sink_close",
+      "pass": true,
+      "waitCalls": 1,
+      "receipt": {
+        "browserCloseExit": 0,
+        "browserCloseError": "OSError(5, 'synthetic close sink')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "F1:second_wait_timeout",
+      "pass": true,
+      "waitCalls": 2,
+      "receipt": {
+        "browserCloseExit": 0,
+        "supervisorTerminated": true,
+        "cleanupError": "TimeoutExpired('mock', 30)"
+      }
+    },
+    {
+      "case": "F1:no_endpoint",
+      "pass": true,
+      "waitCalls": 1,
+      "receipt": {
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "F2:return:sink_failure=False",
+      "pass": true,
+      "outcome": "return",
+      "code": null
+    },
+    {
+      "case": "F2:return:sink_failure=True",
+      "pass": true,
+      "outcome": "SystemExit",
+      "code": 74
+    },
+    {
+      "case": "F2:exit_none:sink_failure=False",
+      "pass": true,
+      "outcome": "SystemExit",
+      "code": null
+    },
+    {
+      "case": "F2:exit_none:sink_failure=True",
+      "pass": true,
+      "outcome": "SystemExit",
+      "code": 74
+    },
+    {
+      "case": "F2:runtime_error:sink_failure=False",
+      "pass": true,
+      "outcome": "RuntimeError",
+      "code": null
+    },
+    {
+      "case": "F2:runtime_error:sink_failure=True",
+      "pass": true,
+      "outcome": "RuntimeError",
+      "code": null
+    },
+    {
+      "case": "F2:keyboard_interrupt:sink_failure=False",
+      "pass": true,
+      "outcome": "KeyboardInterrupt",
+      "code": null
+    },
+    {
+      "case": "F2:keyboard_interrupt:sink_failure=True",
+      "pass": true,
+      "outcome": "KeyboardInterrupt",
+      "code": null
+    },
+    {
+      "case": "F3:nested-propagation-and-independent-scans",
+      "pass": true,
+      "scans": 2,
+      "events": [
+        {
+          "type": "OSError",
+          "errno": 5,
+          "strerror": "synthetic nested",
+          "filename": "nested-0",
+          "filename2": null,
+          "message": "[Errno 5] synthetic nested: 'nested-0'",
+          "function": "visit",
+          "line": 1092,
+          "source": "with os.scandir(fd) as children:",
+          "relativeDirectory": [
+            "nested"
+          ],
+          "entryName": null
+        },
+        {
+          "type": "OSError",
+          "errno": 5,
+          "strerror": "synthetic nested",
+          "filename": "nested-1",
+          "filename2": null,
+          "message": "[Errno 5] synthetic nested: 'nested-1'",
+          "function": "visit",
+          "line": 1092,
+          "source": "with os.scandir(fd) as children:",
+          "relativeDirectory": [
+            "nested"
+          ],
+          "entryName": null
+        }
+      ]
+    },
+    {
+      "case": "diagnostic-reject:scanner",
+      "pass": true
+    },
+    {
+      "case": "diagnostic-reject:scanCallsObserved",
+      "pass": true
+    },
+    {
+      "case": "diagnostic-reject:lineAndOpcodeTracing",
+      "pass": true
+    },
+    {
+      "case": "diagnostic-reject:scannerSha256Before",
+      "pass": true
+    },
+    {
+      "case": "diagnostic-reject:errors",
+      "pass": true
+    },
+    {
+      "case": "controller-status:none",
+      "pass": true,
+      "status": "PASS"
+    },
+    {
+      "case": "controller-status:missing_diagnostic",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:false_diagnostic",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:diagnosticError",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:cleanupError",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:browserCloseError",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:integrityError",
+      "pass": true,
+      "status": "NOT_PASS"
+    },
+    {
+      "case": "controller-status:cleanupVerificationError",
+      "pass": true,
+      "status": "NOT_PASS"
+    }
+  ]
+}

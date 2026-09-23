@@ -1,0 +1,2704 @@
+TAP version 13
+# Subtest: legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+ok 1 - legacy keyPoints deterministic backfill，合法 explicit IDs 原樣保留
+  ---
+  duration_ms: 101.330625
+  type: 'test'
+  ...
+# Subtest: caller-supplied invalid identity 在 sanitizer 前 fail loud
+ok 2 - caller-supplied invalid identity 在 sanitizer 前 fail loud
+  ---
+  duration_ms: 5.182291
+  type: 'test'
+  ...
+# Subtest: renderer 對 directly operable roots 輸出 slide-local unique element identity
+ok 3 - renderer 對 directly operable roots 輸出 slide-local unique element identity
+  ---
+  duration_ms: 170.588917
+  type: 'test'
+  ...
+# Subtest: edit-text descriptor 完整宣告 bounded metadata
+ok 4 - edit-text descriptor 完整宣告 bounded metadata
+  ---
+  duration_ms: 7.162125
+  type: 'test'
+  ...
+# Subtest: executeOperation 只依 stable target pair 編輯文字並 fail loud
+ok 5 - executeOperation 只依 stable target pair 編輯文字並 fail loud
+  ---
+  duration_ms: 22.479
+  type: 'test'
+  ...
+# Subtest: legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+ok 6 - legacy non-pattern 與 201+ 字元 slideId 仍可走 Node/browser operation path
+  ---
+  duration_ms: 68.221791
+  type: 'test'
+  ...
+# Subtest: 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+ok 7 - 對抗性 long component／keyPoint IDs 仍解析為 bounded unique identity 並可 round-trip
+  ---
+  duration_ms: 162.627125
+  type: 'test'
+  ...
+# Subtest: descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+ok 8 - descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist
+  ---
+  duration_ms: 28.463583
+  type: 'test'
+  ...
+# Subtest: legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+ok 9 - legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞
+  ---
+  duration_ms: 22.739875
+  type: 'test'
+  ...
+# Subtest: legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+ok 10 - legacy adapters、duplicate 與 export/reopen 共用 canonical identity
+  ---
+  duration_ms: 44.956667
+  type: 'test'
+  ...
+# Subtest: S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 11 - S7 drag Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 169.616584
+  type: 'test'
+  ...
+# Subtest: S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+ok 12 - S7 resize Escape→trusted release-click 重播不重選；fresh pointerdown/click 立即恢復
+  ---
+  duration_ms: 63.2175
+  type: 'test'
+  ...
+# Subtest: S7 cancel 共用取消尾隨 click 防護
+ok 13 - S7 cancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 57.901167
+  type: 'test'
+  ...
+# Subtest: S7 pointercancel 共用取消尾隨 click 防護
+ok 14 - S7 pointercancel 共用取消尾隨 click 防護
+  ---
+  duration_ms: 60.281083
+  type: 'test'
+  ...
+# Subtest: S7 blur 共用取消尾隨 click 防護
+ok 15 - S7 blur 共用取消尾隨 click 防護
+  ---
+  duration_ms: 78.80225
+  type: 'test'
+  ...
+# Subtest: S7 scroll 共用取消尾隨 click 防護
+ok 16 - S7 scroll 共用取消尾隨 click 防護
+  ---
+  duration_ms: 77.286459
+  type: 'test'
+  ...
+# Subtest: S7 resize 共用取消尾隨 click 防護
+ok 17 - S7 resize 共用取消尾隨 click 防護
+  ---
+  duration_ms: 86.994291
+  type: 'test'
+  ...
+# Subtest: S7 selection 共用取消尾隨 click 防護
+ok 18 - S7 selection 共用取消尾隨 click 防護
+  ---
+  duration_ms: 103.255667
+  type: 'test'
+  ...
+# Subtest: S7 mode 共用取消尾隨 click 防護
+ok 19 - S7 mode 共用取消尾隨 click 防護
+  ---
+  duration_ms: 133.206041
+  type: 'test'
+  ...
+# Subtest: S7 text 共用取消尾隨 click 防護
+ok 20 - S7 text 共用取消尾隨 click 防護
+  ---
+  duration_ms: 84.850417
+  type: 'test'
+  ...
+# Subtest: S7 toggle 共用取消尾隨 click 防護
+ok 21 - S7 toggle 共用取消尾隨 click 防護
+  ---
+  duration_ms: 63.524583
+  type: 'test'
+  ...
+# Subtest: S7 replacement 共用取消尾隨 click 防護
+ok 22 - S7 replacement 共用取消尾隨 click 防護
+  ---
+  duration_ms: 51.549791
+  type: 'test'
+  ...
+# Subtest: S7 stale-update 共用取消尾隨 click 防護
+ok 23 - S7 stale-update 共用取消尾隨 click 防護
+  ---
+  duration_ms: 80.163417
+  type: 'test'
+  ...
+# Subtest: S7 stale-release 共用取消尾隨 click 防護
+ok 24 - S7 stale-release 共用取消尾隨 click 防護
+  ---
+  duration_ms: 74.326375
+  type: 'test'
+  ...
+# Subtest: S7 invalid 共用取消尾隨 click 防護
+ok 25 - S7 invalid 共用取消尾隨 click 防護
+  ---
+  duration_ms: 105.049334
+  type: 'test'
+  ...
+# Subtest: S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+ok 26 - S7 取消若沒有尾隨 click，下一次 primary pointerdown/click 仍正常選取
+  ---
+  duration_ms: 107.217208
+  type: 'test'
+  ...
+# Subtest: S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+ok 27 - S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響
+  ---
+  duration_ms: 82.370416
+  type: 'test'
+  ...
+# Subtest: S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+ok 28 - S7 鍵盤 detail0 與 programmatic control 不受影響，亦不消耗尾隨 click 防護
+  ---
+  duration_ms: 100.026209
+  type: 'test'
+  ...
+# Subtest: S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+ok 29 - S7 programmatic component click 可選取；後續尾隨 trusted click 不重建 vendor
+  ---
+  duration_ms: 111.47975
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+ok 30 - S7 非新有效 pointerdown {"isTrusted":false} 不解除本次取消防護
+  ---
+  duration_ms: 97.500875
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+ok 31 - S7 非新有效 pointerdown {"isPrimary":false} 不解除本次取消防護
+  ---
+  duration_ms: 108.887083
+  type: 'test'
+  ...
+# Subtest: S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+ok 32 - S7 非新有效 pointerdown {"button":2} 不解除本次取消防護
+  ---
+  duration_ms: 123.05725
+  type: 'test'
+  ...
+# Subtest: S7 destroy 移除 pointerdown listener，重複 teardown 安全
+ok 33 - S7 destroy 移除 pointerdown listener，重複 teardown 安全
+  ---
+  duration_ms: 105.966166
+  type: 'test'
+  ...
+# Subtest: WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+ok 34 - WP2-S1 text mode 只開放 title/subtitle/keyPoint，component 不取得 direct-edit authority
+  ---
+  duration_ms: 267.046833
+  type: 'test'
+  ...
+# Subtest: WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+ok 35 - WP2-S1 blur / 完成編輯以 edit-text commit，preserve 其他 canonical scopes
+  ---
+  duration_ms: 37.135125
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+ok 36 - WP2-S1 IME composition 期間 export fail loud，compositionend 才提交完整文字
+  ---
+  duration_ms: 45.4585
+  type: 'test'
+  ...
+# Subtest: WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+ok 37 - WP2-S1 IME 未完成時切到 layout 只取消 partial DOM，不提交 canonical
+  ---
+  duration_ms: 77.562958
+  type: 'test'
+  ...
+# Subtest: WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+ok 38 - WP2-S1 Escape 還原未提交 DOM，雙擊合法文字直接進 edit mode
+  ---
+  duration_ms: 33.027959
+  type: 'test'
+  ...
+# Subtest: WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+ok 39 - WP2-S1 export/reopen 使用 canonical committed text 且不輸出 contenteditable
+  ---
+  duration_ms: 28.023875
+  type: 'test'
+  ...
+# Subtest: S10 public mounted layout 插圖：無 image、固定 geometry／fit／檔名、一次 revision
+ok 40 - S10 public mounted layout 插圖：無 image、固定 geometry／fit／檔名、一次 revision
+  ---
+  duration_ms: 164.99875
+  type: 'test'
+  ...
+# Subtest: S10 empty selection 均可用；play/edit/teardown 關閉入口
+ok 41 - S10 empty selection 均可用；play/edit/teardown 關閉入口
+  ---
+  duration_ms: 86.133083
+  type: 'test'
+  ...
+# Subtest: S10 text selection 均可用；play/edit/teardown 關閉入口
+ok 42 - S10 text selection 均可用；play/edit/teardown 關閉入口
+  ---
+  duration_ms: 83.124292
+  type: 'test'
+  ...
+# Subtest: S10 image selection 均可用；play/edit/teardown 關閉入口
+ok 43 - S10 image selection 均可用；play/edit/teardown 關閉入口
+  ---
+  duration_ms: 79.414375
+  type: 'test'
+  ...
+# Subtest: S10 multi selection 均可用；play/edit/teardown 關閉入口
+ok 44 - S10 multi selection 均可用；play/edit/teardown 關閉入口
+  ---
+  duration_ms: 134.82325
+  type: 'test'
+  ...
+# Subtest: S10 gesture 取消不 commit，capture→blur→change，snap=false
+ok 45 - S10 gesture 取消不 commit，capture→blur→change，snap=false
+  ---
+  duration_ms: 153.16625
+  type: 'test'
+  ...
+# Subtest: S10 gesture 取消不 commit，capture→blur→change，snap=true
+ok 46 - S10 gesture 取消不 commit，capture→blur→change，snap=true
+  ---
+  duration_ms: 290.85875
+  type: 'test'
+  ...
+# Subtest: S10 slide 取消未 change snapshot
+ok 47 - S10 slide 取消未 change snapshot
+  ---
+  duration_ms: 140.705625
+  type: 'test'
+  ...
+# Subtest: S10 focusin 取消未 change snapshot
+ok 48 - S10 focusin 取消未 change snapshot
+  ---
+  duration_ms: 113.73525
+  type: 'test'
+  ...
+# Subtest: S10 mode 取消未 change snapshot
+ok 49 - S10 mode 取消未 change snapshot
+  ---
+  duration_ms: 148.783417
+  type: 'test'
+  ...
+# Subtest: S10 selection 取消未 change snapshot
+ok 50 - S10 selection 取消未 change snapshot
+  ---
+  duration_ms: 405.388542
+  type: 'test'
+  ...
+# Subtest: S10 same-selection 取消未 change snapshot
+ok 51 - S10 same-selection 取消未 change snapshot
+  ---
+  duration_ms: 446.848291
+  type: 'test'
+  ...
+# Subtest: S10 marquee 取消未 change snapshot
+ok 52 - S10 marquee 取消未 change snapshot
+  ---
+  duration_ms: 541.459625
+  type: 'test'
+  ...
+# Subtest: S10 empty-marquee 取消未 change snapshot
+ok 53 - S10 empty-marquee 取消未 change snapshot
+  ---
+  duration_ms: 207.132208
+  type: 'test'
+  ...
+# Subtest: S10 clear 取消未 change snapshot
+ok 54 - S10 clear 取消未 change snapshot
+  ---
+  duration_ms: 597.249875
+  type: 'test'
+  ...
+# Subtest: S10 destroy 取消未 change snapshot
+ok 55 - S10 destroy 取消未 change snapshot
+  ---
+  duration_ms: 363.340833
+  type: 'test'
+  ...
+# Subtest: S10 delete 取消未 change snapshot
+ok 56 - S10 delete 取消未 change snapshot
+  ---
+  duration_ms: 155.524416
+  type: 'test'
+  ...
+# Subtest: S10 pointer 取消未 change snapshot
+ok 57 - S10 pointer 取消未 change snapshot
+  ---
+  duration_ms: 79.437542
+  type: 'test'
+  ...
+# Subtest: S10 cancel 不占用 ID，reset 可重選
+ok 58 - S10 cancel 不占用 ID，reset 可重選
+  ---
+  duration_ms: 71.049667
+  type: 'test'
+  ...
+# Subtest: S10 empty 不占用 ID，reset 可重選
+ok 59 - S10 empty 不占用 ID，reset 可重選
+  ---
+  duration_ms: 150.001791
+  type: 'test'
+  ...
+# Subtest: S10 throw 不占用 ID，reset 可重選
+ok 60 - S10 throw 不占用 ID，reset 可重選
+  ---
+  duration_ms: 103.26425
+  type: 'test'
+  ...
+# Subtest: S10 無 pending／wrong input／互斥／busy 重入不跨送
+ok 61 - S10 無 pending／wrong input／互斥／busy 重入不跨送
+  ---
+  duration_ms: 158.538791
+  type: 'test'
+  ...
+# Subtest: S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一次
+ok 62 - S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一次
+  ---
+  duration_ms: 117.361125
+  type: 'test'
+  ...
+# Subtest: S10 async File 捕捉，export／切頁／mode／其他修改保留；finally 不覆寫新 S6 picker
+ok 63 - S10 async File 捕捉，export／切頁／mode／其他修改保留；finally 不覆寫新 S6 picker
+  ---
+  duration_ms: 140.60075
+  type: 'test'
+  ...
+# Subtest: S10 async removed 原子拒絕，不 rename/retry，busy 釋放
+ok 64 - S10 async removed 原子拒絕，不 rename/retry，busy 釋放
+  ---
+  duration_ms: 88.848417
+  type: 'test'
+  ...
+# Subtest: S10 async collision 原子拒絕，不 rename/retry，busy 釋放
+ok 65 - S10 async collision 原子拒絕，不 rename/retry，busy 釋放
+  ---
+  duration_ms: 185.103375
+  type: 'test'
+  ...
+# Subtest: S10 async invalid 原子拒絕，不 rename/retry，busy 釋放
+ok 66 - S10 async invalid 原子拒絕，不 rename/retry，busy 釋放
+  ---
+  duration_ms: 66.369917
+  type: 'test'
+  ...
+# Subtest: S10 async reject 原子拒絕，不 rename/retry，busy 釋放
+ok 67 - S10 async reject 原子拒絕，不 rename/retry，busy 釋放
+  ---
+  duration_ms: 74.391708
+  type: 'test'
+  ...
+# Subtest: S10 非唯一 DOM 不開 chooser；export cleanup／remount 不重複 input
+ok 68 - S10 非唯一 DOM 不開 chooser；export cleanup／remount 不重複 input
+  ---
+  duration_ms: 122.351458
+  type: 'test'
+  ...
+# Subtest: S10 change 前 ID 碰撞由 S8 preflight 拒絕，optimizer0／不 rename
+ok 69 - S10 change 前 ID 碰撞由 S8 preflight 拒絕，optimizer0／不 rename
+  ---
+  duration_ms: 126.949167
+  type: 'test'
+  ...
+# Subtest: S10 export 的 canonical 重新 mounted 後可再插入，不占舊 ID
+ok 70 - S10 export 的 canonical 重新 mounted 後可再插入，不占舊 ID
+  ---
+  duration_ms: 180.325667
+  type: 'test'
+  ...
+# Subtest: S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+ok 71 - S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+  ---
+  duration_ms: 604.264042
+  type: 'test'
+  ...
+# Subtest: S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+ok 72 - S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+  ---
+  duration_ms: 164.834125
+  type: 'test'
+  ...
+# Subtest: S12 text/plain 不攔截、不讀內容／URL fallback
+ok 73 - S12 text/plain 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 63.759167
+  type: 'test'
+  ...
+# Subtest: S12 text/html 不攔截、不讀內容／URL fallback
+ok 74 - S12 text/html 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 134.390708
+  type: 'test'
+  ...
+# Subtest: S12 text/uri-list 不攔截、不讀內容／URL fallback
+ok 75 - S12 text/uri-list 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 197.16825
+  type: 'test'
+  ...
+# Subtest: S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+ok 76 - S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+  ---
+  duration_ms: 135.256084
+  type: 'test'
+  ...
+# Subtest: S12 0 files 拒絕且 status 提示
+ok 77 - S12 0 files 拒絕且 status 提示
+  ---
+  duration_ms: 83.625709
+  type: 'test'
+  ...
+# Subtest: S12 2 files 拒絕且 status 提示
+ok 78 - S12 2 files 拒絕且 status 提示
+  ---
+  duration_ms: 82.387875
+  type: 'test'
+  ...
+# Subtest: S12 insert chooser 保留 pending/input 且 paste 不提交
+ok 79 - S12 insert chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 137.000667
+  type: 'test'
+  ...
+# Subtest: S12 replace chooser 保留 pending/input 且 paste 不提交
+ok 80 - S12 replace chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 151.0115
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=false
+ok 81 - S12 active gesture 取消不 commit，snap=false
+  ---
+  duration_ms: 338.609042
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=true
+ok 82 - S12 active gesture 取消不 commit，snap=true
+  ---
+  duration_ms: 2682.878667
+  type: 'test'
+  ...
+# Subtest: S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+ok 83 - S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+  ---
+  duration_ms: 2099.531375
+  type: 'test'
+  ...
+# Subtest: S12 async removed 原子拒絕、零 partial／retry
+ok 84 - S12 async removed 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 854.015041
+  type: 'test'
+  ...
+# Subtest: S12 async collision 原子拒絕、零 partial／retry
+ok 85 - S12 async collision 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 2973.413958
+  type: 'test'
+  ...
+# Subtest: S12 async reject 原子拒絕、零 partial／retry
+ok 86 - S12 async reject 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 678.295625
+  type: 'test'
+  ...
+# Subtest: S12 async invalid 原子拒絕、零 partial／retry
+ok 87 - S12 async invalid 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 153.102125
+  type: 'test'
+  ...
+# Subtest: S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+ok 88 - S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+  ---
+  duration_ms: 316.92025
+  type: 'test'
+  ...
+# Subtest: S12 body 採 currentId
+ok 89 - S12 body 採 currentId
+  ---
+  duration_ms: 163.976292
+  type: 'test'
+  ...
+# Subtest: S12 document 採 currentId
+ok 90 - S12 document 採 currentId
+  ---
+  duration_ms: 216.334167
+  type: 'test'
+  ...
+# Subtest: S12 deck 採 currentId
+ok 91 - S12 deck 採 currentId
+  ---
+  duration_ms: 149.261042
+  type: 'test'
+  ...
+# Subtest: S12 toolbar 採 currentId
+ok 92 - S12 toolbar 採 currentId
+  ---
+  duration_ms: 319.450167
+  type: 'test'
+  ...
+# Subtest: S12 play 不接管且不取消 gesture
+ok 93 - S12 play 不接管且不取消 gesture
+  ---
+  duration_ms: 151.045958
+  type: 'test'
+  ...
+# Subtest: S12 edit 不接管且不取消 gesture
+ok 94 - S12 edit 不接管且不取消 gesture
+  ---
+  duration_ms: 151.1975
+  type: 'test'
+  ...
+# Subtest: S12 destroy 不接管且不取消 gesture
+ok 95 - S12 destroy 不接管且不取消 gesture
+  ---
+  duration_ms: 305.349959
+  type: 'test'
+  ...
+# Subtest: S12 defaultPrevented 不接管且不取消 gesture
+ok 96 - S12 defaultPrevented 不接管且不取消 gesture
+  ---
+  duration_ms: 176.379708
+  type: 'test'
+  ...
+# Subtest: S12 isComposing 不接管且不取消 gesture
+ok 97 - S12 isComposing 不接管且不取消 gesture
+  ---
+  duration_ms: 265.83575
+  type: 'test'
+  ...
+# Subtest: S12 composingText 不接管且不取消 gesture
+ok 98 - S12 composingText 不接管且不取消 gesture
+  ---
+  duration_ms: 197.956917
+  type: 'test'
+  ...
+# Subtest: S12 external 不接管且不取消 gesture
+ok 99 - S12 external 不接管且不取消 gesture
+  ---
+  duration_ms: 416.682125
+  type: 'test'
+  ...
+# Subtest: S12 detached 不接管且不取消 gesture
+ok 100 - S12 detached 不接管且不取消 gesture
+  ---
+  duration_ms: 183.830792
+  type: 'test'
+  ...
+# Subtest: S12 other-deck 不接管且不取消 gesture
+ok 101 - S12 other-deck 不接管且不取消 gesture
+  ---
+  duration_ms: 319.346625
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-dom 不接管且不取消 gesture
+ok 102 - S12 duplicate-dom 不接管且不取消 gesture
+  ---
+  duration_ms: 323.56925
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-spec 不接管且不取消 gesture
+ok 103 - S12 duplicate-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 79.545
+  type: 'test'
+  ...
+# Subtest: S12 missing-id 不接管且不取消 gesture
+ok 104 - S12 missing-id 不接管且不取消 gesture
+  ---
+  duration_ms: 511.236542
+  type: 'test'
+  ...
+# Subtest: S12 missing-spec 不接管且不取消 gesture
+ok 105 - S12 missing-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 572.12925
+  type: 'test'
+  ...
+# Subtest: S12 null 不接管且不取消 gesture
+ok 106 - S12 null 不接管且不取消 gesture
+  ---
+  duration_ms: 525.862666
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=false
+ok 107 - S12 ownership input active=false
+  ---
+  duration_ms: 237.796417
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=true
+ok 108 - S12 ownership input active=true
+  ---
+  duration_ms: 138.345792
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=false
+ok 109 - S12 ownership textarea active=false
+  ---
+  duration_ms: 926.839709
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=true
+ok 110 - S12 ownership textarea active=true
+  ---
+  duration_ms: 185.401666
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=false
+ok 111 - S12 ownership select active=false
+  ---
+  duration_ms: 598.653333
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=true
+ok 112 - S12 ownership select active=true
+  ---
+  duration_ms: 48.534083
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=false
+ok 113 - S12 ownership textbox active=false
+  ---
+  duration_ms: 59.072708
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=true
+ok 114 - S12 ownership textbox active=true
+  ---
+  duration_ms: 73.663833
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=false
+ok 115 - S12 ownership editable active=false
+  ---
+  duration_ms: 38.602834
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=true
+ok 116 - S12 ownership editable active=true
+  ---
+  duration_ms: 59.908208
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=false
+ok 117 - S12 ownership nestededitable active=false
+  ---
+  duration_ms: 124.67725
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=true
+ok 118 - S12 ownership nestededitable active=true
+  ---
+  duration_ms: 75.994958
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=false
+ok 119 - S12 ownership invalid-inherited active=false
+  ---
+  duration_ms: 35.421292
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=true
+ok 120 - S12 ownership invalid-inherited active=true
+  ---
+  duration_ms: 83.171834
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=false
+ok 121 - S12 ownership false active=false
+  ---
+  duration_ms: 211.970459
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=true
+ok 122 - S12 ownership false active=true
+  ---
+  duration_ms: 72.459125
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=false
+ok 123 - S12 ownership false-inside-true active=false
+  ---
+  duration_ms: 107.733792
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=true
+ok 124 - S12 ownership false-inside-true active=true
+  ---
+  duration_ms: 82.63525
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=false
+ok 125 - S12 ownership true-inside-false active=false
+  ---
+  duration_ms: 44.3275
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=true
+ok 126 - S12 ownership true-inside-false active=true
+  ---
+  duration_ms: 103.403792
+  type: 'test'
+  ...
+# Subtest: S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+ok 127 - S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+  ---
+  duration_ms: 149.280208
+  type: 'test'
+  ...
+# Subtest: S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+ok 128 - S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+  ---
+  duration_ms: 106.795709
+  type: 'test'
+  ...
+# Subtest: S12 既有 drop busy 拒絕 paste，不清 pending
+ok 129 - S12 既有 drop busy 拒絕 paste，不清 pending
+  ---
+  duration_ms: 220.576417
+  type: 'test'
+  ...
+# Subtest: S12 external 拒絕保留進行中 gesture
+ok 130 - S12 external 拒絕保留進行中 gesture
+  ---
+  duration_ms: 265.492916
+  type: 'test'
+  ...
+# Subtest: S12 duplicate 拒絕保留進行中 gesture
+ok 131 - S12 duplicate 拒絕保留進行中 gesture
+  ---
+  duration_ms: 434.922666
+  type: 'test'
+  ...
+# Subtest: S12 text 拒絕保留進行中 gesture
+ok 132 - S12 text 拒絕保留進行中 gesture
+  ---
+  duration_ms: 469.803708
+  type: 'test'
+  ...
+# Subtest: S12 input 拒絕保留進行中 gesture
+ok 133 - S12 input 拒絕保留進行中 gesture
+  ---
+  duration_ms: 225.733792
+  type: 'test'
+  ...
+# Subtest: S12 IME 拒絕保留進行中 gesture
+ok 134 - S12 IME 拒絕保留進行中 gesture
+  ---
+  duration_ms: 132.476833
+  type: 'test'
+  ...
+# Subtest: S12 async edit 不取消、不改 captured slide
+ok 135 - S12 async edit 不取消、不改 captured slide
+  ---
+  duration_ms: 348.601625
+  type: 'test'
+  ...
+# Subtest: S12 async play 不取消、不改 captured slide
+ok 136 - S12 async play 不取消、不改 captured slide
+  ---
+  duration_ms: 313.950041
+  type: 'test'
+  ...
+# Subtest: S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation
+ok 137 - S13 Node 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation
+  ---
+  duration_ms: 101.809333
+  type: 'test'
+  ...
+# Subtest: S13 Node exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用
+ok 138 - S13 Node exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用
+  ---
+  duration_ms: 49.161334
+  type: 'test'
+  ...
+# Subtest: S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋
+ok 139 - S13 Node null prototype／frozen 輸入不修改，duplicate 不覆蓋
+  ---
+  duration_ms: 36.28575
+  type: 'test'
+  ...
+# Subtest: S13 Node long-ID identity collision 拒絕且舊 identity 不變
+ok 140 - S13 Node long-ID identity collision 拒絕且舊 identity 不變
+  ---
+  duration_ms: 4.05375
+  type: 'test'
+  ...
+# Subtest: S13 Node escape／geometry／export reopen／再插入，既有內容完整保留
+ok 141 - S13 Node escape／geometry／export reopen／再插入，既有內容完整保留
+  ---
+  duration_ms: 383.41475
+  type: 'test'
+  ...
+# Subtest: S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation
+ok 142 - S13 mounted 精確 text、跨頁同 ID、Unicode code points 1–500 與完整 preservation
+  ---
+  duration_ms: 101.332083
+  type: 'test'
+  ...
+# Subtest: S13 mounted exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用
+ok 143 - S13 mounted exact fields／getter0／hidden／symbol／prototype／混搭／長度／geometry 拒絕無副作用
+  ---
+  duration_ms: 525.402167
+  type: 'test'
+  ...
+# Subtest: S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋
+ok 144 - S13 mounted null prototype／frozen 輸入不修改，duplicate 不覆蓋
+  ---
+  duration_ms: 69.11575
+  type: 'test'
+  ...
+# Subtest: S13 mounted long-ID identity collision 拒絕且舊 identity 不變
+ok 145 - S13 mounted long-ID identity collision 拒絕且舊 identity 不變
+  ---
+  duration_ms: 63.774417
+  type: 'test'
+  ...
+# Subtest: S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留
+ok 146 - S13 mounted escape／geometry／export reopen／再插入，既有內容完整保留
+  ---
+  duration_ms: 494.29925
+  type: 'test'
+  ...
+# Subtest: S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority
+ok 147 - S13 mounted play 插入明設不可 editable，切模式不取得 direct-text authority
+  ---
+  duration_ms: 207.083583
+  type: 'test'
+  ...
+# Subtest: S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority
+ok 148 - S13 mounted edit 插入明設不可 editable，切模式不取得 direct-text authority
+  ---
+  duration_ms: 96.199166
+  type: 'test'
+  ...
+# Subtest: S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority
+ok 149 - S13 mounted layout 插入明設不可 editable，切模式不取得 direct-text authority
+  ---
+  duration_ms: 90.835959
+  type: 'test'
+  ...
+# Subtest: S13 mounted missing atomic canonical／DOM／revision／selection rollback
+ok 150 - S13 mounted missing atomic canonical／DOM／revision／selection rollback
+  ---
+  duration_ms: 365.077291
+  type: 'test'
+  ...
+# Subtest: S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback
+ok 151 - S13 mounted duplicate-root atomic canonical／DOM／revision／selection rollback
+  ---
+  duration_ms: 152.904833
+  type: 'test'
+  ...
+# Subtest: S13 mounted append-before atomic canonical／DOM／revision／selection rollback
+ok 152 - S13 mounted append-before atomic canonical／DOM／revision／selection rollback
+  ---
+  duration_ms: 495.285292
+  type: 'test'
+  ...
+# Subtest: S13 mounted append-after atomic canonical／DOM／revision／selection rollback
+ok 153 - S13 mounted append-after atomic canonical／DOM／revision／selection rollback
+  ---
+  duration_ms: 251.701167
+  type: 'test'
+  ...
+# Subtest: S13 mounted detached-project atomic canonical／DOM／revision／selection rollback
+ok 154 - S13 mounted detached-project atomic canonical／DOM／revision／selection rollback
+  ---
+  duration_ms: 365.403667
+  type: 'test'
+  ...
+# Subtest: S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved
+ok 155 - S13 mounted snap=false 跨頁插入取消 drag preview／clear selection／舊 nodes preserved
+  ---
+  duration_ms: 155.280208
+  type: 'test'
+  ...
+# Subtest: S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved
+ok 156 - S13 mounted snap=false 跨頁插入取消 resize preview／clear selection／舊 nodes preserved
+  ---
+  duration_ms: 160.562
+  type: 'test'
+  ...
+# Subtest: S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved
+ok 157 - S13 mounted snap=true 跨頁插入取消 drag preview／clear selection／舊 nodes preserved
+  ---
+  duration_ms: 143.542958
+  type: 'test'
+  ...
+# Subtest: S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved
+ok 158 - S13 mounted snap=true 跨頁插入取消 resize preview／clear selection／舊 nodes preserved
+  ---
+  duration_ms: 51.838041
+  type: 'test'
+  ...
+# Subtest: S14 Node existing／new／cross-slide text 精確保留與 shared codepoint policy
+ok 159 - S14 Node existing／new／cross-slide text 精確保留與 shared codepoint policy
+  ---
+  duration_ms: 29.768459
+  type: 'test'
+  ...
+# Subtest: S14 Node exact data descriptors／getter0／hidden／symbol／prototype 拒絕
+ok 160 - S14 Node exact data descriptors／getter0／hidden／symbol／prototype 拒絕
+  ---
+  duration_ms: 13.787209
+  type: 'test'
+  ...
+# Subtest: S14 Node null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策
+ok 161 - S14 Node null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策
+  ---
+  duration_ms: 9.449333
+  type: 'test'
+  ...
+# Subtest: S14 Node 無 geometry／非文字 type guard／reorder long IDs
+ok 162 - S14 Node 無 geometry／非文字 type guard／reorder long IDs
+  ---
+  duration_ms: 3.843167
+  type: 'test'
+  ...
+# Subtest: S14 Node descriptor 僅 text component authority
+ok 163 - S14 Node descriptor 僅 text component authority
+  ---
+  duration_ms: 1.62
+  type: 'test'
+  ...
+# Subtest: S14 mounted existing／new／cross-slide text 精確保留與 shared codepoint policy
+ok 164 - S14 mounted existing／new／cross-slide text 精確保留與 shared codepoint policy
+  ---
+  duration_ms: 116.349084
+  type: 'test'
+  ...
+# Subtest: S14 mounted exact data descriptors／getter0／hidden／symbol／prototype 拒絕
+ok 165 - S14 mounted exact data descriptors／getter0／hidden／symbol／prototype 拒絕
+  ---
+  duration_ms: 35.225167
+  type: 'test'
+  ...
+# Subtest: S14 mounted null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策
+ok 166 - S14 mounted null-proto／crossrealm 接受且 role subtitle 空字串沿舊政策
+  ---
+  duration_ms: 52.587291
+  type: 'test'
+  ...
+# Subtest: S14 mounted 無 geometry／非文字 type guard／reorder long IDs
+ok 167 - S14 mounted 無 geometry／非文字 type guard／reorder long IDs
+  ---
+  duration_ms: 48.154334
+  type: 'test'
+  ...
+# Subtest: S14 mounted descriptor 僅 text component authority
+ok 168 - S14 mounted descriptor 僅 text component authority
+  ---
+  duration_ms: 33.99075
+  type: 'test'
+  ...
+# Subtest: S14 mounted snap=false drag invalid/noop 保留 preview；成功取消一次 revision
+ok 169 - S14 mounted snap=false drag invalid/noop 保留 preview；成功取消一次 revision
+  ---
+  duration_ms: 116.2615
+  type: 'test'
+  ...
+# Subtest: S14 mounted snap=false resize invalid/noop 保留 preview；成功取消一次 revision
+ok 170 - S14 mounted snap=false resize invalid/noop 保留 preview；成功取消一次 revision
+  ---
+  duration_ms: 99.945583
+  type: 'test'
+  ...
+# Subtest: S14 mounted snap=true drag invalid/noop 保留 preview；成功取消一次 revision
+ok 171 - S14 mounted snap=true drag invalid/noop 保留 preview；成功取消一次 revision
+  ---
+  duration_ms: 379.652
+  type: 'test'
+  ...
+# Subtest: S14 mounted snap=true resize invalid/noop 保留 preview；成功取消一次 revision
+ok 172 - S14 mounted snap=true resize invalid/noop 保留 preview；成功取消一次 revision
+  ---
+  duration_ms: 519.7395
+  type: 'test'
+  ...
+# Subtest: S14 mounted missing failure canonical／DOM／root／revision／gesture rollback
+ok 173 - S14 mounted missing failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 265.472166
+  type: 'test'
+  ...
+# Subtest: S14 mounted duplicate-root failure canonical／DOM／root／revision／gesture rollback
+ok 174 - S14 mounted duplicate-root failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 147.263583
+  type: 'test'
+  ...
+# Subtest: S14 mounted duplicate-slide failure canonical／DOM／root／revision／gesture rollback
+ok 175 - S14 mounted duplicate-slide failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 82.491
+  type: 'test'
+  ...
+# Subtest: S14 mounted duplicate-target failure canonical／DOM／root／revision／gesture rollback
+ok 176 - S14 mounted duplicate-target failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 167.70525
+  type: 'test'
+  ...
+# Subtest: S14 mounted detached failure canonical／DOM／root／revision／gesture rollback
+ok 177 - S14 mounted detached failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 187.125875
+  type: 'test'
+  ...
+# Subtest: S14 mounted mismatch-text failure canonical／DOM／root／revision／gesture rollback
+ok 178 - S14 mounted mismatch-text failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 214.315334
+  type: 'test'
+  ...
+# Subtest: S14 mounted mismatch-target failure canonical／DOM／root／revision／gesture rollback
+ok 179 - S14 mounted mismatch-target failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 133.662667
+  type: 'test'
+  ...
+# Subtest: S14 mounted nested-element failure canonical／DOM／root／revision／gesture rollback
+ok 180 - S14 mounted nested-element failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 85.231041
+  type: 'test'
+  ...
+# Subtest: S14 mounted setter-before failure canonical／DOM／root／revision／gesture rollback
+ok 181 - S14 mounted setter-before failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 193.810417
+  type: 'test'
+  ...
+# Subtest: S14 mounted setter-after failure canonical／DOM／root／revision／gesture rollback
+ok 182 - S14 mounted setter-after failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 116.630459
+  type: 'test'
+  ...
+# Subtest: S14 mounted clean failure canonical／DOM／root／revision／gesture rollback
+ok 183 - S14 mounted clean failure canonical／DOM／root／revision／gesture rollback
+  ---
+  duration_ms: 70.866541
+  type: 'test'
+  ...
+# Subtest: S14 mounted IME guard／未提交 role DOM 保留／component 不 directeditable／export reopen
+ok 184 - S14 mounted IME guard／未提交 role DOM 保留／component 不 directeditable／export reopen
+  ---
+  duration_ms: 51.845875
+  type: 'test'
+  ...
+# Subtest: S14 Node hash collision／同 ID 跨頁／reorder／export 後 stable pair
+ok 185 - S14 Node hash collision／同 ID 跨頁／reorder／export 後 stable pair
+  ---
+  duration_ms: 8.61675
+  type: 'test'
+  ...
+# Subtest: S14 mounted hash collision／同 ID 跨頁／reorder／export 後 stable pair
+ok 186 - S14 mounted hash collision／同 ID 跨頁／reorder／export 後 stable pair
+  ---
+  duration_ms: 88.418625
+  type: 'test'
+  ...
+# Subtest: S14 mounted 同值不呼叫 DOM setter；成功僅修改目標純文字
+ok 187 - S14 mounted 同值不呼叫 DOM setter；成功僅修改目標純文字
+  ---
+  duration_ms: 32.395166
+  type: 'test'
+  ...
+# Subtest: S15 markup／bootstrap 有 label、focusable status、無 UTF16 maxlength
+ok 188 - S15 markup／bootstrap 有 label、focusable status、無 UTF16 maxlength
+  ---
+  duration_ms: 29.400958
+  type: 'test'
+  ...
+# Subtest: S15 mounted 精確文字／empty=false／固定 geometry／一次 revision／舊 root 保留
+ok 189 - S15 mounted 精確文字／empty=false／固定 geometry／一次 revision／舊 root 保留
+  ---
+  duration_ms: 265.992875
+  type: 'test'
+  ...
+# Subtest: S15 mounted 精確文字／empty=true／固定 geometry／一次 revision／舊 root 保留
+ok 190 - S15 mounted 精確文字／empty=true／固定 geometry／一次 revision／舊 root 保留
+  ---
+  duration_ms: 81.456375
+  type: 'test'
+  ...
+# Subtest: S15 cancel 為 no-op、清 draft、focus 與重開
+ok 191 - S15 cancel 為 no-op、清 draft、focus 與重開
+  ---
+  duration_ms: 119.595875
+  type: 'test'
+  ...
+# Subtest: S15 escape 為 no-op、清 draft、focus 與重開
+ok 192 - S15 escape 為 no-op、清 draft、focus 與重開
+  ---
+  duration_ms: 85.250209
+  type: 'test'
+  ...
+# Subtest: S15 close 為 no-op、清 draft、focus 與重開
+ok 193 - S15 close 為 no-op、清 draft、focus 與重開
+  ---
+  duration_ms: 78.892416
+  type: 'test'
+  ...
+# Subtest: S15 invalid 保留 draft/status/focus；500 emoji 與空白可修正再提交
+ok 194 - S15 invalid 保留 draft/status/focus；500 emoji 與空白可修正再提交
+  ---
+  duration_ms: 150.079916
+  type: 'test'
+  ...
+# Subtest: S15 synthetic composition 不搶 submit/Escape，Enter 不提交，focusout 不提交
+ok 195 - S15 synthetic composition 不搶 submit/Escape，Enter 不提交，focusout 不提交
+  ---
+  duration_ms: 183.053792
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation page 不插入錯頁
+ok 196 - S15 target invalidation page 不插入錯頁
+  ---
+  duration_ms: 134.058916
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation focusin 不插入錯頁
+ok 197 - S15 target invalidation focusin 不插入錯頁
+  ---
+  duration_ms: 80.209917
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation mode 不插入錯頁
+ok 198 - S15 target invalidation mode 不插入錯頁
+  ---
+  duration_ms: 167.934541
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation selection 不插入錯頁
+ok 199 - S15 target invalidation selection 不插入錯頁
+  ---
+  duration_ms: 136.856375
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation clear 不插入錯頁
+ok 200 - S15 target invalidation clear 不插入錯頁
+  ---
+  duration_ms: 342.185417
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation destroy 不插入錯頁
+ok 201 - S15 target invalidation destroy 不插入錯頁
+  ---
+  duration_ms: 156.638417
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation removed 不插入錯頁
+ok 202 - S15 target invalidation removed 不插入錯頁
+  ---
+  duration_ms: 148.430042
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation rebuilt 不插入錯頁
+ok 203 - S15 target invalidation rebuilt 不插入錯頁
+  ---
+  duration_ms: 228.946791
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation duplicate-root 不插入錯頁
+ok 204 - S15 target invalidation duplicate-root 不插入錯頁
+  ---
+  duration_ms: 255.554916
+  type: 'test'
+  ...
+# Subtest: S15 target invalidation duplicate-slide 不插入錯頁
+ok 205 - S15 target invalidation duplicate-slide 不插入錯頁
+  ---
+  duration_ms: 198.897041
+  type: 'test'
+  ...
+# Subtest: S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化
+ok 206 - S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化
+  ---
+  duration_ms: 243.94
+  type: 'test'
+  ...
+# Subtest: S15 showModal throw 回收、reentrant submit 只一次、gesture cancel 不 commit
+ok 207 - S15 showModal throw 回收、reentrant submit 只一次、gesture cancel 不 commit
+  ---
+  duration_ms: 170.662
+  type: 'test'
+  ...
+# Subtest: S15 chooser 互斥、busy 與 dialog 期間 image controls 禁用
+ok 208 - S15 chooser 互斥、busy 與 dialog 期間 image controls 禁用
+  ---
+  duration_ms: 118.867541
+  type: 'test'
+  ...
+# Subtest: S15 export 不提交 draft、無 dialog/transient；offline mounted bootstrap 可再插／S14 edit
+ok 209 - S15 export 不提交 draft、無 dialog/transient；offline mounted bootstrap 可再插／S14 edit
+  ---
+  duration_ms: 248.355334
+  type: 'test'
+  ...
+# Subtest: S15 invalid slide／detached root 不開啟，dialog native focus 不切 slide
+ok 210 - S15 invalid slide／detached root 不開啟，dialog native focus 不切 slide
+  ---
+  duration_ms: 82.424833
+  type: 'test'
+  ...
+# Subtest: S15 synthetic pointerdown 的 mounted event 路由在 click 前取消 preview
+ok 211 - S15 synthetic pointerdown 的 mounted event 路由在 click 前取消 preview
+  ---
+  duration_ms: 84.374666
+  type: 'test'
+  ...
+# Subtest: S15 detached append 失敗保留 draft 與 canonical，可更正後再送
+ok 212 - S15 detached append 失敗保留 draft 與 canonical，可更正後再送
+  ---
+  duration_ms: 143.412708
+  type: 'test'
+  ...
+# Subtest: S15 未完成 image optimize 的 insertionBusy 阻止 text open
+ok 213 - S15 未完成 image optimize 的 insertionBusy 阻止 text open
+  ---
+  duration_ms: 66.983583
+  type: 'test'
+  ...
+# Subtest: S16 markup 單一 shared dialog 與 context action
+ok 214 - S16 markup 單一 shared dialog 與 context action
+  ---
+  duration_ms: 7.184166
+  type: 'test'
+  ...
+# Subtest: S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit
+ok 215 - S16 僅 layout 單選 text 可開啟，排除 role／quote／image／多選／空選／edit
+  ---
+  duration_ms: 700.256917
+  type: 'test'
+  ...
+# Subtest: S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留
+ok 216 - S16 預填精確原文／draft 無寫入／save 只改 text 與一次 revision／root node 保留
+  ---
+  duration_ms: 132.585375
+  type: 'test'
+  ...
+# Subtest: S16 same-value no-op 保留 revision DOM selection
+ok 217 - S16 same-value no-op 保留 revision DOM selection
+  ---
+  duration_ms: 220.271584
+  type: 'test'
+  ...
+# Subtest: S16 invalid empty 保留 draft 可 retry
+ok 218 - S16 invalid empty 保留 draft 可 retry
+  ---
+  duration_ms: 484.726375
+  type: 'test'
+  ...
+# Subtest: S16 invalid 501字 保留 draft 可 retry
+ok 219 - S16 invalid 501字 保留 draft 可 retry
+  ---
+  duration_ms: 411.271708
+  type: 'test'
+  ...
+# Subtest: S16 invalid 501� 保留 draft 可 retry
+ok 220 - S16 invalid 501� 保留 draft 可 retry
+  ---
+  duration_ms: 654.236542
+  type: 'test'
+  ...
+# Subtest: S16 500 emoji codepoints 不以 UTF16 截短
+ok 221 - S16 500 emoji codepoints 不以 UTF16 截短
+  ---
+  duration_ms: 216.981584
+  type: 'test'
+  ...
+# Subtest: S16 cancel button 清 draft 保留 selection focus
+ok 222 - S16 cancel button 清 draft 保留 selection focus
+  ---
+  duration_ms: 113.39075
+  type: 'test'
+  ...
+# Subtest: S16 cancel escape 清 draft 保留 selection focus
+ok 223 - S16 cancel escape 清 draft 保留 selection focus
+  ---
+  duration_ms: 120.728917
+  type: 'test'
+  ...
+# Subtest: S16 cancel native 清 draft 保留 selection focus
+ok 224 - S16 cancel native 清 draft 保留 selection focus
+  ---
+  duration_ms: 69.398917
+  type: 'test'
+  ...
+# Subtest: S16 stale text 不寫舊 draft
+ok 225 - S16 stale text 不寫舊 draft
+  ---
+  duration_ms: 193.7215
+  type: 'test'
+  ...
+# Subtest: S16 stale node 不寫舊 draft
+ok 226 - S16 stale node 不寫舊 draft
+  ---
+  duration_ms: 83.927958
+  type: 'test'
+  ...
+# Subtest: S16 stale root 不寫舊 draft
+ok 227 - S16 stale root 不寫舊 draft
+  ---
+  duration_ms: 84.919875
+  type: 'test'
+  ...
+# Subtest: S16 stale removed 不寫舊 draft
+ok 228 - S16 stale removed 不寫舊 draft
+  ---
+  duration_ms: 79.283833
+  type: 'test'
+  ...
+# Subtest: S16 stale duplicate-node 不寫舊 draft
+ok 229 - S16 stale duplicate-node 不寫舊 draft
+  ---
+  duration_ms: 106.103708
+  type: 'test'
+  ...
+# Subtest: S16 stale duplicate-root 不寫舊 draft
+ok 230 - S16 stale duplicate-root 不寫舊 draft
+  ---
+  duration_ms: 94.516
+  type: 'test'
+  ...
+# Subtest: S16 stale identity 不寫舊 draft
+ok 231 - S16 stale identity 不寫舊 draft
+  ---
+  duration_ms: 81.6505
+  type: 'test'
+  ...
+# Subtest: S16 stale selection 不寫舊 draft
+ok 232 - S16 stale selection 不寫舊 draft
+  ---
+  duration_ms: 76.338583
+  type: 'test'
+  ...
+# Subtest: S16 stale mode 不寫舊 draft
+ok 233 - S16 stale mode 不寫舊 draft
+  ---
+  duration_ms: 76.139958
+  type: 'test'
+  ...
+# Subtest: S16 stale slide 不寫舊 draft
+ok 234 - S16 stale slide 不寫舊 draft
+  ---
+  duration_ms: 184.858458
+  type: 'test'
+  ...
+# Subtest: S16 geometry 更新不失效且 save 不覆蓋
+ok 235 - S16 geometry 更新不失效且 save 不覆蓋
+  ---
+  duration_ms: 112.611667
+  type: 'test'
+  ...
+# Subtest: S16 synthetic IME submit／Escape guard 與 Enter 不提交
+ok 236 - S16 synthetic IME submit／Escape guard 與 Enter 不提交
+  ---
+  duration_ms: 119.508
+  type: 'test'
+  ...
+# Subtest: S16 showModal throw 回收並可 retry
+ok 237 - S16 showModal throw 回收並可 retry
+  ---
+  duration_ms: 101.730625
+  type: 'test'
+  ...
+# Subtest: S16 insert→edit→insert mode 復原及重入拒絕
+ok 238 - S16 insert→edit→insert mode 復原及重入拒絕
+  ---
+  duration_ms: 188.663292
+  type: 'test'
+  ...
+# Subtest: S16 同步 reentrant projection 只提交一次
+ok 239 - S16 同步 reentrant projection 只提交一次
+  ---
+  duration_ms: 127.458958
+  type: 'test'
+  ...
+# Subtest: S16 chooser 互斥與 pointerdown 取消 gesture
+ok 240 - S16 chooser 互斥與 pointerdown 取消 gesture
+  ---
+  duration_ms: 402.717584
+  type: 'test'
+  ...
+# Subtest: S16 export draft 不提交／offline UI edit／remount 不重複
+ok 241 - S16 export draft 不提交／offline UI edit／remount 不重複
+  ---
+  duration_ms: 492.133583
+  type: 'test'
+  ...
+# Subtest: S16 snap=false gesture=false 開啟保留編輯identity且release不commit
+ok 242 - S16 snap=false gesture=false 開啟保留編輯identity且release不commit
+  ---
+  duration_ms: 174.489083
+  type: 'test'
+  ...
+# Subtest: S16 snap=false gesture=true 開啟保留編輯identity且release不commit
+ok 243 - S16 snap=false gesture=true 開啟保留編輯identity且release不commit
+  ---
+  duration_ms: 202.984334
+  type: 'test'
+  ...
+# Subtest: S16 snap=true gesture=false 開啟保留編輯identity且release不commit
+ok 244 - S16 snap=true gesture=false 開啟保留編輯identity且release不commit
+  ---
+  duration_ms: 138.855958
+  type: 'test'
+  ...
+# Subtest: S16 snap=true gesture=true 開啟保留編輯identity且release不commit
+ok 245 - S16 snap=true gesture=true 開啟保留編輯identity且release不commit
+  ---
+  duration_ms: 305.886542
+  type: 'test'
+  ...
+# Subtest: S17 單擊只選取；雙擊預填同一 dialog，canonical／DOM／geometry 不變
+ok 246 - S17 單擊只選取；雙擊預填同一 dialog，canonical／DOM／geometry 不變
+  ---
+  duration_ms: 362.246417
+  type: 'test'
+  ...
+# Subtest: S17 兩次 click 沿既有 selection 改選後，雙擊編輯新目標
+ok 247 - S17 兩次 click 沿既有 selection 改選後，雙擊編輯新目標
+  ---
+  duration_ms: 221.646458
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：另一文字
+ok 248 - S17 選取舊文字時拒絕非目標：另一文字
+  ---
+  duration_ms: 110.879375
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：另一頁
+ok 249 - S17 選取舊文字時拒絕非目標：另一頁
+  ---
+  duration_ms: 65.880375
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：image
+ok 250 - S17 選取舊文字時拒絕非目標：image
+  ---
+  duration_ms: 113.889458
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：quote
+ok 251 - S17 選取舊文字時拒絕非目標：quote
+  ---
+  duration_ms: 68.063625
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：空白
+ok 252 - S17 選取舊文字時拒絕非目標：空白
+  ---
+  duration_ms: 109.676166
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：chrome
+ok 253 - S17 選取舊文字時拒絕非目標：chrome
+  ---
+  duration_ms: 80.260458
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：detached clone
+ok 254 - S17 選取舊文字時拒絕非目標：detached clone
+  ---
+  duration_ms: 71.520667
+  type: 'test'
+  ...
+# Subtest: S17 選取舊文字時拒絕非目標：偽造節點
+ok 255 - S17 選取舊文字時拒絕非目標：偽造節點
+  ---
+  duration_ms: 52.822667
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"shiftKey":true}
+ok 256 - S17 拒絕修飾／非主要按鍵／已處理事件 {"shiftKey":true}
+  ---
+  duration_ms: 117.5445
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"ctrlKey":true}
+ok 257 - S17 拒絕修飾／非主要按鍵／已處理事件 {"ctrlKey":true}
+  ---
+  duration_ms: 166.848375
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"altKey":true}
+ok 258 - S17 拒絕修飾／非主要按鍵／已處理事件 {"altKey":true}
+  ---
+  duration_ms: 115.755667
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"metaKey":true}
+ok 259 - S17 拒絕修飾／非主要按鍵／已處理事件 {"metaKey":true}
+  ---
+  duration_ms: 83.015375
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"isComposing":true}
+ok 260 - S17 拒絕修飾／非主要按鍵／已處理事件 {"isComposing":true}
+  ---
+  duration_ms: 86.169833
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"defaultPrevented":true}
+ok 261 - S17 拒絕修飾／非主要按鍵／已處理事件 {"defaultPrevented":true}
+  ---
+  duration_ms: 132.005792
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"button":1}
+ok 262 - S17 拒絕修飾／非主要按鍵／已處理事件 {"button":1}
+  ---
+  duration_ms: 134.186625
+  type: 'test'
+  ...
+# Subtest: S17 拒絕修飾／非主要按鍵／已處理事件 {"button":2}
+ok 263 - S17 拒絕修飾／非主要按鍵／已處理事件 {"button":2}
+  ---
+  duration_ms: 129.980209
+  type: 'test'
+  ...
+# Subtest: S17 play 不開 component dialog
+ok 264 - S17 play 不開 component dialog
+  ---
+  duration_ms: 38.19925
+  type: 'test'
+  ...
+# Subtest: S17 edit 不開 component dialog
+ok 265 - S17 edit 不開 component dialog
+  ---
+  duration_ms: 201.176416
+  type: 'test'
+  ...
+# Subtest: S17 空選 不開 component dialog
+ok 266 - S17 空選 不開 component dialog
+  ---
+  duration_ms: 131.938833
+  type: 'test'
+  ...
+# Subtest: S17 多選 不開 component dialog
+ok 267 - S17 多選 不開 component dialog
+  ---
+  duration_ms: 178.664792
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：duplicate-node
+ok 268 - S17 拒絕不再唯一或不合 canonical 的 target：duplicate-node
+  ---
+  duration_ms: 141.962167
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：duplicate-root
+ok 269 - S17 拒絕不再唯一或不合 canonical 的 target：duplicate-root
+  ---
+  duration_ms: 118.932792
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：detached
+ok 270 - S17 拒絕不再唯一或不合 canonical 的 target：detached
+  ---
+  duration_ms: 141.117375
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：identity
+ok 271 - S17 拒絕不再唯一或不合 canonical 的 target：identity
+  ---
+  duration_ms: 176.08575
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：kind
+ok 272 - S17 拒絕不再唯一或不合 canonical 的 target：kind
+  ---
+  duration_ms: 174.853958
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：text
+ok 273 - S17 拒絕不再唯一或不合 canonical 的 target：text
+  ---
+  duration_ms: 84.077166
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：child
+ok 274 - S17 拒絕不再唯一或不合 canonical 的 target：child
+  ---
+  duration_ms: 106.858167
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：chrome-owner
+ok 275 - S17 拒絕不再唯一或不合 canonical 的 target：chrome-owner
+  ---
+  duration_ms: 119.614542
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：canonical-type
+ok 276 - S17 拒絕不再唯一或不合 canonical 的 target：canonical-type
+  ---
+  duration_ms: 269.718584
+  type: 'test'
+  ...
+# Subtest: S17 拒絕不再唯一或不合 canonical 的 target：canonical-duplicate
+ok 277 - S17 拒絕不再唯一或不合 canonical 的 target：canonical-duplicate
+  ---
+  duration_ms: 148.28075
+  type: 'test'
+  ...
+# Subtest: S17 保留 S1 role-title 雙擊 direct editing
+ok 278 - S17 保留 S1 role-title 雙擊 direct editing
+  ---
+  duration_ms: 195.836083
+  type: 'test'
+  ...
+# Subtest: S17 保留 S1 role-subtitle 雙擊 direct editing
+ok 279 - S17 保留 S1 role-subtitle 雙擊 direct editing
+  ---
+  duration_ms: 121.981125
+  type: 'test'
+  ...
+# Subtest: S17 重複 dblclick 不另開 dialog、不覆蓋 draft；insert pending 互斥
+ok 280 - S17 重複 dblclick 不另開 dialog、不覆蓋 draft；insert pending 互斥
+  ---
+  duration_ms: 96.431875
+  type: 'test'
+  ...
+# Subtest: S17 synthetic IME 阻擋 save／Escape／重入，compositionend 才能存
+ok 281 - S17 synthetic IME 阻擋 save／Escape／重入，compositionend 才能存
+  ---
+  duration_ms: 94.4195
+  type: 'test'
+  ...
+# Subtest: S17 image picker 與 component dialog 雙向互斥
+ok 282 - S17 image picker 與 component dialog 雙向互斥
+  ---
+  duration_ms: 205.265166
+  type: 'test'
+  ...
+# Subtest: S17 async image busy 期間拒絕，settle 後可雙擊
+ok 283 - S17 async image busy 期間拒絕，settle 後可雙擊
+  ---
+  duration_ms: 300.451333
+  type: 'test'
+  ...
+# Subtest: S17 showModal throw 回收 draft，下一次雙擊可重試
+ok 284 - S17 showModal throw 回收 draft，下一次雙擊可重試
+  ---
+  duration_ms: 240.338291
+  type: 'test'
+  ...
+# Subtest: S17 snap=false gesture=false 雙擊取消 preview，save 僅一次 edit-text
+ok 285 - S17 snap=false gesture=false 雙擊取消 preview，save 僅一次 edit-text
+  ---
+  duration_ms: 147.8165
+  type: 'test'
+  ...
+# Subtest: S17 snap=false gesture=true 雙擊取消 preview，save 僅一次 edit-text
+ok 286 - S17 snap=false gesture=true 雙擊取消 preview，save 僅一次 edit-text
+  ---
+  duration_ms: 329.392334
+  type: 'test'
+  ...
+# Subtest: S17 snap=true gesture=false 雙擊取消 preview，save 僅一次 edit-text
+ok 287 - S17 snap=true gesture=false 雙擊取消 preview，save 僅一次 edit-text
+  ---
+  duration_ms: 412.848459
+  type: 'test'
+  ...
+# Subtest: S17 snap=true gesture=true 雙擊取消 preview，save 僅一次 edit-text
+ok 288 - S17 snap=true gesture=true 雙擊取消 preview，save 僅一次 edit-text
+  ---
+  duration_ms: 367.478792
+  type: 'test'
+  ...
+# Subtest: S17 save reentry 不重開 dialog 或二次提交
+ok 289 - S17 save reentry 不重開 dialog 或二次提交
+  ---
+  duration_ms: 702.32825
+  type: 'test'
+  ...
+# Subtest: S17 same-value no-op 保留 selection／revision／DOM
+ok 290 - S17 same-value no-op 保留 selection／revision／DOM
+  ---
+  duration_ms: 300.233667
+  type: 'test'
+  ...
+# Subtest: S17 invalid draft 保留並可修正：空字串
+ok 291 - S17 invalid draft 保留並可修正：空字串
+  ---
+  duration_ms: 192.771833
+  type: 'test'
+  ...
+# Subtest: S17 invalid draft 保留並可修正：501 codepoints
+ok 292 - S17 invalid draft 保留並可修正：501 codepoints
+  ---
+  duration_ms: 257.159583
+  type: 'test'
+  ...
+# Subtest: S17 cancel button 不提交，清 draft 並沿用 S16 focus
+ok 293 - S17 cancel button 不提交，清 draft 並沿用 S16 focus
+  ---
+  duration_ms: 125.264875
+  type: 'test'
+  ...
+# Subtest: S17 cancel Escape 不提交，清 draft 並沿用 S16 focus
+ok 294 - S17 cancel Escape 不提交，清 draft 並沿用 S16 focus
+  ---
+  duration_ms: 182.720875
+  type: 'test'
+  ...
+# Subtest: S17 cancel native 不提交，清 draft 並沿用 S16 focus
+ok 295 - S17 cancel native 不提交，清 draft 並沿用 S16 focus
+  ---
+  duration_ms: 86.948334
+  type: 'test'
+  ...
+# Subtest: S17 外部 text 更新使舊 draft 失效
+ok 296 - S17 外部 text 更新使舊 draft 失效
+  ---
+  duration_ms: 81.234375
+  type: 'test'
+  ...
+# Subtest: S17 export draft 不提交；offline spec remount 可雙擊再編輯
+ok 297 - S17 export draft 不提交；offline spec remount 可雙擊再編輯
+  ---
+  duration_ms: 405.579458
+  type: 'test'
+  ...
+# Subtest: S17 同 document 重複 bootstrap 不建立第二個 listener／editor，仍可雙擊
+ok 298 - S17 同 document 重複 bootstrap 不建立第二個 listener／editor，仍可雙擊
+  ---
+  duration_ms: 177.1035
+  type: 'test'
+  ...
+# Subtest: S18 Node 獨立 text/image 跨頁精確刪除、保留順序 identity 與所有其他資料
+ok 299 - S18 Node 獨立 text/image 跨頁精確刪除、保留順序 identity 與所有其他資料
+  ---
+  duration_ms: 61.255375
+  type: 'test'
+  ...
+# Subtest: S18 Node exact enumerable data objects、confirmation、getter0 拒絕
+ok 300 - S18 Node exact enumerable data objects、confirmation、getter0 拒絕
+  ---
+  duration_ms: 93.521334
+  type: 'test'
+  ...
+# Subtest: S18 Node null-proto 與跨 realm plain records 接受
+ok 301 - S18 Node null-proto 與跨 realm plain records 接受
+  ---
+  duration_ms: 70.909
+  type: 'test'
+  ...
+# Subtest: S18 Node role/keyPoint/table/chart/citation/缺 target/錯 slide 拒絕
+ok 302 - S18 Node role/keyPoint/table/chart/citation/缺 target/錯 slide 拒絕
+  ---
+  duration_ms: 54.601541
+  type: 'test'
+  ...
+# Subtest: S18 Node slots 引用 fail loud 且不拆 layout
+ok 303 - S18 Node slots 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 3.671833
+  type: 'test'
+  ...
+# Subtest: S18 Node order-ref 引用 fail loud 且不拆 layout
+ok 304 - S18 Node order-ref 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 4.820167
+  type: 'test'
+  ...
+# Subtest: S18 Node order-id 引用 fail loud 且不拆 layout
+ok 305 - S18 Node order-id 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 1.56775
+  type: 'test'
+  ...
+# Subtest: S18 Node order-element 引用 fail loud 且不拆 layout
+ok 306 - S18 Node order-element 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 1.470834
+  type: 'test'
+  ...
+# Subtest: S18 Node collision 刪除不得 remap surviving stable IDs
+ok 307 - S18 Node collision 刪除不得 remap surviving stable IDs
+  ---
+  duration_ms: 2.460917
+  type: 'test'
+  ...
+# Subtest: S18 Node 空 geometry map 正規化、可刪無 geometry 的獨立元件
+ok 308 - S18 Node 空 geometry map 正規化、可刪無 geometry 的獨立元件
+  ---
+  duration_ms: 17.603125
+  type: 'test'
+  ...
+# Subtest: S18 Node export/extract/sanitize/render/offline 再插入、編輯、刪除
+ok 309 - S18 Node export/extract/sanitize/render/offline 再插入、編輯、刪除
+  ---
+  duration_ms: 470.973791
+  type: 'test'
+  ...
+# Subtest: S18 mounted 獨立 text/image 跨頁精確刪除、保留順序 identity 與所有其他資料
+ok 310 - S18 mounted 獨立 text/image 跨頁精確刪除、保留順序 identity 與所有其他資料
+  ---
+  duration_ms: 207.688958
+  type: 'test'
+  ...
+# Subtest: S18 mounted exact enumerable data objects、confirmation、getter0 拒絕
+ok 311 - S18 mounted exact enumerable data objects、confirmation、getter0 拒絕
+  ---
+  duration_ms: 46.736459
+  type: 'test'
+  ...
+# Subtest: S18 mounted null-proto 與跨 realm plain records 接受
+ok 312 - S18 mounted null-proto 與跨 realm plain records 接受
+  ---
+  duration_ms: 251.113959
+  type: 'test'
+  ...
+# Subtest: S18 mounted role/keyPoint/table/chart/citation/缺 target/錯 slide 拒絕
+ok 313 - S18 mounted role/keyPoint/table/chart/citation/缺 target/錯 slide 拒絕
+  ---
+  duration_ms: 108.055666
+  type: 'test'
+  ...
+# Subtest: S18 mounted slots 引用 fail loud 且不拆 layout
+ok 314 - S18 mounted slots 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 83.793834
+  type: 'test'
+  ...
+# Subtest: S18 mounted order-ref 引用 fail loud 且不拆 layout
+ok 315 - S18 mounted order-ref 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 142.599542
+  type: 'test'
+  ...
+# Subtest: S18 mounted order-id 引用 fail loud 且不拆 layout
+ok 316 - S18 mounted order-id 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 58.444083
+  type: 'test'
+  ...
+# Subtest: S18 mounted order-element 引用 fail loud 且不拆 layout
+ok 317 - S18 mounted order-element 引用 fail loud 且不拆 layout
+  ---
+  duration_ms: 40.259917
+  type: 'test'
+  ...
+# Subtest: S18 mounted collision 刪除不得 remap surviving stable IDs
+ok 318 - S18 mounted collision 刪除不得 remap surviving stable IDs
+  ---
+  duration_ms: 27.316834
+  type: 'test'
+  ...
+# Subtest: S18 mounted 空 geometry map 正規化、可刪無 geometry 的獨立元件
+ok 319 - S18 mounted 空 geometry map 正規化、可刪無 geometry 的獨立元件
+  ---
+  duration_ms: 66.997
+  type: 'test'
+  ...
+# Subtest: S18 mounted export/extract/sanitize/render/offline 再插入、編輯、刪除
+ok 320 - S18 mounted export/extract/sanitize/render/offline 再插入、編輯、刪除
+  ---
+  duration_ms: 976.597709
+  type: 'test'
+  ...
+# Subtest: S18 mounted missing 原子拒絕保住 canonical/DOM/selection/gesture
+ok 321 - S18 mounted missing 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 154.397042
+  type: 'test'
+  ...
+# Subtest: S18 mounted duplicate 原子拒絕保住 canonical/DOM/selection/gesture
+ok 322 - S18 mounted duplicate 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 126.777
+  type: 'test'
+  ...
+# Subtest: S18 mounted duplicate-slide 原子拒絕保住 canonical/DOM/selection/gesture
+ok 323 - S18 mounted duplicate-slide 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 134.8585
+  type: 'test'
+  ...
+# Subtest: S18 mounted wrong-deck 原子拒絕保住 canonical/DOM/selection/gesture
+ok 324 - S18 mounted wrong-deck 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 245.57925
+  type: 'test'
+  ...
+# Subtest: S18 mounted wrong-target 原子拒絕保住 canonical/DOM/selection/gesture
+ok 325 - S18 mounted wrong-target 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 137.76425
+  type: 'test'
+  ...
+# Subtest: S18 mounted wrong-kind 原子拒絕保住 canonical/DOM/selection/gesture
+ok 326 - S18 mounted wrong-kind 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 145.494542
+  type: 'test'
+  ...
+# Subtest: S18 mounted stale-text 原子拒絕保住 canonical/DOM/selection/gesture
+ok 327 - S18 mounted stale-text 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 335.55175
+  type: 'test'
+  ...
+# Subtest: S18 mounted text-child 原子拒絕保住 canonical/DOM/selection/gesture
+ok 328 - S18 mounted text-child 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 88.697167
+  type: 'test'
+  ...
+# Subtest: S18 mounted stale-image 原子拒絕保住 canonical/DOM/selection/gesture
+ok 329 - S18 mounted stale-image 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 86.612625
+  type: 'test'
+  ...
+# Subtest: S18 mounted image-alt 原子拒絕保住 canonical/DOM/selection/gesture
+ok 330 - S18 mounted image-alt 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 104.300417
+  type: 'test'
+  ...
+# Subtest: S18 mounted image-fit 原子拒絕保住 canonical/DOM/selection/gesture
+ok 331 - S18 mounted image-fit 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 88.066708
+  type: 'test'
+  ...
+# Subtest: S18 mounted remove-before 原子拒絕保住 canonical/DOM/selection/gesture
+ok 332 - S18 mounted remove-before 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 79.028625
+  type: 'test'
+  ...
+# Subtest: S18 mounted remove-after 原子拒絕保住 canonical/DOM/selection/gesture
+ok 333 - S18 mounted remove-after 原子拒絕保住 canonical/DOM/selection/gesture
+  ---
+  duration_ms: 83.133042
+  type: 'test'
+  ...
+# Subtest: S18 mounted snap=false drag 成功取消 preview/selection 不提交 geometry
+ok 334 - S18 mounted snap=false drag 成功取消 preview/selection 不提交 geometry
+  ---
+  duration_ms: 99.556042
+  type: 'test'
+  ...
+# Subtest: S18 mounted snap=false resize 成功取消 preview/selection 不提交 geometry
+ok 335 - S18 mounted snap=false resize 成功取消 preview/selection 不提交 geometry
+  ---
+  duration_ms: 109.278083
+  type: 'test'
+  ...
+# Subtest: S18 mounted snap=true drag 成功取消 preview/selection 不提交 geometry
+ok 336 - S18 mounted snap=true drag 成功取消 preview/selection 不提交 geometry
+  ---
+  duration_ms: 98.847916
+  type: 'test'
+  ...
+# Subtest: S18 mounted snap=true resize 成功取消 preview/selection 不提交 geometry
+ok 337 - S18 mounted snap=true resize 成功取消 preview/selection 不提交 geometry
+  ---
+  duration_ms: 95.017292
+  type: 'test'
+  ...
+# Subtest: S18 mounted remove 同步重入不得提交另一 operation
+ok 338 - S18 mounted remove 同步重入不得提交另一 operation
+  ---
+  duration_ms: 95.821375
+  type: 'test'
+  ...
+# Subtest: S18 mounted S16 draft 拒絕保留，成功關閉且 late submit 不復活
+ok 339 - S18 mounted S16 draft 拒絕保留，成功關閉且 late submit 不復活
+  ---
+  duration_ms: 222.832375
+  type: 'test'
+  ...
+# Subtest: S18 descriptor 明示 destructive/confirm=true/undoable=false，Node 與 portable 一致
+ok 340 - S18 descriptor 明示 destructive/confirm=true/undoable=false，Node 與 portable 一致
+  ---
+  duration_ms: 21.907125
+  type: 'test'
+  ...
+# Subtest: S18 deferred insert/resolve optimizer pending 拒絕刪除、settle 後恢復
+ok 341 - S18 deferred insert/resolve optimizer pending 拒絕刪除、settle 後恢復
+  ---
+  duration_ms: 224.576917
+  type: 'test'
+  ...
+# Subtest: S18 deferred insert/reject optimizer pending 拒絕刪除、settle 後恢復
+ok 342 - S18 deferred insert/reject optimizer pending 拒絕刪除、settle 後恢復
+  ---
+  duration_ms: 119.875917
+  type: 'test'
+  ...
+# Subtest: S18 deferred replace/resolve optimizer pending 拒絕刪除、settle 後恢復
+ok 343 - S18 deferred replace/resolve optimizer pending 拒絕刪除、settle 後恢復
+  ---
+  duration_ms: 141.167375
+  type: 'test'
+  ...
+# Subtest: S18 deferred replace/reject optimizer pending 拒絕刪除、settle 後恢復
+ok 344 - S18 deferred replace/reject optimizer pending 拒絕刪除、settle 後恢復
+  ---
+  duration_ms: 115.573708
+  type: 'test'
+  ...
+# Subtest: S18 兩個 deferred optimizer 只完成一個仍拒絕；全部 settle 才可刪除
+ok 345 - S18 兩個 deferred optimizer 只完成一個仍拒絕；全部 settle 才可刪除
+  ---
+  duration_ms: 58.628958
+  type: 'test'
+  ...
+# Subtest: S18 insert picker/cancel ownership 拒絕 delete、釋放後恢復
+ok 346 - S18 insert picker/cancel ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 198.939834
+  type: 'test'
+  ...
+# Subtest: S18 insert picker/resolve ownership 拒絕 delete、釋放後恢復
+ok 347 - S18 insert picker/resolve ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 227.943208
+  type: 'test'
+  ...
+# Subtest: S18 insert picker/reject ownership 拒絕 delete、釋放後恢復
+ok 348 - S18 insert picker/reject ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 275.958834
+  type: 'test'
+  ...
+# Subtest: S18 replace picker/cancel ownership 拒絕 delete、釋放後恢復
+ok 349 - S18 replace picker/cancel ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 133.728208
+  type: 'test'
+  ...
+# Subtest: S18 replace picker/resolve ownership 拒絕 delete、釋放後恢復
+ok 350 - S18 replace picker/resolve ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 141.735917
+  type: 'test'
+  ...
+# Subtest: S18 replace picker/reject ownership 拒絕 delete、釋放後恢復
+ok 351 - S18 replace picker/reject ownership 拒絕 delete、釋放後恢復
+  ---
+  duration_ms: 106.89075
+  type: 'test'
+  ...
+# Subtest: S18 text submit edit/throw=false 同步 projection 期間拒絕 delete，finally 恢復
+ok 352 - S18 text submit edit/throw=false 同步 projection 期間拒絕 delete，finally 恢復
+  ---
+  duration_ms: 118.4005
+  type: 'test'
+  ...
+# Subtest: S18 text submit edit/throw=true 同步 projection 期間拒絕 delete，finally 恢復
+ok 353 - S18 text submit edit/throw=true 同步 projection 期間拒絕 delete，finally 恢復
+  ---
+  duration_ms: 140.849333
+  type: 'test'
+  ...
+# Subtest: S18 text submit insert/throw=false 同步 projection 期間拒絕 delete，finally 恢復
+ok 354 - S18 text submit insert/throw=false 同步 projection 期間拒絕 delete，finally 恢復
+  ---
+  duration_ms: 124.07075
+  type: 'test'
+  ...
+# Subtest: S18 text submit insert/throw=true 同步 projection 期間拒絕 delete，finally 恢復
+ok 355 - S18 text submit insert/throw=true 同步 projection 期間拒絕 delete，finally 恢復
+  ---
+  duration_ms: 80.366208
+  type: 'test'
+  ...
+# Subtest: S18 Node API 返回值深層隔離，不洩漏 mutable canonical
+ok 356 - S18 Node API 返回值深層隔離，不洩漏 mutable canonical
+  ---
+  duration_ms: 2.812459
+  type: 'test'
+  ...
+# Subtest: S18 mounted API 返回值深層隔離，不洩漏 mutable canonical
+ok 357 - S18 mounted API 返回值深層隔離，不洩漏 mutable canonical
+  ---
+  duration_ms: 35.142917
+  type: 'test'
+  ...
+# Subtest: S18 motion refs 在 shared pure preflight 拒絕；不依 sanitizer 靜默移除
+ok 358 - S18 motion refs 在 shared pure preflight 拒絕；不依 sanitizer 靜默移除
+  ---
+  duration_ms: 6.586042
+  type: 'test'
+  ...
+# Subtest: S18 API-only VM 無 layout/完整 DOM 時 fail closed，其他 public operation 仍可使用
+ok 359 - S18 API-only VM 無 layout/完整 DOM 時 fail closed，其他 public operation 仍可使用
+  ---
+  duration_ms: 55.789125
+  type: 'test'
+  ...
+# Subtest: S18 reentry applyLocalPatch/before 拒絕 image patch，單次 revision 與 DOM/canonical 一致
+ok 360 - S18 reentry applyLocalPatch/before 拒絕 image patch，單次 revision 與 DOM/canonical 一致
+  ---
+  duration_ms: 30.194792
+  type: 'test'
+  ...
+# Subtest: S18 reentry applyLocalPatch/after 拒絕 image patch，單次 revision 與 DOM/canonical 一致
+ok 361 - S18 reentry applyLocalPatch/after 拒絕 image patch，單次 revision 與 DOM/canonical 一致
+  ---
+  duration_ms: 50.954833
+  type: 'test'
+  ...
+# Subtest: S18 reentry prepareExport/before 在 syncText 前拒絕，不匯出半完成 DOM
+ok 362 - S18 reentry prepareExport/before 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 46.744417
+  type: 'test'
+  ...
+# Subtest: S18 reentry prepareExport/after 在 syncText 前拒絕，不匯出半完成 DOM
+ok 363 - S18 reentry prepareExport/after 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 43.8975
+  type: 'test'
+  ...
+# Subtest: S18 reentry exportHtml/before 在 syncText 前拒絕，不匯出半完成 DOM
+ok 364 - S18 reentry exportHtml/before 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 37.31625
+  type: 'test'
+  ...
+# Subtest: S18 reentry exportHtml/after 在 syncText 前拒絕，不匯出半完成 DOM
+ok 365 - S18 reentry exportHtml/after 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 48.771
+  type: 'test'
+  ...
+# Subtest: S18 reentry getSizeReport/before 在 syncText 前拒絕，不匯出半完成 DOM
+ok 366 - S18 reentry getSizeReport/before 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 71.455417
+  type: 'test'
+  ...
+# Subtest: S18 reentry getSizeReport/after 在 syncText 前拒絕，不匯出半完成 DOM
+ok 367 - S18 reentry getSizeReport/after 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 54.467417
+  type: 'test'
+  ...
+# Subtest: S18 reentry download/before 在 syncText 前拒絕，不匯出半完成 DOM
+ok 368 - S18 reentry download/before 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 43.041125
+  type: 'test'
+  ...
+# Subtest: S18 reentry download/after 在 syncText 前拒絕，不匯出半完成 DOM
+ok 369 - S18 reentry download/after 在 syncText 前拒絕，不匯出半完成 DOM
+  ---
+  duration_ms: 34.615042
+  type: 'test'
+  ...
+# Subtest: S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+ok 370 - S6 單選圖片顯示 action，其他 selection／mode 隱藏；UI 不修改 canonical
+  ---
+  duration_ms: 327.682833
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=false
+ok 371 - S6 capture → natural blur → change 保留第二圖，snap=false
+  ---
+  duration_ms: 114.431875
+  type: 'test'
+  ...
+# Subtest: S6 capture → natural blur → change 保留第二圖，snap=true
+ok 372 - S6 capture → natural blur → change 保留第二圖，snap=true
+  ---
+  duration_ms: 111.476792
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+ok 373 - S6 picker 後 slide 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 120.109292
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+ok 374 - S6 picker 後 mode 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 81.55525
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+ok 375 - S6 picker 後 selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 80.12025
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+ok 376 - S6 picker 後 same-selection 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 138.160291
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+ok 377 - S6 picker 後 marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 125.052542
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+ok 378 - S6 picker 後 empty-marquee 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 78.245625
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+ok 379 - S6 picker 後 clear 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 100.553167
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+ok 380 - S6 picker 後 destroy 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 106.732625
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+ok 381 - S6 picker 後 delete 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 101.7625
+  type: 'test'
+  ...
+# Subtest: S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+ok 382 - S6 picker 後 pointer 取消目標；無 pending 不呼叫 optimizer
+  ---
+  duration_ms: 69.922791
+  type: 'test'
+  ...
+# Subtest: S6 cancel 重設 value，同檔可再次選取
+ok 383 - S6 cancel 重設 value，同檔可再次選取
+  ---
+  duration_ms: 149.434708
+  type: 'test'
+  ...
+# Subtest: S6 empty 重設 value，同檔可再次選取
+ok 384 - S6 empty 重設 value，同檔可再次選取
+  ---
+  duration_ms: 123.229709
+  type: 'test'
+  ...
+# Subtest: S6 success 重設 value，同檔可再次選取
+ok 385 - S6 success 重設 value，同檔可再次選取
+  ---
+  duration_ms: 159.318625
+  type: 'test'
+  ...
+# Subtest: S6 failure 重設 value，同檔可再次選取
+ok 386 - S6 failure 重設 value，同檔可再次選取
+  ---
+  duration_ms: 174.5395
+  type: 'test'
+  ...
+# Subtest: S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+ok 387 - S6 無 pending／target 刪除先拒絕；後一次 picker 不覆蓋未消耗的 chooser
+  ---
+  duration_ms: 162.195667
+  type: 'test'
+  ...
+# Subtest: S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+ok 388 - S6 change 先消耗 snapshot；async 中新 picker／export／切頁不改前次 target
+  ---
+  duration_ms: 200.978959
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+ok 389 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=false
+  ---
+  duration_ms: 77.67825
+  type: 'test'
+  ...
+# Subtest: S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+ok 390 - S6 picker pointerdown 取消 gesture 且 click 前尺寸狀態不變 snap=true
+  ---
+  duration_ms: 122.896458
+  type: 'test'
+  ...
+# Subtest: S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+ok 391 - S6 export 移除新增 chrome，pending 不序列化；重新 mount 可選圖
+  ---
+  duration_ms: 150.292209
+  type: 'test'
+  ...
+# Subtest: S6 picker 等待檔案時唯讀 export 不取消 pending target
+ok 392 - S6 picker 等待檔案時唯讀 export 不取消 pending target
+  ---
+  duration_ms: 87.567875
+  type: 'test'
+  ...
+# Subtest: S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+ok 393 - S6 async target 移除後失敗，零 asset mutation 且 input 可重選
+  ---
+  duration_ms: 77.105584
+  type: 'test'
+  ...
+# Subtest: S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+ok 394 - S6 play teardown 不殘留 transient overlay marker，toolbar另由export清理
+  ---
+  duration_ms: 103.764
+  type: 'test'
+  ...
+# Subtest: S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+ok 395 - S8 Node 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 49.556708
+  type: 'test'
+  ...
+# Subtest: S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+ok 396 - S8 Node exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 49.305166
+  type: 'test'
+  ...
+# Subtest: S8 Node null prototype own records 可用且輸入不受修改
+ok 397 - S8 Node null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 2.957209
+  type: 'test'
+  ...
+# Subtest: S8 Node long-ID collision 不改名；可穩定追加另一 collision
+ok 398 - S8 Node long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 13.219625
+  type: 'test'
+  ...
+# Subtest: S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+ok 399 - S8 Node 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 450.420917
+  type: 'test'
+  ...
+# Subtest: S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+ok 400 - S8 mounted 尾端插入、預設及明示 fit、跨頁同 ID、完整 preservation
+  ---
+  duration_ms: 206.802542
+  type: 'test'
+  ...
+# Subtest: S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+ok 401 - S8 mounted exact schema／政策／geometry 拒絕且 getter calls=0
+  ---
+  duration_ms: 609.482417
+  type: 'test'
+  ...
+# Subtest: S8 mounted null prototype own records 可用且輸入不受修改
+ok 402 - S8 mounted null prototype own records 可用且輸入不受修改
+  ---
+  duration_ms: 33.647333
+  type: 'test'
+  ...
+# Subtest: S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+ok 403 - S8 mounted long-ID collision 不改名；可穩定追加另一 collision
+  ---
+  duration_ms: 164.029542
+  type: 'test'
+  ...
+# Subtest: S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+ok 404 - S8 mounted 新 identity 可 fit／replace／move／resize，renderer export/reopen 唯一 root
+  ---
+  duration_ms: 240.257834
+  type: 'test'
+  ...
+# Subtest: S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+ok 405 - S8 mounted missing 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 108.637667
+  type: 'test'
+  ...
+# Subtest: S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+ok 406 - S8 mounted duplicate-root 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 74.245125
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+ok 407 - S8 mounted append-before 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 60.675375
+  type: 'test'
+  ...
+# Subtest: S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+ok 408 - S8 mounted append-after 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 93.771792
+  type: 'test'
+  ...
+# Subtest: S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+ok 409 - S8 mounted detached-project 零 canonical／DOM／revision／selection 副作用
+  ---
+  duration_ms: 151.940792
+  type: 'test'
+  ...
+# Subtest: S8 mounted snap=false 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+ok 410 - S8 mounted snap=false 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 97.299792
+  type: 'test'
+  ...
+# Subtest: S8 mounted snap=false 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+ok 411 - S8 mounted snap=false 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 137.806125
+  type: 'test'
+  ...
+# Subtest: S8 mounted snap=true 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+ok 412 - S8 mounted snap=true 成功取消 drag preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 144.143583
+  type: 'test'
+  ...
+# Subtest: S8 mounted snap=true 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+ok 413 - S8 mounted snap=true 成功取消 resize preview／clear selection，保持舊 nodes／mode／currentId
+  ---
+  duration_ms: 135.789375
+  type: 'test'
+  ...
+# Subtest: S8 descriptor 精確 image＋text oneOf slide target、無 history 宣稱
+ok 414 - S8 descriptor 精確 image＋text oneOf slide target、無 history 宣稱
+  ---
+  duration_ms: 13.151084
+  type: 'test'
+  ...
+# Subtest: S9 public insertImageFile 新增圖片並保留 optimizer result identity
+ok 415 - S9 public insertImageFile 新增圖片並保留 optimizer result identity
+  ---
+  duration_ms: 123.85675
+  type: 'test'
+  ...
+# Subtest: S9 default 全 spec preservation／唯一 DOM
+ok 416 - S9 default 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 46.201875
+  type: 'test'
+  ...
+# Subtest: S9 contain 全 spec preservation／唯一 DOM
+ok 417 - S9 contain 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 31.848417
+  type: 'test'
+  ...
+# Subtest: S9 cover 全 spec preservation／唯一 DOM
+ok 418 - S9 cover 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 32.869167
+  type: 'test'
+  ...
+# Subtest: S9 cross-slide 全 spec preservation／唯一 DOM
+ok 419 - S9 cross-slide 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 108.314917
+  type: 'test'
+  ...
+# Subtest: S9 null-proto 全 spec preservation／唯一 DOM
+ok 420 - S9 null-proto 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 44.739292
+  type: 'test'
+  ...
+# Subtest: S9 frozen 全 spec preservation／唯一 DOM
+ok 421 - S9 frozen 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 135.417167
+  type: 'test'
+  ...
+# Subtest: S9 non-enumerable 全 spec preservation／唯一 DOM
+ok 422 - S9 non-enumerable 全 spec preservation／唯一 DOM
+  ---
+  duration_ms: 113.598708
+  type: 'test'
+  ...
+# Subtest: S9 invalid own-data／geometry／target：getter0 optimizer0，既有 gesture 不取消
+ok 423 - S9 invalid own-data／geometry／target：getter0 optimizer0，既有 gesture 不取消
+  ---
+  duration_ms: 347.936292
+  type: 'test'
+  ...
+# Subtest: S9 falsy file 不讀 options／不呼叫 optimizer；missing optimizer 明確失敗
+ok 424 - S9 falsy file 不讀 options／不呼叫 optimizer；missing optimizer 明確失敗
+  ---
+  duration_ms: 53.815334
+  type: 'test'
+  ...
+# Subtest: S9 snapshot＋await 切頁／mode／export clone，保留等待中 content／geometry
+ok 425 - S9 snapshot＋await 切頁／mode／export clone，保留等待中 content／geometry
+  ---
+  duration_ms: 103.821
+  type: 'test'
+  ...
+# Subtest: S9 pending reject 零提交
+ok 426 - S9 pending reject 零提交
+  ---
+  duration_ms: 52.283792
+  type: 'test'
+  ...
+# Subtest: S9 pending null 零提交
+ok 427 - S9 pending null 零提交
+  ---
+  duration_ms: 64.21475
+  type: 'test'
+  ...
+# Subtest: S9 pending missing-warnings 零提交
+ok 428 - S9 pending missing-warnings 零提交
+  ---
+  duration_ms: 84.077333
+  type: 'test'
+  ...
+# Subtest: S9 pending warnings-string 零提交
+ok 429 - S9 pending warnings-string 零提交
+  ---
+  duration_ms: 111.409833
+  type: 'test'
+  ...
+# Subtest: S9 pending warnings-item 零提交
+ok 430 - S9 pending warnings-item 零提交
+  ---
+  duration_ms: 74.821291
+  type: 'test'
+  ...
+# Subtest: S9 pending missing-optimized 零提交
+ok 431 - S9 pending missing-optimized 零提交
+  ---
+  duration_ms: 78.500791
+  type: 'test'
+  ...
+# Subtest: S9 pending optimized-string 零提交
+ok 432 - S9 pending optimized-string 零提交
+  ---
+  duration_ms: 97.092083
+  type: 'test'
+  ...
+# Subtest: S9 pending no-data 零提交
+ok 433 - S9 pending no-data 零提交
+  ---
+  duration_ms: 203.036
+  type: 'test'
+  ...
+# Subtest: S9 pending unsafe 零提交
+ok 434 - S9 pending unsafe 零提交
+  ---
+  duration_ms: 123.442125
+  type: 'test'
+  ...
+# Subtest: S9 pending svg 零提交
+ok 435 - S9 pending svg 零提交
+  ---
+  duration_ms: 193.071208
+  type: 'test'
+  ...
+# Subtest: S9 pending missing-target 零提交
+ok 436 - S9 pending missing-target 零提交
+  ---
+  duration_ms: 180.805542
+  type: 'test'
+  ...
+# Subtest: S9 pending identity-collision 零提交
+ok 437 - S9 pending identity-collision 零提交
+  ---
+  duration_ms: 114.011625
+  type: 'test'
+  ...
+# Subtest: S9 pending missing-dom 零提交
+ok 438 - S9 pending missing-dom 零提交
+  ---
+  duration_ms: 86.970375
+  type: 'test'
+  ...
+# Subtest: S9 pending duplicate-dom 零提交
+ok 439 - S9 pending duplicate-dom 零提交
+  ---
+  duration_ms: 228.202584
+  type: 'test'
+  ...
+# Subtest: S9 pending prepare-throw 零提交
+ok 440 - S9 pending prepare-throw 零提交
+  ---
+  duration_ms: 172.699916
+  type: 'test'
+  ...
+# Subtest: S9 pending append-before 零提交
+ok 441 - S9 pending append-before 零提交
+  ---
+  duration_ms: 121.244208
+  type: 'test'
+  ...
+# Subtest: S9 pending append-after 零提交
+ok 442 - S9 pending append-after 零提交
+  ---
+  duration_ms: 319.399084
+  type: 'test'
+  ...
+# Subtest: S9 preflight identity collision 在 optimizer 前拒絕
+ok 443 - S9 preflight identity collision 在 optimizer 前拒絕
+  ---
+  duration_ms: 141.388417
+  type: 'test'
+  ...
+# Subtest: S9 pending 競爭 same-id：完成次序決定，不覆蓋
+ok 444 - S9 pending 競爭 same-id：完成次序決定，不覆蓋
+  ---
+  duration_ms: 84.086334
+  type: 'test'
+  ...
+# Subtest: S9 pending 競爭 different-id：完成次序決定，不覆蓋
+ok 445 - S9 pending 競爭 different-id：完成次序決定，不覆蓋
+  ---
+  duration_ms: 128.734791
+  type: 'test'
+  ...
+# Subtest: S9 pending 競爭 cross-slide：完成次序決定，不覆蓋
+ok 446 - S9 pending 競爭 cross-slide：完成次序決定，不覆蓋
+  ---
+  duration_ms: 69.090791
+  type: 'test'
+  ...
+# Subtest: S9 drag pending 保留／成功才 cancel clear revision 一次
+ok 447 - S9 drag pending 保留／成功才 cancel clear revision 一次
+  ---
+  duration_ms: 186.829458
+  type: 'test'
+  ...
+# Subtest: S9 resize pending 保留／成功才 cancel clear revision 一次
+ok 448 - S9 resize pending 保留／成功才 cancel clear revision 一次
+  ---
+  duration_ms: 127.398459
+  type: 'test'
+  ...
+# Subtest: S9 export／reparse／remount 恰一 root，新圖可選取與 fit
+ok 449 - S9 export／reparse／remount 恰一 root，新圖可選取與 fit
+  ---
+  duration_ms: 405.8915
+  type: 'test'
+  ...
+1..449
+# tests 449
+# suites 0
+# pass 449
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 95008.710458

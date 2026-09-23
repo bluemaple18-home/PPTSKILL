@@ -1099,3 +1099,10 @@ WP2-S16 已整合推送，Owner 回報遠端 readback MATCH；本輪本地 main/
 **WP2-S17 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** 文字元件雙擊開啟既有 S16 編輯視窗，沿同一 selected-target／edit-text 契約。Product 8c07810，runtime/ZIP ca4f4d7；fresh scoped313/full874、雙viewport26+26、affected PGQ單輪16、ZIP/source4/protected4/cleanup PASS。首輪空白點hit-test FAIL已以實測定位修正harness，歷史證據保留；不新增inline contenteditable。卡 tasks/edx-wp2-s17-text-double-click.md；交接 handoff_20260923_edx_wp2_s17_review.md。停Independent Review，不 merge/push/deploy、不開S18。
 
 WP2-S17 COMPLETE / INDEPENDENT_REVIEW_GO：Owner交回GO，reviewed8c07810、P0–P3全0；Reviewer fresh53/313/874，browser26+26與PGQ單輪16為committed evidence核對。Mainline source4/protected4/ZIP MATCH，reviewed delivery無drift；詳evidence/edx-wp2-s17/independent-review.md。Owner授權整合推送，完成停止，不開S18。
+
+
+WP2-S17 已結案整合推送；Owner 回報遠端 readback MATCH，本輪本地 main/origin-main=e3b90a8，source4/protected4/ZIP fresh MATCH。Owner 明示「繼續」。
+
+**WP2-S18 PARTIAL / HOST_BROWSER_PENDING / INDEPENDENT_REVIEW_PENDING：** 安全刪除獨立 text/image component 的 delete-element API，candidate84ea938；明示 confirm=true，引用／identity remap 拒絕。scoped449/full945及browser21+21已有PASS；第一輪PGQ因主機resource observation I/O failure未完成（7/10），完整cleanup未通過；第二輪診斷僅selftest，正式host尚未重跑。task tasks/edx-wp2-s18-delete-element.md；review卡 handoff_20260924_edx_wp2_s18_review.md 已備妥，獨立verdict未執行；未closure、不 merge/push/deploy、不開 S19。
+
+**WP2-S18 Mainline CLOSED：** product84ea938；Mainline code review GO，fresh71/449/945；diagnostic F1/F2/F3修復並targeted re-review GO；fresh host21+21、PGQ單輪16與cleanup全PASS。native產品抽查PARTIAL不冒稱全產品Independent GO。首輪I/O根因仍unknown。見evidence/edx-wp2-s18/mainline-closure.md。回tasks/edx-core-six-card-closure-plan.md，不開S19；未merge/push/deploy。

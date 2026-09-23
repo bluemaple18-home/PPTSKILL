@@ -1,0 +1,8 @@
+{
+  "synthetic": true,
+  "controllerInvoked": false,
+  "error": "[Errno 28] synthetic log sink full",
+  "waitCalls": 0,
+  "terminateCalls": 0,
+  "receiptAfterBlock": {}
+}

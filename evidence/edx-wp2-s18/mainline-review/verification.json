@@ -1,0 +1,53 @@
+{
+  "candidate": "84ea9381cb438491449b6d871fbaeedea5e55b98",
+  "fresh": {
+    "focused": {
+      "tests": 71,
+      "pass": 71,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "scoped": {
+      "tests": 449,
+      "pass": 449,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "nonbrowser": {
+      "tests": 945,
+      "pass": 945,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    }
+  },
+  "integrity": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "runtime/component-deletion.js": true,
+      "tests/edx-wp2-s18-delete-element.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/edx-wp2-s18-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2301572,
+      "sha256": "5ccedbc43af3f23f9582ed989c635479be10065752d231fefa4bf2104ff3ec74",
+      "match": true
+    }
+  },
+  "freshBrowser": false
+}

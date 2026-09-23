@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "cases": 26,
+  "browserLaunches": 0,
+  "results": [
+    {
+      "case": "teardown:none",
+      "pass": true,
+      "receipt": {
+        "browserCloseExit": 0,
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:log_open",
+      "pass": true,
+      "receipt": {
+        "browserCloseError": "OSError(28, 'synthetic')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:log_write",
+      "pass": true,
+      "receipt": {
+        "browserCloseError": "OSError(5, 'synthetic output/close failure')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:close_raise",
+      "pass": true,
+      "receipt": {
+        "browserCloseError": "OSError(5, 'synthetic output/close failure')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:close_nonzero",
+      "pass": true,
+      "receipt": {
+        "browserCloseExit": 3,
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:wait_timeout",
+      "pass": true,
+      "receipt": {
+        "browserCloseExit": 0,
+        "supervisorTerminated": true,
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "teardown:terminate_error",
+      "pass": true,
+      "receipt": {
+        "browserCloseExit": 0,
+        "cleanupError": "PermissionError(13, 'synthetic')"
+      }
+    },
+    {
+      "case": "wrapper:0:none",
+      "pass": true,
+      "exit": 0
+    },
+    {
+      "case": "wrapper:0:open",
+      "pass": true,
+      "exit": 74
+    },
+    {
+      "case": "wrapper:0:write",
+      "pass": true,
+      "exit": 74
+    },
+    {
+      "case": "wrapper:0:hash",
+      "pass": true,
+      "exit": 74
+    },
+    {
+      "case": "wrapper:2:none",
+      "pass": true,
+      "exit": 2
+    },
+    {
+      "case": "wrapper:2:open",
+      "pass": true,
+      "exit": 2
+    },
+    {
+      "case": "wrapper:2:write",
+      "pass": true,
+      "exit": 2
+    },
+    {
+      "case": "wrapper:2:hash",
+      "pass": true,
+      "exit": 2
+    },
+    {
+      "case": "wrapper:143:none",
+      "pass": true,
+      "exit": 143
+    },
+    {
+      "case": "wrapper:143:open",
+      "pass": true,
+      "exit": 143
+    },
+    {
+      "case": "wrapper:143:write",
+      "pass": true,
+      "exit": 143
+    },
+    {
+      "case": "wrapper:143:hash",
+      "pass": true,
+      "exit": 143
+    },
+    {
+      "case": "scanner:12-independent-errors",
+      "pass": true,
+      "scans": 12,
+      "captured": 12
+    },
+    {
+      "case": "diagnostic:none",
+      "pass": true,
+      "accepted": true
+    },
+    {
+      "case": "diagnostic:missing",
+      "pass": true,
+      "accepted": false
+    },
+    {
+      "case": "diagnostic:invalid",
+      "pass": true,
+      "accepted": false
+    },
+    {
+      "case": "diagnostic:zero_scan",
+      "pass": true,
+      "accepted": false
+    },
+    {
+      "case": "diagnostic:hash",
+      "pass": true,
+      "accepted": false
+    },
+    {
+      "case": "diagnostic:io_error",
+      "pass": true,
+      "accepted": false
+    }
+  ]
+}

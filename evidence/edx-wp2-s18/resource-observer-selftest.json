@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "synthetic": true,
+  "normalScan": [
+    2,
+    1
+  ],
+  "failureReasonUnchanged": "NO_GO: resource observation unknown (I/O failure)",
+  "scanCallsObserved": 2,
+  "captured": [
+    {
+      "type": "FileNotFoundError",
+      "errno": 2,
+      "strerror": "No such file or directory",
+      "filename": "synthetic-entry",
+      "filename2": null,
+      "message": "[Errno 2] No such file or directory: 'synthetic-entry'",
+      "function": "visit",
+      "line": 1092,
+      "source": "with os.scandir(fd) as children:",
+      "relativeDirectory": [],
+      "entryName": null
+    }
+  ],
+  "fixtureRemoved": true,
+  "previousAttempt": {
+    "status": "IMPORT_FAILURE_BEFORE_EXECUTION",
+    "error": "ModuleNotFoundError: No module named host_capacity_sensor",
+    "fix": "將 AI Core scripts 放入 fixture 的 sys.path，與正式 wrapper 相同；未改 helper"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "normal": {
+    "counts": [
+      1024,
+      512
+    ],
+    "events": [
+      {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "strerror": "synthetic",
+        "filename": "fixture-gone",
+        "filename2": null,
+        "message": "[Errno 2] synthetic: 'fixture-gone'",
+        "function": "visit",
+        "line": 1092,
+        "source": "with os.scandir(fd) as children:",
+        "relativeDirectory": [],
+        "entryName": null
+      }
+    ],
+    "scans": 1
+  },
+  "scandir_failure": {
+    "reason": "NO_GO: resource observation unknown (I/O failure)",
+    "events": [
+      {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "strerror": "synthetic",
+        "filename": "fixture-gone",
+        "filename2": null,
+        "message": "[Errno 2] synthetic: 'fixture-gone'",
+        "function": "visit",
+        "line": 1092,
+        "source": "with os.scandir(fd) as children:",
+        "relativeDirectory": [],
+        "entryName": null
+      }
+    ]
+  },
+  "stat_failure": {
+    "reason": "NO_GO: resource observation unknown (I/O failure)",
+    "events": [
+      {
+        "type": "PermissionError",
+        "errno": 13,
+        "strerror": "synthetic",
+        "filename": "vanished",
+        "filename2": null,
+        "message": "[Errno 13] synthetic: 'vanished'",
+        "function": "visit",
+        "line": 1097,
+        "source": "info = entry.stat(follow_symlinks=False)",
+        "relativeDirectory": [],
+        "entryName": "vanished"
+      }
+    ]
+  },
+  "resource_stop": {
+    "code": 2,
+    "signals": [
+      15,
+      9
+    ],
+    "detach": 1,
+    "stderr": "NO_GO: resource observation unknown (I/O failure)\n",
+    "errors": [
+      {
+        "type": "OSError",
+        "errno": 5,
+        "strerror": "synthetic",
+        "filename": "bad-entry",
+        "filename2": null,
+        "message": "[Errno 5] synthetic: 'bad-entry'",
+        "function": "visit",
+        "line": 1092,
+        "source": "with os.scandir(fd) as children:",
+        "relativeDirectory": [],
+        "entryName": null
+      }
+    ]
+  },
+  "wrapper_finally": [
+    {
+      "originalExit": 0,
+      "injectedWriteFailure": false,
+      "outcome": "SystemExit",
+      "exit": 0,
+      "context": null,
+      "teardownStubCompleted": true,
+      "errno": null,
+      "traceRestored": true
+    },
+    {
+      "originalExit": 0,
+      "injectedWriteFailure": true,
+      "outcome": "OSError",
+      "exit": 1,
+      "context": "SystemExit",
+      "teardownStubCompleted": true,
+      "errno": 28,
+      "traceRestored": true
+    },
+    {
+      "originalExit": 2,
+      "injectedWriteFailure": false,
+      "outcome": "SystemExit",
+      "exit": 2,
+      "context": null,
+      "teardownStubCompleted": true,
+      "errno": null,
+      "traceRestored": true
+    },
+    {
+      "originalExit": 2,
+      "injectedWriteFailure": true,
+      "outcome": "OSError",
+      "exit": 1,
+      "context": "SystemExit",
+      "teardownStubCompleted": true,
+      "errno": 28,
+      "traceRestored": true
+    },
+    {
+      "originalExit": 143,
+      "injectedWriteFailure": false,
+      "outcome": "SystemExit",
+      "exit": 143,
+      "context": null,
+      "teardownStubCompleted": true,
+      "errno": null,
+      "traceRestored": true
+    },
+    {
+      "originalExit": 143,
+      "injectedWriteFailure": true,
+      "outcome": "OSError",
+      "exit": 1,
+      "context": "SystemExit",
+      "teardownStubCompleted": true,
+      "errno": 28,
+      "traceRestored": true
+    }
+  ],
+  "performance": {
+    "baseline": {
+      "samples_ms": [
+        1.755499979481101,
+        1.0669170878827572,
+        1.0104579851031303,
+        0.9922089520841837,
+        0.9755829814821482,
+        1.0145839769393206,
+        1.0837919544428587
+      ],
+      "median_ms": 1.0145839769393206,
+      "counts": [
+        1024,
+        512
+      ]
+    },
+    "traced": {
+      "samples_ms": [
+        1.5961669851094484,
+        1.6478749457746744,
+        1.5875000972300768,
+        1.4183330349624157,
+        2.0052919862791896,
+        1.4959999825805426,
+        1.4268748927861452
+      ],
+      "median_ms": 1.5875000972300768,
+      "counts": [
+        1024,
+        512
+      ]
+    },
+    "ratio": 1.564680828115444
+  },
+  "repeated_errors": {
+    "attempts": 12,
+    "scanCalls": 12,
+    "captured": 2,
+    "allFailClosed": true,
+    "events": [
+      {
+        "type": "OSError",
+        "errno": 5,
+        "strerror": "synthetic",
+        "filename": "repeat",
+        "filename2": null,
+        "message": "[Errno 5] synthetic: 'repeat'",
+        "function": "visit",
+        "line": 1092,
+        "source": "with os.scandir(fd) as children:",
+        "relativeDirectory": [],
+        "entryName": null
+      },
+      {
+        "type": "OSError",
+        "errno": 5,
+        "strerror": "synthetic",
+        "filename": "repeat",
+        "filename2": null,
+        "message": "[Errno 5] synthetic: 'repeat'",
+        "function": "visit",
+        "line": 1092,
+        "source": "with os.scandir(fd) as children:",
+        "relativeDirectory": [],
+        "entryName": null
+      }
+    ]
+  }
+}

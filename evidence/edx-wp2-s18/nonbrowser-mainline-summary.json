@@ -1,0 +1,13 @@
+{
+  "files": 75,
+  "exit": 1,
+  "signal": null,
+  "summary": {
+    "tests": 945,
+    "pass": 943,
+    "fail": 2,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  }
+}
