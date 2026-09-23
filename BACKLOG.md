@@ -1087,3 +1087,5 @@ WP2-S14已依Owner授權FF/push main `8dcc3a0`，遠端readback MATCH；詳evide
 **WP2-S15 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** 安全插入文字UI，沿S13 insert-element與native dialog/textarea；task tasks/edx-wp2-s15-insert-text-ui.md。無新mutation authority、無component direct contenteditable／auto-layout；修復scoped252/full789、ZIP、雙viewport48／48與PGQ單輪16 PASS；candidate a181982，詳細handoff_20260923_edx_wp2_s15_review.md，未merge/push/deploy新slice。
 
 WP2-S15 closure：Owner交回Independent GO，reviewed a181982，P0–P3全0；Reviewer fresh252/789，browser48+48及PGQ單輪16為committed evidence核對。Mainline source6/protected4/ZIP MATCH，delivery無drift；reviewed code／ZIP未改。詳evidence/edx-wp2-s15/independent-review.md。Owner明示授權整合push後繼續。
+
+WP2-S15已FF/push main3cebfaf，遠端readback MATCH。S16開卡：已選text component的context dialog編輯UI，沿S14 edit-text與S15 dialog；tasks/edx-wp2-s16-edit-text-ui.md，direct inline editing不在此Slice。
