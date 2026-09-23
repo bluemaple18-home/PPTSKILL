@@ -14,7 +14,8 @@ export async function runInsertTextBrowserCases({ cdp, evaluate, navigate, sourc
     component: { id, type: 'text', text }, geometry: { x: 550, y: 600, width: 420, height: 160 },
   } });
   const expected = await spec();
-  await evaluate(`window.__s13Nodes=[...document.querySelectorAll('.slide,.slide [data-edit-target],.slide img')];window.__s13Trusted=[];for(const type of ['pointerdown','keydown'])document.addEventListener(type,e=>window.__s13Trusted.push({type,trusted:e.isTrusted,key:e.key||''}));`);
+  // Escape 由 document capture handler 停止傳遞；window capture 先觀測，不改產品事件行為。
+  await evaluate(`window.__s13Nodes=[...document.querySelectorAll('.slide,.slide [data-edit-target],.slide img')];window.__s13Trusted=[];for(const type of ['pointerdown','keydown'])window.addEventListener(type,e=>window.__s13Trusted.push({type,trusted:e.isTrusted,key:e.key||''}),true);`);
   const insert = async req => {
     await evaluate(`window.PPTSKILLEditor.executeOperation(${JSON.stringify(req)})`);
     const slide = expected.slides.find(s => s.id === req.target.slideId);
