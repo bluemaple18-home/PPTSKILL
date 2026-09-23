@@ -14,11 +14,24 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
     return required.every(key => Object.hasOwn(value, key)) && Reflect.ownKeys(value).every(key => [...required, ...optional].includes(key)
       && Object.hasOwn(Object.getOwnPropertyDescriptor(value, key), 'value'));
   };
+  // S13／S14 共用同一文字值政策；不改 image／File 的 enumerable 契約。
+  const validateTextValue = value => {
+    if (typeof value !== 'string' || [...value].length < 1 || [...value].length > 500) throw new Error('text 必須為 1–500 Unicode code points。');
+  };
+  const validateEditTextRequest = request => {
+    const exact = (value, keys) => fields(value, keys) && Reflect.ownKeys(value).every(key => Object.getOwnPropertyDescriptor(value, key).enumerable);
+    if (!exact(request, ['operation', 'target', 'value']) || request.operation !== 'edit-text'
+      || !exact(request.target, ['slideId', 'elementId'])) throw new Error('edit-text payload／target 欄位無效。');
+    if (typeof request.target.slideId !== 'string' || !request.target.slideId
+      || typeof request.target.elementId !== 'string' || !idPattern.test(request.target.elementId)) throw new Error('edit-text target slideId／elementId 格式非法。');
+    if (typeof request.value !== 'string') throw new Error('operation value 必須是 string。');
+    return request;
+  };
   const validateMetadata = (slideId, component, geometry) => {
     if (typeof slideId !== 'string' || !slideId || typeof component.id !== 'string' || !idPattern.test(component.id)
       || !['image', 'text'].includes(component.type)) throw new Error('insert-element metadata 無效。');
     if (component.type === 'text') {
-      if (typeof component.text !== 'string' || [...component.text].length < 1 || [...component.text].length > 500) throw new Error('insert-element text 必須為 1–500 Unicode code points。');
+      validateTextValue(component.text);
     } else if (typeof component.alt !== 'string'
       || (Object.hasOwn(component, 'fit') && !assets.descriptor.inputSchema.properties.value.properties.fit.enum.includes(component.fit))) throw new Error('insert-element image metadata 無效。');
     validateGeometry(Object.fromEntries(['x', 'y', 'width', 'height'].map(key => [key, geometry[key]])));
@@ -97,7 +110,7 @@ export function createImageInsertionContract(assets, validateGeometry, resolveId
     destructive: false, confirmation: 'none', undoable: false, qaInvalidation: ['content', 'assets', 'geometry', 'overflow', 'portableSize'],
     portableSerialization: 'json', unsupportedReason: null,
   };
-  return { validateRequest, snapshotFileOptions, preflight, update, descriptor };
+  return { validateTextValue, validateEditTextRequest, validateRequest, snapshotFileOptions, preflight, update, descriptor };
 }
 export const imageInsertion = createImageInsertionContract(assetReplacement, validateComponentGeometry, resolveSlideElementIdentities);
 export const buildImageInsertionRuntime = () => `const imageInsertion=(${createImageInsertionContract.toString()})(assetReplacement,validateComponentGeometry,resolveSlideElementIdentities);`;

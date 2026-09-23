@@ -46,7 +46,7 @@ test('renderer 對 directly operable roots 輸出 slide-local unique element ide
 
 test('edit-text descriptor 完整宣告 bounded metadata', () => {
   assert.deepEqual(Object.keys(OPERATION_DESCRIPTORS), ['insert-element', 'replace-asset', 'set-typography', 'copy-style', 'paste-style', 'edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
-  assert.deepEqual(OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles, ['title', 'subtitle', 'keyPoint']);
+  assert.deepEqual(OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles, ['title', 'subtitle', 'keyPoint', 'component']);
   for (const field of ['inputSchema', 'mutates', 'preserves', 'destructive', 'confirmation', 'undoable', 'qaInvalidation', 'portableSerialization', 'unsupportedReason']) {
     assert.ok(field in OPERATION_DESCRIPTORS['edit-text'], `descriptor 缺少 ${field}`);
   }
@@ -86,7 +86,7 @@ test('executeOperation 只依 stable target pair 編輯文字並 fail loud', () 
   assert.throws(() => editor.executeOperation({ operation: 'unknown-operation', target: { slideId: 'problem', elementId: 'role-title' }, value: 'x' }), /operation|支援/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'missing', elementId: 'role-title' }, value: 'x' }), /slide/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'missing' }, value: 'x' }), /element/u);
-  assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'component-portable-quote' }, value: 'x' }), /role/u);
+  assert.equal(editor.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'component-portable-quote' }, value: 'x' }).slides.find(s => s.id === 'portable').content.components.find(c => c.id === 'portable-quote').text, 'x');
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'role-title' }, value: 42 }), /value|string/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'role-title' }, value: 'x', arbitrary: true }), /payload|欄位|additional/u);
   assert.throws(() => editor.executeOperation({ operation: 'edit-text', target: { slideId: 'problem', elementId: 'role-title', arbitrary: true }, value: 'x' }), /target|欄位|additional/u);
@@ -163,12 +163,15 @@ test('對抗性 long component／keyPoint IDs 仍解析為 bounded unique identi
 test('descriptor metadata 深層 immutable，mutation 不可擴張 enforcement allowlist', () => {
   assert.throws(() => OPERATION_DESCRIPTORS['edit-text'].allowedTargetRoles.push('component'), TypeError);
   assert.throws(() => { OPERATION_DESCRIPTORS['edit-text'].inputSchema.properties.value.type = 'object'; }, TypeError);
-  const editor = createDeckEditor(fixture);
+  const nontext = structuredClone(fixture);
+  const component = nontext.slides.find(s => s.id === 'portable').content.components.find(c => c.id === 'portable-quote');
+  Object.assign(component, { type: 'image', dataUri: 'data:image/png;base64,AA==', alt: '非文字' });
+  const editor = createDeckEditor(nontext);
   assert.throws(() => editor.executeOperation({
     operation: 'edit-text',
     target: { slideId: 'portable', elementId: 'component-portable-quote' },
     value: 'still rejected',
-  }), /role/u);
+  }), /type=text/u);
   const runtime = renderFullDeck(fixture).html;
   assert.match(runtime, /operationDescriptors=deepFreeze\(/);
   assert.match(runtime, /if\(!operationDescriptors\[o\.operation\]\.allowedTargetRoles\.includes\(role\)\)throw new Error/);

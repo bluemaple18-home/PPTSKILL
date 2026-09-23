@@ -1,3 +1,4 @@
+import { runEditTextComponentBrowserCases } from './edx-wp2-s14-browser-cases.mjs';
 import { runInsertTextBrowserCases } from './edx-wp2-s13-browser-cases.mjs';
 import { runImagePasteBrowserCases } from './edx-wp2-s12-browser-cases.mjs';
 import { runImageDropBrowserCases } from './edx-wp2-s11-browser-cases.mjs';
@@ -48,7 +49,7 @@ if (process.argv.includes('--insert-image-ui-regression') || process.argv.includ
   empty.composition = { primitive: 'title-points', variant: 'default', slots: { title: 'content.title', subtitle: 'content.subtitle', points: 'content.keyPoints' } };
   input.slides.push(empty);
 }
-if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || (process.argv.includes('--insert-image-regression') || process.argv.includes('--insert-text-regression')) || process.argv.includes('--insert-image-file-regression') || process.argv.includes('--insert-image-ui-regression') || process.argv.includes('--image-drop-regression') || process.argv.includes('--image-paste-regression')) addAssetReplacementFixture(input);
+if (process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || (process.argv.includes('--insert-image-regression') || (process.argv.includes('--insert-text-regression') || process.argv.includes('--edit-text-component-regression'))) || process.argv.includes('--insert-image-file-regression') || process.argv.includes('--insert-image-ui-regression') || process.argv.includes('--image-drop-regression') || process.argv.includes('--image-paste-regression')) addAssetReplacementFixture(input);
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -206,8 +207,9 @@ try {
       if (process.argv.includes('--typography-regression')) await runTypographyBrowserCases({ cdp, evaluate, navigate, sourcePath, width, run, click, position, settle, assertExport });
       if (process.argv.includes('--asset-replacement-regression')) await runAssetReplacementBrowserCases({ cdp, evaluate, navigate, sourcePath, run, assertExport });
       if (process.argv.includes('--targeted-image-file-regression')) await runTargetedImageFileBrowserCases({ cdp, evaluate, navigate, sourcePath, run, assertExport });
-      if ((process.argv.includes('--insert-image-regression') || process.argv.includes('--insert-text-regression'))) await runInsertImageBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
-      if (process.argv.includes('--insert-text-regression')) await runInsertTextBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
+      if ((process.argv.includes('--insert-image-regression') || (process.argv.includes('--insert-text-regression') || process.argv.includes('--edit-text-component-regression')))) await runInsertImageBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
+      if ((process.argv.includes('--insert-text-regression') || process.argv.includes('--edit-text-component-regression'))) await runInsertTextBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
+      if (process.argv.includes('--edit-text-component-regression')) await runEditTextComponentBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--insert-image-file-regression')) await runInsertImageFileBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--image-fit-regression')) await runImageFitBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
       if (process.argv.includes('--selected-image-regression')) await runSelectedImageBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport });
