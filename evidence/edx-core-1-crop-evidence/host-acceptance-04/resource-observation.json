@@ -1,0 +1,25 @@
+{
+  "status": "IO_ERROR_OBSERVED",
+  "scanner": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "scannerSha256Before": "3d200b37bde357eb86000ba57c36ab0e115ea119f82bc8bfcba90882876a38b6",
+  "scannerSha256After": "3d200b37bde357eb86000ba57c36ab0e115ea119f82bc8bfcba90882876a38b6",
+  "scanCallsObserved": 608,
+  "errors": [
+    {
+      "type": "FileNotFoundError",
+      "errno": 2,
+      "strerror": "No such file or directory",
+      "filename": ".com.google.Chrome.Local State.CGAlLV",
+      "filename2": null,
+      "message": "[Errno 2] No such file or directory: '.com.google.Chrome.Local State.CGAlLV'",
+      "function": "visit",
+      "line": 1097,
+      "source": "info = entry.stat(follow_symlinks=False)",
+      "relativeDirectory": [
+        "profile"
+      ],
+      "entryName": ".com.google.Chrome.Local State.CGAlLV"
+    }
+  ],
+  "lineAndOpcodeTracing": false
+}

@@ -1,0 +1,161 @@
+{
+  "classification": "existing browser evidence freshly read/hash-checked; no fresh browser run",
+  "receiptSha256": "7556089794a702ba5639bb91038a55b828954b76ebb0934979e72f832359936a",
+  "sourceHashMatches": true,
+  "sourceContainsFrozenRuntime": true,
+  "runs": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "status": "pass",
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1235,
+      "pixelToleranceRecomputed": true,
+      "sourceUnchanged": true,
+      "artifactCount": 40,
+      "artifactFailures": [],
+      "targetClosed": true,
+      "errors": {
+        "page": 0,
+        "network": 0,
+        "http": 0,
+        "remote": 0,
+        "console": 0
+      },
+      "previewFinal": [
+        {
+          "label": "preview-portrait-matches-final",
+          "maxDelta": 0.0000013235675614120535
+        },
+        {
+          "label": "preview-landscape-matches-final",
+          "maxDelta": 0.00002708659145778114
+        }
+      ],
+      "repairCases": [
+        {
+          "crop": "synthetic persisted pagehide/pageshow",
+          "kind": "synthetic event，非真BFCache命中",
+          "canonicalSame": true,
+          "styleSame": true,
+          "sourceSame": true
+        },
+        {
+          "crop": "raw-observe",
+          "kind": "synthetic fault injection＋後續真resize pixel",
+          "error": "repair raw observe",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true,
+          "selectionSame": true,
+          "dialogOpen": true
+        },
+        {
+          "crop": "reset-refresh",
+          "kind": "synthetic fault injection＋後續真resize pixel",
+          "error": "repair reset refresh",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true,
+          "selectionSame": true,
+          "dialogOpen": false
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1600,
+        900
+      ],
+      "status": "pass",
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1240,
+      "pixelToleranceRecomputed": true,
+      "sourceUnchanged": true,
+      "artifactCount": 40,
+      "artifactFailures": [],
+      "targetClosed": true,
+      "errors": {
+        "page": 0,
+        "network": 0,
+        "http": 0,
+        "remote": 0,
+        "console": 0
+      },
+      "previewFinal": [
+        {
+          "label": "preview-portrait-matches-final",
+          "maxDelta": 4.2354416093792757e-7
+        },
+        {
+          "label": "preview-landscape-matches-final",
+          "maxDelta": 0.00003068668505967764
+        }
+      ],
+      "repairCases": [
+        {
+          "crop": "synthetic persisted pagehide/pageshow",
+          "kind": "synthetic event，非真BFCache命中",
+          "canonicalSame": true,
+          "styleSame": true,
+          "sourceSame": true
+        },
+        {
+          "crop": "raw-observe",
+          "kind": "synthetic fault injection＋後續真resize pixel",
+          "error": "repair raw observe",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true,
+          "selectionSame": true,
+          "dialogOpen": true
+        },
+        {
+          "crop": "reset-refresh",
+          "kind": "synthetic fault injection＋後續真resize pixel",
+          "error": "repair reset refresh",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true,
+          "selectionSame": true,
+          "dialogOpen": false
+        }
+      ]
+    }
+  ],
+  "suppliedVerificationReceipt": {
+    "candidate": "2db6185",
+    "runs": [
+      {
+        "viewport": [
+          1280,
+          720
+        ],
+        "records": 45,
+        "pixelCases": 24,
+        "pixelChecks": 1235,
+        "artifactsVerified": 40,
+        "sourceUnchanged": true,
+        "targetClosed": true,
+        "errors": 0
+      },
+      {
+        "viewport": [
+          1600,
+          900
+        ],
+        "records": 45,
+        "pixelCases": 24,
+        "pixelChecks": 1240,
+        "artifactsVerified": 40,
+        "sourceUnchanged": true,
+        "targetClosed": true,
+        "errors": 0
+      }
+    ]
+  }
+}

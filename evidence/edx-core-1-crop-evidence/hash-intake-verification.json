@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "package": "@noble/hashes",
+  "version": "2.0.1",
+  "license": "MIT",
+  "licenseSha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec",
+  "cases": [
+    {
+      "name": "empty",
+      "bytes": 0,
+      "match": true,
+      "elapsedMs": 0.538375000000002
+    },
+    {
+      "name": "abc",
+      "bytes": 3,
+      "match": true,
+      "elapsedMs": 0.048500000000004206
+    },
+    {
+      "name": "unicode",
+      "bytes": 10,
+      "match": true,
+      "elapsedMs": 0.040083999999993125
+    },
+    {
+      "name": "1MiB",
+      "bytes": 1048598,
+      "match": true,
+      "elapsedMs": 12.228333000000006
+    },
+    {
+      "name": "6MiB",
+      "bytes": 6291478,
+      "match": true,
+      "elapsedMs": 42.91966700000002
+    },
+    {
+      "name": "12MiB",
+      "bytes": 12582934,
+      "match": true,
+      "elapsedMs": 83.19666700000002
+    }
+  ],
+  "scope": "package source only; large strings not decoded image; not browser bundle"
+}

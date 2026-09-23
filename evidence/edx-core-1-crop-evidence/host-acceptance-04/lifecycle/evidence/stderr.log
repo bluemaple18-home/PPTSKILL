@@ -1,0 +1,17 @@
+
+DevTools listening on ws://127.0.0.1:51490/devtools/browser/50ff3585-8c5d-448d-b7de-1c9004533af1
+Trying to load the allocator multiple times. This is *not* supported.
+[82731:22323419:0924/040926.793329:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82731:22323419:0924/040926.797248:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82731:22323419:0924/040926.797353:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82731:22323419:0924/040926.797442:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82731:22323419:0924/040926.797524:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82731:22323419:0924/040926.797617:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[82725:22323385:0924/040929.008272:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[82725:22323385:0924/040954.274195:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[82725:22323385:0924/041034.804478:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[82725:22323385:0924/041207.951435:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[82725:22323385:0924/041550.407578:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[82725:22323385:0924/041956.011860:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -2
+[82725:22323325:0924/041956.016540:ERROR:content/browser/network_service_instance_impl.cc:655] Network service crashed or was terminated, restarting service.
+[82725:22323325:0924/041956.021163:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15

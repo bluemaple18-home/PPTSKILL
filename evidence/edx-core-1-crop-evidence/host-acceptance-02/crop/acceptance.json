@@ -1,0 +1,1932 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/source.html",
+  "sourceSha256": "2cf7b91f487bc9d870d50228723bbb86ca580297b5141d2f7cddb34dd56a59bd",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "crop": "original",
+          "kind": "真 CDP screenshot pixel oracle",
+          "checks": [
+            {
+              "px": 115,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "actual": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "actual": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "actual": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "actual": [
+                30,
+                136,
+                229,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "actual": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "actual": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "actual": [
+                0,
+                172,
+                193,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            }
+          ],
+          "excluded": [
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label",
+            "source-edge-or-label"
+          ],
+          "sourceUnchanged": true,
+          "natural": [
+            240,
+            160
+          ],
+          "frame": [
+            480,
+            224
+          ]
+        },
+        {
+          "crop": "ui-confirm",
+          "kind": "真 CDP screenshot pixel oracle",
+          "checks": [
+            {
+              "px": 115,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 115,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 172,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 290,
+              "inside": true,
+              "expected": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "actual": [
+                229,
+                57,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "actual": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "actual": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 235,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "actual": [
+                253,
+                216,
+                53,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 290,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 302,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 290,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 374,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 189,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 218,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 254,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 290,
+              "inside": true,
+              "expected": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "actual": [
+                67,
+                160,
+                71,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 330,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 364,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 446,
+              "py": 388,
+              "inside": true,
+              "expected": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "actual": [
+                142,
+                36,
+                170,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 518,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 189,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 218,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 254,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 290,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 330,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 364,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            },
+            {
+              "px": 556,
+              "py": 388,
+              "inside": false,
+              "expected": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "actual": [
+                240,
+                240,
+                240,
+                255
+              ],
+              "pass": true
+            }
+          ],
+          "excluded": [],
+          "sourceUnchanged": true,
+          "natural": [
+            240,
+            160
+          ],
+          "frame": [
+            480,
+            224
+          ]
+        },
+        {
+          "crop": "range pointer／number keyboard／人工確認／cancel／Escape／保護範圍拒絕",
+          "kind": "產品 UI，另以 API 設定數值與用途"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-legacy-selected.html",
+          "bytes": 593349,
+          "sha256": "57aa78fba63f6ec6e0ab0328c09d2b11d6513e3691d2bf4d5687f903430c40a4"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-preview-export.html",
+          "bytes": 593636,
+          "sha256": "499a428b66941f60ac8a491cd0022d4039a7be997f483f67492068ddaeee9430"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-cancel.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-noop.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-invalid.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-invalid-resize.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-play-mode.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-export.html",
+          "bytes": 593636,
+          "sha256": "9d46f289c903cd983eb80f4ecc8026f43a6a8d45dd20e26c018f22402df0cf2b"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-reopen-export.html",
+          "bytes": 593636,
+          "sha256": "a1bd5ace411a9ec726f16eb62cd029c32dc128de9f24cbb73ec4c75f01c4bb7d"
+        },
+        {
+          "label": "crop-original",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-crop-original.png",
+          "bytes": 30615,
+          "sha256": "b31010f819a2b2b6436f4f26e57c23060b03a80752791e334d3e5b06d74ea208"
+        },
+        {
+          "label": "crop-ui-confirm",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-02/crop/1280-crop-ui-confirm.png",
+          "bytes": 43580,
+          "sha256": "971772dee6969188320bf9e1071d8ee2aa7eee7f8cd7b384ee1632c73e3349e1"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: {\"label\":\"rollback-crop-image-before\",\"checks\":[{\"px\":112,\"py\":191,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":224,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":265,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":306,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":352,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":391,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":419,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[229,57,53,255],\"pass\":false},{\"px\":162,\"py\":191,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":224,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":265,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":306,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":352,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":162,\"py\":391,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":162,\"py\":419,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[168,95,59,255],\"pass\":false},{\"px\":216,\"py\":191,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":224,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":265,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":306,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":352,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":216,\"py\":391,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":216,\"py\":419,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[67,160,71,255],\"pass\":false},{\"px\":274,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":274,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":274,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[30,136,229,255],\"pass\":false},{\"px\":337,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":337,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":337,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":462,\"py\":191,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":224,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":265,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":306,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":352,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":462,\"py\":391,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":462,\"py\":419,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":495,\"py\":191,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":224,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":265,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":306,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":352,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":391,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":419,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true}],\"excluded\":[],\"sourceUnchanged\":true,\"natural\":[240,160],\"frame\":[416,256]}\n    at pixels (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-crop-browser-cases.mjs:67:103)\n    at async runCropBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-crop-browser-cases.mjs:92:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:234:25",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: {\"label\":\"rollback-crop-image-before\",\"checks\":[{\"px\":112,\"py\":191,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":224,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":265,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":306,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":352,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":391,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":112,\"py\":419,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[229,57,53,255],\"pass\":false},{\"px\":162,\"py\":191,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":224,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":265,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":306,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":162,\"py\":352,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":162,\"py\":391,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":162,\"py\":419,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[168,95,59,255],\"pass\":false},{\"px\":216,\"py\":191,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":224,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":265,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":306,\"inside\":true,\"expected\":[229,57,53,255],\"actual\":[229,57,53,255],\"pass\":true},{\"px\":216,\"py\":352,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":216,\"py\":391,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[253,216,53,255],\"pass\":true},{\"px\":216,\"py\":419,\"inside\":true,\"expected\":[253,216,53,255],\"actual\":[67,160,71,255],\"pass\":false},{\"px\":274,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":274,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":274,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":274,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[30,136,229,255],\"pass\":false},{\"px\":337,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":337,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":337,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":337,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":191,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":224,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":265,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":306,\"inside\":true,\"expected\":[67,160,71,255],\"actual\":[67,160,71,255],\"pass\":true},{\"px\":399,\"py\":352,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":391,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":399,\"py\":419,\"inside\":true,\"expected\":[142,36,170,255],\"actual\":[142,36,170,255],\"pass\":true},{\"px\":462,\"py\":191,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":224,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":265,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":306,\"inside\":true,\"expected\":[30,136,229,255],\"actual\":[30,136,229,255],\"pass\":true},{\"px\":462,\"py\":352,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":462,\"py\":391,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":462,\"py\":419,\"inside\":true,\"expected\":[0,172,193,255],\"actual\":[0,172,193,255],\"pass\":true},{\"px\":495,\"py\":191,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":224,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":265,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":306,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":352,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":391,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true},{\"px\":495,\"py\":419,\"inside\":false,\"expected\":[240,240,240,255],\"actual\":[240,240,240,255],\"pass\":true}],\"excluded\":[],\"sourceUnchanged\":true,\"natural\":[240,160],\"frame\":[416,256]}\n    at pixels (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-crop-browser-cases.mjs:67:103)\n    at async runCropBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-crop-browser-cases.mjs:92:3)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:234:25"
+}

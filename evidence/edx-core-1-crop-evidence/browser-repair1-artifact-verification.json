@@ -1,0 +1,31 @@
+{
+  "candidate": "2db6185",
+  "runs": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1235,
+      "artifactsVerified": 40,
+      "sourceUnchanged": true,
+      "targetClosed": true,
+      "errors": 0
+    },
+    {
+      "viewport": [
+        1600,
+        900
+      ],
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1240,
+      "artifactsVerified": 40,
+      "sourceUnchanged": true,
+      "targetClosed": true,
+      "errors": 0
+    }
+  ]
+}

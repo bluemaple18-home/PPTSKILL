@@ -1,0 +1,6 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {pathToFileURL} from 'node:url';
+const {imageCrop}=await import(pathToFileURL(process.cwd()+'/runtime/image-crop.js'));
+const r={x:.2,y:.15,width:.5,height:.6},W=240,H=160;
+const visible=(Bw,Bh)=>{const p=imageCrop.projectRect(r,W,H,Bw,Bh,'cover');return{frame:[Bw,Bh],projection:p,visible:{x:Math.max(r.x,-p.left/p.width),y:Math.max(r.y,-p.top/p.height),right:Math.min(r.x+r.width,(Bw-p.left)/p.width),bottom:Math.min(r.y+r.height,(Bh-p.top)/p.height)}};};
+const preview=visible(330,170),final=visible(250,400);assert.notDeepEqual(preview.visible,final.visible);
+const report={name:'F5_decorative_cover_preview_uses_dialog_aspect_instead_of_target',natural:[W,H],crop:r,preview,final,point:{x:.22,y:.45},pointVisibleInPreview:.22>=preview.visible.x&&.22<=preview.visible.right&&.45>=preview.visible.y&&.45<=preview.visible.bottom,pointVisibleInFinal:.22>=final.visible.x&&.22<=final.visible.right&&.45>=final.visible.y&&.45<=final.visible.bottom};assert.equal(report.pointVisibleInPreview,true);assert.equal(report.pointVisibleInFinal,false);fs.writeFileSync('/private/tmp/pptskill-core-crop-repair1-original/preview-result.json',JSON.stringify(report,null,2));console.log(report);

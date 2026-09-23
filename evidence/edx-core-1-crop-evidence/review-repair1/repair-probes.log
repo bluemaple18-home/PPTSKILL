@@ -1,0 +1,193 @@
+[
+  {
+    "name": "F1_persisted_restore_resize_load_S18",
+    "status": "PASS",
+    "detail": {
+      "syntheticCycles": 3,
+      "duplicateObservers": 0,
+      "resize": true,
+      "load": true,
+      "S18": true
+    }
+  },
+  {
+    "name": "F2_partial-observe",
+    "status": "PASS",
+    "detail": {
+      "oldNodeRestored": true,
+      "positionRestored": true,
+      "canonicalRestored": true,
+      "revision": 1,
+      "expectedRevision": 1,
+      "activeOldObservers": 1,
+      "oldLoadCallbacks": 1,
+      "oldErrorCallbacks": 1,
+      "candidateConnected": false,
+      "candidateLoad": 0,
+      "candidateError": 0,
+      "candidateObservers": 0,
+      "dialogOpen": true
+    }
+  },
+  {
+    "name": "F2_partial-error-listener",
+    "status": "PASS",
+    "detail": {
+      "oldNodeRestored": true,
+      "positionRestored": true,
+      "canonicalRestored": true,
+      "revision": 1,
+      "expectedRevision": 1,
+      "activeOldObservers": 1,
+      "oldLoadCallbacks": 1,
+      "oldErrorCallbacks": 1,
+      "candidateConnected": false,
+      "candidateLoad": 0,
+      "candidateError": 0,
+      "candidateObservers": 0,
+      "dialogOpen": true
+    }
+  },
+  {
+    "name": "F2_old-style",
+    "status": "PASS",
+    "detail": {
+      "oldNodeRestored": true,
+      "positionRestored": true,
+      "canonicalRestored": true,
+      "revision": 1,
+      "expectedRevision": 1,
+      "activeOldObservers": 1,
+      "oldLoadCallbacks": 1,
+      "oldErrorCallbacks": 1,
+      "candidateConnected": false,
+      "candidateLoad": 0,
+      "candidateError": 0,
+      "candidateObservers": 0,
+      "dialogOpen": true
+    }
+  },
+  {
+    "name": "F2_old-disconnect-after",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: 舊 observer ownership 必須恢復\n\n0 !== 1\n\n    at file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:24:545\n    at async probe (file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:8:82)\n    at async file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:12:123",
+    "detail": {
+      "oldNodeRestored": true,
+      "positionRestored": true,
+      "canonicalRestored": true,
+      "revision": 1,
+      "expectedRevision": 1,
+      "activeOldObservers": 0,
+      "oldLoadCallbacks": 1,
+      "oldErrorCallbacks": 1,
+      "candidateConnected": false,
+      "candidateLoad": 0,
+      "candidateError": 0,
+      "candidateObservers": 0,
+      "dialogOpen": true
+    }
+  },
+  {
+    "name": "F2_old-remove-load-after",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: 舊 load listener 必須恢復\n\n0 !== 1\n\n    at file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:24:606\n    at async probe (file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:8:82)\n    at async file:///private/tmp/pptskill-core-crop-review-2db6185/repair-probes.mjs:12:123",
+    "detail": {
+      "oldNodeRestored": true,
+      "positionRestored": true,
+      "canonicalRestored": true,
+      "revision": 1,
+      "expectedRevision": 1,
+      "activeOldObservers": 1,
+      "oldLoadCallbacks": 0,
+      "oldErrorCallbacks": 1,
+      "candidateConnected": false,
+      "candidateLoad": 0,
+      "candidateError": 0,
+      "candidateObservers": 0,
+      "dialogOpen": true
+    }
+  },
+  {
+    "name": "F3_reset_tail_rollback_then_resize_load_S18",
+    "status": "PASS",
+    "detail": {
+      "restored": true,
+      "resize": true,
+      "load": true,
+      "S18": true
+    }
+  },
+  {
+    "name": "F4_full_license_hash_render_export_reopen",
+    "status": "PASS",
+    "detail": {
+      "documents": 3,
+      "fullText": true,
+      "licenseSha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+    }
+  },
+  {
+    "name": "F5_mounted_preview_250x400",
+    "status": "PASS",
+    "detail": {
+      "target": [
+        250,
+        400
+      ],
+      "mountedPreview": [
+        106.25,
+        170
+      ],
+      "previewVisible": [
+        0.325,
+        0.15000000000000002,
+        0.575,
+        0.75
+      ],
+      "committedVisible": [
+        0.32499999999999996,
+        0.15,
+        0.575,
+        0.7499999999999999
+      ],
+      "stageResizeCallbacks": 20,
+      "wholeSpecSerializationsDuringResize": 0
+    }
+  },
+  {
+    "name": "F5_mounted_preview_500x200",
+    "status": "PASS",
+    "detail": {
+      "target": [
+        500,
+        200
+      ],
+      "mountedPreview": [
+        311,
+        124.4
+      ],
+      "previewVisible": [
+        0.2,
+        0.3,
+        0.7,
+        0.6
+      ],
+      "committedVisible": [
+        0.2,
+        0.3,
+        0.7,
+        0.6
+      ],
+      "stageResizeCallbacks": 20,
+      "wholeSpecSerializationsDuringResize": 0
+    }
+  },
+  {
+    "name": "adjacent_legacy_nonpersisted_and_export_cleanup",
+    "status": "PASS",
+    "detail": {
+      "legacyNoObserver": true,
+      "exportCanonical": true
+    }
+  }
+]

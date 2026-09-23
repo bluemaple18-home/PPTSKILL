@@ -1,0 +1,110 @@
+{
+  "classification": "existing browser evidence freshly read/hash-checked; no fresh browser run",
+  "receiptSha256": "7556089794a702ba5639bb91038a55b828954b76ebb0934979e72f832359936a",
+  "sourceHashMatches": true,
+  "sourceContainsFrozenRuntime": true,
+  "runs": [
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "status": "pass",
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1235,
+      "pixelToleranceRecomputed": true,
+      "sourceUnchanged": true,
+      "artifactCount": 40,
+      "artifactFailures": [],
+      "targetClosed": true,
+      "errors": {
+        "page": 0,
+        "network": 0,
+        "http": 0,
+        "remote": 0,
+        "console": 0
+      },
+      "previewFinal": [
+        {
+          "label": "preview-portrait-matches-final",
+          "maxDelta": 0.0000013235675614120535
+        },
+        {
+          "label": "preview-landscape-matches-final",
+          "maxDelta": 0.00002708659145778114
+        }
+      ],
+      "repairCases": [
+        {
+          "label": "synthetic persisted pagehide/pageshow",
+          "canonicalSame": true,
+          "styleSame": true
+        },
+        {
+          "label": "raw-observe",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true
+        },
+        {
+          "label": "reset-refresh",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true
+        }
+      ]
+    },
+    {
+      "viewport": [
+        1600,
+        900
+      ],
+      "status": "pass",
+      "records": 45,
+      "pixelCases": 24,
+      "pixelChecks": 1240,
+      "pixelToleranceRecomputed": true,
+      "sourceUnchanged": true,
+      "artifactCount": 40,
+      "artifactFailures": [],
+      "targetClosed": true,
+      "errors": {
+        "page": 0,
+        "network": 0,
+        "http": 0,
+        "remote": 0,
+        "console": 0
+      },
+      "previewFinal": [
+        {
+          "label": "preview-portrait-matches-final",
+          "maxDelta": 4.2354416093792757e-7
+        },
+        {
+          "label": "preview-landscape-matches-final",
+          "maxDelta": 0.00003068668505967764
+        }
+      ],
+      "repairCases": [
+        {
+          "label": "synthetic persisted pagehide/pageshow",
+          "canonicalSame": true,
+          "styleSame": true
+        },
+        {
+          "label": "raw-observe",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true
+        },
+        {
+          "label": "reset-refresh",
+          "canonicalSame": true,
+          "nodeSame": true,
+          "styleSame": true
+        }
+      ]
+    }
+  ]
+}

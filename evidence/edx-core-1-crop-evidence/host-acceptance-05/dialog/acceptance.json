@@ -1,0 +1,68 @@
+{
+  "scope": "Crop Evidence-classification dialog visual supplement only; no PGQ rerun",
+  "status": "pass",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "check": {
+        "open": true,
+        "rect": {
+          "x": 300,
+          "y": 16,
+          "width": 680,
+          "height": 688
+        },
+        "horizontalOverflow": false,
+        "controls": 21,
+        "focusInside": true,
+        "confirmDisabled": true
+      },
+      "artifacts": [
+        {
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1280-dialog-top.png",
+          "bytes": 77162,
+          "sha256": "b6bdae200cc61d78819a4c1cf9b3abb160d121033dd82d8194832eb700e5c3a1"
+        },
+        {
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1280-dialog-actions.png",
+          "bytes": 77363,
+          "sha256": "8d2dc10a077db941d9a139632d0b0c2ab237bde1aca9a6d87d6e80109308c5f3"
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "check": {
+        "open": true,
+        "rect": {
+          "x": 460,
+          "y": 94.109375,
+          "width": 680,
+          "height": 711.78125
+        },
+        "horizontalOverflow": false,
+        "controls": 21,
+        "focusInside": true,
+        "confirmDisabled": true
+      },
+      "artifacts": [
+        {
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1600-dialog-top.png",
+          "bytes": 93105,
+          "sha256": "b640d7fb06ea210c3fc077087f89957b244a8d09df29ecc0b1406e74add92aa4"
+        },
+        {
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1600-dialog-actions.png",
+          "bytes": 93105,
+          "sha256": "b640d7fb06ea210c3fc077087f89957b244a8d09df29ecc0b1406e74add92aa4"
+        }
+      ],
+      "status": "pass"
+    }
+  ],
+  "errors": [],
+  "targetClosed": true
+}

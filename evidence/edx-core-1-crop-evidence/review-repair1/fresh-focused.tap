@@ -1,0 +1,172 @@
+TAP version 13
+# Subtest: Crop fixture PNG 真非方六色／軸／AXIS bitmap／CRC與scanlines
+ok 1 - Crop fixture PNG 真非方六色／軸／AXIS bitmap／CRC與scanlines
+  ---
+  duration_ms: 14.972583
+  type: 'test'
+  ...
+# Subtest: Crop projection math 横／直／兩frame比例、contain與cover；不冒充像素
+ok 2 - Crop projection math 横／直／兩frame比例、contain與cover；不冒充像素
+  ---
+  duration_ms: 0.3705
+  type: 'test'
+  ...
+# Subtest: Crop harness fixture render/reparse與exact bounded branch
+ok 3 - Crop harness fixture render/reparse與exact bounded branch
+  ---
+  duration_ms: 16.948584
+  type: 'test'
+  ...
+# Subtest: Crop UI keyboard/range草稿不提交；勾選confirm一次revision、原src不變
+ok 4 - Crop UI keyboard/range草稿不提交；勾選confirm一次revision、原src不變
+  ---
+  duration_ms: 59.13525
+  type: 'test'
+  ...
+# Subtest: Crop UI Evidence預設完整保護、外框排除拒絕、確認後reset與S7拒絕cover
+ok 5 - Crop UI Evidence預設完整保護、外框排除拒絕、確認後reset與S7拒絕cover
+  ---
+  duration_ms: 52.556958
+  type: 'test'
+  ...
+# Subtest: Crop UI cancel/Escape/切頁/selection失效與busy chooser互斥
+ok 6 - Crop UI cancel/Escape/切頁/selection失效與busy chooser互斥
+  ---
+  duration_ms: 48.546917
+  type: 'test'
+  ...
+# Subtest: Crop UI async decode source換掉／S18 delete／reject不得晚到提交
+ok 7 - Crop UI async decode source換掉／S18 delete／reject不得晚到提交
+  ---
+  duration_ms: 77.133459
+  type: 'test'
+  ...
+# Subtest: Crop API style mutation前後throw回滾canonical/DOM/revision，S18仍能刪active crop
+ok 8 - Crop API style mutation前後throw回滾canonical/DOM/revision，S18仍能刪active crop
+  ---
+  duration_ms: 49.297041
+  type: 'test'
+  ...
+# Subtest: Crop 20MiB UI range preview不hash來源／不序列化DeckSpec，confirm才hash
+ok 9 - Crop 20MiB UI range preview不hash來源／不序列化DeckSpec，confirm才hash
+  ---
+  duration_ms: 296.5
+  type: 'test'
+  ...
+# Subtest: Crop duplicate保留canonical但重建projection ownership，刪頁清理load callback
+ok 10 - Crop duplicate保留canonical但重建projection ownership，刪頁清理load callback
+  ---
+  duration_ms: 47.323958
+  type: 'test'
+  ...
+# Subtest: Repair1 F5 decorative cover預覽沿target aspect，portrait/landscape可見區域等同commit
+ok 11 - Repair1 F5 decorative cover預覽沿target aspect，portrait/landscape可見區域等同commit
+  ---
+  duration_ms: 78.57
+  type: 'test'
+  ...
+# Subtest: Crop Node 原圖、Evidence、pending、reset、reparse及cover安全
+ok 12 - Crop Node 原圖、Evidence、pending、reset、reparse及cover安全
+  ---
+  duration_ms: 7.396125
+  type: 'test'
+  ...
+# Subtest: Crop Node exact payload／wrong target／protected 原子拒絕
+ok 13 - Crop Node exact payload／wrong target／protected 原子拒絕
+  ---
+  duration_ms: 1.524833
+  type: 'test'
+  ...
+# Subtest: Crop Node raw tuple變更pending／decorative fit不失效
+ok 14 - Crop Node raw tuple變更pending／decorative fit不失效
+  ---
+  duration_ms: 1.255917
+  type: 'test'
+  ...
+# Subtest: Crop portable 原圖、Evidence、pending、reset、reparse及cover安全
+ok 15 - Crop portable 原圖、Evidence、pending、reset、reparse及cover安全
+  ---
+  duration_ms: 35.520042
+  type: 'test'
+  ...
+# Subtest: Crop portable exact payload／wrong target／protected 原子拒絕
+ok 16 - Crop portable exact payload／wrong target／protected 原子拒絕
+  ---
+  duration_ms: 7.535833
+  type: 'test'
+  ...
+# Subtest: Crop portable raw tuple變更pending／decorative fit不失效
+ok 17 - Crop portable raw tuple變更pending／decorative fit不失效
+  ---
+  duration_ms: 10.17125
+  type: 'test'
+  ...
+# Subtest: Crop SHA256 UTF8 vectors／20MiB／portable parity與metadata
+ok 18 - Crop SHA256 UTF8 vectors／20MiB／portable parity與metadata
+  ---
+  duration_ms: 162.13625
+  type: 'test'
+  ...
+# Subtest: Crop cache／ResizeObserver geometry無hash，projection throw不留candidate
+ok 19 - Crop cache／ResizeObserver geometry無hash，projection throw不留candidate
+  ---
+  duration_ms: 8.991583
+  type: 'test'
+  ...
+# Subtest: Crop registry／正常render與export保存原src，無chrome並可reopen
+ok 20 - Crop registry／正常render與export保存原src，無chrome並可reopen
+  ---
+  duration_ms: 20.248083
+  type: 'test'
+  ...
+# Subtest: Repair1 F1 synthetic persisted lifecycle恢復canonical投影、load/resize且S18可刪
+ok 21 - Repair1 F1 synthetic persisted lifecycle恢復canonical投影、load/resize且S18可刪
+  ---
+  duration_ms: 11.796292
+  type: 'test'
+  ...
+# Subtest: Repair1 F2 raw patch observe throw回復node位置、style、selection/dialog及舊ownership
+ok 22 - Repair1 F2 raw patch observe throw回復node位置、style、selection/dialog及舊ownership
+  ---
+  duration_ms: 38.840375
+  type: 'test'
+  ...
+# Subtest: Repair1 F3 reset refresh throw回復observer/load ownership而非僅CSS
+ok 23 - Repair1 F3 reset refresh throw回復observer/load ownership而非僅CSS
+  ---
+  duration_ms: 9.888875
+  type: 'test'
+  ...
+# Subtest: Repair1 F4 standalone render/export/reopen含完整noble MIT且hash符合raw metadata
+ok 24 - Repair1 F4 standalone render/export/reopen含完整noble MIT且hash符合raw metadata
+  ---
+  duration_ms: 19.196708
+  type: 'test'
+  ...
+# Subtest: Repair1 sync半建observe/listener失敗清理、既有空crop snapshot恢復與CSS priority
+ok 25 - Repair1 sync半建observe/listener失敗清理、既有空crop snapshot恢復與CSS priority
+  ---
+  duration_ms: 12.310333
+  type: 'test'
+  ...
+# Subtest: Repair1 F2 raw patch render style throw清candidate且舊node保留priority及load
+ok 26 - Repair1 F2 raw patch render style throw清candidate且舊node保留priority及load
+  ---
+  duration_ms: 7.316125
+  type: 'test'
+  ...
+# Subtest: Repair1 F2 舊projection teardown style throw也回復DOM及已disconnect ownership
+ok 27 - Repair1 F2 舊projection teardown style throw也回復DOM及已disconnect ownership
+  ---
+  duration_ms: 10.013375
+  type: 'test'
+  ...
+1..27
+# tests 27
+# suites 0
+# pass 27
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1437.77475

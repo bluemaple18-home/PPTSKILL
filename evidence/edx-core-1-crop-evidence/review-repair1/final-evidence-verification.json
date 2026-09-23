@@ -1,0 +1,358 @@
+{
+  "product": "2db6185d13a6713700d0186758b1261ff23b9d85",
+  "decision": "GO with residual",
+  "reconciliation": "PASS, raw host05 NOT_PASS/exit1 retained; stale summary fields verified",
+  "independentTextFixtures": [
+    {
+      "name": "host05 actual fields",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "old fields false negative",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "readinessExit/MISSING",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "readinessExit/1",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "readinessExit/False",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "pgqFailedExit/MISSING",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "pgqFailedExit/1",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "pgqFailedExit/False",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "dialogVisualExit/MISSING",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "dialogVisualExit/1",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "dialogVisualExit/False",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "browserCloseExit/MISSING",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "browserCloseExit/1",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "browserCloseExit/False",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "supervisorExit/MISSING",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "supervisorExit/1",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "supervisorExit/False",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "ownedRootAbsent/false",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "isolationMarkerAbsent/false",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "diagnosticVerified/false",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "error/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "browserCloseError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "cleanupError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "cleanupVerificationError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "integrityError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "diagnosticError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "receiptWriteError/present",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "before/sources/missing",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "before/protected/missing",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "before/zip/bad",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "after/sources/missing",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "after/protected/missing",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "after/zip/bad",
+      "expected": false,
+      "actual": false
+    },
+    {
+      "name": "host04 remains rejected",
+      "expected": false,
+      "actual": false
+    }
+  ],
+  "rawHost04Status": "NOT_PASS",
+  "rawHost05Status": "NOT_PASS",
+  "rawHost05ExitByControllerPredicate": 1,
+  "correctActualStepExits": {
+    "readinessExit": 0,
+    "pgqFailedExit": 0,
+    "dialogVisualExit": 0,
+    "browserCloseExit": 0,
+    "supervisorExit": 0
+  },
+  "host04RejectedByIndependentPredicate": [
+    "exit:pgqFailedExit",
+    "exit:dialogVisualExit",
+    "exit:browserCloseExit",
+    "exit:supervisorExit",
+    "flag:diagnosticVerified",
+    "error:error",
+    "error:diagnosticError"
+  ],
+  "hashes": {
+    "sources": {
+      "package.json": true,
+      "pnpm-lock.yaml": true,
+      "runtime/crop-hash-vendor.js": true,
+      "runtime/deck-editor.js": true,
+      "runtime/deck-spec.js": true,
+      "runtime/full-deck-renderer.js": true,
+      "runtime/image-crop.js": true,
+      "runtime/vendor/crop-hash-2.0.1.iife.js": true,
+      "runtime/vendor/crop-hash-LICENSE.md": true,
+      "runtime/vendor/crop-hash-vendor.json": true,
+      "schemas/deck-spec.schema.json": true,
+      "tests/edx-core-crop-fixture.test.mjs": true,
+      "tests/edx-core-crop-ui.test.mjs": true,
+      "tests/edx-core-crop.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/build-crop-hash-vendor.mjs": true,
+      "tools/edx-core-crop-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    }
+  },
+  "zip": {
+    "bytes": 2316286,
+    "sha256": "82eb4f571ba4283572bafa404dda6888d90dae292ccb06ac536eafe3fcba3880"
+  },
+  "ownedRootsAbsent": true,
+  "isolationMarkerAbsent": true,
+  "scanner": {
+    "sha256": "3d200b37bde357eb86000ba57c36ab0e115ea119f82bc8bfcba90882876a38b6",
+    "host05Scans": 136,
+    "host05Errors": 0,
+    "host04Scans": 608,
+    "host04Errors": [
+      {
+        "type": "FileNotFoundError",
+        "errno": 2,
+        "strerror": "No such file or directory",
+        "filename": ".com.google.Chrome.Local State.CGAlLV",
+        "filename2": null,
+        "message": "[Errno 2] No such file or directory: '.com.google.Chrome.Local State.CGAlLV'",
+        "function": "visit",
+        "line": 1097,
+        "source": "info = entry.stat(follow_symlinks=False)",
+        "relativeDirectory": [
+          "profile"
+        ],
+        "entryName": ".com.google.Chrome.Local State.CGAlLV"
+      }
+    ]
+  },
+  "aiCoreHead": "81c80ffa349c58b0bb5006f7430ca1624b337774",
+  "pgq": {
+    "expectedNamedCases": [
+      "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+      "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+      "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+      "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+      "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+      "sample content 或 composition 只使該頁失效",
+      "style 或 contract version 變更使全部 sample 失效",
+      "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+      "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+      "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+      "stale Owner identity 與 caller forged evidence fail loud",
+      "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+      "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+      "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+      "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+      "每張 canonical slide 的 required title 必須有 painted visibility"
+    ],
+    "host04PassNames": [
+      "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+      "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+      "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+      "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+      "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+      "sample content 或 composition 只使該頁失效",
+      "style 或 contract version 變更使全部 sample 失效",
+      "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+      "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+      "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+      "stale Owner identity 與 caller forged evidence fail loud",
+      "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+      "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+      "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+      "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3"
+    ],
+    "host04FailedNames": [
+      "每張 canonical slide 的 required title 必須有 painted visibility"
+    ],
+    "host05SolePassName": [
+      "每張 canonical slide 的 required title 必須有 painted visibility"
+    ],
+    "uniquePassCount": 16,
+    "composition": "15+1; not single-run 16"
+  },
+  "visual": {
+    "viewports": 2,
+    "artifacts": [
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1280-dialog-top.png",
+        "sha256": "b6bdae200cc61d78819a4c1cf9b3abb160d121033dd82d8194832eb700e5c3a1",
+        "dimensions": [
+          1280,
+          720
+        ]
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1280-dialog-actions.png",
+        "sha256": "8d2dc10a077db941d9a139632d0b0c2ab237bde1aca9a6d87d6e80109308c5f3",
+        "dimensions": [
+          1280,
+          720
+        ]
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1600-dialog-top.png",
+        "sha256": "b640d7fb06ea210c3fc077087f89957b244a8d09df29ecc0b1406e74add92aa4",
+        "dimensions": [
+          1600,
+          900
+        ]
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-05/dialog/1600-dialog-actions.png",
+        "sha256": "b640d7fb06ea210c3fc077087f89957b244a8d09df29ecc0b1406e74add92aa4",
+        "dimensions": [
+          1600,
+          900
+        ]
+      }
+    ],
+    "reviewerViewedScreenshots": true
+  },
+  "evidenceHashes": {
+    "host-controller-05.py": "4a33b056936bb505d4b68eb3ed263dd562d834aa3a58f5c1f53886da9e8918ee",
+    "host05-offline-verification.py": "d4778ccceb98b34cd1fbb96da59c4f0edd2f7e89c0896e8a098e92883fcd26be",
+    "host05-offline-verification.json": "34efc36037bbeeb8006a14a25708e7dc220faf09a4504bcf8158d04099a1bcbf",
+    "host-acceptance-04/controller-receipt.json": "b94dde0318851d3abb51330808ec45ca77769ce86934d2ce90ae8035db3a6fd8",
+    "host-acceptance-05/controller-receipt.json": "efe5414e2be50a8e1249bbc3d29a01cb072259970cce617c1dd7e346a3f3e144",
+    "host-acceptance-04/pgq.log": "9a7f4d3f759694516bf3c9bc5adedefc23e62bffe6d77bb46924879b0e0b0e4d",
+    "host-acceptance-05/pgqFailed.log": "c02a6d27085e33fafe9c4884544a7d86744457361b7829b73850e0d088a74bef",
+    "host-acceptance-04/resource-observation.json": "9109e99c1f1870adcadfe01156eac626f17888e0d41a36b323ca8b5500523c3a",
+    "host-acceptance-05/resource-observation.json": "6b631fdf2bb3817614f14e0bf01bbbb4736d69f7e117bd9eebf19162abfcc5bb",
+    "host-acceptance-05/dialog/acceptance.json": "8a6eb409b7ea9a4951f0f28247ea2a2b39d0fdc923341477b894b2d6f5b2ec45"
+  },
+  "freshBrowserExecution": false,
+  "priorProductProbes": {
+    "pass": 9,
+    "fail": 2,
+    "residual": "F2 OPEN P2"
+  },
+  "attributionCorrection": "Mainline relayed standing Owner AGENTS + model-role-routing policy; no new Owner Repair2 cost approval this round"
+}

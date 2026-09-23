@@ -1,0 +1,18 @@
+{
+  "checks": {
+    "runtime/crop-hash-vendor.js": true,
+    "runtime/deck-editor.js": true,
+    "runtime/deck-spec.js": true,
+    "runtime/full-deck-renderer.js": true,
+    "runtime/image-crop.js": true,
+    "runtime/vendor/crop-hash-2.0.1.iife.js": true,
+    "runtime/vendor/crop-hash-LICENSE.md": true,
+    "runtime/vendor/crop-hash-vendor.json": true,
+    "schemas/deck-spec.schema.json": true
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2316286,
+    "sha256": "82eb4f571ba4283572bafa404dda6888d90dae292ccb06ac536eafe3fcba3880"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "sources": {
+    "package.json": true,
+    "pnpm-lock.yaml": true,
+    "runtime/crop-hash-vendor.js": true,
+    "runtime/deck-editor.js": true,
+    "runtime/deck-spec.js": true,
+    "runtime/full-deck-renderer.js": true,
+    "runtime/image-crop.js": true,
+    "runtime/vendor/crop-hash-2.0.1.iife.js": true,
+    "runtime/vendor/crop-hash-LICENSE.md": true,
+    "runtime/vendor/crop-hash-vendor.json": true,
+    "schemas/deck-spec.schema.json": true,
+    "tests/edx-core-crop-fixture.test.mjs": true,
+    "tests/edx-core-crop-ui.test.mjs": true,
+    "tests/edx-core-crop.test.mjs": true,
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+    "tools/build-crop-hash-vendor.mjs": true,
+    "tools/edx-core-crop-browser-cases.mjs": true,
+    "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+    "tools/edx-wp1-s4-perf-mounted.mjs": true
+  },
+  "protected": {
+    ".DS_Store": true,
+    "CLAUDE.md": true,
+    "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+    "HANDOFF-20260914-PGQ-WP1.md": true
+  },
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2316286,
+    "sha256": "82eb4f571ba4283572bafa404dda6888d90dae292ccb06ac536eafe3fcba3880"
+  },
+  "sourceMatchesCandidate": true,
+  "deliveryDrift": false
+}

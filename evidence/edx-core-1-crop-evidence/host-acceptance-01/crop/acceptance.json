@@ -1,0 +1,60 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/source.html",
+  "sourceSha256": "9f49ec2c7e276bb5c883ccdbcbbc466661a1fc6ed774b73e9499ba07634a8cd5",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/1280-legacy-selected.html",
+          "bytes": 593353,
+          "sha256": "0a5d1115084c678e4ae3882c4fbd37c63a241987ae6c8bfbf2a8bd8c5ab14d04"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/1280-preview-export.html",
+          "bytes": 593640,
+          "sha256": "6c0dba7a2bdc4ca56b8a18b7cf146d3ac92a57ea7ffbf3e08620cd367b035a2e"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/1280-cancel.html",
+          "bytes": 593640,
+          "sha256": "7fd590f79f511a763fc6eda5cce5e3cb6562604704b5279b10c22ed46fed6dd8"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/1280-noop.html",
+          "bytes": 593640,
+          "sha256": "7fd590f79f511a763fc6eda5cce5e3cb6562604704b5279b10c22ed46fed6dd8"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-1-crop-evidence/host-acceptance-01/crop/1280-invalid.html",
+          "bytes": 593640,
+          "sha256": "7fd590f79f511a763fc6eda5cce5e3cb6562604704b5279b10c22ed46fed6dd8"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /未套用/. Input:\n\n'拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:186:14",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /未套用/. Input:\n\n'拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:186:14"
+}

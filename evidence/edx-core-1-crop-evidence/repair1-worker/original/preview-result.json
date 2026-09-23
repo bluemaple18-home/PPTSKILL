@@ -1,0 +1,57 @@
+{
+  "name": "F5_decorative_cover_preview_uses_dialog_aspect_instead_of_target",
+  "natural": [
+    240,
+    160
+  ],
+  "crop": {
+    "x": 0.2,
+    "y": 0.15,
+    "width": 0.5,
+    "height": 0.6
+  },
+  "preview": {
+    "frame": [
+      330,
+      170
+    ],
+    "projection": {
+      "width": 660,
+      "height": 440,
+      "left": -132,
+      "top": -113,
+      "clip": "inset(15% 30% 25% 20%)"
+    },
+    "visible": {
+      "x": 0.2,
+      "y": 0.25681818181818183,
+      "right": 0.7,
+      "bottom": 0.6431818181818182
+    }
+  },
+  "final": {
+    "frame": [
+      250,
+      400
+    ],
+    "projection": {
+      "width": 1000.0000000000001,
+      "height": 666.6666666666667,
+      "left": -325,
+      "top": -100,
+      "clip": "inset(15% 30% 25% 20%)"
+    },
+    "visible": {
+      "x": 0.32499999999999996,
+      "y": 0.15,
+      "right": 0.575,
+      "bottom": 0.7499999999999999
+    }
+  },
+  "point": {
+    "x": 0.22,
+    "y": 0.45
+  },
+  "pointVisibleInPreview": true,
+  "pointVisibleInFinal": false
+}
