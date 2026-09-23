@@ -1,0 +1,1283 @@
+{
+  "status": "PASS",
+  "productSha": "09c7d29253a5235b12ac58b5fef3f13cd5c70acb",
+  "sources": 4,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2295103,
+    "sha256": "96daa683bb24ffe300a14c7a2cc63ec99dc27ec9d80ad0c4e26b050eff534eb7"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 712,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 111,
+      "groups": {
+        "base": 10,
+        "wp2s10": 13,
+        "wp2s11": 36,
+        "wp2s12": 52
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s12Records": [
+        {
+          "wp2s12": "nested-image",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "same-file",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "empty-slide",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "insert-empty",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "cross-slide",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "body-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "toolbar-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "document-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-4",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "deck-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-5",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "offline-remount",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "gesture-cancel snap=false",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "gesture-cancel snap=true",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "captured-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "busy",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "play",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "edit",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "destroy",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "text",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "null",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "defaultPrevented",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "isComposing",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "empty-file-marker",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "multi",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "external",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "input-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "input-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textarea-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textarea-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "select-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "select-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textbox-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textbox-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "editable-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "editable-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "existing-IME",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "optimizer-reject",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "mixed-file-text-no-ID-leak",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 287.98828125,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "insert-chooser",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "replace-chooser",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "驗收界線",
+          "isTrusted": false,
+          "nativeOSClipboard": false,
+          "cmdCtrlV": false,
+          "optimizer": "real decode 3x2",
+          "priorRoutes": "獨立 S10 chooser 與 S11 drop records"
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 111,
+      "groups": {
+        "base": 10,
+        "wp2s10": 13,
+        "wp2s11": 36,
+        "wp2s12": 52
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s12Records": [
+        {
+          "wp2s12": "nested-image",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "same-file",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "empty-slide",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "insert-empty",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "cross-slide",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "body-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-2",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "toolbar-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "document-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-4",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "deck-current",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "asset-other",
+          "id": "inserted-image-5",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "offline-remount",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-3",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "gesture-cancel snap=false",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "gesture-cancel snap=true",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "captured-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "busy",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "play",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "edit",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "destroy",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "text",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "null",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "defaultPrevented",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "isComposing",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "empty-file-marker",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "multi",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "external",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "input-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "input-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textarea-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textarea-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "select-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "select-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textbox-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "textbox-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "editable-active",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "editable-target",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "existing-IME",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": false,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "optimizer-reject",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "mixed-file-text-no-ID-leak",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 1,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "decode-defaults-oldroots-selection",
+          "page": "portable",
+          "id": "inserted-image-1",
+          "actual": {
+            "natural": [
+              3,
+              2
+            ],
+            "fit": "contain",
+            "alt": "paste-3x2.png",
+            "box": {
+              "x": 560,
+              "y": 288,
+              "width": 480,
+              "height": 320
+            }
+          }
+        },
+        {
+          "wp2s12": "insert-chooser",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "replace-chooser",
+          "route": "synthetic ClipboardEvent + DataTransfer + File",
+          "isTrusted": false,
+          "prevented": true,
+          "optimizerCalls": 0,
+          "gesturing": false
+        },
+        {
+          "wp2s12": "驗收界線",
+          "isTrusted": false,
+          "nativeOSClipboard": false,
+          "cmdCtrlV": false,
+          "optimizer": "real decode 3x2",
+          "priorRoutes": "獨立 S10 chooser 與 S11 drop records"
+        }
+      ]
+    }
+  ],
+  "artifactHashesMatched": 38,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1280-image-drop.png",
+      "sha256": "8f3db49353dc7c8afb02825aad8f09f9ccc6a1498d3dc52c1b5723c4cfcceedf",
+      "bytes": 48441,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1280-image-paste-new-image.png",
+      "sha256": "b34b4888b8749103812d1385455b3227de0c0abe5bba1e4873c4feefc483e75c",
+      "bytes": 43720,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1280-image-paste-toolbar.png",
+      "sha256": "7d06552d68be4544df0f74be397ba3eb41cdc795b2225b49c225b7ad533b7ae0",
+      "bytes": 51453,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1280-insert-image-ui.png",
+      "sha256": "9ba1a8742c21809ed5e88adb9dadc4ed29632aa9461bce28704533bb59a7a32f",
+      "bytes": 59793,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1280-selected.png",
+      "sha256": "681856c50902e0b3cb8bde5b5ec12a5f25cf752e35fb3f4fcdf3c8e2e4ff22e1",
+      "bytes": 46895,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1600-image-drop.png",
+      "sha256": "2f378b92e0016d206511b4c72dc7df53c91f5af88f7c524e3aae366b1503a8a8",
+      "bytes": 59502,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1600-image-paste-new-image.png",
+      "sha256": "111610989cc63f506a9a689fa7b1acc2065a30c037489686813c771265a31434",
+      "bytes": 52779,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1600-image-paste-toolbar.png",
+      "sha256": "20390b3c86890983dc10e0aa27c1a462b754a3535502b660f9325957bfb3a2ed",
+      "bytes": 62903,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1600-insert-image-ui.png",
+      "sha256": "62a978799148a0051f2077ab9a80cb05556f73deaea0dee542fb1e7f231c92b4",
+      "bytes": 72406,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s12/host-acceptance/image-paste/1600-selected.png",
+      "sha256": "1a26c7faf5c6717d14a7721b90168c911f5c0d4543aaaf695bdb659a04546765",
+      "bytes": 56899,
+      "dimensions": [
+        1600,
+        900
+      ]
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "limitations": [
+    "S12是synthetic ClipboardEvent +真File/optimizer adapter驗收，非原生OS clipboard或Cmd/Ctrl+V",
+    "未讀寫Owner系統clipboard，未用navigator.clipboard或permission grant",
+    "S11 trusted drop與synthetic gesture分開；S10 chooser非人工OS dialog",
+    "固定插入geometry非自動避障；S8歷史I/O根因未知",
+    "Independent Review pending，未merge/push/deploy S12"
+  ]
+}

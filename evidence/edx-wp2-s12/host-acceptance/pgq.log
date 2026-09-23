@@ -1,0 +1,24 @@
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (23323.633625ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (5.008667ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (1.059917ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (1.951708ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.211208ms)
+✔ sample content 或 composition 只使該頁失效 (1.089ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.861375ms)
+✔ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (169318.25ms)
+✔ trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在 (3.24975ms)
+✔ Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner (0.252416ms)
+✔ stale Owner identity 與 caller forged evidence fail loud (0.799292ms)
+✔ Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs (0.390709ms)
+✔ accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair (0.33075ms)
+✔ 單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget (81687.2465ms)
+✔ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (157969.002125ms)
+✔ 每張 canonical slide 的 required title 必須有 painted visibility (137024.081209ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 705335.218791

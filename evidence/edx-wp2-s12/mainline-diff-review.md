@@ -1,0 +1,7 @@
+# S12 Mainline diff 核對
+
+Worker STOP後實讀四個交付檔，source4與worker hash MATCH；不是Independent Review。
+Runtime僅新增pasteInputOwned／pasteSlide／paste listener。mode/defaultPrevented/composingText/isComposing與target/active輸入ownership先於FileList讀取；contenteditable false停止繼承，true/plaintext-only/空值屬editable。合法slide採事件identity，body/document/deck/toolbar沿currentId。insertionSlide仍驗唯一DOM/canonical target；textHTML/URI無File不攔截、不getData。
+FileList唯一File來源，unsupported沿真optimizer；insertionBusy/chooser門檻共用，接受後cancel preview，再沿insertionTarget/options→S9/S8；無新ID counter/schema/asset policy。finally只釋放insertionBusy，S6較晚chooser保留。
+Worker新fixture只補實際nav父容器，mounted helper/舊tests未改；66個S12具名case與236scoped log逐名一致。RED59的25fail與GREEN57/59的2個fixture問題保留；最後66不是59+66累加。
+Browser只準備未執行：S10/S11既有routing不改語意，新flag串接S12；ClipboardEvent/DataTransfer/File均synthetic明標，optimizer仍真decode；不碰OSclipboard。需要正式host才能宣稱DOM/portable/cleanup完成。

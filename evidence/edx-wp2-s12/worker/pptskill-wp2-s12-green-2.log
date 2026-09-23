@@ -1,0 +1,364 @@
+TAP version 13
+# Subtest: S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+ok 1 - S12 public paste：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection
+  ---
+  duration_ms: 31.155958
+  type: 'test'
+  ...
+# Subtest: S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+ok 2 - S12 cross-slide 無圖頁採事件 target，首個空缺 ID
+  ---
+  duration_ms: 8.975541
+  type: 'test'
+  ...
+# Subtest: S12 text/plain 不攔截、不讀內容／URL fallback
+ok 3 - S12 text/plain 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 7.095916
+  type: 'test'
+  ...
+# Subtest: S12 text/html 不攔截、不讀內容／URL fallback
+ok 4 - S12 text/html 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 6.225125
+  type: 'test'
+  ...
+# Subtest: S12 text/uri-list 不攔截、不讀內容／URL fallback
+ok 5 - S12 text/uri-list 不攔截、不讀內容／URL fallback
+  ---
+  duration_ms: 7.012125
+  type: 'test'
+  ...
+# Subtest: S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+ok 6 - S12 items.kind=file 可辨識；detached／無 transfer 不攔截
+  ---
+  duration_ms: 8.674875
+  type: 'test'
+  ...
+# Subtest: S12 0 files 拒絕且 status 提示
+ok 7 - S12 0 files 拒絕且 status 提示
+  ---
+  duration_ms: 6.52825
+  type: 'test'
+  ...
+# Subtest: S12 2 files 拒絕且 status 提示
+ok 8 - S12 2 files 拒絕且 status 提示
+  ---
+  duration_ms: 6.591209
+  type: 'test'
+  ...
+# Subtest: S12 insert chooser 保留 pending/input 且 paste 不提交
+ok 9 - S12 insert chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 9.772209
+  type: 'test'
+  ...
+# Subtest: S12 replace chooser 保留 pending/input 且 paste 不提交
+ok 10 - S12 replace chooser 保留 pending/input 且 paste 不提交
+  ---
+  duration_ms: 8.100959
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=false
+ok 11 - S12 active gesture 取消不 commit，snap=false
+  ---
+  duration_ms: 9.765625
+  type: 'test'
+  ...
+# Subtest: S12 active gesture 取消不 commit，snap=true
+ok 12 - S12 active gesture 取消不 commit，snap=true
+  ---
+  duration_ms: 10.267333
+  type: 'test'
+  ...
+# Subtest: S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+ok 13 - S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser
+  ---
+  duration_ms: 20.259042
+  type: 'test'
+  ...
+# Subtest: S12 async removed 原子拒絕、零 partial／retry
+ok 14 - S12 async removed 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 7.411791
+  type: 'test'
+  ...
+# Subtest: S12 async collision 原子拒絕、零 partial／retry
+ok 15 - S12 async collision 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 7.054875
+  type: 'test'
+  ...
+# Subtest: S12 async reject 原子拒絕、零 partial／retry
+ok 16 - S12 async reject 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 9.665667
+  type: 'test'
+  ...
+# Subtest: S12 async invalid 原子拒絕、零 partial／retry
+ok 17 - S12 async invalid 原子拒絕、零 partial／retry
+  ---
+  duration_ms: 9.351333
+  type: 'test'
+  ...
+# Subtest: S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+ok 18 - S12 export canonical／remount 恢復 listener，無 transient 或重複插入
+  ---
+  duration_ms: 16.51175
+  type: 'test'
+  ...
+# Subtest: S12 body 採 currentId
+ok 19 - S12 body 採 currentId
+  ---
+  duration_ms: 9.656209
+  type: 'test'
+  ...
+# Subtest: S12 document 採 currentId
+ok 20 - S12 document 採 currentId
+  ---
+  duration_ms: 9.633125
+  type: 'test'
+  ...
+# Subtest: S12 deck 採 currentId
+ok 21 - S12 deck 採 currentId
+  ---
+  duration_ms: 9.115333
+  type: 'test'
+  ...
+# Subtest: S12 toolbar 採 currentId
+ok 22 - S12 toolbar 採 currentId
+  ---
+  duration_ms: 9.57675
+  type: 'test'
+  ...
+# Subtest: S12 play 不接管且不取消 gesture
+ok 23 - S12 play 不接管且不取消 gesture
+  ---
+  duration_ms: 7.151542
+  type: 'test'
+  ...
+# Subtest: S12 edit 不接管且不取消 gesture
+ok 24 - S12 edit 不接管且不取消 gesture
+  ---
+  duration_ms: 7.457084
+  type: 'test'
+  ...
+# Subtest: S12 destroy 不接管且不取消 gesture
+ok 25 - S12 destroy 不接管且不取消 gesture
+  ---
+  duration_ms: 7.227958
+  type: 'test'
+  ...
+# Subtest: S12 defaultPrevented 不接管且不取消 gesture
+ok 26 - S12 defaultPrevented 不接管且不取消 gesture
+  ---
+  duration_ms: 6.019542
+  type: 'test'
+  ...
+# Subtest: S12 isComposing 不接管且不取消 gesture
+ok 27 - S12 isComposing 不接管且不取消 gesture
+  ---
+  duration_ms: 5.9105
+  type: 'test'
+  ...
+# Subtest: S12 composingText 不接管且不取消 gesture
+ok 28 - S12 composingText 不接管且不取消 gesture
+  ---
+  duration_ms: 7.402917
+  type: 'test'
+  ...
+# Subtest: S12 external 不接管且不取消 gesture
+ok 29 - S12 external 不接管且不取消 gesture
+  ---
+  duration_ms: 6.861666
+  type: 'test'
+  ...
+# Subtest: S12 detached 不接管且不取消 gesture
+ok 30 - S12 detached 不接管且不取消 gesture
+  ---
+  duration_ms: 6.26925
+  type: 'test'
+  ...
+# Subtest: S12 other-deck 不接管且不取消 gesture
+ok 31 - S12 other-deck 不接管且不取消 gesture
+  ---
+  duration_ms: 8.270583
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-dom 不接管且不取消 gesture
+ok 32 - S12 duplicate-dom 不接管且不取消 gesture
+  ---
+  duration_ms: 7.090042
+  type: 'test'
+  ...
+# Subtest: S12 duplicate-spec 不接管且不取消 gesture
+ok 33 - S12 duplicate-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 6.032959
+  type: 'test'
+  ...
+# Subtest: S12 missing-id 不接管且不取消 gesture
+ok 34 - S12 missing-id 不接管且不取消 gesture
+  ---
+  duration_ms: 6.658125
+  type: 'test'
+  ...
+# Subtest: S12 missing-spec 不接管且不取消 gesture
+ok 35 - S12 missing-spec 不接管且不取消 gesture
+  ---
+  duration_ms: 5.723917
+  type: 'test'
+  ...
+# Subtest: S12 null 不接管且不取消 gesture
+ok 36 - S12 null 不接管且不取消 gesture
+  ---
+  duration_ms: 5.99775
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=false
+ok 37 - S12 ownership input active=false
+  ---
+  duration_ms: 6.657958
+  type: 'test'
+  ...
+# Subtest: S12 ownership input active=true
+ok 38 - S12 ownership input active=true
+  ---
+  duration_ms: 5.632792
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=false
+ok 39 - S12 ownership textarea active=false
+  ---
+  duration_ms: 7.404958
+  type: 'test'
+  ...
+# Subtest: S12 ownership textarea active=true
+ok 40 - S12 ownership textarea active=true
+  ---
+  duration_ms: 6.446875
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=false
+ok 41 - S12 ownership select active=false
+  ---
+  duration_ms: 7.285625
+  type: 'test'
+  ...
+# Subtest: S12 ownership select active=true
+ok 42 - S12 ownership select active=true
+  ---
+  duration_ms: 6.575083
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=false
+ok 43 - S12 ownership textbox active=false
+  ---
+  duration_ms: 6.530834
+  type: 'test'
+  ...
+# Subtest: S12 ownership textbox active=true
+ok 44 - S12 ownership textbox active=true
+  ---
+  duration_ms: 6.449958
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=false
+ok 45 - S12 ownership editable active=false
+  ---
+  duration_ms: 6.238125
+  type: 'test'
+  ...
+# Subtest: S12 ownership editable active=true
+ok 46 - S12 ownership editable active=true
+  ---
+  duration_ms: 6.392959
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=false
+ok 47 - S12 ownership nestededitable active=false
+  ---
+  duration_ms: 6.090625
+  type: 'test'
+  ...
+# Subtest: S12 ownership nestededitable active=true
+ok 48 - S12 ownership nestededitable active=true
+  ---
+  duration_ms: 6.400041
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=false
+ok 49 - S12 ownership invalid-inherited active=false
+  ---
+  duration_ms: 5.877041
+  type: 'test'
+  ...
+# Subtest: S12 ownership invalid-inherited active=true
+ok 50 - S12 ownership invalid-inherited active=true
+  ---
+  duration_ms: 6.165583
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=false
+ok 51 - S12 ownership false active=false
+  ---
+  duration_ms: 8.244542
+  type: 'test'
+  ...
+# Subtest: S12 ownership false active=true
+ok 52 - S12 ownership false active=true
+  ---
+  duration_ms: 8.581334
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=false
+ok 53 - S12 ownership false-inside-true active=false
+  ---
+  duration_ms: 7.729083
+  type: 'test'
+  ...
+# Subtest: S12 ownership false-inside-true active=true
+ok 54 - S12 ownership false-inside-true active=true
+  ---
+  duration_ms: 8.665834
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=false
+ok 55 - S12 ownership true-inside-false active=false
+  ---
+  duration_ms: 5.702
+  type: 'test'
+  ...
+# Subtest: S12 ownership true-inside-false active=true
+ok 56 - S12 ownership true-inside-false active=true
+  ---
+  duration_ms: 6.640708
+  type: 'test'
+  ...
+# Subtest: S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+ok 57 - S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt
+  ---
+  duration_ms: 10.586333
+  type: 'test'
+  ...
+# Subtest: S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+ok 58 - S12 無 file 的 event 不改 revision、selection、status 或 active gesture
+  ---
+  duration_ms: 7.08325
+  type: 'test'
+  ...
+# Subtest: S12 既有 drop busy 拒絕 paste，不清 pending
+ok 59 - S12 既有 drop busy 拒絕 paste，不清 pending
+  ---
+  duration_ms: 8.594375
+  type: 'test'
+  ...
+1..59
+# tests 59
+# suites 0
+# pass 59
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 618.26475

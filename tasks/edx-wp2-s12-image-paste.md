@@ -1,6 +1,6 @@
 # EDX-WP2-S12 — Clipboard paste-event 單張圖片插入
 
-Status: IMPLEMENTATION
+Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
 Base/main/origin-main: 8b9ee5bceb1ab6d762f3f370f95f9f248943e446（S10/S11 GO已FF並push）
 Branch: codex/edx-wp2-s12-image-paste
 traces_to: BACKLOG §10.1 decision3圖片clipboard paste、decision2文字/IME、decision7 identity、decision8單一operation；§10.3 WP2；§10.4 insert-element。
@@ -21,7 +21,7 @@ Dependencies：S8 canonical insertion／S9 File adapter／S10 chooser／S11 drop
 
 Worker public mounted RED→GREEN：positive/nested/body/toolbar/current/cross/empty-slide/firstfree/samefile/defaults；negative mode/defaultPrevented/textURI/getData poison/input-active/nestededitable/IME/external/detached/duplicate-ID/multifile/empty/busy/chooser；snapfalse/true active cancellation；async mode/other edit/export/removed/collision/reject/invalid；drop/chooser互斥；export/reparse/remount。保留RED與中間FAIL，舊assertions不放寬。
 Worker scoped明列：S12新測試、S11 drop、S10 insert UI、S9 File、S6 image UI、S7 fit、WP2-S1 direct text、WP1 keyboard、S1 export cleanup。只跑明列、不glob/full/browser/ZIP。
-Worker新增tools/edx-wp2-s12-browser-cases.mjs＋runner --image-paste-regression；沿既有S10合法三頁fixture。正式路徑先S10 chooser與S11 drop確保互斥回歸，再S12synthetic paste；分開records/isTrusted。雙viewport1280×720/1600×900，新圖與toolbar截图；errors/HTTP/remote0、targetClosed；capturedtarget、gesturecancel、input/IME、chooser/busy、reject、export/offline真DOM覆蓋。
+Worker新增tools/edx-wp2-s12-browser-cases.mjs＋runner --image-paste-regression；沿既有S10合法三頁fixture。正式路徑先S10 chooser與S11 drop確保互斥回歸，再S12synthetic paste；分開records/isTrusted。雙viewport1280×720/1600×900，新圖與toolbar截圖；errors/HTTP/remote0、targetClosed；capturedtarget、gesturecancel、input/IME、chooser/busy、reject、export/offline真DOM覆蓋。
 Mainline Worker STOP後讀diff，focused/full明列nonbrowser、ZIP build/lifecycle/bytesdelta、source/protected/hash，再正式managed host雙viewport與4支affectedPGQ --test-concurrency=1、cleanup。全部過才Independent Review candidate；原OS clipboard未測限制不得隱藏。
 
 ## Prior art／最小採用
@@ -30,5 +30,9 @@ DIRECT_REUSE：W3C ClipboardEvent/clipboardData/DataTransfer File與內部S9/S10
 
 ## 派工
 
-standard／1 clean native Worker／medium／shared sequential single product writer；Mainline只control與驗收準備。原推薦Terra不在native可用model，本工具要求未經Owner指定不得override，因此继承主模型、medium、fork_context=false；不額外開Reviewer。1 implementation loop；兩次無進展/contractfork停回主線。Owner外部Independent Review沿既有交接。
+standard／1 clean native Worker／medium／shared sequential single product writer；Mainline只control與驗收準備。原推薦Terra不在native可用model，本工具要求未經Owner指定不得override，因此繼承主模型、medium、fork_context=false；不額外開Reviewer。1 implementation loop；兩次無進展/contractfork停回主線。Owner外部Independent Review沿既有交接。
 允許：runtime/deck-editor.js、tests/edx-wp2-s12-image-paste.test.mjs、tools/edx-wp2-s12-browser-cases.mjs、tools/edx-wp1-s4-browser-acceptance.mjs；mountedhelper只有明示必要且保持舊tests才准小補。禁止其他runtime/schema/vendor/AI Core/protected/control/evidence/branch/commit、full/browser/Chrome/ZIP/build/PGQ、merge/push/deploy/subagent。Report/log：/private/tmp/pptskill-wp2-s12-*。Worker完成STOP WRITING交Mainline。
+
+## Mainline acceptance
+
+Candidate 09c7d29253a5235b12ac58b5fef3f13cd5c70acb；Worker66/scoped236、full712、ZIP lifecycle、1280×720：111 records、1600×900：111 records、PGQ單輪16、managed cleanup/source4/protected4/hash PASS。S12只驗synthetic ClipboardEvent File adapter，不冒稱OSclipboard；詳receipt與review handoff。未merge/push/deploy S12，未開S13。

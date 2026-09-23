@@ -1,0 +1,517 @@
+✖ S12 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection (21.207083ms)
+✖ S12 cross-slide 無圖頁採事件 target，首個空缺 ID (8.094125ms)
+✔ S12 text/plain 不攔截、不讀內容／URL fallback (6.746583ms)
+✔ S12 text/html 不攔截、不讀內容／URL fallback (7.624125ms)
+✔ S12 text/uri-list 不攔截、不讀內容／URL fallback (6.526375ms)
+✖ S12 items.kind=file 可辨識；slide 外／無 transfer 不攔截 (6.190417ms)
+✖ S12 0 files 拒絕且 status 提示 (7.014291ms)
+✖ S12 2 files 拒絕且 status 提示 (6.618292ms)
+✖ S12 insert chooser 保留 pending/input 且 drop 不提交 (6.82225ms)
+✖ S12 replace chooser 保留 pending/input 且 drop 不提交 (6.780875ms)
+✖ S12 active gesture 取消不 commit，snap=false (7.194667ms)
+✖ S12 active gesture 取消不 commit，snap=true (7.320709ms)
+✖ S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser (6.213542ms)
+✖ S12 async removed 原子拒絕、零 partial／retry (5.923833ms)
+✖ S12 async collision 原子拒絕、零 partial／retry (7.391083ms)
+✖ S12 async reject 原子拒絕、零 partial／retry (5.746583ms)
+✖ S12 async invalid 原子拒絕、零 partial／retry (5.855875ms)
+✖ S12 export canonical／remount 恢復 listener，無 transient 或重複插入 (13.898833ms)
+✖ S12 body 採 currentId (7.747792ms)
+✖ S12 document 採 currentId (6.924917ms)
+✖ S12 deck 採 currentId (6.996875ms)
+✖ S12 toolbar 採 currentId (7.098917ms)
+✔ S12 play 不接管且不取消 gesture (7.29025ms)
+✔ S12 edit 不接管且不取消 gesture (7.380167ms)
+✔ S12 destroy 不接管且不取消 gesture (6.892792ms)
+✔ S12 defaultPrevented 不接管且不取消 gesture (6.235916ms)
+✔ S12 isComposing 不接管且不取消 gesture (6.066958ms)
+✔ S12 composingText 不接管且不取消 gesture (8.889083ms)
+✔ S12 external 不接管且不取消 gesture (6.823417ms)
+✔ S12 detached 不接管且不取消 gesture (6.239125ms)
+✔ S12 other-deck 不接管且不取消 gesture (6.3ms)
+✔ S12 duplicate-dom 不接管且不取消 gesture (6.67525ms)
+✔ S12 duplicate-spec 不接管且不取消 gesture (6.080208ms)
+✔ S12 missing-id 不接管且不取消 gesture (5.731833ms)
+✔ S12 missing-spec 不接管且不取消 gesture (5.841708ms)
+✔ S12 null 不接管且不取消 gesture (5.869333ms)
+✔ S12 ownership input active=false (6.356791ms)
+✔ S12 ownership input active=true (5.542583ms)
+✔ S12 ownership textarea active=false (6.373625ms)
+✔ S12 ownership textarea active=true (5.788458ms)
+✔ S12 ownership select active=false (5.597208ms)
+✔ S12 ownership select active=true (6.152458ms)
+✔ S12 ownership textbox active=false (5.8355ms)
+✔ S12 ownership textbox active=true (6.304459ms)
+✔ S12 ownership editable active=false (5.926208ms)
+✔ S12 ownership editable active=true (5.649208ms)
+✔ S12 ownership nestededitable active=false (6.30525ms)
+✔ S12 ownership nestededitable active=true (5.695833ms)
+✔ S12 ownership invalid-inherited active=false (6.113875ms)
+✔ S12 ownership invalid-inherited active=true (6.005416ms)
+✖ S12 ownership false active=false (6.129375ms)
+✖ S12 ownership false active=true (5.390959ms)
+✖ S12 ownership false-inside-true active=false (5.63ms)
+✖ S12 ownership false-inside-true active=true (6.397042ms)
+✔ S12 ownership true-inside-false active=false (5.552459ms)
+✔ S12 ownership true-inside-false active=true (6.188333ms)
+✖ S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt (5.508917ms)
+✔ S12 無 file 的 event 不改 revision、selection、status 或 active gesture (6.152959ms)
+✖ S12 既有 drop busy 拒絕 paste，不清 pending (7.902542ms)
+ℹ tests 59
+ℹ suites 0
+ℹ pass 34
+ℹ fail 25
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 535.692708
+
+✖ failing tests:
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:33:1
+✖ S12 public drop：nested image 新 slot、同檔遞增、defaults、old roots、revision／selection (21.207083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:38:12)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:48:1
+✖ S12 cross-slide 無圖頁採事件 target，首個空缺 ID (8.094125ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'inserted-image-2'
+  - 'inserted-image-1'
+                    ^
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:54:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'inserted-image-2',
+    expected: 'inserted-image-1',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:64:1
+✖ S12 items.kind=file 可辨識；slide 外／無 transfer 不攔截 (6.190417ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:70:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:74:41
+✖ S12 0 files 拒絕且 status 提示 (7.014291ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /單張|一張|一個/. Input:
+
+  '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:77:75)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小',
+    expected: /單張|一張|一個/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:74:41
+✖ S12 2 files 拒絕且 status 提示 (6.618292ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /單張|一張|一個/. Input:
+
+  '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:77:75)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小',
+    expected: /單張|一張|一個/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:80:46
+✖ S12 insert chooser 保留 pending/input 且 drop 不提交 (6.82225ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:85:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:80:46
+✖ S12 replace chooser 保留 pending/input 且 drop 不提交 (6.780875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:85:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:91:35
+✖ S12 active gesture 取消不 commit，snap=false (7.194667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:94:26)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:91:35
+✖ S12 active gesture 取消不 commit，snap=true (7.320709ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:94:26)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:98:1
+✖ S12 deferred：busy 互斥；mode/export/other edit 保留；finally 不清其後 S6 chooser (6.213542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:101:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:113:70
+✖ S12 async removed 原子拒絕、零 partial／retry (5.923833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:116:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:113:70
+✖ S12 async collision 原子拒絕、零 partial／retry (7.391083ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:116:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:113:70
+✖ S12 async reject 原子拒絕、零 partial／retry (5.746583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:116:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:113:70
+✖ S12 async invalid 原子拒絕、零 partial／retry (5.855875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:116:36)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:126:1
+✖ S12 export canonical／remount 恢復 listener，無 transient 或重複插入 (13.898833ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:131:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:136:68
+✖ S12 body 採 currentId (7.747792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:139:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:136:68
+✖ S12 document 採 currentId (6.924917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:139:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:136:68
+✖ S12 deck 採 currentId (6.996875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:139:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:136:68
+✖ S12 toolbar 採 currentId (7.098917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:139:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:166:202
+✖ S12 ownership false active=false (6.129375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:175:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:166:202
+✖ S12 ownership false active=true (5.390959ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:175:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:166:202
+✖ S12 ownership false-inside-true active=false (5.63ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:175:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:166:202
+✖ S12 ownership false-inside-true active=true (6.397042ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:175:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:180:1
+✖ S12 FileList 唯一來源、混合文字不讀、無 filename 空 alt (5.508917ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:183:47)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-wp2-s12-image-paste.test.mjs:196:1
+✖ S12 既有 drop busy 拒絕 paste，不清 pending (7.902542ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s12-image-paste.test.mjs:200:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

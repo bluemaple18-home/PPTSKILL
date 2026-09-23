@@ -1,0 +1,33 @@
+{
+  "head": "bd4126a9b92b55178af3d716a512c93b984a9d41",
+  "branch": "codex/edx-wp2-s12-image-paste",
+  "node": "v25.9.0",
+  "nodePath": "/opt/homebrew/Cellar/node/25.9.0_3/bin/node",
+  "files": [
+    {
+      "path": "runtime/deck-editor.js",
+      "bytes": 79881,
+      "sha256": "1b6aa89740042930178db333728e0cfe8e9d2beddb7d1e394a56b0a3e41484dd",
+      "headSha256": "f4effb516c48acabcfa0cade8cf11a6885e2f81e16867e89d7f5393432741310"
+    },
+    {
+      "path": "tests/edx-wp2-s12-image-paste.test.mjs",
+      "bytes": 16718,
+      "sha256": "d3045a25b14abeef7e99f9eb4286fed8e417cbb128b1d2ce1b769e07b7ec21f8",
+      "headSha256": null
+    },
+    {
+      "path": "tools/edx-wp2-s12-browser-cases.mjs",
+      "bytes": 14868,
+      "sha256": "0057262a4ab1231ca1f734d2f039ccef6ddc1a52a98f9bce95c6053d1bfe5d4c",
+      "headSha256": null
+    },
+    {
+      "path": "tools/edx-wp1-s4-browser-acceptance.mjs",
+      "bytes": 23161,
+      "sha256": "0c01fda9d4246c835a0707b900105d0029fb99c29f1d1ffa75fb74066178cf6a",
+      "headSha256": "0d16f8d81911eeab5011c5d805f45589b8d16f5fefb0a4f6a12671cd11855e21"
+    }
+  ],
+  "fixtureSha256": "1d377ad2fbb3de7ca174437f39da1dba5001b5cf2f0c2454c910ab291632e4d7"
+}
