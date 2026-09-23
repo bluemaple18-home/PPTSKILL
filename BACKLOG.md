@@ -1078,4 +1078,6 @@ WP2-S13 closure：clean native Independent GO，reviewed9b7767d，P0–P3全0；
 
 WP2-S13已依Owner授權FF/push main `b08c4d3`，遠端readback MATCH；詳evidence/edx-wp2-s13/mainline-integration.md。
 
-**WP2-S14 MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING：** API-driven text-component edit-text；task tasks/edx-wp2-s14-edit-text-component.md。沿同一operation／stableID／S13文字政策／原renderer，保留S1 UI邊界；fresh scoped122/full763、ZIP、雙viewport各69、affected PGQ單輪16 PASS；candidate e595b84，source6/protected4/cleanup MATCH。harness-only geometry fixture修復與歷史FAIL完整保留；handoff_20260923_edx_wp2_s14_review.md。未merge/push/deploy S14、未開S15。
+**WP2-S14 COMPLETE / INDEPENDENT_REVIEW_GO：** API-driven text-component edit-text；task tasks/edx-wp2-s14-edit-text-component.md。沿同一operation／stableID／S13文字政策／原renderer，保留S1 UI邊界；fresh scoped122/full763、ZIP、雙viewport各69、affected PGQ單輪16 PASS；candidate e595b84，source6/protected4/cleanup MATCH。harness-only geometry fixture修復與歷史FAIL完整保留；handoff_20260923_edx_wp2_s14_review.md。未merge/push/deploy S14、未開S15。
+
+WP2-S14 closure：Owner轉交Independent GO，reviewed `e595b84`，P0–P3全0；Reviewer fresh scoped122/full763，browser69+69／PGQ16為committed evidence核對。Mainline source6/protected4/ZIP MATCH、delivery drift0；詳evidence/edx-wp2-s14/independent-review.md及closure-verification.json。可進整合gate；main/origin-main本地ref仍b08c4d3，未merge/push/deploy、未開S15。

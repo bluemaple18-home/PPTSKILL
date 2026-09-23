@@ -1,6 +1,6 @@
 # EDX-WP2-S14 — API-driven 文字元件 edit-text
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: b08c4d34cb7ff950a6bf0ab70f4fe172f270f186（S13 GO closure已FF/push/readback MATCH）
 Branch: codex/edx-wp2-s14-edit-text-component
 traces_to: BACKLOG §10.1 decisions2/3/7/8、§10.3 WP2、§10.4 edit-text。
@@ -33,4 +33,4 @@ PGQ四支content-integrity/sample-approval/full-deck-qa/required-visibility串�
 
 ## 驗收交付
 
-Candidate `e595b84638da36fc73c2e6c7cc31ff1f05f57962`；scoped122/full763、雙viewport各69、PGQ單輪16、source6/protected4/ZIP/cleanup PASS。首輪fixture FAIL與harness-only修復完整保留。詳evidence/edx-wp2-s14/receipt.md與handoff_20260923_edx_wp2_s14_review.md。尚非Independent GO；未merge/push/deploy、未開S15。
+Candidate `e595b84638da36fc73c2e6c7cc31ff1f05f57962`；scoped122/full763、雙viewport各69、PGQ單輪16、source6/protected4/ZIP/cleanup PASS。首輪fixture FAIL與harness-only修復完整保留。詳evidence/edx-wp2-s14/receipt.md與handoff_20260923_edx_wp2_s14_review.md。Independent Review已GO，P0–P3全0；詳evidence/edx-wp2-s14/independent-review.md。本輪Mainline核對source6/protected4/ZIP及無delivery drift，可進Integration Gate；未merge/push/deploy、未開S15。

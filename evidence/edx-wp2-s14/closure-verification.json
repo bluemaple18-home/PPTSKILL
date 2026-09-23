@@ -1,0 +1,18 @@
+{
+  "reviewedSha": "e595b84638da36fc73c2e6c7cc31ff1f05f57962",
+  "handoffHead": "525b42bd0280dc2e5c82ba9baa907a08d8113095",
+  "sourceMatches": 6,
+  "protectedMatches": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2296447,
+    "sha256": "0749990f26a6f65619d23744802d38e67428a4c90ce99e52fd4891b65b27c74b"
+  },
+  "deliveryDrift": false,
+  "diffCheck": "PASS",
+  "main": "b08c4d34cb7ff950a6bf0ab70f4fe172f270f186",
+  "originMainLocalTrackingRef": "b08c4d34cb7ff950a6bf0ab70f4fe172f270f186",
+  "reviewSource": "Owner 在本 task 轉交的 Independent Review GO；未推定 reviewer 身分或工具來源",
+  "mainlineFreshTests": "NOT_RUN；本輪只核對 SHA／hash／drift／既有 evidence",
+  "mergePushDeploy": false
+}
