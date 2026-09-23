@@ -1,6 +1,6 @@
 # EDX-WP2-S16 — 已選文字元件編輯 UI
 
-Status: MAINLINE_ACCEPTANCE_PASS / INDEPENDENT_REVIEW_PENDING
+Status: COMPLETE / INDEPENDENT_REVIEW_GO
 Base/main/origin-main: 3cebfafddcbd070d28fae23de24e52a88163b778
 Branch: codex/edx-wp2-s16-edit-text-ui
 traces_to: BACKLOG §10.1 decisions2/7/8、§10.3 WP2、§10.4 edit-text。
@@ -40,3 +40,7 @@ Visual clarification：Mainline實看S15 1280 toolbar截圖，既有role action�
 ## Mainline acceptance
 
 Candidate f5db0c03b61bbcbb2285f95562d8a3ef986a9ee0；fresh scoped260/full821/ZIP、雙viewport42+42、PGQ單輪16、source4/protected4/cleanup PASS；首輪FAIL、中止及snap修復證據完整保留。詳evidence/edx-wp2-s16/receipt.md及handoff_20260923_edx_wp2_s16_review.md。S16未merge/push/deploy，未開S17。
+
+## Independent Review closure
+
+Owner交回GO，reviewed f5db0c03b61bbcbb2285f95562d8a3ef986a9ee0，P0–P3全0；Reviewer fresh260/821，browser42+42與PGQ16為committed evidence核對。詳evidence/edx-wp2-s16/independent-review.md。Owner僅授權整合推送，完成停止，不開S17。

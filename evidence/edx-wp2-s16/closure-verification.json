@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-23T14:17:55.829867+00:00",
+  "reviewedSha": "f5db0c03b61bbcbb2285f95562d8a3ef986a9ee0",
+  "handoffHead": "32319a71793e43f179075393ecb844813194f1c8",
+  "sourceMatched": 4,
+  "protectedMatched": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2298511,
+    "sha256": "a26d5bc80044afb2c2cd9c00eb31b715d38fdf704846b9670761e1a404d101bd"
+  },
+  "deliveryDrift": [],
+  "diffCheck": "PASS",
+  "freshTestsRerun": false,
+  "freshBrowserRerun": false,
+  "ownerScope": "推上去就好；完成後停止，不開S17"
+}
