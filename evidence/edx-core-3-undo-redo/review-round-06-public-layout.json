@@ -1,0 +1,28 @@
+{
+  "expected": {
+    "canonicalTitle": "成果，不鎖在工具裡",
+    "revision": 0,
+    "history": {
+      "canUndo": false,
+      "canRedo": false,
+      "entries": 0,
+      "bytes": 0,
+      "oversized": false
+    },
+    "mode": "edit"
+  },
+  "actual": {
+    "canonicalTitle": "pending layout text",
+    "revision": 1,
+    "history": {
+      "canUndo": true,
+      "canRedo": false,
+      "entries": 1,
+      "bytes": 5220,
+      "oversized": false
+    },
+    "mode": "layout"
+  },
+  "domTitle": "pending layout text",
+  "nestedRejected": true
+}

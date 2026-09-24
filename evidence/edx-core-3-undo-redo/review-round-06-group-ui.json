@@ -1,0 +1,30 @@
+{
+  "expected": {
+    "groups": null,
+    "revision": 0,
+    "history": {
+      "canUndo": false,
+      "canRedo": false,
+      "entries": 0,
+      "bytes": 0,
+      "oversized": false
+    }
+  },
+  "actual": {
+    "groups": [
+      [
+        "component-perf-image",
+        "component-group-text"
+      ]
+    ],
+    "revision": 1,
+    "history": {
+      "canUndo": true,
+      "canRedo": false,
+      "entries": 1,
+      "bytes": 5846,
+      "oversized": false
+    },
+    "status": "未套用：group final status fault"
+  }
+}
