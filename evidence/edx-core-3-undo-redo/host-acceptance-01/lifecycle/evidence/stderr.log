@@ -1,0 +1,14 @@
+
+DevTools listening on ws://127.0.0.1:51936/devtools/browser/3398f7a0-c1d1-4ff5-8882-06a0433fb73a
+Trying to load the allocator multiple times. This is *not* supported.
+[94274:23228686:0924/120401.532367:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94274:23228686:0924/120401.533867:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94274:23228686:0924/120401.574208:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94274:23228686:0924/120401.574638:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94274:23228686:0924/120401.574882:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94274:23228686:0924/120401.575246:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[94161:23228620:0924/120402.599627:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[94161:23228620:0924/120421.471358:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:484] ConnectionHandler failed with net error: -2
+[94161:23228169:0924/120421.483252:ERROR:content/browser/gpu/gpu_process_host.cc:1054] GPU process exited unexpectedly: exit_code=15
+[95262:23230799:0924/120421.635521:ERROR:base/apple/mach_port_rendezvous_mac.cc:256] bootstrap_look_up com.google.Chrome.MachPortRendezvousServer.1: Unknown service name (1102)
+[95262:23230799:0924/120421.635867:ERROR:base/memory/shared_memory_switch.cc:261] No rendezvous client, terminating process (parent died?)

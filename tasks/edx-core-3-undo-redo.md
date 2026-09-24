@@ -30,3 +30,7 @@ Focused 應涵 `edit-text`、move/resize/group/lock、同筆 revision、no-op/th
 厚度 strict/core-bounded、規格已固定。規則首選 GPT-5.5 high；此 native subagent catalog 無 GPT-5.5/Terra/Luna，實際 Writer 採 clean `fork_context=false`、繼承 Astra／medium，明列成本路由差異。單一 shared Worker 寫 delivery 與本卡測試／browser harness；Mainline 同期只寫 task/control/evidence，做裁決、完整驗證與 review handoff。不可安裝新 vendor、不改 AI Core、不改 Core2 candidate、protected 四檔、schema 或舊 Slice；Worker 不啟 browser/build ZIP、不 commit／merge／push／deploy。
 
 Worker 可改 `runtime/deck-editor.js` 及必要的單一純 history helper、新 focused tests／mounted fixture／既有 browser harness 的本卡 flag。若需改 `component-interaction.js` 或其他 runtime，先以現有 interface 無法滿足的具體測試證據回主線裁決。缺生效的 rollback/projection 路徑、無法保證 false-operation barrier、重複兩次同類失敗或必須放寬記憶體界限時停止，不宣稱 GO。Mainline 停在獨立 review candidate；本卡未獲正式 browser、PGQ、Independent GO 前維持 2/6，不開第4張。
+
+## Mainline 對 A→B 停點的裁決
+
+同一 Worker 已完成 A 段 Node history 初版，focused 3/3、受影響 scoped 43/43；尚未提交。B 段前以故障注入量到既有 portable `move`（slide reorder）在 `insertBefore` 先生效後拋錯時，canonical、DOM 順序和 revision 已變而操作失敗。這是 history barrier／rollback 所需的實測缺口，不是 Undo UI 的測試假設。Mainline 授權在本卡同一 Writer 及既准許的 `runtime/deck-editor.js` 範圍內，先讓 reorder 對 after-effect throw 原子回退；同時盤點 duplicate、remove、component direct patch 與 export cleanup 的直接寫入，對同類可重現缺口做最小修復／測試，然後才接 portable history。不得藉此改 Core2 或其他舊功能語意、擴展到未量測 writer；若安全 barrier 無法覆蓋，停止回主線裁決。這是同一 Core3 實作接續，不是新的 Repair generation。

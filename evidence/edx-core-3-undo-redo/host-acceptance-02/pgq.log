@@ -1,0 +1,12 @@
+✔ visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud (25023.295459ms)
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (7.496917ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (1.734917ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (3.087208ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (2.807083ms)
+✔ sample content 或 composition 只使該頁失效 (2.540375ms)
+✔ style 或 contract version 變更使全部 sample 失效 (1.698666ms)
+✔ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (171309.932833ms)
+
+Interrupted while running:
+
+⚠ tests/pgq-wp4-s4-full-deck-qa.test.mjs (tests/pgq-wp4-s4-full-deck-qa.test.mjs:1:1)

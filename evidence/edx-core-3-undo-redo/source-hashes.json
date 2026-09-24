@@ -1,0 +1,24 @@
+{
+  "sources": {
+    "runtime/deck-editor.js": "7dd6252edf82e91a06a87112b7157f904b0471f3dce1cf069a184ab980c03a4d",
+    "runtime/editor-history.js": "2ba2f027fd139db88a82faf7890a4f542a644aeb35ece7251849f4a9ff1bbb2e",
+    "runtime/component-interaction.js": "590d68a5c62b73dda8b8aa5762bc5e9af2a84010bb49cb83890a82f50490af25",
+    "runtime/deck-spec.js": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+    "runtime/group-lock.js": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
+    "tests/edx-core-3-undo-redo.test.mjs": "a2bc4af12790187f2dbce8c43d483b7736ab9fb27e767cbd80335c48944056db",
+    "tests/edx-wp1-s5-keyboard.test.mjs": "d6798df76819a7e1772d6cfad3ede262f8b281f410869d0e5b931c26a3af77ab",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "8f169d710d787f3c117217bdf68d09c6caab8b0ca2300708d92917b706feb7e4",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "ab56738fcf4984e9bf57e1f399903217ed7f275727b697b3b519e5289d79eb63"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2325796,
+    "sha256": "3edd7591e4da140eb47924a60ce7ac1e13735e66227845f8f5e09ed5c9d4c2b2"
+  }
+}
