@@ -66,17 +66,21 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       const g = gesture;
       gesture = null;
       if (!g) return false;
+      let committed = false;
       try {
         beforeFinish();
         if (!enabled || !fresh(g)) { onCancel(); notify('元件已變更，已取消拖曳'); return false; }
         const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
         if (fields.every(key => g.next[key] === g.base[key])) return false;
         notify('手動版面已更新');
+        // preview 先回 canonical；提交後投影須留在 operation 的 rollback 範圍內。
+        restore();
         executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
-          value: Object.fromEntries(fields.map(key => [key, g.next[key]])) });
+          value: Object.fromEntries(fields.map(key => [key, g.next[key]])) }, restore);
+        committed = true;
         return true;
       } catch (error) { onCancel(); notify('未套用：' + error.message); return false; }
-      finally { restore(); }
+      finally { if (!committed) restore(); }
     },
   };
 }

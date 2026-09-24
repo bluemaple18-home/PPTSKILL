@@ -65,6 +65,62 @@ test('Core3 portable slide reorder 的 after-effect DOM throw 原子回退', () 
   assert.equal(h.getRevision(), 0);
 });
 
+test('Core3 Repair3 gesture restore after-effect throw 回退 geometry／history', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  const before = h.getSpec(), node = h.component(), style = node.style, beforeStyle = node.getAttribute('style');
+  let once = true;
+  node.style = new Proxy(style, { get(target, key) {
+    if (key === 'setProperty') return (name, value) => {
+      target.setProperty(name, value);
+      if (once && name === 'left' && h.api.getHistoryState().entries === 1) {
+        once = false; throw Error('post-commit restore projection fault');
+      }
+    };
+    return target[key];
+  } });
+  h.begin(); h.update(8, 0);
+  try { assert.notEqual(h.finish(), true); } catch (error) { assert.match(error.message, /post-commit restore projection fault/); }
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.getAttribute('style'), beforeStyle);
+  assert.equal(h.getRevision(), 0);
+  assert.equal(h.api.getHistoryState().entries, 0);
+  assert.equal(h.api.layout.getState().gesturing, false);
+});
+
+test('Core3 Repair3 gesture 收尾投影不得同步重入 Undo', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: 'prior' });
+  h.begin(); h.update(8, 0);
+  const undo = h.document.querySelector('[data-action="undo"]');
+  let disabled = undo.disabled, replayed = false, once = true;
+  Object.defineProperty(undo, 'disabled', { configurable: true,
+    get() { return disabled; },
+    set(value) { disabled = value; if (once) { once = false; replayed = h.api.undo(); } },
+  });
+  h.finish();
+  assert.equal(replayed, false);
+  assert.equal(h.getSpec().slides[0].content.title, 'prior');
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+  assert.equal(h.getRevision(), 2);
+  assert.equal(h.api.getHistoryState().entries, 2);
+});
+
+test('Core3 Repair3 reorder after-effect throw 不提交 pending 文字', () => {
+  const spec = fixture(0), second = structuredClone(spec.slides[0]);
+  second.id = 'portable-two'; spec.slides.push(second);
+  const h = mountedEditor(spec), before = h.getSpec(), deck = h.document.querySelector('.deck');
+  const title = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  title.textContent = 'pending';
+  const insertBefore = deck.insertBefore;
+  deck.insertBefore = function (node, next) { insertBefore.call(this, node, next); throw Error('reorder post-effect'); };
+  assert.throws(() => h.action('move-down'), /reorder post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
+  assert.equal(title.textContent, 'pending');
+  assert.equal(h.getRevision(), 0);
+  assert.equal(h.api.getHistoryState().entries, 0);
+});
+
 test('Core3 portable duplicate／remove after-effect throw 不留下變更', () => {
   const spec = fixture(0), second = structuredClone(spec.slides[0]); second.id = 'portable-two'; spec.slides.push(second);
   const h = mountedEditor(spec), deck = h.document.querySelector('.deck'), original = h.getSpec();
