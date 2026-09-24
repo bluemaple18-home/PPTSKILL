@@ -1,0 +1,234 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { createDeckEditor } from '../runtime/deck-editor.js';
+import { fixture, mountedEditor } from '../tools/edx-wp1-s4-perf-mounted.mjs';
+import { createEditorHistory } from '../runtime/editor-history.js';
+import { extractDeckSpec } from '../runtime/deck-spec.js';
+import { renderFullDeck } from '../runtime/full-deck-renderer.js';
+
+const editor = () => createDeckEditor(fixture(0));
+const title = (deck) => deck.getSpec().slides[0].content.title;
+const edit = (deck, value) => deck.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value });
+
+test('Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier', () => {
+  const deck = editor(), original = title(deck);
+  edit(deck, '甲');
+  assert.equal(deck.getHistoryState().canUndo, true);
+  edit(deck, '甲');
+  assert.equal(deck.getHistoryState().entries, 1);
+  deck.undo();
+  assert.equal(title(deck), original);
+  assert.equal(deck.getHistoryState().canRedo, true);
+  deck.redo();
+  assert.equal(title(deck), '甲');
+  deck.undo();
+  edit(deck, '乙');
+  assert.equal(deck.getHistoryState().canRedo, false);
+  deck.undo();
+  edit(deck, '丙');
+  deck.editComponent('portable', 'portable-quote', { text: '直接 patch' });
+  assert.equal(deck.getHistoryState().canUndo, false);
+  assert.equal(deck.getHistoryState().canRedo, false);
+});
+
+test('Core3 Node 驗證失敗不動 history，20 筆 bounded', () => {
+  const deck = editor();
+  edit(deck, '起始');
+  const before = deck.getHistoryState();
+  assert.throws(() => edit(deck, null));
+  assert.deepEqual(deck.getHistoryState(), before);
+  for (let i = 0; i < 25; i++) edit(deck, '改' + i);
+  assert.equal(deck.getHistoryState().entries, 20);
+  assert.equal(deck.getHistoryState().canUndo, true);
+});
+
+test('Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor', () => {
+  const history = createEditorHistory(2, 100);
+  history.record({ text: 'a' }, { text: 'b' }, true);
+  const before = history.state();
+  assert.throws(() => history.replay('undo', () => { throw Error('projection fault'); }));
+  assert.deepEqual(history.state(), before);
+  history.record({ payload: 'x'.repeat(80) }, { payload: 'y'.repeat(80) }, true);
+  assert.deepEqual(history.state(), { canUndo: false, canRedo: false, entries: 0, bytes: 0, oversized: true });
+});
+
+test('Core3 portable slide reorder 的 after-effect DOM throw 原子回退', () => {
+  const spec = fixture(0), copy = structuredClone(spec.slides[0]);
+  copy.id = 'portable-two'; spec.slides.push(copy);
+  const h = mountedEditor(spec), deck = h.document.querySelector('.deck');
+  const original = deck.insertBefore;
+  deck.insertBefore = function (node, before) { original.call(this, node, before); throw Error('post-insert fault'); };
+  assert.throws(() => h.action('move-down'), /post-insert fault/);
+  assert.deepEqual(h.getSpec().slides.map(slide => slide.id), ['portable', 'portable-two']);
+  assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
+  assert.equal(h.getRevision(), 0);
+});
+
+test('Core3 portable duplicate／remove after-effect throw 不留下變更', () => {
+  const spec = fixture(0), second = structuredClone(spec.slides[0]); second.id = 'portable-two'; spec.slides.push(second);
+  const h = mountedEditor(spec), deck = h.document.querySelector('.deck'), original = h.getSpec();
+  const first = deck.children[0], after = first.after;
+  first.after = function (node) { after.call(this, node); throw Error('duplicate post-effect'); };
+  assert.throws(() => h.action('duplicate'), /duplicate post-effect/);
+  assert.deepEqual(h.getSpec(), original);
+  assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
+  assert.equal(h.getRevision(), 0);
+  first.after = after;
+  const remove = first.remove;
+  first.remove = function () { remove.call(this); throw Error('remove post-effect'); };
+  assert.throws(() => h.action('delete'), /remove post-effect/);
+  assert.deepEqual(h.getSpec(), original);
+  assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
+  assert.equal(h.getRevision(), 0);
+});
+
+test('Core3 portable direct component patch replaceWith after-effect throw 不留下變更', () => {
+  const h = mountedEditor(fixture(0)), before = h.getSpec();
+  const node = h.document.querySelector('[data-pptskill-element-id="component-portable-quote"]');
+  const replaceWith = node.replaceWith;
+  node.replaceWith = function (next) { replaceWith.call(this, next); throw Error('patch post-effect'); };
+  assert.throws(() => h.api.applyLocalPatch({ slideId: 'portable', region: 'content.components.portable-quote', value: { text: '更新' } }), /patch post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(h.document.querySelector('[data-pptskill-element-id="component-portable-quote"]'), node);
+  assert.equal(h.getRevision(), 0);
+});
+
+test('Core3 portable operation undo／redo 與 false writer barrier', () => {
+  const h = mountedEditor(fixture(0)), original = h.getSpec();
+  h.api.layout.setMode(true);
+  const editText = value => h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value });
+  editText('新標題');
+  assert.equal(h.api.getHistoryState().canUndo, true);
+  assert.equal(h.getRevision(), 1);
+  h.api.undo();
+  assert.deepEqual(h.getSpec(), original);
+  assert.equal(h.getRevision(), 2);
+  h.api.redo();
+  assert.equal(h.getSpec().slides[0].content.title, '新標題');
+  assert.equal(h.getRevision(), 3);
+  h.api.applyLocalPatch({ slideId: 'portable', region: 'content.components.portable-quote', value: { text: '直接修改' } });
+  assert.deepEqual(h.api.getHistoryState().canUndo, false);
+  assert.deepEqual(extractDeckSpec(h.api.exportHtml()), h.getSpec());
+});
+
+test('Core3 portable 成功 slide direct writer 清除歷史', () => {
+  const spec = fixture(0), second = structuredClone(spec.slides[0]); second.id = 'portable-two'; spec.slides.push(second);
+  const h = mountedEditor(spec); h.api.layout.setMode(true);
+  const edit = value => h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value });
+  edit('可撤銷'); h.action('move-down');
+  assert.equal(h.api.getHistoryState().canUndo, false);
+  edit('再次'); h.action('duplicate');
+  assert.equal(h.api.getHistoryState().canUndo, false);
+  edit('再一次'); h.action('delete');
+  assert.equal(h.api.getHistoryState().canUndo, false);
+});
+
+test('Core3 browser harness flag 已接線且預留正式 host 驗收', () => {
+  const harness = readFileSync(new URL('../tools/edx-wp1-s4-browser-acceptance.mjs', import.meta.url), 'utf8');
+  assert.match(harness, /--undo-redo-regression/);
+  assert.match(harness, /if\(undoRedoRegression\)/);
+  assert.match(harness, /Input\.dispatchKeyEvent/);
+  const spec = JSON.parse(readFileSync(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
+  spec.slides = spec.slides.filter(slide => slide.id === 'portable');
+  spec.slides[0].content.components.push({ id: 'history-a', type: 'text', text: 'A' }, { id: 'history-b', type: 'text', text: 'B' });
+  spec.slides[0].composition.geometryOverrides = { 'history-a': { x: 120, y: 120, width: 180, height: 120 }, 'history-b': { x: 360, y: 120, width: 180, height: 120 } };
+  assert.equal(renderFullDeck(spec).status, 'pass');
+});
+
+test('Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership', () => {
+  const h = mountedEditor(fixture(0)); h.api.layout.setMode(true);
+  const button = name => h.document.querySelector('[data-action="' + name + '"]');
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '鍵盤測試' });
+  assert.equal(button('undo').disabled, false);
+  const key = (target, extra = {}) => {
+    const event = { target, key: 'z', ctrlKey: true, metaKey: false, altKey: false, shiftKey: false, isComposing: false, prevented: false,
+      preventDefault() { this.prevented = true; }, stopImmediatePropagation() {}, ...extra };
+    for (const fn of h.document.listeners.keydown || []) fn(event);
+    return event;
+  };
+  const input = h.document.querySelector('[data-typography-size]');
+  for (const extra of [{ target: input }, { isComposing: true }, { altKey: true }]) assert.equal(key(extra.target || h.document.body, extra).prevented, false);
+  input.focus();
+  assert.equal(h.api.undo(), false);
+  h.document.body.focus();
+  assert.equal(h.getSpec().slides[0].content.title, '鍵盤測試');
+  assert.equal(key(h.document.body).prevented, true);
+  assert.equal(button('redo').disabled, false);
+  assert.equal(key(h.document.body, { shiftKey: true }).prevented, true);
+  h.action('undo');
+  assert.equal(h.api.getHistoryState().canRedo, true);
+  assert.equal(key(h.document.body, { ctrlKey: false, metaKey: true, shiftKey: true }).prevented, true);
+  h.api.layout.setMode(false);
+  assert.equal(button('undo').disabled, true);
+  assert.equal(key(h.document.body, { ctrlKey: false, metaKey: true }).prevented, false);
+});
+
+test('Core3 portable group／lock／geometry replay 與 large-image pointer hot path', () => {
+  const spec = fixture(6);
+  spec.slides[0].content.components.push({ id: 'history-a', type: 'text', text: 'A' }, { id: 'history-b', type: 'text', text: 'B' });
+  Object.assign(spec.slides[0].composition.geometryOverrides, {
+    'history-a': { x: 120, y: 120, width: 180, height: 120 },
+    'history-b': { x: 360, y: 120, width: 180, height: 120 },
+  });
+  const h = mountedEditor(spec); h.api.layout.setMode(true);
+  const before = h.getSpec();
+  const groupTarget = { slideId: 'portable', elementIds: ['component-history-a', 'component-history-b'] };
+  h.api.executeOperation({ operation: 'group-elements', target: groupTarget, value: {} });
+  h.api.executeOperation({ operation: 'lock-elements', target: groupTarget, value: {} });
+  h.api.undo(); h.api.undo();
+  assert.deepEqual(h.getSpec(), before);
+  h.api.redo(); h.api.redo();
+  assert.equal(h.getSpec().slides[0].composition.lockedElementIds.length, 2);
+  h.api.executeOperation({ operation: 'unlock-elements', target: groupTarget, value: {} });
+  h.api.executeOperation({ operation: 'move-element', target: { slideId: 'portable', elementId: 'component-portable-quote' }, value: { x: 816, y: 280 } });
+  h.api.undo();
+  assert.deepEqual(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'], before.slides[0].composition.geometryOverrides['portable-quote']);
+  h.ready(); h.resetCounts(); h.begin(); h.update(8, 0);
+  assert.equal(h.counts.payloadReads, 0);
+  assert.equal(h.counts.wholeSpecSerializations, 0);
+});
+
+test('Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade', () => {
+  const h = mountedEditor(fixture(16)); h.api.layout.setMode(true);
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '超限提交' });
+  assert.equal(h.getSpec().slides[0].content.title, '超限提交');
+  assert.equal(h.api.getHistoryState().oversized, true);
+  assert.equal(h.api.getHistoryState().canUndo, false);
+  const button = h.document.querySelector('[data-action="undo"]');
+  assert.equal(button.disabled, true);
+  assert.match(button.title, /64 MiB/);
+});
+
+test('Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor', () => {
+  const h = mountedEditor(fixture(0)); h.api.layout.setMode(true);
+  const target = { slideId: 'portable', elementId: 'role-title' };
+  h.api.executeOperation({ operation: 'edit-text', target, value: '待復原' });
+  const node = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  const before = h.getSpec(), revision = h.getRevision(), state = h.api.getHistoryState(), text = node.textContent;
+  const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(node), 'textContent');
+  let once = true;
+  Object.defineProperty(node, 'textContent', { configurable: true, get() { return descriptor.get.call(this); }, set(value) {
+    descriptor.set.call(this, value); if (once) { once = false; throw Error('history projection post-effect'); }
+  } });
+  assert.throws(() => h.api.undo(), /history projection post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.textContent, text);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), state);
+});
+
+test('Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history', () => {
+  const h = mountedEditor(fixture(0)), before = h.getSpec(), state = h.api.getHistoryState();
+  const node = h.document.querySelector('[data-pptskill-element-id="role-title"]'), text = node.textContent;
+  const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(node), 'textContent');
+  let once = true;
+  Object.defineProperty(node, 'textContent', { configurable: true, get() { return descriptor.get.call(this); }, set(value) {
+    descriptor.set.call(this, value); if (once) { once = false; throw Error('operation post-effect'); }
+  } });
+  assert.throws(() => h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '失敗提交' }), /operation post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.textContent, text);
+  assert.equal(h.getRevision(), 0);
+  assert.deepEqual(h.api.getHistoryState(), state);
+});

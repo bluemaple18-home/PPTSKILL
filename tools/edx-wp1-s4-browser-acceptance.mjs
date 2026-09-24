@@ -40,6 +40,8 @@ const groupLockRegression=process.argv.includes('--group-lock-regression');
 if(groupLockRegression&&process.argv.some(arg=>/^--.*-regression$/.test(arg)&&arg!=='--group-lock-regression'))throw Error('group/lock regression僅允許base10＋Core2。');
 const cropRegression=process.argv.includes('--crop-regression');
 if(cropRegression&&process.argv.some(arg=>/^--.*-regression$/.test(arg)&&arg!=='--crop-regression'))throw Error('crop regression 僅允許 base10+Crop。');
+const undoRedoRegression=process.argv.includes('--undo-redo-regression');
+if(undoRedoRegression&&process.argv.some(arg=>/^--.*-regression$/.test(arg)&&arg!=='--undo-redo-regression'))throw Error('undo/redo regression 僅允許 base10+Core3。');
 const fixtureOnly = process.argv.includes('--fixture-only');
 const perfRegression = process.argv.includes('--perf-regression');
 const deleteElementRegression = process.argv.includes('--delete-element-regression');
@@ -64,6 +66,10 @@ if (process.argv.includes('--text-double-click-regression') || process.argv.incl
 }
 if (process.argv.includes('--text-double-click-regression') || process.argv.includes('--edit-text-ui-regression') || process.argv.includes('--insert-text-ui-regression') || process.argv.includes('--asset-replacement-regression') || process.argv.includes('--targeted-image-file-regression') || process.argv.includes('--selected-image-regression') || process.argv.includes('--image-fit-regression') || (process.argv.includes('--insert-image-regression') || (process.argv.includes('--insert-text-regression') || process.argv.includes('--edit-text-component-regression'))) || process.argv.includes('--insert-image-file-regression') || process.argv.includes('--insert-image-ui-regression') || process.argv.includes('--image-drop-regression') || process.argv.includes('--image-paste-regression')) addAssetReplacementFixture(input);
 if(cropRegression)addCropFixture(input);
+if(undoRedoRegression){
+  input.slides[0].content.components.push({id:'history-a',type:'text',text:'A'},{id:'history-b',type:'text',text:'B'});
+  input.slides[0].composition.geometryOverrides={...(input.slides[0].composition.geometryOverrides||{}),'history-a':{x:120,y:120,width:180,height:120},'history-b':{x:360,y:120,width:180,height:120}};
+}
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
 await writeFile(sourcePath, rendered.html);
@@ -236,6 +242,31 @@ try {
       if (process.argv.includes('--insert-text-ui-regression')) await runInsertTextUIBrowserCases({ cdp, evaluate, navigate, sourcePath, outputDir, width, run, click, position, mouse, settle, assertExport, startGesture });
       if(groupLockRegression)await runGroupLockBrowserCases({cdp,evaluate,navigate,sourcePath,outputDir,width,run,click,position,mouse,settle,assertExport});
       if(cropRegression)await runCropBrowserCases({cdp,evaluate,navigate,sourcePath,outputDir,width,run,click,position,mouse,settle,assertExport});
+      if(undoRedoRegression){
+        await navigate(sourcePath);await click('[data-action="layout"]');
+        const initial=await evaluate('window.PPTSKILLEditor.getDeckSpec()');
+        const edit={operation:'edit-text',target:{slideId:'portable',elementId:'role-title'},value:'Core3 browser title'};
+        await evaluate('window.PPTSKILLEditor.executeOperation('+JSON.stringify(edit)+')');
+        assert.equal(await evaluate('document.querySelector("[data-action=undo]").disabled'),false);
+        await click('[data-action="undo"]');
+        assert.deepEqual(await evaluate('window.PPTSKILLEditor.getDeckSpec()'),initial);
+        await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',key:'z',code:'KeyZ',windowsVirtualKeyCode:90,modifiers:2|8});
+        await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',key:'z',code:'KeyZ',windowsVirtualKeyCode:90,modifiers:2|8});
+        assert.equal(await evaluate('window.PPTSKILLEditor.getDeckSpec().slides[0].content.title'),'Core3 browser title');
+        const groupTarget={slideId:'portable',elementIds:['component-history-a','component-history-b']};
+        await evaluate('window.PPTSKILLEditor.executeOperation('+JSON.stringify({operation:'group-elements',target:groupTarget,value:{}})+')');
+        await evaluate('window.PPTSKILLEditor.executeOperation('+JSON.stringify({operation:'lock-elements',target:groupTarget,value:{}})+')');
+        await click('[data-action="undo"]');
+        assert.equal(await evaluate('window.PPTSKILLEditor.getDeckSpec().slides[0].composition.lockedElementIds?.length||0'),0);
+        await click('[data-action="redo"]');
+        assert.equal(await evaluate('window.PPTSKILLEditor.getDeckSpec().slides[0].composition.lockedElementIds.length'),2);
+        const committed=await evaluate('window.PPTSKILLEditor.getDeckSpec()');
+        const reopened=await assertExport('undo-redo-export',committed);
+        await navigate(reopened);
+        assert.deepEqual(await evaluate('window.PPTSKILLEditor.getDeckSpec()'),committed);
+        assert.equal(await evaluate('window.PPTSKILLEditor.getHistoryState().canUndo'),false);
+        run.checks.push('Core3 真 toolbar／Ctrl+Shift+Z／group-lock replay／export offline reopen');
+      }
       run.traceback = await evaluate('document.body.innerText.includes("Traceback")'); assert.equal(run.traceback, false);
       for (const key of ['console', 'pageErrors', 'networkFailures', 'httpErrors', 'remoteRequests']) assert.deepEqual(run[key], [], key);
       run.status = 'pass';

@@ -67,7 +67,9 @@ test('S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀�
   emit(h, 'compositionstart'); untouched({}); emit(h, 'compositionend'); assert.equal(key(h).prevented, true);
   emit(h, 'compositionstart'); h.api.layout.setMode(false); h.ready(); assert.equal(key(h).prevented, true);
   h.api.layout.destroy();
-  for (const name of ['keydown', 'compositionstart', 'compositionend']) assert.equal(h.document.listeners[name].length, 0);
+  assert.equal(h.document.listeners.keydown.length, 1); // Core3 editor 快捷鍵仍由 document 持有。
+  for (const name of ['compositionstart', 'compositionend']) assert.equal(h.document.listeners[name].length, 0);
+  assert.equal(key(h).prevented, false);
 });
 test('S5 mounted no mode／selection／geometry／deleted 與原子 bounds', () => {
   const h = mountedEditor(fixture(0)); const before = h.getSpec();
