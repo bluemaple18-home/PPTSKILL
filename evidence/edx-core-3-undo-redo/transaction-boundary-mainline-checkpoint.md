@@ -1,7 +1,19 @@
 # Core3 交易邊界 Mainline checkpoint
 
-Status: `NON_BROWSER_GREEN / TARGETED_CODE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
-Code SHA：`e6f9afab11d74e95042f7abe3157daa6c2d4f92d`。目前仍不能標 Core3 whole-card GO／closure。
+Status: `NON_BROWSER_GREEN / TARGETED_RE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
+Code SHA：`8ad5d6fbaca45027cf73da70432787e1413b7502`。目前仍不能標 Core3 whole-card GO／closure。
+
+## 最新 round-06 repair（待獨立重審）
+
+前封包 `b35336d` 的兩名 verdict 為一 GO、一 NO-GO；主線重播兩個 P1，見 `review-round-06.md`。本批修復 public layout mode 與 operation handler 終態副作用回退，未抹掉前次失敗。
+
+- Writer fresh：targeted **12/12**、affected **153/153**、81 檔 full non-browser **1056/1056 PASS**、0 skipped。主線核對原始 TAP 與來源 hash，沒有冒稱主線 fresh full rerun。
+- Mainline fresh：ZIP build/lifecycle PASS；75/75 runtime/schemas/contracts byte match、protected 4/4 MATCH、歷史 evidence hash MATCH。
+- ZIP：**2,329,448 bytes**；SHA-256 `65534796efd020a434f59d8121a1de09ced2af9db6dd9b945b29fc87323189b1`。
+- 詳證：`transaction-boundary-r06-writer.md`、`transaction-boundary-r06-validation.json`、`transaction-boundary-r06-mainline-hashes.json`、`transaction-boundary-r06-distribution-probe.json`。
+- 新 code 尚無 independent GO；整卡仍 HOST_OBSERVER_BLOCKED，Crop F2/P2 residual 保留。
+
+以下為前輪歷史（e6f9afa／b35336d），不代表最新候選已通過 review。
 
 ## 實作與保留紀錄
 

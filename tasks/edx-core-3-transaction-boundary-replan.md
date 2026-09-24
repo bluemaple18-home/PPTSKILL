@@ -1,9 +1,11 @@
 # Core3 Undo／Redo 交易邊界重規劃 — Owner 裁決卡
 
-Status: `NON_BROWSER_GREEN / TARGETED_CODE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
-Current product／ZIP candidate: `4a405cfcb397a2223dcd010cf048a1e5e058418f`（NO-GO，不得整合）
+Status: `NON_BROWSER_GREEN / TARGETED_RE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
+Historical product／ZIP candidate: `4a405cfcb397a2223dcd010cf048a1e5e058418f`（NO-GO，不得整合）
 
 2026-09-24 續接：新 code checkpoint `e6f9afab11d74e95042f7abe3157daa6c2d4f92d` 已取得 Writer 1044/1044 full non-browser、98/98 scoped；ZIP 已由主線重新 build/lifecycle/75-source byte match。原 `4a405cf` 與中間 `a0fd3e7`（Mainline full 23 FAIL）歷史保留；本次尚無獨立 GO，禁止整合。固定程式／ZIP 交付與後續 verdict 見 `evidence/edx-core-3-undo-redo/transaction-boundary-mainline-checkpoint.md`。
+
+最新續接：code `8ad5d6f` 已修 round-06 兩項 P1；1056/1056 non-browser、更新 ZIP lifecycle 通過，獨立 re-review pending。以上 e6f9afa 為歷史階段，詳見最新 Mainline checkpoint。
 
 ## 為什麼需要重新裁決
 
