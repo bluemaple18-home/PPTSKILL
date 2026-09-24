@@ -2,9 +2,19 @@ import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.j
 import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
-export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {}, capturePreview = () => [], transactFinish = work => work(), mutate = work => work() }) {
+export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {}, capturePreview = () => [], transactFinish = work => work(), mutate = work => work(), recoverCancel = error => { throw error; } }) {
   let enabled = false, target = null, gesture = null, selectedToken = null, finishing = false;
-  const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
+  const cancel = () => {
+    const g = gesture; gesture = null;
+    try { if (g) onCancel(); restore(); }
+    catch (error) {
+      // 正常取消仍零 snapshot；投影失敗才沿 preview 前 checkpoint 回退，不能重建 gesture。
+      if (g) recoverCancel(error, g.checkpoint, () => {
+        if (!fresh(g) || g.checkpoint?.nodes?.some(([node]) => !node.isConnected)) throw new Error('取消投影 checkpoint 已失效。');
+      });
+      throw error;
+    }
+  };
   const select = next => {
     cancel();
     const current = enabled && next && readTarget(next);
@@ -109,7 +119,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {}, runMutation = work => work(), mutate = work => work(), mutationBlocked = () => false, previewEvent = handler => handler }) {
+  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {}, runMutation = work => work(), mutate = work => work(), recoverCancel = error => { throw error; }, mutationBlocked = () => false, previewEvent = handler => handler }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -151,6 +161,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   };
   const finishView = () => { if (snap) clearSelection(); else moveable?.updateRect(); };
   const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify, mutate,
+    recoverCancel: (error, checkpoint, verify) => recoverCancel(error, checkpoint, () => { verify(); moveable?.stopDrag(); }),
     beforeFinish: () => { try { moveable?.updateRect(); } catch (error) { error.componentProjection = true; throw error; } onGestureChange(); },
     capturePreview(target) {
       const current = resolve(target);

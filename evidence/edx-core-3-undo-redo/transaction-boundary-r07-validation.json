@@ -1,0 +1,21 @@
+{
+  "baseCommit": "fdc202b59f21ba08ea0e6499926eec56b58264b1",
+  "branch": "codex/edx-core-3-undo-redo",
+  "sourceSHA256": {
+    "runtime/deck-editor.js": "65c00f4510997557653741fa0c2ac284cdeeab31a03069ebdfbee6667eb9ac9c",
+    "runtime/component-interaction.js": "befd4c53719aabd0f6deea171f1c90a78b0836359b673f61e950368c3886b41f",
+    "tests/edx-core-3-transaction-boundary.test.mjs": "618ed9bfecfa9e4d71dbb165a9ceb805ddd239e5389baf6a26c51cf63e60e808"
+  },
+  "protectedUnchanged": true,
+  "historicalUnchanged": {
+    "evidence/edx-core-3-undo-redo/review-round-06.md": "3a3b3ac8d3c87254f8d0f33ff833078ea4b771011b144a94397c29d107571067",
+    "evidence/edx-core-3-undo-redo/review-round-07.md": "3ab2728eed862b3d8e11a70c7c261abdc9673a430b858881bc1a8045d9dcc6bd",
+    "evidence/edx-core-3-undo-redo/review-round-07-a-cancel-projection-repro.mjs": "e21753f993814fe3bfcbf5a5adb61192d6fa8a10a13926c5ee4cf3482dcde01e",
+    "evidence/edx-core-3-undo-redo/review-round-07-a-cancel-projection-repro.log": "f217c8b3b4f00a3cad0646eb08e54871ec0c01df41ae3fb822d1005b725f229e",
+    "evidence/edx-core-3-undo-redo/review-round-07-a-closure-probes.mjs": "e0d8cfb296eeeccbe7877f8920c6020654ea21b03b8d36dbacf4ffb270c9030e",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-r06-full-01.tap.gz": "6e63ba3975cb7d44ebe1cb4a0c98744d810e1b0f28981ed385880169a80c471a",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-mainline-nonbrowser.tap.gz": "15354dcf8b02ede94c22a7c37886903c4e0b6bb9d4ff946e9b185bddd8447d4a"
+  },
+  "diffCheck": "",
+  "scope": "兩 runtime、transaction-boundary test 與本輪 evidence；未啟 browser/PGQ、未改 ZIP/AI Core/其他 runtime、未 merge/push/deploy"
+}

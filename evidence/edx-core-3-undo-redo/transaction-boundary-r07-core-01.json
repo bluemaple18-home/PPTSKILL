@@ -1,0 +1,35 @@
+{
+  "tests": [
+    "tests/edx-core-2-group-lock.test.mjs",
+    "tests/edx-core-3-undo-redo.test.mjs",
+    "tests/edx-core-3-transaction-boundary.test.mjs",
+    "tests/edx-wp1-s4-perf.test.mjs",
+    "tests/edx-wp1-s4-interaction.test.mjs",
+    "tests/edx-wp1-s5-keyboard.test.mjs",
+    "tests/edx-wp1-s9-mounted-align.test.mjs",
+    "tests/edx-wp1-s10-mounted-distribute.test.mjs",
+    "tests/edx-wp1-s7-snap.test.mjs"
+  ],
+  "sourceSHA256": {
+    "runtime/deck-editor.js": "65c00f4510997557653741fa0c2ac284cdeeab31a03069ebdfbee6667eb9ac9c",
+    "runtime/component-interaction.js": "befd4c53719aabd0f6deea171f1c90a78b0836359b673f61e950368c3886b41f",
+    "tests/edx-core-2-group-lock.test.mjs": "8b0ff4bf4effaa7d64477a8f0be76f095ebb8cc68bedb5ab82b6cfc1ffb8617d",
+    "tests/edx-core-3-undo-redo.test.mjs": "5dcf80792ef862906766ae024c7ef625d145a4f23e8515c4b96d24c454d0eece",
+    "tests/edx-core-3-transaction-boundary.test.mjs": "618ed9bfecfa9e4d71dbb165a9ceb805ddd239e5389baf6a26c51cf63e60e808",
+    "tests/edx-wp1-s4-perf.test.mjs": "6093bd420094c58f0bf22cc9d72ee57b6cf76787de1f618b0ed58e282a7353fc",
+    "tests/edx-wp1-s4-interaction.test.mjs": "72e63c44bcd0eaf2a5da0b51d155bd32f6dd4a88025e58d413db08d27e91c5e9",
+    "tests/edx-wp1-s5-keyboard.test.mjs": "d6798df76819a7e1772d6cfad3ede262f8b281f410869d0e5b931c26a3af77ab",
+    "tests/edx-wp1-s9-mounted-align.test.mjs": "84f8f996a21075861f086412a88ad9a180dbb700304692b88786f5f2250ec357",
+    "tests/edx-wp1-s10-mounted-distribute.test.mjs": "f5ea233ed6594cd5ef8d0f99c7cd31c2ceb029766bf5fdc1554896e8e6a6c4f7",
+    "tests/edx-wp1-s7-snap.test.mjs": "633485727d04a6e3f7e52e0beb650bb240f13e0932d3cbe28a443902c1655233"
+  },
+  "exit": 0,
+  "signal": null,
+  "summary": {
+    "tests": 160,
+    "pass": 160,
+    "fail": 0,
+    "skipped": 0
+  },
+  "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r07-core-01.tap.gz"
+}

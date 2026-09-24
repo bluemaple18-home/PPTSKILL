@@ -1,0 +1,8 @@
+{
+  "phase": "focused runner 啟動",
+  "testExecutionStarted": false,
+  "error": "ENOENT: no such file or directory, open 'tests/edx-wp1-s9-mounted-alignment.test.mjs'",
+  "cause": "沿用 r06 runner 的不存在路徑；不是產品 RED 或 fault injection 結果",
+  "correction": "rg --files 查得 tests/edx-wp1-s9-mounted-align.test.mjs，只更正本輪新 runner，原歷史不改",
+  "result": "更正後 core-01 已執行 9 檔，160/160、exit 0"
+}

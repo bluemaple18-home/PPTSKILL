@@ -738,6 +738,12 @@ if(afterRollback)try{afterRollback(error);refreshHistoryControls(true)}catch(fau
 throw error;
 }
 };
+// 取消失敗才啟用既有 mutate fallback；連 checkpoint 捕捉／驗證失敗都必須封閉後續寫入。
+const recoverCancel=(error,checkpoint,verify)=>{
+let restored=false;
+try{mutate(()=>{throw error},checkpoint,()=>{verify();restored=true})}
+catch(fault){if(!restored){rollbackFailed=true;throw new Error('rollback failed：'+fault.message,{cause:error})}throw fault}
+};
 const replayHistory=direction=>{if(!historyMode()||historyBusy(true))return false;if(spec.slides.filter(s=>s.id===currentId).length!==1||qa('.slide').filter(s=>s.dataset.slideId===currentId).length!==1)return false;const before=spec,revisionBefore=revision,checkpoint=captureHistoryDom(),historyBefore=history.checkpoint(),controls=captureHistoryControls(),selectionBefore=layout?.getSelectionState(),statusBefore=q('[data-editor-status]')?.textContent;try{const changed=history.replay(direction,value=>{const next=clean(value);if(!sameCanonicalValue(next,value))throw new Error('history snapshot 清理結果失配。');spec=next;projectHistoryState(next,before);layout?.refresh?.();clearTypographyTarget();refreshSelectedImage('refresh');revision++});if(changed){refreshHistoryControls();status(direction==='undo'?'已復原':'已重做')}return changed}catch(error){spec=before;revision=revisionBefore;history.restore(historyBefore);restoreHistoryDom(checkpoint);try{layout?.restoreSelection?.(selectionBefore)}catch{}restoreHistoryControls(controls);if(statusBefore!==undefined)try{status(statusBefore)}catch{}throw error}}
 // UI handler 可攔截 executor error；operation 本身必須先回退，不能把半成品留給外層。
 const executeOperationInternal=(request,afterCommit=()=>{})=>mutate(()=>{const o=validateOperationRequest(request),before=clone(spec);const result=executeOperationCore(request);if(!sameCanonicalValue(before,spec))history.record(before,clone(spec),operationDescriptors[o.operation]?.undoable===true);afterCommit();return result});
@@ -807,7 +813,7 @@ window.addEventListener?.('scroll',event=>{if(cropDialog?.isOpen()&&event.target
 ${buildComponentInteractionRuntime()}
 ${buildMultiSelectionRuntime()}
 ${buildComponentInteractionMount()}
-layout=mountComponentInteraction({document,window,getSpec:()=>spec,getRevision:()=>revision,resolveIdentities:resolveSlideElementIdentities,groupLock,executeOperation:executeOperationInternal,mutate,runMutation,mutationBlocked,previewEvent,project:()=>projectComponentGeometry(document,spec),notify:message=>{if(message!=='可直接播放'||q('[data-editor-status]')?.textContent!=='文字編輯目標已失效，請重新開啟。')status(message)},setTextMode:setEdit,selectSlide:select,onSelectionChange:refreshSelectedImage,onGestureChange:rendered=>refreshHistoryControls(rendered===true)});
+layout=mountComponentInteraction({document,window,getSpec:()=>spec,getRevision:()=>revision,resolveIdentities:resolveSlideElementIdentities,groupLock,executeOperation:executeOperationInternal,mutate,recoverCancel,runMutation,mutationBlocked,previewEvent,project:()=>projectComponentGeometry(document,spec),notify:message=>{if(message!=='可直接播放'||q('[data-editor-status]')?.textContent!=='文字編輯目標已失效，請重新開啟。')status(message)},setTextMode:setEdit,selectSlide:select,onSelectionChange:refreshSelectedImage,onGestureChange:rendered=>refreshHistoryControls(rendered===true)});
 cropDialog=mountCropDialog({document,window,contract:imageCrop,projection:cropProjection,getTarget:selectedImageTarget,getComponent:selectedImageComponent,getRevision:()=>revision,getCurrentSlide:()=>currentId,getBusy:()=>Boolean(pendingTextInsertion||textInsertionBusy||insertionBusy||imagePickerOpen||pendingAssetOperations||composingText||deletionInProgress||q('[data-component-dialog]')?.open),cancelGesture:()=>layout?.cancel('picker'),execute:executeOperationInternal,notify:status,refresh:()=>refreshSelectedImage('refresh')});
 window.addEventListener?.('pagehide',()=>{cropDialog?.close();cropProjection.destroy();});
 window.addEventListener?.('pageshow',event=>{if(event.persisted){projectCropImages(document,spec);refreshSelectedImage('refresh');}});

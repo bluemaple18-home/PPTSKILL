@@ -310,3 +310,53 @@ for (const snap of [false, true]) test(`R06 active preview setMode(false) fault 
   h.begin(); h.update(8, 0, 'drag', snap ? { left: 808, top: 280 } : {}); h.finish();
   assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
 });
+
+for (const snap of [false, true]) for (const entry of ['api', 'click']) test(`R07 cancel projector fault 回 canonical、不中途開放寫入（snap=${snap}, ${entry}）`, () => {
+  const h = mountedEditor(fixture(0)); h.ready(); if (snap) h.action('snap-layout');
+  const node = h.component(), style = node.getAttribute('style'), before = state(h), mode = modeState(h);
+  const proxy = snap && h.vendor.options.target, proxyStyle = proxy && proxy.getAttribute('style');
+  h.begin(); h.update(8, 10, 'drag', snap ? { left: 808, top: 290 } : {});
+  assert.notEqual(node.getAttribute('style'), style); assert.equal(node.style.top, '290px');
+  const base = node.style, failure = Error('cancel projection fault'); let injected = false, nestedRejected = false;
+  node.style = new Proxy(base, { get(target, key) {
+    if (key === 'setProperty') return (name, value) => {
+      target.setProperty(name, value);
+      if (!injected && name === 'left') {
+        injected = true;
+        try { h.api.executeOperation(edit('nested cancellation')); } catch (error) { nestedRejected = /同步交易/.test(error.message); }
+        throw failure;
+      }
+    };
+    return target[key];
+  } });
+  assert.throws(() => entry === 'api' ? h.api.layout.setMode(false) : h.action('layout'), error => error === failure);
+  assert.equal(injected, true); assert.equal(nestedRejected, true);
+  assert.deepEqual(state(h), before); assert.deepEqual(modeState(h), mode);
+  assert.equal(node.getAttribute('style'), style); if (proxy) assert.equal(proxy.getAttribute('style'), proxyStyle);
+  assert.equal(h.api.layout.getState().gesturing, false); assert.equal(h.vendor.destroyed, false);
+  h.finish(); assert.deepEqual(state(h), before);
+  h.api.executeOperation(edit('after cancel fault')); assert.equal(h.getRevision(), before.revision + 1);
+  h.begin(); h.update(8, 0, 'drag', snap ? { left: 808, top: 280 } : {}); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+});
+
+test('R07 cancel attribute fallback 不可驗證時 fail-closed，gesture 不復活', () => {
+  const h = mountedEditor(fixture(0)); h.ready(); h.action('snap-layout');
+  const node = h.component(), before = state(h); h.begin(); h.update(8, 10, 'drag', { left: 808, top: 290 });
+  assert.equal(node.style.top, '290px');
+  const base = node.style, setAttribute = node.setAttribute, failure = Error('cancel projection fault');
+  let injected = false, fallbackAttempts = 0;
+  node.style = new Proxy(base, { get(target, key) {
+    if (key === 'setProperty') return (name, value) => { target.setProperty(name, value); if (!injected && name === 'left') { injected = true; throw failure; } };
+    return target[key];
+  } });
+  node.setAttribute = function (name, value) { if (name === 'style') { fallbackAttempts++; throw Error('attribute fallback unavailable'); } return setAttribute.call(this, name, value); };
+  let caught; try { h.api.layout.setMode(false); } catch (error) { caught = error; }
+  assert.equal(injected, true); assert.deepEqual(state(h), before); assert.equal(h.api.layout.getState().gesturing, false);
+  assert.throws(() => h.api.executeOperation(edit('must stay blocked')), /rollback failed/);
+  assert.match(caught.message, /rollback failed/); assert.equal(caught.cause, failure); assert.ok(fallbackAttempts > 0);
+  assert.equal(h.api.undo(), false); assert.throws(() => h.api.layout.setMode(false), /rollback failed/);
+  let reads = 0; const request = new Proxy({}, { get() { reads++; throw Error('payload read'); } });
+  assert.throws(() => h.api.executeOperation(request), /rollback failed/); assert.equal(reads, 0);
+  h.finish(); assert.deepEqual(state(h), before);
+});

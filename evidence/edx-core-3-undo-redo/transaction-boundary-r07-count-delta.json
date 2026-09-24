@@ -1,0 +1,21 @@
+{
+  "previous": {
+    "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r06-core-01.log.gz",
+    "tests": 153
+  },
+  "current": {
+    "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r07-core-01.tap.gz",
+    "tests": 160
+  },
+  "added": [
+    "R07 cancel projector fault 回 canonical、不中途開放寫入（snap=false, api）",
+    "R07 cancel projector fault 回 canonical、不中途開放寫入（snap=false, click）",
+    "R07 cancel projector fault 回 canonical、不中途開放寫入（snap=true, api）",
+    "R07 cancel projector fault 回 canonical、不中途開放寫入（snap=true, click）",
+    "R07 cancel attribute fallback 不可驗證時 fail-closed，gesture 不復活",
+    "S9 multi-selection 才顯示 align controls；align 後 selection 保留且 export 不洩漏",
+    "S9 align UI 任一 target 缺 canonical geometry 時整筆不改且保留 selection"
+  ],
+  "removed": [],
+  "explanation": "153 + 5 個 R07 新反例 + 2 個正確選入的 mounted-align 測試 = 160；無其他增減。只比較既存 TAP，未重跑測試。"
+}
