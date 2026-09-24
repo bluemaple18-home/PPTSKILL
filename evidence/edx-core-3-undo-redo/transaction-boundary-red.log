@@ -1,0 +1,98 @@
+✖ 交易邊界：reorder pending text 的 status 不得重入 Undo (116.82225ms)
+✖ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (76.85025ms)
+✖ 交易邊界：double projection fault 回復 preview 前的 attribute (51.198792ms)
+✖ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (56.697792ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 531.534042
+
+✖ failing tests:
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:15:1
+✖ 交易邊界：reorder pending text 的 status 不得重入 Undo (116.82225ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:21:34)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.start (node:internal/test_runner/test:1096:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:27:1
+✖ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (76.85025ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:37:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:40:1
+✖ 交易邊界：double projection fault 回復 preview 前的 attribute (51.198792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'position:absolute;inset:auto;left:800px;top:290px;width:640px;height:480px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box'
+  - 'position:absolute;inset:auto;left:800px;top:280px;width:640px;height:480px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:49:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'position:absolute;inset:auto;left:800px;top:290px;width:640px;height:480px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box',
+    expected: 'position:absolute;inset:auto;left:800px;top:280px;width:640px;height:480px;margin:0;min-width:0;max-width:none;min-height:0;max-height:none;box-sizing:border-box',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:53:1
+✖ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (56.697792ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:66:37)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

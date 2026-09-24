@@ -372,8 +372,8 @@ test('Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor', () =
 test('Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取', () => {
   const h = mountedEditor(fixture(0)); h.ready();
   const before = h.getSpec(), revision = h.getRevision(), node = h.component(), selection = h.api.layout.getSelectionState();
-  const original = h.api.layout.clearSelection;
-  h.api.layout.clearSelection = (...args) => { original(...args); throw Error('selection cleanup post-effect'); };
+  const selecto = h.selecto, original = selecto.setSelectedTargets; let injected = false;
+  selecto.setSelectedTargets = function (nodes) { const out = original.call(this, nodes); if (!injected && !nodes.length) { injected = true; throw Error('selection cleanup post-effect'); } return out; };
   assert.throws(() => h.api.applyLocalPatch({ slideId: 'portable', region: 'content.components.portable-quote', value: { text: '失敗 patch' } }), /selection cleanup post-effect/);
   assert.deepEqual(h.getSpec(), before); assert.equal(h.getRevision(), revision);
   assert.equal(h.component(), node); assert.deepEqual(h.api.layout.getSelectionState(), selection);
@@ -396,12 +396,12 @@ test('Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable', () =>
   assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
   deck.insertBefore = insert;
   h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '待復原' });
-  const refresh = h.api.layout.refresh;
-  h.api.layout.refresh = () => { h.api.layout.clearSelection(); throw Error('replay selection post-effect'); };
+  const selecto = h.selecto, refresh = selecto.setSelectedTargets; let injected = false;
+  selecto.setSelectedTargets = function (nodes) { const out = refresh.call(this, nodes); if (!injected && !nodes.length) { injected = true; throw Error('replay selection post-effect'); } return out; };
   assert.throws(() => h.api.undo(), /replay selection post-effect/);
   assert.deepEqual(h.api.layout.getSelectionState(), selected);
   assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
-  h.api.layout.refresh = refresh;
+  selecto.setSelectedTargets = refresh;
 });
 
 test('Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled', () => {

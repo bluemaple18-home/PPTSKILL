@@ -1,0 +1,32 @@
+file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/component-interaction.js:338
+      });
+       ^
+
+SyntaxError: missing ) after argument list
+    at compileSourceTextModule (node:internal/modules/esm/utils:354:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:91:18)
+    at #translate (node:internal/modules/esm/loader:451:20)
+    at afterLoad (node:internal/modules/esm/loader:507:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:512:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:555:36)
+    at afterResolve (node:internal/modules/esm/loader:603:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:609:12)
+    at ModuleJob.syncLink (node:internal/modules/esm/module_job:162:33)
+    at ModuleJob.link (node:internal/modules/esm/module_job:252:17)
+
+Node.js v25.9.0
+✖ tests/edx-core-3-transaction-boundary.test.mjs (145.449667ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 154.691916
+
+✖ failing tests:
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:1:1
+✖ tests/edx-core-3-transaction-boundary.test.mjs (145.449667ms)
+  'test failed'

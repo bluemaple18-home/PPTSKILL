@@ -182,11 +182,15 @@ test('Core2 portable group resize 最後 update 有效、release 越過 minimum 
 test('Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤', () => {
   const h = groupedUi(), before = h.getSpec(), revision = h.getRevision();
   const selection = selectedIds(h), target = h.api.layout.getState().target;
-  const originalVendor = h.vendor, original = h.api.layout.refresh;
-  const failure = new Error('injected AFTER refresh');
-  h.api.layout.refresh = () => { original(); throw failure; };
-  try { assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure); }
-  finally { h.api.layout.refresh = original; }
+  const originalVendor = h.vendor, status = h.document.querySelector('[data-editor-status]');
+  const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(status), 'textContent');
+  const failure = new Error('injected AFTER refresh'); let faults = 0;
+  Object.defineProperty(status, 'textContent', { configurable: true, get() { return descriptor.get.call(this); }, set(value) {
+    descriptor.set.call(this, value);
+    if (value === '已鎖定；選取後可解鎖') { faults++; throw failure; }
+  } });
+  assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure);
+  assert.equal(faults, 1);
   assert.deepEqual(h.getSpec(), before);
   assert.equal(h.getRevision(), revision);
   assert.deepEqual(selectedIds(h), selection);
@@ -198,12 +202,22 @@ test('Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原
 
 test('Core2 portable rollback 投影再拋錯仍保留原始 operation error', () => {
   const h = groupedUi(), before = h.getSpec(), revision = h.getRevision();
-  const original = h.api.layout.refresh, restore = h.api.layout.restoreProjection;
-  const failure = new Error('injected AFTER refresh');
-  h.api.layout.refresh = () => { original(); throw failure; };
-  h.api.layout.restoreProjection = () => { restore(); throw new Error('injected rollback'); };
-  try { assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure); }
-  finally { h.api.layout.refresh = original; h.api.layout.restoreProjection = restore; }
+  const status = h.document.querySelector('[data-editor-status]');
+  const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(status), 'textContent');
+  const failure = new Error('injected AFTER refresh'); let faults = 0, rollbackFaults = 0;
+  Object.defineProperty(status, 'textContent', { configurable: true, get() { return descriptor.get.call(this); }, set(value) {
+    descriptor.set.call(this, value);
+    if (value === '已鎖定；選取後可解鎖') { faults++; throw failure; }
+  } });
+  const Moveable = h.window.PPTSKILLMoveable.default;
+  h.window.PPTSKILLMoveable.default = class extends Moveable {
+    on(name, handler) {
+      super.on(name, handler);
+      if (name === 'resizeGroupEnd' && rollbackFaults++ === 0) throw new Error('injected rollback');
+    }
+  };
+  assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure);
+  assert.equal(faults, 1); assert.ok(rollbackFaults >= 1);
   assert.deepEqual(h.getSpec(), before);
   assert.equal(h.getRevision(), revision);
   assert.deepEqual(new Set(selectedIds(h)), new Set(ids));

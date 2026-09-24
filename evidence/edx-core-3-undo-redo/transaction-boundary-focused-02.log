@@ -1,0 +1,12 @@
+✔ 交易邊界：reorder pending text 的 status 不得重入 Undo (164.774916ms)
+✔ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (124.930625ms)
+✔ 交易邊界：double projection fault 回復 preview 前的 attribute (154.030083ms)
+✔ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (182.891667ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 894.921708

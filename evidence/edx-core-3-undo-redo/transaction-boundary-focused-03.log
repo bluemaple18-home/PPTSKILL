@@ -1,0 +1,63 @@
+✔ 交易邊界：reorder pending text 的 status 不得重入 Undo (99.932125ms)
+✔ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (64.20075ms)
+✔ 交易邊界：double projection fault 回復 preview 前的 attribute (41.732541ms)
+✔ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (38.672584ms)
+✔ 交易邊界：reorder 所有 public 入口先拒絕、再讀 payload (56.194542ms)
+✔ 交易邊界：finish 所有 public 入口先拒絕、再讀 payload (54.557791ms)
+✔ 交易邊界：checkpoint fallback 本身無法驗證時鎖住 mutation 與 gesture (42.102ms)
+✖ 交易邊界：Node payload getter 重入遭拒，private paste-style 保留 (2.358042ms)
+✖ 交易邊界：portable private paste-style 與 undo／redo 相容 (34.157792ms)
+✖ 交易邊界：invalid component patch 保留已同步的 pending text (38.466709ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 7
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 679.961458
+
+✖ failing tests:
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:116:1
+✖ 交易邊界：Node payload getter 重入遭拒，private paste-style 保留 (2.358042ms)
+  Error: edit-text payload／target 欄位無效。
+      at Object.validateEditTextRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/image-insertion.js:24:66)
+      at validateOperationRequest (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:48:65)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:258:42)
+      at Object.executeOperation (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/runtime/deck-editor.js:401:26)
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:120:7)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:128:1
+✖ 交易邊界：portable private paste-style 與 undo／redo 相容 (34.157792ms)
+  TypeError: Cannot read properties of undefined (reading 'fontSize')
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:136:75)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+
+test at tests/edx-core-3-transaction-boundary.test.mjs:140:1
+✖ 交易邊界：invalid component patch 保留已同步的 pending text (38.466709ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-transaction-boundary.test.mjs:143:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }

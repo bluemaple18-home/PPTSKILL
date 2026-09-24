@@ -2,7 +2,7 @@ import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.j
 import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
-export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {} }) {
+export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {}, capturePreview = () => [], transactFinish = work => work() }) {
   let enabled = false, target = null, gesture = null, selectedToken = null, finishing = false;
   const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
   const select = next => {
@@ -50,7 +50,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       if (!enabled || !current?.rect || !['drag', 'resize'].includes(kind) || !Number.isFinite(scale) || scale <= 0
         || !Number.isFinite(point.x) || !Number.isFinite(point.y)) return false;
       gesture = { kind, target: { ...target }, token: current.token, tokens: current.tokens, revision: current.revision,
-        base: { ...current.rect }, next: { ...current.rect }, point: { ...point }, scale };
+        checkpoint: capturePreview(target), base: { ...current.rect }, next: { ...current.rect }, point: { ...point }, scale };
       return true;
     },
     update(point) {
@@ -65,32 +65,25 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
     },
     finish() {
       const g = gesture;
+      if (!g || finishing) return false;
       gesture = null;
-      if (!g) return false;
       finishing = true;
-      let committed = false;
       try {
-        beforeFinish();
-        if (!enabled || !fresh(g)) { onCancel(); notify('元件已變更，已取消拖曳'); return false; }
-        const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
-        if (fields.every(key => g.next[key] === g.base[key])) return false;
-        notify('手動版面已更新');
-        // preview 先回 canonical；提交後投影須留在 operation 的 rollback 範圍內。
-        restore();
-        executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
-          value: Object.fromEntries(fields.map(key => [key, g.next[key]])) }, () => {
+        return transactFinish(() => {
+          beforeFinish();
+          if (!enabled || !fresh(g)) { onCancel(); restore(); notify('元件已變更，已取消拖曳'); return false; }
+          const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
+          if (fields.every(key => g.next[key] === g.base[key])) { restore(); return false; }
+          notify('手動版面已更新');
           restore();
-          // 控制列在同一 operation 內收尾；setter 重入仍由 projection guard 拒絕。
-          finishing = false;
-          try { beforeFinish(); } finally { finishing = true; }
-        });
-        committed = true;
-        return true;
-      } catch (error) { onCancel(); notify('未套用：' + error.message); return false; }
-      finally {
-        try { if (!committed) restore(); }
-        finally { finishing = false; if (!committed) beforeFinish(); }
-      }
+          executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
+            value: Object.fromEntries(fields.map(key => [key, g.next[key]])) }, () => { restore(); beforeFinish(); });
+          return true;
+        }, g.checkpoint);
+      } catch (error) {
+        if (/rollback failed/.test(error.message) || error.componentProjection) throw error;
+        return false;
+      } finally { finishing = false; }
     },
   };
 }
@@ -115,7 +108,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {} }) {
+  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {}, runMutation = work => work(), mutationBlocked = () => false, mutationEvent = handler => handler, previewEvent = handler => handler }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -155,7 +148,15 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const target = interaction.getState().target, rect = geometryTarget && target && resolve(target)?.rect;
     if (rect) projectBox(geometryTarget, rect);
   };
-  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify, beforeFinish: onGestureChange,
+  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
+    beforeFinish: () => { try { moveable?.updateRect(); } catch (error) { error.componentProjection = true; throw error; } onGestureChange(); },
+    capturePreview(target) {
+      const current = resolve(target);
+      return { revision: getRevision(), nodes: [...new Set([...(current?.nodes || [current?.node]), geometryTarget].filter(Boolean))]
+        .map(node => [node, ['style', 'data-pptskill-geometry'].map(key => [key, node.getAttribute(key)])]),
+        controls: ['undo', 'redo'].map(direction => { const button = document.querySelector('[data-action="' + direction + '"]'); return button && [button, button.disabled, button.title]; }) };
+    },
+    transactFinish: (work, checkpoint) => runMutation(work, checkpoint, error => { suppressPointerClick = true; moveable?.updateRect(); notify('未套用：' + error.message); }),
     onCancel: () => { suppressPointerClick = true; onGestureChange(); },
     preview(target, rect) {
       const current = resolve(target);
@@ -272,10 +273,10 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
           && !node.closest?.('[data-pptskill-element-id],.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box,input,textarea,select,[contenteditable],[role="textbox"]'));
       },
     });
-    selecto.on('selectEnd', event => {
+    selecto.on('selectEnd', mutationEvent(event => {
       const ids = [...new Set((event.selected || []).map(node => node.dataset?.pptskillElementId).filter(Boolean))];
       mutateSelection(ids, event.inputEvent?.shiftKey ? 'toggle' : 'replace');
-    });
+    }));
     selecto.setSelectedTargets(eligibleNodes().filter(node => selection.getState().selected.includes(node.dataset.pptskillElementId)));
   };
   const cancel = (reason = 'clear') => {
@@ -310,7 +311,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     for (const [eventName, kind] of [['drag', 'drag'], ['resize', 'resize']]) {
       const vendorEvent = eventName + (isGroup ? 'Group' : '');
       let origin, base, scale;
-      moveable.on(vendorEvent + 'Start', event => {
+      moveable.on(vendorEvent + 'Start', previewEvent(event => {
         if (moveable !== vendor) { event.stop(); return; }
         const live = resolve(target);
         scale = live?.slideNode.getBoundingClientRect().width / COMPONENT_GEOMETRY.slideWidth;
@@ -323,8 +324,8 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         onGestureChange();
         if (kind === 'drag') { event.set?.([0, 0]); event.events?.forEach(child => child.set?.([0, 0])); }
         if (isGroup && kind === 'resize') event.setFixedDirection?.([-1, -1]);
-      });
-      moveable.on(vendorEvent, event => {
+      }));
+      moveable.on(vendorEvent, previewEvent(event => {
         if (moveable !== vendor || !interaction.getState().gesturing) return;
         let next = point(event);
         if (useSnap && Number.isFinite(next.x) && Number.isFinite(next.y) && !(next.x === origin.x && next.y === origin.y)) {
@@ -335,27 +336,18 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         }
         // 返回起點必須送回 base，不能略過而留下上一個 preview。
         if (!interaction.update(next) && useSnap) clearSelection();
-      });
+      }));
       moveable.on(vendorEvent + 'End', event => {
-        if (moveable !== vendor || !interaction.getState().gesturing) return;
-        // Moveable 可能在越過最小尺寸後停止送 update；release 才是最後候選。
-        if (isGroup && kind === 'resize' && Number.isFinite(event?.inputEvent?.clientX) && Number.isFinite(event.inputEvent.clientY)) interaction.update(point(event));
-        // 先完成可能拋錯的控制投影；失敗時還原 preview，避免提交後才報錯。
-        try { moveable?.updateRect(); }
-        catch (error) {
-          interaction.cancel();
-          try { moveable?.updateRect(); } catch { clearSelection(); }
-          notify('未套用：' + error.message);
-          throw error;
-        }
-        const committed = interaction.finish();
-        if (useSnap && !committed) clearSelection();
-        else if (!committed) moveable?.updateRect();
+        if (mutationBlocked() || moveable !== vendor || !interaction.getState().gesturing) return;
+        if (isGroup && kind === 'resize') previewEvent(event => {
+          if (Number.isFinite(event?.inputEvent?.clientX) && Number.isFinite(event.inputEvent.clientY)) interaction.update(point(event));
+        })(event);
+        return interaction.finish();
       });
     }
-    observer = new MutationObserver(() => {
+    observer = new MutationObserver(previewEvent(() => {
       if (resolve(target)?.node !== current.node || current.nodes?.some(node => !node.isConnected)) { clearSelection(); notify('元件已移除，已取消選取'); }
-    });
+    }));
     observer.observe(document.querySelector('.deck'), { childList: true, subtree: true });
     // explicit container 會略過 vendor mount 的第二次 render；ref 已掛載後量測，才會顯示首次 SE handle。
     if (useSnap) vendor.updateRect();
@@ -496,17 +488,20 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     // 沒有尾隨 click（例如 pointercancel）時，新的有效 pointer 仍立即恢復操作。
     if (event.isTrusted && event.isPrimary !== false && event.button === 0) { suppressPointerClick = false; routedControlClick = null; }
   };
-  window.addEventListener('click', routeGestureControl, true);
-  document.addEventListener('pointerdown', pointerDown, true);
-  document.addEventListener('click', click);
-  document.addEventListener('keydown', keydown, true);
-  document.addEventListener('compositionstart', compositionStart, true);
-  document.addEventListener('compositionend', compositionEnd, true);
-  document.addEventListener('pointercancel', pointerCancel, true);
+  const guarded = new Map();
+  // viewport／pointer observation 只持同步排他，不複製 canonical 或全 DOM。
+  const entry = handler => { if (!guarded.has(handler)) guarded.set(handler, (handler === click || handler === keydown ? mutationEvent : previewEvent)(handler)); return guarded.get(handler); };
+  window.addEventListener('click', entry(routeGestureControl), true);
+  document.addEventListener('pointerdown', entry(pointerDown), true);
+  document.addEventListener('click', entry(click));
+  document.addEventListener('keydown', entry(keydown), true);
+  document.addEventListener('compositionstart', entry(compositionStart), true);
+  document.addEventListener('compositionend', entry(compositionEnd), true);
+  document.addEventListener('pointercancel', entry(pointerCancel), true);
   const blur = () => { composing = false; if (interaction.getState().enabled) cancel('blur'); clearSelection('blur'); };
-  window.addEventListener('blur', blur);
-  window.addEventListener('resize', viewportChanged);
-  window.addEventListener('scroll', viewportChanged, true);
+  window.addEventListener('blur', entry(blur));
+  window.addEventListener('resize', entry(viewportChanged));
+  window.addEventListener('scroll', entry(viewportChanged), true);
   const refresh = () => { const ids = selection.getState().selected; const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId); const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids; if (!selection.replace(expanded)) applySelection(expanded); };
   return { setMode, clearSelection, restoreSelection, cancel, refresh, restoreProjection: refresh, getState: interaction.getState,
     getSelectionState: selection.getState,
@@ -515,14 +510,14 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       destroySelecto();
       suppressPointerClick = false;
       routedControlClick = null;
-      window.removeEventListener('click', routeGestureControl, true);
-      document.removeEventListener('pointerdown', pointerDown, true);
-      document.removeEventListener('click', click); document.removeEventListener('keydown', keydown, true);
-      document.removeEventListener('compositionstart', compositionStart, true);
-      document.removeEventListener('compositionend', compositionEnd, true);
-      document.removeEventListener('pointercancel', pointerCancel, true);
-      window.removeEventListener('blur', blur); window.removeEventListener('resize', viewportChanged);
-      window.removeEventListener('scroll', viewportChanged, true);
+      window.removeEventListener('click', entry(routeGestureControl), true);
+      document.removeEventListener('pointerdown', entry(pointerDown), true);
+      document.removeEventListener('click', entry(click)); document.removeEventListener('keydown', entry(keydown), true);
+      document.removeEventListener('compositionstart', entry(compositionStart), true);
+      document.removeEventListener('compositionend', entry(compositionEnd), true);
+      document.removeEventListener('pointercancel', entry(pointerCancel), true);
+      window.removeEventListener('blur', entry(blur)); window.removeEventListener('resize', entry(viewportChanged));
+      window.removeEventListener('scroll', entry(viewportChanged), true);
     },
   };
 }

@@ -1,0 +1,138 @@
+✔ Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision (9.606208ms)
+✔ Core2 Node group move／resize 比例、單次提交與整批拒絕 (3.008458ms)
+✔ Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (5.248125ms)
+✔ Core2 Node exact own-data payload 不呼叫 getter (1.540083ms)
+✔ Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision (54.713334ms)
+✔ Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕 (39.874042ms)
+✔ Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (62.799541ms)
+✔ Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter (34.268375ms)
+✔ Core2 metadata sanitizer 持久化與非法引用不得靜默清除 (2.285208ms)
+✔ Core2 schema／operationDescriptors 與 portable export 保留 authority (32.220375ms)
+✔ Core2 mounted toolbar、原生group事件mapping、單次revision與clone (104.736542ms)
+✔ Core2 portable group resize 最後 update 有效、release 越過 minimum 時整組不提交 (69.8885ms)
+✖ Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤 (67.373959ms)
+✖ Core2 portable rollback 投影再拋錯仍保留原始 operation error (66.189875ms)
+✔ Core2 mounted click/marquee展開整組、Shift切換不拆散 (124.923166ms)
+✔ Core2 mounted lock可選取解鎖，但沒有transform或image/text入口 (156.10475ms)
+✔ Core2 mounted group nudge、IME guard、Escape/pointercancel均不誤提交 (104.192625ms)
+✔ Core2 mounted stale／bounds／minimum拒絕，移除任一成員取消整组 (84.773541ms)
+✔ Core2 mounted export/reopen清UI並保留group lock；duplicate不共用metadata引用 (146.919875ms)
+✔ Core2 Node locked多目標／圖片mutation入口整批拒絕 (3.325083ms)
+✔ Core2 portable locked多目標／圖片mutation入口整批拒絕 (32.354292ms)
+✔ Core2 portable group projection同步throw與重入，canonical/DOM/revision全回退 (78.800542ms)
+✔ Core2 portable未完成gesture或text dialog期間group metadata拒絕 (129.377292ms)
+✔ 交易邊界：reorder pending text 的 status 不得重入 Undo (96.8655ms)
+✔ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (60.422959ms)
+✔ 交易邊界：double projection fault 回復 preview 前的 attribute (38.718625ms)
+✔ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (37.088416ms)
+✔ Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier (10.434708ms)
+✔ Core3 Node 驗證失敗不動 history，20 筆 bounded (7.9525ms)
+✔ Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor (0.292917ms)
+✔ Core3 portable slide reorder 的 after-effect DOM throw 原子回退 (60.945167ms)
+✔ Core3 Repair3 gesture restore after-effect throw 回退 geometry／history (47.360375ms)
+✔ Core3 Repair3 gesture 收尾投影不得同步重入 Undo (43.508875ms)
+✔ Core3 Repair3 pre-commit restore setter 不得重入 Undo (44.670084ms)
+✔ Core3 Repair3 post-commit restore setter 不得重入 Undo (67.871958ms)
+✔ Core3 Repair3 成功通知 setter 不得重入 Undo (72.812959ms)
+✔ Core3 Repair3 reorder after-effect throw 不提交 pending 文字 (38.90575ms)
+✔ Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序 (34.973292ms)
+✔ Core3 portable duplicate／remove after-effect throw 不留下變更 (33.666417ms)
+✔ Core3 portable direct component patch replaceWith after-effect throw 不留下變更 (20.918542ms)
+✔ Core3 portable operation undo／redo 與 false writer barrier (66.318583ms)
+✔ Core3 portable 成功 slide direct writer 清除歷史 (80.708916ms)
+✔ Core3 browser harness flag 已接線且預留正式 host 驗收 (18.77825ms)
+✔ Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership (68.120916ms)
+✔ Core3 portable group／lock／geometry replay 與 large-image pointer hot path (1389.112375ms)
+✔ Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade (693.571458ms)
+✔ Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor (29.526459ms)
+✔ Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history (14.248708ms)
+✔ Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry (26.211792ms)
+✔ Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor (38.77925ms)
+✖ Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取 (52.214084ms)
+✔ Core3 Repair1 stale component DOM patch fail closed (17.387542ms)
+✖ Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable (86.06275ms)
+✔ Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled (52.638459ms)
+✔ Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作 (60.368708ms)
+✔ Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字 (58.385208ms)
+✔ Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交 (72.369542ms)
+✔ Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影 (59.676084ms)
+ℹ tests 58
+ℹ suites 0
+ℹ pass 54
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5668.708542
+
+✖ failing tests:
+
+test at tests/edx-core-2-group-lock.test.mjs:182:1
+✖ Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤 (67.373959ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:188:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-2-group-lock.test.mjs:199:1
+✖ Core2 portable rollback 投影再拋錯仍保留原始 operation error (66.189875ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:205:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:372:1
+✖ Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取 (52.214084ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:377:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /selection cleanup post-effect/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:389:1
+✖ Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable (86.06275ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:401:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /replay selection post-effect/,
+    operator: 'throws',
+    diff: 'simple'
+  }

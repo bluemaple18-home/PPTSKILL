@@ -1,0 +1,20 @@
+✔ 交易邊界：reorder pending text 的 status 不得重入 Undo (56.088416ms)
+✔ 交易邊界：reorder after-effect callback 不得先成功再被 rollback 抹除 (34.49825ms)
+✔ 交易邊界：double projection fault 回復 preview 前的 attribute (20.222125ms)
+✔ 交易邊界：終態 enabled controls 仍持 finishing／owner，throw 必須 rollback (19.933583ms)
+✔ 交易邊界：reorder 所有 public 入口先拒絕、再讀 payload (26.002875ms)
+✔ 交易邊界：finish 所有 public 入口先拒絕、再讀 payload (24.524875ms)
+✔ 交易邊界：checkpoint fallback 本身無法驗證時鎖住 mutation 與 gesture (17.990375ms)
+✔ 交易邊界：Node payload getter 重入遭拒，private paste-style 保留 (2.1875ms)
+✔ 交易邊界：portable private paste-style 與 undo／redo 相容 (22.414167ms)
+✔ 交易邊界：invalid component patch 保留已同步的 pending text (17.804625ms)
+✔ 交易邊界：mode status after-effect throw 還原 controls 與 mode (26.604417ms)
+✔ 交易邊界：async adapter 同步 optimizer 與完成通知都持 owner (27.928542ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 423.216542

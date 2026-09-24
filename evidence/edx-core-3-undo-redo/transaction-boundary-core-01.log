@@ -1,0 +1,236 @@
+✔ Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision (55.348916ms)
+✔ Core2 Node group move／resize 比例、單次提交與整批拒絕 (17.204833ms)
+✔ Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (51.228041ms)
+✔ Core2 Node exact own-data payload 不呼叫 getter (5.745083ms)
+✔ Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision (140.616292ms)
+✔ Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕 (127.005542ms)
+✔ Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (137.190958ms)
+✔ Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter (97.842875ms)
+✔ Core2 metadata sanitizer 持久化與非法引用不得靜默清除 (6.46575ms)
+✔ Core2 schema／operationDescriptors 與 portable export 保留 authority (92.450416ms)
+✔ Core2 mounted toolbar、原生group事件mapping、單次revision與clone (553.783083ms)
+✔ Core2 portable group resize 最後 update 有效、release 越過 minimum 時整組不提交 (181.2265ms)
+✖ Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤 (123.173667ms)
+✖ Core2 portable rollback 投影再拋錯仍保留原始 operation error (107.627042ms)
+✔ Core2 mounted click/marquee展開整組、Shift切換不拆散 (160.551209ms)
+✔ Core2 mounted lock可選取解鎖，但沒有transform或image/text入口 (181.90425ms)
+✔ Core2 mounted group nudge、IME guard、Escape/pointercancel均不誤提交 (128.659917ms)
+✔ Core2 mounted stale／bounds／minimum拒絕，移除任一成員取消整组 (116.9835ms)
+✔ Core2 mounted export/reopen清UI並保留group lock；duplicate不共用metadata引用 (144.390125ms)
+✔ Core2 Node locked多目標／圖片mutation入口整批拒絕 (2.492833ms)
+✔ Core2 portable locked多目標／圖片mutation入口整批拒絕 (31.549208ms)
+✔ Core2 portable group projection同步throw與重入，canonical/DOM/revision全回退 (73.410833ms)
+✔ Core2 portable未完成gesture或text dialog期間group metadata拒絕 (107.056834ms)
+✔ Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier (8.925042ms)
+✔ Core3 Node 驗證失敗不動 history，20 筆 bounded (7.948542ms)
+✔ Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor (0.256917ms)
+✔ Core3 portable slide reorder 的 after-effect DOM throw 原子回退 (60.393917ms)
+✔ Core3 Repair3 gesture restore after-effect throw 回退 geometry／history (65.393583ms)
+✔ Core3 Repair3 gesture 收尾投影不得同步重入 Undo (93.830958ms)
+✔ Core3 Repair3 pre-commit restore setter 不得重入 Undo (115.058083ms)
+✔ Core3 Repair3 post-commit restore setter 不得重入 Undo (113.835083ms)
+✔ Core3 Repair3 成功通知 setter 不得重入 Undo (150.030958ms)
+✔ Core3 Repair3 reorder after-effect throw 不提交 pending 文字 (76.599834ms)
+✔ Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序 (71.347292ms)
+✔ Core3 portable duplicate／remove after-effect throw 不留下變更 (69.27125ms)
+✔ Core3 portable direct component patch replaceWith after-effect throw 不留下變更 (43.91825ms)
+✔ Core3 portable operation undo／redo 與 false writer barrier (133.325125ms)
+✔ Core3 portable 成功 slide direct writer 清除歷史 (134.045ms)
+✔ Core3 browser harness flag 已接線且預留正式 host 驗收 (24.54275ms)
+✖ Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership (73.428584ms)
+✖ Core3 portable group／lock／geometry replay 與 large-image pointer hot path (4204.515375ms)
+✔ Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade (1051.950917ms)
+✔ Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor (26.783708ms)
+✔ Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history (14.988ms)
+✔ Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry (20.737125ms)
+✔ Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor (37.827708ms)
+✖ Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取 (58.157875ms)
+✔ Core3 Repair1 stale component DOM patch fail closed (108.77125ms)
+✖ Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable (501.826917ms)
+✔ Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled (141.768209ms)
+✖ Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作 (54.224375ms)
+✔ Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字 (57.396792ms)
+✖ Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交 (66.006875ms)
+✖ Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影 (52.499584ms)
+ℹ tests 54
+ℹ suites 0
+ℹ pass 45
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11174.069292
+
+✖ failing tests:
+
+test at tests/edx-core-2-group-lock.test.mjs:182:1
+✖ Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤 (123.173667ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:188:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-2-group-lock.test.mjs:199:1
+✖ Core2 portable rollback 投影再拋錯仍保留原始 operation error (107.627042ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:205:16)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:250:1
+✖ Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership (73.428584ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  false !== true
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:271:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:278:1
+✖ Core3 portable group／lock／geometry replay 與 large-image pointer hot path (4204.515375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 0
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:300:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:372:1
+✖ Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取 (58.157875ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:377:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /selection cleanup post-effect/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:389:1
+✖ Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable (501.826917ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:401:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /replay selection post-effect/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:418:1
+✖ Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作 (54.224375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  true !== false
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:439:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:474:1
+✖ Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交 (66.006875ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /未套用：gesture success status post-effect/. Input:
+
+  '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小'
+
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:496:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小',
+    expected: /未套用：gesture success status post-effect/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/edx-core-3-undo-redo.test.mjs:504:1
+✖ Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影 (52.499584ms)
+  AssertionError [ERR_ASSERTION]: Missing expected exception.
+      at TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:520:10)
+      at Test.runInAsyncScope (node:async_hooks:226:14)
+      at Test.run (node:internal/test_runner/test:1201:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+      at Test.postRun (node:internal/test_runner/test:1330:19)
+      at Test.run (node:internal/test_runner/test:1258:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /vendor updateRect post-effect/,
+    operator: 'throws',
+    diff: 'simple'
+  }
