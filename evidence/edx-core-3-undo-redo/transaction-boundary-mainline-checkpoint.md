@@ -1,9 +1,11 @@
 # Core3 交易邊界 Mainline checkpoint
 
-Status: `NON_BROWSER_GREEN / TARGETED_RE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
+Status: `CODE_NO_GO / CANCEL_PROJECTION_FOLLOWUP / HOST_OBSERVER_BLOCKED`
 Code SHA：`8ad5d6fbaca45027cf73da70432787e1413b7502`。目前仍不能標 Core3 whole-card GO／closure。
 
-## 最新 round-06 repair（待獨立重審）
+最新裁決：packaged `2f134de` round-07 一名GO、一名NO-GO。原兩項P1關閉；新增取消投影P1，主線四組fresh重現，見 `review-round-07.md`。以下待重審文字為交付時狀態，已由本裁決取代。
+
+## Round-06 repair交付紀錄
 
 前封包 `b35336d` 的兩名 verdict 為一 GO、一 NO-GO；主線重播兩個 P1，見 `review-round-06.md`。本批修復 public layout mode 與 operation handler 終態副作用回退，未抹掉前次失敗。
 

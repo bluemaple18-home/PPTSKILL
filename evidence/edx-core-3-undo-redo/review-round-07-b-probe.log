@@ -1,0 +1,6 @@
+PASS public setMode(true) terminal rollback + retry
+PASS public setMode(false) terminal rollback + retry
+PASS group terminal rollback + same target retry/drag
+PASS active preview cancellation snap=false
+PASS active preview cancellation snap=true
+TOTAL 5/5 PASS
