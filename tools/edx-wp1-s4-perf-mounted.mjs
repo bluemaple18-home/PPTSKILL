@@ -102,6 +102,8 @@ export function mountedEditor(input = fixture(), browserApis = {}) {
   body.append(new Element('nav', { class: 'pptskill-editor', 'data-pptskill-editor': '' }));
   const tag = new Element('script', { id: 'deck-spec', type: 'application/json' }, JSON.stringify(state)); body.append(tag);
   for (const action of ['layout', 'snap-layout', 'initialize-layout', 'edit', 'move-up', 'move-down', 'duplicate', 'delete']) body.append(new Element('button', { 'data-action': action }));
+  const groupToolbar = new Element('span', { 'data-pptskill-group-toolbar': '', hidden: '' }); groupToolbar.hidden = true; body.append(groupToolbar);
+  for (const action of ['group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements']) groupToolbar.append(new Element('button', { 'data-action': action, 'data-group-control': '' }));
   const alignToolbar = new Element('span', { 'data-pptskill-context-toolbar': '', hidden: '' }); alignToolbar.hidden = true; body.append(alignToolbar);
   for (const action of ['align-left', 'align-center-x', 'align-right', 'align-top', 'align-center-y', 'align-bottom']) alignToolbar.append(new Element('button', { 'data-action': action }));
   for (const action of ['distribute-horizontal-centers', 'distribute-vertical-centers', 'distribute-horizontal-gaps', 'distribute-vertical-gaps']) { const control = new Element('button', { 'data-action': action, 'data-distribute-control': '', hidden: '' }); control.hidden = true; alignToolbar.append(control); }

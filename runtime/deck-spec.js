@@ -1,6 +1,7 @@
 import { imageCrop } from './image-crop.js';
 import { roleTypography } from './role-typography.js';
-import { sanitizeGeometryOverrides } from './component-geometry.js';
+import { sanitizeGeometryOverrides, validateComponentGeometry } from './component-geometry.js';
+import { createGroupLockContract } from './group-lock.js';
 import { createHash } from 'node:crypto';
 import { sanitizeCompositionMotion } from './motion-capabilities.js';
 import { sanitizeCompositionBackgroundEffect } from './background-effects.js';
@@ -65,6 +66,8 @@ export const resolveSlideElementIds = (slide) => {
   const identities = resolveSlideElementIdentities(slide);
   return [identities.title, identities.subtitle, ...identities.keyPoints, ...identities.components];
 };
+
+export const groupLock = createGroupLockContract(resolveSlideElementIdentities, validateComponentGeometry);
 
 const sanitizeSlide = (slide, index) => {
   const rawKeyPoints = slide?.content?.keyPoints;
@@ -157,6 +160,7 @@ const sanitizeComposition = (composition = {}, components = [], content = {}) =>
     ...(backgroundEffect ? { backgroundEffect } : {}),
     ...(geometryOverrides ? { geometryOverrides } : {}),
     ...(typographyOverrides ? { typographyOverrides } : {}),
+    ...groupLock.sanitize(composition, { content: { ...content, components }, composition }),
   };
 };
 
@@ -243,6 +247,7 @@ export function validateDeckSpec(spec) {
   const ids = spec?.slides?.map((slide) => slide.id) ?? [];
   if (ids.some((id) => !id) || new Set(ids).size !== ids.length) errors.push('slide ID 不可缺漏或重複。');
   for (const slide of spec?.slides ?? []) {
+    try { groupLock.sanitize(slide.composition ?? {}, slide); } catch (error) { errors.push(error.message); }
     try { roleTypography.sanitize(slide.composition?.typographyOverrides, slide.content); } catch (error) { errors.push(error.message); }
     try { sanitizeGeometryOverrides(slide.composition?.geometryOverrides, slide.content?.components ?? []); } catch (error) { errors.push(error.message); }
     if (!slide.content?.title || !slide.content?.subtitle || !Array.isArray(slide.content?.keyPoints) || slide.content.keyPoints.length < 3 || slide.content.keyPoints.length > 5) errors.push(`${slide.id || 'unknown'} 缺少 title／subtitle／3～5 keyPoints。`);
@@ -282,7 +287,12 @@ export function patchComposition(spec, slideId, composition) {
   const sanitized = sanitizeDeckSpec(spec);
   const slide = sanitized.slides.find((item) => item.id === slideId);
   if (!slide) throw new Error(`找不到 slide：${slideId}`);
-  slide.composition = sanitizeComposition(composition, slide.content.components, slide.content);
+  const before = { ...slide, composition: slide.composition };
+  slide.composition = sanitizeComposition({ ...composition,
+    ...(before.composition.elementGroups ? { elementGroups: before.composition.elementGroups } : {}),
+    ...(before.composition.lockedElementIds ? { lockedElementIds: before.composition.lockedElementIds } : {}),
+  }, slide.content.components, slide.content);
+  groupLock.assertPatch(before, slide);
   return sanitized;
 }
 
@@ -292,6 +302,7 @@ export function patchSlideContent(spec, slideId, contentChanges) {
   if (index < 0) throw new Error(`找不到 slide：${slideId}`);
   const target = sanitized.slides[index];
   const next = sanitizeDeckSpec({ ...sanitized, slides: [{ ...target, content: { ...target.content, ...contentChanges } }] }).slides[0];
+  groupLock.assertPatch(target, next);
   sanitized.slides[index] = next;
   return sanitized;
 }

@@ -66,7 +66,7 @@ for (const [lane, makeEditor] of [['Node', createDeckEditor], ['browser API VM',
   });
   test(`${lane} descriptors 深度 immutable 且 allowlist 無法擴權`, () => {
     const editor = makeEditor(fixture), d = editor.operationDescriptors;
-    assert.deepEqual(Object.keys(d), ['insert-element', 'delete-element', 'replace-asset', 'crop-image', 'reset-image-crop', 'set-typography', 'copy-style', 'paste-style', 'edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
+    assert.deepEqual(Object.keys(d), ['group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements', 'move-group', 'resize-group', 'insert-element', 'delete-element', 'replace-asset', 'crop-image', 'reset-image-crop', 'set-typography', 'copy-style', 'paste-style', 'edit-text', 'move-element', 'resize-element', 'align-selection', 'distribute-selection']);
     assert.ok(Object.isFrozen(d));
     assert.ok(Object.isFrozen(d['move-element'].inputSchema.properties.value.properties));
     assert.throws(() => d['move-element'].allowedTargetRoles.push('title'));

@@ -22,11 +22,11 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
   };
   const fresh = g => {
     const current = readTarget(g.target);
-    return current && current.token === g.token && current.revision === g.revision;
+    return current && current.token === g.token && current.revision === g.revision && (!g.tokens || current.tokens?.every((token, i) => token === g.tokens[i]));
   };
   return {
     setMode, select, initialize, cancel,
-    getState: () => ({ enabled, target: target && { ...target }, gesturing: Boolean(gesture) }),
+    getState: () => ({ enabled, target: target && { ...target, ...(target.elementIds ? { elementIds: [...target.elementIds] } : {}) }, gesturing: Boolean(gesture) }),
     // 回傳是否已處理按鍵；越界拒絕與gesture互斥亦須阻止外層翻頁。
     nudge(key, shift = false) {
       const delta = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[key];
@@ -36,7 +36,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       if (gesture) return true;
       const step = shift ? 10 : 1;
       try {
-        executeOperation({ operation: 'move-element', target: { ...target },
+        executeOperation({ operation: target.elementIds ? 'move-group' : 'move-element', target: { ...target },
           value: { x: current.rect.x + delta[0] * step, y: current.rect.y + delta[1] * step } });
         notify('手動版面已更新');
       } catch (error) { notify('未套用：' + error.message); }
@@ -48,7 +48,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       const current = target && readTarget(target);
       if (!enabled || !current?.rect || !['drag', 'resize'].includes(kind) || !Number.isFinite(scale) || scale <= 0
         || !Number.isFinite(point.x) || !Number.isFinite(point.y)) return false;
-      gesture = { kind, target: { ...target }, token: current.token, revision: current.revision,
+      gesture = { kind, target: { ...target }, token: current.token, tokens: current.tokens, revision: current.revision,
         base: { ...current.rect }, next: { ...current.rect }, point: { ...point }, scale };
       return true;
     },
@@ -70,7 +70,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
         if (!enabled || !fresh(g)) { onCancel(); notify('元件已變更，已取消拖曳'); return false; }
         const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
         if (fields.every(key => g.next[key] === g.base[key])) return false;
-        executeOperation({ operation: g.kind === 'drag' ? 'move-element' : 'resize-element', target: g.target,
+        executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
           value: Object.fromEntries(fields.map(key => [key, g.next[key]])) });
         notify('手動版面已更新');
         return true;
@@ -100,7 +100,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide, onSelectionChange = () => {} }) {
+  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {} }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -110,9 +110,21 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   const alignToolbar = document.querySelector('[data-pptskill-context-toolbar]');
   const distributeButtons = [...document.querySelectorAll('[data-distribute-control]')];
   if (!button || !initializeButton) return null;
+  const groupToolbar = document.querySelector('[data-pptskill-group-toolbar]');
+  const groupControls = [...document.querySelectorAll('[data-group-control]')];
   const resolve = target => {
+    if (target.elementIds) {
+      const slide = getSpec().slides.find(s => s.id === target.slideId);
+      const group = slide && groupLock?.groupFor(slide, target.elementIds[0]);
+      if (!group || group.length !== target.elementIds.length || !group.every(id => target.elementIds.includes(id))
+        || group.some(id => groupLock.isLocked(slide, id))) return null;
+      const members = group.map(elementId => resolve({ slideId: target.slideId, elementId }));
+      if (members.some(item => !item?.rect)) return null;
+      return { ...members[0], nodes: members.map(item => item.node), tokens: members.map(item => item.node),
+        rect: groupLock.bounds(slide, target.elementIds) };
+    }
     const spec = getSpec(), slide = spec.slides.find(s => s.id === target.slideId);
-    if (!slide) return null;
+    if (!slide || groupLock?.isLocked(slide, target.elementId)) return null;
     const index = resolveIdentities(slide).components.indexOf(target.elementId);
     if (index < 0) return null;
     const slideNode = document.querySelector('.slide[data-slide-id="' + CSS.escape(target.slideId) + '"]');
@@ -134,7 +146,17 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       const current = resolve(target);
       if (!current) return;
       // 預览允許超界，release 才由既有 validator 拒絕；不 secret clamp。
-      projectBox(current.node, rect);
+      if (target.elementIds) {
+        const slide = getSpec().slides.find(s => s.id === target.slideId);
+        try {
+          const next = groupLock.transform(slide, target.elementIds, 'resize-group', { width: rect.width, height: rect.height });
+          const base = groupLock.bounds(slide, target.elementIds);
+          for (const node of current.nodes) {
+            const component = groupLock.component(slide, node.dataset.pptskillElementId), box = next[component.id];
+            projectBox(node, { ...box, x: box.x + rect.x - base.x, y: box.y + rect.y - base.y });
+          }
+        } catch { project(); }
+      } else projectBox(current.node, rect);
       if (geometryTarget) projectBox(geometryTarget, rect);
     },
   });
@@ -144,7 +166,8 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (!slideNode) return [];
     return [...slideNode.querySelectorAll('[data-pptskill-element-id]')].filter(node => {
       const target = { slideId: slideNode.dataset.slideId, elementId: node.dataset.pptskillElementId };
-      return Boolean(resolve(target));
+      const slide = getSpec().slides.find(s => s.id === target.slideId);
+      return Boolean(slide && resolveIdentities(slide).components.includes(target.elementId) && node.isConnected);
     });
   };
   const eligibleIds = () => eligibleNodes().map(node => node.dataset.pptskillElementId);
@@ -160,6 +183,8 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     selecto?.setSelectedTargets?.([]);
     initializeButton.hidden = true;
     if (alignToolbar) alignToolbar.hidden = true;
+    if (groupToolbar) groupToolbar.hidden = true;
+    if (snapButton) { snapButton.disabled = false; snapButton.title = ''; }
     distributeButtons.forEach(control => { control.hidden = true; });
   };
   let selection;
@@ -171,17 +196,31 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const selectedNodes = ids.map(id => slideNode.querySelector('[data-pptskill-element-id="' + CSS.escape(id) + '"]')).filter(Boolean);
     selectedNodes.forEach(node => node.setAttribute('data-editor-selected', 'true'));
     selecto?.setSelectedTargets?.(selectedNodes);
-    if (alignToolbar) alignToolbar.hidden = ids.length <= 1;
-    distributeButtons.forEach(control => { control.hidden = ids.length < 3; });
-    if (ids.length > 1) { notify('已選取 ' + ids.length + ' 個元件'); return; }
-    const target = { slideId: slideNode.dataset.slideId, elementId: ids[0] };
+    const slide = getSpec().slides.find(s => s.id === slideNode.dataset.slideId);
+    const group = groupLock?.groupFor(slide, ids[0]);
+    const exactGroup = group && group.length === ids.length && group.every(id => ids.includes(id));
+    const grouped = ids.some(id => groupLock?.groupFor(slide, id)), locked = ids.some(id => groupLock?.isLocked(slide, id));
+    if (groupToolbar) groupToolbar.hidden = !groupLock;
+    for (const control of groupControls) {
+      const action = control.dataset.action;
+      control.disabled = action === 'group-elements' ? ids.length < 2 || grouped || locked
+        : action === 'ungroup-elements' ? !exactGroup || locked
+        : action === 'lock-elements' ? ids.every(id => groupLock?.isLocked(slide, id)) : !locked;
+    }
+    if (alignToolbar) alignToolbar.hidden = ids.length <= 1 || grouped || locked;
+    distributeButtons.forEach(control => { control.hidden = ids.length < 3 || grouped || locked; });
+    if (snapButton && exactGroup) { snapButton.disabled = true; snapButton.title = '群組使用原始拖曳；8px吸附僅限單一元件'; }
+    if (locked) { notify('已鎖定；選取後可解鎖'); return; }
+    if (ids.length > 1 && !exactGroup) { notify('已選取 ' + ids.length + ' 個元件'); return; }
+    const target = exactGroup ? { slideId: slideNode.dataset.slideId, elementIds: [...ids] }
+      : { slideId: slideNode.dataset.slideId, elementId: ids[0] };
     interaction.select(target);
     const current = resolve(target);
     if (!current) return;
     const active = document.activeElement;
     if (active?.closest?.('.pptskill-editor,[data-pptskill-editor-chrome]')) active.blur?.();
     initializeButton.hidden = Boolean(current.rect);
-    notify(current.rect ? '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
+    notify(exactGroup ? '群組拖曳或方向鍵微調；右下角調整大小（不吸附）' : current.rect ? '拖曳或方向鍵微調；Shift＋方向鍵移動10px，右下角調整大小' : '此元件尚未設定手動版面；套用後將使用預設位置與尺寸');
     bindVendor();
   };
   selection = createMultiSelectionState({ listTargets: eligibleIds, onChange: applySelection });
@@ -189,7 +228,9 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   const mutateSelection = (ids, mode) => {
     onSelectionChange('selection');
     interaction.cancel(); moveable?.stopDrag();
-    return mode === 'toggle' ? selection.toggle(ids) : selection.replace(ids);
+    const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId);
+    const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids;
+    return mode === 'toggle' ? selection.toggle(expanded) : selection.replace(expanded);
   };
   const destroySelecto = () => { if (selecto) { selecto.destroy(); selecto = null; } };
   const bindSelecto = () => {
@@ -231,63 +272,66 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     destroyVendor();
     const target = interaction.getState().target, current = target && resolve(target);
     if (!current?.rect) return;
+    const isGroup = Boolean(target.elementIds), useSnap = snap && !isGroup;
     const Moveable = window.PPTSKILLMoveable?.default;
     if (!Moveable) { notify('版面編輯器未載入'); return; }
     overlay = document.createElement('div'); overlay.setAttribute('data-pptskill-editor-chrome', 'layout');
-    (snap ? current.slideNode : document.body).append(overlay);
-    if (snap) {
+    (useSnap ? current.slideNode : document.body).append(overlay);
+    if (useSnap) {
       geometryTarget = document.createElement('div');
       geometryTarget.setAttribute('data-pptskill-editor-chrome', 'geometry-target');
       Object.assign(geometryTarget.style, { position: 'absolute', boxSizing: 'border-box', pointerEvents: 'none' });
       projectBox(geometryTarget, current.rect); current.slideNode.append(geometryTarget);
     }
-    moveable = new Moveable(overlay, { target: geometryTarget || current.node, draggable: true, resizable: true,
-      ...(snap ? { dragTarget: current.node, container: current.slideNode, rootContainer: document.body,
+    moveable = new Moveable(overlay, { target: isGroup ? current.nodes : geometryTarget || current.node, draggable: true, resizable: true,
+      ...(useSnap ? { dragTarget: current.node, container: current.slideNode, rootContainer: document.body,
         snapContainer: current.slideNode, snapGridWidth: 8, snapGridHeight: 8,
         snapDirections: { left: true, top: true, right: false, bottom: false, center: false, middle: false } } : {}),
-      renderDirections: ['se'], origin: false, rotatable: false, scalable: false, snappable: snap,
+      renderDirections: ['se'], origin: false, rotatable: false, scalable: false, snappable: useSnap,
       hideDefaultLines: false, throttleDrag: 0, throttleResize: 0, checkInput: true,
       preventClickEventOnDrag: true });
     const vendor = moveable;
     for (const [eventName, kind] of [['drag', 'drag'], ['resize', 'resize']]) {
+      const vendorEvent = eventName + (isGroup ? 'Group' : '');
       let origin, base, scale;
-      moveable.on(eventName + 'Start', event => {
+      moveable.on(vendorEvent + 'Start', event => {
         if (moveable !== vendor) { event.stop(); return; }
         const live = resolve(target);
         scale = live?.slideNode.getBoundingClientRect().width / COMPONENT_GEOMETRY.slideWidth;
         origin = point(event); base = live?.rect;
-        if (snap) {
+        if (useSnap) {
           moveable.snapDirections = { left: kind === 'drag', top: kind === 'drag', right: kind === 'resize', bottom: kind === 'resize', center: false, middle: false };
           if (kind === 'resize') event.setFixedDirection([-1, -1]);
         }
         if (!interaction.begin(kind, point(event), scale)) { event.stop(); return; }
-        if (kind === 'drag') event.set([0, 0]);
+        if (kind === 'drag') { event.set?.([0, 0]); event.events?.forEach(child => child.set?.([0, 0])); }
+        if (isGroup && kind === 'resize') event.setFixedDirection?.([-1, -1]);
       });
-      moveable.on(eventName, event => {
+      moveable.on(vendorEvent, event => {
         if (moveable !== vendor || !interaction.getState().gesturing) return;
         let next = point(event);
-        if (snap && Number.isFinite(next.x) && Number.isFinite(next.y) && !(next.x === origin.x && next.y === origin.y)) {
+        if (useSnap && Number.isFinite(next.x) && Number.isFinite(next.y) && !(next.x === origin.x && next.y === origin.y)) {
           // vendor 已換算父層矩陣；轉成既有 controller 的輸入單位，不能再除 scale。
           const dx = kind === 'drag' ? event.left - base.x : event.width - base.width;
           const dy = kind === 'drag' ? event.top - base.y : event.height - base.height;
           next = { x: origin.x + dx * scale, y: origin.y + dy * scale };
         }
         // 返回起點必須送回 base，不能略過而留下上一個 preview。
-        if (!interaction.update(next) && snap) clearSelection();
+        if (!interaction.update(next) && useSnap) clearSelection();
       });
-      moveable.on(eventName + 'End', () => {
+      moveable.on(vendorEvent + 'End', () => {
         if (moveable !== vendor || !interaction.getState().gesturing) return;
         const committed = interaction.finish();
-        if (snap && !committed) clearSelection();
+        if (useSnap && !committed) clearSelection();
         else moveable?.updateRect();
       });
     }
     observer = new MutationObserver(() => {
-      if (resolve(target)?.node !== current.node) { clearSelection(); notify('元件已移除，已取消選取'); }
+      if (resolve(target)?.node !== current.node || current.nodes?.some(node => !node.isConnected)) { clearSelection(); notify('元件已移除，已取消選取'); }
     });
     observer.observe(document.querySelector('.deck'), { childList: true, subtree: true });
     // explicit container 會略過 vendor mount 的第二次 render；ref 已掛載後量測，才會顯示首次 SE handle。
-    if (snap) vendor.updateRect();
+    if (useSnap) vendor.updateRect();
   };
   const select = (target, toggle = false) => {
     onSelectionChange('selection');
@@ -359,7 +403,19 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (action === 'layout') { setMode(!interaction.getState().enabled); return; }
     if (action?.startsWith('align-')) { alignSelection(action.slice('align-'.length)); return; }
     if (action?.startsWith('distribute-')) { distributeSelection(action.slice('distribute-'.length)); return; }
+    if (['group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements'].includes(action)) {
+      const selected = selection.getState().selected, slideNode = currentSlideNode();
+      if (!interaction.getState().enabled || !slideNode || !selected.length) return;
+      interaction.cancel(); moveable?.stopDrag();
+      try {
+        executeOperation({ operation: action, target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: {} });
+        applySelection(selection.getState().selected);
+        notify(({ 'group-elements': '已群組', 'ungroup-elements': '已解組', 'lock-elements': '已鎖定', 'unlock-elements': '已解鎖' })[action]);
+      } catch (error) { notify('未套用：' + error.message); }
+      return;
+    }
     if (action === 'snap-layout') {
+      if (interaction.getState().target?.elementIds) return;
       if (!interaction.getState().enabled) return;
       interaction.cancel(); moveable?.stopDrag(); destroyVendor();
       snap = !snap; snapButton?.setAttribute('aria-pressed', String(snap)); bindVendor();
@@ -374,7 +430,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const element = event.target.closest?.('[data-pptskill-element-id]'), slide = element?.closest('.slide');
     if (slide && element) {
       const target = { slideId: slide.dataset.slideId, elementId: element.dataset.pptskillElementId };
-      if (resolve(target)) { event.preventDefault(); select(target, Boolean(event.shiftKey)); return; }
+      if (resolve(target) || (target.slideId === currentSlideNode()?.dataset.slideId && eligibleIds().includes(target.elementId))) { event.preventDefault(); select(target, Boolean(event.shiftKey)); return; }
     }
     clearSelection();
   };
@@ -402,7 +458,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const node = event.target, action = node.closest?.('[data-action]')?.dataset.action;
     const selection = node.closest?.('.slide') && !node.closest?.('.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box');
     if (action === 'set-selected-image-fit') { cancel('image-fit'); routedControlClick = event; return; }
-    if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !action?.startsWith('distribute-') && !selection) return;
+    if (!['layout', 'snap-layout', 'edit'].includes(action) && !action?.startsWith('align-') && !action?.startsWith('distribute-') && !['group-elements','ungroup-elements','lock-elements','unlock-elements'].includes(action) && !selection) return;
     // 比 gesture 才註冊的 vendor window capture 更早；stopDrag 解除 blocker，原事件仍走既有 handler。
     cancel(); routedControlClick = event;
   };
@@ -424,7 +480,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   window.addEventListener('blur', blur);
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
-  return { setMode, clearSelection, cancel, getState: interaction.getState,
+  return { setMode, clearSelection, cancel, refresh: () => { const ids = selection.getState().selected; const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId); const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids; if (!selection.replace(expanded)) applySelection(expanded); }, getState: interaction.getState,
     getSelectionState: selection.getState,
     destroy() {
       setMode(false);
