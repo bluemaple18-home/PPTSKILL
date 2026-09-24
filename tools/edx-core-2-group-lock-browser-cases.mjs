@@ -55,7 +55,11 @@ export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, output
   await mouse('mouseMoved', a); await mouse('mousePressed', a, true);
   for (let i = 1; i <= 6; i++) await mouse('mouseMoved', { x: a.x + (b.x-a.x)*i/6, y: a.y+(b.y-a.y)*i/6 }, true);
   await mouse('mouseReleased', b); await settle(); assert.deepEqual(new Set(await selected()), new Set(ids)); record('trusted marquee', { selected: await selected() });
+  await screenshot('before-group-click');
+  await evaluate(`(()=>{window.__core2ClickTrace=[];for(const type of ['pointerdown','mousedown','focusin','mouseup','click'])document.addEventListener(type,e=>{const b=document.querySelector('[data-action="group-elements"]'),r=b.getBoundingClientRect();window.__core2ClickTrace.push({type,trusted:e.isTrusted,action:e.target.closest('[data-action]')?.dataset.action,disabled:b.disabled,hidden:b.hidden,rect:{x:r.x,y:r.y,width:r.width,height:r.height},selected:window.PPTSKILLEditor.layout.getSelectionState().selected})},true)})()`);
   await click('[data-action="group-elements"]'); let committed = await spec();
+  record('group-click diagnostic', await evaluate(`({events:window.__core2ClickTrace,status:document.querySelector('[data-editor-status]')?.textContent,state:window.PPTSKILLEditor.layout.getState()})`));
+  await screenshot('after-group-click');
   assert.deepEqual(new Set(committed.slides[0].composition.elementGroups[0]), new Set(ids));
   assert.ok(await evaluate('document.querySelector(".moveable-se")?.getBoundingClientRect().width>0'));
   assert.equal(await evaluate('document.querySelector("[data-action=snap-layout]").disabled'), true); record('toolbar group＋Moveable group handle');
