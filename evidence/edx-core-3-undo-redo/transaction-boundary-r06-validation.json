@@ -1,0 +1,21 @@
+{
+  "baseCommit": "f03b0dfc28004b8bd1982771d318269250b261ce",
+  "branch": "codex/edx-core-3-undo-redo",
+  "sourceSHA256": {
+    "runtime/deck-editor.js": "eb2ac04b8cd1691cabb646082bde32c2bf21b182a9417d511181730a0ba0a926",
+    "runtime/component-interaction.js": "72aa7d46388227321b06da4559d4840d7f8a8304afce406498a4c2d7eaa57cc3",
+    "tests/edx-core-3-transaction-boundary.test.mjs": "e4e638adaeefc0e05a9e091c06b013d30b298c0b247cc106653ba705298f1a32"
+  },
+  "protectedUnchanged": true,
+  "historicalUnchanged": {
+    "evidence/edx-core-3-undo-redo/review-round-06.md": "3a3b3ac8d3c87254f8d0f33ff833078ea4b771011b144a94397c29d107571067",
+    "evidence/edx-core-3-undo-redo/review-round-06-public-layout.mjs": "cf9ce9dd9c598f14fe68808859b8f7812af10a7f0f92180c8bf4ad764649b743",
+    "evidence/edx-core-3-undo-redo/review-round-06-public-layout.json": "f7d3996a429a3c81bfdfd973aa2aebc59068e0804ab34f6465198f89721927da",
+    "evidence/edx-core-3-undo-redo/review-round-06-group-ui.mjs": "625462ca1cf3a770361b7a52f196a6253f89d8176c15b5e95a4a9f5832baa4ca",
+    "evidence/edx-core-3-undo-redo/review-round-06-group-ui.json": "6eb7656a7c9c4d3cc5318fa7da7fe4ba52b12ea4646a834ff8a333a17e93bf81",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-mainline-nonbrowser.tap.gz": "15354dcf8b02ede94c22a7c37886903c4e0b6bb9d4ff946e9b185bddd8447d4a",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-regression-full-02.tap.gz": "62c3b65c8b8e38defd8cc75ae74ce0a14c2f77b33ea403cb49b61029320dd5c2"
+  },
+  "diffCheck": "",
+  "scope": "兩 runtime、一個 direct test 與自身 evidence；未啟 browser、PGQ、ZIP、其他 runtime、AI Core、merge/push/deploy"
+}

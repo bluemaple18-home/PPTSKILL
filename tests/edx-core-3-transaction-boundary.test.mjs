@@ -214,3 +214,99 @@ test('交易邊界：IME 提交的最後 status after-effect fault 不得留下�
   assert.throws(() => { for (const listener of h.document.body.listeners.compositionend || []) listener({ target: title }); }, error => error === failure);
   assert.equal(injected, true); assert.deepEqual(state(h), before); assert.equal(title.textContent, 'IME pending');
 });
+
+const modeState = h => ({ mode: h.document.body.dataset.editorMode,
+  controls: ['edit', 'layout', 'initialize-layout'].map(action => {
+    const node = h.document.querySelector(`[data-action="${action}"]`);
+    return [node.textContent, node.getAttribute('aria-pressed'), node.hidden];
+  }), editable: h.document.querySelectorAll('[data-edit-kind="text"]').map(node => node.contentEditable) });
+
+for (const on of [true, false]) test(`R06 public setMode(${on}) 終態 fault 回復文字、mode、selection 並可再操作`, () => {
+  const h = mountedEditor(fixture(0));
+  if (on) h.action('edit'); else h.ready();
+  const title = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  if (on) title.textContent = 'pending layout text';
+  const pending = title.textContent, before = state(h), mode = modeState(h), failure = Error('layout final status fault');
+  let injected = false, nestedRejected = false;
+  statusHook(h, value => {
+    if (!injected && value === (on ? '點選元件或拖曳空白區框選多個元件' : '可直接播放')) {
+      injected = true;
+      try { h.api.executeOperation(edit('nested')); } catch (error) { nestedRejected = /同步交易/.test(error.message); }
+      throw failure;
+    }
+  });
+  assert.throws(() => h.api.layout.setMode(on), error => error === failure);
+  assert.equal(injected, true); assert.equal(nestedRejected, true);
+  assert.deepEqual(state(h), before); assert.deepEqual(modeState(h), mode); assert.equal(title.textContent, pending);
+  if (on) { h.api.layout.setMode(true); assert.equal(h.getSpec().slides[0].content.title, pending); h.click(h.component()); }
+  assert.equal(h.vendor.destroyed, false); h.begin(); h.update(8, 0); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+});
+
+const r06FamilyFixture = () => {
+  const spec = fixture(0), slide = spec.slides[0];
+  slide.content.components.push({ id: 'group-text', type: 'text', text: 'G' });
+  Object.assign(slide.composition.geometryOverrides, {
+    'group-text': { x: 120, y: 120, width: 200, height: 160 },
+    'perf-image': { x: 420, y: 320, width: 300, height: 200 },
+  });
+  return spec;
+};
+const r06Key = h => {
+  const event = { target: h.document.body, key: 'ArrowRight', preventDefault() {}, stopImmediatePropagation() { this.stopped = true; } };
+  for (const listener of h.document.listeners.keydown || []) { listener(event); if (event.stopped) break; }
+};
+for (const [action, success] of [
+  ['group-elements', '已群組'], ['ungroup-elements', '已解組'], ['lock-elements', '已鎖定'], ['unlock-elements', '已解鎖'],
+  ['align-left', '已對齊 2 個元件'], ['distribute-horizontal-gaps', '已均分 3 個元件'],
+  ['initialize-layout', '已套用預設手動位置與尺寸'], ['nudge', '手動版面已更新'],
+]) test(`R06 ${action} 最後 notify after-effect fault 不保留提交`, () => {
+  const spec = r06FamilyFixture(); if (action === 'initialize-layout') delete spec.slides[0].composition.geometryOverrides['portable-quote'];
+  const h = mountedEditor(spec); h.api.layout.setMode(true);
+  if (['initialize-layout', 'nudge'].includes(action)) h.click(h.component());
+  else {
+    h.click(h.document.querySelector('[data-pptskill-element-id="component-group-text"]'));
+    h.click(h.document.querySelector('[data-pptskill-element-id="component-perf-image"]'), { shiftKey: true });
+    if (action === 'distribute-horizontal-gaps') h.click(h.component(), { shiftKey: true });
+    if (action === 'ungroup-elements') h.action('group-elements');
+    if (action === 'unlock-elements') h.action('lock-elements');
+  }
+  const before = state(h), mode = modeState(h), target = JSON.stringify(h.api.layout.getState().target);
+  const nodes = h.document.querySelectorAll('[data-pptskill-element-id]'); assert.ok(nodes.length > 0);
+  const styles = nodes.map(node => node.getAttribute('style')); let injected = false, nestedRejected = false;
+  const failure = Error(action + ' final status fault');
+  statusHook(h, value => {
+    if (!injected && value === success) {
+      injected = true;
+      try { h.api.executeOperation(edit('nested')); } catch (error) { nestedRejected = /同步交易/.test(error.message); }
+      throw failure;
+    }
+  });
+  const run = () => action === 'nudge' ? r06Key(h) : h.action(action);
+  run(); assert.equal(injected, true); assert.equal(nestedRejected, true);
+  assert.match(h.document.querySelector('[data-editor-status]').textContent, new RegExp(failure.message));
+  assert.deepEqual(state(h), before); assert.deepEqual(modeState(h), mode);
+  assert.equal(JSON.stringify(h.api.layout.getState().target), target);
+  assert.deepEqual(nodes.map(node => node.getAttribute('style')), styles);
+  run(); assert.equal(h.getRevision(), before.revision + 1);
+  assert.equal(h.document.querySelector('[data-editor-status]').textContent, success);
+  if (['group-elements', 'initialize-layout', 'nudge'].includes(action)) {
+    assert.equal(h.vendor.destroyed, false); const kind = action === 'group-elements' ? 'dragGroup' : 'drag';
+    h.begin(kind); h.update(8, 0, kind); h.finish(kind);
+    assert.equal(h.getRevision(), before.revision + 2);
+  }
+});
+
+for (const snap of [false, true]) test(`R06 active preview setMode(false) fault 不復活 preview 或 gesture（snap=${snap}）`, () => {
+  const h = mountedEditor(fixture(0)); h.ready(); if (snap) h.action('snap-layout');
+  const before = state(h), mode = modeState(h), style = h.component().getAttribute('style');
+  h.begin(); h.update(32, 16, 'drag', snap ? { left: 832, top: 296 } : {}); assert.notEqual(h.component().getAttribute('style'), style);
+  const failure = Error('cancelled mode final fault'); let injected = false;
+  statusHook(h, value => { if (!injected && value === '可直接播放') { injected = true; throw failure; } });
+  assert.throws(() => h.api.layout.setMode(false), error => error === failure);
+  assert.equal(injected, true); assert.deepEqual(state(h), before); assert.deepEqual(modeState(h), mode);
+  assert.equal(h.component().getAttribute('style'), style); assert.equal(h.api.layout.getState().gesturing, false);
+  assert.equal(h.vendor.destroyed, false); assert.equal(h.vendor.options.target.isConnected, true); h.finish(); assert.deepEqual(state(h), before);
+  h.begin(); h.update(8, 0, 'drag', snap ? { left: 808, top: 280 } : {}); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+});

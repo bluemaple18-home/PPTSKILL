@@ -691,14 +691,22 @@ const projectHistoryState=(state,previous)=>{
   }
   if(geometryChanged)projectComponentGeometry(document,state)
 };
-const captureHistoryDom=()=>{const deck=q('.deck'),nodes=deck?qa('*',deck):[];return{deck,nodes:new Set(nodes),saved:nodes.map(node=>[node,node.parentNode,node.nextSibling,node.children?.length?null:node.textContent,['style','data-pptskill-geometry','data-editor-selected','contenteditable','data-to','data-final-display','data-use-grouping','data-fraction-digits'].map(key=>[key,node.getAttribute(key)])])}};
-const historyDomChanged=checkpoint=>{const deck=q('.deck');if(deck!==checkpoint.deck)return true;if(!deck)return false;const nodes=qa('*',deck);if(nodes.length!==checkpoint.nodes.size||nodes.some(node=>!checkpoint.nodes.has(node)))return true;return checkpoint.saved.some(([node,parent,next,value,attributes])=>node.parentNode!==parent||node.nextSibling!==next||(value!==null&&node.textContent!==value)||attributes.some(([key,old])=>node.getAttribute(key)!==old))};
+// mode 回退由既有 selection 重建短生命 vendor；canonical 節點順序不依賴 chrome sibling。
+const historyNextSibling=(node,excludeChrome)=>{let next=node.nextSibling;while(excludeChrome&&next?.closest('[data-pptskill-editor-chrome]'))next=next.nextSibling;return next};
+const captureHistoryDom=(excludeChrome=false)=>{const deck=q('.deck'),nodes=deck?qa('*',deck).filter(node=>!excludeChrome||!node.closest('[data-pptskill-editor-chrome]')):[];return{deck,excludeChrome,modeControls:['edit','layout','initialize-layout'].map(action=>q('[data-action="'+action+'"]')).filter(Boolean).map(node=>[node,node.textContent,node.getAttribute('aria-pressed'),node.hidden]),nodes:new Set(nodes),saved:nodes.map(node=>[node,node.parentNode,historyNextSibling(node,excludeChrome),node.children?.length?null:node.textContent,['style','data-pptskill-geometry','data-editor-selected','contenteditable','data-to','data-final-display','data-use-grouping','data-fraction-digits'].map(key=>[key,node.getAttribute(key)]),node.contentEditable])}};
+const historyDomChanged=checkpoint=>{const deck=q('.deck');if(deck!==checkpoint.deck)return true;if(!deck)return false;const nodes=qa('*',deck).filter(node=>!checkpoint.excludeChrome||!node.closest('[data-pptskill-editor-chrome]'));if(nodes.length!==checkpoint.nodes.size||nodes.some(node=>!checkpoint.nodes.has(node)))return true;return checkpoint.modeControls.some(([node,text,pressed,hidden])=>node.textContent!==text||node.getAttribute('aria-pressed')!==pressed||node.hidden!==hidden)||checkpoint.saved.some(([node,parent,next,value,attributes,editable])=>node.contentEditable!==editable||node.parentNode!==parent||historyNextSibling(node,checkpoint.excludeChrome)!==next||(value!==null&&node.textContent!==value)||attributes.some(([key,old])=>node.getAttribute(key)!==old))};
 const restoreHistoryDom=checkpoint=>{const deck=q('.deck');if(!deck&&!checkpoint.deck)return;if(!deck)throw new Error('rollback failed：deck 已移除。');
-for(const node of qa('*',deck))if(!checkpoint.nodes.has(node))try{node.remove()}catch{}
-for(const [node,parent,next,value,attributes]of [...checkpoint.saved].reverse()){
-try{if((node.parentNode!==parent||node.nextSibling!==next)&&parent?.isConnected){let proto=Object.getPrototypeOf(parent);while(proto&&!Object.hasOwn(proto,'insertBefore'))proto=Object.getPrototypeOf(proto);proto.insertBefore.call(parent,node,next?.parentNode===parent?next:null)}}catch{}
+for(const node of qa('*',deck))if((!checkpoint.excludeChrome||!node.closest('[data-pptskill-editor-chrome]'))&&!checkpoint.nodes.has(node))try{node.remove()}catch{}
+for(const [node,parent,next,value,attributes,editable]of [...checkpoint.saved].reverse()){
+try{if((node.parentNode!==parent||historyNextSibling(node,checkpoint.excludeChrome)!==next)&&parent?.isConnected){let proto=Object.getPrototypeOf(parent);while(proto&&!Object.hasOwn(proto,'insertBefore'))proto=Object.getPrototypeOf(proto);proto.insertBefore.call(parent,node,next?.parentNode===parent?next:null)}}catch{}
 try{if(value!==null&&node.textContent!==value)node.textContent=value}catch{}
+try{if(node.contentEditable!==editable){if(editable===undefined)delete node.contentEditable;else node.contentEditable=editable}}catch{}
 for(const [key,old]of attributes)try{if(old===null){if(node.getAttribute(key)!==null)node.removeAttribute(key)}else if(node.getAttribute(key)!==old)node.setAttribute(key,old)}catch{}
+}
+for(const [node,text,pressed,hidden]of checkpoint.modeControls){
+try{if(node.textContent!==text)node.textContent=text}catch{}
+try{if(node.getAttribute('aria-pressed')!==pressed){if(pressed===null)node.removeAttribute('aria-pressed');else node.setAttribute('aria-pressed',pressed)}}catch{}
+try{if(node.hidden!==hidden)node.hidden=hidden}catch{}
 }
 if(historyDomChanged(checkpoint))throw new Error('rollback failed：DOM checkpoint 無法驗證。')};
 // 同一 owner 覆蓋 public payload、內部延伸、終態 controls 與可驗證 rollback。
@@ -707,23 +715,23 @@ const mutate=(work,projection=[],afterRollback)=>{
 let saved;
 try{
 if(projection?.revision!==undefined&&projection.revision!==revision)projection=[];
-const checkpoint=captureHistoryDom();
+const checkpoint=captureHistoryDom(projection?.excludeChrome===true);
 for(const [node,attributes]of projection?.nodes||projection||[]){const row=checkpoint.saved.find(item=>item[0]===node);if(row)for(const pair of attributes){const old=row[4].find(item=>item[0]===pair[0]);if(old)old[1]=pair[1]}}
-saved={spec:clone(spec),revision,pendingAssetOperations,history:history.checkpoint(),checkpoint,controls:projection?.controls||captureHistoryControls(),selection:layout?.getSelectionState(),currentId,editMode,typographyTarget,styleClipboard,status:q('[data-editor-status]')?.textContent,mode:document.body.dataset.editorMode};
-const acceptText=()=>{saved.spec=clone(spec);saved.revision=revision;saved.history=history.checkpoint();saved.checkpoint=captureHistoryDom();saved.controls=captureHistoryControls();saved.selection=layout?.getSelectionState();saved.status=q('[data-editor-status]')?.textContent};
+saved={spec:clone(spec),revision,pendingAssetOperations,history:history.checkpoint(),checkpoint,controls:projection?.controls||captureHistoryControls(),selection:layout?.getSelectionState(),target:layout?.getState().target,currentId,editMode,typographyTarget,styleClipboard,status:q('[data-editor-status]')?.textContent,mode:document.body.dataset.editorMode};
+const acceptText=()=>{saved.spec=clone(spec);saved.revision=revision;saved.history=history.checkpoint();saved.checkpoint=captureHistoryDom();saved.controls=captureHistoryControls();saved.selection=layout?.getSelectionState();saved.target=layout?.getState().target;saved.status=q('[data-editor-status]')?.textContent};
 const result=work(acceptText);refreshHistoryControls(true);return result;
 }catch(error){
 if(saved){
 spec=saved.spec;revision=saved.revision;pendingAssetOperations=saved.pendingAssetOperations;history.restore(saved.history);currentId=saved.currentId;editMode=saved.editMode;typographyTarget=saved.typographyTarget;styleClipboard=saved.styleClipboard;
 let fault;
 try{
-if(saved.selection&&JSON.stringify(layout?.getSelectionState())!==JSON.stringify(saved.selection)){if(layout?.getState().enabled!==saved.selection.enabled)layout?.setMode(saved.selection.enabled);layout?.restoreSelection(saved.selection)}
+if(saved.selection&&(JSON.stringify(layout?.getSelectionState())!==JSON.stringify(saved.selection)||JSON.stringify(layout?.getState().target)!==JSON.stringify(saved.target))){if(layout?.getState().enabled!==saved.selection.enabled)layout?.setMode(saved.selection.enabled);layout?.restoreSelection(saved.selection)}
 }catch(e){fault=e}
 try{restoreHistoryDom(saved.checkpoint)}catch(e){fault=e}
 try{document.body.dataset.editorMode=saved.mode;restoreHistoryControls(saved.controls);if(saved.status!==undefined&&q('[data-editor-status]')?.textContent!==saved.status)status(saved.status)}catch(e){fault=e}
 
 try{const controlsMatch=saved.controls.every(item=>!item||(item[0].disabled===item[1]&&item[0].title===item[2]));
-if(historyDomChanged(saved.checkpoint)||!controlsMatch||JSON.stringify(layout?.getSelectionState())!==JSON.stringify(saved.selection)||document.body.dataset.editorMode!==saved.mode||q('[data-editor-status]')?.textContent!==saved.status)throw fault||error;
+if(historyDomChanged(saved.checkpoint)||!controlsMatch||JSON.stringify(layout?.getSelectionState())!==JSON.stringify(saved.selection)||JSON.stringify(layout?.getState().target)!==JSON.stringify(saved.target)||document.body.dataset.editorMode!==saved.mode||q('[data-editor-status]')?.textContent!==saved.status)throw fault||error;
 }catch(fault){rollbackFailed=true;throw new Error('rollback failed：'+fault.message,{cause:error})}
 if(afterRollback)try{afterRollback(error);refreshHistoryControls(true)}catch(fault){rollbackFailed=true;throw new Error('rollback failed：'+fault.message,{cause:error})}
 }
@@ -804,7 +812,7 @@ cropDialog=mountCropDialog({document,window,contract:imageCrop,projection:cropPr
 window.addEventListener?.('pagehide',()=>{cropDialog?.close();cropProjection.destroy();});
 window.addEventListener?.('pageshow',event=>{if(event.persisted){projectCropImages(document,spec);refreshSelectedImage('refresh');}});
 refreshSelectedImage('refresh');refreshHistoryControls();
-const publicLayout=layout&&Object.fromEntries(Object.entries(layout).map(([key,value])=>[key,['getState','getSelectionState'].includes(key)?value:(...args)=>{assertMutationAvailable();return previewEvent(()=>value(...args))()}]));
+const publicLayout=layout&&Object.fromEntries(Object.entries(layout).map(([key,value])=>[key,['getState','getSelectionState'].includes(key)?value:(...args)=>{assertMutationAvailable();return previewEvent(()=>{if(key!=='setMode')return value(...args);if(layout.getState().gesturing){const selection=layout.getSelectionState();layout.cancel();layout.restoreSelection(selection)}return mutate(()=>value(...args),{nodes:[],excludeChrome:true})},key!=='setMode')()}]));
 window.PPTSKILLEditor={layout:publicLayout,getHistoryState:history.state,undo:()=>mutationBlocked()?false:runMutation(()=>replayHistory('undo')),redo:()=>mutationBlocked()?false:runMutation(()=>replayHistory('redo')),getDeckSpec:()=>clone(clean()),operationDescriptors:operationDescriptors,executeOperation:o=>runMutation(()=>clone(executeOperationInternal(o))),applyLocalPatch:p=>runMutation(afterText=>{const out=applyPatch(p,afterText);status('已套用本機 AI patch');return clone(out)}),replaceImageFile,insertImageFile,prepareExport:()=>runMutation(prepareExport),exportHtml:()=>runMutation(exportHtml),getSizeReport:()=>runMutation(()=>prepareExport().report),download:()=>{if(mutationBlocked()){status(rollbackFailed?'rollback failed：請重新掛載編輯器。':'同步交易進行中，拒絕重入。');return false}return runMutation(download)}};
 };if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot,{once:true});else boot()})();</script>`;
 };

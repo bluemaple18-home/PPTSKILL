@@ -2,7 +2,7 @@ import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.j
 import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
-export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {}, capturePreview = () => [], transactFinish = work => work() }) {
+export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {}, capturePreview = () => [], transactFinish = work => work(), mutate = work => work() }) {
   let enabled = false, target = null, gesture = null, selectedToken = null, finishing = false;
   const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
   const select = next => {
@@ -36,11 +36,12 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       if (gesture) return true;
       const step = shift ? 10 : 1;
       try {
-        executeOperation({ operation: target.elementIds ? 'move-group' : 'move-element', target: { ...target },
-          value: { x: current.rect.x + delta[0] * step, y: current.rect.y + delta[1] * step } });
-        notify('手動版面已更新');
-      } catch (error) { notify('未套用：' + error.message); }
-      finally { restore(); }
+        mutate(() => {
+          executeOperation({ operation: target.elementIds ? 'move-group' : 'move-element', target: { ...target },
+            value: { x: current.rect.x + delta[0] * step, y: current.rect.y + delta[1] * step } });
+          notify('手動版面已更新'); restore();
+        });
+      } catch (error) { restore(); notify('未套用：' + error.message); }
       return true;
     },
     begin(kind, point, scale) {
@@ -149,7 +150,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (rect) projectBox(geometryTarget, rect);
   };
   const finishView = () => { if (snap) clearSelection(); else moveable?.updateRect(); };
-  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
+  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify, mutate,
     beforeFinish: () => { try { moveable?.updateRect(); } catch (error) { error.componentProjection = true; throw error; } onGestureChange(); },
     capturePreview(target) {
       const current = resolve(target);
@@ -382,10 +383,12 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     }
     interaction.cancel(); moveable?.stopDrag();
     try {
-      executeOperation({ operation: 'align-selection',
-        target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { alignment } });
-      applySelection(selected);
-      notify('已對齊 ' + selected.length + ' 個元件');
+      mutate(() => {
+        executeOperation({ operation: 'align-selection',
+          target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { alignment } });
+        applySelection(selected);
+        notify('已對齊 ' + selected.length + ' 個元件');
+      });
       return true;
     } catch (error) {
       applySelection(selected);
@@ -401,10 +404,12 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     }
     interaction.cancel(); moveable?.stopDrag();
     try {
-      executeOperation({ operation: 'distribute-selection',
-        target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { distribution } });
-      applySelection(selected);
-      notify('已均分 ' + selected.length + ' 個元件');
+      mutate(() => {
+        executeOperation({ operation: 'distribute-selection',
+          target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: { distribution } });
+        applySelection(selected);
+        notify('已均分 ' + selected.length + ' 個元件');
+      });
       return true;
     } catch (error) {
       applySelection(selected);
@@ -428,9 +433,11 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       if (!interaction.getState().enabled || !slideNode || !selected.length) return;
       interaction.cancel(); moveable?.stopDrag();
       try {
-        executeOperation({ operation: action, target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: {} });
-        applySelection(selection.getState().selected);
-        notify(({ 'group-elements': '已群組', 'ungroup-elements': '已解組', 'lock-elements': '已鎖定', 'unlock-elements': '已解鎖' })[action]);
+        mutate(() => {
+          executeOperation({ operation: action, target: { slideId: slideNode.dataset.slideId, elementIds: [...selected] }, value: {} });
+          applySelection(selection.getState().selected);
+          notify(({ 'group-elements': '已群組', 'ungroup-elements': '已解組', 'lock-elements': '已鎖定', 'unlock-elements': '已解鎖' })[action]);
+        });
       } catch (error) { notify('未套用：' + error.message); }
       return;
     }
@@ -442,7 +449,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
       return;
     }
     if (action === 'initialize-layout') {
-      try { if (interaction.initialize()) { initializeButton.hidden = true; bindVendor(); notify('已套用預設手動位置與尺寸'); } }
+      try { mutate(() => { if (interaction.initialize()) { initializeButton.hidden = true; bindVendor(); notify('已套用預設手動位置與尺寸'); } }); }
       catch (error) { notify(error.message); }
       return;
     }
@@ -493,9 +500,11 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   // viewport／pointer observation 只持同步排他，不複製 canonical 或全 DOM。
   const entry = handler => { if (!guarded.has(handler)) guarded.set(handler, previewEvent(event => {
     const action = handler === click && event.target.closest?.('[data-action]')?.dataset.action;
-    const writes = action && (/^(align-|distribute-)/.test(action) || ['group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements', 'initialize-layout'].includes(action))
+    // mode 取消不復活 gesture；先回到 canonical 投影，再建立可回退的切換基線。
+    if (action === 'layout' && interaction.getState().gesturing) { const saved = selection.getState(); cancel(); restoreSelection(saved); }
+    const writes = action && (/^(align-|distribute-)/.test(action) || ['layout', 'group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements', 'initialize-layout'].includes(action))
       || handler === keydown && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key) && !interaction.getState().gesturing;
-    if (writes) return mutate(() => handler(event));
+    if (writes) return mutate(() => handler(event), action === 'layout' ? { nodes: [], excludeChrome: true } : []);
     const result = handler(event); onGestureChange(true); return result;
   }, false)); return guarded.get(handler); };
   window.addEventListener('click', entry(routeGestureControl), true);

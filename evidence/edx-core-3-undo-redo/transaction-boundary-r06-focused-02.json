@@ -1,0 +1,10 @@
+{
+  "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r06-focused-02.log.gz",
+  "uncompressedSHA256": "96f4af35fd4527ce575199c8799d29715b8f17af4b431e164cedbdf5fb4b6ec6",
+  "summary": {
+    "tests": 12,
+    "pass": 10,
+    "fail": 2,
+    "skipped": 0
+  }
+}

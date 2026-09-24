@@ -1,0 +1,10 @@
+{
+  "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r06-group-red.log.gz",
+  "uncompressedSHA256": "555262ecaba86bc054241efedb3ae91637cce4e4e3196a2c62eb8c5f4498e089",
+  "summary": {
+    "tests": 1,
+    "pass": 0,
+    "fail": 1,
+    "skipped": 0
+  }
+}
