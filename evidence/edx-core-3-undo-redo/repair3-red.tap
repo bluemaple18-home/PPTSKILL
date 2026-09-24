@@ -1,0 +1,469 @@
+TAP version 13
+# Subtest: Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+not ok 1 - Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+  ---
+  duration_ms: 52.181333
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:68:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    ... Skipped lines
+
+      {
+        deckId: 'pptskill-typography-world',
+        language: 'zh-Hant',
+        schemaVersion: '1.0',
+        slides: [
+    ...
+                  width: 640,
+    +             x: 808,
+    -             x: 800,
+                  y: 280
+                }
+              },
+              primitive: 'component-focus',
+              slots: {
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    schemaVersion: '1.0'
+    deckId: 'pptskill-typography-world'
+    title: '讓每個人用 AI 快速完成簡報'
+    language: 'zh-Hant'
+    style:
+      id: 'route-editorial-rail'
+      name: 'Editorial Monument'
+      layout:
+        primaryMove: 'editorial-rail'
+        compositionLanguage: 'narrative'
+      density: 'low'
+      typography:
+        display: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        body: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        mono: 'Menlo, monospace'
+      palette:
+        canvas: '#f1eee6'
+        text: '#171515'
+        muted: '#68615c'
+        accent: '#d7472f'
+        surface: '#ded8cc'
+      spacing:
+        unit: 10
+        slidePadding: 72
+      geometry:
+        radius: 0
+        borderWidth: 1
+      motion:
+        personality: 'premium'
+        durationMs: 420
+        easing: 'cubic-bezier(.16,1,.3,1)'
+        reducedMotion: true
+      assetTreatment: 'editorial chapter crops and quiet captions'
+    slides:
+      0:
+        id: 'portable'
+        content:
+          title: '成果，不鎖在工具裡'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 800
+              y: 280
+              width: 640
+              height: 480
+  actual:
+    schemaVersion: '1.0'
+    deckId: 'pptskill-typography-world'
+    title: '讓每個人用 AI 快速完成簡報'
+    language: 'zh-Hant'
+    style:
+      id: 'route-editorial-rail'
+      name: 'Editorial Monument'
+      layout:
+        primaryMove: 'editorial-rail'
+        compositionLanguage: 'narrative'
+      density: 'low'
+      typography:
+        display: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        body: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        mono: 'Menlo, monospace'
+      palette:
+        canvas: '#f1eee6'
+        text: '#171515'
+        muted: '#68615c'
+        accent: '#d7472f'
+        surface: '#ded8cc'
+      spacing:
+        unit: 10
+        slidePadding: 72
+      geometry:
+        radius: 0
+        borderWidth: 1
+      motion:
+        personality: 'premium'
+        durationMs: 420
+        easing: 'cubic-bezier(.16,1,.3,1)'
+        reducedMotion: true
+      assetTreatment: 'editorial chapter crops and quiet captions'
+    slides:
+      0:
+        id: 'portable'
+        content:
+          title: '成果，不鎖在工具裡'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 808
+              y: 280
+              width: 640
+              height: 480
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:83:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.start (node:internal/test_runner/test:1096:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:385:17)
+  ...
+# Subtest: Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+not ok 2 - Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+  ---
+  duration_ms: 31.8615
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:89:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+
+    + undefined
+    - true
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:99:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+  ...
+# Subtest: Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+not ok 3 - Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+  ---
+  duration_ms: 18.027167
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:107:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    ... Skipped lines
+
+      {
+        deckId: 'pptskill-typography-world',
+        language: 'zh-Hant',
+        schemaVersion: '1.0',
+        slides: [
+    ...
+              subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續',
+    +         title: 'pending'
+    -         title: '成果，不鎖在工具裡'
+            },
+            id: 'portable'
+          },
+          {
+            composition: {
+
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    schemaVersion: '1.0'
+    deckId: 'pptskill-typography-world'
+    title: '讓每個人用 AI 快速完成簡報'
+    language: 'zh-Hant'
+    style:
+      id: 'route-editorial-rail'
+      name: 'Editorial Monument'
+      layout:
+        primaryMove: 'editorial-rail'
+        compositionLanguage: 'narrative'
+      density: 'low'
+      typography:
+        display: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        body: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        mono: 'Menlo, monospace'
+      palette:
+        canvas: '#f1eee6'
+        text: '#171515'
+        muted: '#68615c'
+        accent: '#d7472f'
+        surface: '#ded8cc'
+      spacing:
+        unit: 10
+        slidePadding: 72
+      geometry:
+        radius: 0
+        borderWidth: 1
+      motion:
+        personality: 'premium'
+        durationMs: 420
+        easing: 'cubic-bezier(.16,1,.3,1)'
+        reducedMotion: true
+      assetTreatment: 'editorial chapter crops and quiet captions'
+    slides:
+      0:
+        id: 'portable'
+        content:
+          title: '成果，不鎖在工具裡'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 800
+              y: 280
+              width: 640
+              height: 480
+      1:
+        id: 'portable-two'
+        content:
+          title: '成果，不鎖在工具裡'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 800
+              y: 280
+              width: 640
+              height: 480
+  actual:
+    schemaVersion: '1.0'
+    deckId: 'pptskill-typography-world'
+    title: '讓每個人用 AI 快速完成簡報'
+    language: 'zh-Hant'
+    style:
+      id: 'route-editorial-rail'
+      name: 'Editorial Monument'
+      layout:
+        primaryMove: 'editorial-rail'
+        compositionLanguage: 'narrative'
+      density: 'low'
+      typography:
+        display: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        body: "'Microsoft JhengHei', 'Microsoft JhengHei UI', 'PingFang TC', sans-serif"
+        mono: 'Menlo, monospace'
+      palette:
+        canvas: '#f1eee6'
+        text: '#171515'
+        muted: '#68615c'
+        accent: '#d7472f'
+        surface: '#ded8cc'
+      spacing:
+        unit: 10
+        slidePadding: 72
+      geometry:
+        radius: 0
+        borderWidth: 1
+      motion:
+        personality: 'premium'
+        durationMs: 420
+        easing: 'cubic-bezier(.16,1,.3,1)'
+        reducedMotion: true
+      assetTreatment: 'editorial chapter crops and quiet captions'
+    slides:
+      0:
+        id: 'portable'
+        content:
+          title: 'pending'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 800
+              y: 280
+              width: 640
+              height: 480
+      1:
+        id: 'portable-two'
+        content:
+          title: '成果，不鎖在工具裡'
+          subtitle: 'DeckSpec 與畫面一起走，下一個人拿到就能繼續'
+          keyPoints:
+            0: '離線可開啟'
+            1: '自由轉傳'
+            2: '相容 AI 可接手'
+          keyPointIds:
+            0: 'key-point-01'
+            1: 'key-point-02'
+            2: 'key-point-03'
+          components:
+            0:
+              id: 'portable-quote'
+              type: 'text'
+              text: '簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。'
+            1:
+              id: 'perf-image'
+              type: 'image'
+              alt: '成本探針'
+              dataUri: 'data:image/png;base64,'
+        composition:
+          primitive: 'component-focus'
+          variant: 'quote-monument'
+          slots:
+            title: 'content.title'
+            subtitle: 'content.subtitle'
+            component: 'content.components.portable-quote'
+          geometryOverrides:
+            portable-quote:
+              x: 800
+              y: 280
+              width: 640
+              height: 480
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-3-undo-redo.test.mjs:116:10)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 0
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 255.16775

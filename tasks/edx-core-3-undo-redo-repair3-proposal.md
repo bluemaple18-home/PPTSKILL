@@ -1,6 +1,6 @@
 # Core3 Undo／Redo Repair 3 — Owner 裁決提案
 
-Status: `PROPOSED / NOT_AUTHORIZED`
+Status: `AUTHORIZED / REPAIR3_IN_PROGRESS`
 Base product／ZIP candidate: `60a05ce33924dfd92c2977d743b24afc408dd207`（NO-GO，不得整合）
 
 ## 授權問題
@@ -23,4 +23,4 @@ Base product／ZIP candidate: `60a05ce33924dfd92c2977d743b24afc408dd207`（NO-GO
 
 模型／成本：一名既有產品 Writer 依 bounded strict/core 路由執行一次 repair，主線負責驗收與退件；兩名盲 Reviewer 保持獨立。不得並行第二 Writer，不預先授權 Repair 4、merge／push／deploy 或 Core4。
 
-Owner decision: `PENDING`。
+Owner decision: `AUTHORIZED`（2026-09-24 對本提案回覆「授權」）；未授權 Repair 4、merge／push／deploy。

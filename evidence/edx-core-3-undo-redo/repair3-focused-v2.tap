@@ -1,0 +1,484 @@
+TAP version 13
+# Subtest: Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier
+ok 1 - Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier
+  ---
+  duration_ms: 6.833166
+  type: 'test'
+  ...
+# Subtest: Core3 Node 驗證失敗不動 history，20 筆 bounded
+ok 2 - Core3 Node 驗證失敗不動 history，20 筆 bounded
+  ---
+  duration_ms: 8.695333
+  type: 'test'
+  ...
+# Subtest: Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor
+ok 3 - Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor
+  ---
+  duration_ms: 0.22525
+  type: 'test'
+  ...
+# Subtest: Core3 portable slide reorder 的 after-effect DOM throw 原子回退
+ok 4 - Core3 portable slide reorder 的 after-effect DOM throw 原子回退
+  ---
+  duration_ms: 40.398916
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+ok 5 - Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+  ---
+  duration_ms: 34.69975
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+ok 6 - Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+  ---
+  duration_ms: 28.221834
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 pre-commit restore setter 不得重入 Undo
+ok 7 - Core3 Repair3 pre-commit restore setter 不得重入 Undo
+  ---
+  duration_ms: 24.288875
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 post-commit restore setter 不得重入 Undo
+ok 8 - Core3 Repair3 post-commit restore setter 不得重入 Undo
+  ---
+  duration_ms: 25.479667
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 成功通知 setter 不得重入 Undo
+ok 9 - Core3 Repair3 成功通知 setter 不得重入 Undo
+  ---
+  duration_ms: 23.149625
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+ok 10 - Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+  ---
+  duration_ms: 20.851334
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序
+ok 11 - Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序
+  ---
+  duration_ms: 14.26625
+  type: 'test'
+  ...
+# Subtest: Core3 portable duplicate／remove after-effect throw 不留下變更
+ok 12 - Core3 portable duplicate／remove after-effect throw 不留下變更
+  ---
+  duration_ms: 15.617583
+  type: 'test'
+  ...
+# Subtest: Core3 portable direct component patch replaceWith after-effect throw 不留下變更
+ok 13 - Core3 portable direct component patch replaceWith after-effect throw 不留下變更
+  ---
+  duration_ms: 10.212125
+  type: 'test'
+  ...
+# Subtest: Core3 portable operation undo／redo 與 false writer barrier
+ok 14 - Core3 portable operation undo／redo 與 false writer barrier
+  ---
+  duration_ms: 34.534875
+  type: 'test'
+  ...
+# Subtest: Core3 portable 成功 slide direct writer 清除歷史
+ok 15 - Core3 portable 成功 slide direct writer 清除歷史
+  ---
+  duration_ms: 53.401875
+  type: 'test'
+  ...
+# Subtest: Core3 browser harness flag 已接線且預留正式 host 驗收
+ok 16 - Core3 browser harness flag 已接線且預留正式 host 驗收
+  ---
+  duration_ms: 12.523625
+  type: 'test'
+  ...
+# Subtest: Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership
+ok 17 - Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership
+  ---
+  duration_ms: 34.287292
+  type: 'test'
+  ...
+# Subtest: Core3 portable group／lock／geometry replay 與 large-image pointer hot path
+ok 18 - Core3 portable group／lock／geometry replay 與 large-image pointer hot path
+  ---
+  duration_ms: 510.4125
+  type: 'test'
+  ...
+# Subtest: Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade
+ok 19 - Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade
+  ---
+  duration_ms: 342.089542
+  type: 'test'
+  ...
+# Subtest: Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor
+ok 20 - Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor
+  ---
+  duration_ms: 15.334208
+  type: 'test'
+  ...
+# Subtest: Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history
+ok 21 - Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history
+  ---
+  duration_ms: 10.501167
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry
+ok 22 - Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry
+  ---
+  duration_ms: 21.722208
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor
+ok 23 - Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor
+  ---
+  duration_ms: 31.097584
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取
+ok 24 - Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取
+  ---
+  duration_ms: 31.123333
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 stale component DOM patch fail closed
+ok 25 - Core3 Repair1 stale component DOM patch fail closed
+  ---
+  duration_ms: 9.034042
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable
+ok 26 - Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable
+  ---
+  duration_ms: 45.468208
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled
+ok 27 - Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled
+  ---
+  duration_ms: 22.445542
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作
+ok 28 - Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作
+  ---
+  duration_ms: 27.994375
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字
+ok 29 - Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字
+  ---
+  duration_ms: 18.225
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交
+ok 30 - Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交
+  ---
+  duration_ms: 25.356167
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影
+ok 31 - Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影
+  ---
+  duration_ms: 28.231417
+  type: 'test'
+  ...
+# Subtest: mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+ok 32 - mode/select 不寫 spec；legacy 明示初始化只呼叫一次既有 operation
+  ---
+  duration_ms: 5.867959
+  type: 'test'
+  ...
+# Subtest: scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+ok 33 - scale 0.8 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 2.628292
+  type: 'test'
+  ...
+# Subtest: scale 1 drag/SE resize preview ephemeral，release 至多一次
+ok 34 - scale 1 drag/SE resize preview ephemeral，release 至多一次
+  ---
+  duration_ms: 2.123834
+  type: 'test'
+  ...
+# Subtest: no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+ok 35 - no-op/cancel/mode/stale/target replacement 不提交；invalid 原子拒絕
+  ---
+  duration_ms: 7.351125
+  type: 'test'
+  ...
+# Subtest: SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+ok 36 - SE resize 小於 minimum 原子拒絕；非 component / play 不啟動
+  ---
+  duration_ms: 0.78875
+  type: 'test'
+  ...
+# Subtest: stale target 刪除不提交；切選取取消 preview
+ok 37 - stale target 刪除不提交；切選取取消 preview
+  ---
+  duration_ms: 1.716792
+  type: 'test'
+  ...
+# Subtest: export 只移除 control 對應 style，canonical component 不作 chrome root
+ok 38 - export 只移除 control 對應 style，canonical component 不作 chrome root
+  ---
+  duration_ms: 0.530208
+  type: 'test'
+  ...
+# Subtest: S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y
+ok 39 - S5 public 方向／Shift／repeat 每步最多一筆 move-element，僅改 x/y
+  ---
+  duration_ms: 7.021792
+  type: 'test'
+  ...
+# Subtest: S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp
+ok 40 - S5 public stale identity、刪除、gesture 互斥；拒絕不 clamp
+  ---
+  duration_ms: 1.96225
+  type: 'test'
+  ...
+# Subtest: S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏
+ok 41 - S5 mounted 真 runtime capture 處理方向／Shift／repeat、export/reopen 無 editor 洩漏
+  ---
+  duration_ms: 76.660583
+  type: 'test'
+  ...
+# Subtest: S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理
+ok 42 - S5 mounted guardmatrix 未處理不得攔截或寫 spec；composition 狀態清理
+  ---
+  duration_ms: 45.71825
+  type: 'test'
+  ...
+# Subtest: S5 mounted no mode／selection／geometry／deleted 與原子 bounds
+ok 43 - S5 mounted no mode／selection／geometry／deleted 與原子 bounds
+  ---
+  duration_ms: 42.308583
+  type: 'test'
+  ...
+# Subtest: S5 mounted drag 中按鍵不取消／不提交 gesture
+ok 44 - S5 mounted drag 中按鍵不取消／不提交 gesture
+  ---
+  duration_ms: 21.04325
+  type: 'test'
+  ...
+# Subtest: S5 mounted resize 中按鍵不取消／不提交 gesture
+ok 45 - S5 mounted resize 中按鍵不取消／不提交 gesture
+  ---
+  duration_ms: 24.912416
+  type: 'test'
+  ...
+# Subtest: S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓
+ok 46 - S5 點選元件釋放既有 chrome focus，仍保留直接操作 chrome 時的避讓
+  ---
+  duration_ms: 24.22225
+  type: 'test'
+  ...
+# Subtest: S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消
+ok 47 - S5 guarded Escape 保留 drag 與 selection；普通 Escape 才取消
+  ---
+  duration_ms: 25.48825
+  type: 'test'
+  ...
+# Subtest: S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消
+ok 48 - S5 guarded Escape 保留 resize 與 selection；普通 Escape 才取消
+  ---
+  duration_ms: 24.865791
+  type: 'test'
+  ...
+# Subtest: S7 cancel 取消 preview，proxy 與 vendor 清理
+ok 49 - S7 cancel 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 54.34525
+  type: 'test'
+  ...
+# Subtest: S7 toggle 取消 preview，proxy 與 vendor 清理
+ok 50 - S7 toggle 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 23.799875
+  type: 'test'
+  ...
+# Subtest: S7 mode 取消 preview，proxy 與 vendor 清理
+ok 51 - S7 mode 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 24.261042
+  type: 'test'
+  ...
+# Subtest: S7 text 取消 preview，proxy 與 vendor 清理
+ok 52 - S7 text 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 25.977458
+  type: 'test'
+  ...
+# Subtest: S7 escape 取消 preview，proxy 與 vendor 清理
+ok 53 - S7 escape 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 26.936625
+  type: 'test'
+  ...
+# Subtest: S7 pointercancel 取消 preview，proxy 與 vendor 清理
+ok 54 - S7 pointercancel 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 22.178875
+  type: 'test'
+  ...
+# Subtest: S7 blur 取消 preview，proxy 與 vendor 清理
+ok 55 - S7 blur 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 27.481167
+  type: 'test'
+  ...
+# Subtest: S7 scroll 取消 preview，proxy 與 vendor 清理
+ok 56 - S7 scroll 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 22.491958
+  type: 'test'
+  ...
+# Subtest: S7 resize 取消 preview，proxy 與 vendor 清理
+ok 57 - S7 resize 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 22.655708
+  type: 'test'
+  ...
+# Subtest: S7 stale 取消 preview，proxy 與 vendor 清理
+ok 58 - S7 stale 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 26.641875
+  type: 'test'
+  ...
+# Subtest: S7 deleted 取消 preview，proxy 與 vendor 清理
+ok 59 - S7 deleted 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 23.202875
+  type: 'test'
+  ...
+# Subtest: S7 replacement 取消 preview，proxy 與 vendor 清理
+ok 60 - S7 replacement 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 22.378292
+  type: 'test'
+  ...
+# Subtest: S7 destroy 取消 preview，proxy 與 vendor 清理
+ok 61 - S7 destroy 取消 preview，proxy 與 vendor 清理
+  ---
+  duration_ms: 26.040416
+  type: 'test'
+  ...
+# Subtest: S7 drag bounds/minimum/finite 原子拒絕
+ok 62 - S7 drag bounds/minimum/finite 原子拒絕
+  ---
+  duration_ms: 70.403667
+  type: 'test'
+  ...
+# Subtest: S7 resize bounds/minimum/finite 原子拒絕
+ok 63 - S7 resize bounds/minimum/finite 原子拒絕
+  ---
+  duration_ms: 71.302875
+  type: 'test'
+  ...
+# Subtest: S7 keyboard 仍1/10px、guardedEscape／IME／input 不取消 snap gesture
+ok 64 - S7 keyboard 仍1/10px、guardedEscape／IME／input 不取消 snap gesture
+  ---
+  duration_ms: 28.339417
+  type: 'test'
+  ...
+# Subtest: S7 public begin/update/finish：preview 0筆、release 1筆、return/cancel/stale 0筆
+ok 65 - S7 public begin/update/finish：preview 0筆、release 1筆、return/cancel/stale 0筆
+  ---
+  duration_ms: 3.3615
+  type: 'test'
+  ...
+# Subtest: S7 mounted 1MiB snap preview 不序列化、不讀 payload
+ok 66 - S7 mounted 1MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 62.692584
+  type: 'test'
+  ...
+# Subtest: S7 mounted 6MiB snap preview 不序列化、不讀 payload
+ok 67 - S7 mounted 6MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 142.365834
+  type: 'test'
+  ...
+# Subtest: S7 mounted 12MiB snap preview 不序列化、不讀 payload
+ok 68 - S7 mounted 12MiB snap preview 不序列化、不讀 payload
+  ---
+  duration_ms: 249.6455
+  type: 'test'
+  ...
+# Subtest: S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用
+ok 69 - S7 初始 off、明示開關、proxy 不攔 visible hit、vendor direction 與清引用
+  ---
+  duration_ms: 26.764833
+  type: 'test'
+  ...
+# Subtest: S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy
+ok 70 - S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy
+  ---
+  duration_ms: 35.680375
+  type: 'test'
+  ...
+# Subtest: S7 SE 固定左上 anchor；preview/cancel 不清 presentation transform
+ok 71 - S7 SE 固定左上 anchor；preview/cancel 不清 presentation transform
+  ---
+  duration_ms: 22.935292
+  type: 'test'
+  ...
+# Subtest: S7 0.8 drag vendor canonical payload、preview/export、單次 release
+ok 72 - S7 0.8 drag vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 50.923333
+  type: 'test'
+  ...
+# Subtest: S7 0.8 drag 零與返回原點不得採用 vendor 起始修正
+ok 73 - S7 0.8 drag 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 47.02475
+  type: 'test'
+  ...
+# Subtest: S7 0.8 resize vendor canonical payload、preview/export、單次 release
+ok 74 - S7 0.8 resize vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 46.256
+  type: 'test'
+  ...
+# Subtest: S7 0.8 resize 零與返回原點不得採用 vendor 起始修正
+ok 75 - S7 0.8 resize 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 45.713417
+  type: 'test'
+  ...
+# Subtest: S7 1 drag vendor canonical payload、preview/export、單次 release
+ok 76 - S7 1 drag vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 43.278375
+  type: 'test'
+  ...
+# Subtest: S7 1 drag 零與返回原點不得採用 vendor 起始修正
+ok 77 - S7 1 drag 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 45.697334
+  type: 'test'
+  ...
+# Subtest: S7 1 resize vendor canonical payload、preview/export、單次 release
+ok 78 - S7 1 resize vendor canonical payload、preview/export、單次 release
+  ---
+  duration_ms: 44.4175
+  type: 'test'
+  ...
+# Subtest: S7 1 resize 零與返回原點不得採用 vendor 起始修正
+ok 79 - S7 1 resize 零與返回原點不得採用 vendor 起始修正
+  ---
+  duration_ms: 42.932417
+  type: 'test'
+  ...
+1..79
+# tests 79
+# suites 0
+# pass 79
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3883.541333

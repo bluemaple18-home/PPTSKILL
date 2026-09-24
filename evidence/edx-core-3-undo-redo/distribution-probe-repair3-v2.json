@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-24T06:08:04.998Z",
+  "lifecycleStatus": "pass",
+  "archive": {
+    "version": "0.1.0",
+    "sha256": "a1dd5d23c61ff183d61cda4dd8cd132f33be85a64fce5dcb8de6f9280c0ec7d2"
+  },
+  "sharedCore": {
+    "ready": true,
+    "single": true
+  },
+  "packageSmokeStatus": "pass",
+  "profile": {
+    "absentIsNormal": true,
+    "saveStatus": "pass",
+    "preservedAfterUninstall": true
+  },
+  "hostCapabilityStatus": "partial",
+  "adapters": [
+    {
+      "id": "codex",
+      "status": "recognized",
+      "message": "已辨識 Codex。",
+      "version": "codex-cli 0.148.0-alpha.9"
+    },
+    {
+      "id": "claude-code",
+      "status": "recognized",
+      "message": "已辨識 Claude Code。",
+      "version": "2.1.281 (Claude Code)"
+    },
+    {
+      "id": "gemini",
+      "status": "missing",
+      "message": "找不到 Gemini CLI；請確認 CLI 已安裝並位於 PATH。"
+    }
+  ],
+  "note": "Host capability 只反映目前機器 PATH；缺少某個 CLI 不代表 ZIP lifecycle 失敗。"
+}

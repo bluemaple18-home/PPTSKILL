@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+ok 1 - Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+  ---
+  duration_ms: 159.189292
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+ok 2 - Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+  ---
+  duration_ms: 76.2065
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+ok 3 - Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+  ---
+  duration_ms: 62.659417
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 769.223083
