@@ -3,7 +3,7 @@ import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
 export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {} }) {
-  let enabled = false, target = null, gesture = null, selectedToken = null;
+  let enabled = false, target = null, gesture = null, selectedToken = null, finishing = false;
   const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
   const select = next => {
     cancel();
@@ -26,7 +26,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
   };
   return {
     setMode, select, initialize, cancel,
-    getState: () => ({ enabled, target: target && { ...target, ...(target.elementIds ? { elementIds: [...target.elementIds] } : {}) }, gesturing: Boolean(gesture) }),
+    getState: () => ({ enabled, target: target && { ...target, ...(target.elementIds ? { elementIds: [...target.elementIds] } : {}) }, gesturing: Boolean(gesture), finishing }),
     // 回傳是否已處理按鍵；越界拒絕與gesture互斥亦須阻止外層翻頁。
     nudge(key, shift = false) {
       const delta = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] }[key];
@@ -44,6 +44,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       return true;
     },
     begin(kind, point, scale) {
+      if (finishing) return false;
       cancel();
       const current = target && readTarget(target);
       if (!enabled || !current?.rect || !['drag', 'resize'].includes(kind) || !Number.isFinite(scale) || scale <= 0
@@ -66,6 +67,7 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       const g = gesture;
       gesture = null;
       if (!g) return false;
+      finishing = true;
       let committed = false;
       try {
         beforeFinish();
@@ -76,11 +78,19 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
         // preview 先回 canonical；提交後投影須留在 operation 的 rollback 範圍內。
         restore();
         executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
-          value: Object.fromEntries(fields.map(key => [key, g.next[key]])) }, restore);
+          value: Object.fromEntries(fields.map(key => [key, g.next[key]])) }, () => {
+          restore();
+          // 控制列在同一 operation 內收尾；setter 重入仍由 projection guard 拒絕。
+          finishing = false;
+          try { beforeFinish(); } finally { finishing = true; }
+        });
         committed = true;
         return true;
       } catch (error) { onCancel(); notify('未套用：' + error.message); return false; }
-      finally { if (!committed) restore(); }
+      finally {
+        try { if (!committed) restore(); }
+        finally { finishing = false; if (!committed) beforeFinish(); }
+      }
     },
   };
 }

@@ -105,6 +105,44 @@ test('Core3 Repair3 gesture 收尾投影不得同步重入 Undo', () => {
   assert.equal(h.api.getHistoryState().entries, 2);
 });
 
+for (const phase of ['pre-commit', 'post-commit']) test(`Core3 Repair3 ${phase} restore setter 不得重入 Undo`, () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: 'prior' });
+  h.begin(); h.update(8, 0);
+  const node = h.component(), style = node.style;
+  let replayed = false, once = true;
+  node.style = new Proxy(style, { get(target, key) {
+    if (key === 'setProperty') return (name, value) => {
+      target.setProperty(name, value);
+      if (once && name === 'left' && h.api.getHistoryState().entries === (phase === 'pre-commit' ? 1 : 2)) {
+        once = false; replayed = h.api.undo();
+      }
+    };
+    return target[key];
+  } });
+  h.finish();
+  assert.equal(replayed, false);
+  assert.equal(h.getSpec().slides[0].content.title, 'prior');
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+  assert.equal(h.api.getHistoryState().entries, 2);
+});
+
+test('Core3 Repair3 成功通知 setter 不得重入 Undo', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: 'prior' });
+  h.begin(); h.update(8, 0);
+  const node = h.document.querySelector('[data-editor-status]');
+  let text = node.textContent, replayed = false, once = true;
+  Object.defineProperty(node, 'textContent', { configurable: true,
+    get() { return text; },
+    set(value) { text = value; if (once && value === '手動版面已更新') { once = false; replayed = h.api.undo(); } },
+  });
+  h.finish();
+  assert.equal(replayed, false);
+  assert.equal(h.getSpec().slides[0].content.title, 'prior');
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+});
+
 test('Core3 Repair3 reorder after-effect throw 不提交 pending 文字', () => {
   const spec = fixture(0), second = structuredClone(spec.slides[0]);
   second.id = 'portable-two'; spec.slides.push(second);
@@ -117,6 +155,23 @@ test('Core3 Repair3 reorder after-effect throw 不提交 pending 文字', () => 
   assert.deepEqual(h.getSpec(), before);
   assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
   assert.equal(title.textContent, 'pending');
+  assert.equal(h.getRevision(), 0);
+  assert.equal(h.api.getHistoryState().entries, 0);
+});
+
+test('Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序', () => {
+  const spec = fixture(0), second = structuredClone(spec.slides[0]);
+  second.id = 'portable-two'; spec.slides.push(second);
+  const h = mountedEditor(spec), deck = h.document.querySelector('.deck'), before = h.getSpec();
+  const insertBefore = deck.insertBefore;
+  let calls = 0;
+  deck.insertBefore = function (node, next) {
+    if (++calls === 1) { insertBefore.call(this, node, next); throw Error('reorder post-effect'); }
+    throw Error('rollback before-effect');
+  };
+  assert.throws(() => h.action('move-down'), /reorder post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.deepEqual(deck.children.map(slide => slide.dataset.slideId), ['portable', 'portable-two']);
   assert.equal(h.getRevision(), 0);
   assert.equal(h.api.getHistoryState().entries, 0);
 });
