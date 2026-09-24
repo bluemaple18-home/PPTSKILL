@@ -1,0 +1,117 @@
+{
+  "packagedSHA": "9ce7396a481621960f6f2c89ff7fcf352c0e515a",
+  "codeSHA": "f3d8a11865a5af25f34a08a5b65dccb3fed6914f",
+  "entries": [
+    {
+      "actor": "Reviewer A",
+      "source": "/private/tmp/core3-reviewer-a-r07-targeted.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-a-targeted.tap.gz",
+      "originalSHA256": "432583ab027ae0af570765c0e736fa3c05f2daaa9892aee28be1e5c86aea340c",
+      "originalBytes": 1317,
+      "summary": [
+        "# tests 5",
+        "# pass 5",
+        "# fail 0",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer A",
+      "source": "/private/tmp/core3-reviewer-a-r07-independent-v2.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-a-independent-v2.tap.gz",
+      "originalSHA256": "bb4166387f13d1536feeb7b095b6f26487ced7c70a1d280fce53ef341b1546e2",
+      "originalBytes": 904,
+      "summary": [
+        "# tests 5",
+        "# pass 5",
+        "# fail 0",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer A",
+      "source": "/private/tmp/core3-reviewer-a-r07-independent.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-a-independent-first.tap.gz",
+      "originalSHA256": "b8277b2841b88d3483c6a9dd2ad98dfb7cb82fef2c0cf3334ffc6cb83cb33501",
+      "originalBytes": 1369,
+      "summary": [
+        "# tests 1",
+        "# pass 0",
+        "# fail 1",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer A",
+      "source": "/private/tmp/core3-reviewer-a-r07-bounded-regression.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-a-bounded.tap.gz",
+      "originalSHA256": "3370193b5e79550cabc7b38fa29f3b7f02306c4d1da2df7a530867d2d9f05f18",
+      "originalBytes": 2492,
+      "summary": [
+        "# tests 11",
+        "# pass 11",
+        "# fail 0",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer A",
+      "source": "/private/tmp/core3-reviewer-a-r07-prior-closure.log",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-a-prior-closure.log",
+      "originalSHA256": "b8c1242a0b73c0278e9a00a2ed0238b531cacb44cd2e7ef3ed406ad9b002c7fa",
+      "originalBytes": 74,
+      "summary": []
+    },
+    {
+      "actor": "Reviewer B",
+      "source": "/private/tmp/core3-review-b-r07-focused-9ce7396.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-b-focused.tap.gz",
+      "originalSHA256": "b6783b8619304851ae7ec85c5497b6fda5626acfb8906974535fad9e89e08113",
+      "originalBytes": 34256,
+      "summary": [
+        "# tests 160",
+        "# pass 160",
+        "# fail 0",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer B",
+      "source": "/private/tmp/core3-review-b-r07-new5-9ce7396.tap",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-b-targeted.tap.gz",
+      "originalSHA256": "d3700600ae7fa2ed6ed3a0a6e960e49e4287b3d62ac042af7631e54394b8d878",
+      "originalBytes": 1316,
+      "summary": [
+        "# tests 5",
+        "# pass 5",
+        "# fail 0",
+        "# skipped 0"
+      ]
+    },
+    {
+      "actor": "Reviewer B",
+      "source": "/private/tmp/core3-review-b-r07-cancel-9ce7396.log",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-b-cancel.log",
+      "originalSHA256": "63435b1a9a987b493db49857d329e53ff9622248e59e6ae91a5f84aa8de2ca26",
+      "originalBytes": 157,
+      "summary": []
+    },
+    {
+      "actor": "Reviewer B",
+      "source": "/private/tmp/core3-review-b-r07-prior-b35336d.log",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-b-prior-10.log",
+      "originalSHA256": "b6f641c5990d5f54cf4527347358796e8407b6b56ecc87cca0a2769ae3120e9a",
+      "originalBytes": 306,
+      "summary": []
+    },
+    {
+      "actor": "Reviewer B",
+      "source": "/private/tmp/core3-review-b-r07-prior-r06.log",
+      "artifact": "evidence/edx-core-3-undo-redo/review-round-08-b-prior-5.log",
+      "originalSHA256": "65bc96e115e77de50c404ccdd0a6878e2fa5e7a42028f55f2e03f29a51cb422d",
+      "originalBytes": 261,
+      "summary": []
+    }
+  ],
+  "probeChange": "僅本機絕對import轉repo-relative，斷言與fault injection不變。"
+}

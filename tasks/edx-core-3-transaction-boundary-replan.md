@@ -1,6 +1,6 @@
 # Core3 Undo／Redo 交易邊界重規劃 — Owner 裁決卡
 
-Status: `NON_BROWSER_GREEN / TARGETED_RE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
+Status: `CODE_GO / HOST_OBSERVER_BLOCKED / WHOLE_CARD_NOT_CLOSED`
 Historical product／ZIP candidate: `4a405cfcb397a2223dcd010cf048a1e5e058418f`（NO-GO，不得整合）
 
 2026-09-24 續接：新 code checkpoint `e6f9afab11d74e95042f7abe3157daa6c2d4f92d` 已取得 Writer 1044/1044 full non-browser、98/98 scoped；ZIP 已由主線重新 build/lifecycle/75-source byte match。原 `4a405cf` 與中間 `a0fd3e7`（Mainline full 23 FAIL）歷史保留；本次尚無獨立 GO，禁止整合。固定程式／ZIP 交付與後續 verdict 見 `evidence/edx-core-3-undo-redo/transaction-boundary-mainline-checkpoint.md`。
@@ -33,3 +33,7 @@ Owner decision: `AUTHORIZE_BOUNDARY_IMPLEMENTATION`。2026-09-24 Owner 在 zoom-
 - 介面／不變量：公开 mutation 在同步 owner 活躍時先拒絕，再讀 payload；內部 text sync／paste-style 仍用原 executor，不以 ambient allowNested 放行 callback。DeckSpec／revision／history／DOM／selection／controls 原子成功或可驗證回退；失敗回退無法完成時明確 fail-closed。finish 不暫時解除 finishing；正常 Core2 group drag 不退化。API／event selection/mode、export 的 text-sync 副作用、async adapter 的同步入口也須核對，不能只加在 Undo。
 - 驗收／證據：先把 `review-round-05-repro.mjs` 轉為期待正確行為的 regression，保存 RED；補 direct operation／patch／selection／mode／gesture reentry、paste-style／syncText 正常路徑、單／雙投影故障與 fallback 失敗；跑 `node --test --test-concurrency=1 tests/edx-core-2-group-lock.test.mjs tests/edx-core-3-undo-redo.test.mjs` 及必要的新測試。再由主線 full non-browser、ZIP lifecycle、source/protected hashes、固定 SHA 雙盲 review。證據存 `evidence/edx-core-3-undo-redo/transaction-boundary-*`。
 - 禁區／停損：不改 AI Core、不啟 Chrome、不重跑 PGQ、不改歷史 evidence、不新增第二套 state authority/history/scene graph、不 merge/push/deploy。不擴 Core4。若需要擴架構或兩次同類修正無進展，帶最小重播交回 Mainline；不要宣稱 review GO。產品可用 git revert 回退本輪 commit，不動四個 protected untracked。
+
+## 最新裁決（取代上文歷史pending）
+
+固定packaged `9ce7396a481621960f6f2c89ff7fcf352c0e515a`／code `f3d8a11865a5af25f34a08a5b65dccb3fed6914f`，原兩Reviewer targeted re-review均CODE GO；兩項mode/group與後續cancel P1全閉。詳 `evidence/edx-core-3-undo-redo/review-round-08.md`、最新Mainline checkpoint。仍待AI Core observer適用修復與本candidate fresh browser/PGQ，不做Core3 closure／integration；不開Core4。

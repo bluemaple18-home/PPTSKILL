@@ -1,0 +1,4 @@
+PASS cancel recovery snap=false entry=click
+PASS cancel recovery snap=true entry=api
+PASS cancel fallback fail-closed and pre-payload barrier
+TOTAL 3/3 PASS

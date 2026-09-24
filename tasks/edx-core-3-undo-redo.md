@@ -1,10 +1,12 @@
 # 核心完整版 3/6：operation-level Undo／Redo
 
-Status: OPEN / CONTRACT_LOCKED
+Status: CODE_GO / HOST_OBSERVER_BLOCKED / WHOLE_CARD_NOT_CLOSED
 Branch: `codex/edx-core-3-undo-redo`
 Base: `115027040a169c505df0e7f31a0a8845280a4ed7`（Core2 closure）
 Parent: `tasks/edx-core-six-card-closure-plan.md` 第3項（WP3-S1）
 Trace: `CORE3-SC-01` 可撤銷提交、`CORE3-SC-02` 重做與分岔、`CORE3-SC-03` DOM／匯出一致、`CORE3-SC-04` 忙碌與原生鍵盤邊界；均對應父卡第3項，不新增第七張產品卡。
+
+最新接續：`9ce7396`／code `f3d8a11` 兩名Reviewer CODE GO；fresh non-browser 1061/1061、ZIP lifecycle與hash MATCH。尚無新候選fresh browser/PGQ，整卡不關閉，核心仍2/6。完整狀態見 `evidence/edx-core-3-undo-redo/transaction-boundary-mainline-checkpoint.md`。
 
 ## 目標、依賴與實測缺口
 
