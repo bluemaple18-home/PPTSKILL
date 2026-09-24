@@ -2,7 +2,7 @@ import { COMPONENT_GEOMETRY, getComponentGeometry } from './component-geometry.j
 import { createMultiSelectionState } from './multi-selection.js';
 
 // 只保存未提交的 gesture；geometry authority 仍為 executeOperation 的 DeckSpec。
-export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {} }) {
+export function createComponentInteraction({ readTarget, executeOperation, preview, restore, notify = () => {}, onCancel = () => {}, beforeFinish = () => {} }) {
   let enabled = false, target = null, gesture = null, selectedToken = null;
   const cancel = () => { const active = Boolean(gesture); gesture = null; if (active) onCancel(); restore(); };
   const select = next => {
@@ -67,12 +67,13 @@ export function createComponentInteraction({ readTarget, executeOperation, previ
       gesture = null;
       if (!g) return false;
       try {
+        beforeFinish();
         if (!enabled || !fresh(g)) { onCancel(); notify('元件已變更，已取消拖曳'); return false; }
         const fields = g.kind === 'drag' ? ['x', 'y'] : ['width', 'height'];
         if (fields.every(key => g.next[key] === g.base[key])) return false;
+        notify('手動版面已更新');
         executeOperation({ operation: g.target.elementIds ? (g.kind === 'drag' ? 'move-group' : 'resize-group') : (g.kind === 'drag' ? 'move-element' : 'resize-element'), target: g.target,
           value: Object.fromEntries(fields.map(key => [key, g.next[key]])) });
-        notify('手動版面已更新');
         return true;
       } catch (error) { onCancel(); notify('未套用：' + error.message); return false; }
       finally { restore(); }
@@ -140,7 +141,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const target = interaction.getState().target, rect = geometryTarget && target && resolve(target)?.rect;
     if (rect) projectBox(geometryTarget, rect);
   };
-  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
+  const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify, beforeFinish: onGestureChange,
     onCancel: () => { suppressPointerClick = true; onGestureChange(); },
     preview(target, rect) {
       const current = resolve(target);
@@ -325,9 +326,17 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         if (moveable !== vendor || !interaction.getState().gesturing) return;
         // Moveable 可能在越過最小尺寸後停止送 update；release 才是最後候選。
         if (isGroup && kind === 'resize' && Number.isFinite(event?.inputEvent?.clientX) && Number.isFinite(event.inputEvent.clientY)) interaction.update(point(event));
-        const committed = interaction.finish(); onGestureChange();
+        // 先完成可能拋錯的控制投影；失敗時還原 preview，避免提交後才報錯。
+        try { moveable?.updateRect(); }
+        catch (error) {
+          interaction.cancel();
+          try { moveable?.updateRect(); } catch { clearSelection(); }
+          notify('未套用：' + error.message);
+          throw error;
+        }
+        const committed = interaction.finish();
         if (useSnap && !committed) clearSelection();
-        else moveable?.updateRect();
+        else if (!committed) moveable?.updateRect();
       });
     }
     observer = new MutationObserver(() => {

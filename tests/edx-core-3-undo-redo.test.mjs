@@ -303,3 +303,123 @@ test('Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled', ()
   h.begin(); assert.equal(button.disabled, true);
   h.api.layout.cancel(); assert.equal(button.disabled, false);
 });
+
+test('Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '既有歷史' });
+  const before = h.getSpec(), revision = h.getRevision(), history = h.api.getHistoryState();
+  const node = h.component(), style = node.getAttribute('style'), selection = h.api.layout.getSelectionState();
+  const button = h.document.querySelector('[data-action="undo"]'), redo = h.document.querySelector('[data-action="redo"]');
+  const originalDisabled = button.disabled, originalTitle = button.title, redoDisabled = redo.disabled, redoTitle = redo.title;
+  const vendor = h.vendor;
+  h.begin(); h.update(8, 0);
+  assert.notEqual(node.getAttribute('style'), style);
+  let writes = 0, stored = button.disabled;
+  Object.defineProperty(button, 'disabled', { configurable: true, get() { return stored; }, set(value) {
+    stored = value; if (++writes === 1 && h.getRevision() === revision) throw Error('gesture toolbar post-effect');
+  } });
+  let result;
+  try { result = h.finish(); } catch (error) { assert.match(error.message, /gesture toolbar post-effect/); }
+  assert.notEqual(result, true);
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.getAttribute('style'), style);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), history);
+  assert.equal(button.disabled, originalDisabled); assert.equal(button.title, originalTitle);
+  assert.equal(redo.disabled, redoDisabled); assert.equal(redo.title, redoTitle);
+  assert.match(h.document.querySelector('[data-editor-status]').textContent, /未套用：gesture toolbar post-effect/);
+  assert.deepEqual(h.api.layout.getSelectionState(), selection);
+  assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+  assert.equal(h.vendor, vendor);
+  h.begin(); h.update(8, 0); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+  assert.match(node.getAttribute('style'), /left:808px/);
+  assert.equal(h.getRevision(), revision + 1);
+  assert.equal(h.api.getHistoryState().entries, history.entries + 1);
+  assert.equal(button.disabled, false);
+  assert.equal(redo.disabled, true);
+});
+
+test('Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  const toolbar = h.document.querySelector('[data-pptskill-editor]');
+  for (const direction of ['move-up', 'move-down']) toolbar.append(h.document.querySelector('[data-action="' + direction + '"]'));
+  const before = h.getSpec(), revision = h.getRevision(), history = h.api.getHistoryState();
+  const selection = h.api.layout.getSelectionState(), vendor = h.vendor;
+  const titleNode = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  titleNode.textContent = '尚未同步的文字';
+  for (const direction of ['move-up', 'move-down']) {
+    h.action(direction);
+    assert.deepEqual(h.getSpec(), before);
+    assert.equal(h.getRevision(), revision);
+    assert.deepEqual(h.api.getHistoryState(), history);
+    assert.equal(titleNode.textContent, '尚未同步的文字');
+    assert.deepEqual(h.api.layout.getSelectionState(), selection);
+    assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+    assert.equal(h.vendor, vendor);
+  }
+});
+
+test('Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  const before = h.getSpec(), revision = h.getRevision(), history = h.api.getHistoryState();
+  const node = h.component(), style = node.getAttribute('style'), selection = h.api.layout.getSelectionState();
+  const status = h.document.querySelector('[data-editor-status]');
+  const undo = h.document.querySelector('[data-action="undo"]'), redo = h.document.querySelector('[data-action="redo"]');
+  const controls = [undo.disabled, undo.title, redo.disabled, redo.title];
+  h.begin(); h.update(8, 0);
+  const descriptor = Object.getOwnPropertyDescriptor(Object.getPrototypeOf(status), 'textContent');
+  let once = true;
+  Object.defineProperty(status, 'textContent', { configurable: true, get() { return descriptor.get.call(this); }, set(value) {
+    descriptor.set.call(this, value);
+    if (once && value === '手動版面已更新') { once = false; throw Error('gesture success status post-effect'); }
+  } });
+  try { assert.notEqual(h.finish(), true); } catch (error) { assert.match(error.message, /gesture success status post-effect/); }
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.getAttribute('style'), style);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), history);
+  assert.deepEqual([undo.disabled, undo.title, redo.disabled, redo.title], controls);
+  assert.deepEqual(h.api.layout.getSelectionState(), selection);
+  assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+  assert.match(status.textContent, /未套用：gesture success status post-effect/);
+  h.begin(); h.update(8, 0); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+  assert.equal(h.getRevision(), revision + 1);
+  assert.equal(h.api.getHistoryState().entries, history.entries + 1);
+  assert.equal(status.textContent, '手動版面已更新');
+});
+
+test('Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '既有歷史' });
+  const before = h.getSpec(), revision = h.getRevision(), history = h.api.getHistoryState();
+  const node = h.component(), style = node.getAttribute('style'), selection = h.api.layout.getSelectionState();
+  const undo = h.document.querySelector('[data-action="undo"]'), redo = h.document.querySelector('[data-action="redo"]');
+  const controls = [undo.disabled, undo.title, redo.disabled, redo.title];
+  const vendor = h.vendor, original = vendor.updateRect;
+  let once = true;
+  vendor.projectedX = 800;
+  vendor.updateRect = function () {
+    original.call(this);
+    this.projectedX = Number(/left:(\d+)px/.exec(node.getAttribute('style'))?.[1]);
+    if (once) { once = false; throw Error('vendor updateRect post-effect'); }
+  };
+  h.begin(); h.update(8, 0);
+  assert.throws(() => h.finish(), /vendor updateRect post-effect/);
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(node.getAttribute('style'), style);
+  assert.equal(vendor.projectedX, 800);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), history);
+  assert.deepEqual([undo.disabled, undo.title, redo.disabled, redo.title], controls);
+  assert.deepEqual(h.api.layout.getSelectionState(), selection);
+  assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+  assert.equal(h.vendor, vendor);
+  assert.match(h.document.querySelector('[data-editor-status]').textContent, /未套用：vendor updateRect post-effect/);
+  h.begin(); h.update(8, 0); h.finish();
+  assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x, 808);
+  assert.equal(vendor.projectedX, 808);
+  assert.equal(h.getRevision(), revision + 1);
+  assert.equal(h.api.getHistoryState().entries, history.entries + 1);
+});
