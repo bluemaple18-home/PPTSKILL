@@ -18,6 +18,7 @@ export async function groupLockFixture() {
 export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, outputDir, width, run, click: baseClick, position, mouse, settle, assertExport }) {
   const source = await groupLockFixture(), rendered = renderFullDeck(source); assert.equal(rendered.status, 'pass');
   const path = resolve(outputDir, 'group-lock-source.html'); await writeFile(path, rendered.html); await navigate(path);
+  await evaluate(`(()=>{const Original=window.PPTSKILLMoveable.default;window.__core2VendorTrace=[];window.PPTSKILLMoveable={...window.PPTSKILLMoveable,default:class extends Original{on(name,listener){return super.on(name,event=>{const item={name,x:event.inputEvent?.clientX,y:event.inputEvent?.clientY,trusted:event.inputEvent?.isTrusted,before:window.PPTSKILLEditor.layout.getState()};window.__core2VendorTrace.push(item);const result=listener(event);item.after=window.PPTSKILLEditor.layout.getState();return result})}}}})()`);
   const ids = ['component-group-text', 'component-group-image'];
   const css = id => '[data-pptskill-element-id="' + id + '"]';
   const spec = () => evaluate('window.PPTSKILLEditor.getDeckSpec()');
@@ -38,10 +39,11 @@ export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, output
     const scale = await evaluate("document.querySelector('.slide').getBoundingClientRect().width/1600");
     const p = await position(kind === 'resize' ? '.moveable-se' : css(ids[0]), kind === 'resize' ? .5 : .2, .5);
     assert.ok(p.width > 0 && p.height > 0, '可見pointer target');
+    const hit = await evaluate(`(()=>{const e=document.elementFromPoint(${p.x},${p.y});return{tag:e?.tagName,classes:e?.className,elementId:e?.closest('[data-pptskill-element-id]')?.dataset.pptskillElementId}})()`);
     await mouse('mouseMoved', p); await mouse('mousePressed', p, true);
     let end;
     for (let i = 1; i <= 6; i++) { end = { x: p.x + dx * scale * i / 6, y: p.y + dy * scale * i / 6 }; await mouse('mouseMoved', end, true); }
-    await settle(); if (finish) { await mouse('mouseReleased', end); await settle(); } return end;
+    await settle(); if (finish) { await mouse('mouseReleased', end); await settle(); } record('native gesture diagnostic',{kind,dx,dy,hit,point:p,...await evaluate(`({trace:window.__core2VendorTrace.splice(0),state:window.PPTSKILLEditor.layout.getState(),status:document.querySelector('[data-editor-status]')?.textContent})`)}); return end;
   };
   const key = async (key, code, extra = {}) => {
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, ...extra });
@@ -68,7 +70,7 @@ export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, output
   await assertExport('core2-preview-export', committed); await mouse('mouseReleased', end); await settle();
   committed = await spec(); assert.equal(geometry(committed)['group-text'].x, 180); assert.equal(geometry(committed)['group-image'].x, 560);
   await checkGeometry(geometry(committed)); record('trusted group drag／preview export');
-  await gesture('resize', 124, 40); committed = await spec();
+  await gesture('resize', 124, 40); await screenshot('after-resize'); committed = await spec();
   assert.deepEqual(geometry(committed)['group-text'], { x: 180, y: 330, width: 288, height: 144 });
   assert.deepEqual(geometry(committed)['group-image'], { x: 636, y: 378, width: 288, height: 192 });
   await checkGeometry(geometry(committed)); record('trusted group resize／canonical比例');
