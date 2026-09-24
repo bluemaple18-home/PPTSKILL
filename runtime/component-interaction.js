@@ -319,8 +319,10 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         // 返回起點必須送回 base，不能略過而留下上一個 preview。
         if (!interaction.update(next) && useSnap) clearSelection();
       });
-      moveable.on(vendorEvent + 'End', () => {
+      moveable.on(vendorEvent + 'End', event => {
         if (moveable !== vendor || !interaction.getState().gesturing) return;
+        // Moveable 可能在越過最小尺寸後停止送 update；release 才是最後候選。
+        if (isGroup && kind === 'resize' && Number.isFinite(event?.inputEvent?.clientX) && Number.isFinite(event.inputEvent.clientY)) interaction.update(point(event));
         const committed = interaction.finish();
         if (useSnap && !committed) clearSelection();
         else moveable?.updateRect();

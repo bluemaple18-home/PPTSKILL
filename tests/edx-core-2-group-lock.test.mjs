@@ -157,11 +157,26 @@ test('Core2 mounted toolbar、原生group事件mapping、單次revision與clone'
   h.finish('dragGroup'); assert.equal(h.getRevision(), 2);
   assert.equal(composition(h.getSpec()).geometryOverrides['group-text'].x, 160);
   assert.equal(composition(h.getSpec()).geometryOverrides['perf-image'].x, 460);
-  h.begin('resizeGroup'); h.update(300, 200, 'resizeGroup'); h.finish('resizeGroup');
+  h.begin('resizeGroup'); h.update(300, 200, 'resizeGroup');
+  h.vendor.handlers.resizeGroupEnd({ inputEvent: { clientX: 300, clientY: 200, isTrusted: true } });
   assert.equal(h.getRevision(), 3);
   assert.deepEqual(composition(h.getSpec()).geometryOverrides['group-text'], { x: 160, y: 160, width: 300, height: 240 });
   const clone = h.api.layout.getState(); clone.target.elementIds.push('corrupt');
   assert.equal(h.api.layout.getState().target.elementIds.length, 2);
+});
+
+test('Core2 portable group resize 最後 update 有效、release 越過 minimum 時整組不提交', () => {
+  const h = groupedUi(), before = h.getSpec(), revision = h.getRevision();
+  const nodes = ids.map(id => nodeFor(h, id)), styles = nodes.map(node => node.getAttribute('style'));
+  h.begin('resizeGroup');
+  h.update(-100, -30, 'resizeGroup');
+  assert.deepEqual(h.getSpec(), before, '中途 preview 不提交');
+  h.vendor.handlers.resizeGroupEnd({ inputEvent: { clientX: -700, clientY: -200, isTrusted: true } });
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(nodes.map(node => node.getAttribute('style')), styles);
+  assert.deepEqual(Array.from(h.api.layout.getState().target.elementIds), selectedIds(h));
+  assert.equal(h.api.layout.getState().gesturing, false);
 });
 
 test('Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤', () => {
