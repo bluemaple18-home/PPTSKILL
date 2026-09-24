@@ -232,3 +232,74 @@ test('Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 hi
   assert.equal(h.getRevision(), 0);
   assert.deepEqual(h.api.getHistoryState(), state);
 });
+
+test('Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry', () => {
+  const h = mountedEditor(fixture(0)); h.api.layout.setMode(true);
+  const before = h.getSpec(), state = h.api.getHistoryState(), revision = h.getRevision();
+  const titleNode = h.document.querySelector('[data-pptskill-element-id="role-title"]'), text = titleNode.textContent;
+  const button = h.document.querySelector('[data-action="undo"]'), disabled = button.disabled, title = button.title;
+  let once = true, stored = disabled;
+  Object.defineProperty(button, 'disabled', { configurable: true, get() { return stored; }, set(value) { stored = value; if (once) { once = false; throw Error('toolbar commit post-effect'); } } });
+  assert.throws(() => h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '失敗' }), /toolbar commit post-effect/);
+  assert.deepEqual(h.getSpec(), before); assert.equal(titleNode.textContent, text); assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), state); assert.equal(button.disabled, disabled); assert.equal(button.title, title);
+});
+
+test('Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor', () => {
+  const h = mountedEditor(fixture(0)); h.api.layout.setMode(true);
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '待復原' });
+  const before = h.getSpec(), state = h.api.getHistoryState(), revision = h.getRevision();
+  const titleNode = h.document.querySelector('[data-pptskill-element-id="role-title"]'), text = titleNode.textContent;
+  const button = h.document.querySelector('[data-action="undo"]'), disabled = button.disabled;
+  let writes = 0, stored = disabled;
+  Object.defineProperty(button, 'disabled', { configurable: true, get() { return stored; }, set(value) { stored = value; if (++writes === 3) throw Error('toolbar replay post-effect'); } });
+  assert.throws(() => h.api.undo(), /toolbar replay post-effect/);
+  assert.deepEqual(h.getSpec(), before); assert.equal(titleNode.textContent, text); assert.equal(h.getRevision(), revision);
+  assert.deepEqual(h.api.getHistoryState(), state); assert.equal(button.disabled, disabled);
+});
+
+test('Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  const before = h.getSpec(), revision = h.getRevision(), node = h.component(), selection = h.api.layout.getSelectionState();
+  const original = h.api.layout.clearSelection;
+  h.api.layout.clearSelection = (...args) => { original(...args); throw Error('selection cleanup post-effect'); };
+  assert.throws(() => h.api.applyLocalPatch({ slideId: 'portable', region: 'content.components.portable-quote', value: { text: '失敗 patch' } }), /selection cleanup post-effect/);
+  assert.deepEqual(h.getSpec(), before); assert.equal(h.getRevision(), revision);
+  assert.equal(h.component(), node); assert.deepEqual(h.api.layout.getSelectionState(), selection);
+});
+
+test('Core3 Repair1 stale component DOM patch fail closed', () => {
+  const h = mountedEditor(fixture(0)), before = h.getSpec(), revision = h.getRevision(), state = h.api.getHistoryState();
+  h.component().remove();
+  assert.throws(() => h.api.applyLocalPatch({ slideId: 'portable', region: 'content.components.portable-quote', value: { text: 'stale patch' } }), /DOM|target|已移除/);
+  assert.deepEqual(h.getSpec(), before); assert.equal(h.getRevision(), revision); assert.deepEqual(h.api.getHistoryState(), state);
+});
+
+test('Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable', () => {
+  const spec = fixture(0), copy = structuredClone(spec.slides[0]); copy.id = 'portable-two'; spec.slides.push(copy);
+  const h = mountedEditor(spec); h.ready();
+  const selected = h.api.layout.getSelectionState(), deck = h.document.querySelector('.deck'), insert = deck.insertBefore;
+  deck.insertBefore = function (node, before) { insert.call(this, node, before); throw Error('reorder post-effect'); };
+  assert.throws(() => h.action('move-down'), /reorder post-effect/);
+  assert.deepEqual(h.api.layout.getSelectionState(), selected);
+  assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+  deck.insertBefore = insert;
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '待復原' });
+  const refresh = h.api.layout.refresh;
+  h.api.layout.refresh = () => { h.api.layout.clearSelection(); throw Error('replay selection post-effect'); };
+  assert.throws(() => h.api.undo(), /replay selection post-effect/);
+  assert.deepEqual(h.api.layout.getSelectionState(), selected);
+  assert.equal(h.api.layout.getState().target?.elementId, 'component-portable-quote');
+  h.api.layout.refresh = refresh;
+});
+
+test('Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled', () => {
+  const h = mountedEditor(fixture(0)); h.ready();
+  h.api.executeOperation({ operation: 'edit-text', target: { slideId: 'portable', elementId: 'role-title' }, value: '可復原' });
+  const button = h.document.querySelector('[data-action="undo"]');
+  assert.equal(button.disabled, false);
+  h.begin(); assert.equal(button.disabled, true);
+  h.update(0, 0); h.finish(); assert.equal(button.disabled, false);
+  h.begin(); assert.equal(button.disabled, true);
+  h.api.layout.cancel(); assert.equal(button.disabled, false);
+});

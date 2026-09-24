@@ -100,7 +100,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {} }) {
+  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {} }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -141,7 +141,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     if (rect) projectBox(geometryTarget, rect);
   };
   const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
-    onCancel: () => { suppressPointerClick = true; },
+    onCancel: () => { suppressPointerClick = true; onGestureChange(); },
     preview(target, rect) {
       const current = resolve(target);
       if (!current) return;
@@ -225,6 +225,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   };
   selection = createMultiSelectionState({ listTargets: eligibleIds, onChange: applySelection });
   const clearSelection = (reason = 'clear') => { if (!selection.clear()) clearSelectionView(); onSelectionChange(reason); };
+  const restoreSelection = saved => { if (selection.replace(saved.selected)) return; applySelection(saved.selected); };
   const mutateSelection = (ids, mode) => {
     onSelectionChange('selection');
     interaction.cancel(); moveable?.stopDrag();
@@ -304,6 +305,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
           if (kind === 'resize') event.setFixedDirection([-1, -1]);
         }
         if (!interaction.begin(kind, point(event), scale)) { event.stop(); return; }
+        onGestureChange();
         if (kind === 'drag') { event.set?.([0, 0]); event.events?.forEach(child => child.set?.([0, 0])); }
         if (isGroup && kind === 'resize') event.setFixedDirection?.([-1, -1]);
       });
@@ -323,7 +325,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         if (moveable !== vendor || !interaction.getState().gesturing) return;
         // Moveable 可能在越過最小尺寸後停止送 update；release 才是最後候選。
         if (isGroup && kind === 'resize' && Number.isFinite(event?.inputEvent?.clientX) && Number.isFinite(event.inputEvent.clientY)) interaction.update(point(event));
-        const committed = interaction.finish();
+        const committed = interaction.finish(); onGestureChange();
         if (useSnap && !committed) clearSelection();
         else moveable?.updateRect();
       });
@@ -483,7 +485,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
   const refresh = () => { const ids = selection.getState().selected; const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId); const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids; if (!selection.replace(expanded)) applySelection(expanded); };
-  return { setMode, clearSelection, cancel, refresh, restoreProjection: refresh, getState: interaction.getState,
+  return { setMode, clearSelection, restoreSelection, cancel, refresh, restoreProjection: refresh, getState: interaction.getState,
     getSelectionState: selection.getState,
     destroy() {
       setMode(false);

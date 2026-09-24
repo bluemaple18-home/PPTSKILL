@@ -12,6 +12,8 @@ export function createEditorHistory(maxEntries = 20, maxBytes = 64 * 1024 * 1024
   };
   const clear = () => { entries.length = 0; cursor = 0; bytes = 0; oversized = false; };
   const state = () => ({ canUndo: cursor > 0, canRedo: cursor < entries.length, entries: entries.length, bytes, oversized });
+  const checkpoint = () => ({ entries: entries.slice(), cursor, bytes, oversized });
+  const restore = saved => { entries.splice(0, entries.length, ...saved.entries); cursor = saved.cursor; bytes = saved.bytes; oversized = saved.oversized; };
   const record = (before, after, undoable) => {
     if (!undoable) { clear(); return state(); }
     const size = sizeOf(before) + sizeOf(after);
@@ -34,5 +36,5 @@ export function createEditorHistory(maxEntries = 20, maxBytes = 64 * 1024 * 1024
     cursor += direction === 'undo' ? -1 : 1;
     return true;
   };
-  return { clear, record, replay, state };
+  return { clear, record, replay, state, checkpoint, restore };
 }
