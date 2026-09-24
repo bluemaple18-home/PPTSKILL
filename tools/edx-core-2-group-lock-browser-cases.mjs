@@ -22,7 +22,7 @@ export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, output
   const css = id => '[data-pptskill-element-id="' + id + '"]';
   const spec = () => evaluate('window.PPTSKILLEditor.getDeckSpec()');
   const selected = () => evaluate('window.PPTSKILLEditor.layout.getSelectionState().selected');
-  const click = async selector => { await evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({block:'nearest'})`); await baseClick(selector); };
+  const click = async selector => { await evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({block:'nearest'})`); const hit=await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(selector)}),r=e.getBoundingClientRect();return r.width>0&&r.height>0&&!e.disabled&&e.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2))})()`); assert.equal(hit,true,'可見且命中：'+selector); await baseClick(selector); };
   const geometry = s => s.slides[0].composition.geometryOverrides;
   const record = (caseName, details = {}) => run.checks.push({ core2: caseName, ...details });
   const screenshot = async label => {
