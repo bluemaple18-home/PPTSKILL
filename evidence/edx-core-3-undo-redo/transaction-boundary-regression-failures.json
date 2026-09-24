@@ -1,0 +1,117 @@
+[
+  {
+    "name": "not ok 74 - Crop UI keyboard/range草稿不提交；勾選confirm一次revision、原src不變",
+    "file": "tests/edx-core-crop-ui.test.mjs",
+    "detail": "not ok 74 - Crop UI keyboard/range草稿不提交；勾選confirm一次revision、原src不變\n  ---\n  duration_ms: 98.79875\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:15:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:20:80)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)\n  ..."
+  },
+  {
+    "name": "not ok 75 - Crop UI Evidence預設完整保護、外框排除拒絕、確認後reset與S7拒絕cover",
+    "file": "tests/edx-core-crop-ui.test.mjs",
+    "detail": "not ok 75 - Crop UI Evidence預設完整保護、外框排除拒絕、確認後reset與S7拒絕cover\n  ---\n  duration_ms: 78.735292\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:23:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    The input did not match the regular expression /不可遮掉/. Input:\n    \n    '同步交易進行中，拒絕重入。'\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n  actual: '同步交易進行中，拒絕重入。'\n  operator: 'match'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:25:66)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)\n  ..."
+  },
+  {
+    "name": "not ok 79 - Crop 20MiB UI range preview不hash來源／不序列化DeckSpec，confirm才hash",
+    "file": "tests/edx-core-crop-ui.test.mjs",
+    "detail": "not ok 79 - Crop 20MiB UI range preview不hash來源／不序列化DeckSpec，confirm才hash\n  ---\n  duration_ms: 1003.53525\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:59:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:67:72)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)\n  ..."
+  },
+  {
+    "name": "not ok 81 - Repair1 F5 decorative cover預覽沿target aspect，portrait/landscape可見區域等同commit",
+    "file": "tests/edx-core-crop-ui.test.mjs",
+    "detail": "not ok 81 - Repair1 F5 decorative cover預覽沿target aspect，portrait/landscape可見區域等同commit\n  ---\n  duration_ms: 78.416708\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:77:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly deep-equal:\n    + actual - expected\n    \n    + undefined\n    - {\n    -   height: 0.6,\n    -   width: 0.5,\n    -   x: 0.2,\n    -   y: 0.15\n    - }\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected:\n    x: 0.2\n    y: 0.15\n    width: 0.5\n    height: 0.6\n  operator: 'deepStrictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-crop-ui.test.mjs:90:162)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async"
+  },
+  {
+    "name": "not ok 135 - legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞",
+    "file": "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs",
+    "detail": "not ok 135 - legacy component ID 與 role／point canonical IDs 可同名但 element identity 不碰撞\n  ---\n  duration_ms: 6.983041\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s2-stable-identity-operation-path.test.mjs:180:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    The input did not match the regular expression /const executeOperation=\\(request,afterCommit=.*?validateOperationRequest\\(request\\)/s. Input:\n    \n    '<!doctype html><html lang=\"zh-Hant\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>讓每個人用 AI 快速完成簡報</title><style>\\n' +\n      \":root{--canvas:#f1eee6;--text:#171515;--muted:#68615c;--accent:#d7472f;--surface:#ded8cc;--unit:10px;--pad:72px;--radius:0px;--border:1px;--motion:420ms;--ease:cubic-bezier(.16,1,.3,1);--display:'Micros"
+  },
+  {
+    "name": "not ok 140 - browser API VM absolute move/resize 僅改 canonical override，content edit 保留",
+    "file": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "detail": "not ok 140 - browser API VM absolute move/resize 僅改 canonical override，content edit 保留\n  ---\n  duration_ms: 13.272083\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:40:3'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)\n    TestContext.<anon"
+  },
+  {
+    "name": "not ok 141 - browser API VM invalid 全部 fail loud 且 state 原子性",
+    "file": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "detail": "not ok 141 - browser API VM invalid 全部 fail loud 且 state 原子性\n  ---\n  duration_ms: 3.62675\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:52:3'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)\n    TestContext.<anonymous> (file:///Users/matt/D"
+  },
+  {
+    "name": "not ok 142 - browser API VM descriptors 深度 immutable 且 allowlist 無法擴權",
+    "file": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "detail": "not ok 142 - browser API VM descriptors 深度 immutable 且 allowlist 無法擴權\n  ---\n  duration_ms: 2.036167\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:67:3'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)\n    TestContext.<anonymous> (file:///Us"
+  },
+  {
+    "name": "not ok 148 - browser API VM 合法 constructor ID 與非 slot component 走 own-property override",
+    "file": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "detail": "not ok 148 - browser API VM 合法 constructor ID 與非 slot component 走 own-property override\n  ---\n  duration_ms: 2.858083\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:118:3'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)\n    TestContext.<ano"
+  },
+  {
+    "name": "not ok 149 - browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp",
+    "file": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+    "detail": "not ok 149 - browser API VM safe-area 精確邊界／integer 非 grid 值不 clamp\n  ---\n  duration_ms: 2.00125\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:136:3'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    browserEditor (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s3-bounded-geometry.test.mjs:34:6)\n    TestContext.<anonymous> (file:///Users"
+  },
+  {
+    "name": "not ok 223 - S7 stale-release 共用取消尾隨 click 防護",
+    "file": "tests/edx-wp1-s7-cancel-click.test.mjs",
+    "detail": "not ok 223 - S7 stale-release 共用取消尾隨 click 防護\n  ---\n  duration_ms: 23.279167\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:44:177'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    1 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 1\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:63:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:internal/test_runner/test:1330:19)\n    Test.run (node:intern"
+  },
+  {
+    "name": "not ok 224 - S7 invalid 共用取消尾隨 click 防護",
+    "file": "tests/edx-wp1-s7-cancel-click.test.mjs",
+    "detail": "not ok 224 - S7 invalid 共用取消尾隨 click 防護\n  ---\n  duration_ms: 22.41825\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:44:177'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    1 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 1\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:63:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:internal/test_runner/test:1330:19)\n    Test.run (node:internal/test"
+  },
+  {
+    "name": "not ok 226 - S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響",
+    "file": "tests/edx-wp1-s7-cancel-click.test.mjs",
+    "detail": "not ok 226 - S7 未啟動 gesture 的普通選取與零位移 release 不受取消防護影響\n  ---\n  duration_ms: 32.214708\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:75:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    1 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 1\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s7-cancel-click.test.mjs:79:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:internal/test_runner/test:1330:19)\n    Test.run (node"
+  },
+  {
+    "name": "not ok 293 - S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy",
+    "file": "tests/edx-wp1-s7-snap.test.mjs",
+    "detail": "not ok 293 - S7 舊 vendor 延遲 end 不得提交新 gesture；stale release 清 proxy\n  ---\n  duration_ms: 71.817459\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s7-snap.test.mjs:107:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    + actual - expected\n    \n    + <ref *3> Element {\n    +   attrs: {\n    +     'data-pptskill-editor-chrome': 'geometry-target',\n    +     style: 'position:absolute;boxSizing:border-box;pointerEvents:none;left:803px;top:283px;width:637px;height:477px'\n    +   },\n    +   children: [],\n    +   dataset: {},\n    +   listeners: {},\n    +   parentElement: <ref *1> Element {\n    +     attrs: {\n    +       'data-editor-selected': 'true',\n    +       'data-slide-id': 'portable',\n    +       class: 'slide'\n    +     },\n    +     children: [\n "
+  },
+  {
+    "name": "not ok 305 - S8 plain/Shift click 與 marquee 共用單一 editor-local selection state",
+    "file": "tests/edx-wp1-s8-mounted-selection.test.mjs",
+    "detail": "not ok 305 - S8 plain/Shift click 與 marquee 共用單一 editor-local selection state\n  ---\n  duration_ms: 20.863375\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp1-s8-mounted-selection.test.mjs:44:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    4 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 4\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp1-s8-mounted-selection.test.mjs:63:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:internal/test_runner"
+  },
+  {
+    "name": "not ok 351 - S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一次",
+    "file": "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+    "detail": "not ok 351 - S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一次\n  ---\n  duration_ms: 26.541458\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s10-insert-image-ui.test.mjs:109:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s10-insert-image-ui.test.mjs:119:10)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)\n  ..."
+  },
+  {
+    "name": "not ok 524 - S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化",
+    "file": "tests/edx-wp2-s15-insert-text-ui.test.mjs",
+    "detail": "not ok 524 - S15 submit 時讀 canonical 第一個空缺，跨 type namespace，無 draft 整份序列化\n  ---\n  duration_ms: 20.339833\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:57:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    2 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 2\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s15-insert-text-ui.test.mjs:58:91)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:internal/test_runner/test:13"
+  },
+  {
+    "name": "not ok 677 - S18 API-only VM 無 layout/完整 DOM 時 fail closed，其他 public operation 仍可使用",
+    "file": "tests/edx-wp2-s18-delete-element.test.mjs",
+    "detail": "not ok 677 - S18 API-only VM 無 layout/完整 DOM 時 fail closed，其他 public operation 仍可使用\n  ---\n  duration_ms: 9.804542\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:277:1'\n  failureType: 'testCodeFailure'\n  error: 'Cannot convert undefined or null to object'\n  code: 'ERR_TEST_FAILURE'\n  name: 'TypeError'\n  stack: |-\n    Object.entries (<anonymous>)\n    boot (evalmachine.<anonymous>:1980:46)\n    evalmachine.<anonymous>:1982:106\n    evalmachine.<anonymous>:1982:114\n    Script.runInContext (node:vm:149:12)\n    Script.runInNewContext (node:vm:154:17)\n    Object.runInNewContext (node:vm:310:38)\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:293:6)\n    Test.runInA"
+  },
+  {
+    "name": "not ok 686 - S18 reentry download/before 在 syncText 前拒絕，不匯出半完成 DOM",
+    "file": "tests/edx-wp2-s18-delete-element.test.mjs",
+    "detail": "not ok 686 - S18 reentry download/before 在 syncText 前拒絕，不匯出半完成 DOM\n  ---\n  duration_ms: 8.647375\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:322:125'\n  failureType: 'testCodeFailure'\n  error: '同步交易進行中，拒絕重入。'\n  code: 'ERR_TEST_FAILURE'\n  stack: |-\n    assertMutationAvailable (evalmachine.<anonymous>:1099:122)\n    runMutation (evalmachine.<anonymous>:1346:1)\n    Object.download (evalmachine.<anonymous>:1981:745)\n    target.remove (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:334:26)\n    deleteComponent (evalmachine.<anonymous>:1270:10)\n    executeOperationCore (evalmachine.<anonymous>:1291:350)\n    executeOperationInternal (evalmachine.<anonymous>:1373:137)\n    evalmachine.<anony"
+  },
+  {
+    "name": "not ok 687 - S18 reentry download/after 在 syncText 前拒絕，不匯出半完成 DOM",
+    "file": "tests/edx-wp2-s18-delete-element.test.mjs",
+    "detail": "not ok 687 - S18 reentry download/after 在 syncText 前拒絕，不匯出半完成 DOM\n  ---\n  duration_ms: 8.06225\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:322:125'\n  failureType: 'testCodeFailure'\n  error: '同步交易進行中，拒絕重入。'\n  code: 'ERR_TEST_FAILURE'\n  stack: |-\n    assertMutationAvailable (evalmachine.<anonymous>:1099:122)\n    runMutation (evalmachine.<anonymous>:1346:1)\n    Object.download (evalmachine.<anonymous>:1981:745)\n    target.remove (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s18-delete-element.test.mjs:334:26)\n    deleteComponent (evalmachine.<anonymous>:1270:10)\n    executeOperationCore (evalmachine.<anonymous>:1291:350)\n    executeOperationInternal (evalmachine.<anonymous>:1373:137)\n    evalmachine.<anonymo"
+  },
+  {
+    "name": "not ok 775 - S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize",
+    "file": "tests/edx-wp2-s7-selected-image-fit.test.mjs",
+    "detail": "not ok 775 - S7 same-image click 與 refresh 只讀 bounded metadata；不讀 payload／serialize\n  ---\n  duration_ms: 493.182417\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:78:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    640 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 640\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s7-selected-image-fit.test.mjs:82:10)\n    Test.runInAsyncScope (node:async_hooks:226:14)\n    Test.run (node:internal/test_runner/test:1201:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:831:18)\n    Test.postRun (node:interna"
+  },
+  {
+    "name": "not ok 845 - S9 drag pending 保留／成功才 cancel clear revision 一次",
+    "file": "tests/edx-wp2-s9-insert-image-file.test.mjs",
+    "detail": "not ok 845 - S9 drag pending 保留／成功才 cancel clear revision 一次\n  ---\n  duration_ms: 27.981167\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s9-insert-image-file.test.mjs:144:40'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s9-insert-image-file.test.mjs:153:10)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)\n  ..."
+  },
+  {
+    "name": "not ok 846 - S9 resize pending 保留／成功才 cancel clear revision 一次",
+    "file": "tests/edx-wp2-s9-insert-image-file.test.mjs",
+    "detail": "not ok 846 - S9 resize pending 保留／成功才 cancel clear revision 一次\n  ---\n  duration_ms: 24.654708\n  type: 'test'\n  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-wp2-s9-insert-image-file.test.mjs:144:40'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-wp2-s9-insert-image-file.test.mjs:153:10)\n    async Test.run (node:internal/test_runner/test:1208:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)\n  ..."
+  }
+]

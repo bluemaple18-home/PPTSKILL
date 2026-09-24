@@ -146,9 +146,10 @@ for (const kind of ['drag', 'resize']) test(`S9 ${kind} pending 保留／成功�
   const queue = deferred(h), before = snapshot(h), pending = h.api.insertImageFile({}, options());
   assert.deepEqual(snapshot(h), before);
   let cancels = 0, clears = 0;
-  const cancel = h.api.layout.cancel, clear = h.api.layout.clearSelection;
-  h.api.layout.cancel = (...args) => { cancels++; return cancel(...args); };
-  h.api.layout.clearSelection = (...args) => { clears++; return clear(...args); };
+  const vendor = h.vendor, stop = vendor.stopDrag, selectedNode = h.component(), removeAttribute = selectedNode.removeAttribute;
+  // 原有取消／清選取契約，改在 vendor 與 DOM effect 計數，仍要求各一次。
+  vendor.stopDrag = function (...args) { cancels++; return stop.apply(this, args); };
+  selectedNode.removeAttribute = function (key) { if (key === 'data-editor-selected') clears++; return removeAttribute.call(this, key); };
   queue[0].resolve({ ...result(), optimized: true }); await pending;
   assert.equal(cancels, 1); assert.equal(clears, 1); assert.equal(h.getRevision(), 1);
   assert.equal(h.api.layout.getState().gesturing, false); assert.deepEqual([...h.api.layout.getSelectionState().selected], []);

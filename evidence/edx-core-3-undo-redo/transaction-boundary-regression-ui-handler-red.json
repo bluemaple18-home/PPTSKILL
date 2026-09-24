@@ -1,0 +1,10 @@
+{
+  "log": "evidence/edx-core-3-undo-redo/transaction-boundary-regression-ui-handler-red.log.gz",
+  "uncompressedSHA256": "92672be8044ac769f36ba81945612553e32f4a337f732ea35c954f259d1abcc4",
+  "summary": {
+    "tests": 1,
+    "pass": 0,
+    "fail": 1,
+    "skipped": 0
+  }
+}

@@ -108,7 +108,7 @@ export function cleanupComponentInteractionClone(root) {
 
 // DOM 與 vendor 只負責呈現；關閉吸附沿用原始 pointer，開啟時橋接 vendor canonical 候選。
 export function mountComponentInteraction({ document, window, getSpec, getRevision, resolveIdentities, executeOperation,
-  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {}, runMutation = work => work(), mutationBlocked = () => false, mutationEvent = handler => handler, previewEvent = handler => handler }) {
+  project, notify, setTextMode, selectSlide, groupLock = null, onSelectionChange = () => {}, onGestureChange = () => {}, runMutation = work => work(), mutate = work => work(), mutationBlocked = () => false, previewEvent = handler => handler }) {
   let moveable = null, selecto = null, overlay = null, observer = null, composing = false, snap = false, geometryTarget = null;
   let suppressPointerClick = false;
   let routedControlClick = null;
@@ -148,6 +148,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
     const target = interaction.getState().target, rect = geometryTarget && target && resolve(target)?.rect;
     if (rect) projectBox(geometryTarget, rect);
   };
+  const finishView = () => { if (snap) clearSelection(); else moveable?.updateRect(); };
   const interaction = createComponentInteraction({ readTarget: resolve, executeOperation, restore, notify,
     beforeFinish: () => { try { moveable?.updateRect(); } catch (error) { error.componentProjection = true; throw error; } onGestureChange(); },
     capturePreview(target) {
@@ -156,7 +157,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         .map(node => [node, ['style', 'data-pptskill-geometry'].map(key => [key, node.getAttribute(key)])]),
         controls: ['undo', 'redo'].map(direction => { const button = document.querySelector('[data-action="' + direction + '"]'); return button && [button, button.disabled, button.title]; }) };
     },
-    transactFinish: (work, checkpoint) => runMutation(work, checkpoint, error => { suppressPointerClick = true; moveable?.updateRect(); notify('未套用：' + error.message); }),
+    transactFinish: (work, checkpoint) => runMutation(() => { const committed = work(); if (!committed) finishView(); return committed; }, checkpoint, error => { suppressPointerClick = true; finishView(); notify('未套用：' + error.message); }),
     onCancel: () => { suppressPointerClick = true; onGestureChange(); },
     preview(target, rect) {
       const current = resolve(target);
@@ -273,7 +274,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
           && !node.closest?.('[data-pptskill-element-id],.pptskill-editor,[data-pptskill-editor-chrome],.moveable-control-box,input,textarea,select,[contenteditable],[role="textbox"]'));
       },
     });
-    selecto.on('selectEnd', mutationEvent(event => {
+    selecto.on('selectEnd', previewEvent(event => {
       const ids = [...new Set((event.selected || []).map(node => node.dataset?.pptskillElementId).filter(Boolean))];
       mutateSelection(ids, event.inputEvent?.shiftKey ? 'toggle' : 'replace');
     }));
@@ -490,7 +491,13 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   };
   const guarded = new Map();
   // viewport／pointer observation 只持同步排他，不複製 canonical 或全 DOM。
-  const entry = handler => { if (!guarded.has(handler)) guarded.set(handler, (handler === click || handler === keydown ? mutationEvent : previewEvent)(handler)); return guarded.get(handler); };
+  const entry = handler => { if (!guarded.has(handler)) guarded.set(handler, previewEvent(event => {
+    const action = handler === click && event.target.closest?.('[data-action]')?.dataset.action;
+    const writes = action && (/^(align-|distribute-)/.test(action) || ['group-elements', 'ungroup-elements', 'lock-elements', 'unlock-elements', 'initialize-layout'].includes(action))
+      || handler === keydown && ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key) && !interaction.getState().gesturing;
+    if (writes) return mutate(() => handler(event));
+    const result = handler(event); onGestureChange(true); return result;
+  }, false)); return guarded.get(handler); };
   window.addEventListener('click', entry(routeGestureControl), true);
   document.addEventListener('pointerdown', entry(pointerDown), true);
   document.addEventListener('click', entry(click));

@@ -76,10 +76,11 @@ for (const phase of ['reorder', 'finish']) test(`交易邊界：${phase} 所有 
     const payload = new Proxy({}, { get() { getters++; throw Error('payload 不可讀取'); }, ownKeys() { getters++; return []; } });
     for (const invoke of [() => h.api.executeOperation(payload), () => h.api.applyLocalPatch(payload),
       () => h.api.layout.setMode(false), () => h.api.layout.clearSelection(), () => h.api.layout.refresh(),
-      () => h.api.prepareExport(), () => h.api.exportHtml(), () => h.api.getSizeReport(), () => h.api.download()]) {
+      () => h.api.prepareExport(), () => h.api.exportHtml(), () => h.api.getSizeReport()]) {
       assert.throws(invoke, /同步交易/); checked++;
     }
     assert.equal(h.api.undo(), false); assert.equal(h.api.redo(), false);
+    assert.equal(h.api.download(), false); assert.match(h.document.querySelector('[data-editor-status]').textContent, /同步交易/);
     const snapshot = state(h);
     h.click(h.document.querySelector('[data-slide-id="portable-two"]')); h.action('edit'); h.action('duplicate'); h.action('delete');
     h.selecto.handlers.selectEnd({ get selected() { getters++; return []; } });
@@ -90,7 +91,7 @@ for (const phase of ['reorder', 'finish']) test(`交易邊界：${phase} 所有 
   if (phase === 'reorder') { statusHook(h, value => { if (value === '已調整順序') probe(); }); h.action('move-down'); }
   else { h.begin(); h.update(8, 0); statusHook(h, value => { if (value === '手動版面已更新') probe(); }); h.finish(); }
   await Promise.all(promises);
-  assert.equal(entered, true); assert.equal(checked, 9); assert.equal(getters, 0);
+  assert.equal(entered, true); assert.equal(checked, 8); assert.equal(getters, 0);
   assert.equal(h.getSpec().slides.find(s => s.id === 'portable').content.title, 'prior');
 });
 
@@ -186,4 +187,30 @@ for (const kind of ['scroll', 'resize', 'pointerdown']) test(`交易邊界：大
   const surface = kind === 'pointerdown' ? h.document : h.window;
   for (const handler of surface.listeners[kind] || []) handler({ target: h.component(), isTrusted: false });
   assert.equal(h.counts.payloadReads, 0); assert.equal(h.counts.wholeSpecSerializations, 0);
+});
+
+test('交易邊界：UI 字級 handler catch after-effect error 仍完整回退', () => {
+  const h = mountedEditor(fixture(0)); h.action('edit');
+  const title = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  for (const listener of h.document.body.listeners.focusin || []) listener({ target: title });
+  const input = h.document.querySelector('[data-typography-size]'); input.value = '40';
+  const before = state(h), style = title.getAttribute('style'); let value = input.value, injected = false;
+  Object.defineProperty(input, 'value', { configurable: true, get: () => value, set(next) {
+    value = next;
+    if (!injected && next === '40') { injected = true; throw Error('UI typography after-effect'); }
+  } });
+  h.action('apply-typography');
+  assert.equal(injected, true); assert.deepEqual(state(h), before); assert.equal(title.getAttribute('style'), style);
+  assert.match(h.document.querySelector('[data-editor-status]').textContent, /UI typography after-effect/);
+});
+
+test('交易邊界：IME 提交的最後 status after-effect fault 不得留下提交', () => {
+  const h = mountedEditor(fixture(0)); h.action('edit');
+  const title = h.document.querySelector('[data-pptskill-element-id="role-title"]');
+  for (const listener of h.document.body.listeners.compositionstart || []) listener({ target: title });
+  title.textContent = 'IME pending'; const before = state(h), failure = Error('IME final status');
+  let injected = false;
+  statusHook(h, value => { if (!injected && value === '文字已更新') { injected = true; throw failure; } });
+  assert.throws(() => { for (const listener of h.document.body.listeners.compositionend || []) listener({ target: title }); }, error => error === failure);
+  assert.equal(injected, true); assert.deepEqual(state(h), before); assert.equal(title.textContent, 'IME pending');
 });

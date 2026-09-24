@@ -111,8 +111,9 @@ test('S10 slide-local 首個空缺 ID、空 alt、成功只 clear selection 一�
     for (const n of [1, 3]) s.slides[0].content.components.push({ id: `inserted-image-${n}`, type: 'text', text: '已占用' });
     s.slides[1].content.components.push({ id: 'inserted-image-2', type: 'text', text: '別頁' });
   });
-  h.ready(); let clears = 0; const clear = h.api.layout.clearSelection;
-  h.api.layout.clearSelection = (...args) => { clears++; return clear(...args); };
+  h.ready(); let clears = 0; const selectedNode = h.component(), removeAttribute = selectedNode.removeAttribute;
+  // 觀察真實 selection marker 的清除，public facade 覆寫不再是內部呼叫計數器。
+  selectedNode.removeAttribute = function (key) { if (key === 'data-editor-selected') clears++; return removeAttribute.call(this, key); };
   h.pick(); await h.change({});
   const c = h.getSpec().slides[0].content.components.at(-1);
   assert.equal(c.id, 'inserted-image-2'); assert.equal(c.alt, ''); assert.equal(c.fit, 'contain');

@@ -190,7 +190,8 @@ test('legacy component ID 與 role／point canonical IDs 可同名但 element id
   assert.match(rendered.html, /data-pptskill-element-id="role-title"[^>]*data-edit-target="slides\.portable\.content\.title"/);
   assert.match(rendered.html, /data-pptskill-element-id="component-title"[^>]*data-edit-target="slides\.portable\.content\.components\.title"/);
   assert.match(rendered.html, /const cleanSlideContent=.*new Set\(elementIds\)/s);
-  assert.match(rendered.html, /const executeOperation=\(request,afterCommit=.*?validateOperationRequest\(request\)/s);
+  assert.match(rendered.html, /const executeOperation=request=>runMutation\(\(\)=>executeOperationInternal\(request\)\)/);
+  assert.match(rendered.html, /const executeOperationInternal=\(request,afterCommit=.*?validateOperationRequest\(request\)/s);
 });
 
 test('legacy adapters、duplicate 與 export/reopen 共用 canonical identity', () => {
