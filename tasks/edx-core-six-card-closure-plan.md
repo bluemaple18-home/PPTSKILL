@@ -52,3 +52,7 @@ Owner回報第1張已整合推送；本輪本機main/origin-main均a3fd195a4a4c5
 ## 第2張關閉
 
 產品／ZIP `88f401c7798976babfd28df991a6ba5b6b784e4e`；同一 Repair1 後獨立 whole-card Review GO，Core2 P0–P3 全 0。Mainline full non-browser 995/995、雙 viewport 各27 check records PASS、PGQ單輪16/16與受管清理 PASS；詳 `evidence/edx-core-2-group-lock/mainline-closure.md`。原六張目前 **2/6完成、4張剩餘**。原 Crop F2 OPEN／P2 繼續留第6張。下一 frontier 為第3張 Undo／Redo，尚未開工；Core2 停在獨立分支，未 merge／push／deploy。
+
+## 第3張啟動
+
+Core2 本地 integration gate 唯讀核對通過，產品→closure 只有 task/evidence 變更，工作樹僅原四個 protected untracked；未因此 merge／push。第3張依序從 Core2 closure `115027040a169c505df0e7f31a0a8845280a4ed7` 建 `codex/edx-core-3-undo-redo`，固定卡 `tasks/edx-core-3-undo-redo.md`。目前仍 **2/6完成、4張剩餘**；Undo／Redo 待實作與獨立驗收。
