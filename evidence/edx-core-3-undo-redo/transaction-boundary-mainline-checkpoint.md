@@ -1,9 +1,11 @@
 # Core3 交易邊界 Mainline checkpoint
 
-Status: `CODE_NO_GO / CANCEL_PROJECTION_FOLLOWUP / HOST_OBSERVER_BLOCKED`
-Code SHA：`8ad5d6fbaca45027cf73da70432787e1413b7502`。目前仍不能標 Core3 whole-card GO／closure。
+Status: `NON_BROWSER_GREEN / CANCEL_RE_REVIEW_PENDING / HOST_OBSERVER_BLOCKED`
+Code SHA：`f3d8a11865a5af25f34a08a5b65dccb3fed6914f`。目前仍不能標 Core3 whole-card GO／closure。
 
-最新裁決：packaged `2f134de` round-07 一名GO、一名NO-GO。原兩項P1關閉；新增取消投影P1，主線四組fresh重現，見 `review-round-07.md`。以下待重審文字為交付時狀態，已由本裁決取代。
+最新交付：code `f3d8a11` 修取消投影；Writer新增5/5、focused160/160、full1061/1061（81檔、0 skipped）。主線fresh ZIP lifecycle PASS、75/75 byte-match、protected4/4及歷史hash一致。ZIP **2,329,758 bytes**，SHA256 `862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290`。詳 `transaction-boundary-r07-writer.md`／`transaction-boundary-r07-mainline-hashes.json`。獨立targeted re-review pending，不能宣告GO。Observer唯讀診斷另見 `observer-zoom-out-20260924.md`。
+
+歷史裁決：packaged `2f134de` round-07 一名GO、一名NO-GO。原兩項P1關閉；新增取消投影P1，主線四組fresh重現，見 `review-round-07.md`。以下待重審文字為交付時狀態，已由本裁決取代。
 
 ## Round-06 repair交付紀錄
 

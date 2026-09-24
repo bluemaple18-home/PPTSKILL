@@ -1,6 +1,6 @@
 # Core3 交易邊界：round-06 targeted repair
 
-Status: `CODE_NO_GO / CANCEL_PROJECTION_FOLLOWUP`。Owner 於 round-06 review 中斷後要求「繼續」；承接同一 Core3 scope。
+Status: `CANCEL_REPAIR_IMPLEMENTED / TARGETED_RE_REVIEW_PENDING`。Owner 於 round-06 review 中斷後要求「繼續」；承接同一 Core3 scope。
 
 - 目標：關閉 `evidence/edx-core-3-undo-redo/review-round-06.md` 兩個 P1。基線 packaged `b35336d`／code `e6f9afa`，不得抹掉兩名不同 verdict 或既有 FAIL。
 - 範圍：`runtime/deck-editor.js` public layout mode entry、`runtime/component-interaction.js` 既有 operation handler 的終態 notify/controls，及直接 regression tests。模式切換可能 syncText，須完整交易；純 refresh/selection 仍 bounded guard、零 payload read。同一 handler 家族的 group/ungroup/lock/unlock、nudge、align/distribute、initialize 要列 operation→最後可throw副作用，使用同一既有 afterCommit／mutate seam，不逐顆加獨立 state。既有 actor/group/selector authority、history 不變。
@@ -13,3 +13,5 @@ Status: `CODE_NO_GO / CANCEL_PROJECTION_FOLLOWUP`。Owner 於 round-06 review �
 ## Round-07 單一取消投影 follow-up
 
 原兩項 P1 已由兩名 Reviewer／主線反例確認關閉。新 P1 與四組fresh重播見 `evidence/edx-core-3-undo-redo/review-round-07.md`。本續修僅既有兩runtime／transaction-boundary tests：取消本身throw仍須canonical DOM或明確fail-closed，不得建立checkpoint前留下partial preview。先RED，再既有取消checkpoint/fallback修復；驗四組、double projection、rollback失敗明確拒絕、原closure與hotpath，full→ZIP→原Reviewer targeted re-review。不得復活gesture或新增authority；同一失敗兩次無進展即停。
+
+取消投影修復code `f3d8a11`；Writer新反例5/5、focused160/160、full1061/1061。主線已重建ZIP/lifecycle及75-source驗證，待原Reviewer依新固定封包獨立裁決。
