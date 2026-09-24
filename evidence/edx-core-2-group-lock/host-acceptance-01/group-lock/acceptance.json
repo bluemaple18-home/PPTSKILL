@@ -1,0 +1,95 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/source.html",
+  "sourceSha256": "06b2129a82b680da049c5be4ff8ba540a00b5691e17173392532d23594654949",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "core2": "trusted marquee",
+          "selected": [
+            "component-group-text",
+            "component-group-image"
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-legacy-selected.html",
+          "bytes": 612323,
+          "sha256": "269fbed8e1f97d9138dbdba326443e045aed15493ce5e5d748f3937435331ae8"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-preview-export.html",
+          "bytes": 612632,
+          "sha256": "1cb0ef3b180ed391865da88ba157fbacf29f170350330b98aabd6b3796b5b26c"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-cancel.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-noop.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-invalid.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-invalid-resize.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-play-mode.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-export.html",
+          "bytes": 612632,
+          "sha256": "9d44aff16f1e0815b16a3c99beb7f073dc29e4084acdfed8ece487b59a97f129"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-01/group-lock/1280-reopen-export.html",
+          "bytes": 612632,
+          "sha256": "d7d5db52bc44472e0189613c0eaccd1dc7768608fc5f4e2b0cb5fbd7cf2594e9"
+        }
+      ],
+      "error": "TypeError: Cannot read properties of undefined (reading '0')\n    at runGroupLockBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-2-group-lock-browser-cases.mjs:59:73)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:237:30",
+      "targetClosed": true
+    }
+  ],
+  "error": "TypeError: Cannot read properties of undefined (reading '0')\n    at runGroupLockBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-2-group-lock-browser-cases.mjs:59:73)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:237:30"
+}

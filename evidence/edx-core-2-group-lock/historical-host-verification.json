@@ -1,0 +1,82 @@
+[
+  {
+    "round": 1,
+    "overall": "NOT_PASS",
+    "browserExit": 1,
+    "pgqStarted": false,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsentRechecked": true,
+    "scanCalls": 16,
+    "runs": [
+      {
+        "width": 1280,
+        "height": 720,
+        "status": "fail",
+        "checks": 11,
+        "targetClosed": true,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "round": 2,
+    "overall": "NOT_PASS",
+    "browserExit": 1,
+    "pgqStarted": false,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsentRechecked": true,
+    "scanCalls": 10,
+    "runs": [
+      {
+        "width": 1280,
+        "height": 720,
+        "status": "fail",
+        "checks": 12,
+        "targetClosed": true,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "round": 3,
+    "overall": "NOT_PASS",
+    "browserExit": 1,
+    "pgqStarted": false,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsentRechecked": true,
+    "scanCalls": 11,
+    "runs": [
+      {
+        "width": 1280,
+        "height": 720,
+        "status": "fail",
+        "checks": 14,
+        "targetClosed": true,
+        "errors": 0
+      }
+    ]
+  },
+  {
+    "round": 4,
+    "overall": "NOT_PASS",
+    "browserExit": 1,
+    "pgqStarted": false,
+    "browserCloseExit": 0,
+    "supervisorExit": 0,
+    "ownedRootAbsentRechecked": true,
+    "scanCalls": 11,
+    "runs": [
+      {
+        "width": 1280,
+        "height": 720,
+        "status": "fail",
+        "checks": 16,
+        "targetClosed": true,
+        "errors": 0
+      }
+    ]
+  }
+]

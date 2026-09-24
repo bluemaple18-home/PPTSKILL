@@ -1,0 +1,7 @@
+{
+  "runtime/group-lock.js": true,
+  "runtime/component-interaction.js": true,
+  "runtime/deck-editor.js": true,
+  "runtime/deck-spec.js": true,
+  "schemas/deck-spec.schema.json": true
+}

@@ -1,0 +1,263 @@
+{
+  "reviewer": "Ramanujan",
+  "mode": "evidence-only final addendum",
+  "time": "2026-09-24T03:11:22.596Z",
+  "candidate": "88f401c7798976babfd28df991a6ba5b6b784e4e",
+  "wholeCardVerdict": "GO",
+  "codeVerdict": "GO inherited from Repair1 targeted review",
+  "newFindings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+  },
+  "resolved": [
+    "GL-R1",
+    "GL-R2"
+  ],
+  "inheritedResidual": {
+    "id": "Crop F2",
+    "severity": "P2",
+    "status": "OPEN",
+    "disposition": "既有 residual 留第6張 Final Closure，不屬新 Repair 或本卡新 finding"
+  },
+  "freshThisTurn": {
+    "testRuns": 0,
+    "browserRuns": 0,
+    "pgqRuns": 0,
+    "checks": "read-only hashes/receipt/log consistency; source11/protected4/ZIP compared to freeze and fixed commit; current owned-root/marker absence"
+  },
+  "priorReviewerFreshTests": {
+    "pass": 76,
+    "fail": 0,
+    "source": "/private/tmp/pptskill-core2-review-2bb1aaf/repair1-88f401c/receipt.json"
+  },
+  "mainlineEvidence": {
+    "exits": {
+      "readinessExit": 0,
+      "groupBrowserExit": 0,
+      "pgqExit": 0,
+      "browserCloseExit": 0,
+      "supervisorExit": 0
+    },
+    "browser": [
+      {
+        "viewport": [
+          1280,
+          720
+        ],
+        "checkRecords": 27,
+        "status": "pass",
+        "targetClosed": true,
+        "allFiveErrorCategories": 0
+      },
+      {
+        "viewport": [
+          1600,
+          900
+        ],
+        "checkRecords": 27,
+        "status": "pass",
+        "targetClosed": true,
+        "allFiveErrorCategories": 0
+      }
+    ],
+    "pgq": {
+      "singleSummary": true,
+      "uniquePassingTests": 16,
+      "fail": 0,
+      "files": [
+        "tests/pgq-wp4-s3-content-integrity.test.mjs",
+        "tests/pgq-wp4-s3-sample-approval.test.mjs",
+        "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+        "tests/pgq-wp4-s4-required-visibility.test.mjs"
+      ],
+      "names": [
+        "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+        "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+        "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+        "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+        "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+        "sample content 或 composition 只使該頁失效",
+        "style 或 contract version 變更使全部 sample 失效",
+        "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+        "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+        "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+        "stale Owner identity 與 caller forged evidence fail loud",
+        "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+        "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+        "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+        "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+        "每張 canonical slide 的 required title 必須有 painted visibility"
+      ]
+    },
+    "lifecycle": {
+      "status": "pass",
+      "packageSmoke": "pass",
+      "archiveSha256": "1f8ed872504a5a9f655a52dad2adda52d065e78288eb3d34d698475858dfa2b9",
+      "hostCapability": "partial",
+      "limitation": "Gemini CLI missing; does not establish Gemini host recognition"
+    },
+    "cleanup": {
+      "ownedRoot": "/private/tmp/aic-b-3f8565f428cd465585a9d8321e24db26",
+      "currentlyAbsent": true,
+      "marker": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/.git/.ai-core-tmp-artifact-isolation.json",
+      "markerCurrentlyAbsent": true,
+      "receiptSupervisorExit": 0,
+      "diagnosticVerified": true
+    }
+  },
+  "sources": [
+    {
+      "path": "runtime/group-lock.js",
+      "sha256": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "runtime/component-interaction.js",
+      "sha256": "a95341a6fcf75f9d671ed143b023e74864c942bdc653c2fa51d8cb11d514bb2e",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "runtime/deck-editor.js",
+      "sha256": "416f110da1b35408e5430217f51f39392786ecc80c52da57b2aa51401aa88a5a",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "runtime/deck-spec.js",
+      "sha256": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "schemas/deck-spec.schema.json",
+      "sha256": "bec0b4d5f3b81c867170ee0172f6a0d019bd9124659d1c95c27edcff2c548dca",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tests/edx-core-2-group-lock.test.mjs",
+      "sha256": "d15a00c6bdb9611f42475986d577b77738520fd961fe5b5dd3ee7c226db10e9a",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs",
+      "sha256": "91b56e5d295794b4ff52ef5b20da86a27b0edbcda45635aa0021b0491926d298",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+      "sha256": "3fc0fdae4d0a706020d1a1a9911ef3dcf45c02a7bebe2bf3c548cefc4e40f005",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tools/edx-core-2-group-lock-browser-cases.mjs",
+      "sha256": "c48b5d5fe2b376e5ad4cb74480d7df40cdb56baf51402fb55bfbe5c8403fa8f1",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tools/edx-wp1-s4-browser-acceptance.mjs",
+      "sha256": "9a2de56cbc7da27a8f492ee76d74351e353a0a128228bbf5f9501d01408fb570",
+      "workingTreeAndCommitMatch": true
+    },
+    {
+      "path": "tools/edx-wp1-s4-perf-mounted.mjs",
+      "sha256": "ab56738fcf4984e9bf57e1f399903217ed7f275727b697b3b519e5289d79eb63",
+      "workingTreeAndCommitMatch": true
+    }
+  ],
+  "protectedChecks": [
+    {
+      "path": ".DS_Store",
+      "sha256": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+      "workingTreeMatchesFreeze": true
+    },
+    {
+      "path": "CLAUDE.md",
+      "sha256": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+      "workingTreeMatchesFreeze": true
+    },
+    {
+      "path": "HANDOFF-20260914-P0-R11-R1-S3.md",
+      "sha256": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+      "workingTreeMatchesFreeze": true
+    },
+    {
+      "path": "HANDOFF-20260914-PGQ-WP1.md",
+      "sha256": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4",
+      "workingTreeMatchesFreeze": true
+    }
+  ],
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2322437,
+    "sha256": "1f8ed872504a5a9f655a52dad2adda52d065e78288eb3d34d698475858dfa2b9"
+  },
+  "evidence": [
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-06/controller-receipt.json",
+      "sha256": "19cce4be4180716b357eeafa92a5e52549f068b8de926ee7d3ce6b4c8c058c03",
+      "bytes": 2467,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/acceptance.json",
+      "sha256": "8577ea8f0dca123049a19ba151e0ba48ee1885b4a12f7634a1eb086ce5d5e2f3",
+      "bytes": 86514,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-06/pgq.log",
+      "sha256": "bc606d089662631f531dd85adb902eddd67abab159b42db9553f7421545a1604",
+      "bytes": 1603,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/source-hashes.json",
+      "sha256": "9b40bdccb5935e4435937ebf3543b822b9d2321b9b539d88d9bad6fc872a425b",
+      "bytes": 1915,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/distribution-repair1b-lifecycle.json",
+      "sha256": "4798fe6c97710eb94d73dc46ae0fab008ef8809c6fcc28fcdbd99830c5d9da43",
+      "bytes": 1046,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-05/controller-receipt.json",
+      "sha256": "406f60001523deced82a89ebe8929123fedd674245b564562afe04d2dd060004",
+      "bytes": 2853,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/acceptance.json",
+      "sha256": "39fea6807cf0a7d3db62bf555d8d886f1a22fde5fbbdae96a6080069d8a027ee",
+      "bytes": 43465,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-controller-06.py",
+      "sha256": "fa8701531286d0f6088248c254ad79d6c351870a58ff9eaa406e6b45bc84d758",
+      "bytes": 7566,
+      "presentInFixedProductCommit": false
+    },
+    {
+      "path": "evidence/edx-core-2-group-lock/host-acceptance-06/resource-observation.json",
+      "sha256": "e39e08e8c6360a5613680648b5aa162d3e2e13b50dc936f6dd2d9061dc759eed",
+      "bytes": 371,
+      "presentInFixedProductCommit": false
+    }
+  ],
+  "history": {
+    "host05NotPassPreserved": true,
+    "host05AcceptanceUnchangedFromTargetedReview": true,
+    "host06AcceptanceUnchangedFromTargetedReview": true
+  },
+  "boundaries": [
+    "No tests/browser/PGQ rerun",
+    "No repo/source/ZIP/protected write",
+    "Output only reviewer-owned tmp",
+    "Mainline receipts are repository evidence files, not assumed to be inside product commit",
+    "GL-R2 remains synthetic exception proof",
+    "GO is card acceptance, not merge/push/deploy authorization"
+  ]
+}

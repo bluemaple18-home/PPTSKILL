@@ -1,0 +1,1352 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/source.html",
+  "sourceSha256": "f81df7daaa13af3e6059957dd5ef89372f866a2856cd587dec6ada07fe1e6793",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        {
+          "core2": "trusted marquee",
+          "selected": [
+            "component-group-text",
+            "component-group-image"
+          ]
+        },
+        {
+          "core2": "group-click diagnostic",
+          "events": [
+            {
+              "type": "pointerdown",
+              "trusted": true,
+              "action": "group-elements",
+              "disabled": false,
+              "hidden": false,
+              "rect": {
+                "x": 429.609375,
+                "y": 635.8125,
+                "width": 48,
+                "height": 33.59375
+              },
+              "selected": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            {
+              "type": "mousedown",
+              "trusted": true,
+              "action": "group-elements",
+              "disabled": false,
+              "hidden": false,
+              "rect": {
+                "x": 429.609375,
+                "y": 635.8125,
+                "width": 48,
+                "height": 33.59375
+              },
+              "selected": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            {
+              "type": "focusin",
+              "trusted": true,
+              "action": "group-elements",
+              "disabled": false,
+              "hidden": false,
+              "rect": {
+                "x": 429.609375,
+                "y": 635.8125,
+                "width": 48,
+                "height": 33.59375
+              },
+              "selected": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            {
+              "type": "mouseup",
+              "trusted": true,
+              "action": "group-elements",
+              "disabled": false,
+              "hidden": false,
+              "rect": {
+                "x": 429.609375,
+                "y": 635.8125,
+                "width": 48,
+                "height": 33.59375
+              },
+              "selected": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            {
+              "type": "click",
+              "trusted": true,
+              "action": "group-elements",
+              "disabled": false,
+              "hidden": false,
+              "rect": {
+                "x": 429.609375,
+                "y": 635.8125,
+                "width": 48,
+                "height": 33.59375
+              },
+              "selected": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            }
+          ],
+          "status": "已群組",
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": false
+          }
+        },
+        {
+          "core2": "toolbar group＋Moveable group handle"
+        },
+        {
+          "core2": "native gesture diagnostic",
+          "kind": "drag",
+          "dx": 60,
+          "dy": 30,
+          "hit": {
+            "tag": "DIV",
+            "classes": "moveable-area",
+            "se": false
+          },
+          "point": {
+            "x": 134.4,
+            "y": 288,
+            "width": 192,
+            "height": 96
+          },
+          "trace": [
+            {
+              "name": "dragGroupStart",
+              "x": 134,
+              "y": 288,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 142,
+              "y": 292,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 150,
+              "y": 296,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 158,
+              "y": 300,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 166,
+              "y": 304,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 174,
+              "y": 308,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 182,
+              "y": 312,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            }
+          ],
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": true
+          },
+          "status": "已群組"
+        },
+        {
+          "core2": "trusted group drag／preview export"
+        },
+        {
+          "core2": "native gesture diagnostic",
+          "kind": "resize",
+          "dx": 124,
+          "dy": 40,
+          "hit": {
+            "tag": "DIV",
+            "classes": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "se": true
+          },
+          "point": {
+            "x": 640,
+            "y": 424,
+            "width": 14,
+            "height": 14
+          },
+          "trace": [
+            {
+              "name": "dragGroupEnd",
+              "x": 182,
+              "y": 312,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              }
+            },
+            {
+              "name": "resizeGroupStart",
+              "x": 640,
+              "y": 424,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 656,
+              "y": 429,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 673,
+              "y": 434,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 689,
+              "y": 440,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 706,
+              "y": 445,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 722,
+              "y": 450,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 739,
+              "y": 456,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroupEnd",
+              "x": 739,
+              "y": 456,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              }
+            }
+          ],
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": false
+          },
+          "status": "手動版面已更新"
+        },
+        {
+          "core2": "trusted group resize／canonical比例"
+        },
+        {
+          "core2": "trusted Shift nudge整組10px"
+        },
+        {
+          "core2": "native gesture diagnostic",
+          "kind": "drag",
+          "dx": 35,
+          "dy": 35,
+          "hit": {
+            "tag": "DIV",
+            "classes": "moveable-area",
+            "se": false
+          },
+          "point": {
+            "x": 198.078125,
+            "y": 321.59375,
+            "width": 230.390625,
+            "height": 115.1875
+          },
+          "trace": [
+            {
+              "name": "dragGroupStart",
+              "x": 198,
+              "y": 321,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 202,
+              "y": 326,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 207,
+              "y": 330,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 212,
+              "y": 335,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 216,
+              "y": 340,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 221,
+              "y": 344,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "dragGroup",
+              "x": 226,
+              "y": 349,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            }
+          ],
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": true
+          },
+          "status": "手動版面已更新"
+        },
+        {
+          "core2": "trusted Escape cancel without commit"
+        },
+        {
+          "core2": "native gesture diagnostic",
+          "kind": "resize",
+          "dx": 20,
+          "dy": 20,
+          "hit": {
+            "tag": "DIV",
+            "classes": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "se": true
+          },
+          "point": {
+            "x": 747.2000122070312,
+            "y": 456,
+            "width": 14,
+            "height": 14
+          },
+          "trace": [
+            {
+              "name": "resizeGroupStart",
+              "x": 747,
+              "y": 456,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 749,
+              "y": 458,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 752,
+              "y": 461,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 755,
+              "y": 464,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 757,
+              "y": 466,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 760,
+              "y": 469,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 763,
+              "y": 472,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            }
+          ],
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": true
+          },
+          "status": "群組拖曳或方向鍵微調；右下角調整大小（不吸附）"
+        },
+        {
+          "core2": "trusted pointer＋synthetic pointercancel"
+        },
+        {
+          "core2": "native gesture diagnostic",
+          "kind": "resize",
+          "dx": -700,
+          "dy": -200,
+          "hit": {
+            "tag": "DIV",
+            "classes": "moveable-control moveable-direction moveable-se moveable-resizable",
+            "se": true
+          },
+          "point": {
+            "x": 747.2000122070312,
+            "y": 456,
+            "width": 14,
+            "height": 14
+          },
+          "trace": [
+            {
+              "name": "resizeGroupStart",
+              "x": 747,
+              "y": 456,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 653,
+              "y": 429,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroup",
+              "x": 560,
+              "y": 402,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              }
+            },
+            {
+              "name": "resizeGroupEnd",
+              "x": 187,
+              "y": 296,
+              "trusted": true,
+              "before": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": true
+              },
+              "after": {
+                "enabled": true,
+                "target": {
+                  "slideId": "portable",
+                  "elementIds": [
+                    "component-group-text",
+                    "component-group-image"
+                  ]
+                },
+                "gesturing": false
+              }
+            }
+          ],
+          "state": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": false
+          },
+          "status": "手動版面已更新"
+        }
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-legacy-selected.html",
+          "bytes": 612638,
+          "sha256": "d74bc8acec307fad6c8c05fb5d2f34a71273c5b1e35a31a52d1be820f796f5c6"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-preview-export.html",
+          "bytes": 612947,
+          "sha256": "872d1877e220ce9a98bc2aa72642e5d79e424e5286c784123f55a89d0c5fded2"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-cancel.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-noop.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-invalid.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-invalid-resize.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-play-mode.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-export.html",
+          "bytes": 612947,
+          "sha256": "a70cbb0782558bc3760960f7310ed47adef9a671d50a2965cf3a2c712dfb2912"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-reopen-export.html",
+          "bytes": 612947,
+          "sha256": "0a908b3d2f623e60512af02afe98b8645a184cfdf1b841d0df35e21af536cfd2"
+        },
+        {
+          "label": "before-group-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-group-lock-before-group-click.png",
+          "bytes": 56633,
+          "sha256": "eb1bb3087e297ce6887321bf07fbc242dc34b8e0f609ac471fd01e8dd7adeb85"
+        },
+        {
+          "label": "after-group-click",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-group-lock-after-group-click.png",
+          "bytes": 53521,
+          "sha256": "763fc93869f6e4e0b72f3477ac3fe1e5c3a7927e76331182418f1e08925967f5"
+        },
+        {
+          "label": "grouped",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-group-lock-grouped.png",
+          "bytes": 53521,
+          "sha256": "763fc93869f6e4e0b72f3477ac3fe1e5c3a7927e76331182418f1e08925967f5"
+        },
+        {
+          "label": "core2-preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-core2-preview-export.html",
+          "bytes": 616536,
+          "sha256": "e3e26fb639374a4f987e84b5f124f747c881ab4c57bbb27e18c1e1f84cf5fb44"
+        },
+        {
+          "label": "after-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-05/group-lock/1280-group-lock-after-resize.png",
+          "bytes": 54829,
+          "sha256": "b4e3ba7c1e3e719dea53403f9e2a87bada5b825517131e469e39d64495dcddb2"
+        }
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    deckId: 'pptskill-typography-world',\n    language: 'zh-Hant',\n    schemaVersion: '1.0',\n    slides: [\n...\n            'group-image': {\n+             height: 138,\n+             width: 197,\n+             x: 503,\n+             y: 365\n-             height: 192,\n-             width: 288,\n-             x: 646,\n-             y: 378\n            },\n            'group-text': {\n+             height: 104,\n+             width: 197,\n-             height: 144,\n-             width: 288,\n              x: 190,\n              y: 330\n            }\n          },\n          primitive: 'title-points',\n\n    at runGroupLockBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-2-group-lock-browser-cases.mjs:88:47)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:237:30",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    deckId: 'pptskill-typography-world',\n    language: 'zh-Hant',\n    schemaVersion: '1.0',\n    slides: [\n...\n            'group-image': {\n+             height: 138,\n+             width: 197,\n+             x: 503,\n+             y: 365\n-             height: 192,\n-             width: 288,\n-             x: 646,\n-             y: 378\n            },\n            'group-text': {\n+             height: 104,\n+             width: 197,\n-             height: 144,\n-             width: 288,\n              x: 190,\n              y: 330\n            }\n          },\n          primitive: 'title-points',\n\n    at runGroupLockBrowserCases (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-2-group-lock-browser-cases.mjs:88:47)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:237:30"
+}

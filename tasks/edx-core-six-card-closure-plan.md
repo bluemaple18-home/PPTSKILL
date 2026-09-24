@@ -1,6 +1,6 @@
 # PPTSKILL 核心完整版：六張主卡收斂
 
-Status: S18_CLOSED / CORE_1_CLOSED_WITH_P2_RESIDUAL / FIVE_REMAINING
+Status: CORE_1_CLOSED_WITH_P2_RESIDUAL / CORE_2_CLOSED / FOUR_REMAINING
 Owner裁決：收尾既有S18，回到原六項核心交付；不再從局部缺口逐張順延S19、S20。
 這是Mainline範圍裁決文件，不是第七張產品實作卡。歷史S16/S17/S18編號與commit不改名、不改寫。
 
@@ -44,3 +44,11 @@ S18先完成Mainline完整產品review與正式host收尾；native產品review�
 第1張Crop＋Evidence已完成：Product2db6185；Independent whole-card GO with residual，P0/P1=0、P2=1。完整receipt為evidence/edx-core-1-crop-evidence/mainline-closure.md。原六卡目前 **1/6完成，5張剩餘**；下一張Group/Ungroup＋Lock/Unlock尚未開工。
 
 第6張Final Closure沿用本次F2 OPEN/P2紀錄：after-side-effect teardown throw可能遺失observer/load ownership，沒有普通browser觸發證據。到時先重判風險／驗收，並非預先授權Repair2；不因此增第七張或開S19/S20。既有S18安全刪除直接復用。所有變更仍在本地分支，未merge/push/deploy。
+
+## 第2張啟動
+
+Owner回報第1張已整合推送；本輪本機main/origin-main均a3fd195a4a4c5b33ccbe4cccd3c2a8f121c93889，四個protected檔案保留。第2張以tasks/edx-core-2-group-lock.md為唯一新主卡，branch codex/edx-core-2-group-lock；包含Group/Ungroup、Lock/Unlock及必要UI／export／驗收，不拆新主題。核心完成進度仍1/6，剩5張。原P2留在第6張；本輪未授權merge/push/deploy。
+
+## 第2張關閉
+
+產品／ZIP `88f401c7798976babfd28df991a6ba5b6b784e4e`；同一 Repair1 後獨立 whole-card Review GO，Core2 P0–P3 全 0。Mainline full non-browser 995/995、雙 viewport 各27 check records PASS、PGQ單輪16/16與受管清理 PASS；詳 `evidence/edx-core-2-group-lock/mainline-closure.md`。原六張目前 **2/6完成、4張剩餘**。原 Crop F2 OPEN／P2 繼續留第6張。下一 frontier 為第3張 Undo／Redo，尚未開工；Core2 停在獨立分支，未 merge／push／deploy。

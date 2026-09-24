@@ -1,0 +1,771 @@
+{
+  "reviewer": "Ramanujan",
+  "scope": "Core2 Repair1 targeted re-review GL-R1/GL-R2 + repair regression",
+  "time": "2026-09-24T03:02:54.082Z",
+  "candidate": "88f401c7798976babfd28df991a6ba5b6b784e4e",
+  "originalCandidate": "2bb1aafcc12694fa64a972e3bb76c9b3618d1cdd",
+  "diagnosticHead": "81fd40926f2a303184e3175971b5df3d3a906943",
+  "codeVerdict": "GO_TARGETED",
+  "wholeCardVerdict": "PENDING_MAINLINE_FINAL_RECEIPTS",
+  "findings": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+  },
+  "resolved": [
+    "GL-R1 P1",
+    "GL-R2 P2"
+  ],
+  "freshTests": {
+    "focused": 23,
+    "scoped": 43,
+    "originalUnchangedProbe": 1,
+    "independentRepairProbes": 9,
+    "totalPass": 76,
+    "totalFail": 0,
+    "scopedFiles": [
+      "tests/edx-wp1-s4-interaction.test.mjs",
+      "tests/edx-wp1-s7-snap.test.mjs",
+      "tests/edx-wp1-s8-mounted-selection.test.mjs"
+    ]
+  },
+  "sources": [
+    {
+      "path": "runtime/component-interaction.js",
+      "sha256": "a95341a6fcf75f9d671ed143b023e74864c942bdc653c2fa51d8cb11d514bb2e",
+      "candidateMatch": true
+    },
+    {
+      "path": "runtime/deck-editor.js",
+      "sha256": "416f110da1b35408e5430217f51f39392786ecc80c52da57b2aa51401aa88a5a",
+      "candidateMatch": true
+    },
+    {
+      "path": "runtime/group-lock.js",
+      "sha256": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
+      "candidateMatch": true
+    },
+    {
+      "path": "runtime/deck-spec.js",
+      "sha256": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+      "candidateMatch": true
+    },
+    {
+      "path": "schemas/deck-spec.schema.json",
+      "sha256": "bec0b4d5f3b81c867170ee0172f6a0d019bd9124659d1c95c27edcff2c548dca",
+      "candidateMatch": true
+    },
+    {
+      "path": "tests/edx-core-2-group-lock.test.mjs",
+      "sha256": "d15a00c6bdb9611f42475986d577b77738520fd961fe5b5dd3ee7c226db10e9a",
+      "candidateMatch": true
+    },
+    {
+      "path": "tools/edx-core-2-group-lock-browser-cases.mjs",
+      "sha256": "c48b5d5fe2b376e5ad4cb74480d7df40cdb56baf51402fb55bfbe5c8403fa8f1",
+      "candidateMatch": true
+    },
+    {
+      "path": "dist/PPTSKILL-0.1.0.zip",
+      "sha256": "1f8ed872504a5a9f655a52dad2adda52d065e78288eb3d34d698475858dfa2b9",
+      "candidateMatch": true
+    }
+  ],
+  "zip": {
+    "bytes": 2322437,
+    "sha256": "1f8ed872504a5a9f655a52dad2adda52d065e78288eb3d34d698475858dfa2b9",
+    "checksumMatch": true,
+    "sourceEntriesMatched": 74,
+    "checks": [
+      {
+        "path": "contracts/export-sanitizer-allowlist.md",
+        "sha256": "871b7175c838edf00e823a0c25a1e951b6821b457fb8fb256cd33db4509c5508"
+      },
+      {
+        "path": "contracts/p0-r11-release-acceptance-matrix.md",
+        "sha256": "81aa83041ed4bcb3c4de10a4c97dccf4ff19136eeb09144a9a40763f7694c2c1"
+      },
+      {
+        "path": "runtime/asset-policy.js",
+        "sha256": "f00992429bf53e1510c1436ad49527cec6fdb0a15d3f4c0aaa5322e7df80e72f"
+      },
+      {
+        "path": "runtime/asset-replacement.js",
+        "sha256": "124ec868348fa4fea9b5ecc59a94a6001550b24dc392b784dbd8791c1f40b5bf"
+      },
+      {
+        "path": "runtime/background-effects-runtime.js",
+        "sha256": "f772577d2fb7ad72cec2dee43f48f719a422c5a4ccf9dfa4b8a79762992b77a9"
+      },
+      {
+        "path": "runtime/background-effects-vendor.js",
+        "sha256": "9209414178f69a9d7ba633787dcfe32db492af98714a9946a5d7a4bef35cc99c"
+      },
+      {
+        "path": "runtime/background-effects.js",
+        "sha256": "1a564655e91f75a61d087227036456cf812c2a83109a462d9e325517e4f807ed"
+      },
+      {
+        "path": "runtime/browser-asset-optimizer.js",
+        "sha256": "43f4e20c47a53b1abb8d2e12f865364d4c508c8e6da32d3022ace8001b027f2d"
+      },
+      {
+        "path": "runtime/capability-probe.js",
+        "sha256": "3ba257728735a181b7cf6215b5e52578504bef0b90d6049ba4ee8f1fb26d915a"
+      },
+      {
+        "path": "runtime/company-style-pack.js",
+        "sha256": "6144d16a0a71a6023cbcf8308cb39f097dfb31a2617315f54ee7e7fc295032b6"
+      },
+      {
+        "path": "runtime/component-deletion.js",
+        "sha256": "87666c77b91d9b2789dcdca8a3520c068114311f74d3112f0946558d56df5656"
+      },
+      {
+        "path": "runtime/component-geometry.js",
+        "sha256": "739d391a24e70d28e15f1d5d79504dad4a74c7327e793872afb8eab2fd284c2d"
+      },
+      {
+        "path": "runtime/component-interaction.js",
+        "sha256": "a95341a6fcf75f9d671ed143b023e74864c942bdc653c2fa51d8cb11d514bb2e"
+      },
+      {
+        "path": "runtime/composition-primitives.js",
+        "sha256": "3dfcc7c208a4174fdc1ad3de70467037aa6afd4bb938401e4fdd62df1fd75b65"
+      },
+      {
+        "path": "runtime/crop-hash-vendor.js",
+        "sha256": "36ebd63ba38893a8e9bb075a43db36db72e3042e649dd5960a997dfed2bbea8f"
+      },
+      {
+        "path": "runtime/deck-editor.js",
+        "sha256": "416f110da1b35408e5430217f51f39392786ecc80c52da57b2aa51401aa88a5a"
+      },
+      {
+        "path": "runtime/deck-rhythm-planner.js",
+        "sha256": "0c691842dd33e641d832a5d94f1a077c99637e1eb8eac8007cff72c6d7a80165"
+      },
+      {
+        "path": "runtime/deck-spec.js",
+        "sha256": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216"
+      },
+      {
+        "path": "runtime/deck.js",
+        "sha256": "28cf90cc73341a8fca4ed1b3401278621893671f142f04f2d45c895278050459"
+      },
+      {
+        "path": "runtime/design-grammar.js",
+        "sha256": "12743c92ce70825c5f43225887731675ca7bc1c4ea5458f9256b253a69bc1e92"
+      },
+      {
+        "path": "runtime/full-deck-qa.js",
+        "sha256": "0ff18b1b0b0690af57a36b5d45416b3b40fc893fa365f8d4d8c51fd26d98be22"
+      },
+      {
+        "path": "runtime/full-deck-renderer.js",
+        "sha256": "4a521dafade5f44b5e5ae38f536eda65b39a19fd14a9b50e63546c104ffa1b44"
+      },
+      {
+        "path": "runtime/full-deck-variants.js",
+        "sha256": "c0e13d1f11bbecec0e926bb9c391421f3135a8d868eb79d741f22dce6f69b333"
+      },
+      {
+        "path": "runtime/generation-capabilities.js",
+        "sha256": "b0a1d9e33a0ae8ef0859232c1f8f535504106d31ca06f916bb906a21f988eb13"
+      },
+      {
+        "path": "runtime/generation-plan.js",
+        "sha256": "d34cabb98f4ce8380a0428b000fa7032af4fc19ed33b30ea03065508e1c63c9e"
+      },
+      {
+        "path": "runtime/golden-reference-router.js",
+        "sha256": "ad3eacf359724fe41aae04c882a4bb1a3a19bc80de021ac20d4328f5fb91fed7"
+      },
+      {
+        "path": "runtime/grill-outline.js",
+        "sha256": "1ced69741416dfde9f22d6f42e978c7ce1b91dbc33ca387d834b290f28fd4565"
+      },
+      {
+        "path": "runtime/group-lock.js",
+        "sha256": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56"
+      },
+      {
+        "path": "runtime/image-crop.js",
+        "sha256": "68cb7dca1fb4cfdee9a2f14cbb03ad0559ab036f87ac6d7df5d8183d80bf293a"
+      },
+      {
+        "path": "runtime/image-insertion.js",
+        "sha256": "0c250610800a2eb59adea70289e03d3f021679aafc9859f120259aaae262d646"
+      },
+      {
+        "path": "runtime/layout-repair-policy.js",
+        "sha256": "658bf01ee5aa8ae4cf54f91f475ea6ff804b66e3f61cf44885856a19f173e6cd"
+      },
+      {
+        "path": "runtime/local-profile.js",
+        "sha256": "f946eceaa771b463019c3a5cd9c5c1639ecd0a54d8aa72c268aa94d24a78a621"
+      },
+      {
+        "path": "runtime/motion-capabilities.js",
+        "sha256": "620639e653ef43ac750ade1ec3ab9172386519eaae254a1b0504ff63959a6d0c"
+      },
+      {
+        "path": "runtime/motion-primitives.js",
+        "sha256": "9c83b17419de69c65b99c175949441d2d910888ddf0aa94a580d8bc8390d817d"
+      },
+      {
+        "path": "runtime/moveable-vendor.js",
+        "sha256": "8263f7e142946227ad058e8da0e497866eddde0f42e158e383ad4136e2025378"
+      },
+      {
+        "path": "runtime/multi-selection.js",
+        "sha256": "2238b4a7ff0827992da8e2ec5084f14b6b56238c512cecfe00bcf4d2bb080755"
+      },
+      {
+        "path": "runtime/number-flow-vendor.js",
+        "sha256": "28d5ce4c0b732657b02ddfd2f732cff10ecfbbe32cf431c13c808f3b5826cb0f"
+      },
+      {
+        "path": "runtime/portable-size-guard.js",
+        "sha256": "b01bd621b382fde76c7d4dbb30767bb57a0205d231b7364005821e9fdaaec95a"
+      },
+      {
+        "path": "runtime/preflight-brief.js",
+        "sha256": "c91c48f38eee183e64eaa2e5a31a9fe16a958d27f445cee47b303fb8882c6e26"
+      },
+      {
+        "path": "runtime/representative-qa-evidence.js",
+        "sha256": "1b81359474096a256a4b9ada664eda7820415b1f9717c6b5f0f7f98cade5eae2"
+      },
+      {
+        "path": "runtime/representative-qa-gate.js",
+        "sha256": "f1598a369779b8e01b559d743b85c053e9bda93d23dad0eee4ffa91d8e58435e"
+      },
+      {
+        "path": "runtime/representative-sample-identity.js",
+        "sha256": "75d7751de1df9f70fca0df0840c80587a43ae49e04d89a6ac1e9c3378d14c0d0"
+      },
+      {
+        "path": "runtime/representative-sample-planner.js",
+        "sha256": "38bd9ad49e6ade7cef5628bd783c5e0b174e8ceaa5d57da61fd0ca6b3cbb806a"
+      },
+      {
+        "path": "runtime/role-typography.js",
+        "sha256": "bc6072e6992b0ceb02bc63a487bae2507fc2b7ef834e5ae4eb1d57f06673399e"
+      },
+      {
+        "path": "runtime/sample-approval.js",
+        "sha256": "389f63c980c39a1d6abaa5a0cbeac81f3eeea7f616d05475d3919401705ee092"
+      },
+      {
+        "path": "runtime/selecto-vendor.js",
+        "sha256": "3639952638cb60afd09d26f27fd721fe1faa006d7c65956c317efde270a7184e"
+      },
+      {
+        "path": "runtime/semantic-composition-planner.js",
+        "sha256": "94982f126ce3f18b500ae52163a44cdbabb5ba9c3c2a3b16317a5cfbf03cd555"
+      },
+      {
+        "path": "runtime/style-candidates.js",
+        "sha256": "93e576b4b48e9ce1e8c84c16866cce6238693977ed86a001190fafc9d7ad24e1"
+      },
+      {
+        "path": "runtime/theme-preview.js",
+        "sha256": "e621beea66e2f875d5ce50d1fd71bfa5de9a567882b86c93f311a8b9bca3d4f6"
+      },
+      {
+        "path": "runtime/vendor/crop-hash-2.0.1.iife.js",
+        "sha256": "851cf8fec13faa9969460cea2d0e1f3dba1caa06f5c9cac92dbc21e59aa6e963"
+      },
+      {
+        "path": "runtime/vendor/crop-hash-LICENSE.md",
+        "sha256": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+      },
+      {
+        "path": "runtime/vendor/crop-hash-vendor.json",
+        "sha256": "efca60c5986f39cd4719e912ccbada871ffc2acf96e24082c1245107fbfadc7a"
+      },
+      {
+        "path": "runtime/vendor/moveable-0.53.0.iife.js",
+        "sha256": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053"
+      },
+      {
+        "path": "runtime/vendor/moveable-LICENSE.md",
+        "sha256": "0ca8b832ee207340ff0fa39c5de79086b9e072ec06f60f0da5a90a1627f56266"
+      },
+      {
+        "path": "runtime/vendor/moveable-licenses/css-styled-LICENSE",
+        "sha256": "77f98221f8531e87aa227c0a8d63c17c903dd4d36daf24bdc48296b09e06a25e"
+      },
+      {
+        "path": "runtime/vendor/moveable-metafile.json",
+        "sha256": "7baa17bb4fdf6147280e3ec8392d03d78de9bbd489f8b09bddfe0f385cc2e18d"
+      },
+      {
+        "path": "runtime/vendor/moveable-vendor.json",
+        "sha256": "eb8a572b6c6c8c876ca9df6ec97159f0019b81acd88486b0cf0706c61c46504a"
+      },
+      {
+        "path": "runtime/vendor/number-flow-0.6.2.iife.js",
+        "sha256": "ea78e2aa83778c4642a3b12bb8f1e427db1528f8092bad98ac55837acf3ac73a"
+      },
+      {
+        "path": "runtime/vendor/number-flow-LICENSE.md",
+        "sha256": "f8a3eac9fd2ae94f18a2bf0459e57d90da539f015a7ec4ad6186a5ca33a6aa9a"
+      },
+      {
+        "path": "runtime/vendor/number-flow-vendor.json",
+        "sha256": "5790a83dbccd230584689d930a072bf59882bf95c2645dc92a4eff91329295fd"
+      },
+      {
+        "path": "runtime/vendor/selecto-1.26.3.iife.js",
+        "sha256": "dd4d7afb863b1e73803325f16c9e49706ad8fd2325f245d8ca3a39bcf925e2cf"
+      },
+      {
+        "path": "runtime/vendor/selecto-LICENSE.md",
+        "sha256": "6c7a611e1e774b3f63467f29d303a6832ef19b5c5fc05367c0925df0f1796f60"
+      },
+      {
+        "path": "runtime/vendor/selecto-metafile.json",
+        "sha256": "3172197d5be7cb4bf4dff635cc19993c39761f79b2cf64c5f51f67a7a28fdde0"
+      },
+      {
+        "path": "runtime/vendor/selecto-vendor.json",
+        "sha256": "08dff33e85ad21f62ba3287e17f642e7470466db7be59f11638cbe433f08ea74"
+      },
+      {
+        "path": "runtime/vendor/three-LICENSE.md",
+        "sha256": "7dddf7c5b8fd10ee654db8857d75d104b5557889aa5a91fc4ca545ea7c07062f"
+      },
+      {
+        "path": "runtime/vendor/vanta-LICENSE.md",
+        "sha256": "65df69dccc2a06fcf307e81da62c0f64b4abc03fe64a23944427a69642edadcb"
+      },
+      {
+        "path": "runtime/vendor/vanta-three-0.5.24-r134.iife.js",
+        "sha256": "c3ce4c1144610e85c14144c19c9676b889c58cd746d88ccd1a4e0d1a6fcdef5b"
+      },
+      {
+        "path": "runtime/vendor/vanta-vendor.json",
+        "sha256": "7c0ec13d5b20ea199a56562b2486125acfb08c7ccd151921fc8fe155dcc03ea0"
+      },
+      {
+        "path": "runtime/workflow-cli.mjs",
+        "sha256": "f3fe6e8d4983da26e34a60762c4c2ae2dcca0c491e7aec5f6519759846b47028"
+      },
+      {
+        "path": "runtime/workflow-entry.js",
+        "sha256": "62aeac711170bebd877a9daf2d1d94fc91f5b9a32681883583a7382c29eb53b1"
+      },
+      {
+        "path": "schemas/composition-spec.schema.json",
+        "sha256": "182cc4c0ca365fd009cb5f9759556426af35c71d21ce335a1cecfd20cc1da77e"
+      },
+      {
+        "path": "schemas/deck-spec.schema.json",
+        "sha256": "bec0b4d5f3b81c867170ee0172f6a0d019bd9124659d1c95c27edcff2c548dca"
+      },
+      {
+        "path": "schemas/outline.schema.json",
+        "sha256": "6ec207d8a343267674afe89633c58546bf3d5a9396a094edfd01692f9fedac20"
+      },
+      {
+        "path": "schemas/style-spec.schema.json",
+        "sha256": "cb6755f67f26832f98807f0d77c6e9d9b6c8203a385c700d8dad83c4e6102186"
+      }
+    ]
+  },
+  "zipCrc": "unzip -t exit 0",
+  "unchanged": [
+    "group-lock contract",
+    "deck-spec",
+    "schemas",
+    "pinned runtime/vendor"
+  ],
+  "browser": {
+    "source": "Mainline host06 saved evidence; Reviewer readonly verification, no browser launch",
+    "runs": [
+      {
+        "viewport": [
+          1280,
+          720
+        ],
+        "status": "pass",
+        "checkRecords": 27,
+        "errors": {
+          "console": 0,
+          "pageErrors": 0,
+          "networkFailures": 0,
+          "httpErrors": 0,
+          "remoteRequests": 0
+        },
+        "resize": [
+          {
+            "dx": 124,
+            "hit": true,
+            "events": [
+              {
+                "name": "resizeGroupStart",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroupEnd",
+                "trusted": true
+              }
+            ],
+            "status": "手動版面已更新",
+            "gesturing": false
+          },
+          {
+            "dx": -700,
+            "hit": true,
+            "events": [
+              {
+                "name": "resizeGroupStart",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroupEnd",
+                "trusted": true
+              }
+            ],
+            "status": "未套用：geometry width 低於 minimum／safe area。",
+            "gesturing": false
+          }
+        ]
+      },
+      {
+        "viewport": [
+          1600,
+          900
+        ],
+        "status": "pass",
+        "checkRecords": 27,
+        "errors": {
+          "console": 0,
+          "pageErrors": 0,
+          "networkFailures": 0,
+          "httpErrors": 0,
+          "remoteRequests": 0
+        },
+        "resize": [
+          {
+            "dx": 124,
+            "hit": true,
+            "events": [
+              {
+                "name": "resizeGroupStart",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroupEnd",
+                "trusted": true
+              }
+            ],
+            "status": "手動版面已更新",
+            "gesturing": false
+          },
+          {
+            "dx": -700,
+            "hit": true,
+            "events": [
+              {
+                "name": "resizeGroupStart",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroup",
+                "trusted": true
+              },
+              {
+                "name": "resizeGroupEnd",
+                "trusted": true
+              }
+            ],
+            "status": "未套用：geometry width 低於 minimum／safe area。",
+            "gesturing": false
+          }
+        ]
+      }
+    ],
+    "artifactHashesVerified": 38,
+    "artifacts": [
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-legacy-selected.html",
+        "sha256": "3627b6dcc792541719d3810523372af47b1ad1bf4119dd3d1fda67b20f553e27",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-preview-export.html",
+        "sha256": "1f2eb7a45b39fad8f962fd18b899a25a8d6d305fb06bbde8a46e9dd4f381f8e0",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-cancel.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-noop.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-invalid.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-invalid-resize.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-play-mode.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-export.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-reopen-export.html",
+        "sha256": "52d3312e6445bd7aa72707f1bfa983a7f0e8fe49c4b5b10b3f5e490ac3b6de62",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-before-group-click.png",
+        "sha256": "eb1bb3087e297ce6887321bf07fbc242dc34b8e0f609ac471fd01e8dd7adeb85",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-after-group-click.png",
+        "sha256": "763fc93869f6e4e0b72f3477ac3fe1e5c3a7927e76331182418f1e08925967f5",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-grouped.png",
+        "sha256": "763fc93869f6e4e0b72f3477ac3fe1e5c3a7927e76331182418f1e08925967f5",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-core2-preview-export.html",
+        "sha256": "d8eef7eff8c263c518df7d8389b9b8e4c6d2cc1b1d40c09d5fc9caf811b8ee4e",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-after-resize.png",
+        "sha256": "b4e3ba7c1e3e719dea53403f9e2a87bada5b825517131e469e39d64495dcddb2",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-locked.png",
+        "sha256": "79d9f2b7a8fce7141d510b4bb603cb12516df5ca07cb75db8957f78318de0926",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-core2-locked-export.html",
+        "sha256": "e5351b108c28882e3cb1470d5714ebc631e2ba8505d5d8cdff77313fb7a92517",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-core2-final-export.html",
+        "sha256": "13e2685b1e87895a1368a988af4e9463970d27d0e457ea7dc77c4b566da543a0",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1280-group-lock-ungrouped.png",
+        "sha256": "6a9fc3b4bdb81978e3347eb07dffdf94976dfbf6a26dcce5dc12ae3624326417",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/group-lock-source.html",
+        "sha256": "fa69c33857a28f11d737a59fdaacbda3d61896884c04300ad427dc2d59b5c797",
+        "width": 1280
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-legacy-selected.html",
+        "sha256": "3627b6dcc792541719d3810523372af47b1ad1bf4119dd3d1fda67b20f553e27",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-preview-export.html",
+        "sha256": "1f2eb7a45b39fad8f962fd18b899a25a8d6d305fb06bbde8a46e9dd4f381f8e0",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-cancel.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-noop.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-invalid.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-invalid-resize.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-play-mode.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-export.html",
+        "sha256": "59468c7b858b7ae6d57a18b9285670af132d434ef2d863e5eb841ff94281a421",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-reopen-export.html",
+        "sha256": "52d3312e6445bd7aa72707f1bfa983a7f0e8fe49c4b5b10b3f5e490ac3b6de62",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-before-group-click.png",
+        "sha256": "494a75b294c3a3c1ad192bf98de4fca98930cfab1da72aae003d524de67a216d",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-after-group-click.png",
+        "sha256": "14555e784bbb65c6e5e7c7a0cea8348c8066565f7804a64e4f5e4412f8b332ce",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-grouped.png",
+        "sha256": "14555e784bbb65c6e5e7c7a0cea8348c8066565f7804a64e4f5e4412f8b332ce",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-core2-preview-export.html",
+        "sha256": "d8eef7eff8c263c518df7d8389b9b8e4c6d2cc1b1d40c09d5fc9caf811b8ee4e",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-after-resize.png",
+        "sha256": "a48a82424803584e35007ff7e2356ca64445b6db32ffea07f619f3599d95b546",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-locked.png",
+        "sha256": "a416e58a7cfca8281c2a524b5c5a298107a825a55ac973c9cd4da677bb01689c",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-core2-locked-export.html",
+        "sha256": "e5351b108c28882e3cb1470d5714ebc631e2ba8505d5d8cdff77313fb7a92517",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-core2-final-export.html",
+        "sha256": "13e2685b1e87895a1368a988af4e9463970d27d0e457ea7dc77c4b566da543a0",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/1600-group-lock-ungrouped.png",
+        "sha256": "02cb58a6258cba2aa6bedb97bcb4f7ac12966ad330445664e87bd079d31d553d",
+        "width": 1600
+      },
+      {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-06/group-lock/group-lock-source.html",
+        "sha256": "fa69c33857a28f11d737a59fdaacbda3d61896884c04300ad427dc2d59b5c797",
+        "width": 1600
+      }
+    ],
+    "exactCandidateRenderedSourceMatch": true
+  },
+  "originalFailure": {
+    "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/review-initial/rollback-probe.tap",
+    "sha256": "5ca9d9f51a69154e91e0ec262cda7d80b865d64057ffff1873ac4b208f779173",
+    "status": "1 FAIL retained",
+    "sameProbeFresh": "1 PASS"
+  },
+  "history": {
+    "host05": "NOT_PASS retained, minimum release intermediate preview commit",
+    "host04": "GL-R1 original FAIL preserved in initial review"
+  },
+  "pending": [
+    "Mainline host06 controller final receipt",
+    "PGQ four affected files/16 unique final result",
+    "cleanup/final source ZIP protected freeze receipt"
+  ],
+  "boundary": [
+    "No new scope",
+    "No repo/ZIP/protected mutations",
+    "All writes owned tmp",
+    "No browser/PGQ/full/install/merge/push/deploy",
+    "GL-R2 proof remains synthetic after-effect injection, no claim of ordinary browser trigger",
+    "Existing Crop F2 OPEN/P2 unchanged"
+  ],
+  "codegraph": "queried; unrelated symbols; bounded rg; no rebuild"
+}

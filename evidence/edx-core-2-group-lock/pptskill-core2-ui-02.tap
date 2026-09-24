@@ -1,0 +1,23 @@
+✔ Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision (8.962791ms)
+✔ Core2 Node group move／resize 比例、單次提交與整批拒絕 (2.480208ms)
+✔ Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (6.142417ms)
+✔ Core2 Node exact own-data payload 不呼叫 getter (1.909458ms)
+✔ Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision (137.343917ms)
+✔ Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕 (29.684625ms)
+✔ Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編 (68.410042ms)
+✔ Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter (8.665458ms)
+✔ Core2 metadata sanitizer 持久化與非法引用不得靜默清除 (1.574167ms)
+✔ Core2 schema／operationDescriptors 與 portable export 保留 authority (16.475167ms)
+✔ S8 focusin 換頁清 selection，方向鍵不得修改上一頁 canonical (39.83125ms)
+✔ S8 同頁 focusin 保留 selection，跨頁 focusin 清除多選 (26.668917ms)
+✔ S8 plain/Shift click 與 marquee 共用單一 editor-local selection state (22.68625ms)
+✔ S8 export clone-only 清除 Selecto/selection chrome，live selection 保持 (17.609167ms)
+✔ S8 Escape/blur/mode teardown 清 selection，重複 destroy idempotent (26.25075ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 636.937916

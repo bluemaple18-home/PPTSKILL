@@ -1,0 +1,84 @@
+TAP version 13
+# Subtest: Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision
+ok 1 - Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision
+  ---
+  duration_ms: 6.644083
+  type: 'test'
+  ...
+# Subtest: Core2 Node group move／resize 比例、單次提交與整批拒絕
+ok 2 - Core2 Node group move／resize 比例、單次提交與整批拒絕
+  ---
+  duration_ms: 2.942042
+  type: 'test'
+  ...
+# Subtest: Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+ok 3 - Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+  ---
+  duration_ms: 3.932292
+  type: 'test'
+  ...
+# Subtest: Core2 Node exact own-data payload 不呼叫 getter
+ok 4 - Core2 Node exact own-data payload 不呼叫 getter
+  ---
+  duration_ms: 1.280375
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision
+ok 5 - Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision
+  ---
+  duration_ms: 26.50125
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕
+ok 6 - Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕
+  ---
+  duration_ms: 13.406833
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+not ok 7 - Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+  ---
+  duration_ms: 16.622416
+  type: 'test'
+  location: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:68:3'
+  failureType: 'testCodeFailure'
+  error: 'Missing expected exception.'
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tests/edx-core-2-group-lock.test.mjs:86:44)
+    Test.runInAsyncScope (node:async_hooks:226:14)
+    Test.run (node:internal/test_runner/test:1201:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:831:18)
+    Test.postRun (node:internal/test_runner/test:1330:19)
+    Test.run (node:internal/test_runner/test:1258:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+  ...
+# Subtest: Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter
+ok 8 - Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter
+  ---
+  duration_ms: 8.73525
+  type: 'test'
+  ...
+# Subtest: Core2 metadata sanitizer 持久化與非法引用不得靜默清除
+ok 9 - Core2 metadata sanitizer 持久化與非法引用不得靜默清除
+  ---
+  duration_ms: 1.716334
+  type: 'test'
+  ...
+# Subtest: Core2 schema／operationDescriptors 與 portable export 保留 authority
+ok 10 - Core2 schema／operationDescriptors 與 portable export 保留 authority
+  ---
+  duration_ms: 13.229
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 9
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 225.503542

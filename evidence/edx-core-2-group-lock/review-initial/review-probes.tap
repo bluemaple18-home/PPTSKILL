@@ -1,0 +1,21 @@
+✔ Node：group 內明確 edit/replace 不改 membership，單員 transform/delete 拒絕 (6.699625ms)
+✔ Node：全組重排 target 與重複 lock 是 no-op；跨頁未知 group 拒絕 (1.35525ms)
+✔ Node：cross-realm own-data payload 可用且 clone metadata 隔離 (1.164666ms)
+✔ Node：locked singleton 無 geometry 可選解鎖，raw patch 不可寫入 (0.757042ms)
+✔ portable VM synthetic：group 內明確 edit/replace 不改 membership，單員 transform/delete 拒絕 (28.679959ms)
+✔ portable VM synthetic：全組重排 target 與重複 lock 是 no-op；跨頁未知 group 拒絕 (12.692542ms)
+✔ portable VM synthetic：cross-realm own-data payload 可用且 clone metadata 隔離 (9.794958ms)
+✔ portable VM synthetic：locked singleton 無 geometry 可選解鎖，raw patch 不可寫入 (27.803375ms)
+✔ Node：patchComposition/patchSlideContent 不能改 lock/group/content/geometry，其他文字可改 (1.837166ms)
+✔ sanitizer：metadata descriptor/sparse/symbol/prototype/missing geometry 拒絕且 getter 0 次 (1.227209ms)
+✔ portable VM synthetic：optimizer pending 期間 lock 拒絕，完成後 lock 阻擋後續 async 替換 (10.406625ms)
+✔ portable VM synthetic：gesture 中 export 不提交 preview，stale revision 不落盤 (34.969625ms)
+✔ portable VM synthetic：新 group descriptors 與 Node 同值 (5.799875ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 261.876208

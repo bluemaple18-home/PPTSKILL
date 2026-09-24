@@ -1,0 +1,69 @@
+{
+  "hostSandbox": null,
+  "before": {
+    "sources": {
+      "runtime/group-lock.js": true,
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "runtime/deck-spec.js": true,
+      "schemas/deck-spec.schema.json": true,
+      "tests/edx-core-2-group-lock.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/edx-core-2-group-lock-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2322319,
+      "sha256": "12f8811ae0e4a3a6ec4c4ecd27bc22ee4011f3891d48e5bd0ec067f27ad4efe6"
+    }
+  },
+  "aiCoreCommit": "d84b0feed35e51937c34914cbf25ef5431cd8bee",
+  "diagnosticPath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-acceptance-03/resource-observation.json",
+  "scope": "Core 2 Group/Lock product acceptance",
+  "supervisorPid": 65261,
+  "readinessExit": 0,
+  "ownedRoot": "/private/tmp/aic-b-bd258ec6bc454238a525659d40f789d4",
+  "groupBrowserStarted": true,
+  "groupBrowserExit": 1,
+  "error": "Traceback (most recent call last):\n  File \"/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-2-group-lock/host-controller-03.py\", line 96, in <module>\n    if run.returncode: raise RuntimeError(key+' 驗收失敗；停止後續步驟')\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: groupBrowser 驗收失敗；停止後續步驟\n",
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "after": {
+    "sources": {
+      "runtime/group-lock.js": true,
+      "runtime/component-interaction.js": true,
+      "runtime/deck-editor.js": true,
+      "runtime/deck-spec.js": true,
+      "schemas/deck-spec.schema.json": true,
+      "tests/edx-core-2-group-lock.test.mjs": true,
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": true,
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs": true,
+      "tools/edx-core-2-group-lock-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "tools/edx-wp1-s4-perf-mounted.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    },
+    "zip": {
+      "bytes": 2322319,
+      "sha256": "12f8811ae0e4a3a6ec4c4ecd27bc22ee4011f3891d48e5bd0ec067f27ad4efe6"
+    }
+  },
+  "diagnosticVerified": true,
+  "scanCallsObserved": 11,
+  "status": "NOT_PASS"
+}

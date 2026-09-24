@@ -1,0 +1,80 @@
+[
+  {
+    "original": "evidence/edx-core-2-group-lock/focused-green-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/focused-green-01.tap.gz",
+    "bytes": 4253,
+    "sha256": "dae111cc0e48bc9a189582f232ac2bd4830d19ca16a937177e025276af518329"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/focused-node-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/focused-node-01.tap.gz",
+    "bytes": 7121,
+    "sha256": "ecb0cce83e79bd85419dc85a3e0d9fce0fcd62e5c0ceb885eb3e9ac040aedb71"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/focused-portable-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/focused-portable-01.tap.gz",
+    "bytes": 4246,
+    "sha256": "a2a71e5d5ef618c1bb4284f6ffc3a6f66fa0e4321196b23a36f81acd5b228609"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/focused-red-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/focused-red-01.tap.gz",
+    "bytes": 10328,
+    "sha256": "31f82db9f679e6c75ca545ccf218d3c110fb50b1e9214455f582e05abd9f9583"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/focused-resume-red.tap",
+    "archive": "evidence/edx-core-2-group-lock/focused-resume-red.tap.gz",
+    "bytes": 4247,
+    "sha256": "22e04be878782ab72521ec4db2cbd9f4e40400ae973c2a19916e7123e983cebf"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/nonbrowser-resume-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/nonbrowser-resume-01.tap.gz",
+    "bytes": 88647,
+    "sha256": "460c54669c3a41e989a8c34ed1de9260439360f7eba3f7122419abab5669e40e"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/pptskill-core2-contract-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/pptskill-core2-contract-01.tap.gz",
+    "bytes": 8924,
+    "sha256": "8bff28425597f96448d8191fdc693e1c781ade8ef70214d3ee80ec332c43ffbc"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/pptskill-core2-ui-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/pptskill-core2-ui-01.tap.gz",
+    "bytes": 16724,
+    "sha256": "f7b2b01a3060320b27c3654ba24a92b4f97405992c1ddc7fe2b9d98a4fdcc87c"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/pptskill-core2-ui-green01.tap",
+    "archive": "evidence/edx-core-2-group-lock/pptskill-core2-ui-green01.tap.gz",
+    "bytes": 3881,
+    "sha256": "09e7b254f48564292f6891c5dd0bf16a6b96912b9263801d9ed4e9ff16dc654a"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/pptskill-core2-ui-red.tap",
+    "archive": "evidence/edx-core-2-group-lock/pptskill-core2-ui-red.tap.gz",
+    "bytes": 9633,
+    "sha256": "f4efceec840dfe7c2b32e078ee271b73d3a6209998a04f75c515deba914a5468"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/regression-01.tap",
+    "archive": "evidence/edx-core-2-group-lock/regression-01.tap.gz",
+    "bytes": 206380,
+    "sha256": "23bcfab141096988bce969016625c1e4b725e892ea67c741f4b45744155aacfb"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/review-initial/rollback-probe.tap",
+    "archive": "evidence/edx-core-2-group-lock/review-initial/rollback-probe.tap.gz",
+    "bytes": 1519,
+    "sha256": "5ca9d9f51a69154e91e0ec262cda7d80b865d64057ffff1873ac4b208f779173"
+  },
+  {
+    "original": "evidence/edx-core-2-group-lock/worker/01-red.log",
+    "archive": "evidence/edx-core-2-group-lock/worker/01-red.log.gz",
+    "bytes": 8998,
+    "sha256": "fa31d676a3e712c5d3bf794fc77b9203af9e961bf267ce4ecb6d4f2d34c99de7"
+  }
+]
