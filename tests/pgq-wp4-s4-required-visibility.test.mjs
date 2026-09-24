@@ -11,6 +11,11 @@ import { collectFullDeckQaEvidence } from '../runtime/representative-qa-evidence
 
 const run = promisify(execFile);
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+const producerReceipt = (error) => {
+  if (!error.stdout?.trim()) throw error;
+  try { return JSON.parse(error.stdout); }
+  catch { throw new Error(`Browser producer receipt 不是完整 JSON（exit=${error.code ?? 'unknown'}）：${error.stderr || error.message}`, { cause: error }); }
+};
 
 test('每張 canonical slide 的 required title 必須有 painted visibility', async () => {
   const source = await readFile(join(root, 'fixtures', 'full-deck.html'), 'utf8');
@@ -23,7 +28,7 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
   await assert.rejects(
     run(process.execPath, [join(root, 'tools', 'browser-geometry-qa.mjs'), artifact, '--motion', 'static'], { maxBuffer: 32 * 1024 * 1024 }),
     (error) => {
-      const receipt = JSON.parse(error.stdout);
+      const receipt = producerReceipt(error);
       assert.equal(receipt.status, 'fail');
       assert.equal(receipt.gates.rasterVisibility, 'fail');
       for (const [slideId, target] of [
@@ -54,7 +59,7 @@ test('每張 canonical slide 的 required title 必須有 painted visibility', a
   await assert.rejects(
     run(process.execPath, [join(root, 'tools', 'browser-geometry-qa.mjs'), artifact, '--motion', 'normal'], { maxBuffer: 32 * 1024 * 1024 }),
     (error) => {
-      const receipt = JSON.parse(error.stdout);
+      const receipt = producerReceipt(error);
       assert.equal(receipt.gates.rasterVisibility, 'fail');
       assert.ok(receipt.runs.every(({ rasterVisibility }) => rasterVisibility.some((item) => (
         item.slideId === 'problem' && item.target === 'slides.problem.content.title'
