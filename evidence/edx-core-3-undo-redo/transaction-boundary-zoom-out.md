@@ -23,7 +23,7 @@ Status: `RESEARCH_ONLY / PRODUCT_NO_GO`
 
 `move()` 必須在交易開始時固定 slide identity，並把 pending text sync、DOM sibling reorder、canonical swap、revision/history/control/status 視為一個成功／失敗單位。內部文字同步可以產生中間 state，但對外不得報獨立成功；外層失敗須回到交易前的 spec、DOM sibling order、文字、revision、history、selection 與 controls。`historyDomChanged()` 現在未比較同 parent 的 sibling order，且 `restoreHistoryDom()` 會吞下節點回退錯誤；reorder 應保留專用順序驗證，通用 rollback 也要回報驗證失敗。
 
-Gesture 的 owner 至少涵蓋 `beforeFinish`、`notify`、preview restore、canonical operation、history／controls 和失敗收尾。`finishing` 只能代表真實手勢收尾，不能兼作公開 mutation owner；Core2 group operation 檢查的是 `gesturing`，不能把 `finishing` 假裝為 `gesturing`。`refreshHistoryControls` 在 owner 持有時可先顯示 blocked，交易釋放後再做一次最終刷新；最終刷新若同步觸發新 public operation，這已是前一筆交易完成後的下一筆寫入，不得再被前一筆 rollback 抹去。
+Gesture 的 owner 至少涵蓋 `beforeFinish`、`notify`、preview restore、canonical operation、history／controls 和失敗收尾。`finishing` 只能代表真實手勢收尾，不能兼作公開 mutation owner；Core2 group operation 檢查的是 `gesturing`，不能把 `finishing` 假裝為 `gesturing`。2026-09-24 實作前精化：終態 controls 以 private rendering 參數呈現，但真實 owner／finishing 仍保持；全部可拋錯 UI 必須留在 rollback 範圍，交易釋放後只 return。原先「釋放後刷新」建議撤回，以免重新造成已提交卻向外報失敗的 Repair1 P1。
 
 ## 投影故障的獨立回退契約
 
