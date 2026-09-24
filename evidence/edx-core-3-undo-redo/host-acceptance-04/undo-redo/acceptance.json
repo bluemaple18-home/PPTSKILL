@@ -1,0 +1,181 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/source.html",
+  "sourceSha256": "64bb2f86ca380a7ff9e4d2daf42f0bdc092ee07ccd57cba1ef6cf290ec0b47a9",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        "Core3 真 toolbar／Ctrl+Shift+Z／group-lock replay／export offline reopen"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-legacy-selected.html",
+          "bytes": 627316,
+          "sha256": "42d6678367806cde69c3a975f1dc0d46decd9262fa1a48dec452f835ace556e7"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-preview-export.html",
+          "bytes": 627603,
+          "sha256": "df9dd2e0583fec28aa707006ca67c2aaabb598fc4e3b87578d3b019699704536"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-cancel.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-noop.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-invalid.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-invalid-resize.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-play-mode.html",
+          "bytes": 627603,
+          "sha256": "00c470228d23e23c44cf41e19f7d5ca88c0a0595fb34c3c3a14250ae96f13881"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-export.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-reopen-export.html",
+          "bytes": 627573,
+          "sha256": "d2073147ba85cbae5f3c3f08cee263eb07f8d742bb81b87086bdf0ff98dc0d1d"
+        },
+        {
+          "label": "undo-redo-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1280-undo-redo-export.html",
+          "bytes": 627399,
+          "sha256": "7479b51497145a759b98f46c7e391208f01c7b7252762c28b85f937821f107d4"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "文字模式互斥",
+        "Core3 真 toolbar／Ctrl+Shift+Z／group-lock replay／export offline reopen"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-legacy-selected.html",
+          "bytes": 627316,
+          "sha256": "42d6678367806cde69c3a975f1dc0d46decd9262fa1a48dec452f835ace556e7"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-preview-export.html",
+          "bytes": 627603,
+          "sha256": "df9dd2e0583fec28aa707006ca67c2aaabb598fc4e3b87578d3b019699704536"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-cancel.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-noop.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-invalid.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-invalid-resize.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-play-mode.html",
+          "bytes": 627603,
+          "sha256": "00c470228d23e23c44cf41e19f7d5ca88c0a0595fb34c3c3a14250ae96f13881"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-export.html",
+          "bytes": 627573,
+          "sha256": "2ec2f38803be36f1db7ca60fd2cba2bfca56a1a672c5fb82f5e3901ee7b2a8f9"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-reopen-export.html",
+          "bytes": 627573,
+          "sha256": "d2073147ba85cbae5f3c3f08cee263eb07f8d742bb81b87086bdf0ff98dc0d1d"
+        },
+        {
+          "label": "undo-redo-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-04/undo-redo/1600-undo-redo-export.html",
+          "bytes": 627399,
+          "sha256": "7479b51497145a759b98f46c7e391208f01c7b7252762c28b85f937821f107d4"
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

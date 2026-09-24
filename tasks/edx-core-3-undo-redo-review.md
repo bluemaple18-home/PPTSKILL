@@ -1,6 +1,6 @@
 # Core3 Undo／Redo 獨立審查
 
-Status: CODE_NO_GO / REPAIR_2_OWNER_COST_APPROVAL_REQUIRED
+Status: REPAIR_2_CODE_NO_GO / STOPPED_OWNER_DECISION_REQUIRED
 Base: `6add4b545a97c8f62457a729da036706034e5232`
 Candidate: `fffb729607975a38e2adbb38c4c1a43d154d43fc`（Repair 1；NO-GO）
 Parent: `tasks/edx-core-3-undo-redo.md`
@@ -16,3 +16,7 @@ Reviewer 唯讀固定 SHA，與產品 Writer 分離；不得修改 candidate／Z
 兩名 Reviewer 各自唯讀重現，Code verdict 均 NO-GO。共同 P1：operation toolbar after-effect throw 留下 history entry；replay toolbar throw 亦可能留下前進的 cursor。另一 P1：direct component patch 的 selection cleanup after-effect throw 使 DOM 與回退的 canonical 不一致。P2：stale component DOM patch 回報成功；gesture 期間 undo 按鈕仍顯示可用；slide reorder/replay 失敗後 selection／Moveable 未恢復。修復需覆蓋同一 atomic checkpoint 的 history、canonical、DOM、revision、selection／controls，並補具名故障注入。首輪 browser 已達雙 viewport PASS，但 PGQ／host cleanup 與 repair 尚待完成；不得將此候選標 GO。
 
 Repair 1 `fffb729`：主線 focused 20/20、full non-browser 1015/1015、ZIP lifecycle 與 75 source byte-match PASS；正式 browser 雙 viewport 各 11 records PASS。Reviewer A targeted GO，Reviewer B 對原 findings 亦確認關閉，但另以故障注入重現 gesture-end toolbar callback 在 canonical commit 後 throw 的新 P1，以及邊界 reorder no-op 清 selection P2，故整體仍 NO-GO。PGQ 於新 code verdict 後主動中止，cleanup PASS；不得記成 PGQ PASS。下一輪範圍與成本界線見 `tasks/edx-core-3-undo-redo-repair2-approval.md`，依 Owner 核准前不得改產品。
+
+## Repair 2 獨立複審
+
+固定候選 `60a05ce33924dfd92c2977d743b24afc408dd207`。兩名獨立盲審均判 Code NO-GO：一名重現 `finish()` 的 `finally` 投影在提交後拋錯，留下 geometry／revision／history；另一名重現 gesture 收尾可重入 Undo，以及有效 reorder 故障留下先前同步的文字提交。主線重播相同反例。正式 Host04 browser 通過，但 PGQ 與資源觀測失敗；詳見 `evidence/edx-core-3-undo-redo/review-round-03.md`。Repair 2 額度已用完，依停損等待 Owner 另行裁決。

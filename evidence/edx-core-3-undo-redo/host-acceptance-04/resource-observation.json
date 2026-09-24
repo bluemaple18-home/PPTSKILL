@@ -1,0 +1,26 @@
+{
+  "status": "IO_ERROR_OBSERVED",
+  "scanner": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "scannerSha256Before": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "scannerSha256After": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "scanCallsObserved": 144,
+  "errors": [
+    {
+      "type": "FileNotFoundError",
+      "errno": 2,
+      "strerror": "No such file or directory",
+      "filename": ".com.google.Chrome.Network Persistent State.KZjSE6",
+      "filename2": null,
+      "message": "[Errno 2] No such file or directory: '.com.google.Chrome.Network Persistent State.KZjSE6'",
+      "function": "visit",
+      "line": 1098,
+      "source": "info = entry.stat(follow_symlinks=False)",
+      "relativeDirectory": [
+        "profile",
+        "Default"
+      ],
+      "entryName": ".com.google.Chrome.Network Persistent State.KZjSE6"
+    }
+  ],
+  "lineAndOpcodeTracing": false
+}

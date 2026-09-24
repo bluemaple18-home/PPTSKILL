@@ -1,11 +1,11 @@
 {
   "sources": {
-    "runtime/deck-editor.js": "7dd6252edf82e91a06a87112b7157f904b0471f3dce1cf069a184ab980c03a4d",
+    "runtime/deck-editor.js": "57e443512f29a26898f143027cda66369ece354be2d1c6fb7673e532306a856e",
     "runtime/editor-history.js": "2ba2f027fd139db88a82faf7890a4f542a644aeb35ece7251849f4a9ff1bbb2e",
-    "runtime/component-interaction.js": "590d68a5c62b73dda8b8aa5762bc5e9af2a84010bb49cb83890a82f50490af25",
+    "runtime/component-interaction.js": "943190a7b7271dee9baf64fc65f3d9fd789d5b2a8c55c2fee65db6119cdddae9",
     "runtime/deck-spec.js": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
     "runtime/group-lock.js": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
-    "tests/edx-core-3-undo-redo.test.mjs": "a2bc4af12790187f2dbce8c43d483b7736ab9fb27e767cbd80335c48944056db",
+    "tests/edx-core-3-undo-redo.test.mjs": "40ebfbf869fad4a06405381cffaa808e5342df15c59ed2099c90a8ca094752f6",
     "tests/edx-wp1-s5-keyboard.test.mjs": "d6798df76819a7e1772d6cfad3ede262f8b281f410869d0e5b931c26a3af77ab",
     "tools/edx-wp1-s4-browser-acceptance.mjs": "8f169d710d787f3c117217bdf68d09c6caab8b0ca2300708d92917b706feb7e4",
     "tools/edx-wp1-s4-perf-mounted.mjs": "ab56738fcf4984e9bf57e1f399903217ed7f275727b697b3b519e5289d79eb63"
@@ -18,7 +18,7 @@
   },
   "distribution": {
     "path": "dist/PPTSKILL-0.1.0.zip",
-    "bytes": 2325796,
-    "sha256": "3edd7591e4da140eb47924a60ce7ac1e13735e66227845f8f5e09ed5c9d4c2b2"
+    "bytes": 2325923,
+    "sha256": "0e4fc9b09d86c1851d9f090e56889f2def449cc5ede41c47916be3fa24966ac5"
   }
 }

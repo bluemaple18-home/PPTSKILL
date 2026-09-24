@@ -1,7 +1,8 @@
 # Core3 Repair 2 成本核准提案（非新 Slice）
 
-Status: OWNER_COST_APPROVAL_REQUIRED
+Status: OWNER_APPROVED / REPAIR_2_CODE_NO_GO / STOPPED
 Candidate: `fffb729607975a38e2adbb38c4c1a43d154d43fc`（NO-GO；不得整合）
+Repair2Candidate: `60a05ce33924dfd92c2977d743b24afc408dd207`（NO-GO；不得整合）
 Parent: `tasks/edx-core-3-undo-redo.md`
 
 ## 已重現的缺口
@@ -15,3 +16,7 @@ Parent: `tasks/edx-core-3-undo-redo.md`
 驗收成本界線：1 次 bounded Worker repair、focused/affected scoped、主線 full non-browser、ZIP lifecycle/source byte-match、正式受管雙 viewport browser 與 4 支 affected PGQ 串行、兩名原 Reviewer targeted re-review。此卡不授權 Repair 3；若同類再次 NO-GO 或需改別的 runtime，停回 Owner 裁決。不得 merge／push／deploy，不開 Core4。
 
 Host03 對此 NO-GO SHA 的 browser 雙 viewport各 11 records PASS；PGQ 在 code verdict 後由主線主動中止，不能算 16/16。Browser.close 0、supervisor 0、owned root／marker cleanup PASS；source 9/9、protected 4/4、ZIP 前後 MATCH。原始 receipt 留於 `evidence/edx-core-3-undo-redo/host-acceptance-03/`。
+
+## Repair 2 停點
+
+Owner 已以「處理 修掉」授權本卡的一次 Repair 2 與完整重驗。產品候選 `60a05ce` 的 focused 與 non-browser 驗證通過，但兩名獨立 Reviewer 均重現 P1，Code verdict 為 NO-GO；正式 Host04 的 browser 通過、PGQ 與資源觀測未通過。依本卡停損，不啟動 Repair 3、Host05 或 Core4，不 merge／push／deploy。逐項證據與未關閉 finding 見 `evidence/edx-core-3-undo-redo/review-round-03.md`。
