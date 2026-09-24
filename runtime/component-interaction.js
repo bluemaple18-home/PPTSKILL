@@ -288,7 +288,7 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
         snapContainer: current.slideNode, snapGridWidth: 8, snapGridHeight: 8,
         snapDirections: { left: true, top: true, right: false, bottom: false, center: false, middle: false } } : {}),
       renderDirections: ['se'], origin: false, rotatable: false, scalable: false, snappable: useSnap,
-      hideDefaultLines: false, throttleDrag: 0, throttleResize: 0, checkInput: true,
+      hideDefaultLines: false, ...(isGroup ? { hideChildMoveableDefaultLines: true } : {}), throttleDrag: 0, throttleResize: 0, checkInput: true,
       preventClickEventOnDrag: true });
     const vendor = moveable;
     for (const [eventName, kind] of [['drag', 'drag'], ['resize', 'resize']]) {
@@ -480,7 +480,8 @@ export function mountComponentInteraction({ document, window, getSpec, getRevisi
   window.addEventListener('blur', blur);
   window.addEventListener('resize', viewportChanged);
   window.addEventListener('scroll', viewportChanged, true);
-  return { setMode, clearSelection, cancel, refresh: () => { const ids = selection.getState().selected; const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId); const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids; if (!selection.replace(expanded)) applySelection(expanded); }, getState: interaction.getState,
+  const refresh = () => { const ids = selection.getState().selected; const slide = getSpec().slides.find(s => s.id === currentSlideNode()?.dataset.slideId); const expanded = slide && groupLock ? groupLock.expand(slide, ids) : ids; if (!selection.replace(expanded)) applySelection(expanded); };
+  return { setMode, clearSelection, cancel, refresh, restoreProjection: refresh, getState: interaction.getState,
     getSelectionState: selection.getState,
     destroy() {
       setMode(false);

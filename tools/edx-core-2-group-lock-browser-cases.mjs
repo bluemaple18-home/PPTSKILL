@@ -39,11 +39,16 @@ export async function runGroupLockBrowserCases({ cdp, evaluate, navigate, output
     const scale = await evaluate("document.querySelector('.slide').getBoundingClientRect().width/1600");
     const p = await position(kind === 'resize' ? '.moveable-se' : css(ids[0]), kind === 'resize' ? .5 : .2, .5);
     assert.ok(p.width > 0 && p.height > 0, '可見pointer target');
-    const hit = await evaluate(`(()=>{const e=document.elementFromPoint(${p.x},${p.y});return{tag:e?.tagName,classes:e?.className,elementId:e?.closest('[data-pptskill-element-id]')?.dataset.pptskillElementId}})()`);
+    const hit = await evaluate(`(()=>{const e=document.elementFromPoint(${p.x},${p.y});return{tag:e?.tagName,classes:e?.className,elementId:e?.closest('[data-pptskill-element-id]')?.dataset.pptskillElementId,se:e?.closest('.moveable-se')===document.querySelector('.moveable-se')}})()`);
+    if (kind === 'resize' && finish && dx > 0) assert.equal(hit.se, true, 'SE handle 中心須命中原生 resize control');
     await mouse('mouseMoved', p); await mouse('mousePressed', p, true);
     let end;
     for (let i = 1; i <= 6; i++) { end = { x: p.x + dx * scale * i / 6, y: p.y + dy * scale * i / 6 }; await mouse('mouseMoved', end, true); }
-    await settle(); if (finish) { await mouse('mouseReleased', end); await settle(); } record('native gesture diagnostic',{kind,dx,dy,hit,point:p,...await evaluate(`({trace:window.__core2VendorTrace.splice(0),state:window.PPTSKILLEditor.layout.getState(),status:document.querySelector('[data-editor-status]')?.textContent})`)}); return end;
+    await settle(); if (finish) { await mouse('mouseReleased', end); await settle(); }
+    const diagnostic = { kind, dx, dy, hit, point: p, ...await evaluate(`({trace:window.__core2VendorTrace.splice(0),state:window.PPTSKILLEditor.layout.getState(),status:document.querySelector('[data-editor-status]')?.textContent})`) };
+    record('native gesture diagnostic', diagnostic);
+    if (kind === 'resize' && finish && dx > 0) for (const name of ['resizeGroupStart', 'resizeGroup', 'resizeGroupEnd']) assert.ok(diagnostic.trace.some(event => event.name === name && event.trusted === true), `缺少 trusted ${name}`);
+    return end;
   };
   const key = async (key, code, extra = {}) => {
     await cdp.send('Input.dispatchKeyEvent', { type: 'keyDown', key, code, ...extra });

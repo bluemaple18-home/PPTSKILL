@@ -149,6 +149,7 @@ const key = (h, value, extra = {}) => {
 test('Core2 mounted toolbar、原生group事件mapping、單次revision與clone', () => {
   const h = groupedUi(), before = h.getSpec();
   assert.equal(h.vendor.options.target.length, 2);
+  assert.equal(h.vendor.options.hideChildMoveableDefaultLines, true, '群組須隱藏子 Moveable 預設邊線');
   assert.equal(typeof h.vendor.handlers.dragGroupStart, 'function');
   assert.equal(typeof h.vendor.handlers.resizeGroupStart, 'function');
   h.resetCounts(); h.begin('dragGroup'); h.update(40, 40, 'dragGroup');
@@ -161,6 +162,38 @@ test('Core2 mounted toolbar、原生group事件mapping、單次revision與clone'
   assert.deepEqual(composition(h.getSpec()).geometryOverrides['group-text'], { x: 160, y: 160, width: 300, height: 240 });
   const clone = h.api.layout.getState(); clone.target.elementIds.push('corrupt');
   assert.equal(h.api.layout.getState().target.elementIds.length, 2);
+});
+
+test('Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤', () => {
+  const h = groupedUi(), before = h.getSpec(), revision = h.getRevision();
+  const selection = selectedIds(h), target = h.api.layout.getState().target;
+  const originalVendor = h.vendor, original = h.api.layout.refresh;
+  const failure = new Error('injected AFTER refresh');
+  h.api.layout.refresh = () => { original(); throw failure; };
+  try { assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure); }
+  finally { h.api.layout.refresh = original; }
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(selectedIds(h), selection);
+  assert.deepEqual(h.api.layout.getState().target, target);
+  assert.equal(h.vendor.destroyed, false);
+  assert.equal(originalVendor.destroyed, true, '失敗的 refresh 已移除舊 handle，rollback 須重建');
+  assert.equal(typeof h.vendor.handlers.resizeGroupStart, 'function');
+});
+
+test('Core2 portable rollback 投影再拋錯仍保留原始 operation error', () => {
+  const h = groupedUi(), before = h.getSpec(), revision = h.getRevision();
+  const original = h.api.layout.refresh, restore = h.api.layout.restoreProjection;
+  const failure = new Error('injected AFTER refresh');
+  h.api.layout.refresh = () => { original(); throw failure; };
+  h.api.layout.restoreProjection = () => { restore(); throw new Error('injected rollback'); };
+  try { assert.throws(() => h.api.executeOperation(request('lock-elements')), error => error === failure); }
+  finally { h.api.layout.refresh = original; h.api.layout.restoreProjection = restore; }
+  assert.deepEqual(h.getSpec(), before);
+  assert.equal(h.getRevision(), revision);
+  assert.deepEqual(new Set(selectedIds(h)), new Set(ids));
+  assert.deepEqual(new Set(h.api.layout.getState().target.elementIds), new Set(ids));
+  assert.equal(h.vendor.destroyed, false);
 });
 
 test('Core2 mounted click/marquee展開整組、Shift切換不拆散', () => {
