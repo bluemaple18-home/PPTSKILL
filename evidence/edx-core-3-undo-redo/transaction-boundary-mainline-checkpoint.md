@@ -38,3 +38,7 @@ Observer接續診斷已存 `observer-zoom-out-20260924.md`：沿AI Core既有sca
 ## 2026-09-27 獨立診斷review接收
 
 Owner交回447ce01獨立review：8/8診斷、RED exit1，未發現阻塞問題。診斷卡改為DIAGNOSTIC_REVIEW_PASS；詳細來源界線見 `observer-independent-review-20260927.md`。主線fresh核對AI Core HEAD/scanner仍未變；HOST_OBSERVER_BLOCKED與核心2/6維持，尚無恢復策略或新host驗收。
+
+## 2026-09-27 push與observer候選接續
+
+PPT分支8a770fd已push並核對遠端SHA。AI Core隔離候選唯一R1 `8e60945` 已targeted CODE GO（Reviewer fresh50＋18＋5）；canonical未啟用、host未跑。詳細 `observer-mainline-result-20260927.md`。Core3 whole-card仍HOST_BLOCKED、核心2/6不變；本段取代早期「未push」的當時狀態，不覆寫歷史驗證。

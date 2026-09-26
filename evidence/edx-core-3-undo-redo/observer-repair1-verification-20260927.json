@@ -1,0 +1,38 @@
+{
+  "candidate": "8e6094582547205db70f6dccce369d694f50154b",
+  "candidateStatus": "",
+  "normalCommitHookExit": 0,
+  "sourceSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "6a6dc198e34cd43a95003f66280b37800fca737aa241d76019a9f3a573ddcee0",
+    "tests/test_tmp_artifact_lifecycle.py": "0392399157c92f34be76e4a1b9656570a834c4c88a8c450ffa0a3bd7a9c95805",
+    "docs/tmp-session-lifecycle.md": "84e37796766b475775db2dd3ab93a3f868605c57c4da33bef055db362d683fc1"
+  },
+  "mainlineFreshProbe": {
+    "cases": 18,
+    "contractFailures": [],
+    "allDescriptorsClosed": true,
+    "log": "observer-repair1-mainline-green-20260927.jsonl"
+  },
+  "pptskillChecks": {
+    "source": {
+      "count": 75,
+      "mismatch": []
+    },
+    "protected": {
+      "count": 4,
+      "mismatch": []
+    }
+  },
+  "zip": {
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290",
+    "match": true
+  },
+  "aiCoreCanonicalHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "aiCoreCanonicalStatus": "?? .work/CARD-CODEX-WEB-GPT-RETAINED-CONTEXT-20260924/\n?? .work/CARD-PPTSKILL-PGQ-HOST-ROUTING-AND-OBSERVER-HANDOFF-20260924/",
+  "aiCoreCanonicalScannerSHA": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "review": "CODE GO",
+  "activated": false,
+  "host": "BLOCKED_NOT_RUN",
+  "reviewEvidence": "observer-review-r1-20260927/receipt.md"
+}
