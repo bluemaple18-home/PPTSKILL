@@ -1,0 +1,33 @@
+{
+  "aiCoreHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "scannerSHA256": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "scannerUnchanged": true,
+  "results": [
+    {
+      "case": "disappeared-file",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303651
+          ],
+          "errno": 2,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "FileNotFoundError",
+        "errno": 2
+      },
+      "finalEntries": [],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    }
+  ],
+  "browserLaunched": false,
+  "scope": "受控fixture；不是Host04類型歸因或host修復驗收"
+}

@@ -30,3 +30,7 @@ Observer接續診斷已存 `observer-zoom-out-20260924.md`：沿AI Core既有sca
 ## 歷史保留
 
 `a0fd3e7` 的Mainline full1019/1042（23FAIL）、`b35336d` round06兩項P1、`2f134de` round07取消P1，以及各輪RED／repair／不同verdict皆保留原檔。主線歷史文件的當時pending／NO-GO由本最新checkpoint標明接續，沒有覆寫為單輪全綠。
+
+## 2026-09-26 接續診斷
+
+產品／ZIP／protected與上列reviewed candidate仍一致。observer新增可重播證據：原scanner同ENOENT stop（require-complete exit1）；8個contract診斷包含rename後正式檔仍存在，證明直接略過ENOENT可能漏算容量。詳細 `observer-race-receipt-20260926.md`。fixture均清除，未啟browser；AI Core source未改，HOST_OBSERVER_BLOCKED未解除。下一個必要工作已收斂為AI Core處置策略及適用host驗證，不重開產品修復。

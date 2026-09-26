@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-26",
+  "candidate": "9ce7396a481621960f6f2c89ff7fcf352c0e515a",
+  "headBeforeDiagnostic": "c8d02ef7ddf8854702ffde9dbbafb5fd1ea911ed",
+  "aiCoreHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "scannerSHA256": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "scannerUnchanged": true,
+  "sourceAndProtectedMismatches": [],
+  "deliveryDrift": "",
+  "zipBytes": 2329758,
+  "zipSHA256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290",
+  "diagnosticSHA256": "5a419b1b6495688aa57b9b35ac6cb4037e2a0677bfb474a6a1acb11fc54518cd",
+  "redCommandExit": 1,
+  "matrixCommandExit": 0,
+  "matrixCases": 8,
+  "allFixtureRootsRemoved": true,
+  "browserLaunched": false
+}
