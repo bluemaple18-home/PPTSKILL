@@ -42,3 +42,9 @@ Owner交回447ce01獨立review：8/8診斷、RED exit1，未發現阻塞問題�
 ## 2026-09-27 push與observer候選接續
 
 PPT分支8a770fd已push並核對遠端SHA。AI Core隔離候選唯一R1 `8e60945` 已targeted CODE GO（Reviewer fresh50＋18＋5）；canonical未啟用、host未跑。詳細 `observer-mainline-result-20260927.md`。Core3 whole-card仍HOST_BLOCKED、核心2/6不變；本段取代早期「未push」的當時狀態，不覆寫歷史驗證。
+
+## 2026-09-27 外部re-review接收與host採用裁決
+
+Owner再交回8e60945有界CODE GO（Reviewer fresh50＋23），未發現新阻塞；主線push00aae7f已fresh ls-remote核對。採用前置查明：canonical未變、candidate clean；PPT75來源/4protected/ZIP吻合。原生Chrome port檔為不可連的殘留（approved read ECONNREFUSED），本task仍seatbelt且無managed attachment。
+
+採用裁決為候選可交有界host評估、canonical採用HOLD。實體接續卡 `tasks/edx-core-3-observer-host-evaluation.md`，只先readiness/test-page/scanner/cleanup，禁止直接再跑PGQ。HOST_BLOCKED維持，未新增browser launch或repair。
