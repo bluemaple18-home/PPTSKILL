@@ -1,6 +1,6 @@
 # Core3 observer：AI Core 採用前 host 驗證
 
-Status：`HOST_RUNTIME_UNVERIFIED / CAPABILITY_INQUIRY_RETURNED_EMPTY / NOT_LAUNCHED / STOP_LOCAL_CONTINUATION`。
+Status：`HOST_EXECUTED_ONCE / NOT_PASS / ADOPTION_NO_GO / CLEANUP_VERIFIED / REPLAN_REQUIRED`。
 
 ## 主線裁決
 
@@ -38,3 +38,19 @@ Status：`HOST_RUNTIME_UNVERIFIED / CAPABILITY_INQUIRY_RETURNED_EMPTY / NOT_LAUN
 Mainline唯讀檢查兩個既有task，未發現更新的host acceptance；目前task仍seatbelt/無managed port。已向既有AI Core任務「接手浏览器预算诊断卡片」送出一次限唯讀的能力確認，禁止launch/寫入/變更模型/清環境；平台回報turn completed，但wait與read-back均無assistant/tool內容。故只能標NO_HOST_CAPABILITY_EVIDENCE_RETURNED，不能推論它有host能力或已執行檢查。詳 `observer-host-capability-inquiry-20260927.json`。
 
 依既有停止規則，停止在同一runtime反覆探測或另開等價卡。下一個必要輸入為合法host executor的可核验入口／能力回報，或按本卡完成的host receipt；在此之前不再啟Chrome、不重跑PGQ、不改scanner、不merge。這不是新增review或產品修復要求。
+
+## 正式提權實測後接續（取代前次runtime不可用判斷）
+
+使用者詢問需何種授權時，Mainline已實測正式 `exec_command(require_escalated, login=false)` 回 `CODEX_SANDBOX=null`，沒有清除環境旗標。前次僅測預設sandbox便判host不可用不充分，現已更正；使用者再次「繼續吧」，依本卡允許的一輪bounded smoke接續。這是新入口實測證據，不是重置scanner修復或失敗次數。
+
+本輪代號host-smoke-01；Worker只準備 evidence/edx-core-3-undo-redo/host-smoke-01-controller.py（可附同輪observer及unit test），不launch／不commit。沿host-controller-04.py收尾及resource-observer.py call/return/exception旁聽接點；舊檔保持原bytes。固定AI Core 8e60945 worktree，Python沿canonical .venv；資源policy保持64MiB/10000、TTL最多120秒、readiness25秒，一次新owned profile。只CDP新建本輪target＋data:text/html簡單頁面與斷言、等兩個完整runtime scan、關target/Browser.close/lifecycle cleanup；不跑PGQ/產品browser，不部署。
+
+Observer須記scan budgeted/cleanup區別、開始/完成耗時、entries/counts、原errors；tuple完整回傳才算complete，None/unwind算failed或unknown，合法恢復仍保留ENOENT。只call/exception/return，禁line/opcode；不monkeypatch scanner，不改policy。host profile Default的flat regular-only適用性以本輪owned目錄no-follow bounded唯讀觀測，不碰一般profile。傳回HOST_SMOKE_PASS最多代表runtime smoke；RECOVERY_NOT_OBSERVED或nonflat須明示，不解除Core3 gate。
+
+離線selftest需驗正常return／已恢復ENOENT／unhandled error／budget拒絕之classification、原trace恢复、observer不改scanner返回結果。Mainline核對後只有一輪正式launch；任何實際smoke失敗即停止本輪。Worker依standard bounded、既有模型繼承，不新增Reviewer；Mainline同步source/policy/入口核對及最終驗收。
+
+## 一輪實測完成：採用NO-GO
+
+詳 `evidence/edx-core-3-undo-redo/host-smoke-01/mainline-receipt.md`。正式提權確實可跑受管Chrome，前次host不可用判斷已更正。Readiness／簡單DOM／target close／Browser.close通過；第8次runtime scan於candidate1145 fresh stat遇ENOENT，supervisor exit2。Default實測23個子目錄；candidate flat-only與post-pin recovery均不足涵蓋此場景。
+
+Mainline判定：有界CODE GO保留、目前host採用NO-GO；root/marker與兩個已知PID清理已驗證，sources75/protected4/ZIP均未變。沒有第二次launch、沒有PGQ。按本卡停止條件回到REPLAN_REQUIRED，不能沿用原局部修法反覆retry。

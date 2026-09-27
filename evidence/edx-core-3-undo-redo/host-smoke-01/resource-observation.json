@@ -1,0 +1,275 @@
+{
+  "scans": [
+    {
+      "id": 1,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827114.907597458,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        450,
+        1
+      ],
+      "entries": 1,
+      "recovered": false,
+      "partialCounts": [
+        450,
+        1
+      ],
+      "elapsedMs": 0.2928749890998006
+    },
+    {
+      "id": 2,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827115.942786583,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2232663,
+        69
+      ],
+      "entries": 98,
+      "recovered": false,
+      "partialCounts": [
+        2232663,
+        69
+      ],
+      "elapsedMs": 7.7788750641047955
+    },
+    {
+      "id": 3,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827116.990949708,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2232663,
+        69
+      ],
+      "entries": 98,
+      "recovered": false,
+      "partialCounts": [
+        2232663,
+        69
+      ],
+      "elapsedMs": 9.511874988675117
+    },
+    {
+      "id": 4,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827118.0334805,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2232663,
+        69
+      ],
+      "entries": 98,
+      "recovered": false,
+      "partialCounts": [
+        2232663,
+        69
+      ],
+      "elapsedMs": 6.627083057537675
+    },
+    {
+      "id": 5,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827119.04157425,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2232663,
+        69
+      ],
+      "entries": 98,
+      "recovered": false,
+      "partialCounts": [
+        2232663,
+        69
+      ],
+      "elapsedMs": 5.752291064709425
+    },
+    {
+      "id": 6,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827120.094410583,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2232806,
+        72
+      ],
+      "entries": 101,
+      "recovered": false,
+      "partialCounts": [
+        2232806,
+        72
+      ],
+      "elapsedMs": 4.970000009052455
+    },
+    {
+      "id": 7,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827121.156904708,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        4315455,
+        170
+      ],
+      "entries": 242,
+      "recovered": false,
+      "partialCounts": [
+        4315455,
+        170
+      ],
+      "elapsedMs": 10.44020801782608
+    },
+    {
+      "id": 8,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 120
+      },
+      "startedMonotonic": 827122.182143458,
+      "outcome": "FAILED",
+      "events": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: '.com.google.Chrome.BookmarkMergedSurfaceOrdering.6GXID2'",
+          "errno": 2,
+          "function": "visit",
+          "line": 1145,
+          "relativeDirectory": [
+            "profile",
+            "Default"
+          ],
+          "entryName": ".com.google.Chrome.BookmarkMergedSurfaceOrdering.6GXID2"
+        },
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: '.com.google.Chrome.BookmarkMergedSurfaceOrdering.6GXID2'",
+          "errno": 2,
+          "function": "visit",
+          "line": 1190,
+          "relativeDirectory": [
+            "profile"
+          ],
+          "entryName": "Default"
+        },
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: '.com.google.Chrome.BookmarkMergedSurfaceOrdering.6GXID2'",
+          "errno": 2,
+          "function": "visit",
+          "line": 1190,
+          "relativeDirectory": [],
+          "entryName": "profile"
+        },
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: '.com.google.Chrome.BookmarkMergedSurfaceOrdering.6GXID2'",
+          "errno": 2,
+          "function": "scan_resource_artifacts",
+          "line": 1231,
+          "relativeDirectory": [],
+          "entryName": null
+        },
+        {
+          "type": "LifecycleError",
+          "message": "NO_GO: resource observation unknown (I/O failure)",
+          "errno": null,
+          "function": "scan_resource_artifacts",
+          "line": 1235,
+          "relativeDirectory": [],
+          "entryName": null
+        }
+      ],
+      "counts": null,
+      "entries": 149,
+      "recovered": false,
+      "partialCounts": [
+        3362292,
+        103
+      ],
+      "elapsedMs": 24.176916922442615
+    },
+    {
+      "id": 9,
+      "kind": "cleanup",
+      "root": "/private/tmp/aic-b-7409a4784b774472b3e78c160d4d4171",
+      "limits": null,
+      "startedMonotonic": 827122.415497791,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        4913699,
+        225
+      ],
+      "entries": 308,
+      "recovered": false,
+      "partialCounts": [
+        4913699,
+        225
+      ],
+      "elapsedMs": 4.052959033288062
+    }
+  ],
+  "unfinishedScans": [],
+  "diagnosticErrors": [],
+  "traceEvents": [
+    "call",
+    "exception",
+    "return"
+  ],
+  "lineAndOpcodeTracing": false,
+  "scanner": "/private/tmp/ai-core-pptskill-observer-20260927/scripts/tmp_artifact_lifecycle.py",
+  "scannerSha256Before": "6a6dc198e34cd43a95003f66280b37800fca737aa241d76019a9f3a573ddcee0",
+  "scannerSha256After": "6a6dc198e34cd43a95003f66280b37800fca737aa241d76019a9f3a573ddcee0"
+}

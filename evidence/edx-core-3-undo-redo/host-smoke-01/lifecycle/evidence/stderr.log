@@ -1,0 +1,10 @@
+
+DevTools listening on ws://127.0.0.1:58524/devtools/browser/dd13dd0a-ee4d-4be8-bae6-d3c3c58c69e6
+Trying to load the allocator multiple times. This is *not* supported.
+[77522:25190756:0927/143250.154638:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.155179:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.155303:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.155404:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.155492:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.155575:ERROR:ui/display/mac/cv_display_link_mac.mm:195] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[77522:25190756:0927/143250.380520:ERROR:gpu/command_buffer/service/shared_image/shared_image_manager.cc:395] SharedImageManager::ProduceMemory: Trying to Produce a Memory representation from a non-existent mailbox.

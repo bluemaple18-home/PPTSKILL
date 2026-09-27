@@ -52,3 +52,9 @@ Owner再交回8e60945有界CODE GO（Reviewer fresh50＋23），未發現新阻�
 ## 2026-09-27 host能力確認停止點
 
 已向既有AI Core任務做一次唯讀能力確認；平台completed但無內容，不能視為host可用。詳 `observer-host-capability-inquiry-20260927.json`。無新增browser/test/repair/activation。主線STOP_LOCAL_CONTINUATION，待合法host能力證據或host receipt後續接原卡，不另開同義卡。
+
+## 2026-09-27 正式host smoke：環境已通、候選不適用
+
+正式提權在不改環境旗標下取得CODEX_SANDBOX=null，實際完成受管Chrome launch/readiness/簡單頁/Browser.close，取代先前「無合法host入口」的不足判斷。一次host-smoke-01結果NOT_PASS：candidate1145 fresh stat遇ENOENT、recovered=false；Default包含23子目錄。7完整＋1失敗runtime scan，supervisor exit2，但root/marker與兩個已知PID已清。
+
+詳 host-smoke-01/mainline-receipt.md。8e60945有界CODE GO仍有效，當前host採用NO-GO；Core3保持HOST_OBSERVER_BLOCKED、核心2/6。下一步需依新實測缺口REPLAN，不再重試或自動加repair；本輪未merge/push/deploy。
