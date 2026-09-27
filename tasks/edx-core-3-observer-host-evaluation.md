@@ -1,6 +1,6 @@
 # Core3 observer：AI Core 採用前 host 驗證
 
-Status：`HOST_RUNTIME_UNAVAILABLE / NOT_DISPATCHED / NOT_LAUNCHED`。
+Status：`HOST_RUNTIME_UNVERIFIED / CAPABILITY_INQUIRY_RETURNED_EMPTY / NOT_LAUNCHED / STOP_LOCAL_CONTINUATION`。
 
 ## 主線裁決
 
@@ -32,3 +32,9 @@ Status：`HOST_RUNTIME_UNAVAILABLE / NOT_DISPATCHED / NOT_LAUNCHED`。
 `CODEX_SANDBOX=seatbelt`，無 `PPTSKILL_DEVTOOLS_ACTIVE_PORT`。原生Chrome port檔存在，但唯讀 `/json/version` 在核准的非sandbox read仍 `ECONNREFUSED`，不是可用attachment；未啟Chrome。Native2/3是outer Codex harness connector，名稱本身不證明有合法host能力；沒有以換connector繞限制。
 
 本卡已具體化接續範圍，仍未派往另一task；建立／移交新task須有使用者明示。本輪只做Mainline control與唯讀preflight，沒有delivery code變更。
+
+## 接續結果：既有task能力確認未取得證據
+
+Mainline唯讀檢查兩個既有task，未發現更新的host acceptance；目前task仍seatbelt/無managed port。已向既有AI Core任務「接手浏览器预算诊断卡片」送出一次限唯讀的能力確認，禁止launch/寫入/變更模型/清環境；平台回報turn completed，但wait與read-back均無assistant/tool內容。故只能標NO_HOST_CAPABILITY_EVIDENCE_RETURNED，不能推論它有host能力或已執行檢查。詳 `observer-host-capability-inquiry-20260927.json`。
+
+依既有停止規則，停止在同一runtime反覆探測或另開等價卡。下一個必要輸入為合法host executor的可核验入口／能力回報，或按本卡完成的host receipt；在此之前不再啟Chrome、不重跑PGQ、不改scanner、不merge。這不是新增review或產品修復要求。

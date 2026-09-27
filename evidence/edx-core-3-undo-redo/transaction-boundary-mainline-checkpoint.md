@@ -48,3 +48,7 @@ PPT分支8a770fd已push並核對遠端SHA。AI Core隔離候選唯一R1 `8e60945
 Owner再交回8e60945有界CODE GO（Reviewer fresh50＋23），未發現新阻塞；主線push00aae7f已fresh ls-remote核對。採用前置查明：canonical未變、candidate clean；PPT75來源/4protected/ZIP吻合。原生Chrome port檔為不可連的殘留（approved read ECONNREFUSED），本task仍seatbelt且無managed attachment。
 
 採用裁決為候選可交有界host評估、canonical採用HOLD。實體接續卡 `tasks/edx-core-3-observer-host-evaluation.md`，只先readiness/test-page/scanner/cleanup，禁止直接再跑PGQ。HOST_BLOCKED維持，未新增browser launch或repair。
+
+## 2026-09-27 host能力確認停止點
+
+已向既有AI Core任務做一次唯讀能力確認；平台completed但無內容，不能視為host可用。詳 `observer-host-capability-inquiry-20260927.json`。無新增browser/test/repair/activation。主線STOP_LOCAL_CONTINUATION，待合法host能力證據或host receipt後續接原卡，不另開同義卡。

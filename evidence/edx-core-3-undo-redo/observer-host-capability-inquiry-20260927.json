@@ -1,0 +1,29 @@
+{
+  "scope": "既有AI Core任務唯讀host能力確認；非launch/repair授權",
+  "taskId": "01a0c179-617e-7c71-852d-30dca2363603",
+  "taskTitle": "接手浏览器预算诊断卡片",
+  "turnId": "01a0e15f-82f4-7a21-95e1-199ad707a20b",
+  "send": "success",
+  "wait": {
+    "reason": "turnCompleted",
+    "status": "completed",
+    "latestAssistantMessage": null,
+    "latestToolMarker": null
+  },
+  "readBack": {
+    "status": "completed",
+    "error": null,
+    "items": []
+  },
+  "conclusion": "NO_HOST_CAPABILITY_EVIDENCE_RETURNED",
+  "currentRuntime": {
+    "CODEX_SANDBOX": "seatbelt",
+    "PPTSKILL_DEVTOOLS_ACTIVE_PORT": null
+  },
+  "browserLaunches": 0,
+  "testsRun": 0,
+  "newTasksCreated": 0,
+  "candidateActivated": false,
+  "decision": "STOP_LOCAL_CONTINUATION / HOST_BLOCKED",
+  "reason": "本機無合法host入口；既有AI Core任務未回傳可核驗能力；不能把平台turn completed當作驗收或權限證明。"
+}
