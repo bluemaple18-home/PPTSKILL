@@ -1,0 +1,288 @@
+{
+  "base": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "candidate": "1829f1ab31ba63bbe6e286faf1bc03d2bb9e11ed",
+  "status": "HOST_FIXTURE_PASS_REVIEW_PENDING_NOT_ACTIVATED",
+  "candidateSourceSHA256": {
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_session.py": "0bff045e697875fc9c4431dab51d61b7b107a53065d920302b68fd8d65826dc4",
+    "tests/test_tmp_session_browser_command.py": "86cfa3d4eeb436909e4aef8af4febe20d55e92e444eb162f434b4276e50d5ac2"
+  },
+  "unchangedSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892"
+  },
+  "canonicalHEAD": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "canonicalTrackedClean": true,
+  "productSourceMatch": 75,
+  "protectedMatch": 4,
+  "archive": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290"
+  },
+  "hostTests": {
+    "command": "python -B -m unittest discover -s tests -p test_tmp_session*.py -v",
+    "total": 25,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "exit": 0,
+    "seconds": 37.083,
+    "log": "browser-command-ownership-host-tests.log",
+    "sha256": "d4c661314b16d260d8f809664e4d0940a0a4d352088fa10250d9b75781646958",
+    "cases": [
+      {
+        "case": "spawn-browser",
+        "root": "/private/tmp/aic-b-013253f4873b49c9962652edb913a776",
+        "pid": 27596,
+        "pgid": null,
+        "processes": [],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "spawn-client",
+        "root": "/private/tmp/aic-b-e6a12b367737479480e988659666062a",
+        "pid": 27607,
+        "pgid": 27607,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27608,
+            "pgid": 27607
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-0",
+        "root": "/private/tmp/aic-b-18c7741ce1044427ad4a99152d04821a",
+        "pid": 27624,
+        "pgid": 27624,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27625,
+            "pgid": 27624
+          },
+          {
+            "role": "client",
+            "pid": 27626,
+            "pgid": 27624
+          }
+        ],
+        "originalResultcode": 0,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-7",
+        "root": "/private/tmp/aic-b-bfebd2d9abe34757992e753324c11b53",
+        "pid": 27638,
+        "pgid": 27638,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27639,
+            "pgid": 27638
+          },
+          {
+            "role": "client",
+            "pid": 27640,
+            "pgid": 27638
+          }
+        ],
+        "originalResultcode": 7,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 7
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "residual-0",
+        "root": "/private/tmp/aic-b-91290983a06840dcaf9ca57203fc9b3a",
+        "pid": 27650,
+        "pgid": 27650,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27651,
+            "pgid": 27650
+          },
+          {
+            "role": "client",
+            "pid": 27652,
+            "pgid": 27650
+          },
+          {
+            "role": "descendant",
+            "pid": 27653,
+            "pgid": 27650
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-2",
+        "root": "/private/tmp/aic-b-6f25d7ea4df7475c88f85008d8f21281",
+        "pid": 27668,
+        "pgid": 27668,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27669,
+            "pgid": 27668
+          },
+          {
+            "role": "client",
+            "pid": 27670,
+            "pgid": 27668
+          }
+        ],
+        "originalResultcode": 130,
+        "originalChildReturncodes": {
+          "browser": -2,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-15",
+        "root": "/private/tmp/aic-b-9d626ec89e0148a0b8dcef877579fe17",
+        "pid": 27692,
+        "pgid": 27692,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27693,
+            "pgid": 27692
+          },
+          {
+            "role": "client",
+            "pid": 27694,
+            "pgid": 27692
+          }
+        ],
+        "originalResultcode": 143,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "ttl",
+        "root": "/private/tmp/aic-b-ed6cc3fa4b7d4c51b0e39aa156088d6b",
+        "pid": 27712,
+        "pgid": 27712,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27713,
+            "pgid": 27712
+          },
+          {
+            "role": "client",
+            "pid": 27714,
+            "pgid": 27712
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "bytes",
+        "root": "/private/tmp/aic-b-c4905c3ec0014adc83ee6351da8a194b",
+        "pid": 27724,
+        "pgid": 27724,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27725,
+            "pgid": 27724
+          },
+          {
+            "role": "client",
+            "pid": 27726,
+            "pgid": 27724
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "files",
+        "root": "/private/tmp/aic-b-4990c755a7e840f7bfa53d5546831c20",
+        "pid": 27738,
+        "pgid": 27738,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 27739,
+            "pgid": 27738
+          },
+          {
+            "role": "client",
+            "pid": 27740,
+            "pgid": 27738
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      }
+    ]
+  },
+  "bundle": {
+    "file": "browser-command-ownership-candidate.bundle",
+    "sha256": "93538502e60f5d57067581fa41ae15a863d3f4cbb867361b50d4c8b94b3c31bd",
+    "verify": "PASS",
+    "prerequisite": "28cad2d3beaaf32de2f62d0c08396aaba789ea01"
+  },
+  "limitations": [
+    "fake browser/client process fixture；未啟Chrome或PGQ",
+    "unknown convergence以mock驗證保留root",
+    "SIGKILL後原child wait status未知保留null，不冒稱original exit0",
+    "候選未整合canonical、未修改PPT client/controller"
+  ]
+}

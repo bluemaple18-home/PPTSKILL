@@ -1,0 +1,23 @@
+test_browser_client_cli_delegates_to_existing_outer (b_browser_unit.BrowserCommandUnitTests.test_browser_client_cli_delegates_to_existing_outer) ... ok
+test_browser_spawn_failure_never_starts_client (b_browser_unit.BrowserCommandUnitTests.test_browser_spawn_failure_never_starts_client) ... ok
+test_execute_preserves_legacy_argv_and_client_tmp_environment (b_browser_unit.BrowserCommandUnitTests.test_execute_preserves_legacy_argv_and_client_tmp_environment) ... {"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpmrg5nlov/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpmrg5nlov/profile/DevToolsActivePort"}
+{"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpm2uhxw_k/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpm2uhxw_k/profile/DevToolsActivePort"}
+ok
+test_invalid_client_is_rejected_before_admission (b_browser_unit.BrowserCommandUnitTests.test_invalid_client_is_rejected_before_admission) ... usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+ok
+test_raw_exits_spawn_errors_and_bounded_browser_stop (b_browser_unit.BrowserCommandUnitTests.test_raw_exits_spawn_errors_and_bounded_browser_stop) ... ok
+test_unknown_convergence_preserves_root_without_cleanup (b_browser_unit.BrowserCommandUnitTests.test_unknown_convergence_preserves_root_without_cleanup) ... ok
+test_client_exit_record_io_failure_returns_zero (__main__.NarrowProbes.test_client_exit_record_io_failure_returns_zero) ... ok
+test_outer_signal_is_not_overridden_by_child_zero (__main__.NarrowProbes.test_outer_signal_is_not_overridden_by_child_zero) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.020s
+
+OK

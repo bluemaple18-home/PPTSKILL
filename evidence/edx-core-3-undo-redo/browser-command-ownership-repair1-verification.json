@@ -1,0 +1,309 @@
+{
+  "base": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "canonicalHEAD": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "unchangedSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892"
+  },
+  "productSourceMatch": 75,
+  "protectedMatch": 4,
+  "archive": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290"
+  },
+  "candidate": "996492481144e92775780ce932661e38779cdddc",
+  "status": "CODE_GO_READY_FOR_CANONICAL_INTEGRATION_NOT_ACTIVATED",
+  "candidateSourceSHA256": {
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176"
+  },
+  "hostTests": {
+    "tests": 15,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0,
+    "exit": 0,
+    "seconds": 16.049,
+    "log": "browser-command-ownership-repair1-host-tests.log",
+    "sha256": "05af42d6dcb46f2bca4d3f253637df0f3cca26d098c59ef0767b4c5474565183",
+    "cases": [
+      {
+        "case": "spawn-browser",
+        "root": "/private/tmp/aic-b-b87c03b816094ef0a9efdf76604c6b81",
+        "pid": 28364,
+        "pgid": null,
+        "processes": [],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "spawn-client",
+        "root": "/private/tmp/aic-b-d3408b98791c46c9b9a9b54a8ba4a0eb",
+        "pid": 28375,
+        "pgid": 28375,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28379,
+            "pgid": 28375
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-0",
+        "root": "/private/tmp/aic-b-fc2feb924b424a0da1529f60f1a71200",
+        "pid": 28395,
+        "pgid": 28395,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28396,
+            "pgid": 28395
+          },
+          {
+            "role": "client",
+            "pid": 28397,
+            "pgid": 28395
+          }
+        ],
+        "originalResultcode": 0,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-7",
+        "root": "/private/tmp/aic-b-3f1b36398b5045a79b4544afa07840fb",
+        "pid": 28409,
+        "pgid": 28409,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28410,
+            "pgid": 28409
+          },
+          {
+            "role": "client",
+            "pid": 28411,
+            "pgid": 28409
+          }
+        ],
+        "originalResultcode": 7,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 7
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "residual-0",
+        "root": "/private/tmp/aic-b-365bce5a1fb94820942d7cf87f322979",
+        "pid": 28421,
+        "pgid": 28421,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28422,
+            "pgid": 28421
+          },
+          {
+            "role": "client",
+            "pid": 28423,
+            "pgid": 28421
+          },
+          {
+            "role": "descendant",
+            "pid": 28424,
+            "pgid": 28421
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-2",
+        "root": "/private/tmp/aic-b-8fc4585f6f2a4e10a9550d1936583d57",
+        "pid": 28439,
+        "pgid": 28439,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28440,
+            "pgid": 28439
+          },
+          {
+            "role": "client",
+            "pid": 28441,
+            "pgid": 28439
+          }
+        ],
+        "originalResultcode": 130,
+        "originalChildReturncodes": {
+          "browser": -2,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-15",
+        "root": "/private/tmp/aic-b-63cb069a361244d083563c050b8b475e",
+        "pid": 28453,
+        "pgid": 28453,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28454,
+            "pgid": 28453
+          },
+          {
+            "role": "client",
+            "pid": 28455,
+            "pgid": 28453
+          }
+        ],
+        "originalResultcode": 143,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "ttl",
+        "root": "/private/tmp/aic-b-bb1cb9441c994942a67e11bc0f76c757",
+        "pid": 28472,
+        "pgid": 28472,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28473,
+            "pgid": 28472
+          },
+          {
+            "role": "client",
+            "pid": 28474,
+            "pgid": 28472
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "bytes",
+        "root": "/private/tmp/aic-b-82572a4b974749039f44229ea13fbeec",
+        "pid": 28484,
+        "pgid": 28484,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28485,
+            "pgid": 28484
+          },
+          {
+            "role": "client",
+            "pid": 28486,
+            "pgid": 28484
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "files",
+        "root": "/private/tmp/aic-b-e68bd62a873c46dc8f2d32acaaafbde9",
+        "pid": 28497,
+        "pgid": 28497,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 28498,
+            "pgid": 28497
+          },
+          {
+            "role": "client",
+            "pid": 28499,
+            "pgid": 28497
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      }
+    ]
+  },
+  "freshAfterObservation": {
+    "knownPidCount": 28,
+    "matches": [],
+    "rootsAbsent": true
+  },
+  "previousWholeRegression": {
+    "candidate": "1829f1ab31ba63bbe6e286faf1bc03d2bb9e11ed",
+    "tests": 25,
+    "sha256": "d4c661314b16d260d8f809664e4d0940a0a4d352088fa10250d9b75781646958",
+    "reference": "browser-command-ownership-verification.json"
+  },
+  "bundle": {
+    "file": "browser-command-ownership-repair1.bundle",
+    "sha256": "312dd9983eb3c5d7d04415e8700953164ab38811a2f1ac5674d52f382cc3c903",
+    "verify": "PASS",
+    "prerequisite": "28cad2d3beaaf32de2f62d0c08396aaba789ea01"
+  },
+  "limitations": [
+    "fake browser/client process fixture；未啟Chrome或PGQ",
+    "unknown convergence以mock驗證保留root",
+    "SIGKILL後原child wait status未知保留null，不冒稱original exit0",
+    "候選未整合canonical、未修改PPT client/controller"
+  ],
+  "reviews": {
+    "a": {
+      "verdict": "GO",
+      "receipt": "browser-command-ownership-review-a-repair1.md",
+      "sha256": "a3c3d2eb8a1ca2b95541b8d4889ebd20f552896a904bbd4d37e564019e0f96e4"
+    },
+    "b": {
+      "verdict": "GO",
+      "receipt": "browser-command-ownership-review-b-repair1.md",
+      "sha256": "11e26956fa41381d15736e2ba7686a9ebf1f8b0a6d1db8a97b63bf6c063b6c2d"
+    }
+  }
+}

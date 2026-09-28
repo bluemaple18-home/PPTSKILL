@@ -75,3 +75,7 @@ R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 
 ## 2026-09-28 產品驗收啟動前停止：程序歸屬缺口
 
 新 controller offline21/21，但 A/B 各自重現 signal 退出競態及未收斂外部產品 group 與 browser shared tmp cleanup 的兩項 P1。canonical supervisor 自動 runtime/TTL cleanup 也不等待外部 group，不能只加外層 finish gate。詳 `host-controller-r2-mainline-receipt.md`。Mainline 裁決 NO_GO／NOT_ACTIVATED，manifest 保持 pending；本輪 host/browser/PGQ 未啟動，沒有新 scanner host failure。canonical28cad2d3整合保持有效；Core3改為 ACCEPTANCE_EXECUTION_OWNERSHIP_BLOCKED，仍未closure／核心2/6。下一步先裁決共同 tmp 使用者的執行與清理責任；不自動建新runtime、不補scanner、不R3、不Core4。產品75／protected4／ZIP再驗不變。
+
+## 2026-09-28 Owner「繼續」後的歸屬候選
+
+REPLAN為既有tmp_session browser可選client，同一run_child owned group，未新增supervisor或修改scanner。候選99649248（base28cad2d3）精確入口／test／docs三檔；初版25/25 formal fake-process回歸，單次journal錯誤Repair1後15/15 formal browser/routing、0skip，10case的28已知PID與roots消失。A/B留證反例closure GO，Mainline GO_FOR_CANONICAL_INTEGRATION；完整 `browser-command-ownership-mainline-receipt.md`。候選未套canonical、PPTclient未接線，尚無真Chrome／PGQ，Core3仍未closure／核心2/6。依Owner AGENTS「繼續」不含merge授權，固定候選整合待明示；本Mainline持續負責後續，不轉交。原R2 applicability與RECOVERY_NOT_OBSERVED不改，產品75／protected4／ZIP再驗MATCH，原untracked保留。

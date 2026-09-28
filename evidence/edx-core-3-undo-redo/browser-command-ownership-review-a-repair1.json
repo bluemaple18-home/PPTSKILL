@@ -1,0 +1,56 @@
+{
+  "candidate": "996492481144e92775780ce932661e38779cdddc",
+  "unitTests": {
+    "run": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "subcases": 6
+  },
+  "originalProbeReplay": {
+    "exit": 2,
+    "records": [
+      {
+        "role": "browser",
+        "event": "starting"
+      },
+      {
+        "role": "browser",
+        "event": "started",
+        "pid": 101,
+        "pgid": 28689
+      },
+      {
+        "role": "client",
+        "event": "starting"
+      },
+      {
+        "role": "client",
+        "event": "started",
+        "pid": 102,
+        "pgid": 28689
+      },
+      {
+        "role": "session",
+        "event": "error",
+        "error": "[Errno 28] 單次 client exited 留證失敗"
+      },
+      {
+        "role": "browser",
+        "event": "exited",
+        "returncode": 0
+      }
+    ],
+    "injectedFailure": "第五次 journal append/open 單次 ENOSPC；其後恢復"
+  },
+  "originalEvidenceAndDeliveryUnchanged": true,
+  "sha256": {
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/browser-command-ownership-review-a-probes.py": "427f8d6caf412b7fe984493259395a417a6fc040035c9de65317189b3d85850b",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/browser-command-ownership-review-a-probes.json": "ba5cb6d966dd0fd63ff3171abcb8f5415bb1e2da8d302225c78e8b0feb3975b6",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/browser-command-ownership-review-a.md": "bfeb0f60860191dc9e1a65f3dba745e28208d4f47ba8d20ffaabe39ca0c88bc3",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/browser-command-ownership-review-a-tests.log": "586b6a6993257d8a586b83f1dd0efdf555ffb926b671b98eca3c1041e41ed986",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89"
+  }
+}

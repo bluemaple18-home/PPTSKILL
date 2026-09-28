@@ -1,0 +1,44 @@
+test_browser_and_client_spawn_failure (test_tmp_session_browser_command.BrowserCommandProcessTests.test_browser_and_client_spawn_failure) ... {"case": "spawn-browser", "root": "/private/tmp/aic-b-b87c03b816094ef0a9efdf76604c6b81", "pid": 28364, "pgid": null, "processes": [], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "spawn-client", "root": "/private/tmp/aic-b-d3408b98791c46c9b9a9b54a8ba4a0eb", "pid": 28375, "pgid": 28375, "processes": [{"role": "browser", "pid": 28379, "pgid": 28375}], "originalResultcode": 2, "originalChildReturncodes": {"browser": 0, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_same_pgid_success_nonzero_and_residual (test_tmp_session_browser_command.BrowserCommandProcessTests.test_same_pgid_success_nonzero_and_residual) ... {"case": "normal-0", "root": "/private/tmp/aic-b-fc2feb924b424a0da1529f60f1a71200", "pid": 28395, "pgid": 28395, "processes": [{"role": "browser", "pid": 28396, "pgid": 28395}, {"role": "client", "pid": 28397, "pgid": 28395}], "originalResultcode": 0, "originalChildReturncodes": {"browser": 0, "client": 0}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "normal-7", "root": "/private/tmp/aic-b-3f1b36398b5045a79b4544afa07840fb", "pid": 28409, "pgid": 28409, "processes": [{"role": "browser", "pid": 28410, "pgid": 28409}, {"role": "client", "pid": 28411, "pgid": 28409}], "originalResultcode": 7, "originalChildReturncodes": {"browser": 0, "client": 7}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "residual-0", "root": "/private/tmp/aic-b-365bce5a1fb94820942d7cf87f322979", "pid": 28421, "pgid": 28421, "processes": [{"role": "browser", "pid": 28422, "pgid": 28421}, {"role": "client", "pid": 28423, "pgid": 28421}, {"role": "descendant", "pid": 28424, "pgid": 28421}], "originalResultcode": 2, "originalChildReturncodes": {"browser": 0, "client": 0}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_sigint_sigterm_are_not_overridden_by_client_exit (test_tmp_session_browser_command.BrowserCommandProcessTests.test_sigint_sigterm_are_not_overridden_by_client_exit) ... {"case": "signal-2", "root": "/private/tmp/aic-b-8fc4585f6f2a4e10a9550d1936583d57", "pid": 28439, "pgid": 28439, "processes": [{"role": "browser", "pid": 28440, "pgid": 28439}, {"role": "client", "pid": 28441, "pgid": 28439}], "originalResultcode": 130, "originalChildReturncodes": {"browser": -2, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "signal-15", "root": "/private/tmp/aic-b-63cb069a361244d083563c050b8b475e", "pid": 28453, "pgid": 28453, "processes": [{"role": "browser", "pid": 28454, "pgid": 28453}, {"role": "client", "pid": 28455, "pgid": 28453}], "originalResultcode": 143, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_ttl_bytes_files_kill_whole_group (test_tmp_session_browser_command.BrowserCommandProcessTests.test_ttl_bytes_files_kill_whole_group) ... {"case": "ttl", "root": "/private/tmp/aic-b-bb1cb9441c994942a67e11bc0f76c757", "pid": 28472, "pgid": 28472, "processes": [{"role": "browser", "pid": 28473, "pgid": 28472}, {"role": "client", "pid": 28474, "pgid": 28472}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "bytes", "root": "/private/tmp/aic-b-82572a4b974749039f44229ea13fbeec", "pid": 28484, "pgid": 28484, "processes": [{"role": "browser", "pid": 28485, "pgid": 28484}, {"role": "client", "pid": 28486, "pgid": 28484}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "files", "root": "/private/tmp/aic-b-e68bd62a873c46dc8f2d32acaaafbde9", "pid": 28497, "pgid": 28497, "processes": [{"role": "browser", "pid": 28498, "pgid": 28497}, {"role": "client", "pid": 28499, "pgid": 28497}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_browser_client_cli_delegates_to_existing_outer (test_tmp_session_browser_command.BrowserCommandUnitTests.test_browser_client_cli_delegates_to_existing_outer) ... ok
+test_browser_spawn_failure_never_starts_client (test_tmp_session_browser_command.BrowserCommandUnitTests.test_browser_spawn_failure_never_starts_client) ... ok
+test_execute_preserves_legacy_argv_and_client_tmp_environment (test_tmp_session_browser_command.BrowserCommandUnitTests.test_execute_preserves_legacy_argv_and_client_tmp_environment) ... {"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpf07u7et9/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpf07u7et9/profile/DevToolsActivePort"}
+{"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpd8l_157g/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpd8l_157g/profile/DevToolsActivePort"}
+ok
+test_invalid_client_is_rejected_before_admission (test_tmp_session_browser_command.BrowserCommandUnitTests.test_invalid_client_is_rejected_before_admission) ... usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+ok
+test_raw_exits_spawn_errors_and_bounded_browser_stop (test_tmp_session_browser_command.BrowserCommandUnitTests.test_raw_exits_spawn_errors_and_bounded_browser_stop) ... ok
+test_single_journal_failure_stays_nonzero_after_recovery (test_tmp_session_browser_command.BrowserCommandUnitTests.test_single_journal_failure_stays_nonzero_after_recovery) ... ok
+test_unknown_convergence_preserves_root_without_cleanup (test_tmp_session_browser_command.BrowserCommandUnitTests.test_unknown_convergence_preserves_root_without_cleanup) ... ok
+test_browser_arguments_cannot_override_managed_flags (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_browser_arguments_cannot_override_managed_flags) ... usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: unrecognized arguments: --disable-features=Other
+usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+ok
+test_codex_sandbox_blocks_before_lifecycle_admission (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_codex_sandbox_blocks_before_lifecycle_admission) ... ok
+test_host_browser_path_still_delegates_to_lifecycle (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_host_browser_path_still_delegates_to_lifecycle) ... ok
+test_url_with_flag_text_remains_one_argument (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_url_with_flag_text_remains_one_argument) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 16.049s
+
+OK

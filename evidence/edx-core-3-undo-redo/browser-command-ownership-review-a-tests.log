@@ -1,0 +1,11 @@
+test_browser_client_cli_delegates_to_existing_outer (review_a_browser_command_tests.BrowserCommandUnitTests.test_browser_client_cli_delegates_to_existing_outer) ... ok
+test_browser_spawn_failure_never_starts_client (review_a_browser_command_tests.BrowserCommandUnitTests.test_browser_spawn_failure_never_starts_client) ... ok
+test_execute_preserves_legacy_argv_and_client_tmp_environment (review_a_browser_command_tests.BrowserCommandUnitTests.test_execute_preserves_legacy_argv_and_client_tmp_environment) ... ok
+test_invalid_client_is_rejected_before_admission (review_a_browser_command_tests.BrowserCommandUnitTests.test_invalid_client_is_rejected_before_admission) ... ok
+test_raw_exits_spawn_errors_and_bounded_browser_stop (review_a_browser_command_tests.BrowserCommandUnitTests.test_raw_exits_spawn_errors_and_bounded_browser_stop) ... ok
+test_unknown_convergence_preserves_root_without_cleanup (review_a_browser_command_tests.BrowserCommandUnitTests.test_unknown_convergence_preserves_root_without_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.018s
+
+OK

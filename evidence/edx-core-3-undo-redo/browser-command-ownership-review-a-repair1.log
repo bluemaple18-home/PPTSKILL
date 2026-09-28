@@ -1,0 +1,6 @@
+test_single_journal_failure_stays_nonzero_after_recovery (review_a_repair1_tests.BrowserCommandUnitTests.test_single_journal_failure_stays_nonzero_after_recovery) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.008s
+
+OK

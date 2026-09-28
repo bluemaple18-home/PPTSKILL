@@ -1,12 +1,12 @@
 # 核心完整版 3/6：operation-level Undo／Redo
 
-Status: CODE_GO / ACCEPTANCE_EXECUTION_OWNERSHIP_BLOCKED / WHOLE_CARD_NOT_CLOSED
+Status: CODE_GO / OWNERSHIP_CANONICAL_INTEGRATION_PENDING / WHOLE_CARD_NOT_CLOSED
 Branch: `codex/edx-core-3-undo-redo`
 Base: `115027040a169c505df0e7f31a0a8845280a4ed7`（Core2 closure）
 Parent: `tasks/edx-core-six-card-closure-plan.md` 第3項（WP3-S1）
 Trace: `CORE3-SC-01` 可撤銷提交、`CORE3-SC-02` 重做與分岔、`CORE3-SC-03` DOM／匯出一致、`CORE3-SC-04` 忙碌與原生鍵盤邊界；均對應父卡第3項，不新增第七張產品卡。
 
-最新接續：`9ce7396`／code `f3d8a11` 兩名Reviewer CODE GO；既有 non-browser 1061/1061、ZIP lifecycle與hash MATCH。AI Core R2 已整合 canonical `28cad2d3` 且 fresh scanner 33/33 PASS。產品驗收 controller 被兩份獨立 review 擋下：中斷訊號競態及跨程序群組共用 tmp 的清理責任未閉合；本輪未啟動 browser/PGQ，不能將此 blocker 說成 scanner 再失敗。整卡不關閉，核心仍2/6。詳 `evidence/edx-core-3-undo-redo/host-controller-r2-mainline-receipt.md`；完整歷史見 `transaction-boundary-mainline-checkpoint.md`。
+最新接續：`9ce7396`／code `f3d8a11` 兩名Reviewer CODE GO；既有 non-browser 1061/1061、ZIP lifecycle與hash MATCH。AI Core R2 已整合 canonical `28cad2d3` 且 fresh scanner 33/33 PASS。針對驗收controller的跨群組cleanup缺口，已完成同群組ownership候選 `99649248`：正式fake-process25/25，留證錯誤Repair1後15/15、0skip，A/B closure GO；尚未整合canonical、尚未接線或啟動真Chrome／PGQ。整合待Owner明確放行，整卡不關閉，核心仍2/6。詳 `evidence/edx-core-3-undo-redo/browser-command-ownership-mainline-receipt.md`；完整歷史見 `transaction-boundary-mainline-checkpoint.md`。
 
 ## 目標、依賴與實測缺口
 

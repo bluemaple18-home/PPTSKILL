@@ -1,0 +1,68 @@
+{
+  "before": {
+    "scripts/tmp_session.py": "0bff045e697875fc9c4431dab51d61b7b107a53065d920302b68fd8d65826dc4",
+    "tests/test_tmp_session_browser_command.py": "86cfa3d4eeb436909e4aef8af4febe20d55e92e444eb162f434b4276e50d5ac2",
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf"
+  },
+  "after": {
+    "scripts/tmp_session.py": "0bff045e697875fc9c4431dab51d61b7b107a53065d920302b68fd8d65826dc4",
+    "tests/test_tmp_session_browser_command.py": "86cfa3d4eeb436909e4aef8af4febe20d55e92e444eb162f434b4276e50d5ac2",
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf"
+  },
+  "unchanged": true,
+  "tests": 8,
+  "failures": 0,
+  "errors": 0,
+  "records": [
+    {
+      "case": "test_client_exit_record_io_failure_returns_zero",
+      "returnedCode": 0,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 27795
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 27795
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 5] B transient evidence write failure"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "case": "test_outer_signal_is_not_overridden_by_child_zero",
+      "signal": 2,
+      "childExit": 0,
+      "outerExit": 130
+    },
+    {
+      "case": "test_outer_signal_is_not_overridden_by_child_zero",
+      "signal": 15,
+      "childExit": 0,
+      "outerExit": 143
+    }
+  ]
+}
