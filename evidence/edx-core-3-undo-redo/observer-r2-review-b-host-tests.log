@@ -1,0 +1,18 @@
+test_capacity_uses_original_seam_and_asdict (__main__.ControllerOfflineTests.test_capacity_uses_original_seam_and_asdict) ... ok
+test_cdp_fake_success_and_page_error_always_close_owned_target (__main__.ControllerOfflineTests.test_cdp_fake_success_and_page_error_always_close_owned_target) ... ok
+test_cleanup_observation_cannot_satisfy_runtime_wait (__main__.ControllerOfflineTests.test_cleanup_observation_cannot_satisfy_runtime_wait) ... ok
+test_close_failure_still_waits_and_terminates_original_supervisor (__main__.ControllerOfflineTests.test_close_failure_still_waits_and_terminates_original_supervisor) ... ok
+test_frozen_identity_read_only (__main__.ControllerOfflineTests.test_frozen_identity_read_only) ... ok
+test_mixed_parent_still_requires_mainline_adoption (__main__.ControllerOfflineTests.test_mixed_parent_still_requires_mainline_adoption) ... ok
+test_owned_metadata_nonflat_and_special_are_explicit (__main__.ControllerOfflineTests.test_owned_metadata_nonflat_and_special_are_explicit) ... ok
+test_diagnostic_write_failure_does_not_change_scan_return (__main__.ObserverTests.test_diagnostic_write_failure_does_not_change_scan_return) ... ok
+test_none_return_is_unknown_and_no_line_opcode (__main__.ObserverTests.test_none_return_is_unknown_and_no_line_opcode) ... ok
+test_normal_return_and_cleanup_are_separate (__main__.ObserverTests.test_normal_return_and_cleanup_are_separate) ... ok
+test_previous_trace_restored_on_return_and_exception (__main__.ObserverTests.test_previous_trace_restored_on_return_and_exception) ... ok
+test_recovery_keeps_enoent_and_original_return (__main__.ObserverTests.test_recovery_keeps_enoent_and_original_return) ... ok
+test_unwind_and_budget_rejection_are_not_complete (__main__.ObserverTests.test_unwind_and_budget_rejection_are_not_complete) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.407s
+
+OK

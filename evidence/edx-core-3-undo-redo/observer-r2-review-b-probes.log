@@ -1,0 +1,31 @@
+test_finish_side_effect_failures (__main__.IndependentProbes.test_finish_side_effect_failures) ... ok
+test_identity_io_cause_is_not_in_observer_events (__main__.IndependentProbes.test_identity_io_cause_is_not_in_observer_events) ... ok
+test_journal_failure_preserves_error_object_and_partial (__main__.IndependentProbes.test_journal_failure_preserves_error_object_and_partial) ... ok
+test_rename_to_already_visited_parent (__main__.IndependentProbes.test_rename_to_already_visited_parent) ... ok
+test_second_enoent_other_parent_no_third_try (__main__.IndependentProbes.test_second_enoent_other_parent_no_third_try) ... ok
+test_browser_allowlist_is_counted_without_following (review_b_core_tests.ObserverR2Tests.test_browser_allowlist_is_counted_without_following) ... ok
+test_browser_depth_limit_never_retries (review_b_core_tests.ObserverR2Tests.test_browser_depth_limit_never_retries) ... ok
+test_directory_disappears_between_stat_and_open (review_b_core_tests.ObserverR2Tests.test_directory_disappears_between_stat_and_open) ... ok
+test_directory_replaced_between_stat_and_open (review_b_core_tests.ObserverR2Tests.test_directory_replaced_between_stat_and_open) ... ok
+test_observed_special_and_sticky_budget_never_retry (review_b_core_tests.ObserverR2Tests.test_observed_special_and_sticky_budget_never_retry) ... ok
+test_real_socket_is_rejected_without_retry (review_b_core_tests.ObserverR2Tests.test_real_socket_is_rejected_without_retry) ... ERROR
+test_retry_shares_deadline_and_entry_budget (review_b_core_tests.ObserverR2Tests.test_retry_shares_deadline_and_entry_budget) ... ok
+test_root_and_parent_replacement_or_missing_fail_closed (review_b_core_tests.ObserverR2Tests.test_root_and_parent_replacement_or_missing_fail_closed) ... ok
+test_root_missing_or_identity_unknown_never_starts_attempt (review_b_core_tests.ObserverR2Tests.test_root_missing_or_identity_unknown_never_starts_attempt) ... ok
+test_second_enoent_same_or_other_parent_never_retries (review_b_core_tests.ObserverR2Tests.test_second_enoent_same_or_other_parent_never_retries) ... ok
+test_stable_recursive_tree_and_trace_contract (review_b_core_tests.ObserverR2Tests.test_stable_recursive_tree_and_trace_contract) ... ok
+test_unknown_io_and_non_runtime_never_retry (review_b_core_tests.ObserverR2Tests.test_unknown_io_and_non_runtime_never_retry) ... ok
+test_unlink_and_rename_whole_scan (review_b_core_tests.ObserverR2Tests.test_unlink_and_rename_whole_scan) ... ok
+
+======================================================================
+ERROR: test_real_socket_is_rejected_without_retry (review_b_core_tests.ObserverR2Tests.test_real_socket_is_rejected_without_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_artifact_lifecycle.py", line 2437, in test_real_socket_is_rejected_without_retry
+    sock.bind(str(self.root / "foreign-socket"))
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.273s
+
+FAILED (errors=1)

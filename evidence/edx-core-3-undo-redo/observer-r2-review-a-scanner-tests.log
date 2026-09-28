@@ -1,0 +1,49 @@
+test_browser_allowlist_is_counted_without_following (review_a_scanner_tests.ObserverR2Tests.test_browser_allowlist_is_counted_without_following) ... ok
+test_browser_depth_limit_never_retries (review_a_scanner_tests.ObserverR2Tests.test_browser_depth_limit_never_retries) ... ok
+test_directory_disappears_between_stat_and_open (review_a_scanner_tests.ObserverR2Tests.test_directory_disappears_between_stat_and_open) ... ok
+test_directory_replaced_between_stat_and_open (review_a_scanner_tests.ObserverR2Tests.test_directory_replaced_between_stat_and_open) ... ok
+test_observed_special_and_sticky_budget_never_retry (review_a_scanner_tests.ObserverR2Tests.test_observed_special_and_sticky_budget_never_retry) ... ok
+test_real_socket_is_rejected_without_retry (review_a_scanner_tests.ObserverR2Tests.test_real_socket_is_rejected_without_retry) ... ERROR
+test_retry_shares_deadline_and_entry_budget (review_a_scanner_tests.ObserverR2Tests.test_retry_shares_deadline_and_entry_budget) ... ok
+test_root_and_parent_replacement_or_missing_fail_closed (review_a_scanner_tests.ObserverR2Tests.test_root_and_parent_replacement_or_missing_fail_closed) ... ok
+test_root_missing_or_identity_unknown_never_starts_attempt (review_a_scanner_tests.ObserverR2Tests.test_root_missing_or_identity_unknown_never_starts_attempt) ... ok
+test_second_enoent_same_or_other_parent_never_retries (review_a_scanner_tests.ObserverR2Tests.test_second_enoent_same_or_other_parent_never_retries) ... ok
+test_stable_recursive_tree_and_trace_contract (review_a_scanner_tests.ObserverR2Tests.test_stable_recursive_tree_and_trace_contract) ... ok
+test_unknown_io_and_non_runtime_never_retry (review_a_scanner_tests.ObserverR2Tests.test_unknown_io_and_non_runtime_never_retry) ... ok
+test_unlink_and_rename_whole_scan (review_a_scanner_tests.ObserverR2Tests.test_unlink_and_rename_whole_scan) ... ok
+test_runtime_budget_reason_preserves_dimension_counts_and_entry (__main__.main.<locals>.Regression.test_runtime_budget_reason_preserves_dimension_counts_and_entry) ... ok
+test_runtime_budget_both_dimensions_and_nested_entry (__main__.main.<locals>.Regression.test_runtime_budget_both_dimensions_and_nested_entry) ... ok
+test_runtime_unknown_reasons_are_not_budget_diagnostics (__main__.main.<locals>.Regression.test_runtime_unknown_reasons_are_not_budget_diagnostics) ... ok
+test_scan_deadline_reports_bounded_observation_details (__main__.main.<locals>.Regression.test_scan_deadline_reports_bounded_observation_details) ... ok
+test_scan_entry_limit_is_distinct_from_deadline (__main__.main.<locals>.Regression.test_scan_entry_limit_is_distinct_from_deadline) ... ok
+test_scan_completion_deadline_reports_completed_counts (__main__.main.<locals>.Regression.test_scan_completion_deadline_reports_completed_counts) ... ok
+test_owned_browser_scan_accepts_measured_slow_small_profile (__main__.main.<locals>.Regression.test_owned_browser_scan_accepts_measured_slow_small_profile) ... ok
+test_owned_browser_scan_still_rejects_expired_completion (__main__.main.<locals>.Regression.test_owned_browser_scan_still_rejects_expired_completion) ... ok
+test_owned_browser_scan_keeps_byte_file_and_special_entry_guards (__main__.main.<locals>.Regression.test_owned_browser_scan_keeps_byte_file_and_special_entry_guards) ... ok
+test_browser_growth_after_stat_is_detected_on_next_scan (__main__.main.<locals>.Regression.test_browser_growth_after_stat_is_detected_on_next_scan) ... ok
+test_large_profile_scan_allows_bounded_slow_tree (__main__.main.<locals>.Regression.test_large_profile_scan_allows_bounded_slow_tree) ... ok
+test_large_profile_scan_time_limit_remains_fail_closed (__main__.main.<locals>.Regression.test_large_profile_scan_time_limit_remains_fail_closed) ... ok
+test_default_profile_scan_keeps_short_time_limit (__main__.main.<locals>.Regression.test_default_profile_scan_keeps_short_time_limit) ... ok
+test_default_scan_accepts_measured_host_delay (__main__.main.<locals>.Regression.test_default_scan_accepts_measured_host_delay) ... ok
+test_scan_rejects_expired_completion_after_final_io (__main__.main.<locals>.Regression.test_scan_rejects_expired_completion_after_final_io) ... ok
+test_scan_accepts_completion_before_deadline (__main__.main.<locals>.Regression.test_scan_accepts_completion_before_deadline) ... ok
+test_scan_without_limits_preserves_unbounded_completion (__main__.main.<locals>.Regression.test_scan_without_limits_preserves_unbounded_completion) ... ok
+test_cleanup_count_failure_removes_only_bound_fixture_and_raises (__main__.ExtraProbes.test_cleanup_count_failure_removes_only_bound_fixture_and_raises) ... ok
+test_enumeration_retry_only_descendant (__main__.ExtraProbes.test_enumeration_retry_only_descendant) ... ok
+test_parent_identity_checked_after_successful_visit (__main__.ExtraProbes.test_parent_identity_checked_after_successful_visit) ... ok
+test_pending_manifest_prevents_all_launch_side_effects (__main__.ExtraProbes.test_pending_manifest_prevents_all_launch_side_effects) ... ok
+test_signal_handler_keeps_first_signal_and_control_error (__main__.ExtraProbes.test_signal_handler_keeps_first_signal_and_control_error) ... ok
+test_teardown_failure_states (__main__.ExtraProbes.test_teardown_failure_states) ... ok
+
+======================================================================
+ERROR: test_real_socket_is_rejected_without_retry (review_a_scanner_tests.ObserverR2Tests.test_real_socket_is_rejected_without_retry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_artifact_lifecycle.py", line 2437, in test_real_socket_is_rejected_without_retry
+    sock.bind(str(self.root / "foreign-socket"))
+PermissionError: [Errno 1] Operation not permitted
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.440s
+
+FAILED (errors=1)

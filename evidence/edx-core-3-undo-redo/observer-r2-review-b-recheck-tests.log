@@ -1,0 +1,15 @@
+test_diagnostic_write_failure_does_not_change_scan_return (b_recheck_tests.ObserverTests.test_diagnostic_write_failure_does_not_change_scan_return) ... ok
+test_identity_io_cause_survives_sampling_string_boundary (b_recheck_tests.ObserverTests.test_identity_io_cause_survives_sampling_string_boundary) ... ok
+test_none_return_is_unknown_and_no_line_opcode (b_recheck_tests.ObserverTests.test_none_return_is_unknown_and_no_line_opcode) ... ok
+test_normal_return_and_cleanup_are_separate (b_recheck_tests.ObserverTests.test_normal_return_and_cleanup_are_separate) ... ok
+test_previous_trace_restored_on_return_and_exception (b_recheck_tests.ObserverTests.test_previous_trace_restored_on_return_and_exception) ... ok
+test_recovery_keeps_enoent_and_original_return (b_recheck_tests.ObserverTests.test_recovery_keeps_enoent_and_original_return) ... ok
+test_unwind_and_budget_rejection_are_not_complete (b_recheck_tests.ObserverTests.test_unwind_and_budget_rejection_are_not_complete) ... ok
+test_cycle (__main__.CauseBounds.test_cycle) ... ok
+test_empty_and_exact_bound (__main__.CauseBounds.test_empty_and_exact_bound) ... ok
+test_over_bound (__main__.CauseBounds.test_over_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.021s
+
+OK

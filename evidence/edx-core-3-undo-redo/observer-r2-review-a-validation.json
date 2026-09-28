@@ -1,0 +1,16 @@
+{
+  "tests": 36,
+  "failures": 0,
+  "errors": 1,
+  "skips": 0,
+  "deliveryUnchangedDuringProbes": true,
+  "sha256": {
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_artifact_lifecycle.py": "b517c796fa45124bfffc1ab22a54c7ea904b302ae5a917b0e164877b37cf199a",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-controller.py": "f8462b9e50f08a5f54f9adbbae54508119590ee935216546d9119aebf7e86c8c",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-observer.py": "086ba6f5408d09d3da7dad0c2fad69b7dce36c669e8f60b2ccd2200d0a0b0698",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-test.py": "68aeb26b6f227e0df18c2d90f32e48dad2570de4107fe6e35f184ab71214ffde",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-candidate.json": "f7d9732055a3e7f6923c5a6d58db9508041207267b003be0dc2c7ffa0c8f35b9"
+  }
+}

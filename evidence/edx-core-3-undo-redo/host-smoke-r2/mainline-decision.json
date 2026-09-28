@@ -1,0 +1,12 @@
+{
+  "candidate": "4edd0747a25b13920b3ab1ead99895a99dbe8964",
+  "code": "GO",
+  "hostSmoke": "PASS",
+  "recovery": "NOT_OBSERVED",
+  "hostAttempts": 1,
+  "canonicalAdoption": "PENDING_NOT_ACTIVATED",
+  "core3": "PRODUCT_CODE_GO_ACCEPTANCE_PENDING",
+  "pgqRun": false,
+  "repeatAllowed": false,
+  "next": "AI Core canonical adoption decision before Core3 browser/PGQ"
+}

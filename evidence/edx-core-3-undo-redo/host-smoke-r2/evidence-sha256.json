@@ -1,0 +1,62 @@
+{
+  "browser-close.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cdp.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cdp.stdout": {
+    "bytes": 327,
+    "sha256": "dd4b588cd6bcc40cde37b81477e9da0c63068e1bddfc15621afd202bdc07bd62"
+  },
+  "controller-receipt.json": {
+    "bytes": 34612,
+    "sha256": "1478e8e6e5305164ab8745b3cc3c8d7e23de99e5585171da31a5535a764eae1b"
+  },
+  "launcher.stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "launcher.stdout": {
+    "bytes": 210,
+    "sha256": "28180fc9ac9c24d0e663ba0a23ddca1c76288783f181977ae9edf469d2788314"
+  },
+  "lifecycle/evidence/session.json": {
+    "bytes": 96,
+    "sha256": "3dcbd1823e1f0b312a0c6d6a51c0554a39e0cbc359c4c621a049e80ec2446b25"
+  },
+  "lifecycle/evidence/stderr.log": {
+    "bytes": 1230,
+    "sha256": "64cf7c9abbdf85f1b02c0dc24123a26a86410c0ca8206fed85a39fd5125191c4"
+  },
+  "lifecycle/evidence/stdout.log": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "mainline-decision.json": {
+    "bytes": 368,
+    "sha256": "06d6ebf4b32eed24dd2721504f3ea38b79473662ffa5f2be52efa5fc3f4c660f"
+  },
+  "mainline-process-check.json": {
+    "bytes": 217,
+    "sha256": "79ff2031d0635345e5d8492628835b05cdcd1492f4a64d5ce5fac65b0515026f"
+  },
+  "mainline-receipt.md": {
+    "bytes": 4408,
+    "sha256": "5e60f6e8832e479630512e73949f9edfe5a2f8e04c139a1f37e9a6c7481fe1e4"
+  },
+  "mainline-verification.json": {
+    "bytes": 745,
+    "sha256": "9a762cf9d3ad0886244bdf6b84a17ac1bdcae6e500f91d9f2c0c979c2adef377"
+  },
+  "resource-observation.json": {
+    "bytes": 5054,
+    "sha256": "c4213626979f90d734e7bf06acb5556ed382e62c50ec4e67f0f8e56c730bd7b0"
+  },
+  "scan-events.jsonl": {
+    "bytes": 5389,
+    "sha256": "ba760e1f74aa9c2510f5c199d270c4f45f885818144d85bd6db9c453066bfce5"
+  }
+}

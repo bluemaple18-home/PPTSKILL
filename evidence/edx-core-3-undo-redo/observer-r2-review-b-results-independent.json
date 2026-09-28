@@ -1,0 +1,1082 @@
+{
+  "before": {
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_artifact_lifecycle.py": "b517c796fa45124bfffc1ab22a54c7ea904b302ae5a917b0e164877b37cf199a",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-controller.py": "f8462b9e50f08a5f54f9adbbae54508119590ee935216546d9119aebf7e86c8c",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-observer.py": "086ba6f5408d09d3da7dad0c2fad69b7dce36c669e8f60b2ccd2200d0a0b0698",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-test.py": "68aeb26b6f227e0df18c2d90f32e48dad2570de4107fe6e35f184ab71214ffde",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-candidate.json": "f7d9732055a3e7f6923c5a6d58db9508041207267b003be0dc2c7ffa0c8f35b9"
+  },
+  "after": {
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/tests/test_tmp_artifact_lifecycle.py": "b517c796fa45124bfffc1ab22a54c7ea904b302ae5a917b0e164877b37cf199a",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/.work/ai-core-observer-r2-20260928/docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-controller.py": "f8462b9e50f08a5f54f9adbbae54508119590ee935216546d9119aebf7e86c8c",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-observer.py": "086ba6f5408d09d3da7dad0c2fad69b7dce36c669e8f60b2ccd2200d0a0b0698",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-test.py": "68aeb26b6f227e0df18c2d90f32e48dad2570de4107fe6e35f184ab71214ffde",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-smoke-r2-candidate.json": "f7d9732055a3e7f6923c5a6d58db9508041207267b003be0dc2c7ffa0c8f35b9"
+  },
+  "unchanged": true,
+  "tests": 7,
+  "failures": 0,
+  "errors": 0,
+  "probes": [
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "assert_managed_tmp_admission",
+      "code": null,
+      "error": "B assert_managed_tmp_admission",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 0,
+        "plan_root": 0,
+        "update_isolation_marker": 0,
+        "create_root": 0,
+        "verify_browser_ipc_path": 0,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 0,
+        "preserve_unknown_isolation": 0,
+        "cleanup": 0,
+        "clear_isolation_marker": 0,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "create_isolation_marker",
+      "code": null,
+      "error": "B create_isolation_marker",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 0,
+        "update_isolation_marker": 0,
+        "create_root": 0,
+        "verify_browser_ipc_path": 0,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 0,
+        "preserve_unknown_isolation": 0,
+        "cleanup": 0,
+        "clear_isolation_marker": 0,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "plan_root",
+      "code": null,
+      "error": "B plan_root",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 0,
+        "create_root": 0,
+        "verify_browser_ipc_path": 0,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 0,
+        "preserve_unknown_isolation": 1,
+        "cleanup": 0,
+        "clear_isolation_marker": 0,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "create_root",
+      "code": null,
+      "error": "B create_root",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 1,
+        "create_root": 1,
+        "verify_browser_ipc_path": 0,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 0,
+        "preserve_unknown_isolation": 1,
+        "cleanup": 0,
+        "clear_isolation_marker": 0,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "verify_browser_ipc_path",
+      "code": null,
+      "error": "B verify_browser_ipc_path",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 1,
+        "create_root": 1,
+        "verify_browser_ipc_path": 1,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 0,
+        "preserve_unknown_isolation": 0,
+        "cleanup": 1,
+        "clear_isolation_marker": 1,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "run_child",
+      "code": null,
+      "error": "B run_child",
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 2,
+        "create_root": 1,
+        "verify_browser_ipc_path": 1,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 1,
+        "preserve_unknown_isolation": 1,
+        "cleanup": 0,
+        "clear_isolation_marker": 0,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "cleanup",
+      "code": 2,
+      "error": null,
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 2,
+        "create_root": 1,
+        "verify_browser_ipc_path": 1,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 1,
+        "preserve_unknown_isolation": 0,
+        "cleanup": 1,
+        "clear_isolation_marker": 1,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "clear_isolation_marker",
+      "code": 2,
+      "error": null,
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 2,
+        "create_root": 1,
+        "verify_browser_ipc_path": 1,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 1,
+        "preserve_unknown_isolation": 1,
+        "cleanup": 1,
+        "clear_isolation_marker": 1,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_activation_and_teardown_mocked_failure_states",
+      "failure": "release_repo_lock",
+      "code": 2,
+      "error": null,
+      "calls": {
+        "load_policy": 1,
+        "bounded_limits": 1,
+        "acquire_repo_lock": 1,
+        "assert_repo_not_isolated": 1,
+        "ensure_process_group_observation": 1,
+        "acquire_host_tmp_admission_lock": 1,
+        "assert_managed_tmp_admission": 1,
+        "create_isolation_marker": 1,
+        "plan_root": 1,
+        "update_isolation_marker": 2,
+        "create_root": 1,
+        "verify_browser_ipc_path": 1,
+        "release_host_tmp_admission_lock": 1,
+        "run_child": 1,
+        "preserve_unknown_isolation": 0,
+        "cleanup": 1,
+        "clear_isolation_marker": 1,
+        "release_repo_lock": 1
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "close-log",
+      "receipt": {
+        "browserCloseError": "FileExistsError(17, 'File exists')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "cdp",
+      "receipt": {
+        "browserCloseError": "OSError(5, 'B CDP')",
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "wait",
+      "receipt": {
+        "browserCloseError": "OSError(5, 'B CDP')",
+        "cleanupError": "OSError(5, 'B wait')"
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "terminate",
+      "receipt": {
+        "browserCloseError": "OSError(5, 'B CDP')",
+        "cleanupError": "PermissionError(1, 'B 禁止 signal')"
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "second-wait",
+      "receipt": {
+        "browserCloseError": "OSError(5, 'B CDP')",
+        "supervisorTerminated": true,
+        "cleanupError": "TimeoutExpired('mock', 30)"
+      }
+    },
+    {
+      "case": "test_finish_side_effect_failures",
+      "failure": "no-endpoint",
+      "receipt": {
+        "supervisorExit": 0
+      }
+    },
+    {
+      "case": "test_identity_errno_lost_at_runtime_sampling_seam",
+      "injectedErrno": 5,
+      "supervisorMessage": "NO_GO: resource observation unknown (directory identity unavailable)",
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-9g0cas3n",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.494734333,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (directory identity unavailable)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1198,
+            "relativeDirectory": [],
+            "entryName": null,
+            "attempt": 1,
+            "scanPhase": "root_open",
+            "elapsedMs": 0.08641695603728294,
+            "entries": 0,
+            "partialCounts": [
+              0,
+              0
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 0,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          0,
+          0
+        ],
+        "elapsedMs": 0.10104198008775711
+      }
+    },
+    {
+      "case": "test_identity_errno_lost_at_runtime_sampling_seam",
+      "injectedErrno": 13,
+      "supervisorMessage": "NO_GO: resource observation unknown (directory identity unavailable)",
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-7t_yd1gm",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.495597875,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (directory identity unavailable)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1198,
+            "relativeDirectory": [],
+            "entryName": null,
+            "attempt": 1,
+            "scanPhase": "root_open",
+            "elapsedMs": 0.057165976613759995,
+            "entries": 0,
+            "partialCounts": [
+              0,
+              0
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 0,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          0,
+          0
+        ],
+        "elapsedMs": 0.06979098543524742
+      }
+    },
+    {
+      "case": "test_identity_errno_lost_at_runtime_sampling_seam",
+      "injectedErrno": 1,
+      "supervisorMessage": "NO_GO: resource observation unknown (directory identity unavailable)",
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-70hmh2um",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.496416666,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (directory identity unavailable)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1198,
+            "relativeDirectory": [],
+            "entryName": null,
+            "attempt": 1,
+            "scanPhase": "root_open",
+            "elapsedMs": 0.05720905028283596,
+            "entries": 0,
+            "partialCounts": [
+              0,
+              0
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 0,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          0,
+          0
+        ],
+        "elapsedMs": 0.06950006354600191
+      }
+    },
+    {
+      "case": "test_identity_io_cause_is_not_in_observer_events",
+      "originalCauseErrno": 5,
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-ss3kcu2h",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.497269625,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (directory identity unavailable)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1198,
+            "relativeDirectory": [],
+            "entryName": null,
+            "attempt": 1,
+            "scanPhase": "root_open",
+            "elapsedMs": 0.12745801359415054,
+            "entries": 0,
+            "partialCounts": [
+              0,
+              0
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 0,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          0,
+          0
+        ],
+        "elapsedMs": 0.13929104898124933
+      }
+    },
+    {
+      "case": "test_journal_failure_preserves_error_object_and_partial",
+      "errno": 5,
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-lixlyfmj",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.498304208,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "OSError",
+            "message": "[Errno 5] B 原始 I/O",
+            "errno": 5,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.24887500330805779,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "OSError",
+            "message": "[Errno 5] B 原始 I/O",
+            "errno": 5,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.2846670104190707,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "OSError",
+            "message": "[Errno 5] B 原始 I/O",
+            "errno": 5,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.3107499796897173,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (I/O failure)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1217,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.3321249969303608,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 4,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          3,
+          1
+        ],
+        "elapsedMs": 0.35454193130135536
+      }
+    },
+    {
+      "case": "test_journal_failure_preserves_error_object_and_partial",
+      "errno": 13,
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-79q90osh",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.49953875,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "PermissionError",
+            "message": "[Errno 13] B 原始 I/O",
+            "errno": 13,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.22395793348550797,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "PermissionError",
+            "message": "[Errno 13] B 原始 I/O",
+            "errno": 13,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.2587909111753106,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "PermissionError",
+            "message": "[Errno 13] B 原始 I/O",
+            "errno": 13,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.2835829509422183,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (I/O failure)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1217,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.36233291029930115,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 4,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          3,
+          1
+        ],
+        "elapsedMs": 0.3852079389616847
+      }
+    },
+    {
+      "case": "test_journal_failure_preserves_error_object_and_partial",
+      "errno": 1,
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-eu19k50n",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.50090225,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "PermissionError",
+            "message": "[Errno 1] B 原始 I/O",
+            "errno": 1,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.22491603158414364,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "PermissionError",
+            "message": "[Errno 1] B 原始 I/O",
+            "errno": 1,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.2537081018090248,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "PermissionError",
+            "message": "[Errno 1] B 原始 I/O",
+            "errno": 1,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.27804099954664707,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (I/O failure)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1217,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.2988750347867608,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 4,
+        "attempt": 1,
+        "recovered": false,
+        "attemptsDiagnostic": [],
+        "partialCounts": [
+          3,
+          1
+        ],
+        "elapsedMs": 0.3237080527469516
+      }
+    },
+    {
+      "case": "test_rename_to_already_visited_parent",
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-0q1i7gcx",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.502033625,
+        "outcome": "RECOVERED_COMPLETE",
+        "events": [
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] No such file or directory: 'pending'",
+            "errno": 2,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.3335829824209213,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] No such file or directory: 'pending'",
+            "errno": 2,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.36037492100149393,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] No such file or directory: 'pending'",
+            "errno": 2,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.37241599056869745,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          }
+        ],
+        "counts": [
+          10,
+          2
+        ],
+        "entries": 8,
+        "attempt": 2,
+        "recovered": true,
+        "attemptsDiagnostic": [
+          {
+            "attempt": 1,
+            "phase": "before_stat",
+            "relative_parent": [
+              "z"
+            ],
+            "name": "pending",
+            "errno": 2,
+            "elapsed": 0.00033320800866931677,
+            "entries": 4,
+            "partial_bytes": 3,
+            "partial_files": 1
+          }
+        ],
+        "partialCounts": [
+          10,
+          2
+        ],
+        "elapsedMs": 0.5950829945504665
+      }
+    },
+    {
+      "case": "test_second_enoent_other_parent_no_third_try",
+      "record": {
+        "id": 1,
+        "kind": "runtime",
+        "root": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/observer-r2-review-b-vxkc7cdi",
+        "limits": {
+          "max_bytes": 100,
+          "max_file_count": 100
+        },
+        "startedMonotonic": 900711.503378416,
+        "outcome": "FAILED",
+        "events": [
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.16887509264051914,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.19554200116544962,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "z"
+            ],
+            "entryName": "pending",
+            "attempt": 1,
+            "scanPhase": "close",
+            "elapsedMs": 0.2072920324280858,
+            "entries": 4,
+            "partialCounts": [
+              3,
+              1
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "visit",
+            "line": 1128,
+            "relativeDirectory": [
+              "a"
+            ],
+            "entryName": "seed",
+            "attempt": 2,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.2934170188382268,
+            "entries": 6,
+            "partialCounts": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "visit",
+            "line": 1139,
+            "relativeDirectory": [
+              "a"
+            ],
+            "entryName": "seed",
+            "attempt": 2,
+            "scanPhase": "before_stat",
+            "elapsedMs": 0.3172500291839242,
+            "entries": 6,
+            "partialCounts": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "FileNotFoundError",
+            "message": "[Errno 2] B 第二次反例",
+            "errno": 2,
+            "function": "scan_resource_artifacts",
+            "line": 1201,
+            "relativeDirectory": [
+              "a"
+            ],
+            "entryName": "seed",
+            "attempt": 2,
+            "scanPhase": "close",
+            "elapsedMs": 0.3285420825704932,
+            "entries": 6,
+            "partialCounts": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LifecycleError",
+            "message": "NO_GO: resource observation unknown (I/O failure)",
+            "errno": null,
+            "function": "scan_resource_artifacts",
+            "line": 1217,
+            "relativeDirectory": [
+              "a"
+            ],
+            "entryName": "seed",
+            "attempt": 2,
+            "scanPhase": "close",
+            "elapsedMs": 0.33704203087836504,
+            "entries": 6,
+            "partialCounts": [
+              0,
+              0
+            ]
+          }
+        ],
+        "counts": null,
+        "entries": 6,
+        "attempt": 2,
+        "recovered": false,
+        "attemptsDiagnostic": [
+          {
+            "attempt": 1,
+            "phase": "before_stat",
+            "relative_parent": [
+              "z"
+            ],
+            "name": "pending",
+            "errno": 2,
+            "elapsed": 0.00017066707368940115,
+            "entries": 4,
+            "partial_bytes": 3,
+            "partial_files": 1
+          },
+          {
+            "attempt": 2,
+            "phase": "before_stat",
+            "relative_parent": [
+              "a"
+            ],
+            "name": "seed",
+            "errno": 2,
+            "elapsed": 0.0002940000267699361,
+            "entries": 6,
+            "partial_bytes": 0,
+            "partial_files": 0
+          }
+        ],
+        "partialCounts": [
+          0,
+          0
+        ],
+        "elapsedMs": 0.34595909528434277
+      }
+    }
+  ]
+}

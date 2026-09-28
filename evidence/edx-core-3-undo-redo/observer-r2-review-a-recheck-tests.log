@@ -1,0 +1,14 @@
+test_diagnostic_write_failure_does_not_change_scan_return (review_a_recheck_tests.ObserverTests.test_diagnostic_write_failure_does_not_change_scan_return) ... ok
+test_identity_io_cause_survives_sampling_string_boundary (review_a_recheck_tests.ObserverTests.test_identity_io_cause_survives_sampling_string_boundary) ... ok
+test_none_return_is_unknown_and_no_line_opcode (review_a_recheck_tests.ObserverTests.test_none_return_is_unknown_and_no_line_opcode) ... ok
+test_normal_return_and_cleanup_are_separate (review_a_recheck_tests.ObserverTests.test_normal_return_and_cleanup_are_separate) ... ok
+test_previous_trace_restored_on_return_and_exception (review_a_recheck_tests.ObserverTests.test_previous_trace_restored_on_return_and_exception) ... ok
+test_recovery_keeps_enoent_and_original_return (review_a_recheck_tests.ObserverTests.test_recovery_keeps_enoent_and_original_return) ... ok
+test_unwind_and_budget_rejection_are_not_complete (review_a_recheck_tests.ObserverTests.test_unwind_and_budget_rejection_are_not_complete) ... ok
+test_length_and_cycles_preserve_original_exception (__main__.CauseBoundaryTests.test_length_and_cycles_preserve_original_exception) ... ok
+test_sampling_string_identical_with_and_without_observer (__main__.CauseBoundaryTests.test_sampling_string_identical_with_and_without_observer) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.022s
+
+OK

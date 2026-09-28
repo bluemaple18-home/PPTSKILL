@@ -1,0 +1,16 @@
+{
+  "processChecks": [
+    {
+      "pid": 13420,
+      "exit": 1,
+      "output": ""
+    },
+    {
+      "pid": 13426,
+      "exit": 1,
+      "output": ""
+    }
+  ],
+  "ownedRootAbsent": true,
+  "markerAbsent": true
+}

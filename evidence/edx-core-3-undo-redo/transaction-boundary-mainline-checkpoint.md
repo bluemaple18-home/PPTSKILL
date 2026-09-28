@@ -58,3 +58,8 @@ Owner再交回8e60945有界CODE GO（Reviewer fresh50＋23），未發現新阻�
 正式提權在不改環境旗標下取得CODEX_SANDBOX=null，實際完成受管Chrome launch/readiness/簡單頁/Browser.close，取代先前「無合法host入口」的不足判斷。一次host-smoke-01結果NOT_PASS：candidate1145 fresh stat遇ENOENT、recovered=false；Default包含23子目錄。7完整＋1失敗runtime scan，supervisor exit2，但root/marker與兩個已知PID已清。
 
 詳 host-smoke-01/mainline-receipt.md。8e60945有界CODE GO仍有效，當前host採用NO-GO；Core3保持HOST_OBSERVER_BLOCKED、核心2/6。下一步需依新實測缺口REPLAN，不再重試或自動加repair；本輪未merge/push/deploy。
+
+## 2026-09-28 R2 完成單次 host smoke
+
+依 26576e9 與 Owner「做吧」完成 canonical-base R2 候選 4edd0747，兩名 review 與 instrumentation 窄複核 GO。唯一一次 managed host smoke PASS：7 runtime scans、Browser.close/supervisor exit0、cleanup/PID/root/marker 均核對；本輪未自然觸發 recovery，不能聲稱 Host04 根因修復。詳細 `host-smoke-r2/mainline-receipt.md`。
+R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 未整卡 closure，canonical 尚未採用，未跑雙 viewport／PGQ、未開 Core4。產品／ZIP／protected 不變，未 merge/push/deploy。停止自動追加 smoke；下一階段先做 AI Core canonical 採用裁決。
