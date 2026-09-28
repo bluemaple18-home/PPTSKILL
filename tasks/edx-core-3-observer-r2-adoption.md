@@ -1,6 +1,6 @@
 # Core3 observer R2：AI Core canonical 採用裁決
 
-Status：`READY_FOR_DECISION / NOT_STARTED / NOT_ACTIVATED`。
+Status：`DECIDED_GO_FOR_CANONICAL_INTEGRATION / COMPLETE / NOT_ACTIVATED`。
 
 目標：對固定 R2 候選作出可執行的 canonical 採用裁決，交回明確的 GO／HOLD／NO-GO 與整合、回退、驗證邊界。此卡完成代表裁決完成，不代表 canonical 已啟用或 Core3 已驗收。
 
