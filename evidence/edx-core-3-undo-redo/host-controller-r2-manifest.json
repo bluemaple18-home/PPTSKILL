@@ -1,0 +1,33 @@
+{
+  "state": "PREPARED_PENDING_MAINLINE_FINAL",
+  "canonicalRoot": "/Users/matt/ai-core",
+  "integratedHEAD": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "integrationReceiptSHA256": "985f27daf691d67e0793bc365bcce5404971e65adcb67b75c8a521d85172db9c",
+  "canonicalFiles": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "tests/test_tmp_artifact_lifecycle.py": "b517c796fa45124bfffc1ab22a54c7ea904b302ae5a917b0e164877b37cf199a",
+    "docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362",
+    "scripts/tmp_session.py": "96d9beb91ee4f1c39379ffbc34d3e8e07c105707f8adf1a2716689dbfeb6a37f",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567"
+  },
+  "productManifestSHA256": "b65aa37699ab3dd10ad7268201400003700f843d2a9c80c966693a33570a3789",
+  "harnessFiles": {
+    "host-controller-r2.py": "0c2c6ad7fb102cf54fb2cad3dbfba8af71c9373c7349ce5c1fbb2f3735d47ee0",
+    "host-controller-r2-test.py": "dfd249ecdfbd762416ca53cbd0471c437d6e9921f4eb2b2adf1a061e666288ed",
+    "host-smoke-r2-controller.py": "f8462b9e50f08a5f54f9adbbae54508119590ee935216546d9119aebf7e86c8c",
+    "host-smoke-r2-observer.py": "06c362a4775ca57f8cadd1c5dc78fec7e70b3b4a622f14e111c6e59e9b791ff3",
+    "host-smoke-r2-candidate.json": "37735f77306db6afd784a4b2715a8445131b52ff3988da22438713eccb21dae7",
+    "../../tools/edx-wp1-s4-browser-acceptance.mjs": "8f169d710d787f3c117217bdf68d09c6caab8b0ca2300708d92917b706feb7e4",
+    "../../tests/pgq-wp4-s3-content-integrity.test.mjs": "e943ef83a0bb5fa3a1ab42fe411f97674e73a76a5b22a369d5203be6bb9f8d7e",
+    "../../tests/pgq-wp4-s3-sample-approval.test.mjs": "9199b90d6e54913ed0a30a079557bbf925d0e76670ad01f7750a9d1cf339c1b1",
+    "../../tests/pgq-wp4-s4-full-deck-qa.test.mjs": "44e99b3cac9ca200997204aad03c63418e1e5e540d818912bc085d3d2858b450",
+    "../../tests/pgq-wp4-s4-required-visibility.test.mjs": "d1aeb4b4760a8b8aec4f340514ab497e3d0b7651dc8fb5f551d40b86e548f6df"
+  },
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  },
+  "handoff": "Mainline 核對 offline log 與本 manifest 後，僅將 state 定值為 FINAL_FOR_CORE3_ACCEPTANCE；此檔不代表 launch 授權。"
+}

@@ -1,0 +1,26 @@
+test_bind_owned_formal_ttl_and_foreign_event_rejection (__main__.ControllerTests.test_bind_owned_formal_ttl_and_foreign_event_rejection) ... ok
+test_browser_both_viewports_and_errors_required (__main__.ControllerTests.test_browser_both_viewports_and_errors_required) ... ok
+test_descendants_nonconvergence_is_no_go_without_reap (__main__.ControllerTests.test_descendants_nonconvergence_is_no_go_without_reap) ... ok
+test_diagnostic_rejects_incomplete_errors_budget_and_wrong_identity (__main__.ControllerTests.test_diagnostic_rejects_incomplete_errors_budget_and_wrong_identity) ... ok
+test_full_flow_mock_success_and_runtime_failure_cleanup (__main__.ControllerTests.test_full_flow_mock_success_and_runtime_failure_cleanup) ... ok
+test_import_no_launch_and_fixed_contract (__main__.ControllerTests.test_import_no_launch_and_fixed_contract) ... ok
+test_integration_status_head_and_hash_rejected (__main__.ControllerTests.test_integration_status_head_and_hash_rejected) ... ok
+test_live_readonly_identity_no_browser (__main__.ControllerTests.test_live_readonly_identity_no_browser) ... ok
+test_manifest_pending_rejected_without_launch (__main__.ControllerTests.test_manifest_pending_rejected_without_launch) ... ok
+test_missing_integration_receipt_rejected (__main__.ControllerTests.test_missing_integration_receipt_rejected) ... ok
+test_product_environment_owned_tmp_and_symlink_rejection (__main__.ControllerTests.test_product_environment_owned_tmp_and_symlink_rejection) ... ok
+test_product_nonzero_stops_second_task (__main__.ControllerTests.test_product_nonzero_stops_second_task) ... ok
+test_readiness_25_seconds_finalizes_without_product (__main__.ControllerTests.test_readiness_25_seconds_finalizes_without_product) ... ok
+test_recovered_complete_keeps_original_events_causes (__main__.ControllerTests.test_recovered_complete_keeps_original_events_causes) ... ok
+test_regular_read_rejects_symlink_and_oversize (__main__.ControllerTests.test_regular_read_rejects_symlink_and_oversize) ... ok
+test_residual_descendants_reaped_only_after_convergence (__main__.ControllerTests.test_residual_descendants_reaped_only_after_convergence) ... ok
+test_runtime_failure_stops_active_product_preserves_exit (__main__.ControllerTests.test_runtime_failure_stops_active_product_preserves_exit) ... ok
+test_sequential_tasks_and_browser_evidence_gate (__main__.ControllerTests.test_sequential_tasks_and_browser_evidence_gate) ... ok
+test_simultaneous_runtime_failure_keeps_product_exit (__main__.ControllerTests.test_simultaneous_runtime_failure_keeps_product_exit) ... ok
+test_supervisor_cleanup_still_waits_if_close_fails (__main__.ControllerTests.test_supervisor_cleanup_still_waits_if_close_fails) ... ok
+test_timeout_terminates_and_escalates_only_owned_product (__main__.ControllerTests.test_timeout_terminates_and_escalates_only_owned_product) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.191s
+
+OK

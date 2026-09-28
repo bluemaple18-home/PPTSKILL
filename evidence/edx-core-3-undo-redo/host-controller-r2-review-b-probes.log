@@ -1,0 +1,7 @@
+test_signal_at_child_exit_allows_next_product (__main__.FailureProbes.test_signal_at_child_exit_allows_next_product) ... ok
+test_unconverged_or_unanchored_group_reaches_browser_cleanup (__main__.FailureProbes.test_unconverged_or_unanchored_group_reaches_browser_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.010s
+
+OK

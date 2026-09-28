@@ -1,0 +1,81 @@
+{
+  "before": {
+    "host-controller-r2.py": "0c2c6ad7fb102cf54fb2cad3dbfba8af71c9373c7349ce5c1fbb2f3735d47ee0",
+    "host-controller-r2-test.py": "dfd249ecdfbd762416ca53cbd0471c437d6e9921f4eb2b2adf1a061e666288ed",
+    "host-controller-r2-manifest.json": "de1b49422dacb19f94b68e92d3fc3cb09deceb00eebce0298c6a5edb0c1480f9"
+  },
+  "after": {
+    "host-controller-r2.py": "0c2c6ad7fb102cf54fb2cad3dbfba8af71c9373c7349ce5c1fbb2f3735d47ee0",
+    "host-controller-r2-test.py": "dfd249ecdfbd762416ca53cbd0471c437d6e9921f4eb2b2adf1a061e666288ed",
+    "host-controller-r2-manifest.json": "de1b49422dacb19f94b68e92d3fc3cb09deceb00eebce0298c6a5edb0c1480f9"
+  },
+  "unchanged": true,
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "records": [
+    {
+      "case": "test_signal_at_child_exit_allows_next_product",
+      "launchCount": 2,
+      "receipt": {
+        "historyBrowserStarted": true,
+        "historyBrowserGroupConverged": true,
+        "historyBrowserPid": 123,
+        "historyBrowserGroupAnchor": {
+          "pid": 123,
+          "process_group": 123,
+          "session": null,
+          "start_time": null
+        },
+        "historyBrowserTerminated": true,
+        "historyBrowserExit": 0,
+        "browserAcceptance": {
+          "status": "pass"
+        },
+        "pgqStarted": true,
+        "pgqGroupConverged": true,
+        "pgqPid": 123,
+        "pgqGroupAnchor": {
+          "pid": 123,
+          "process_group": 123,
+          "session": null,
+          "start_time": null
+        },
+        "pgqTerminated": true,
+        "pgqExit": 0
+      }
+    },
+    {
+      "case": "test_unconverged_or_unanchored_group_reaches_browser_cleanup",
+      "scenario": "nonconverged",
+      "finishInvocation": {
+        "cleanupRaceRisk": true,
+        "groupConverged": false,
+        "endpoint": "ws://offline",
+        "supervisorIsOriginal": true
+      },
+      "status": "NOT_PASS",
+      "firstCause": {
+        "stage": "products",
+        "category": "CONTROLLER_OR_EVIDENCE",
+        "error": "NO_GO: 產品 parent 退出但 descendants 未收斂"
+      }
+    },
+    {
+      "case": "test_unconverged_or_unanchored_group_reaches_browser_cleanup",
+      "scenario": "anchor-failure",
+      "finishInvocation": {
+        "cleanupRaceRisk": true,
+        "groupConverged": false,
+        "endpoint": "ws://offline",
+        "supervisorIsOriginal": true
+      },
+      "status": "NOT_PASS",
+      "firstCause": {
+        "stage": "products",
+        "category": "CONTROLLER_OR_EVIDENCE",
+        "error": "B anchor unavailable"
+      }
+    }
+  ]
+}

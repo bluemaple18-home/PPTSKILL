@@ -71,3 +71,7 @@ R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 
 ## 2026-09-28 canonical 已整合並驗證
 
 依採用 GO 與 Owner「那做吧」，AI Core canonical 已從 c23e465 整合為 28cad2d3（三檔 exact reviewed bytes），fresh 33/33 scanner PASS，原 untracked/launcher/policy/sensor 保留。見 `observer-r2-integration-verification.json`。Canonical integration 阻擋已解除；固定產品 browser／PGQ 由本 Mainline 接續，未重跑 observer smoke，未改產品或提高 ceilings。
+
+## 2026-09-28 產品驗收啟動前停止：程序歸屬缺口
+
+新 controller offline21/21，但 A/B 各自重現 signal 退出競態及未收斂外部產品 group 與 browser shared tmp cleanup 的兩項 P1。canonical supervisor 自動 runtime/TTL cleanup 也不等待外部 group，不能只加外層 finish gate。詳 `host-controller-r2-mainline-receipt.md`。Mainline 裁決 NO_GO／NOT_ACTIVATED，manifest 保持 pending；本輪 host/browser/PGQ 未啟動，沒有新 scanner host failure。canonical28cad2d3整合保持有效；Core3改為 ACCEPTANCE_EXECUTION_OWNERSHIP_BLOCKED，仍未closure／核心2/6。下一步先裁決共同 tmp 使用者的執行與清理責任；不自動建新runtime、不補scanner、不R3、不Core4。產品75／protected4／ZIP再驗不變。
