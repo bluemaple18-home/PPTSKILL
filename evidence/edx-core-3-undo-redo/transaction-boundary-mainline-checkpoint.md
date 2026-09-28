@@ -63,3 +63,7 @@ Owner再交回8e60945有界CODE GO（Reviewer fresh50＋23），未發現新阻�
 
 依 26576e9 與 Owner「做吧」完成 canonical-base R2 候選 4edd0747，兩名 review 與 instrumentation 窄複核 GO。唯一一次 managed host smoke PASS：7 runtime scans、Browser.close/supervisor exit0、cleanup/PID/root/marker 均核對；本輪未自然觸發 recovery，不能聲稱 Host04 根因修復。詳細 `host-smoke-r2/mainline-receipt.md`。
 R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 未整卡 closure，canonical 尚未採用，未跑雙 viewport／PGQ、未開 Core4。產品／ZIP／protected 不變，未 merge/push/deploy。停止自動追加 smoke；下一階段先做 AI Core canonical 採用裁決。
+
+## 2026-09-28 開立 R2 canonical 採用裁決卡
+
+接續卡：`tasks/edx-core-3-observer-r2-adoption.md`，READY_FOR_DECISION／NOT_STARTED／NOT_ACTIVATED。只評估固定候選 4edd0747 的採用與具體整合／回退／驗證方案；本次開卡未執行 canonical mutation、host 或 PGQ。採用完成及身分驗證仍是 Core3 產品驗收的前置條件。
