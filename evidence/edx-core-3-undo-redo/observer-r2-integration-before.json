@@ -1,0 +1,17 @@
+{
+  "canonicalHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "candidate": "4edd0747a25b13920b3ab1ead99895a99dbe8964",
+  "status": "?? .work/CARD-CODEX-WEB-GPT-RETAINED-CONTEXT-20260924/\n?? .work/CARD-PPTSKILL-PGQ-HOST-ROUTING-AND-OBSERVER-HANDOFF-20260924/\n",
+  "untrackedSHA256": {
+    ".work/CARD-CODEX-WEB-GPT-RETAINED-CONTEXT-20260924/task.md": "a6a0143a32d14b542428621431fae21f130360a06548c0812ffa72629d017f2c",
+    ".work/CARD-PPTSKILL-PGQ-HOST-ROUTING-AND-OBSERVER-HANDOFF-20260924/brief.md": "aabffb71a9f6d4387fc88c4072008fb4ec27faa4461aff93b7357057f9b4abef"
+  },
+  "sourceSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+    "tests/test_tmp_artifact_lifecycle.py": "08cc1eebfe62af0da280021ccfbaeaec12811dc4920d89dc97e1825b4a644323",
+    "docs/tmp-session-lifecycle.md": "c20f1fcd2ed610abfc3230e423a4f233ab1ae2a3d47f1608521989b71e01d316",
+    "scripts/tmp_session.py": "96d9beb91ee4f1c39379ffbc34d3e8e07c105707f8adf1a2716689dbfeb6a37f",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567"
+  }
+}

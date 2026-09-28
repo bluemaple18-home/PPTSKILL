@@ -67,3 +67,7 @@ R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 
 ## 2026-09-28 開立 R2 canonical 採用裁決卡
 
 接續卡：`tasks/edx-core-3-observer-r2-adoption.md`，READY_FOR_DECISION／NOT_STARTED／NOT_ACTIVATED。只評估固定候選 4edd0747 的採用與具體整合／回退／驗證方案；本次開卡未執行 canonical mutation、host 或 PGQ。採用完成及身分驗證仍是 Core3 產品驗收的前置條件。
+
+## 2026-09-28 canonical 已整合並驗證
+
+依採用 GO 與 Owner「那做吧」，AI Core canonical 已從 c23e465 整合為 28cad2d3（三檔 exact reviewed bytes），fresh 33/33 scanner PASS，原 untracked/launcher/policy/sensor 保留。見 `observer-r2-integration-verification.json`。Canonical integration 阻擋已解除；固定產品 browser／PGQ 由本 Mainline 接續，未重跑 observer smoke，未改產品或提高 ceilings。

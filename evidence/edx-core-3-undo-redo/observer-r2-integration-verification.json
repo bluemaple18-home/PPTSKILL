@@ -1,0 +1,30 @@
+{
+  "base": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "candidate": "4edd0747a25b13920b3ab1ead99895a99dbe8964",
+  "integratedHEAD": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "canonicalRoot": "/Users/matt/ai-core",
+  "changedPaths": [
+    "docs/tmp-session-lifecycle.md",
+    "scripts/tmp_artifact_lifecycle.py",
+    "tests/test_tmp_artifact_lifecycle.py"
+  ],
+  "sourceSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "tests/test_tmp_artifact_lifecycle.py": "b517c796fa45124bfffc1ab22a54c7ea904b302ae5a917b0e164877b37cf199a",
+    "docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362"
+  },
+  "unchangedRuntimeSHA256": {
+    "scripts/tmp_session.py": "96d9beb91ee4f1c39379ffbc34d3e8e07c105707f8adf1a2716689dbfeb6a37f",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567"
+  },
+  "untrackedPreserved": true,
+  "loadedScannerPath": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "productIdentityMatch": true,
+  "status": "CANONICAL_INTEGRATED_VERIFIED",
+  "regression": {
+    "tests": 33,
+    "exit": 0,
+    "log": "observer-r2-canonical-regression.log"
+  }
+}

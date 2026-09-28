@@ -1,6 +1,6 @@
 # Core3 observer R2：AI Core canonical 採用裁決
 
-Status：`DECIDED_GO_FOR_CANONICAL_INTEGRATION / COMPLETE / NOT_ACTIVATED`。
+Status：`CANONICAL_INTEGRATED_VERIFIED / DECISION_COMPLETE / CORE3_ACCEPTANCE_PENDING`。
 
 目標：對固定 R2 候選作出可執行的 canonical 採用裁決，交回明確的 GO／HOLD／NO-GO 與整合、回退、驗證邊界。此卡完成代表裁決完成，不代表 canonical 已啟用或 Core3 已驗收。
 
@@ -48,3 +48,7 @@ Owner 於 2026-09-28 指示「開卡吧」；本輪只建立任務卡。Mainline
 - `evidence/edx-core-3-undo-redo/observer-r2-review-b.md`、`observer-r2-review-b-recheck.md`
 
 回交：本卡裁決完成後，下一個 frontier 是已獲授權的 canonical 整合；整合及身分驗證完成，才解鎖 Core3 既有雙 viewport／affected PGQ。未啟用前維持 `CANONICAL_ADOPTION_PENDING / CORE3_ACCEPTANCE_PENDING`。
+
+## 2026-09-28 整合實測
+
+Owner 明示「那做吧」後，Mainline 依裁決 cherry-pick 固定候選；canonical integration commit `28cad2d3beaaf32de2f62d0c08396aaba789ea01`。三檔 SHA 全吻合、launcher/policy/sensor 不變、既有 untracked 保留、實際載入 canonical scanner 路徑已核對，fresh 33/33 scanner regression PASS。證據：`evidence/edx-core-3-undo-redo/observer-r2-integration-verification.json`。原 decision receipt 保留裁決當時 NOT_INTEGRATED 事實；本節為最新狀態。Core3 正式驗收由 `tasks/edx-core-3-observer-r2-integration.md` 接續。
