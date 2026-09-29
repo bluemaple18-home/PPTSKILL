@@ -1,0 +1,18 @@
+test_child_group_mismatch_delegates (__main__.ClientTests.test_child_group_mismatch_delegates) ... ok
+test_invalid_readiness_is_bounded (__main__.ClientTests.test_invalid_readiness_is_bounded) ... ok
+test_managed_context_and_wrong_environment (__main__.ClientTests.test_managed_context_and_wrong_environment) ... ok
+test_nonzero_preserved_prevents_pgq_closes_browser (__main__.ClientTests.test_nonzero_preserved_prevents_pgq_closes_browser) ... ok
+test_readiness_failure_never_spawns_products (__main__.ClientTests.test_readiness_failure_never_spawns_products) ... ok
+test_success_mapping_serial_limits_and_close (__main__.ClientTests.test_success_mapping_serial_limits_and_close) ... ok
+test_timeout_and_signals_delegate_without_continuation_or_kill (__main__.ClientTests.test_timeout_and_signals_delegate_without_continuation_or_kill) ... ok
+test_actual_identity_with_temporary_final_manifest (__main__.OuterTests.test_actual_identity_with_temporary_final_manifest) ... ok
+test_diagnostic_recovery_preserved_and_incomplete_rejected (__main__.OuterTests.test_diagnostic_recovery_preserved_and_incomplete_rejected) ... ok
+test_no_new_authority_and_single_outer_launch (__main__.OuterTests.test_no_new_authority_and_single_outer_launch) ... ok
+test_observer_cleanup_identity_and_exit_fail_cannot_pass (__main__.OuterTests.test_observer_cleanup_identity_and_exit_fail_cannot_pass) ... ok
+test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic (__main__.OuterTests.test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic) ... ok
+test_pending_and_integration_schema_mismatch_rejected (__main__.OuterTests.test_pending_and_integration_schema_mismatch_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.219s
+
+OK

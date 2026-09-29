@@ -1,0 +1,164 @@
+{
+  "before": {
+    "host-client-owned-group.py": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+    "host-controller-owned-group.py": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea",
+    "host-controller-owned-group-test.py": "a6b2080f96705da049193bf2ef0130a2c0a7b0602c4f190851df34e1d23bda39",
+    "host-controller-owned-group-manifest.json": "43d6d616df3b2add2534ee1e39a93a85f7392471e74b0da47ba461c495fab895"
+  },
+  "after": {
+    "host-client-owned-group.py": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+    "host-controller-owned-group.py": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea",
+    "host-controller-owned-group-test.py": "a6b2080f96705da049193bf2ef0130a2c0a7b0602c4f190851df34e1d23bda39",
+    "host-controller-owned-group-manifest.json": "43d6d616df3b2add2534ee1e39a93a85f7392471e74b0da47ba461c495fab895"
+  },
+  "unchanged": true,
+  "tests": 16,
+  "failures": 0,
+  "errors": 0,
+  "records": [
+    {
+      "case": "test_exact_cleanup_identity_and_remaining_root_rejected",
+      "scenario": "valid",
+      "receipt": {
+        "ownedRoot": "/offline/aic-b-owned",
+        "session": {
+          "root": "/offline/aic-b-owned",
+          "mode": "browser",
+          "pid": 500
+        },
+        "processes": [
+          {
+            "role": "browser",
+            "event": "started",
+            "pid": 501,
+            "pgid": 500
+          },
+          {
+            "role": "client",
+            "event": "started",
+            "pid": 502,
+            "pgid": 500
+          }
+        ],
+        "ownedRootAbsent": true,
+        "isolationMarkerAbsent": true,
+        "pidObservation": {
+          "matches": []
+        },
+        "pidsAbsent": true
+      }
+    },
+    {
+      "case": "test_exact_cleanup_identity_and_remaining_root_rejected",
+      "scenario": "foreign",
+      "receipt": {}
+    },
+    {
+      "case": "test_exact_cleanup_identity_and_remaining_root_rejected",
+      "scenario": "remaining",
+      "receipt": {
+        "ownedRoot": "/offline/aic-b-owned",
+        "session": {
+          "root": "/offline/aic-b-owned",
+          "mode": "browser",
+          "pid": 500
+        },
+        "processes": [
+          {
+            "role": "browser",
+            "event": "started",
+            "pid": 501,
+            "pgid": 500
+          },
+          {
+            "role": "client",
+            "event": "started",
+            "pid": 502,
+            "pgid": 500
+          }
+        ],
+        "ownedRootAbsent": false,
+        "isolationMarkerAbsent": false,
+        "pidObservation": {
+          "matches": []
+        },
+        "pidsAbsent": true
+      }
+    },
+    {
+      "case": "test_post_wait_save_failure_replaces_product_exit",
+      "exit": 2,
+      "receipt": {
+        "status": "NOT_PASS",
+        "exit": 2,
+        "errors": [
+          {
+            "stage": "historyBrowser",
+            "type": "OSError",
+            "error": "[Errno 5] B post-wait receipt failure"
+          }
+        ],
+        "readinessDeadlineSeconds": 25,
+        "ownedRoot": "/owned",
+        "pgid": 500,
+        "pid": 15071,
+        "temporaryEnvironment": {
+          "TMPDIR": "/owned/tmp",
+          "TMP": "/owned/tmp",
+          "TEMP": "/owned/tmp"
+        },
+        "readinessComplete": true,
+        "historyBrowserStarted": true,
+        "historyBrowserPid": 600,
+        "historyBrowserExit": 7,
+        "firstCause": {
+          "stage": "historyBrowser",
+          "type": "OSError",
+          "error": "[Errno 5] B post-wait receipt failure"
+        },
+        "browserClosePid": 601,
+        "browserCloseExit": 0
+      }
+    },
+    {
+      "case": "test_product_nonzero_survives_close_failure",
+      "exit": 7,
+      "receipt": {
+        "status": "NOT_PASS",
+        "exit": 7,
+        "errors": [
+          {
+            "stage": "historyBrowser",
+            "type": "RuntimeError",
+            "error": "historyBrowser 非零退出；停止後續"
+          },
+          {
+            "stage": "browser-close",
+            "type": "RuntimeError",
+            "error": "Browser.close 非零"
+          }
+        ],
+        "readinessDeadlineSeconds": 25,
+        "ownedRoot": "/owned",
+        "pgid": 500,
+        "pid": 15071,
+        "temporaryEnvironment": {
+          "TMPDIR": "/owned/tmp",
+          "TMP": "/owned/tmp",
+          "TEMP": "/owned/tmp"
+        },
+        "readinessComplete": true,
+        "historyBrowserStarted": true,
+        "historyBrowserPid": 600,
+        "historyBrowserExit": 7,
+        "firstCause": {
+          "stage": "historyBrowser",
+          "type": "RuntimeError",
+          "error": "historyBrowser 非零退出；停止後續"
+        },
+        "browserClosePid": 601,
+        "browserCloseExit": 9
+      }
+    }
+  ]
+}

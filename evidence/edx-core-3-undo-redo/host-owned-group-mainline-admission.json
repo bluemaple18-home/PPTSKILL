@@ -1,0 +1,23 @@
+{
+  "decision": "GO_FOR_SINGLE_MANAGED_PRODUCT_ACCEPTANCE",
+  "canonicalHEAD": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1",
+  "reviewA": "host-owned-group-review-a.md",
+  "reviewB": "host-owned-group-review-b.md",
+  "reviewedRuntimeUnchanged": true,
+  "runtimeSHA256": {
+    "host-client-owned-group.py": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+    "host-controller-owned-group.py": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea"
+  },
+  "finalManifestSHA256": "bc09789aef80baae04c6169799210de9b1000ebfb285d67b1bf3dc4db6b0db2c",
+  "mainlineOffline": {
+    "tests": 13,
+    "skip": 0,
+    "exit": 0,
+    "log": "host-owned-group-final-offline.log",
+    "sha256": "dda2bf834615b7c5cb118758aa5891dada97a2fc7220e9aedeaa99fd97c4dcc1"
+  },
+  "testOnlyAdjustment": "pending rejection 測試改用明確 pending fixture，避免正式 FINAL manifest 導致測試自身失效；只改測試三行、更新 manifest test hash，client/controller reviewed bytes 未改。",
+  "residual": "A/B 同一非阻塞 P2：exit 7 後單次 receipt EIO 使 client 回2；原7留存、PGQ不啟動、NOT_PASS。本輪保留，不為統一scalar code開新repair。",
+  "scope": "原64MiB/10000/3600；唯一產品雙viewport/四PGQ；scanner observation failure停止、不R3；產品failure不自動repair。",
+  "host": "NOT_YET_STARTED"
+}

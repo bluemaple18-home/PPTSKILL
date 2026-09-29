@@ -83,3 +83,8 @@ REPLAN為既有tmp_session browser可選client，同一run_child owned group，�
 ## 2026-09-29 ownership canonical 整合完成
 
 依Owner本輪獨立GO及明確限縮授權，canonical已由28cad2d3整合固定99649248最終三檔為單一commit **71b774d3**。原commit hooks通過；canonical fresh入口／routing **26/26、0skip、PASS**，10組fake-process roots消失、fresh28已知PID無匹配；scanner／policy／sensor及原untracked hashes保留。產品75／protected4／ZIP MATCH。詳 `browser-command-ownership-integration-receipt.md`。本輪沒有PPT client mapping、真Chrome／雙viewport／PGQ、push/deploy/production；Core3仍PENDING／核心2/6，不提前closure。下一階段client接線與產品驗收仍由本Mainline承接。
+
+
+## 2026-09-29 推送後正式產品驗收與Core3關卡
+
+已先推送AI Core main71b774d3、PPT Core3 b20ee40並核對遠端。接續同群組client薄接線，兩審GO、FINAL後13/13；唯一正式host雙viewport各11 PASS、四PGQ16/16、Browser.close／client／supervisor0、root／marker／fresh group消失。706 scans、705runtime／1cleanup；scan533 before_stat ENOENT→attempt2，entries945→1891，RECOVERY_OBSERVED。A/B各自核對原始host artifacts後GO；固定產品75／protected4／ZIP/core hashes一致，原6 untracked保留。完整 `mainline-closure.md` 與 `host-acceptance-owned-group/mainline-receipt.md`。Core3正式關卡、核心3/6；新證據local checkpoint，未開Core4、未deploy／production。Mapping既有非阻塞P2及Crop F2/P2保留，無新增repair。

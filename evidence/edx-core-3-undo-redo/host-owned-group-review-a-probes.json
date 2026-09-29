@@ -1,0 +1,45 @@
+{
+  "sha256": {
+    "host-client-owned-group.py": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+    "host-controller-owned-group.py": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea",
+    "host-controller-owned-group-test.py": "a6b2080f96705da049193bf2ef0130a2c0a7b0602c4f190851df34e1d23bda39",
+    "host-controller-owned-group-manifest.json": "43d6d616df3b2add2534ee1e39a93a85f7392471e74b0da47ba461c495fab895"
+  },
+  "matchesWorkerHashes": true,
+  "tests": {
+    "run": 13,
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0
+  },
+  "probes": {
+    "productEvidenceReject": {
+      "exit": 2,
+      "launches": 2,
+      "pgqStarted": false,
+      "browserCloseExit": 0
+    },
+    "exitEvidenceFailure": {
+      "exit": 2,
+      "originalProductExit": 7,
+      "browserCloseExit": 0,
+      "pgqStarted": false,
+      "firstCause": {
+        "stage": "historyBrowser",
+        "type": "OSError",
+        "error": "[Errno 28] 單次 product exit 留證失敗"
+      }
+    },
+    "browserCloseFailureAfter0": {
+      "exit": 2,
+      "originalProductExit": 0,
+      "browserCloseExit": 9
+    },
+    "browserCloseFailureAfter7": {
+      "exit": 7,
+      "originalProductExit": 7,
+      "browserCloseExit": 9
+    }
+  },
+  "deliveryUnchanged": true
+}

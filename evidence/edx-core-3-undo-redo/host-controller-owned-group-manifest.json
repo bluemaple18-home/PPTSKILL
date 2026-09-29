@@ -1,0 +1,30 @@
+{
+  "state": "FINAL_FOR_CORE3_ACCEPTANCE",
+  "canonicalRoot": "/Users/matt/ai-core",
+  "integratedHEAD": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1",
+  "canonicalFiles": {
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176",
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892"
+  },
+  "integrationReceiptSHA256": "c7dda20417cc756bb112afa1794a20ff18cd5d0c76a9465edf903fb1841855ac",
+  "productManifestSHA256": "b65aa37699ab3dd10ad7268201400003700f843d2a9c80c966693a33570a3789",
+  "clientAuditSHA256": "773e17451d1af09025c0d9caacffa31c39a893ba14fcc5d80ccaa4afae3328c4",
+  "harnessFiles": {
+    "host-client-owned-group.py": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+    "host-controller-owned-group.py": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea",
+    "host-controller-owned-group-test.py": "bff46f0ec43b2880f0daab192e806ae53a1e6554c024088d5209b11c620802fa",
+    "host-controller-r2.py": "0c2c6ad7fb102cf54fb2cad3dbfba8af71c9373c7349ce5c1fbb2f3735d47ee0",
+    "host-smoke-r2-controller.py": "f8462b9e50f08a5f54f9adbbae54508119590ee935216546d9119aebf7e86c8c",
+    "host-smoke-r2-observer.py": "06c362a4775ca57f8cadd1c5dc78fec7e70b3b4a622f14e111c6e59e9b791ff3",
+    "host-smoke-r2-candidate.json": "37735f77306db6afd784a4b2715a8445131b52ff3988da22438713eccb21dae7"
+  },
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  }
+}

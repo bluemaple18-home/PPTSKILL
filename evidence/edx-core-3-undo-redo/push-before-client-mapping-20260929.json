@@ -1,0 +1,24 @@
+{
+  "status": "PUSHED_REMOTE_SHA_VERIFIED",
+  "recordedAt": "2026-09-29T06:04:39.339430+00:00",
+  "authorization": "Owner：先推上去再繼續吧",
+  "repositories": [
+    {
+      "repository": "/Users/matt/ai-core",
+      "branch": "main",
+      "remote": "https://github.com/bluemaple18-home/aicore.git",
+      "remoteSHA": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1"
+    },
+    {
+      "repository": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+      "branch": "codex/edx-core-3-undo-redo",
+      "remote": "https://github.com/bluemaple18-home/PPTSKILL.git",
+      "remoteSHA": "b20ee4036f1f56acd31e0e7be3fb27d748e83cc3"
+    }
+  ],
+  "verification": "本 session 已完成 fast-forward 檢查、git push --dry-run、實際 push 及 ls-remote SHA 核對。PPT 單分支 fetch mapping 未建立 Core3 remote-tracking ref，另以 ls-remote 再次核對，不以缺少 tracking ref 判為推送失敗。",
+  "forcePush": false,
+  "deploy": false,
+  "core3": "PENDING",
+  "next": "同群組 PPT client mapping 與固定產品正式驗收"
+}

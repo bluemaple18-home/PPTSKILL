@@ -1,0 +1,63 @@
+{
+  "status": "FROZEN_PENDING_TWO_MAINLINE_REVIEWS",
+  "files": {
+    "host-client-owned-group.py": {
+      "sha256": "52aed789555807495ea62a1179a4e5b143c631331bb65f2358f8a7e1a30a6430",
+      "lines": 143,
+      "change": "ADDED"
+    },
+    "host-controller-owned-group.py": {
+      "sha256": "5a73298ff0617994788f9c159582ab54d07d3e55fb7441a79ae2301a29e4e1ea",
+      "lines": 171,
+      "change": "ADDED"
+    },
+    "host-controller-owned-group-test.py": {
+      "sha256": "a6b2080f96705da049193bf2ef0130a2c0a7b0602c4f190851df34e1d23bda39",
+      "lines": 209,
+      "change": "ADDED"
+    },
+    "host-controller-owned-group-manifest.json": {
+      "sha256": "43d6d616df3b2add2534ee1e39a93a85f7392471e74b0da47ba461c495fab895",
+      "lines": 30,
+      "change": "ADDED"
+    }
+  },
+  "tests": {
+    "result": "13/13 PASS",
+    "command": "/Users/matt/ai-core/.venv/bin/python -B evidence/edx-core-3-undo-redo/host-controller-owned-group-test.py",
+    "log": "host-controller-owned-group-offline.log",
+    "sha256": "fcfc823d76eac405ec28fb94d912459c5149f908e5ff81c79d59350c2f150a23"
+  },
+  "whitespaceCheck": "PASS（新檔逐一git diff --no-index --check）",
+  "integratedHEAD": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1",
+  "integrationReceiptSHA256": "c7dda20417cc756bb112afa1794a20ff18cd5d0c76a9465edf903fb1841855ac",
+  "manifestState": "PREPARED_PENDING_MAINLINE_FINAL",
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  },
+  "readinessSeconds": 25,
+  "productTimeoutSeconds": [
+    900,
+    1800
+  ],
+  "diffScope": "新增四個候選檔與離線log／本worker receipt；未修改既有檔。主線控制卡及push receipt不屬本worker寫入。",
+  "reuse": "舊controller僅tasks/verify_identity/check_browser_receipt/check_diagnostic；helper僅read/capacity/load等既有接點，無run_task/finish_supervisor/舊signal呼叫。",
+  "verification": "實際唯讀核對core committed/current hashes、75source/4protected/ZIP、11檔callchain audit；其餘產品/程序/收尾均mock。",
+  "authority": "canonical唯一outer group；client普通children；outer只launch一次並wait，不發close/kill/cleanup。",
+  "realHost": "NOT_RUN",
+  "realChrome": "NOT_RUN",
+  "productAcceptance": "NOT_RUN",
+  "commit": "NONE",
+  "outputExists": {
+    "host-acceptance-owned-group": false,
+    "host-acceptance-r2": false
+  },
+  "risks": [
+    "mapping尚待兩名獨立review與正式host驗收；離線PASS不是產品PASS。",
+    "固定可信任callchain不涵蓋主動detached/setsid的任意client。",
+    "SIGTERM或outer強制停損可能只留client最後進度；不得把缺失exit/cleanup/diagnostic判作成功。",
+    "outer等待3675秒僅為證據等待上限，runtime TTL仍3600；未知狀態不對supervisor或root做介入。"
+  ]
+}

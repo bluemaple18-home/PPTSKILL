@@ -1,0 +1,21 @@
+test_child_group_mismatch_delegates (b_owned_tests.ClientTests.test_child_group_mismatch_delegates) ... ok
+test_invalid_readiness_is_bounded (b_owned_tests.ClientTests.test_invalid_readiness_is_bounded) ... ok
+test_managed_context_and_wrong_environment (b_owned_tests.ClientTests.test_managed_context_and_wrong_environment) ... ok
+test_nonzero_preserved_prevents_pgq_closes_browser (b_owned_tests.ClientTests.test_nonzero_preserved_prevents_pgq_closes_browser) ... ok
+test_readiness_failure_never_spawns_products (b_owned_tests.ClientTests.test_readiness_failure_never_spawns_products) ... ok
+test_success_mapping_serial_limits_and_close (b_owned_tests.ClientTests.test_success_mapping_serial_limits_and_close) ... ok
+test_timeout_and_signals_delegate_without_continuation_or_kill (b_owned_tests.ClientTests.test_timeout_and_signals_delegate_without_continuation_or_kill) ... ok
+test_actual_identity_with_temporary_final_manifest (b_owned_tests.OuterTests.test_actual_identity_with_temporary_final_manifest) ... ok
+test_diagnostic_recovery_preserved_and_incomplete_rejected (b_owned_tests.OuterTests.test_diagnostic_recovery_preserved_and_incomplete_rejected) ... ok
+test_no_new_authority_and_single_outer_launch (b_owned_tests.OuterTests.test_no_new_authority_and_single_outer_launch) ... ok
+test_observer_cleanup_identity_and_exit_fail_cannot_pass (b_owned_tests.OuterTests.test_observer_cleanup_identity_and_exit_fail_cannot_pass) ... ok
+test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic (b_owned_tests.OuterTests.test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic) ... ok
+test_pending_and_integration_schema_mismatch_rejected (b_owned_tests.OuterTests.test_pending_and_integration_schema_mismatch_rejected) ... ok
+test_exact_cleanup_identity_and_remaining_root_rejected (__main__.NarrowProbes.test_exact_cleanup_identity_and_remaining_root_rejected) ... ok
+test_post_wait_save_failure_replaces_product_exit (__main__.NarrowProbes.test_post_wait_save_failure_replaces_product_exit) ... ok
+test_product_nonzero_survives_close_failure (__main__.NarrowProbes.test_product_nonzero_survives_close_failure) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.182s
+
+OK

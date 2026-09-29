@@ -1,0 +1,16 @@
+
+DevTools listening on ws://127.0.0.1:49934/devtools/browser/c4f2bc33-0e40-4609-b2c8-05064624ef97
+Trying to load the allocator multiple times. This is *not* supported.
+[15581:26834194:0929/141714.791281:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15581:26834194:0929/141714.791927:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15581:26834194:0929/141714.792020:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15581:26834194:0929/141714.792106:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15581:26834194:0929/141714.792211:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15581:26834194:0929/141714.792290:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[15546:26834133:0929/141717.505072:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[15546:26834133:0929/141738.446709:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[15546:26834133:0929/141833.299447:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED
+Trying to load the allocator multiple times. This is *not* supported.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790662813.878865 26839561 environment.cc:526] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU
+I0000 00:00:1790662813.889350 26839570 environment.cc:526] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU

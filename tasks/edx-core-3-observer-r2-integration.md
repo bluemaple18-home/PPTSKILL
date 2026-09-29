@@ -1,5 +1,5 @@
 # R2 canonical 整合與 Core3 正式驗收
-Status：OWNERSHIP_CANONICAL_INTEGRATED_VERIFIED / PPT_CLIENT_MAPPING_PENDING / CORE3_ACCEPTANCE_PENDING。
+Status：CORE3_CLOSED / CANONICAL_INTEGRATED / HOST_ACCEPTANCE_PASS / RECOVERY_OBSERVED。
 目標／授權：Owner 在確認本 task 為 Mainline 後明示「那做吧」（2026-09-28），執行已裁決 GO 的 canonical 整合、身分與 scanner 回歸驗證，再接續既有 Core3 雙 viewport／四支串行 PGQ；不 push/deploy、不開 Core4。
 整合：依 observer-r2-adoption-decision.md，canonical 須精確 c23e465、無 tracked drift；只匯入 bundle 並 cherry-pick 4edd0747，三檔 hash 必須相同。保存 canonical/untracked 前後身分；失敗僅 revert 本 integration commit，不 destructive reset/clean。
 契約：固定 R2 whole-scan bounded re-observation 不改。R2 smoke 已消耗，本輪直接做 adoption 後產品驗收，不另加 smoke。若 observation contract 再失敗，停止 scanner patch 線、不 R3；產品 assertion 失敗不自動新增產品 Repair。
@@ -32,3 +32,17 @@ Canonical仍28cad2d3未套用ownership候選；Owner「繼續」依其AGENTS不�
 Owner 完成獨立查核並明示 GO_FOR_CANONICAL_INTEGRATION，授權限 local canonical integration commit 與整合後測試。Mainline 僅將固定99649248最終三檔由已驗bundle整合到精確28cad2d3，形成單一commit；先核對無tracked drift、保存untracked與未變更檔hash，再跑入口／routing完整回歸。範圍不含PPT client mapping、真Chrome／PGQ、push／deploy／production。成功後留下receipt即停在產品驗收PENDING，不沿用前段較廣scope自動啟動。
 
 完成：canonical單一integration commit **71b774d31b8e7aa9e05786c8dc431c7528dabdc1**，三檔exact candidate bytes；原commit hooks通過，整合後正式入口／routing **26/26、0skip、PASS**，fresh28 PID無匹配／10 roots消失。scanner／policy／sensor與untracked hash保留，PPT75／protected4／ZIP不變。詳 `evidence/edx-core-3-undo-redo/browser-command-ownership-integration-receipt.md`。本輪限縮scope已完成；client mapping與產品驗收仍PENDING，未啟動。
+
+
+## 2026-09-29 Owner「先推上去再繼續吧」
+
+授權與狀態：先推送已完成整合及收據，再接續唯一既有範圍：PPT client 同群組薄接線、固定產品雙 viewport／四支串行 PGQ。AI Core main 已 fast-forward 推至 71b774d31b8e7aa9e05786c8dc431c7528dabdc1；PPTSKILL codex/edx-core-3-undo-redo 已推至 b20ee4036f1f56acd31e0e7be3fb27d748e83cc3，兩者遠端 SHA 一致。未 deploy／production。
+
+本輪驗收契約：只新增 evidence 內 owned-group client/controller、manifest 及離線測試；不改 canonical、產品、ZIP、protected 或歷史 NO_GO controller。client 由 canonical browser -- 命令啟動，繼承唯一 outer PGID，將 TMP_SESSION_DEVTOOLS_ACTIVE_PORT 映射至 PPTSKILL_DEVTOOLS_ACTIVE_PORT，依序執行固定 browser 與 PGQ；不建新 session、signal controller、cleanup authority。正常完成或失敗時由 client Browser.close；timeout/訊號/未知收斂由原 lifecycle 負責停損及保留或清理。原64MiB／10000 files／3600秒不放寬。
+
+Worker 僅寫新 host-*-owned-group 檔案與測試，不 launch／commit；Mainline 寫控制收據，凍結後兩名獨立 reviewer 驗證 activation／teardown 失敗分支。全部 GO 後只啟動一次正式產品驗收，不另跑 smoke。保存原 child exit、observer 首因、root/marker/PID 收斂及前後固定 hash。若 scanner observation contract 失敗，停止 scanner patch 線、不 R3；產品 assertion 失敗不自動啟動產品 Repair。Core3 未通過前保持 PENDING／2 of 6。
+
+
+## 2026-09-29 本輪完成
+
+client/controller兩審GO，保留同一非阻塞I/O退出碼P2；FINAL後Mainline13/13。唯一正式產品host：雙viewport各11項PASS、四PGQ16/16、全程序與root/marker cleanup PASS。706 scans中scan533真before_stat ENOENT經唯一一次whole-reobservation完成，entries945→1891；本輪RECOVERY_OBSERVED，舊smoke未觀察的歷史不改寫。A/B再獨立唯讀核對raw artifact，均GO，無Core3 closure blocker。Mainline關Core3、核心3/6，產品75／protected4／ZIP與canonical固定bytes不變；未開Core4。完整 `evidence/edx-core-3-undo-redo/mainline-closure.md`。先前推送已完成；本輪新增接線／驗收證據為後續local checkpoint，未deploy／production。

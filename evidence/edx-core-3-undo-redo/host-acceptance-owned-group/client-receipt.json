@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "exit": 0,
+  "errors": [],
+  "readinessDeadlineSeconds": 25,
+  "ownedRoot": "/private/tmp/aic-b-3cd6b953fafb49d3aa2e39b0ce5eff28",
+  "pgid": 15537,
+  "pid": 15554,
+  "temporaryEnvironment": {
+    "TMPDIR": "/private/tmp/aic-b-3cd6b953fafb49d3aa2e39b0ce5eff28/tmp",
+    "TMP": "/private/tmp/aic-b-3cd6b953fafb49d3aa2e39b0ce5eff28/tmp",
+    "TEMP": "/private/tmp/aic-b-3cd6b953fafb49d3aa2e39b0ce5eff28/tmp"
+  },
+  "readinessComplete": true,
+  "historyBrowserStarted": true,
+  "historyBrowserPid": 15585,
+  "historyBrowserExit": 0,
+  "pgqStarted": true,
+  "pgqPid": 15677,
+  "pgqExit": 0,
+  "browserClosePid": 16879,
+  "browserCloseExit": 0
+}

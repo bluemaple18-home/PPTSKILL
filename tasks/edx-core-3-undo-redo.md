@@ -1,12 +1,12 @@
 # 核心完整版 3/6：operation-level Undo／Redo
 
-Status: CODE_GO / PPT_CLIENT_MAPPING_PENDING / PRODUCT_ACCEPTANCE_PENDING / WHOLE_CARD_NOT_CLOSED
+Status: CORE3_CLOSED / HOST_ACCEPTANCE_PASS / RECOVERY_OBSERVED
 Branch: `codex/edx-core-3-undo-redo`
 Base: `115027040a169c505df0e7f31a0a8845280a4ed7`（Core2 closure）
 Parent: `tasks/edx-core-six-card-closure-plan.md` 第3項（WP3-S1）
 Trace: `CORE3-SC-01` 可撤銷提交、`CORE3-SC-02` 重做與分岔、`CORE3-SC-03` DOM／匯出一致、`CORE3-SC-04` 忙碌與原生鍵盤邊界；均對應父卡第3項，不新增第七張產品卡。
 
-最新接續：`9ce7396`／code `f3d8a11` 兩名Reviewer CODE GO；既有 non-browser 1061/1061、ZIP lifecycle與hash MATCH。AI Core R2 scanner與同群組ownership接點已整合；canonical **71b774d3**，入口／routing fresh **26/26、0skip、PASS**，scanner／policy／sensor不變。尚未接PPT client mapping或啟動真Chrome／PGQ；本輪Owner授權的local整合與測試已完成，不自動擴產品驗收。整卡不關閉，核心仍2/6。詳 `evidence/edx-core-3-undo-redo/browser-command-ownership-integration-receipt.md`；完整歷史見 `transaction-boundary-mainline-checkpoint.md`。
+最新接續：2026-09-29 Core3 關卡GO，核心 **3/6完成、3張剩餘**。Owner授權後先推AI Core main `71b774d3`與PPT Core3 `b20ee40`，再完成同群組client mapping與唯一正式host：雙viewport各11項PASS、PGQ16/16、cleanup全PASS。706 scans含scan533真ENOENT bounded recovery，**RECOVERY_OBSERVED**；A/B獨立host證據核對均GO。產品75／protected4／ZIP與原固定code／packaged SHA不變；原1061及round08 CODE GO按hash引用。詳 `evidence/edx-core-3-undo-redo/mainline-closure.md`。Mapping留證I/O退出碼P2與原Crop F2/P2保留；Core4尚未開工。
 
 ## 目標、依賴與實測缺口
 
