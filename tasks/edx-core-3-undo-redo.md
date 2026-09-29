@@ -1,12 +1,12 @@
 # 核心完整版 3/6：operation-level Undo／Redo
 
-Status: CORE3_CLOSED / HOST_ACCEPTANCE_PASS / RECOVERY_OBSERVED
+Status: FUNCTIONAL_PASS / VISUAL_NO_GO / CORE3_REOPENED
 Branch: `codex/edx-core-3-undo-redo`
 Base: `115027040a169c505df0e7f31a0a8845280a4ed7`（Core2 closure）
 Parent: `tasks/edx-core-six-card-closure-plan.md` 第3項（WP3-S1）
 Trace: `CORE3-SC-01` 可撤銷提交、`CORE3-SC-02` 重做與分岔、`CORE3-SC-03` DOM／匯出一致、`CORE3-SC-04` 忙碌與原生鍵盤邊界；均對應父卡第3項，不新增第七張產品卡。
 
-最新接續：2026-09-29 Core3 關卡GO，核心 **3/6完成、3張剩餘**。Owner授權後先推AI Core main `71b774d3`與PPT Core3 `b20ee40`，再完成同群組client mapping與唯一正式host：雙viewport各11項PASS、PGQ16/16、cleanup全PASS。706 scans含scan533真ENOENT bounded recovery，**RECOVERY_OBSERVED**；A/B獨立host證據核對均GO。產品75／protected4／ZIP與原固定code／packaged SHA不變；原1061及round08 CODE GO按hash引用。詳 `evidence/edx-core-3-undo-redo/mainline-closure.md`。Mapping留證I/O退出碼P2與原Crop F2/P2保留；Core4尚未開工。
+最新接續：Owner指出雙viewport正式截圖主標題BI／中文碰撞P1，已撤回a3c93c8的clean closure；目前 **FUNCTIONAL_PASS / VISUAL_NO_GO，核心2/6**。原Undo/Redo、PGQ16/16、真ENOENT recovery與cleanup證據保留；AI Core71b774d3及已推b20ee40保留，a3c93c8不得推送。正在依 `tasks/edx-core-3-visual-title-repair.md` 有界修復標題tracking／font／混排間距並加visual gate；須以新產品／ZIP身分重驗雙viewport和affectedPGQ。既有receipt I/O P2、Crop F2/P2保留，不開Core4。
 
 ## 目標、依賴與實測缺口
 
@@ -36,3 +36,7 @@ Worker 可改 `runtime/deck-editor.js` 及必要的單一純 history helper、�
 ## Mainline 對 A→B 停點的裁決
 
 同一 Worker 已完成 A 段 Node history 初版，focused 3/3、受影響 scoped 43/43；尚未提交。B 段前以故障注入量到既有 portable `move`（slide reorder）在 `insertBefore` 先生效後拋錯時，canonical、DOM 順序和 revision 已變而操作失敗。這是 history barrier／rollback 所需的實測缺口，不是 Undo UI 的測試假設。Mainline 授權在本卡同一 Writer 及既准許的 `runtime/deck-editor.js` 範圍內，先讓 reorder 對 after-effect throw 原子回退；同時盤點 duplicate、remove、component direct patch 與 export cleanup 的直接寫入，對同類可重現缺口做最小修復／測試，然後才接 portable history。不得藉此改 Core2 或其他舊功能語意、擴展到未量測 writer；若安全 barrier 無法覆蓋，停止回主線裁決。這是同一 Core3 實作接續，不是新的 Repair generation。
+
+## Owner 視覺裁決更正
+
+正式兩張截圖存在BI／中文標題字形碰撞P1，功能PASS不等於視覺PASS。撤回a3c93c8的clean closure，該commit不得推送；核心恢復2/6，Core3重開。修復契約見 `tasks/edx-core-3-visual-title-repair.md`；AI Core、原功能／recovery／cleanup證據保留，產品與ZIP新身分待修復後驗證。

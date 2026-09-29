@@ -1,0 +1,47 @@
+{
+  "supervisorExit": 1,
+  "diagnostic": "NOT_COMPLETE",
+  "cause": "computed letter-spacing 0px 被瀏覽器序列化為normal；診斷assert過窄，非產品assert或scanner failure",
+  "root": "/private/tmp/aic-b-b7187921f4404a778aba7ec036bde5b6",
+  "rootAbsent": true,
+  "markerAbsent": true,
+  "pidObservation": {
+    "observed_at_ns": 1790667299298057000,
+    "process_count": 684,
+    "historical_pid": 32801,
+    "matches": [],
+    "method": "fresh-full-ps-pid-ppid-pgid-root"
+  },
+  "processes": [
+    {
+      "role": "browser",
+      "event": "starting"
+    },
+    {
+      "role": "browser",
+      "event": "started",
+      "pid": 32802,
+      "pgid": 32801
+    },
+    {
+      "role": "client",
+      "event": "starting"
+    },
+    {
+      "role": "client",
+      "event": "started",
+      "pid": 32803,
+      "pgid": 32801
+    },
+    {
+      "role": "client",
+      "event": "exited",
+      "returncode": 1
+    },
+    {
+      "role": "browser",
+      "event": "exited",
+      "returncode": 0
+    }
+  ]
+}

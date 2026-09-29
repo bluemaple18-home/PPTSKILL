@@ -1,5 +1,5 @@
 # R2 canonical 整合與 Core3 正式驗收
-Status：CORE3_CLOSED / CANONICAL_INTEGRATED / HOST_ACCEPTANCE_PASS / RECOVERY_OBSERVED。
+Status: FUNCTIONAL_PASS / VISUAL_NO_GO / CORE3_REOPENED
 目標／授權：Owner 在確認本 task 為 Mainline 後明示「那做吧」（2026-09-28），執行已裁決 GO 的 canonical 整合、身分與 scanner 回歸驗證，再接續既有 Core3 雙 viewport／四支串行 PGQ；不 push/deploy、不開 Core4。
 整合：依 observer-r2-adoption-decision.md，canonical 須精確 c23e465、無 tracked drift；只匯入 bundle 並 cherry-pick 4edd0747，三檔 hash 必須相同。保存 canonical/untracked 前後身分；失敗僅 revert 本 integration commit，不 destructive reset/clean。
 契約：固定 R2 whole-scan bounded re-observation 不改。R2 smoke 已消耗，本輪直接做 adoption 後產品驗收，不另加 smoke。若 observation contract 再失敗，停止 scanner patch 線、不 R3；產品 assertion 失敗不自動新增產品 Repair。
@@ -46,3 +46,7 @@ Worker 僅寫新 host-*-owned-group 檔案與測試，不 launch／commit；Main
 ## 2026-09-29 本輪完成
 
 client/controller兩審GO，保留同一非阻塞I/O退出碼P2；FINAL後Mainline13/13。唯一正式產品host：雙viewport各11項PASS、四PGQ16/16、全程序與root/marker cleanup PASS。706 scans中scan533真before_stat ENOENT經唯一一次whole-reobservation完成，entries945→1891；本輪RECOVERY_OBSERVED，舊smoke未觀察的歷史不改寫。A/B再獨立唯讀核對raw artifact，均GO，無Core3 closure blocker。Mainline關Core3、核心3/6，產品75／protected4／ZIP與canonical固定bytes不變；未開Core4。完整 `evidence/edx-core-3-undo-redo/mainline-closure.md`。先前推送已完成；本輪新增接線／驗收證據為後續local checkpoint，未deploy／production。
+
+## Owner 視覺裁決更正
+
+正式兩張截圖存在BI／中文標題字形碰撞P1，功能PASS不等於視覺PASS。撤回a3c93c8的clean closure，該commit不得推送；核心恢復2/6，Core3重開。修復契約見 `tasks/edx-core-3-visual-title-repair.md`；AI Core、原功能／recovery／cleanup證據保留，產品與ZIP新身分待修復後驗證。

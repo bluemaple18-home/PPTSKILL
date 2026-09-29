@@ -1,0 +1,106 @@
+{
+  "status": "ROOT_CAUSE_CONFIRMED_SCOPE_REPLAN_PENDING_OWNER",
+  "rootCause": "Undo fixture A/B位於主標題上；不是主標題包含BI或Latin/CJK glyph collision",
+  "pairedComparisons": [
+    {
+      "width": 1280,
+      "titleUnchanged": true,
+      "rightquoteUnchanged": true,
+      "originalIntersections": {
+        "A": {
+          "width": 144,
+          "height": 50.109375,
+          "area": 7215.75,
+          "overlaps": true
+        },
+        "B": {
+          "width": 137.0625,
+          "height": 50.109375,
+          "area": 6868.1162109375,
+          "overlaps": true
+        }
+      },
+      "zeroTrackingIntersections": {
+        "A": {
+          "width": 144,
+          "height": 91.21875,
+          "area": 13135.5,
+          "overlaps": true
+        },
+        "B": {
+          "width": 137.0625,
+          "height": 91.21875,
+          "area": 12502.669921875,
+          "overlaps": true
+        }
+      },
+      "movedFixtureIntersections": {
+        "A": {
+          "width": 144,
+          "height": 0,
+          "area": 0,
+          "overlaps": false
+        },
+        "B": {
+          "width": 137.0625,
+          "height": 0,
+          "area": 0,
+          "overlaps": false
+        }
+      }
+    },
+    {
+      "width": 1600,
+      "titleUnchanged": true,
+      "rightquoteUnchanged": true,
+      "originalIntersections": {
+        "A": {
+          "width": 180,
+          "height": 62.625,
+          "area": 11272.5,
+          "overlaps": true
+        },
+        "B": {
+          "width": 171.328125,
+          "height": 62.625,
+          "area": 10729.423828125,
+          "overlaps": true
+        }
+      },
+      "zeroTrackingIntersections": {
+        "A": {
+          "width": 180,
+          "height": 114,
+          "area": 20520,
+          "overlaps": true
+        },
+        "B": {
+          "width": 171.328125,
+          "height": 114,
+          "area": 19531.40625,
+          "overlaps": true
+        }
+      },
+      "movedFixtureIntersections": {
+        "A": {
+          "width": 180,
+          "height": 0,
+          "area": 0,
+          "overlaps": false
+        },
+        "B": {
+          "width": 171.328125,
+          "height": 0,
+          "area": 0,
+          "overlaps": false
+        }
+      }
+    }
+  ],
+  "diagnosticSHA256": "e06ce082360bc3e17b679c38e03086e80c3a767c774e0e77c49a52545a38516b",
+  "sourceHTMLUnchanged": true,
+  "productZIPUnchanged": true,
+  "core3": "FUNCTIONAL_PASS / VISUAL_NO_GO",
+  "proposal": "只改harness A/B top120→600，加title-vs-fixture bbox遮擋gate及PNG人工核對；新雙viewport／affectedPGQ。產品／ZIP維持原身分，不為錯誤根因改font。",
+  "ownerApproval": "PENDING"
+}

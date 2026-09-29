@@ -1,0 +1,50 @@
+{
+  "supervisorExit": 0,
+  "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+  "rootAbsent": true,
+  "markerAbsent": true,
+  "pidObservation": {
+    "observed_at_ns": 1790667408374489000,
+    "process_count": 695,
+    "historical_pid": 32959,
+    "matches": [],
+    "method": "fresh-full-ps-pid-ppid-pgid-root"
+  },
+  "browserClose": {
+    "attempted": true,
+    "result": {},
+    "acknowledged": true
+  },
+  "processes": [
+    {
+      "role": "browser",
+      "event": "starting"
+    },
+    {
+      "role": "browser",
+      "event": "started",
+      "pid": 32960,
+      "pgid": 32959
+    },
+    {
+      "role": "client",
+      "event": "starting"
+    },
+    {
+      "role": "client",
+      "event": "started",
+      "pid": 32961,
+      "pgid": 32959
+    },
+    {
+      "role": "client",
+      "event": "exited",
+      "returncode": 0
+    },
+    {
+      "role": "browser",
+      "event": "exited",
+      "returncode": 0
+    }
+  ]
+}

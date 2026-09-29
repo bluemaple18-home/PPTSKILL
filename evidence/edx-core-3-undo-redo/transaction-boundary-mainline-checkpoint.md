@@ -88,3 +88,8 @@ REPLAN為既有tmp_session browser可選client，同一run_child owned group，�
 ## 2026-09-29 推送後正式產品驗收與Core3關卡
 
 已先推送AI Core main71b774d3、PPT Core3 b20ee40並核對遠端。接續同群組client薄接線，兩審GO、FINAL後13/13；唯一正式host雙viewport各11 PASS、四PGQ16/16、Browser.close／client／supervisor0、root／marker／fresh group消失。706 scans、705runtime／1cleanup；scan533 before_stat ENOENT→attempt2，entries945→1891，RECOVERY_OBSERVED。A/B各自核對原始host artifacts後GO；固定產品75／protected4／ZIP/core hashes一致，原6 untracked保留。完整 `mainline-closure.md` 與 `host-acceptance-owned-group/mainline-receipt.md`。Core3正式關卡、核心3/6；新證據local checkpoint，未開Core4、未deploy／production。Mapping既有非阻塞P2及Crop F2/P2保留，無新增repair。
+
+
+## Owner視覺P1：撤回clean closure
+
+兩張正式PNG主標題BI與中文碰撞，功能11×2／PGQ16／recovery／cleanup證據仍有效，但不能宣稱視覺PASS。a3c93c8停留local、不push；Core3 FUNCTIONAL_PASS / VISUAL_NO_GO，核心2/6。新卡tasks/edx-core-3-visual-title-repair.md只授權標題font/tracking/混排間距與視覺gate、新產品／ZIP、双viewport及affectedPGQ。舊產品／ZIP未變收據不能套用新候選；既有I/O P2保留。

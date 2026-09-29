@@ -1,0 +1,322 @@
+{
+  "scans": [
+    {
+      "id": 1,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947429.86817575,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        450,
+        1
+      ],
+      "entries": 1,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        450,
+        1
+      ],
+      "elapsedMs": 0.45720802154392004
+    },
+    {
+      "id": 2,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947430.897252833,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        2619340,
+        148
+      ],
+      "entries": 213,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        2619340,
+        148
+      ],
+      "elapsedMs": 3.5363329807296395
+    },
+    {
+      "id": 3,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947431.931395458,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        4960842,
+        223
+      ],
+      "entries": 303,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        4960842,
+        223
+      ],
+      "elapsedMs": 8.335457998327911
+    },
+    {
+      "id": 4,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947432.956814625,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        4960842,
+        223
+      ],
+      "entries": 303,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        4960842,
+        223
+      ],
+      "elapsedMs": 5.425291019491851
+    },
+    {
+      "id": 5,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947433.987708333,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5297455,
+        266
+      ],
+      "entries": 355,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5297455,
+        266
+      ],
+      "elapsedMs": 6.393333082087338
+    },
+    {
+      "id": 6,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947435.0141165,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5301575,
+        266
+      ],
+      "entries": 355,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5301575,
+        266
+      ],
+      "elapsedMs": 5.7738329051062465
+    },
+    {
+      "id": 7,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947436.0587205,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5325416,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5325416,
+        267
+      ],
+      "elapsedMs": 6.199333001859486
+    },
+    {
+      "id": 8,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947437.096040791,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5336579,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5336579,
+        267
+      ],
+      "elapsedMs": 4.459416959434748
+    },
+    {
+      "id": 9,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947438.12570075,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5347333,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5347333,
+        267
+      ],
+      "elapsedMs": 5.489915958605707
+    },
+    {
+      "id": 10,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947439.156117333,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5359155,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5359155,
+        267
+      ],
+      "elapsedMs": 5.741500062867999
+    },
+    {
+      "id": 11,
+      "kind": "runtime",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": {
+        "max_bytes": 67108864,
+        "max_file_count": 10000,
+        "ttl_seconds": 3600
+      },
+      "startedMonotonic": 947440.178370333,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5363275,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5363275,
+        267
+      ],
+      "elapsedMs": 6.584957940503955
+    },
+    {
+      "id": 12,
+      "kind": "cleanup",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "limits": null,
+      "startedMonotonic": 947441.326885125,
+      "outcome": "COMPLETE",
+      "events": [],
+      "counts": [
+        5255346,
+        267
+      ],
+      "entries": 356,
+      "attempt": 1,
+      "recovered": false,
+      "attemptsDiagnostic": [],
+      "partialCounts": [
+        5255346,
+        267
+      ],
+      "elapsedMs": 3.6929160123690963
+    }
+  ],
+  "unfinishedScans": [],
+  "diagnosticErrors": [],
+  "traceEvents": [
+    "call",
+    "return"
+  ],
+  "lineAndOpcodeTracing": false,
+  "scanner": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "scannerSha256Before": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+  "scannerSha256After": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf"
+}

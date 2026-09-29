@@ -1,0 +1,1293 @@
+{
+  "status": "DIAGNOSTIC_CAPTURE_COMPLETE",
+  "purpose": "READ_ONLY_CAUSAL_DIAGNOSTIC_NOT_PRODUCT_ACCEPTANCE",
+  "startedAt": "2026-09-29T07:35:32.670Z",
+  "pid": 32961,
+  "node": "v25.9.0",
+  "client": {
+    "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-client-r1.mjs",
+    "sha256": "bbf8847b03f44ced467a54ea1b6fdfe1dcbf66b640e7c092940d170a1b3c9569"
+  },
+  "readinessDeadlineSeconds": 25,
+  "sources": {
+    "1280": {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-owned-group/undo-redo/1280-reopen-export.html",
+      "bytes": 640465,
+      "sha256Before": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb",
+      "sha256After": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb"
+    },
+    "1600": {
+      "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-owned-group/undo-redo/1600-reopen-export.html",
+      "bytes": 640465,
+      "sha256Before": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb",
+      "sha256After": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb"
+    }
+  },
+  "cases": [
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "original",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 50.109375,
+              "right": 425.0625,
+              "bottom": 150.890625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 96,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 192
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 288,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 192
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 50.109375,
+            "area": 7215.75,
+            "overlaps": true
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 50.109375,
+            "area": 6868.1162109375,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 50.109375,
+              "right": 425.0625,
+              "bottom": 150.890625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 96,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 192
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 288,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 192
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 50.109375,
+            "area": 7215.75,
+            "overlaps": true
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 50.109375,
+            "area": 6868.1162109375,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1280-original.png",
+        "bytes": 36698,
+        "sha256": "9f6b4f76981d30222233389d575356bf26d4f3979c9041e6159d4bc96c11d132"
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "title-tracking-zero",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 50.109375,
+              "right": 425.0625,
+              "bottom": 150.890625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 96,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 192
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 288,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 192
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 50.109375,
+            "area": 7215.75,
+            "overlaps": true
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 50.109375,
+            "area": 6868.1162109375,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": "letter-spacing: 0px;",
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "normal",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 100.21875,
+              "right": 425.0625,
+              "bottom": 201
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 96,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 192
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 288,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 192
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 91.21875,
+            "area": 13135.5,
+            "overlaps": true
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 91.21875,
+            "area": 12502.669921875,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1280-title-tracking-zero.png",
+        "bytes": 37088,
+        "sha256": "e50fb2bfafa3f96a7e92ea84c5263a6775551a35436c9b26df1fc3c3f27716cb"
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "fixtures-top-600",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 50.109375,
+              "right": 425.0625,
+              "bottom": 150.890625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 96,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 192
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 288,
+              "y": 96,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 192
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 50.109375,
+            "area": 7215.75,
+            "overlaps": true
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 50.109375,
+            "area": 6868.1162109375,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 62.390625,
+              "y": 100.78125,
+              "width": 362.671875,
+              "height": 50.109375,
+              "right": 425.0625,
+              "bottom": 150.890625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "600px",
+            "bounds": {
+              "x": 96,
+              "y": 480,
+              "width": 144,
+              "height": 96,
+              "right": 240,
+              "bottom": 576
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "600px",
+            "bounds": {
+              "x": 288,
+              "y": 480,
+              "width": 144,
+              "height": 96,
+              "right": 432,
+              "bottom": 576
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 680,
+              "y": 248,
+              "width": 480,
+              "height": 320,
+              "right": 1160,
+              "bottom": 568
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 144,
+            "height": 0,
+            "area": 0,
+            "overlaps": false
+          },
+          "B": {
+            "width": 137.0625,
+            "height": 0,
+            "area": 0,
+            "overlaps": false
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1280-fixtures-top-600.png",
+        "bytes": 37404,
+        "sha256": "1f62c9a48ed5c4a55a9bad99b26958c8d753a8198895f3543b6105176a6f0ed2"
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "original",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 62.625,
+              "right": 531.328125,
+              "bottom": 188.625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 120,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 240
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 360,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 240
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 62.625,
+            "area": 11272.5,
+            "overlaps": true
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 62.625,
+            "area": 10729.423828125,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 62.625,
+              "right": 531.328125,
+              "bottom": 188.625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 120,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 240
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 360,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 240
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 62.625,
+            "area": 11272.5,
+            "overlaps": true
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 62.625,
+            "area": 10729.423828125,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1600-original.png",
+        "bytes": 45669,
+        "sha256": "f2111051ccf3190280e6cf70b7ab8056aeee097da56960b30c532a3d7d4c8eee"
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "title-tracking-zero",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 62.625,
+              "right": 531.328125,
+              "bottom": 188.625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 120,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 240
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 360,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 240
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 62.625,
+            "area": 11272.5,
+            "overlaps": true
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 62.625,
+            "area": 10729.423828125,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": "letter-spacing: 0px;",
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "normal",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 125.25,
+              "right": 531.328125,
+              "bottom": 251.25
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 120,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 240
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 360,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 240
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 114,
+            "area": 20520,
+            "overlaps": true
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 114,
+            "area": 19531.40625,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1600-title-tracking-zero.png",
+        "bytes": 46207,
+        "sha256": "cb6601a86663cd7e5702580eff56b7a7ab0eb1fb2373191ac406784198d4fbe2"
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "fixtures-top-600",
+      "status": "CAPTURED",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "logErrors": [],
+      "before": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 62.625,
+              "right": 531.328125,
+              "bottom": 188.625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 120,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 240
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "120px",
+            "bounds": {
+              "x": 360,
+              "y": 120,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 240
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 62.625,
+            "area": 11272.5,
+            "overlaps": true
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 62.625,
+            "area": 10729.423828125,
+            "overlaps": true
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "after": {
+        "elements": {
+          "title": {
+            "textContent": "成果，不鎖在工具裡",
+            "inlineStyle": null,
+            "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "54px",
+            "fontWeight": "900",
+            "letterSpacing": "-4.05px",
+            "position": "static",
+            "top": "auto",
+            "bounds": {
+              "x": 78,
+              "y": 126,
+              "width": 453.328125,
+              "height": 62.625,
+              "right": 531.328125,
+              "bottom": 188.625
+            }
+          },
+          "A": {
+            "textContent": "A",
+            "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "600px",
+            "bounds": {
+              "x": 120,
+              "y": 600,
+              "width": 180,
+              "height": 120,
+              "right": 300,
+              "bottom": 720
+            }
+          },
+          "B": {
+            "textContent": "B",
+            "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "600px",
+            "bounds": {
+              "x": 360,
+              "y": 600,
+              "width": 180,
+              "height": 120,
+              "right": 540,
+              "bottom": 720
+            }
+          },
+          "rightquote": {
+            "textContent": "座標保持一致",
+            "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+            "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontFamily": "\"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+            "fontSize": "64px",
+            "fontWeight": "900",
+            "letterSpacing": "-3.52px",
+            "position": "absolute",
+            "top": "310px",
+            "bounds": {
+              "x": 850,
+              "y": 310,
+              "width": 600,
+              "height": 400,
+              "right": 1450,
+              "bottom": 710
+            }
+          }
+        },
+        "titleIntersections": {
+          "A": {
+            "width": 180,
+            "height": 0,
+            "area": 0,
+            "overlaps": false
+          },
+          "B": {
+            "width": 171.328125,
+            "height": 0,
+            "area": 0,
+            "overlaps": false
+          }
+        },
+        "note": "DOM bounds intersection 是元素框相交，並非 glyph ink 因果結論；須配對 PNG 核對。"
+      },
+      "screenshot": {
+        "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/visual-title-diagnostic-r1/1600-fixtures-top-600.png",
+        "bytes": 46915,
+        "sha256": "e2757dd68d9cbc1a91584b70dc2132976d97eb2366208023ad82fa6593bd8b01"
+      },
+      "targetClosed": true
+    }
+  ],
+  "errors": [],
+  "browserClose": {
+    "attempted": true,
+    "result": {},
+    "acknowledged": true
+  },
+  "managed": {
+    "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+    "portPath": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120/profile/DevToolsActivePort",
+    "session": {
+      "mode": "browser",
+      "root": "/private/tmp/aic-b-bf60853dc6e04912b16696b6c81d5120",
+      "pid": 32959
+    }
+  },
+  "readinessElapsedMs": 963,
+  "finishedAt": "2026-09-29T07:35:43.541Z"
+}

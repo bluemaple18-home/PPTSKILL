@@ -1,6 +1,6 @@
 # PPTSKILL 核心完整版：六張主卡收斂
 
-Status: CORE_1_CLOSED_WITH_P2_RESIDUAL / CORE_2_CLOSED / CORE_3_CLOSED / THREE_REMAINING
+Status: CORE_1_CLOSED_WITH_P2_RESIDUAL / CORE_2_CLOSED / CORE_3_VISUAL_NO_GO / FOUR_REMAINING
 Owner裁決：收尾既有S18，回到原六項核心交付；不再從局部缺口逐張順延S19、S20。
 這是Mainline範圍裁決文件，不是第七張產品實作卡。歷史S16/S17/S18編號與commit不改名、不改寫。
 
@@ -63,3 +63,7 @@ Core2 本地 integration gate 唯讀核對通過，產品→closure 只有 task/
 Core3固定產品9ce7396／code f3d8a11，沿用原round08雙CODE GO與nonbrowser1061/1061、ZIP證據。AI Core R2與同群組入口已整合並推送71b774d3；PPT同群組薄client兩審GO後唯一正式host雙viewport各11 PASS、PGQ16/16、cleanup全PASS。706 scans中有真ENOENT一次bounded recovery，RECOVERY_OBSERVED；host artifacts兩名獨立唯讀核對GO，Mainline關卡。詳 `evidence/edx-core-3-undo-redo/mainline-closure.md`。
 
 原六張目前 **3/6完成、3張剩餘**。Mapping非阻塞留證I/O退出碼P2及原Crop F2/P2均保留，不藉本輪宣稱修復；後者仍留第6張重判。下一frontier第4張Local draft＋recovery，本輪尚未開工、不增第七張。產品、ZIP、四protected不變；先前兩repo push已完成，本輪接線／收尾證據另存local checkpoint，未merge PPT main／deploy／production。
+
+## Owner 視覺P1：Core3重開
+
+原3/6關卡裁決撤回；現為**2/6完成**。Core3 FUNCTIONAL_PASS / VISUAL_NO_GO，標題Latin/CJK字形碰撞待有界修復與新產品／ZIP驗收，見tasks/edx-core-3-visual-title-repair.md。a3c93c8不推送，Core4不開。

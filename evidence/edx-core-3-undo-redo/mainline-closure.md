@@ -1,3 +1,5 @@
+> **已被 Owner 視覺P1裁決取代：FUNCTIONAL_PASS / VISUAL_NO_GO。** 下方為a3c93c8當時歷史結論，不能再作Core3 clean GO；a3c93c8不得推送，核心恢復2/6。修復契約：`../../tasks/edx-core-3-visual-title-repair.md`。
+
 # Core3 Undo／Redo：Mainline closure GO
 
 日期：2026-09-29。**CORE3_CLOSED / HOST_ACCEPTANCE_PASS / RECOVERY_OBSERVED**。六張核心主卡已完成 **3/6**，剩3張；Core4尚未開工。
