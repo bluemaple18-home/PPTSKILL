@@ -1,5 +1,5 @@
 {
-  "status": "ROOT_CAUSE_CONFIRMED_SCOPE_REPLAN_PENDING_OWNER",
+  "status": "ROOT_CAUSE_CONFIRMED_FIXTURE_REPAIR_AUTHORIZED",
   "rootCause": "Undo fixture A/B位於主標題上；不是主標題包含BI或Latin/CJK glyph collision",
   "pairedComparisons": [
     {
@@ -102,5 +102,5 @@
   "productZIPUnchanged": true,
   "core3": "FUNCTIONAL_PASS / VISUAL_NO_GO",
   "proposal": "只改harness A/B top120→600，加title-vs-fixture bbox遮擋gate及PNG人工核對；新雙viewport／affectedPGQ。產品／ZIP維持原身分，不為錯誤根因改font。",
-  "ownerApproval": "PENDING"
+  "ownerApproval": "Owner在白話說明只移測試文字／加遮擋檢查／產品ZIP不改後指示「繼續？」；本輪採用fixture方案。"
 }

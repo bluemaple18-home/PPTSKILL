@@ -1,0 +1,817 @@
+{
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/source.html",
+  "sourceSha256": "cf306af2dba61c4fa2e939b7ab087edd482a6a7225ed0d0ba096550a9e4708b3",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "Core3 可見fixture避開標題／原120 RED與600 GREEN",
+        "文字模式互斥",
+        "Core3 真 toolbar／Ctrl+Shift+Z／group-lock replay／export offline reopen"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-legacy-selected.html",
+          "bytes": 640208,
+          "sha256": "3e5a983a811a3f4c1c7e063e68f68abc925f96fb93d90fb3aac16c628a6bb318"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-preview-export.html",
+          "bytes": 640495,
+          "sha256": "c24d9a55b9fbb388d693498a013ebdf7b6a61543563c3a0b709e199c5e6691ce"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-cancel.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-noop.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-invalid.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-invalid-resize.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-play-mode.html",
+          "bytes": 640495,
+          "sha256": "0ead9b9368e48359fe260f77182800b90402430e410a5ff31fba07307862ebf3"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-export.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-reopen-export.html",
+          "bytes": 640465,
+          "sha256": "81090d88c6e23ab48c90238f7374f1888667ee12e451f0839c6c37abd83075eb"
+        },
+        {
+          "label": "undo-redo-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-undo-redo-export.html",
+          "bytes": 640291,
+          "sha256": "b5c9b2b11c1e56e93bd55dd7357893e3cfe5d37eecf35ca6acd6a7471588265b"
+        }
+      ],
+      "visualFixtureGate": {
+        "schema": 1,
+        "status": "PASS",
+        "sources": {
+          "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/source.html",
+          "sourceSha256": "cf306af2dba61c4fa2e939b7ab087edd482a6a7225ed0d0ba096550a9e4708b3",
+          "pageUrl": "file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-export.html",
+          "gate": "tools/edx-core-3-fixture-visual-gate.mjs"
+        },
+        "candidate": {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "elements": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "visible": true,
+              "inlineStyle": null,
+              "top": "auto",
+              "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-4.05px",
+              "bounds": {
+                "x": 62.390625,
+                "y": 100.78125,
+                "width": 362.671875,
+                "height": 50.109375
+              }
+            },
+            "A": {
+              "text": "A",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 96,
+                "y": 480,
+                "width": 144,
+                "height": 96
+              }
+            },
+            "B": {
+              "text": "B",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 288,
+                "y": 480,
+                "width": 144,
+                "height": 96
+              }
+            },
+            "rightquote": {
+              "text": "座標保持一致",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "310px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 680,
+                "y": 248,
+                "width": 480,
+                "height": 320
+              }
+            }
+          }
+        },
+        "red": {
+          "phase": "red-negative-control",
+          "measurement": {
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "elements": {
+              "title": {
+                "text": "成果，不鎖在工具裡",
+                "visible": true,
+                "inlineStyle": null,
+                "top": "auto",
+                "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-4.05px",
+                "bounds": {
+                  "x": 62.390625,
+                  "y": 100.78125,
+                  "width": 362.671875,
+                  "height": 50.109375
+                }
+              },
+              "A": {
+                "text": "A",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "120px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 96,
+                  "y": 96,
+                  "width": 144,
+                  "height": 96
+                }
+              },
+              "B": {
+                "text": "B",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "120px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 288,
+                  "y": 96,
+                  "width": 144,
+                  "height": 96
+                }
+              },
+              "rightquote": {
+                "text": "座標保持一致",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "310px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 680,
+                  "y": 248,
+                  "width": 480,
+                  "height": 320
+                }
+              }
+            }
+          },
+          "gate": {
+            "pass": false,
+            "issues": [
+              "title-overlap:A",
+              "title-overlap:B"
+            ],
+            "intersections": {
+              "A": {
+                "width": 144,
+                "height": 50.109375,
+                "area": 7215.75
+              },
+              "B": {
+                "width": 137.0625,
+                "height": 50.109375,
+                "area": 6868.1162109375
+              }
+            }
+          },
+          "screenshot": {
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-fixture-red.png",
+            "bytes": 49808,
+            "sha256": "594706e5898556ec775300b45afe02d4d23e5f0a2fe6a1077779a543ac837d7f"
+          }
+        },
+        "restored": {
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "elements": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "visible": true,
+              "inlineStyle": null,
+              "top": "auto",
+              "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-4.05px",
+              "bounds": {
+                "x": 62.390625,
+                "y": 100.78125,
+                "width": 362.671875,
+                "height": 50.109375
+              }
+            },
+            "A": {
+              "text": "A",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 96,
+                "y": 480,
+                "width": 144,
+                "height": 96
+              }
+            },
+            "B": {
+              "text": "B",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 288,
+                "y": 480,
+                "width": 144,
+                "height": 96
+              }
+            },
+            "rightquote": {
+              "text": "座標保持一致",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "310px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 680,
+                "y": 248,
+                "width": 480,
+                "height": 320
+              }
+            }
+          }
+        },
+        "green": {
+          "phase": "green-candidate",
+          "measurement": {
+            "viewport": {
+              "width": 1280,
+              "height": 720
+            },
+            "elements": {
+              "title": {
+                "text": "成果，不鎖在工具裡",
+                "visible": true,
+                "inlineStyle": null,
+                "top": "auto",
+                "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-4.05px",
+                "bounds": {
+                  "x": 62.390625,
+                  "y": 100.78125,
+                  "width": 362.671875,
+                  "height": 50.109375
+                }
+              },
+              "A": {
+                "text": "A",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "600px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 96,
+                  "y": 480,
+                  "width": 144,
+                  "height": 96
+                }
+              },
+              "B": {
+                "text": "B",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "600px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 288,
+                  "y": 480,
+                  "width": 144,
+                  "height": 96
+                }
+              },
+              "rightquote": {
+                "text": "座標保持一致",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "310px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 680,
+                  "y": 248,
+                  "width": 480,
+                  "height": 320
+                }
+              }
+            }
+          },
+          "gate": {
+            "pass": true,
+            "issues": [],
+            "intersections": {
+              "A": {
+                "width": 144,
+                "height": 0,
+                "area": 0
+              },
+              "B": {
+                "width": 137.0625,
+                "height": 0,
+                "area": 0
+              }
+            }
+          },
+          "screenshot": {
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1280-selected.png",
+            "bytes": 50423,
+            "sha256": "4672b61c7f5aba83909bf65e62e7dfd0d9313420ccfba9c7872232936ced3d28"
+          }
+        }
+      },
+      "traceback": false,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM",
+        "真 SE resize 不改 x/y",
+        "Escape 真 pointer cancel 原子復原",
+        "no-op",
+        "越界／minimum 拒絕，無 clamp",
+        "退出模式 teardown／play 不 drag",
+        "offline reopen 再 drag／單一 instance",
+        "Core3 可見fixture避開標題／原120 RED與600 GREEN",
+        "文字模式互斥",
+        "Core3 真 toolbar／Ctrl+Shift+Z／group-lock replay／export offline reopen"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-legacy-selected.html",
+          "bytes": 640208,
+          "sha256": "3e5a983a811a3f4c1c7e063e68f68abc925f96fb93d90fb3aac16c628a6bb318"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-preview-export.html",
+          "bytes": 640495,
+          "sha256": "c24d9a55b9fbb388d693498a013ebdf7b6a61543563c3a0b709e199c5e6691ce"
+        },
+        {
+          "label": "cancel",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-cancel.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "noop",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-noop.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "invalid",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-invalid.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "invalid-resize",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-invalid-resize.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "play-mode",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-play-mode.html",
+          "bytes": 640495,
+          "sha256": "0ead9b9368e48359fe260f77182800b90402430e410a5ff31fba07307862ebf3"
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-export.html",
+          "bytes": 640465,
+          "sha256": "0693aa557b8835c56f4f207fd07d6834d344f58dd0d2f2f08fe656e4afdc3f76"
+        },
+        {
+          "label": "reopen-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-reopen-export.html",
+          "bytes": 640465,
+          "sha256": "81090d88c6e23ab48c90238f7374f1888667ee12e451f0839c6c37abd83075eb"
+        },
+        {
+          "label": "undo-redo-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-undo-redo-export.html",
+          "bytes": 640291,
+          "sha256": "b5c9b2b11c1e56e93bd55dd7357893e3cfe5d37eecf35ca6acd6a7471588265b"
+        }
+      ],
+      "visualFixtureGate": {
+        "schema": 1,
+        "status": "PASS",
+        "sources": {
+          "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/source.html",
+          "sourceSha256": "cf306af2dba61c4fa2e939b7ab087edd482a6a7225ed0d0ba096550a9e4708b3",
+          "pageUrl": "file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-export.html",
+          "gate": "tools/edx-core-3-fixture-visual-gate.mjs"
+        },
+        "candidate": {
+          "viewport": {
+            "width": 1600,
+            "height": 900
+          },
+          "elements": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "visible": true,
+              "inlineStyle": null,
+              "top": "auto",
+              "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-4.05px",
+              "bounds": {
+                "x": 78,
+                "y": 126,
+                "width": 453.328125,
+                "height": 62.625
+              }
+            },
+            "A": {
+              "text": "A",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 120,
+                "y": 600,
+                "width": 180,
+                "height": 120
+              }
+            },
+            "B": {
+              "text": "B",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 360,
+                "y": 600,
+                "width": 180,
+                "height": 120
+              }
+            },
+            "rightquote": {
+              "text": "座標保持一致",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "310px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 850,
+                "y": 310,
+                "width": 600,
+                "height": 400
+              }
+            }
+          }
+        },
+        "red": {
+          "phase": "red-negative-control",
+          "measurement": {
+            "viewport": {
+              "width": 1600,
+              "height": 900
+            },
+            "elements": {
+              "title": {
+                "text": "成果，不鎖在工具裡",
+                "visible": true,
+                "inlineStyle": null,
+                "top": "auto",
+                "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-4.05px",
+                "bounds": {
+                  "x": 78,
+                  "y": 126,
+                  "width": 453.328125,
+                  "height": 62.625
+                }
+              },
+              "A": {
+                "text": "A",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 120px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "120px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 120,
+                  "y": 120,
+                  "width": 180,
+                  "height": 120
+                }
+              },
+              "B": {
+                "text": "B",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 120px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "120px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 360,
+                  "y": 120,
+                  "width": 180,
+                  "height": 120
+                }
+              },
+              "rightquote": {
+                "text": "座標保持一致",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "310px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 850,
+                  "y": 310,
+                  "width": 600,
+                  "height": 400
+                }
+              }
+            }
+          },
+          "gate": {
+            "pass": false,
+            "issues": [
+              "title-overlap:A",
+              "title-overlap:B"
+            ],
+            "intersections": {
+              "A": {
+                "width": 180,
+                "height": 62.625,
+                "area": 11272.5
+              },
+              "B": {
+                "width": 171.328125,
+                "height": 62.625,
+                "area": 10729.423828125
+              }
+            }
+          },
+          "screenshot": {
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-fixture-red.png",
+            "bytes": 60255,
+            "sha256": "c908de545c06d86a11195cbbe9a65c379922000d6d46e0ea7a1a7064c0f50e1d"
+          }
+        },
+        "restored": {
+          "viewport": {
+            "width": 1600,
+            "height": 900
+          },
+          "elements": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "visible": true,
+              "inlineStyle": null,
+              "top": "auto",
+              "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-4.05px",
+              "bounds": {
+                "x": 78,
+                "y": 126,
+                "width": 453.328125,
+                "height": 62.625
+              }
+            },
+            "A": {
+              "text": "A",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 120,
+                "y": 600,
+                "width": 180,
+                "height": 120
+              }
+            },
+            "B": {
+              "text": "B",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "600px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 360,
+                "y": 600,
+                "width": 180,
+                "height": 120
+              }
+            },
+            "rightquote": {
+              "text": "座標保持一致",
+              "visible": true,
+              "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+              "top": "310px",
+              "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+              "tracking": "-3.52px",
+              "bounds": {
+                "x": 850,
+                "y": 310,
+                "width": 600,
+                "height": 400
+              }
+            }
+          }
+        },
+        "green": {
+          "phase": "green-candidate",
+          "measurement": {
+            "viewport": {
+              "width": 1600,
+              "height": 900
+            },
+            "elements": {
+              "title": {
+                "text": "成果，不鎖在工具裡",
+                "visible": true,
+                "inlineStyle": null,
+                "top": "auto",
+                "font": "900 54px / 62.64px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-4.05px",
+                "bounds": {
+                  "x": 78,
+                  "y": 126,
+                  "width": 453.328125,
+                  "height": 62.625
+                }
+              },
+              "A": {
+                "text": "A",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 600px auto auto 120px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "600px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 120,
+                  "y": 600,
+                  "width": 180,
+                  "height": 120
+                }
+              },
+              "B": {
+                "text": "B",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 600px auto auto 360px; width: 180px; height: 120px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "600px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 360,
+                  "y": 600,
+                  "width": 180,
+                  "height": 120
+                }
+              },
+              "rightquote": {
+                "text": "座標保持一致",
+                "visible": true,
+                "inlineStyle": "position: absolute; inset: 310px auto auto 850px; width: 600px; height: 400px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+                "top": "310px",
+                "font": "900 64px / 75.52px \"Microsoft JhengHei\", \"Microsoft JhengHei UI\", \"PingFang TC\", sans-serif",
+                "tracking": "-3.52px",
+                "bounds": {
+                  "x": 850,
+                  "y": 310,
+                  "width": 600,
+                  "height": 400
+                }
+              }
+            }
+          },
+          "gate": {
+            "pass": true,
+            "issues": [],
+            "intersections": {
+              "A": {
+                "width": 180,
+                "height": 0,
+                "area": 0
+              },
+              "B": {
+                "width": 171.328125,
+                "height": 0,
+                "area": 0
+              }
+            }
+          },
+          "screenshot": {
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-3-undo-redo/host-acceptance-visual-fixture/undo-redo/1600-selected.png",
+            "bytes": 61297,
+            "sha256": "e0349db0405f2652b2a1841ace987d513a4465c5dfa5dc638929e142bd0e376c"
+          }
+        }
+      },
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

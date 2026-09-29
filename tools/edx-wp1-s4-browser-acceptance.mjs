@@ -1,3 +1,4 @@
+import { measureFixtureVisual, fixtureVisualGate } from './edx-core-3-fixture-visual-gate.mjs';
 import { runGroupLockBrowserCases } from './edx-core-2-group-lock-browser-cases.mjs';
 import { addCropFixture, runCropBrowserCases } from './edx-core-crop-browser-cases.mjs';
 import { runTextDoubleClickBrowserCases } from './edx-wp2-s17-browser-cases.mjs';
@@ -68,7 +69,7 @@ if (process.argv.includes('--text-double-click-regression') || process.argv.incl
 if(cropRegression)addCropFixture(input);
 if(undoRedoRegression){
   input.slides[0].content.components.push({id:'history-a',type:'text',text:'A'},{id:'history-b',type:'text',text:'B'});
-  input.slides[0].composition.geometryOverrides={...(input.slides[0].composition.geometryOverrides||{}),'history-a':{x:120,y:120,width:180,height:120},'history-b':{x:360,y:120,width:180,height:120}};
+  input.slides[0].composition.geometryOverrides={...(input.slides[0].composition.geometryOverrides||{}),'history-a':{x:120,y:600,width:180,height:120},'history-b':{x:360,y:600,width:180,height:120}};
 }
 const rendered = renderFullDeck(input); assert.equal(rendered.status, 'pass');
 const sourcePath = resolve(outputDir, 'source.html');
@@ -209,7 +210,45 @@ try {
       pointer = await startGesture('drag', 10, 10); await endGesture(pointer); box = { ...box, x: 850, y: 310 };
       assert.deepEqual(await evaluate(rectExpression), box); await assertRect(box);
       await assertExport('reopen-export', await evaluate(specExpression)); run.checks.push('offline reopen 再 drag／單一 instance');
-      const shot = await cdp.send('Page.captureScreenshot', { format: 'png' }); await writeFile(resolve(outputDir, `${width}-selected.png`), Buffer.from(shot.data, 'base64'));
+      if (undoRedoRegression) {
+        const capture = async name => {
+          const shot = await cdp.send('Page.captureScreenshot', { format: 'png' });
+          const bytes = Buffer.from(shot.data, 'base64'), path = resolve(outputDir, `${width}-${name}.png`);
+          assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+          assert.equal(bytes.readUInt32BE(16), width); assert.equal(bytes.readUInt32BE(20), height);
+          await writeFile(path, bytes);
+          return { path, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') };
+        };
+        const measure = () => evaluate(`(${measureFixtureVisual.toString()})()`);
+        const candidate = await measure();
+        for (const key of ['A', 'B']) assert.equal(candidate.elements[key]?.top, '600px', 'fixture候選須位於600');
+        const visual = run.visualFixtureGate = { schema: 1, status: 'INCOMPLETE',
+          sources: { sourcePath, sourceSha256: createHash('sha256').update(rendered.html).digest('hex'),
+            pageUrl: await evaluate('location.href'), gate: 'tools/edx-core-3-fixture-visual-gate.mjs' }, candidate };
+        try {
+          await evaluate(`(()=>{for(const id of ['component-history-a','component-history-b'])document.querySelector('[data-pptskill-element-id="'+id+'"]').style.top='120px';return true})()`);
+          await settle();
+          const measurement = await measure();
+          visual.red = { phase: 'red-negative-control', measurement, gate: fixtureVisualGate(measurement), screenshot: await capture('fixture-red') };
+          assert.deepEqual(measurement.elements.title, candidate.elements.title, 'RED不得改標題');
+          assert.deepEqual(measurement.elements.rightquote, candidate.elements.rightquote, 'RED不得改右元件');
+          assert.equal(visual.red.gate.pass, false, '原120位置必須被gate拒絕');
+          assert.deepEqual(visual.red.gate.issues, ['title-overlap:A', 'title-overlap:B'], 'RED須僅因可見fixture遮擋');
+        } finally {
+          const styles = Object.fromEntries(['A', 'B'].map(key => [key, candidate.elements[key].inlineStyle]));
+          await evaluate(`(()=>{for(const [key,style] of Object.entries(${JSON.stringify(styles)})){const node=document.querySelector('[data-pptskill-element-id="component-history-'+key.toLowerCase()+'"]');if(style===null)node.removeAttribute('style');else node.setAttribute('style',style)}return true})()`);
+          await settle();
+          visual.restored = await measure();
+          assert.deepEqual(visual.restored, candidate, 'RED後必須完整恢復候選');
+        }
+        const measurement = await measure();
+        visual.green = { phase: 'green-candidate', measurement, gate: fixtureVisualGate(measurement), screenshot: await capture('selected') };
+        assert.equal(visual.green.gate.pass, true, JSON.stringify(visual.green.gate));
+        visual.status = 'PASS';
+        run.checks.push('Core3 可見fixture避開標題／原120 RED與600 GREEN');
+      } else {
+        const shot = await cdp.send('Page.captureScreenshot', { format: 'png' }); await writeFile(resolve(outputDir, `${width}-selected.png`), Buffer.from(shot.data, 'base64'));
+      }
       if (perfRegression) await runPerfBrowserCases({ evaluate, navigate, sourcePath, click, selector, startGesture, endGesture, assertExport, run });
       await click('[data-action="edit"]');
       assert.equal(await evaluate('document.querySelectorAll(".moveable-control-box").length'), 0);

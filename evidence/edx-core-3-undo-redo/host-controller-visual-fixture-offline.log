@@ -1,0 +1,61 @@
+test_child_group_mismatch_delegates (__main__.ClientTests.test_child_group_mismatch_delegates) ... ok
+test_invalid_readiness_is_bounded (__main__.ClientTests.test_invalid_readiness_is_bounded) ... ok
+test_managed_context_and_wrong_environment (__main__.ClientTests.test_managed_context_and_wrong_environment) ... ok
+test_nonzero_preserved_prevents_pgq_closes_browser (__main__.ClientTests.test_nonzero_preserved_prevents_pgq_closes_browser) ... ok
+test_readiness_failure_never_spawns_products (__main__.ClientTests.test_readiness_failure_never_spawns_products) ... ok
+test_success_mapping_serial_limits_and_close (__main__.ClientTests.test_success_mapping_serial_limits_and_close) ... ok
+test_timeout_and_signals_delegate_without_continuation_or_kill (__main__.ClientTests.test_timeout_and_signals_delegate_without_continuation_or_kill) ... ok
+test_actual_identity_with_temporary_final_manifest (__main__.OuterTests.test_actual_identity_with_temporary_final_manifest) ... ok
+test_diagnostic_recovery_preserved_and_incomplete_rejected (__main__.OuterTests.test_diagnostic_recovery_preserved_and_incomplete_rejected) ... ok
+test_no_new_authority_and_single_outer_launch (__main__.OuterTests.test_no_new_authority_and_single_outer_launch) ... ok
+test_observer_cleanup_identity_and_exit_fail_cannot_pass (__main__.OuterTests.test_observer_cleanup_identity_and_exit_fail_cannot_pass) ... ok
+test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic (__main__.OuterTests.test_outer_wait_failure_no_close_no_kill_and_preserves_diagnostic) ... ok
+test_pending_and_integration_schema_mismatch_rejected (__main__.OuterTests.test_pending_and_integration_schema_mismatch_rejected) ... ok
+test_visual_gate_missing_phase_or_png_rejected (__main__.OuterTests.test_visual_gate_missing_phase_or_png_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.206s
+
+OK
+✔ 雙viewport幾何反例：120拒絕、600通過；不是正式browser證據 (2.112209ms)
+✔ 隱藏、移出viewport、刪除或更換A/B不得迴避gate (0.2265ms)
+✔ 所有rect與viewport非finite或型別不符時fail closed (0.926458ms)
+✔ 只要任一fixture有正面積相交就拒絕；不設負容忍值 (0.100625ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 104.616542
+
+凍結紀錄：
+{
+  "status": "FROZEN_PENDING_REVIEW",
+  "tests": {
+    "python": "14/14 PASS",
+    "node": "4/4 PASS",
+    "syntax": "PASS",
+    "whitespace": "PASS"
+  },
+  "sha256": {
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "25d23a56745f6533f4d95a089592b487247d140705aa27ee7646afe4325d0c5b",
+    "tools/edx-core-3-fixture-visual-gate.mjs": "bb9d1f0a3dfc7d102212db366803ee65af9ae02ab9efd6c45917529f94f6a909",
+    "tests/edx-core-3-fixture-visual-gate.test.mjs": "2ae436c912d018056488d1d9bfeda6b0f89f77e7a9f85462a92d4f96d202cd27",
+    "evidence/edx-core-3-undo-redo/host-client-visual-fixture.py": "ae571cd3a8290ca21711b330b5c54842174875c9d9d67ff12bed227ae135759b",
+    "evidence/edx-core-3-undo-redo/host-controller-visual-fixture.py": "b4504a9635330c839ba320d8296ea591a8f006f74b6a871004c9cb8f4dcc1ae9",
+    "evidence/edx-core-3-undo-redo/host-controller-visual-fixture-test.py": "f87669e61d09eb8f1024bcdc51e9e9852ddc8066a20a12390b70b534fded0c6f",
+    "evidence/edx-core-3-undo-redo/host-controller-visual-fixture-manifest.json": "7abc5aa1e6009bf3a4a031c730feb7835d10562ed81fc83a1876112516eb3a74",
+    "evidence/edx-core-3-undo-redo/visual-fixture-client-audit.json": "9d8664ef3f7e4aaeb567e591a6eb2f45819ed09736364e6a74a18bc74306b873"
+  },
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  },
+  "formalBrowserRedGreen": "NOT_RUN",
+  "Chrome/host/PGQ/ZIP/commit": "NOT_RUN",
+  "productIdentity": "離線唯讀75source/4protected/ZIP與core committed/current hashes核對PASS；未修改",
+  "scope": "harness僅A/B y120→600、原截圖處加RED/finally恢復/GREEN；原11功能checks与4PGQ保留，新client僅引用新controller，新controller僅paths與visual evidence驗證增量；未修I/O P2。"
+}

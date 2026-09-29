@@ -27,3 +27,7 @@ Owner指出的視覺遮擋確實存在，但實測根因是Undo／Redo驗收fixt
 此方案改驗收fixture，不是產品變更；75產品來源／四protected／ZIP目前全部SHA不變。Owner先前明示font/spacing-only與新ZIP，實測根因不在該scope，已請Owner確認是否改採上述fixture/gate方案；回覆前不套用修復、不改產品、不重跑PGQ。
 
 原AI Core71b774d3、已推b20ee40、舊功能與真ENOENT recovery證據保留；原receipt I/O非阻塞P2與Crop F2/P2仍保留。
+
+## Owner接續指示
+
+Owner在白話說明fixture方案後指示「繼續？」；現已授權只修fixture與gate、重跑雙viewport／affectedPGQ，產品與ZIP不動。上文待確認描述為診斷完成當時狀態；本輪開始實作，驗收完成前仍VISUAL_NO_GO，不push。

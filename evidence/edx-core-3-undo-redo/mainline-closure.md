@@ -1,3 +1,5 @@
+> **最新有效裁決：fixture修復後Core3已重新關閉（FUNCTIONAL_PASS / VISUAL_PASS），見 [visual-fixture-closure.md](visual-fixture-closure.md)。** 下方a3c93c8過早closure及其撤回聲明均為歷史，不作本輪證據。
+
 > **已被 Owner 視覺P1裁決取代：FUNCTIONAL_PASS / VISUAL_NO_GO。** 下方為a3c93c8當時歷史結論，不能再作Core3 clean GO；a3c93c8不得推送，核心恢復2/6。修復契約：`../../tasks/edx-core-3-visual-title-repair.md`。
 
 # Core3 Undo／Redo：Mainline closure GO

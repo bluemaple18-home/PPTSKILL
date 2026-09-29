@@ -1,6 +1,6 @@
 # PPTSKILL 核心完整版：六張主卡收斂
 
-Status: CORE_1_CLOSED_WITH_P2_RESIDUAL / CORE_2_CLOSED / CORE_3_VISUAL_NO_GO / FOUR_REMAINING
+Status: CORE_1_CLOSED_WITH_P2_RESIDUAL / CORE_2_CLOSED / CORE_3_CLOSED / THREE_REMAINING
 Owner裁決：收尾既有S18，回到原六項核心交付；不再從局部缺口逐張順延S19、S20。
 這是Mainline範圍裁決文件，不是第七張產品實作卡。歷史S16/S17/S18編號與commit不改名、不改寫。
 
@@ -67,3 +67,9 @@ Core3固定產品9ce7396／code f3d8a11，沿用原round08雙CODE GO與nonbrowse
 ## Owner 視覺P1：Core3重開
 
 原3/6關卡裁決撤回；現為**2/6完成**。Core3 FUNCTIONAL_PASS / VISUAL_NO_GO，標題Latin/CJK字形碰撞待有界修復與新產品／ZIP驗收，見tasks/edx-core-3-visual-title-repair.md。a3c93c8不推送，Core4不開。
+
+## 2026-09-29 fixture修復後重新關卡（最新有效裁決）
+
+paired診斷排除font假說，根因是驗收A/B遮標題；Owner接續後只移fixture y120→600、補舊位置RED／新位置GREEN gate。新正式雙viewport各12/12、四PGQ16/16、主線與A/B實際看四PNG及獨立host收尾全GO。Core3 FUNCTIONAL_PASS / VISUAL_PASS，六卡 **3/6完成、3張剩餘**；詳evidence/edx-core-3-undo-redo/visual-fixture-closure.md。
+
+產品／字體／ZIP及AI Core71b774d3未改；本輪RECOVERY_NOT_OBSERVED，不借用前次533作fresh結果。原receipt I/O P2與Crop F2/P2保留。舊a3c93c8不單獨推，這輪只保存local checkpoint；未merge／push／deploy／Core4。

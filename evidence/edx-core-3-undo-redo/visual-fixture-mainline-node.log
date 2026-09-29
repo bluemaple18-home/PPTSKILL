@@ -1,0 +1,12 @@
+✔ 雙viewport幾何反例：120拒絕、600通過；不是正式browser證據 (2.12475ms)
+✔ 隱藏、移出viewport、刪除或更換A/B不得迴避gate (0.284041ms)
+✔ 所有rect與viewport非finite或型別不符時fail closed (0.778333ms)
+✔ 只要任一fixture有正面積相交就拒絕；不設負容忍值 (0.103ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 112.18225

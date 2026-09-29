@@ -1,12 +1,12 @@
 # 核心完整版 3/6：operation-level Undo／Redo
 
-Status: FUNCTIONAL_PASS / VISUAL_NO_GO / CORE3_REOPENED
+Status: CORE3_CLOSED / FUNCTIONAL_PASS / VISUAL_PASS
 Branch: `codex/edx-core-3-undo-redo`
 Base: `115027040a169c505df0e7f31a0a8845280a4ed7`（Core2 closure）
 Parent: `tasks/edx-core-six-card-closure-plan.md` 第3項（WP3-S1）
 Trace: `CORE3-SC-01` 可撤銷提交、`CORE3-SC-02` 重做與分岔、`CORE3-SC-03` DOM／匯出一致、`CORE3-SC-04` 忙碌與原生鍵盤邊界；均對應父卡第3項，不新增第七張產品卡。
 
-最新接續：Owner指出雙viewport正式截圖主標題BI／中文碰撞P1，已撤回a3c93c8的clean closure；目前 **FUNCTIONAL_PASS / VISUAL_NO_GO，核心2/6**。原Undo/Redo、PGQ16/16、真ENOENT recovery與cleanup證據保留；AI Core71b774d3及已推b20ee40保留，a3c93c8不得推送。正在依 `tasks/edx-core-3-visual-title-repair.md` 有界修復標題tracking／font／混排間距並加visual gate；須以新產品／ZIP身分重驗雙viewport和affectedPGQ。既有receipt I/O P2、Crop F2/P2保留，不開Core4。
+最新接續：fixture遮擋已修復，正式雙viewport各12/12、四PGQ16/16、實際PNG與兩審收尾均GO；Core3已關閉，核心 **3/6完成**。產品／字體／ZIP與AI Core71b774d3未改。本輪RECOVERY_NOT_OBSERVED，前次真recovery另存。詳 `evidence/edx-core-3-undo-redo/visual-fixture-closure.md`。僅local checkpoint，未push／deploy／開Core4。
 
 ## 目標、依賴與實測缺口
 
