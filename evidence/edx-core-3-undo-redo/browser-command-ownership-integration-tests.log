@@ -1,0 +1,57 @@
+test_browser_live_discovery_before_exit (test_tmp_session.TmpSessionTests.test_browser_live_discovery_before_exit) ... ok
+test_browser_profile_and_evidence_are_bound_to_owned_root (test_tmp_session.TmpSessionTests.test_browser_profile_and_evidence_are_bound_to_owned_root) ... ok
+test_browser_singletons_survive_sampling_and_cleanup (test_tmp_session.TmpSessionTests.test_browser_singletons_survive_sampling_and_cleanup) ... ok
+test_browser_unknown_foreign_symlink_exits_two_and_cleans_owned_root (test_tmp_session.TmpSessionTests.test_browser_unknown_foreign_symlink_exits_two_and_cleans_owned_root) ... ok
+test_capacity_sampling_is_throttled_and_symlink_is_not_followed (test_tmp_session.TmpSessionTests.test_capacity_sampling_is_throttled_and_symlink_is_not_followed) ... ok
+test_resource_budget_diagnostics_survive_term_then_kill (test_tmp_session.TmpSessionTests.test_resource_budget_diagnostics_survive_term_then_kill) ... ok
+test_resource_stop_keeps_signal_and_observed_exit_precedence (test_tmp_session.TmpSessionTests.test_resource_stop_keeps_signal_and_observed_exit_precedence) ... NO_GO: runtime budget exceeded
+NO_GO: runtime budget exceeded
+ok
+test_review_success_failure_and_second_round (test_tmp_session.TmpSessionTests.test_review_success_failure_and_second_round) ... ok
+test_runtime_ttl_bytes_and_files_stop_before_child_completes (test_tmp_session.TmpSessionTests.test_runtime_ttl_bytes_and_files_stop_before_child_completes) ... ok
+test_signals_export_evidence_and_reap_child_tree (test_tmp_session.TmpSessionTests.test_signals_export_evidence_and_reap_child_tree) ... ok
+test_unknown_resource_observation_is_stop_reason (test_tmp_session.TmpSessionTests.test_unknown_resource_observation_is_stop_reason) ... ok
+test_browser_and_client_spawn_failure (test_tmp_session_browser_command.BrowserCommandProcessTests.test_browser_and_client_spawn_failure) ... {"case": "spawn-browser", "root": "/private/tmp/aic-b-698db18bfb994136813e8c89e8c60b8f", "pid": 2973, "pgid": null, "processes": [], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "spawn-client", "root": "/private/tmp/aic-b-e8f5e131047949b9a334c73e2902ae0d", "pid": 2984, "pgid": 2984, "processes": [{"role": "browser", "pid": 2985, "pgid": 2984}], "originalResultcode": 2, "originalChildReturncodes": {"browser": 0, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_same_pgid_success_nonzero_and_residual (test_tmp_session_browser_command.BrowserCommandProcessTests.test_same_pgid_success_nonzero_and_residual) ... {"case": "normal-0", "root": "/private/tmp/aic-b-52e0afffa81e48dcafa85a88800c7699", "pid": 3004, "pgid": 3004, "processes": [{"role": "browser", "pid": 3005, "pgid": 3004}, {"role": "client", "pid": 3006, "pgid": 3004}], "originalResultcode": 0, "originalChildReturncodes": {"browser": 0, "client": 0}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "normal-7", "root": "/private/tmp/aic-b-de4bcd9c8a2b4161a731a8ec4960275a", "pid": 3017, "pgid": 3017, "processes": [{"role": "browser", "pid": 3018, "pgid": 3017}, {"role": "client", "pid": 3019, "pgid": 3017}], "originalResultcode": 7, "originalChildReturncodes": {"browser": 0, "client": 7}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "residual-0", "root": "/private/tmp/aic-b-e4615158c41045a5a9ac2b55a336fa68", "pid": 3029, "pgid": 3029, "processes": [{"role": "browser", "pid": 3030, "pgid": 3029}, {"role": "client", "pid": 3031, "pgid": 3029}, {"role": "descendant", "pid": 3032, "pgid": 3029}], "originalResultcode": 2, "originalChildReturncodes": {"browser": 0, "client": 0}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_sigint_sigterm_are_not_overridden_by_client_exit (test_tmp_session_browser_command.BrowserCommandProcessTests.test_sigint_sigterm_are_not_overridden_by_client_exit) ... {"case": "signal-2", "root": "/private/tmp/aic-b-ce009ffd608c4d3cb263d6ca57e46626", "pid": 3048, "pgid": 3048, "processes": [{"role": "browser", "pid": 3050, "pgid": 3048}, {"role": "client", "pid": 3051, "pgid": 3048}], "originalResultcode": 130, "originalChildReturncodes": {"browser": -2, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "signal-15", "root": "/private/tmp/aic-b-04726755bae14b7cbeb8feccbd46fb90", "pid": 3061, "pgid": 3061, "processes": [{"role": "browser", "pid": 3062, "pgid": 3061}, {"role": "client", "pid": 3063, "pgid": 3061}], "originalResultcode": 143, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_ttl_bytes_files_kill_whole_group (test_tmp_session_browser_command.BrowserCommandProcessTests.test_ttl_bytes_files_kill_whole_group) ... {"case": "ttl", "root": "/private/tmp/aic-b-e8ce9291cc094a8b8087e4c53fccb7fe", "pid": 3175, "pgid": 3175, "processes": [{"role": "browser", "pid": 3176, "pgid": 3175}, {"role": "client", "pid": 3177, "pgid": 3175}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "bytes", "root": "/private/tmp/aic-b-600d86020e8d4eb1be2d540668ed5c49", "pid": 3192, "pgid": 3192, "processes": [{"role": "browser", "pid": 3193, "pgid": 3192}, {"role": "client", "pid": 3194, "pgid": 3192}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+{"case": "files", "root": "/private/tmp/aic-b-8ddc7211e3cd4476ac27c8a45679cfb5", "pid": 3206, "pgid": 3206, "processes": [{"role": "browser", "pid": 3207, "pgid": 3206}, {"role": "client", "pid": 3208, "pgid": 3206}], "originalResultcode": 2, "originalChildReturncodes": {"browser": null, "client": null}, "rootAbsent": true, "knownPidsAbsent": true}
+ok
+test_browser_client_cli_delegates_to_existing_outer (test_tmp_session_browser_command.BrowserCommandUnitTests.test_browser_client_cli_delegates_to_existing_outer) ... ok
+test_browser_spawn_failure_never_starts_client (test_tmp_session_browser_command.BrowserCommandUnitTests.test_browser_spawn_failure_never_starts_client) ... ok
+test_execute_preserves_legacy_argv_and_client_tmp_environment (test_tmp_session_browser_command.BrowserCommandUnitTests.test_execute_preserves_legacy_argv_and_client_tmp_environment) ... {"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpllnz16rc/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpllnz16rc/profile/DevToolsActivePort"}
+{"event": "browser-starting", "profile": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpk38w09fn/profile", "devtools_active_port": "/var/folders/f8/fv8s94z92kb9dkshb8rr5d7m0000gn/T/tmpk38w09fn/profile/DevToolsActivePort"}
+ok
+test_invalid_client_is_rejected_before_admission (test_tmp_session_browser_command.BrowserCommandUnitTests.test_invalid_client_is_rejected_before_admission) ... usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+usage: entry [-h] {review,browser} ...
+entry: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+ok
+test_raw_exits_spawn_errors_and_bounded_browser_stop (test_tmp_session_browser_command.BrowserCommandUnitTests.test_raw_exits_spawn_errors_and_bounded_browser_stop) ... ok
+test_single_journal_failure_stays_nonzero_after_recovery (test_tmp_session_browser_command.BrowserCommandUnitTests.test_single_journal_failure_stays_nonzero_after_recovery) ... ok
+test_unknown_convergence_preserves_root_without_cleanup (test_tmp_session_browser_command.BrowserCommandUnitTests.test_unknown_convergence_preserves_root_without_cleanup) ... ok
+test_browser_arguments_cannot_override_managed_flags (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_browser_arguments_cannot_override_managed_flags) ... usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: unrecognized arguments: --disable-features=Other
+usage: tmp_session.py [-h] {review,browser} ...
+tmp_session.py: error: browser client 必須是 -- 後不以 '-' 開頭的非空命令
+ok
+test_codex_sandbox_blocks_before_lifecycle_admission (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_codex_sandbox_blocks_before_lifecycle_admission) ... ok
+test_host_browser_path_still_delegates_to_lifecycle (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_host_browser_path_still_delegates_to_lifecycle) ... ok
+test_url_with_flag_text_remains_one_argument (test_tmp_session_browser_routing.TmpSessionBrowserRoutingTests.test_url_with_flag_text_remains_one_argument) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 36.387s
+
+OK

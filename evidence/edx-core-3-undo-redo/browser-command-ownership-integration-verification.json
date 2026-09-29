@@ -1,0 +1,296 @@
+{
+  "status": "CANONICAL_INTEGRATED_VERIFIED",
+  "base": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "candidate": "996492481144e92775780ce932661e38779cdddc",
+  "integratedHEAD": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1",
+  "changedPaths": [
+    "docs/tmp-session-lifecycle.md",
+    "scripts/tmp_session.py",
+    "tests/test_tmp_session_browser_command.py"
+  ],
+  "sourceSHA256": {
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176"
+  },
+  "unchangedSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892"
+  },
+  "untrackedPreserved": true,
+  "singleCommit": true,
+  "date": "2026-09-29",
+  "loadedEntry": "/Users/matt/ai-core/scripts/tmp_session.py",
+  "loadedScanner": "/Users/matt/ai-core/scripts/tmp_artifact_lifecycle.py",
+  "tests": {
+    "pattern": "test_tmp_session*.py",
+    "count": 26,
+    "skip": 0,
+    "failures": 0,
+    "errors": 0,
+    "exit": 0,
+    "seconds": 36.387,
+    "log": "browser-command-ownership-integration-tests.log",
+    "sha256": "a624ad3d9d40801ade7ec655d61545580f0310b0081cde264283178115132c0e",
+    "cases": [
+      {
+        "case": "spawn-browser",
+        "root": "/private/tmp/aic-b-698db18bfb994136813e8c89e8c60b8f",
+        "pid": 2973,
+        "pgid": null,
+        "processes": [],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "spawn-client",
+        "root": "/private/tmp/aic-b-e8f5e131047949b9a334c73e2902ae0d",
+        "pid": 2984,
+        "pgid": 2984,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 2985,
+            "pgid": 2984
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-0",
+        "root": "/private/tmp/aic-b-52e0afffa81e48dcafa85a88800c7699",
+        "pid": 3004,
+        "pgid": 3004,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3005,
+            "pgid": 3004
+          },
+          {
+            "role": "client",
+            "pid": 3006,
+            "pgid": 3004
+          }
+        ],
+        "originalResultcode": 0,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "normal-7",
+        "root": "/private/tmp/aic-b-de4bcd9c8a2b4161a731a8ec4960275a",
+        "pid": 3017,
+        "pgid": 3017,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3018,
+            "pgid": 3017
+          },
+          {
+            "role": "client",
+            "pid": 3019,
+            "pgid": 3017
+          }
+        ],
+        "originalResultcode": 7,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 7
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "residual-0",
+        "root": "/private/tmp/aic-b-e4615158c41045a5a9ac2b55a336fa68",
+        "pid": 3029,
+        "pgid": 3029,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3030,
+            "pgid": 3029
+          },
+          {
+            "role": "client",
+            "pid": 3031,
+            "pgid": 3029
+          },
+          {
+            "role": "descendant",
+            "pid": 3032,
+            "pgid": 3029
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": 0,
+          "client": 0
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-2",
+        "root": "/private/tmp/aic-b-ce009ffd608c4d3cb263d6ca57e46626",
+        "pid": 3048,
+        "pgid": 3048,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3050,
+            "pgid": 3048
+          },
+          {
+            "role": "client",
+            "pid": 3051,
+            "pgid": 3048
+          }
+        ],
+        "originalResultcode": 130,
+        "originalChildReturncodes": {
+          "browser": -2,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "signal-15",
+        "root": "/private/tmp/aic-b-04726755bae14b7cbeb8feccbd46fb90",
+        "pid": 3061,
+        "pgid": 3061,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3062,
+            "pgid": 3061
+          },
+          {
+            "role": "client",
+            "pid": 3063,
+            "pgid": 3061
+          }
+        ],
+        "originalResultcode": 143,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "ttl",
+        "root": "/private/tmp/aic-b-e8ce9291cc094a8b8087e4c53fccb7fe",
+        "pid": 3175,
+        "pgid": 3175,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3176,
+            "pgid": 3175
+          },
+          {
+            "role": "client",
+            "pid": 3177,
+            "pgid": 3175
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "bytes",
+        "root": "/private/tmp/aic-b-600d86020e8d4eb1be2d540668ed5c49",
+        "pid": 3192,
+        "pgid": 3192,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3193,
+            "pgid": 3192
+          },
+          {
+            "role": "client",
+            "pid": 3194,
+            "pgid": 3192
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      },
+      {
+        "case": "files",
+        "root": "/private/tmp/aic-b-8ddc7211e3cd4476ac27c8a45679cfb5",
+        "pid": 3206,
+        "pgid": 3206,
+        "processes": [
+          {
+            "role": "browser",
+            "pid": 3207,
+            "pgid": 3206
+          },
+          {
+            "role": "client",
+            "pid": 3208,
+            "pgid": 3206
+          }
+        ],
+        "originalResultcode": 2,
+        "originalChildReturncodes": {
+          "browser": null,
+          "client": null
+        },
+        "rootAbsent": true,
+        "knownPidsAbsent": true
+      }
+    ]
+  },
+  "afterProcessObservation": {
+    "knownPidCount": 28,
+    "matches": [],
+    "rootsAbsent": true
+  },
+  "canonicalTrackedClean": true,
+  "productSourceMatch": 75,
+  "protectedMatch": 4,
+  "archive": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290"
+  },
+  "clientMapping": "NOT_STARTED",
+  "realChrome": "NOT_RUN",
+  "PGQ": "NOT_RUN",
+  "core3": "PENDING",
+  "commitHooks": "harness audit quick passed; commit exit0；原始輸出保留於本task工具紀錄，未另存完整raw hook log。"
+}

@@ -79,3 +79,7 @@ R2_HOST_SMOKE_PASS / RECOVERY_NOT_OBSERVED / CANONICAL_ADOPTION_PENDING；Core3 
 ## 2026-09-28 Owner「繼續」後的歸屬候選
 
 REPLAN為既有tmp_session browser可選client，同一run_child owned group，未新增supervisor或修改scanner。候選99649248（base28cad2d3）精確入口／test／docs三檔；初版25/25 formal fake-process回歸，單次journal錯誤Repair1後15/15 formal browser/routing、0skip，10case的28已知PID與roots消失。A/B留證反例closure GO，Mainline GO_FOR_CANONICAL_INTEGRATION；完整 `browser-command-ownership-mainline-receipt.md`。候選未套canonical、PPTclient未接線，尚無真Chrome／PGQ，Core3仍未closure／核心2/6。依Owner AGENTS「繼續」不含merge授權，固定候選整合待明示；本Mainline持續負責後續，不轉交。原R2 applicability與RECOVERY_NOT_OBSERVED不改，產品75／protected4／ZIP再驗MATCH，原untracked保留。
+
+## 2026-09-29 ownership canonical 整合完成
+
+依Owner本輪獨立GO及明確限縮授權，canonical已由28cad2d3整合固定99649248最終三檔為單一commit **71b774d3**。原commit hooks通過；canonical fresh入口／routing **26/26、0skip、PASS**，10組fake-process roots消失、fresh28已知PID無匹配；scanner／policy／sensor及原untracked hashes保留。產品75／protected4／ZIP MATCH。詳 `browser-command-ownership-integration-receipt.md`。本輪沒有PPT client mapping、真Chrome／雙viewport／PGQ、push/deploy/production；Core3仍PENDING／核心2/6，不提前closure。下一階段client接線與產品驗收仍由本Mainline承接。

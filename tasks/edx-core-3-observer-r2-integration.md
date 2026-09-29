@@ -1,5 +1,5 @@
 # R2 canonical 整合與 Core3 正式驗收
-Status：R2_CANONICAL_INTEGRATED_VERIFIED / OWNERSHIP_CANDIDATE_CODE_GO / OWNERSHIP_CANONICAL_INTEGRATION_PENDING / CORE3_ACCEPTANCE_PENDING。
+Status：OWNERSHIP_CANONICAL_INTEGRATED_VERIFIED / PPT_CLIENT_MAPPING_PENDING / CORE3_ACCEPTANCE_PENDING。
 目標／授權：Owner 在確認本 task 為 Mainline 後明示「那做吧」（2026-09-28），執行已裁決 GO 的 canonical 整合、身分與 scanner 回歸驗證，再接續既有 Core3 雙 viewport／四支串行 PGQ；不 push/deploy、不開 Core4。
 整合：依 observer-r2-adoption-decision.md，canonical 須精確 c23e465、無 tracked drift；只匯入 bundle 並 cherry-pick 4edd0747，三檔 hash 必須相同。保存 canonical/untracked 前後身分；失敗僅 revert 本 integration commit，不 destructive reset/clean。
 契約：固定 R2 whole-scan bounded re-observation 不改。R2 smoke 已消耗，本輪直接做 adoption 後產品驗收，不另加 smoke。若 observation contract 再失敗，停止 scanner patch 線、不 R3；產品 assertion 失敗不自動新增產品 Repair。
@@ -26,3 +26,9 @@ why_not_less：外層finish gate無法阻止supervisor自主TTL/觀測失敗clea
 本輪交付：初版1829f1ab formal host25/25、0skip；A/B發現同一留證錯誤被exit0掩蓋（A P2、B P1），採一次Repair1為996492481144e92775780ce932661e38779cdddc。修正版formal browser/routing15/15、0skip，10個真程序case與fresh28 PID/root消失證據；A/B同反例closure GO，Mainline GO_FOR_CANONICAL_INTEGRATION。Delta仍精確三檔；scanner/policy/產品/ZIP/protected不變。詳 `evidence/edx-core-3-undo-redo/browser-command-ownership-mainline-receipt.md`，含固定bundle、hashes及單一integration commit／revert方案。
 
 Canonical仍28cad2d3未套用ownership候選；Owner「繼續」依其AGENTS不含merge授權，整合待明確放行。後續由本Mainline負責candidate整合、PPT同群組client薄接線及正式雙viewport／PGQ驗收，不轉交Mainline。原controller pending未動，禁止直接啟動；未Chrome／PGQ、未push/deploy/Core4。
+
+## 2026-09-29 Owner 明確整合授權
+
+Owner 完成獨立查核並明示 GO_FOR_CANONICAL_INTEGRATION，授權限 local canonical integration commit 與整合後測試。Mainline 僅將固定99649248最終三檔由已驗bundle整合到精確28cad2d3，形成單一commit；先核對無tracked drift、保存untracked與未變更檔hash，再跑入口／routing完整回歸。範圍不含PPT client mapping、真Chrome／PGQ、push／deploy／production。成功後留下receipt即停在產品驗收PENDING，不沿用前段較廣scope自動啟動。
+
+完成：canonical單一integration commit **71b774d31b8e7aa9e05786c8dc431c7528dabdc1**，三檔exact candidate bytes；原commit hooks通過，整合後正式入口／routing **26/26、0skip、PASS**，fresh28 PID無匹配／10 roots消失。scanner／policy／sensor與untracked hash保留，PPT75／protected4／ZIP不變。詳 `evidence/edx-core-3-undo-redo/browser-command-ownership-integration-receipt.md`。本輪限縮scope已完成；client mapping與產品驗收仍PENDING，未啟動。
