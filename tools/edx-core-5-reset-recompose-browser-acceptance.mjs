@@ -217,9 +217,13 @@ for (const [width, height] of [[1280, 720], [1600, 900]]) {
             box:box?{left:box.left,top:box.top,right:box.right,bottom:box.bottom}:null,
             rects:range?[...range.getClientRects()].filter(rect=>rect.width>0&&rect.height>0).map(rect=>({left:rect.left,top:rect.top,right:rect.right,bottom:rect.bottom})):[]};
         }
-        return{motionStatic:document.documentElement.classList.contains('motion-static'),measured};
+        return{motionStatic:document.documentElement.classList.contains('motion-static'),
+          variant:[...(root?.classList||[])].find(value=>value.startsWith('variant-'))?.slice(8)||null,measured};
       })()`);
+      run.visuals.push({ label, ...visual });
       assert.equal(visual.motionStatic, true, `${label} 動效未固定`);
+      assert.equal(visual.variant, label === 'recomposed' ? 'evidence-axis' : 'quote-monument',
+        `${label} 視覺版型與驗收階段不符`);
       for (const [name, item] of Object.entries(visual.measured)) {
         assert.ok(item.text && item.display !== 'none' && item.visibility === 'visible'
           && item.opacity === '1' && item.clipPath === 'none' && item.rects.length > 0,
@@ -233,11 +237,13 @@ for (const [width, height] of [[1280, 720], [1600, 900]]) {
           && Math.min(a.bottom, b.bottom) > Math.max(a.top, b.top) + 1)),
         `${label} ${left} 與 ${right} 文字相交`);
       }
-      const quote = visual.measured.quote;
-      assert.ok(quote.rects.every(rect => rect.left >= quote.box.left + 2
-        && rect.top >= quote.box.top + 2 && rect.right <= quote.box.right - 2
-        && rect.bottom <= quote.box.bottom - 2), `${label} 引用文字超出卡片邊界`);
-      run.visuals.push({ label, ...visual });
+      // 只有 evidence-axis 有卡片背景；quote-monument 的字型行框可與元素邊緣齊平。
+      if (visual.variant === 'evidence-axis') {
+        const quote = visual.measured.quote;
+        assert.ok(quote.box && quote.rects.every(rect => rect.left >= quote.box.left + 2
+          && rect.top >= quote.box.top + 2 && rect.right <= quote.box.right - 2
+          && rect.bottom <= quote.box.bottom - 2), `${label} 引用文字超出卡片邊界`);
+      }
       const result = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       const bytes = Buffer.from(result.data, 'base64');
       assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
