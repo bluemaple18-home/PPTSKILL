@@ -50,7 +50,7 @@ test('S1 涵蓋指定的七種判讀頁型', () => {
 test('S1-R1 只替五張弱頁加入 bounded type-as-visual anchor', () => {
   const result = renderFullDeck(fixture);
   assert.equal(result.status, 'pass');
-  assert.equal((result.html.match(/data-type-visual/g) ?? []).length, 5);
+  assert.equal((result.html.match(/<span\b[^>]*\bdata-type-visual\b/g) ?? []).length, 5);
   for (const token of ['成本', '證據', '05', '92', '一套']) {
     assert.match(result.html, new RegExp(`data-word="${token}"`));
   }

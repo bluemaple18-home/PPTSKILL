@@ -13,6 +13,7 @@ import { buildMotionBrowserContractRuntime, validateDeckMotionInput } from './mo
 import { buildBackgroundBrowserContractRuntime, validateDeckBackgroundEffects } from './background-effects.js';
 import { buildMultiSelectionRuntime } from './multi-selection.js';
 import { createEditorHistory } from './editor-history.js';
+import { validateDeckCompositions } from './composition-primitives.js';
 
 const clone = (value) => JSON.parse(JSON.stringify(value));
 // 僅在冷路徑提交／清理後比對 canonical 值；pointer 只讀閉包 revision。
@@ -122,8 +123,91 @@ const editTextComponent = (slide, elementId, value) => {
   return component;
 };
 
+// Reset 僅接受單頁 edit-start 基準；取消不建立交易，無基準的複製頁封閉拒絕。
+const planResetSlide = (spec, request, revision, baseline) => {
+  if (!hasExactKeys(request, ['operation', 'target', 'value']) || request.operation !== 'reset-slide'
+    || !hasExactKeys(request.target, ['deckId', 'slideId', 'revision'])
+    || !hasExactKeys(request.value, ['confirmed'])) throw new Error('reset-slide payload 無效。');
+  if (request.target.deckId !== spec.deckId) throw new Error('reset-slide deck 不符。');
+  if (!Number.isSafeInteger(request.target.revision) || request.target.revision !== revision) throw new Error('reset-slide revision 已失效。');
+  const id = request.target.slideId;
+  if (typeof id !== 'string' || spec.slides.filter(slide => slide.id === id).length !== 1) throw new Error('reset-slide slide 不唯一。');
+  const original = baseline.slides.filter(slide => slide.id === id);
+  if (original.length !== 1) throw new Error('reset-slide 無本次開啟編輯的基準。');
+  if (typeof request.value.confirmed !== 'boolean') throw new Error('reset-slide 確認欄位無效。');
+  if (!request.value.confirmed) return null;
+  const next = clone(spec);
+  next.slides.splice(next.slides.findIndex(slide => slide.id === id), 1, clone(original[0]));
+  return next;
+};
+
+// 只規劃 renderer 已有 CSS 的同 primitive 變體；未知欄位或未授權 override 一律拒絕。
+const planRecomposeSlide = (spec, request, revision, visualWorld) => {
+  const dataOnly = (value, active = new Set()) => {
+    if (!value || typeof value !== 'object') return true;
+    if (active.has(value)) return false;
+    active.add(value);
+    const valid = Reflect.ownKeys(value).every(key => {
+      if (Array.isArray(value) && key === 'length') return true;
+      const property = Object.getOwnPropertyDescriptor(value, key);
+      return typeof key === 'string' && property?.enumerable === true
+        && Object.hasOwn(property, 'value') && dataOnly(property.value, active);
+    });
+    active.delete(value);
+    return valid;
+  };
+  if (!dataOnly(request)) throw new Error('recompose-slide payload 不接受 getter／隱藏欄位／循環引用。');
+  if (!hasExactKeys(request, ['operation', 'target', 'value']) || request.operation !== 'recompose-slide'
+    || !hasExactKeys(request.target, ['deckId', 'slideId', 'revision'])) throw new Error('recompose-slide payload／target 無效。');
+  if (request.target.deckId !== spec.deckId) throw new Error('recompose-slide deck 不符。');
+  if (!Number.isSafeInteger(request.target.revision) || request.target.revision !== revision) throw new Error('recompose-slide revision 已失效。');
+  const slides = spec.slides.filter(slide => slide.id === request.target.slideId);
+  if (typeof request.target.slideId !== 'string' || slides.length !== 1) throw new Error('recompose-slide slide 不唯一。');
+  if (!hasExactKeys(request.value, ['composition', 'replaceScopes', 'confirmedScopes'])) throw new Error('recompose-slide value 欄位無效。');
+  const { composition, replaceScopes, confirmedScopes } = request.value;
+  const allowedScopes = ['variant', 'geometryOverrides', 'typographyOverrides'];
+  if (!Array.isArray(replaceScopes) || replaceScopes.length < 1 || new Set(replaceScopes).size !== replaceScopes.length
+    || replaceScopes.some(scope => !allowedScopes.includes(scope))) throw new Error('recompose-slide override scope 無效。');
+  if (!Array.isArray(confirmedScopes) || !sameCanonicalValue(confirmedScopes, replaceScopes))
+    throw new Error('recompose-slide 須明確確認 destructive scope。');
+  const before = slides[0].composition;
+  if (!composition || typeof composition !== 'object' || Array.isArray(composition)) throw new Error('recompose-slide composition 無效。');
+  if (composition.primitive !== before.primitive) throw new Error('recompose-slide primitive 不支援變更。');
+  if (!sameCanonicalValue(composition.slots, before.slots)) throw new Error('recompose-slide slots 不支援變更。');
+  const keys = new Set([...Object.keys(before), ...Object.keys(composition)]);
+  for (const key of keys) {
+    if (!Object.hasOwn(before, key) && !allowedScopes.includes(key)) throw new Error('recompose-slide composition 欄位不支援：' + key);
+    if (!Object.hasOwn(composition, key) && !replaceScopes.includes(key)) throw new Error('recompose-slide 缺少保留欄位：' + key);
+    if (!replaceScopes.includes(key) && !sameCanonicalValue(composition[key], before[key]))
+      throw new Error('recompose-slide 未授權 override scope：' + key);
+  }
+  const supported = visualWorld === 'typography-hero' ? {
+    'title-points': ['editorial-index', 'dense-ledger'],
+    'component-focus': ['quote-monument', 'evidence-axis'],
+  } : {};
+  if (!supported[before.primitive]?.includes(before.variant) || !supported[before.primitive].includes(composition.variant))
+    throw new Error('recompose-slide portable renderer 不支援此 variant。');
+  const next = clone(spec), target = next.slides.find(slide => slide.id === request.target.slideId);
+  for (const scope of replaceScopes) {
+    if (Object.hasOwn(composition, scope)) target.composition[scope] = clone(composition[scope]);
+    else delete target.composition[scope];
+  }
+  // 非 slot 元件只靠 geometry override 出現在 renderer；清除後現有 DOM 無法同步移除。
+  const slotRef = before.primitive === 'component-focus'
+    ? Object.values(before.slots ?? {}).find(ref => typeof ref === 'string' && ref.startsWith('content.components.')) : null;
+  const nativeComponentId = slotRef?.slice('content.components.'.length);
+  for (const component of slides[0].content.components) {
+    if (component.id !== nativeComponentId
+      && Object.hasOwn(before.geometryOverrides ?? {}, component.id)
+      && !Object.hasOwn(target.composition.geometryOverrides ?? {}, component.id))
+      throw new Error('recompose-slide renderer 不支援清除 geometry-only component：' + component.id);
+  }
+  return next;
+};
+
 const validateOperationRequest = (request) => {
   if (!Object.hasOwn(Object.getOwnPropertyDescriptor(request || {}, 'operation') || {}, 'value')) throw new Error('operation 不接受 getter。');
+  if (request?.operation === 'recompose-slide' || request?.operation === 'reset-slide') return request;
   if (groupLock.names.includes(request.operation)) return groupLock.validateRequest(request);
   if (request?.operation === 'edit-text') return imageInsertion.validateEditTextRequest(request);
   if (request?.operation === 'insert-element') return imageInsertion.validateRequest(request);
@@ -212,6 +296,29 @@ export const OPERATION_DESCRIPTORS = deepFreeze({
     qaInvalidation: ['content', 'overflow'],
     portableSerialization: 'json',
     unsupportedReason: null,
+  },
+  'recompose-slide': {
+    inputSchema: { type: 'object', required: ['operation', 'target', 'value'], additionalProperties: false,
+      properties: { operation: { const: 'recompose-slide' },
+        target: { type: 'object', required: ['deckId', 'slideId', 'revision'], additionalProperties: false,
+          properties: { deckId: { type: 'string' }, slideId: { type: 'string' }, revision: { type: 'integer', minimum: 0 } } },
+        value: { type: 'object', required: ['composition', 'replaceScopes', 'confirmedScopes'], additionalProperties: false,
+          properties: { composition: { type: 'object' }, replaceScopes: { type: 'array', minItems: 1, uniqueItems: true,
+            items: { enum: ['variant', 'geometryOverrides', 'typographyOverrides'] } }, confirmedScopes: { type: 'array' } } } } },
+    allowedTargetRoles: ['slide'], mutates: ['composition.variant', 'composition.geometryOverrides', 'composition.typographyOverrides'],
+    preserves: ['content', 'assets', 'stableIds', 'groupLock', 'motion', 'background', 'otherSlides', 'unlistedOverrides'],
+    destructive: true, confirmation: 'confirmedScopes=replaceScopes', undoable: true,
+    qaInvalidation: ['geometry', 'overflow', 'readability'], portableSerialization: 'json',
+    unsupportedReason: '跨 primitive／slots 或無既有 CSS variant 的候選不支援。',
+  },
+  'reset-slide': {
+    inputSchema: { type: 'object', required: ['operation', 'target', 'value'], additionalProperties: false,
+      properties: { operation: { const: 'reset-slide' }, target: { type: 'object', required: ['deckId', 'slideId', 'revision'], additionalProperties: false },
+        value: { type: 'object', required: ['confirmed'], additionalProperties: false,
+          properties: { confirmed: { type: 'boolean' } } } } },
+    allowedTargetRoles: ['slide'], mutates: ['content', 'composition'], preserves: ['slideId', 'style', 'otherSlides', 'deckSettings'],
+    destructive: true, confirmation: '明示清除本頁文字／元件／人工版面', undoable: true,
+    qaInvalidation: ['content', 'geometry', 'overflow', 'readability'], portableSerialization: 'json', unsupportedReason: '無 edit-start 基準的複製頁不支援。',
   },
   'move-element': geometryDescriptor('move-element', ['x', 'y']),
   'resize-element': geometryDescriptor('resize-element', ['width', 'height']),
@@ -314,6 +421,9 @@ export function createDeckEditor(input) {
   const rawBackgroundErrors = validateDeckBackgroundEffects(input);
   if (rawMotionErrors.length || rawBackgroundErrors.length) throw new Error([...rawMotionErrors, ...rawBackgroundErrors].join(' '));
   let spec = sanitizeDeckSpec(input);
+  const editStartSpec = clone(spec);
+  let revision = 0;
+  const visualWorld = ({ 'editorial-rail': 'typography-hero', 'technical-map': 'information-led', 'full-bleed-type': 'company-dark' })[spec.style.layout.primaryMove] || 'default';
   let styleClipboard = null;
   const history = createEditorHistory();
   const initialCapabilityValidation = validateDeckGenerationCapabilities(spec);
@@ -330,7 +440,7 @@ export function createDeckEditor(input) {
     if (errors.length) throw new Error(errors.join(' '));
     const changed = !sameCanonicalValue(spec, clean);
     const result = clone(clean);
-    if (changed) history.record(spec, clean, undoable);
+    if (changed) { history.record(spec, clean, undoable); revision++; }
     spec = clean;
     return result;
   };
@@ -339,6 +449,18 @@ export function createDeckEditor(input) {
     const { operation, target, value } = validateOperationRequest(request);
     const descriptor = OPERATION_DESCRIPTORS[operation];
     if (!descriptor) throw new Error(`不支援的 operation：${operation || 'unknown'}`);
+    if (operation === 'recompose-slide') {
+      const candidate = planRecomposeSlide(spec, request, revision, visualWorld);
+      const cleaned = sanitizeDeckSpec(candidate);
+      if (!sameCanonicalValue(candidate, cleaned)) throw new Error('recompose-slide sanitizer 不接受候選 composition。');
+      const validation = validateDeckCompositions(cleaned);
+      if (validation.status !== 'pass') throw new Error(validation.errors.join(' '));
+      return commit(candidate, true);
+    }
+    if (operation === 'reset-slide') {
+      const candidate = planResetSlide(spec, request, revision, editStartSpec);
+      return candidate ? commit(candidate, true) : clone(spec);
+    }
     if (operation === 'copy-style' || operation === 'paste-style') {
       const slide = findSlide(spec, target.slideId);
       roleTypography.validateStyleTarget(slide, request);
@@ -403,9 +525,10 @@ export function createDeckEditor(input) {
 
   const editor = {
     getSpec: () => clone(spec),
+    getRevision: () => revision,
     getHistoryState: history.state,
-    undo() { return history.replay('undo', value => { spec = value; }); },
-    redo() { return history.replay('redo', value => { spec = value; }); },
+    undo() { return history.replay('undo', value => { spec = value; revision++; }); },
+    redo() { return history.replay('redo', value => { spec = value; revision++; }); },
     operationDescriptors: OPERATION_DESCRIPTORS,
     executeOperation,
     editText(slideId, field, value) {
@@ -475,12 +598,12 @@ export function createDeckEditor(input) {
   // 公開入口先取得同步 owner；內部呼叫仍指向 private editor／executor。
   let mutationOwner = false;
   return Object.fromEntries(Object.entries(editor).map(([name, value]) => [name,
-    typeof value !== 'function' || ['getSpec', 'getHistoryState'].includes(name) ? value : (...args) => {
+    typeof value !== 'function' || ['getSpec', 'getRevision', 'getHistoryState'].includes(name) ? value : (...args) => {
       if (mutationOwner) { if (name === 'undo' || name === 'redo') return false; throw new Error('同步交易進行中，拒絕重入。'); }
       mutationOwner = true;
-      const before = spec, clipboard = styleClipboard, saved = history.checkpoint();
+      const before = spec, revisionBefore = revision, clipboard = styleClipboard, saved = history.checkpoint();
       try { return value.apply(editor, args); }
-      catch (error) { spec = before; styleClipboard = clipboard; history.restore(saved); throw error; }
+      catch (error) { spec = before; revision = revisionBefore; styleClipboard = clipboard; history.restore(saved); throw error; }
       finally { mutationOwner = false; }
     }]));
 }
@@ -490,7 +613,7 @@ export const buildDeckEditorCss = () => `${buildCropDialogCss()}
 .pptskill-editor button,.pptskill-editor label{appearance:none;border:1px solid #ffffff30;border-radius:7px;background:#2a2a2a;color:inherit;padding:8px 10px;font:inherit;cursor:pointer}.pptskill-editor button:hover,.pptskill-editor label:hover{background:#3b3b3b}.pptskill-editor button:focus-visible,.pptskill-editor label:focus-visible{outline:2px solid #9ed7ff;outline-offset:2px}.pptskill-editor [data-action="save"]{background:#f1eee7;color:#181818}.pptskill-editor__status{min-width:88px;color:#d7d7d7;font-weight:500}.pptskill-editor__file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}.pptskill-component-dialog{width:min(680px,calc(100vw - 40px));border:1px solid #ffffff30;border-radius:14px;background:#181818;color:#fff;padding:20px;font:600 14px/1.5 "Microsoft JhengHei","Microsoft JhengHei UI","PingFang TC",sans-serif}.pptskill-component-dialog::backdrop{background:#0009}.pptskill-component-dialog textarea{display:block;width:100%;min-height:280px;margin:12px 0;padding:12px;border:1px solid #ffffff30;border-radius:8px;background:#0f0f0f;color:#fff;font:500 13px/1.45 ui-monospace,monospace}.pptskill-component-dialog menu{display:flex;justify-content:flex-end;gap:8px;margin:0;padding:0}.pptskill-component-dialog button{padding:8px 12px}.pptskill-insert-text-dialog{box-sizing:border-box;max-height:calc(100vh - 40px);overflow:auto}.pptskill-insert-text-dialog textarea{box-sizing:border-box;min-height:180px;font:inherit}.pptskill-insert-text-dialog [data-insert-text-status]{min-height:1.5em;white-space:pre-wrap;color:#ffd6a0}.pptskill-insert-text-dialog :focus-visible{outline:2px solid #9ed7ff;outline-offset:2px}
 body[data-editor-mode="edit"] [data-edit-kind="text"][contenteditable="true"]{outline:2px dashed #2f82ff;outline-offset:4px;cursor:text}body[data-editor-mode="edit"] .slide[data-editor-selected="true"]{box-shadow:0 0 0 4px #2f82ff inset}
 .pptskill-editor>[data-local-draft]{display:inline-flex;align-items:center}body .pptskill-editor>[data-action="restore-draft"]:not([hidden]),body .pptskill-editor>[data-action="replace-draft"]:not([hidden]){display:inline-flex}.pptskill-editor>[data-local-draft][hidden]{display:none!important}.pptskill-editor [data-local-draft][role="status"]{max-width:220px;color:#d7d7d7;font-weight:500}.pptskill-editor button:disabled{opacity:.45;cursor:not-allowed}body[data-editor-mode="layout"] .pptskill-editor>[data-action="undo"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="redo"]{display:inline-flex}
-.pptskill-editor{max-width:calc(100vw - 36px);flex-wrap:wrap}body[data-editor-mode="layout"] .pptskill-editor{opacity:1}body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-insert-text-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-insert-image-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-selected-image-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-action="snap-layout"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="save"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="delete"],body[data-editor-mode="layout"] .pptskill-editor>[data-editor-status],body[data-editor-mode="layout"] .pptskill-editor>[data-action="initialize-layout"]:not([hidden]),body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-context-toolbar]:not([hidden]),body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-group-toolbar]:not([hidden]){display:inline-flex}.pptskill-editor>[data-pptskill-context-toolbar],.pptskill-editor>[data-pptskill-group-toolbar]{align-items:center;gap:4px;flex-wrap:wrap}.pptskill-editor>[hidden],.pptskill-editor [data-pptskill-insert-text-toolbar]>[hidden],.pptskill-editor [data-pptskill-insert-image-toolbar]>[hidden],.pptskill-editor [data-pptskill-selected-image-toolbar]>[hidden]{display:none!important}body[data-editor-mode="layout"] .slide [data-editor-selected="true"]{outline:2px solid #2f82ff;outline-offset:2px}body[data-editor-mode="layout"] .slide [data-pptskill-element-id]{user-select:none}body[data-editor-mode="layout"] .moveable-control-box{z-index:9999}
+.pptskill-editor{max-width:calc(100vw - 36px);flex-wrap:wrap}body[data-editor-mode="layout"] .pptskill-editor{opacity:1}body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-insert-text-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-insert-image-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-selected-image-toolbar],body[data-editor-mode="layout"] .pptskill-editor>[data-action="snap-layout"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="save"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="delete"],body[data-editor-mode="layout"] .pptskill-editor>[data-action="reset-slide"],body[data-editor-mode="layout"] .pptskill-editor>[data-editor-status],body[data-editor-mode="layout"] .pptskill-editor>[data-action="initialize-layout"]:not([hidden]),body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-context-toolbar]:not([hidden]),body[data-editor-mode="layout"] .pptskill-editor>[data-pptskill-group-toolbar]:not([hidden]){display:inline-flex}.pptskill-editor>[data-pptskill-context-toolbar],.pptskill-editor>[data-pptskill-group-toolbar]{align-items:center;gap:4px;flex-wrap:wrap}.pptskill-editor>[hidden],.pptskill-editor [data-pptskill-insert-text-toolbar]>[hidden],.pptskill-editor [data-pptskill-insert-image-toolbar]>[hidden],.pptskill-editor [data-pptskill-selected-image-toolbar]>[hidden]{display:none!important}body[data-editor-mode="layout"] .slide [data-editor-selected="true"]{outline:2px solid #2f82ff;outline-offset:2px}body[data-editor-mode="layout"] .slide [data-pptskill-element-id]{user-select:none}body[data-editor-mode="layout"] .moveable-control-box{z-index:9999}
 body[data-editor-mode="edit"] .pptskill-editor>[data-pptskill-typography-toolbar]:not([hidden]){display:inline-flex}.pptskill-editor [data-pptskill-typography-toolbar]{align-items:center;gap:4px}.pptskill-editor [data-typography-size]{width:5em;background:#151515;color:inherit;border:1px solid #ffffff50;border-radius:4px;font:inherit;padding:4px}.pptskill-editor [data-typography-size]:focus-visible{outline:2px solid #9ed7ff;outline-offset:2px}
 .pptskill-editor [data-pptskill-selected-image-toolbar],.pptskill-editor [data-selected-image-fit]{align-items:center;gap:4px}.pptskill-editor [data-selected-image-fit]{display:inline-flex}.pptskill-editor [data-image-fit][aria-pressed="true"]{background:#3b3b3b;border-color:#9ed7ff}
 @media print{[data-pptskill-editor-chrome],.moveable-control-box,.selecto-selection{display:none!important}.pptskill-editor{display:none!important}.slide[data-editor-selected="true"]{box-shadow:none}}
@@ -506,7 +629,7 @@ const buildSelectedImageToolbarMarkup = () => `<span data-pptskill-selected-imag
 
 const buildTypographyToolbarMarkup = () => `<span data-pptskill-typography-toolbar hidden><label>字級 <input type="number" min="16" max="160" step="1" aria-label="字級（slide px）" data-typography-size></label><button type="button" data-action="apply-typography">套用字級</button><button type="button" data-action="reset-typography">還原字級</button><button type="button" data-action="copy-style" disabled>複製字級</button><button type="button" data-action="paste-style" disabled>貼上字級</button></span>`;
 
-export const buildDeckEditorMarkup = () => `${buildCropHashLicenseScript()}<nav class="pptskill-editor" data-pptskill-editor aria-label="簡報編輯器"><button type="button" data-action="edit">編輯文字</button><button type="button" data-action="layout" aria-pressed="false">編輯版面</button><button type="button" data-action="undo" disabled aria-label="復原">復原</button><button type="button" data-action="redo" disabled aria-label="重做">重做</button><button type="button" data-action="snap-layout" aria-pressed="false">8px吸附</button><button type="button" data-action="initialize-layout" hidden>套用手動版面</button>${buildInsertImageToolbarMarkup()}${buildInsertTextToolbarMarkup()}${buildTypographyToolbarMarkup()}${buildGroupToolbarMarkup()}${buildSelectedImageToolbarMarkup()}<span data-pptskill-context-toolbar hidden aria-label="多選排列"><button type="button" data-action="align-left">左對齊</button><button type="button" data-action="align-center-x">水平置中</button><button type="button" data-action="align-right">右對齊</button><button type="button" data-action="align-top">上對齊</button><button type="button" data-action="align-center-y">垂直置中</button><button type="button" data-action="align-bottom">下對齊</button><button type="button" data-action="distribute-horizontal-centers" data-distribute-control hidden>水平均分</button><button type="button" data-action="distribute-vertical-centers" data-distribute-control hidden>垂直均分</button><button type="button" data-action="distribute-horizontal-gaps" data-distribute-control hidden>水平等間距</button><button type="button" data-action="distribute-vertical-gaps" data-distribute-control hidden>垂直等間距</button></span><button type="button" data-action="edit-component">編輯元件</button><button type="button" data-action="move-up">上移</button><button type="button" data-action="move-down">下移</button><button type="button" data-action="duplicate">複製</button><button type="button" data-action="delete">刪除</button><label for="pptskill-image-input">替換圖片</label><input class="pptskill-editor__file" id="pptskill-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml"><button type="button" data-action="save">另存 HTML</button><span data-local-draft role="status" aria-live="polite"></span><button type="button" data-local-draft data-action="restore-draft" hidden>恢復本機草稿</button><button type="button" data-local-draft data-action="replace-draft" hidden>捨棄舊草稿，改存目前編輯</button><span class="pptskill-editor__status" data-editor-status aria-live="polite">可直接播放</span></nav>${buildInsertTextDialogMarkup()}${buildCropDialogMarkup()}<dialog class="pptskill-component-dialog" data-component-dialog><strong>編輯目前頁面的支援元件</strong><p>只接受 DeckSpec allowlist 內的 text、image、table、chart 或 public citation。</p><textarea data-component-json spellcheck="false"></textarea><menu><button type="button" data-action="cancel-component">取消</button><button type="button" data-action="apply-component">套用</button></menu></dialog>`;
+export const buildDeckEditorMarkup = () => `${buildCropHashLicenseScript()}<nav class="pptskill-editor" data-pptskill-editor aria-label="簡報編輯器"><button type="button" data-action="edit">編輯文字</button><button type="button" data-action="layout" aria-pressed="false">編輯版面</button><button type="button" data-action="undo" disabled aria-label="復原">復原</button><button type="button" data-action="redo" disabled aria-label="重做">重做</button><button type="button" data-action="snap-layout" aria-pressed="false">8px吸附</button><button type="button" data-action="initialize-layout" hidden>套用手動版面</button>${buildInsertImageToolbarMarkup()}${buildInsertTextToolbarMarkup()}${buildTypographyToolbarMarkup()}${buildGroupToolbarMarkup()}${buildSelectedImageToolbarMarkup()}<span data-pptskill-context-toolbar hidden aria-label="多選排列"><button type="button" data-action="align-left">左對齊</button><button type="button" data-action="align-center-x">水平置中</button><button type="button" data-action="align-right">右對齊</button><button type="button" data-action="align-top">上對齊</button><button type="button" data-action="align-center-y">垂直置中</button><button type="button" data-action="align-bottom">下對齊</button><button type="button" data-action="distribute-horizontal-centers" data-distribute-control hidden>水平均分</button><button type="button" data-action="distribute-vertical-centers" data-distribute-control hidden>垂直均分</button><button type="button" data-action="distribute-horizontal-gaps" data-distribute-control hidden>水平等間距</button><button type="button" data-action="distribute-vertical-gaps" data-distribute-control hidden>垂直等間距</button></span><button type="button" data-action="edit-component">編輯元件</button><button type="button" data-action="move-up">上移</button><button type="button" data-action="move-down">下移</button><button type="button" data-action="duplicate">複製</button><button type="button" data-action="delete">刪除</button><button type="button" data-action="reset-slide" title="清除本頁文字、元件與人工版面">重設本頁</button><label for="pptskill-image-input">替換圖片</label><input class="pptskill-editor__file" id="pptskill-image-input" type="file" accept="image/png,image/jpeg,image/webp,image/gif,image/svg+xml"><button type="button" data-action="save">另存 HTML</button><span data-local-draft role="status" aria-live="polite"></span><button type="button" data-local-draft data-action="restore-draft" hidden>恢復本機草稿</button><button type="button" data-local-draft data-action="replace-draft" hidden>捨棄舊草稿，改存目前編輯</button><span class="pptskill-editor__status" data-editor-status aria-live="polite">可直接播放</span></nav>${buildInsertTextDialogMarkup()}${buildCropDialogMarkup()}<dialog class="pptskill-component-dialog" data-component-dialog><strong>編輯目前頁面的支援元件</strong><p>只接受 DeckSpec allowlist 內的 text、image、table、chart 或 public citation。</p><textarea data-component-json spellcheck="false"></textarea><menu><button type="button" data-action="cancel-component">取消</button><button type="button" data-action="apply-component">套用</button></menu></dialog>`;
 
 export const buildDeckEditorRuntimeScript = (componentTreatments = {}) => {
   const chartCapability = getGenerationCapabilities().components.chart;
@@ -523,6 +646,8 @@ ${buildImageCropRuntime()}
 if(!q('[data-pptskill-crop-hash-license]'))document.body.insertAdjacentHTML?.('beforeend',${JSON.stringify(buildCropHashLicenseScript()).replaceAll('<','\\u003c')});
 const cropProjection=createCropProjection({contract:imageCrop,window});let cropDialog=null;
 const mountCropDialog=${mountCropDialog.toString()};
+if(q('[data-pptskill-editor]')&&typeof document.createElement==='function'&&!q('[data-action="reset-slide"]')){const button=document.createElement('button');button.setAttribute('type','button');button.setAttribute('data-action','reset-slide');button.setAttribute('title','清除本頁文字、元件與人工版面');button.textContent='重設本頁';q('[data-pptskill-editor]').append(button)}
+if(q('[data-pptskill-editor]')&&typeof document.createElement==='function'&&!q('[data-action="recompose-slide"]')){const button=document.createElement('button');button.setAttribute('type','button');button.setAttribute('data-action','recompose-slide');button.setAttribute('title','選擇既有樣式與明示取代的人工調整');button.textContent='重組本頁';q('[data-pptskill-editor]').append(button)}
 if(!q('[data-pptskill-typography-toolbar]'))q('[data-pptskill-editor]')?.insertAdjacentHTML('beforeend',${JSON.stringify(buildTypographyToolbarMarkup())});
 if(!q('[data-pptskill-insert-image-toolbar]'))q('[data-pptskill-editor]')?.insertAdjacentHTML('beforeend',${JSON.stringify(buildInsertImageToolbarMarkup())});
 if(!q('[data-pptskill-insert-text-toolbar]'))q('[data-pptskill-editor]')?.insertAdjacentHTML('beforeend',${JSON.stringify(buildInsertTextToolbarMarkup())});
@@ -546,8 +671,10 @@ ${buildImageInsertionRuntime()}
 ${buildComponentDeletionRuntime()}
 ${buildGroupLockRuntime()}
 const hasExactKeys=(value,keys)=>value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).length===keys.length&&keys.every(key=>Object.hasOwn(value,key));
-const validateOperationRequest=request=>{if(groupCommitInProgress)throw new Error('群組提交進行中。');if(cropCommitInProgress)throw new Error('裁切提交進行中。');if(deletionInProgress)throw new Error('delete-element 進行中，拒絕同步重入。');if(!Object.hasOwn(Object.getOwnPropertyDescriptor(request||{},'operation')||{},'value'))throw new Error('operation 不接受 getter。');if(groupLock.names.includes(request.operation))return groupLock.validateRequest(request);if(request?.operation==='edit-text')return imageInsertion.validateEditTextRequest(request);if(request?.operation==='insert-element')return imageInsertion.validateRequest(request);if(request?.operation==='delete-element')return componentDeletion.validateRequest(request);if(['crop-image','reset-image-crop'].includes(request?.operation))return imageCrop.validateRequest(request);if(request?.operation==='replace-asset')return assetReplacement.validateRequest(request);if(['copy-style','paste-style'].includes(request?.operation))return roleTypography.validateStyleRequest(request);if(request?.operation==='set-typography')return roleTypography.validateRequest(request);if(!hasExactKeys(request,['operation','target','value']))throw new Error('operation payload 欄位必須恰為 operation、target、value。');if(typeof request.operation!=='string'||!idPattern.test(request.operation))throw new Error('operation ID 格式非法。');if(request.operation==='align-selection'||request.operation==='distribute-selection'){const isDistribution=request.operation==='distribute-selection',prefix=isDistribution?'distribute-selection':'align-selection';if(!hasExactKeys(request.target,['slideId','elementIds']))throw new Error(prefix+' target 欄位必須恰為 slideId、elementIds。');if(typeof request.target.slideId!=='string'||request.target.slideId.length<1)throw new Error('operation target slideId 格式非法。');const ids=request.target.elementIds,minimum=isDistribution?3:2;if(!Array.isArray(ids)||ids.length<minimum||ids.some(id=>typeof id!=='string'||!idPattern.test(id))||new Set(ids).size!==ids.length)throw new Error(prefix+' elementIds 數量或格式非法。');if(isDistribution){if(!hasExactKeys(request.value,['distribution'])||!COMPONENT_DISTRIBUTION_VALUES.includes(request.value.distribution))throw new Error('distribute-selection distribution 不支援。')}else if(!hasExactKeys(request.value,['alignment'])||!COMPONENT_ALIGNMENT_VALUES.includes(request.value.alignment))throw new Error('align-selection alignment 不支援。');return request}if(!hasExactKeys(request.target,['slideId','elementId']))throw new Error('operation target 欄位必須恰為 slideId、elementId。');if(typeof request.target.slideId!=='string'||request.target.slideId.length<1)throw new Error('operation target slideId 格式非法。');if(typeof request.target.elementId!=='string'||!idPattern.test(request.target.elementId))throw new Error('operation target elementId 格式非法。');if(request.operation==='edit-text'&&typeof request.value!=='string')throw new Error('operation value 必須是 string。');if(request.operation==='move-element')validateComponentGeometry(request.value,['x','y']);if(request.operation==='resize-element')validateComponentGeometry(request.value,['width','height']);return request};
+const validateOperationRequest=request=>{if(groupCommitInProgress)throw new Error('群組提交進行中。');if(cropCommitInProgress)throw new Error('裁切提交進行中。');if(deletionInProgress)throw new Error('delete-element 進行中，拒絕同步重入。');if(!Object.hasOwn(Object.getOwnPropertyDescriptor(request||{},'operation')||{},'value'))throw new Error('operation 不接受 getter。');if(request?.operation==='reset-slide')return request;if(groupLock.names.includes(request.operation))return groupLock.validateRequest(request);if(request?.operation==='edit-text')return imageInsertion.validateEditTextRequest(request);if(request?.operation==='insert-element')return imageInsertion.validateRequest(request);if(request?.operation==='delete-element')return componentDeletion.validateRequest(request);if(['crop-image','reset-image-crop'].includes(request?.operation))return imageCrop.validateRequest(request);if(request?.operation==='replace-asset')return assetReplacement.validateRequest(request);if(['copy-style','paste-style'].includes(request?.operation))return roleTypography.validateStyleRequest(request);if(request?.operation==='set-typography')return roleTypography.validateRequest(request);if(!hasExactKeys(request,['operation','target','value']))throw new Error('operation payload 欄位必須恰為 operation、target、value。');if(typeof request.operation!=='string'||!idPattern.test(request.operation))throw new Error('operation ID 格式非法。');if(request.operation==='align-selection'||request.operation==='distribute-selection'){const isDistribution=request.operation==='distribute-selection',prefix=isDistribution?'distribute-selection':'align-selection';if(!hasExactKeys(request.target,['slideId','elementIds']))throw new Error(prefix+' target 欄位必須恰為 slideId、elementIds。');if(typeof request.target.slideId!=='string'||request.target.slideId.length<1)throw new Error('operation target slideId 格式非法。');const ids=request.target.elementIds,minimum=isDistribution?3:2;if(!Array.isArray(ids)||ids.length<minimum||ids.some(id=>typeof id!=='string'||!idPattern.test(id))||new Set(ids).size!==ids.length)throw new Error(prefix+' elementIds 數量或格式非法。');if(isDistribution){if(!hasExactKeys(request.value,['distribution'])||!COMPONENT_DISTRIBUTION_VALUES.includes(request.value.distribution))throw new Error('distribute-selection distribution 不支援。')}else if(!hasExactKeys(request.value,['alignment'])||!COMPONENT_ALIGNMENT_VALUES.includes(request.value.alignment))throw new Error('align-selection alignment 不支援。');return request}if(!hasExactKeys(request.target,['slideId','elementId']))throw new Error('operation target 欄位必須恰為 slideId、elementId。');if(typeof request.target.slideId!=='string'||request.target.slideId.length<1)throw new Error('operation target slideId 格式非法。');if(typeof request.target.elementId!=='string'||!idPattern.test(request.target.elementId))throw new Error('operation target elementId 格式非法。');if(request.operation==='edit-text'&&typeof request.value!=='string')throw new Error('operation value 必須是 string。');if(request.operation==='move-element')validateComponentGeometry(request.value,['x','y']);if(request.operation==='resize-element')validateComponentGeometry(request.value,['width','height']);return request};
 const sameCanonicalValue=${sameCanonicalValue.toString()};
+const planRecomposeSlide=${planRecomposeSlide.toString()};
+const planResetSlide=${planResetSlide.toString()};
 const createEditorHistory=${createEditorHistory.toString()};
 const editTextComponent=${editTextComponent.toString()};
 let layout=null,revision=0,mutationOwner=false,rollbackFailed=false;
@@ -761,15 +888,54 @@ const before=spec,revisionBefore=revision,projectionBefore=cropProjection.checkp
 cropCommitInProgress=Boolean(o.operation!=='replace-asset'||updated.crop||updated.imageSafety);
 try{spec=candidate;const cleaned=clean(),component=cleaned.slides.find(s=>s.id===o.target.slideId).content.components.find(c=>c.id===updated.id);spec=cleaned;
 if(!sameCanonicalValue(before,spec)){if(o.operation==='replace-asset')assetReplacement.project(img,component);cropProjection.sync(img,component);}markChanged(before,spec);refreshSelectedImage('refresh');if(imageCrop.state(component)==='pending')status('裁切待重新確認：目前完整顯示原圖。');return spec}catch(error){spec=before;revision=revisionBefore;cropProjection.rollback(img,projectionBefore);for(const [key,value] of attributes){if(value===null)img.removeAttribute(key);else if(img.getAttribute(key)!==value)img.setAttribute(key,value)}if(frameStyle===null)img.parentElement.removeAttribute('style');else img.parentElement.setAttribute('style',frameStyle);throw error}finally{cropCommitInProgress=false}}
-if(o.operation==='copy-style'||o.operation==='paste-style'){if(composingText)throw new Error('IME 組字尚未完成，暫不可複製或貼上字級。');if(!editMode||!typographyTarget||currentId!==o.target.slideId||typographyTarget.slideId!==o.target.slideId||typographyTarget.elementId!==o.target.elementId)throw new Error('請先選取目前頁面的標題或副標題。');const slide=spec.slides.find(s=>s.id===o.target.slideId);roleTypography.validateStyleTarget(slide,o);if(o.operation==='copy-style'){styleClipboard=roleTypography.copyStyle(slide,o);refreshStyleControls();return spec}if(!styleClipboard)throw new Error('請先複製明示字級。');return executeOperationCore({operation:'set-typography',target:o.target,value:{...styleClipboard}})}if(o.operation==='set-typography'){if(composingText)throw new Error('IME 組字尚未完成，暫不可修改字級。');const candidate=clone(spec),slide=candidate.slides.find(s=>s.id===o.target.slideId);if(!slide)throw new Error('找不到 slide。');roleTypography.update(slide,o);const before=spec;try{spec=candidate;spec=clean();projectRoleTypography(document,spec);markChanged(before,spec);if(typographyTarget)setTypographyTarget(typographyTarget);return spec}catch(error){spec=before;throw error}}if(!operationDescriptors[o.operation])throw new Error('不支援的 operation。');const slide=spec.slides.find(s=>s.id===o.target.slideId);if(!slide)throw new Error('找不到 slide。');const identities=resolveSlideElementIdentities(slide);if(o.operation==='align-selection'||o.operation==='distribute-selection'){const before=clone(spec);try{const componentIds=o.target.elementIds.map(elementId=>{const index=identities.components.indexOf(elementId);if(index<0)throw new Error(o.operation+' 找不到 component element：'+elementId);return slide.content.components[index].id});if(o.operation==='align-selection')alignComponentGeometries(slide,componentIds,o.value.alignment);else distributeComponentGeometries(slide,componentIds,o.value.distribution,o.target.elementIds);spec=clean();projectComponentGeometry(document,spec);markChanged(before,spec);return spec}catch(error){spec=before;throw error}}const pointIndex=identities.keyPoints.indexOf(o.target.elementId),role=o.target.elementId===roleElementIds.title?'title':o.target.elementId===roleElementIds.subtitle?'subtitle':pointIndex>=0?'keyPoint':identities.components.includes(o.target.elementId)?'component':null;if(!role)throw new Error('找不到 element。');if(!operationDescriptors[o.operation].allowedTargetRoles.includes(role))throw new Error('operation 不支援 target role：'+role);if(o.operation==='edit-text'&&role==='component')return editComponentText(o);const before=clone(spec);try{if(role==='component')updateComponentGeometry(slide,slide.content.components[identities.components.indexOf(o.target.elementId)].id,o.operation,o.value);else if(role==='title'||role==='subtitle')slide.content[role]=o.value;else slide.content.keyPoints[pointIndex]=o.value;spec=clean();const cleanedSlide=spec.slides.find(s=>s.id===o.target.slideId),root=q('.slide[data-slide-id="'+CSS.escape(o.target.slideId)+'"]'),element=q('[data-pptskill-element-id="'+CSS.escape(o.target.elementId)+'"]',root);if(role==='component'){projectComponentGeometry(document,spec)}else if(role==='keyPoint'&&element?.matches('.metric-cards article'))updateMetricPoint(o.target.slideId,cleanedSlide,pointIndex,o.value);else if(element)element.textContent=o.value;markChanged(before,spec);refreshStyleControls();return spec}catch(error){spec=before;throw error}};
+if(o.operation==='copy-style'||o.operation==='paste-style'){if(composingText)throw new Error('IME 組字尚未完成，暫不可複製或貼上字級。');if(!editMode||!typographyTarget||currentId!==o.target.slideId||typographyTarget.slideId!==o.target.slideId||typographyTarget.elementId!==o.target.elementId)throw new Error('請先選取目前頁面的標題或副標題。');const slide=spec.slides.find(s=>s.id===o.target.slideId);roleTypography.validateStyleTarget(slide,o);if(o.operation==='copy-style'){styleClipboard=roleTypography.copyStyle(slide,o);refreshStyleControls();return spec}if(!styleClipboard)throw new Error('請先複製明示字級。');return executeOperationCore({operation:'set-typography',target:o.target,value:{...styleClipboard}})}if(o.operation==='set-typography'){if(composingText)throw new Error('IME 組字尚未完成，暫不可修改字級。');const candidate=clone(spec),slide=candidate.slides.find(s=>s.id===o.target.slideId);if(!slide)throw new Error('找不到 slide。');roleTypography.update(slide,o);const before=spec;try{spec=candidate;spec=clean();projectRoleTypography(document,spec);markChanged(before,spec);if(typographyTarget)setTypographyTarget(typographyTarget);return spec}catch(error){spec=before;throw error}}if(!operationDescriptors[o.operation])throw new Error('不支援的 operation。');const slide=spec.slides.find(s=>s.id===o.target.slideId);if(!slide)throw new Error('找不到 slide。');const identities=resolveSlideElementIdentities(slide);if(o.operation==='align-selection'||o.operation==='distribute-selection'){const before=clone(spec);try{const componentIds=o.target.elementIds.map(elementId=>{const index=identities.components.indexOf(elementId);if(index<0)throw new Error(o.operation+' 找不到 component element：'+elementId);return slide.content.components[index].id});if(o.operation==='align-selection')alignComponentGeometries(slide,componentIds,o.value.alignment);else distributeComponentGeometries(slide,componentIds,o.value.distribution,o.target.elementIds);spec=clean();projectComponentGeometry(document,spec);markChanged(before,spec);return spec}catch(error){spec=before;throw error}}const pointIndex=identities.keyPoints.indexOf(o.target.elementId),role=o.target.elementId===roleElementIds.title?'title':o.target.elementId===roleElementIds.subtitle?'subtitle':pointIndex>=0?'keyPoint':identities.components.includes(o.target.elementId)?'component':null;if(!role)throw new Error('找不到 element。');if(!operationDescriptors[o.operation].allowedTargetRoles.includes(role))throw new Error('operation 不支援 target role：'+role);if(o.operation==='edit-text'&&role==='component')return editComponentText(o);const before=clone(spec);try{if(role==='component')updateComponentGeometry(slide,slide.content.components[identities.components.indexOf(o.target.elementId)].id,o.operation,o.value);else if(role==='title'||role==='subtitle')slide.content[role]=o.value;else slide.content.keyPoints[pointIndex]=o.value;spec=clean();const cleanedSlide=spec.slides.find(s=>s.id===o.target.slideId),root=q('.slide[data-slide-id="'+CSS.escape(o.target.slideId)+'"]'),element=q('[data-pptskill-element-id="'+CSS.escape(o.target.elementId)+'"]',root);if(role==='component'){projectComponentGeometry(document,spec)}else if(role==='keyPoint'&&element?.matches('.metric-cards article'))updateMetricPoint(o.target.slideId,cleanedSlide,pointIndex,o.value);else if(element)element.textContent=o.value;if(role==='title'&&titleVisualChanged(before.slides.find(s=>s.id===o.target.slideId),cleanedSlide))projectTypeVisual(root,before.slides.find(s=>s.id===o.target.slideId),cleanedSlide);markChanged(before,spec);refreshStyleControls();return spec}catch(error){spec=before;throw error}};
 let historyControlsUpdating=false;
 const historyBusy=(rendered=false)=>Boolean(rollbackFailed||(!rendered&&mutationOwner)||historyControlsUpdating||pasteInputOwned(document.activeElement)||document.activeElement?.closest?.('dialog')||composingText||textInsertionComposing||pendingTextInsertion||textInsertionBusy||insertionBusy||imagePickerOpen||pendingAssetOperations||deletionInProgress||cropCommitInProgress||groupCommitInProgress||cropDialog?.isOpen()||q('[data-component-dialog]')?.open||layout?.getState().gesturing||(!rendered&&layout?.getState().finishing));
 const historyMode=()=>Boolean(editMode||layout?.getState().enabled);
 const captureHistoryControls=()=>['undo','redo'].map(direction=>{const button=q('[data-action="'+direction+'"]');return button&&[button,button.disabled,button.title]});
 const restoreHistoryControls=saved=>{const previous=historyControlsUpdating;historyControlsUpdating=true;try{for(const item of saved)if(item){const [button,disabled,title]=item;try{button.disabled=disabled;button.title=title}catch{}}}finally{historyControlsUpdating=previous}};
 const refreshHistoryControls=(rendered=false)=>{if(historyControlsUpdating)return;const state=history.state(),blocked=!historyMode()||historyBusy(rendered===true)||spec.slides.filter(s=>s.id===currentId).length!==1||qa('.slide').filter(s=>s.dataset.slideId===currentId).length!==1;historyControlsUpdating=true;try{for(const [direction,enabled]of [['undo',state.canUndo],['redo',state.canRedo]]){const button=q('[data-action="'+direction+'"]');if(button){button.disabled=blocked||!enabled;button.title=state.oversized?'歷史超過 64 MiB，無法保留':button.disabled?'目前無法'+(direction==='undo'?'復原':'重做'):''}}}finally{historyControlsUpdating=false}};
+const projectSlideVariant=(root,from,to,allowDetached=false)=>{const value=root?.getAttribute('class');if(!root||(!allowDetached&&!root.isConnected)||typeof value!=='string')throw new Error('recompose-slide DOM slide 已失效。');const names=value.match(/(?:^|\s)variant-[^\s]+/g)||[];if(names.length!==1||names[0].trim()!=='variant-'+from)throw new Error('recompose-slide DOM variant 與 canonical 失配。');if(from!==to)root.setAttribute('class',value.replace('variant-'+from,'variant-'+to));};
+// 僅投影 typography-hero 已核准變體的 page-word；來源公式對齊 renderWorldChrome。
+const typeVisualToken=slide=>{const glyphs=[...String(slide.content.title)].filter(character=>/[\p{Script=Han}A-Za-z0-9]/u.test(character)).slice(0,2).join('');switch(slide.composition.variant){case 'editorial-index':return glyphs;case 'dense-ledger':return String(slide.content.keyPoints.length).padStart(2,'0');case 'evidence-axis':{const chart=slide.content.components.find(({type})=>type==='chart');return String(chart?.series?.at(-1)?.values?.at(-1)??glyphs)}case 'quote-monument':return null;default:throw new Error('recompose-slide type visual variant 不支援。')}};
+// 標題文字變更只同步現有 typography-hero type visual，其他變體不承擔投影。
+const titleVisualChanged=(oldSlide,nextSlide)=>q('.deck')?.dataset.visualWorld==='typography-hero'&&oldSlide.composition.variant===nextSlide.composition.variant&&['editorial-index','evidence-axis'].includes(nextSlide.composition.variant)&&typeVisualToken(oldSlide)!==typeVisualToken(nextSlide);
+const projectTypeVisual=(root,oldSlide,nextSlide,allowDetached=false)=>{
+if(!root||(!allowDetached&&!root.isConnected))throw new Error('recompose-slide type visual slide 已失效。');
+const rules=qa('.effect-rule',root).filter(node=>node.parentNode===root),rule=rules[0];if(rules.length!==1)throw new Error('recompose-slide type visual chrome 不唯一。');
+const nodes=qa('[data-type-visual]',root),oldToken=typeVisualToken(oldSlide),nextToken=typeVisualToken(nextSlide),oldNode=nodes[0],treatment=componentTreatments.visualAnchor||'none';
+if(oldToken){if(nodes.length!==1||oldNode.parentNode!==root||oldNode.nextSibling!==rule||oldNode.getAttribute('class')!=='page-word page-word--'+oldSlide.composition.variant||oldNode.getAttribute('data-word')!==oldToken||oldNode.getAttribute('data-effect-role')!=='visualAnchor'||oldNode.getAttribute('data-effect-treatment')!==treatment||oldNode.getAttribute('aria-hidden')!=='true')throw new Error('recompose-slide type visual DOM 與 canonical 失配。')}
+else if(nodes.length)throw new Error('recompose-slide type visual DOM 與 canonical 失配。');
+if(!nextToken){oldNode?.remove();return}
+const node=oldNode||document.createElement('span');
+node.setAttribute('class','page-word page-word--'+nextSlide.composition.variant);node.setAttribute('data-word',nextToken);
+if(!oldNode){node.setAttribute('data-type-visual','');node.setAttribute('data-effect-role','visualAnchor');node.setAttribute('data-effect-treatment',treatment);node.setAttribute('aria-hidden','true');root.insertBefore(node,rule)}
+};
+// History 只在元件集合改變時沿用現有 component markup，讓 Reset 的結構性 Undo／Redo 有真 DOM。
+const projectHistoryComponents=(root,oldSlide,nextSlide)=>{
+const visible=(slide,component)=>slide.composition.primitive==='component-focus'&&Object.values(slide.composition.slots||{}).includes('content.components.'+component.id)||Boolean(getComponentGeometry(slide.composition,component.id));
+const oldIds=resolveSlideElementIdentities(oldSlide),nextIds=resolveSlideElementIdentities(nextSlide);
+const oldById=new Map(oldSlide.content.components.map((component,i)=>[component.id,{component,identity:oldIds.components[i]}]));
+const nextById=new Map(nextSlide.content.components.map((component,i)=>[component.id,{component,identity:nextIds.components[i]}]));
+for(const [id,{component,identity}]of oldById){
+const nodes=qa('[data-pptskill-element-id]',root).filter(node=>node.dataset.pptskillElementId===identity),wasVisible=visible(oldSlide,component),following=nextById.get(id),nowVisible=following&&visible(nextSlide,following.component);
+if(nodes.length!==(wasVisible?1:0))throw new Error('history component DOM 與 canonical 失配。');
+if(!wasVisible)continue;
+if(!nowVisible){nodes[0].remove();continue}
+if(sameCanonicalValue(component,following.component)&&identity===following.identity)continue;
+const template=document.createElement('template');template.innerHTML=renderComponent(following.component,nextSlide);
+const replacement=template.content.firstElementChild;
+if(!replacement||replacement.dataset.pptskillElementId!==following.identity)throw new Error('history component detached DOM 無效。');
+replacement.contentEditable=following.component.type==='text'?String(editMode):'false';nodes[0].replaceWith(replacement);
+}
+for(const [id,{component,identity}]of nextById){if(oldById.has(id)||!visible(nextSlide,component))continue;
+const template=document.createElement('template');template.innerHTML=renderComponent(component,nextSlide);
+const node=template.content.firstElementChild;if(!node||node.dataset.pptskillElementId!==identity)throw new Error('history component detached DOM 無效。');
+node.contentEditable=component.type==='text'?String(editMode):'false';root.append(node)
+}
+};
 const projectHistoryState=(state,previous)=>{
-  let geometryChanged=false;
+  let geometryChanged=false,typographyChanged=false;
   for(const slide of state.slides){
     const old=previous.slides.find(item=>item.id===slide.id),roots=qa('.slide').filter(node=>node.dataset.slideId===slide.id),root=roots[0];
     if(!old||roots.length!==1||!root.isConnected||root.closest('.deck')!==q('.deck'))throw new Error('history slide target 已失效。');
@@ -778,14 +944,18 @@ const projectHistoryState=(state,previous)=>{
     if(old.content.title!==slide.content.title)setText(identities.title,slide.content.title);
     if(old.content.subtitle!==slide.content.subtitle)setText(identities.subtitle,slide.content.subtitle);
     slide.content.keyPoints.forEach((value,i)=>{if(old.content.keyPoints[i]===value)return;const node=qa('[data-pptskill-element-id]',root).find(item=>item.dataset.pptskillElementId===identities.keyPoints[i]);if(node?.matches('.metric-cards article'))updateMetricPoint(slide.id,slide,i,value);else setText(identities.keyPoints[i],value)});
-    slide.content.components.forEach((component,i)=>{if(component.type==='text'&&old.content.components[i]?.text!==component.text)setText(identities.components[i],component.text)});
+    if(!sameCanonicalValue(old.content.components,slide.content.components))projectHistoryComponents(root,old,slide);
+    if(old.composition.variant!==slide.composition.variant||titleVisualChanged(old,slide))projectTypeVisual(root,old,slide);
+    if(old.composition.variant!==slide.composition.variant)projectSlideVariant(root,old.composition.variant,slide.composition.variant)
     if(!sameCanonicalValue(old.composition.geometryOverrides,slide.composition.geometryOverrides))geometryChanged=true;
+    if(!sameCanonicalValue(old.composition.typographyOverrides,slide.composition.typographyOverrides))typographyChanged=true;
   }
   if(geometryChanged)projectComponentGeometry(document,state)
+  if(typographyChanged)projectRoleTypography(document,state)
 };
 // mode 回退由既有 selection 重建短生命 vendor；canonical 節點順序不依賴 chrome sibling。
 const historyNextSibling=(node,excludeChrome)=>{let next=node.nextSibling;while(excludeChrome&&next?.closest('[data-pptskill-editor-chrome]'))next=next.nextSibling;return next};
-const captureHistoryDom=(excludeChrome=false)=>{const deck=q('.deck'),nodes=deck?qa('*',deck).filter(node=>!excludeChrome||!node.closest('[data-pptskill-editor-chrome]')):[];return{deck,excludeChrome,modeControls:['edit','layout','initialize-layout'].map(action=>q('[data-action="'+action+'"]')).filter(Boolean).map(node=>[node,node.textContent,node.getAttribute('aria-pressed'),node.hidden]),nodes:new Set(nodes),saved:nodes.map(node=>[node,node.parentNode,historyNextSibling(node,excludeChrome),node.children?.length?null:node.textContent,['style','data-pptskill-geometry','data-editor-selected','contenteditable','data-to','data-final-display','data-use-grouping','data-fraction-digits'].map(key=>[key,node.getAttribute(key)]),node.contentEditable])}};
+const captureHistoryDom=(excludeChrome=false)=>{const deck=q('.deck'),nodes=deck?qa('*',deck).filter(node=>!excludeChrome||!node.closest('[data-pptskill-editor-chrome]')):[];return{deck,excludeChrome,modeControls:['edit','layout','initialize-layout'].map(action=>q('[data-action="'+action+'"]')).filter(Boolean).map(node=>[node,node.textContent,node.getAttribute('aria-pressed'),node.hidden]),nodes:new Set(nodes),saved:nodes.map(node=>[node,node.parentNode,historyNextSibling(node,excludeChrome),node.children?.length?null:node.textContent,['class','style','data-word','data-type-visual','data-effect-role','data-effect-treatment','aria-hidden','data-pptskill-geometry','data-editor-selected','contenteditable','data-to','data-final-display','data-use-grouping','data-fraction-digits'].map(key=>[key,node.getAttribute(key)]),node.contentEditable])}};
 const historyDomChanged=checkpoint=>{const deck=q('.deck');if(deck!==checkpoint.deck)return true;if(!deck)return false;const nodes=qa('*',deck).filter(node=>!checkpoint.excludeChrome||!node.closest('[data-pptskill-editor-chrome]'));if(nodes.length!==checkpoint.nodes.size||nodes.some(node=>!checkpoint.nodes.has(node)))return true;return checkpoint.modeControls.some(([node,text,pressed,hidden])=>node.textContent!==text||node.getAttribute('aria-pressed')!==pressed||node.hidden!==hidden)||checkpoint.saved.some(([node,parent,next,value,attributes,editable])=>node.contentEditable!==editable||node.parentNode!==parent||historyNextSibling(node,checkpoint.excludeChrome)!==next||(value!==null&&node.textContent!==value)||attributes.some(([key,old])=>node.getAttribute(key)!==old))};
 const restoreHistoryDom=checkpoint=>{const deck=q('.deck');if(!deck&&!checkpoint.deck)return;if(!deck)throw new Error('rollback failed：deck 已移除。');
 for(const node of qa('*',deck))if((!checkpoint.excludeChrome||!node.closest('[data-pptskill-editor-chrome]'))&&!checkpoint.nodes.has(node))try{node.remove()}catch{}
@@ -839,6 +1009,7 @@ try{mutate(()=>{throw error},checkpoint,()=>{verify();restored=true})}
 catch(fault){if(!restored){rollbackFailed=true;throw new Error('rollback failed：'+fault.message,{cause:error})}throw fault}
 };
 // 恢復只在明示 click 執行；先在 detached slide 上投影，交易失敗交原 checkpoint 回退。
+const editStartSpec=clone(spec),editStartSlides=new Map(editStartSpec.slides.map(slide=>[slide.id,q('.slide[data-slide-id="'+CSS.escape(slide.id)+'"]')?.cloneNode?.(true)]));
 const initialSpec=recoveryCandidate?clone(spec):null,initialSlides=new Map(initialSpec?.slides.map(slide=>[slide.id,q('.slide[data-slide-id="'+CSS.escape(slide.id)+'"]')])||[]);
 const restoreDraft=()=>{
   if(!initialSpec)return false;
@@ -852,6 +1023,8 @@ const restoreDraft=()=>{
     if(!base||!original||!base.isConnected)throw new Error('草稿投影片來源已失效。');
     const node=base.cloneNode(true);
     if(baseId!==slide.id)retarget(node,baseId,slide.id);
+    if(original.composition.variant!==slide.composition.variant||titleVisualChanged(original,slide))projectTypeVisual(node,original,slide,true);
+    if(original.composition.variant!==slide.composition.variant)projectSlideVariant(node,original.composition.variant,slide.composition.variant,true)
     const ids=resolveSlideElementIdentities(slide),originalIds=resolveSlideElementIdentities(original);
     const setText=(id,value)=>{const matches=qa('[data-pptskill-element-id]',node).filter(item=>item.dataset.pptskillElementId===id);if(matches.length!==1)throw new Error('草稿文字投影目標不唯一。');matches[0].textContent=value};
     if(slide.content.title!==original.content.title)setText(ids.title,slide.content.title);if(slide.content.subtitle!==original.content.subtitle)setText(ids.subtitle,slide.content.subtitle);
@@ -876,14 +1049,66 @@ const restoreDraft=()=>{
 const replaceDraft=()=>{replacingDraft=true;if(localDraft.replacePending())return true;replacingDraft=false;draftMessage('failed','目前沒有可取代的舊草稿。');return false};
 const finishRestoredDraft=()=>{let fault;try{localDraft.markRestored()}catch(error){fault=error}replacingDraft=false;try{draftRecoveryControls(false)}catch(error){fault??=error}try{status(fault?'已恢復本機草稿；本機保存狀態無法顯示，請另存 HTML。':'已恢復本機草稿')}catch(error){fault??=error}if(fault){try{if(draftNode)draftNode.textContent='舊稿已恢復；本機保存狀態顯示失敗，請另存 HTML。'}catch{}try{status('已恢復本機草稿；本機保存狀態無法顯示，請另存 HTML。')}catch{}}};
 const replayHistory=direction=>{if(!historyMode()||historyBusy(true))return false;if(spec.slides.filter(s=>s.id===currentId).length!==1||qa('.slide').filter(s=>s.dataset.slideId===currentId).length!==1)return false;const before=spec,revisionBefore=revision,checkpoint=captureHistoryDom(),historyBefore=history.checkpoint(),controls=captureHistoryControls(),selectionBefore=layout?.getSelectionState(),statusBefore=q('[data-editor-status]')?.textContent;try{const changed=history.replay(direction,value=>{const next=clean(value);if(!sameCanonicalValue(next,value))throw new Error('history snapshot 清理結果失配。');spec=next;projectHistoryState(next,before);layout?.refresh?.();clearTypographyTarget();refreshSelectedImage('refresh');revision++});if(changed){refreshHistoryControls();status(direction==='undo'?'已復原':'已重做')}return changed}catch(error){spec=before;revision=revisionBefore;history.restore(historyBefore);restoreHistoryDom(checkpoint);try{layout?.restoreSelection?.(selectionBefore)}catch{}restoreHistoryControls(controls);if(statusBefore!==undefined)try{status(statusBefore)}catch{}throw error}}
+const commitRecompose=o=>{
+if(pendingAssetOperations||pendingTextInsertion||textInsertionBusy||textInsertionComposing||insertionBusy||imagePickerOpen||composingText||cropDialog?.isOpen()||q('[data-component-dialog]')?.open||layout?.getState().gesturing)throw new Error('recompose-slide：編輯或拖曳尚未完成。');
+const candidate=planRecomposeSlide(spec,o,revision,q('.deck')?.dataset.visualWorld),cleaned=clean(candidate);
+if(!sameCanonicalValue(candidate,cleaned))throw new Error('recompose-slide sanitizer 不接受候選 composition。');
+const roots=qa('.slide').filter(node=>node.dataset.slideId===o.target.slideId),root=roots[0],old=spec.slides.find(slide=>slide.id===o.target.slideId),next=cleaned.slides.find(slide=>slide.id===o.target.slideId);
+if(roots.length!==1||!root.isConnected||root.closest('.deck')!==q('.deck'))throw new Error('recompose-slide DOM slide 不唯一。');
+projectSlideVariant(root,old.composition.variant,old.composition.variant);
+if(sameCanonicalValue(spec,cleaned))return spec;
+const before=spec;
+if(old.composition.variant!==next.composition.variant)projectTypeVisual(root,old,next);
+projectSlideVariant(root,old.composition.variant,next.composition.variant);
+spec=cleaned;
+if(!sameCanonicalValue(old.composition.geometryOverrides,next.composition.geometryOverrides))projectComponentGeometry(document,{slides:[next]});
+if(!sameCanonicalValue(old.composition.typographyOverrides,next.composition.typographyOverrides))projectRoleTypography(document,{slides:[next]});
+markChanged(before,spec);layout?.clearSelection();layout?.refresh?.();refreshSelectedImage('refresh');status('已重組投影片；取代：'+o.value.replaceScopes.join('、'));return spec;
+};
+const commitReset=o=>{
+if(pendingAssetOperations||pendingTextInsertion||textInsertionBusy||textInsertionComposing||insertionBusy||imagePickerOpen||composingText||cropDialog?.isOpen()||q('[data-component-dialog]')?.open||layout?.getState().gesturing)throw new Error('reset-slide：編輯或拖曳尚未完成。');
+const candidate=planResetSlide(spec,o,revision,editStartSpec);if(!candidate)return spec;
+const cleaned=clean(candidate);if(!sameCanonicalValue(candidate,cleaned))throw new Error('reset-slide sanitizer 不接受基準。');
+const roots=qa('.slide').filter(node=>node.dataset.slideId===o.target.slideId),root=roots[0],base=editStartSlides.get(o.target.slideId);
+if(roots.length!==1||!root.isConnected||root.closest('.deck')!==q('.deck')||!base)throw new Error('reset-slide DOM 或 edit-start 基準不唯一。');
+if(sameCanonicalValue(spec,cleaned))return spec;
+const node=base.cloneNode(true),before=spec;
+layout?.clearSelection();root.replaceWith(node);spec=cleaned;
+node.addEventListener('focusin',previewEvent(()=>select(node.dataset.slideId)));
+projectComponentGeometry(document,{slides:[cleaned.slides.find(slide=>slide.id===o.target.slideId)]});
+projectRoleTypography(document,{slides:[cleaned.slides.find(slide=>slide.id===o.target.slideId)]});
+projectCropImages(document,{slides:[cleaned.slides.find(slide=>slide.id===o.target.slideId)]});
+directTextElements().forEach(element=>element.contentEditable=String(editMode));
+cropProjection.prune();cropDialog?.invalidate();layout?.refresh?.();refreshSelectedImage('refresh');
+markChanged(before,spec);status('已重設本頁文字、元件與人工版面');return spec;
+};
 // UI handler 可攔截 executor error；operation 本身必須先回退，不能把半成品留給外層。
-const executeOperationInternal=(request,afterCommit=()=>{})=>mutate(()=>{const o=validateOperationRequest(request),before=clone(spec);const result=executeOperationCore(request);if(!sameCanonicalValue(before,spec))history.record(before,clone(spec),operationDescriptors[o.operation]?.undoable===true);afterCommit();return result});
+const executeOperationInternal=(request,afterCommit=()=>{})=>mutate(()=>{const operation=Object.getOwnPropertyDescriptor(request||{},'operation'),o=operation&&Object.hasOwn(operation,'value')&&['recompose-slide','reset-slide'].includes(operation.value)?request:validateOperationRequest(request),before=clone(spec);const result=o.operation==='recompose-slide'?commitRecompose(o):o.operation==='reset-slide'?commitReset(o):executeOperationCore(request);if(!sameCanonicalValue(before,spec))history.record(before,clone(spec),operationDescriptors[o.operation]?.undoable===true);afterCommit();return result});
 const executeOperation=request=>runMutation(()=>executeOperationInternal(request));
 const applyPatch=(p,afterText=()=>{})=>{if(groupCommitInProgress)throw new Error('群組提交進行中。');if(cropCommitInProgress)throw new Error('裁切提交進行中。');if(deletionInProgress)throw new Error('delete-element 進行中，拒絕同步重入。');if(!p||p.slideId!==currentId)throw new Error('patch 必須指向目前選取的 slide。');let slide=spec.slides[currentIndex()];const lockedPatch=/^content\.components\.([a-z0-9][a-z0-9._-]{0,79})$/i.exec(p.region);if(lockedPatch){const index=slide.content.components.findIndex(c=>c.id===lockedPatch[1]);groupLock.assertMutable(slide,'edit-text',[resolveSlideElementIdentities(slide).components[index]])}if(p.region==='content.title'||p.region==='content.subtitle')return executeOperationInternal({operation:'edit-text',target:{slideId:p.slideId,elementId:roleElementIds[p.region.slice(8)]},value:String(p.value)});const m=/^content\.keyPoints\.(\d+)$/.exec(p.region);if(m){const i=Number(m[1]);if(i>=slide.content.keyPoints.length)throw new Error('keyPoint index 超出範圍。');return executeOperationInternal({operation:'edit-text',target:{slideId:p.slideId,elementId:resolveSlideElementIdentities(slide).keyPoints[i]},value:String(p.value)})}syncText();afterText();slide=spec.slides[currentIndex()];const c=/^content\.components\.([a-z0-9][a-z0-9._-]{0,79})$/i.exec(p.region);if(c&&p.value&&typeof p.value==='object'){const i=slide.content.components.findIndex(x=>x.id===c[1]);if(i<0)throw new Error('找不到 component。');const before=clone(spec),revisionBefore=revision,checkpoint=captureHistoryDom(),historyBefore=history.checkpoint(),controls=captureHistoryControls(),selectionBefore=layout?.getSelectionState();slide.content.components[i]={...slide.content.components[i],...clone(p.value),id:c[1],type:slide.content.components[i].type};try{const cleaned=clean(),component=cleaned.slides[currentIndex()].content.components.find(x=>x.id===c[1]);if(!component)throw new Error('元件 patch 未通過 sanitizer。');spec=cleaned;if(!sameCanonicalValue(before,spec)){replaceComponent(component);revision++;history.clear();refreshHistoryControls()}return spec}catch(error){spec=before;revision=revisionBefore;history.restore(historyBefore);if(historyDomChanged(checkpoint))restoreHistoryDom(checkpoint);try{if(selectionBefore&&JSON.stringify(layout?.getSelectionState())!==JSON.stringify(selectionBefore))layout?.restoreSelection?.(selectionBefore)}catch{}restoreHistoryControls(controls);throw error}}throw new Error('patch region 不在 allowlist。')};
 const openComponentEditor=()=>{if(cropDialog?.isOpen())return;syncText();const component=spec.slides[currentIndex()].content.components[0];if(!component){status('此頁沒有支援元件');return}editingComponentId=component.id;q('[data-component-json]').value=JSON.stringify(component,null,2);q('[data-component-dialog]').showModal()};
 const applyComponentEditor=()=>{try{const value=JSON.parse(q('[data-component-json]').value);applyPatch({slideId:currentId,region:'content.components.'+editingComponentId,value});q('[data-component-dialog]').close();status('元件已更新')}catch(error){status(error.message)}};
-const editorClick=e=>{const slide=e.target.closest?.('.slide');if(slide)select(slide.dataset.slideId);const action=e.target.closest?.('[data-action]')?.dataset.action;if(!action)return;if(action==='crop-selected-image')cropDialog.open();if(action==='confirm-crop')cropDialog.submit(false);if(action==='reset-image-crop')cropDialog.submit(true);if(action==='cancel-crop')cropDialog.close();if(action==='insert-text')openInsertText();if(action==='edit-selected-text')openEditText();if(action==='submit-insert-text')submitInsertText();if(action==='cancel-insert-text'&&!textInsertionComposing)closeInsertText();if(action==='insert-image')openInsertImagePicker();if(action==='replace-selected-image')openSelectedImagePicker();if(action==='set-selected-image-fit')setSelectedImageFit(e.target.closest('[data-image-fit]')?.dataset.imageFit);if(action==='copy-style'||action==='paste-style')applyStyle(action);if(action==='apply-typography'||action==='reset-typography')applyTypography(action==='reset-typography');if(action==='edit')setEdit(!editMode);if(action==='edit-component')openComponentEditor();if(action==='apply-component')applyComponentEditor();if(action==='cancel-component')q('[data-component-dialog]').close();if(action==='move-up')move(-1);if(action==='move-down')move(1);if(action==='duplicate')duplicate();if(action==='delete')remove();if(action==='undo'||action==='redo'){refreshHistoryControls(true);if(!q('[data-action="'+action+'"]')?.disabled)try{replayHistory(action)}catch(error){status(error.message)}}if(action==='save')download();if(action==='replace-draft')replaceDraft();if(action==='restore-draft'){let restored=false;try{restored=restoreDraft()}catch(error){draftMessage('failed','恢復失敗：'+error.message+'；原稿未改動。')}if(restored)finishRestoredDraft()}};
-document.addEventListener('click',previewEvent(e=>{const action=e.target.closest?.('[data-action]')?.dataset.action,fit=e.target.closest?.('[data-image-fit]')?.dataset.imageFit,fitTarget=action==='set-selected-image-fit'&&selectedImageTarget();const writes=['move-up','move-down','duplicate','delete','submit-insert-text','apply-component','apply-typography','reset-typography','paste-style','copy-style','undo','redo','save'].includes(action)||(action==='confirm-crop'&&q('[data-crop-confirm]')?.checked)||action==='reset-image-crop'||(fitTarget&&['contain','cover'].includes(fit)&&(selectedImageComponent(fitTarget).fit||'contain')!==fit);if(writes)return mutate(()=>editorClick(e));if(action==='restore-draft'||action==='replace-draft')return editorClick(e);const result=editorClick(e);refreshHistoryControls(true);return result},false));
+const recomposeFromUi=()=>{
+const slide=spec.slides.find(item=>item.id===currentId),world=q('.deck')?.dataset.visualWorld;
+const options=world==='typography-hero'?{'title-points':['editorial-index','dense-ledger'],'component-focus':['quote-monument','evidence-axis']}[slide?.composition.primitive]:null;
+if(!options){status('此頁沒有支援的重組樣式。');return}
+if(typeof window.prompt!=='function'||typeof window.confirm!=='function'){status('無法取得重組確認，未變更。');return}
+const slideId=currentId,targetRevision=revision;
+const variant=window.prompt('選擇本頁既有樣式：'+options.join('／')+'。取消則不變更。',slide.composition.variant);
+if(typeof variant!=='string')return;
+if(!options.includes(variant.trim())){status('不支援此重組樣式，未變更。');return}
+const choice=window.prompt('選擇要取代的人工調整：1 只換樣式；2 樣式＋清除人工位置；3 樣式＋清除人工字級；4 樣式＋兩者都清除。取消則不變更。','1');
+if(typeof choice!=='string')return;
+const scopes={'1':['variant'],'2':['variant','geometryOverrides'],'3':['variant','typographyOverrides'],'4':['variant','geometryOverrides','typographyOverrides']}[choice.trim()];
+if(!scopes){status('重組範圍無效，未變更。');return}
+const impact=scopes.map(scope=>({variant:'樣式',geometryOverrides:'人工位置／大小',typographyOverrides:'人工字級'})[scope]).join('、');
+if(!window.confirm('確認重組目前投影片？本次會取代：'+impact+'。未列出的人工調整、內容及其他投影片保留。'))return;
+const composition=clone(slide.composition);composition.variant=variant.trim();
+for(const scope of scopes)if(scope!=='variant')delete composition[scope];
+try{executeOperationInternal({operation:'recompose-slide',target:{deckId:spec.deckId,slideId,revision:targetRevision},value:{composition,replaceScopes:scopes,confirmedScopes:scopes}})}catch(error){status(error.message)}
+};
+const editorClick=e=>{const slide=e.target.closest?.('.slide');if(slide)select(slide.dataset.slideId);const action=e.target.closest?.('[data-action]')?.dataset.action;if(!action)return;if(action==='crop-selected-image')cropDialog.open();if(action==='confirm-crop')cropDialog.submit(false);if(action==='reset-image-crop')cropDialog.submit(true);if(action==='cancel-crop')cropDialog.close();if(action==='insert-text')openInsertText();if(action==='edit-selected-text')openEditText();if(action==='submit-insert-text')submitInsertText();if(action==='cancel-insert-text'&&!textInsertionComposing)closeInsertText();if(action==='insert-image')openInsertImagePicker();if(action==='replace-selected-image')openSelectedImagePicker();if(action==='set-selected-image-fit')setSelectedImageFit(e.target.closest('[data-image-fit]')?.dataset.imageFit);if(action==='copy-style'||action==='paste-style')applyStyle(action);if(action==='apply-typography'||action==='reset-typography')applyTypography(action==='reset-typography');if(action==='edit')setEdit(!editMode);if(action==='edit-component')openComponentEditor();if(action==='apply-component')applyComponentEditor();if(action==='cancel-component')q('[data-component-dialog]').close();if(action==='move-up')move(-1);if(action==='move-down')move(1);if(action==='duplicate')duplicate();if(action==='delete')remove();if(action==='undo'||action==='redo'){refreshHistoryControls(true);if(!q('[data-action="'+action+'"]')?.disabled)try{replayHistory(action)}catch(error){status(error.message)}}if(action==='save')download();if(action==='recompose-slide')recomposeFromUi();if(action==='reset-slide'){if(!editStartSpec.slides.some(slide=>slide.id===currentId))status('此頁沒有本次開啟編輯的基準，無法重設。');else if(typeof window.confirm!=='function')status('無法取得重設確認，未變更。');else if(window.confirm('重設目前投影片？這會清除本次開啟編輯後對本頁文字、元件與人工版面（位置、大小、字級）的修改。其他投影片與整份簡報設定不變。'))try{executeOperationInternal({operation:'reset-slide',target:{deckId:spec.deckId,slideId:currentId,revision},value:{confirmed:true}})}catch(error){status(error.message)}}if(action==='replace-draft')replaceDraft();if(action==='restore-draft'){let restored=false;try{restored=restoreDraft()}catch(error){draftMessage('failed','恢復失敗：'+error.message+'；原稿未改動。')}if(restored)finishRestoredDraft()}};
+document.addEventListener('click',previewEvent(e=>{const action=e.target.closest?.('[data-action]')?.dataset.action,fit=e.target.closest?.('[data-image-fit]')?.dataset.imageFit,fitTarget=action==='set-selected-image-fit'&&selectedImageTarget();const writes=['move-up','move-down','duplicate','delete','submit-insert-text','apply-component','apply-typography','reset-typography','paste-style','copy-style','undo','redo','save','reset-slide','recompose-slide'].includes(action)||(action==='confirm-crop'&&q('[data-crop-confirm]')?.checked)||action==='reset-image-crop'||(fitTarget&&['contain','cover'].includes(fit)&&(selectedImageComponent(fitTarget).fit||'contain')!==fit);if(writes)return mutate(()=>editorClick(e));if(action==='restore-draft'||action==='replace-draft')return editorClick(e);const result=editorClick(e);refreshHistoryControls(true);return result},false));
 const textEventRoot=document.body?.addEventListener?document.body:document;
 textEventRoot.addEventListener('dblclick',previewEvent(e=>{
 const target=resolveDirectTextTarget(e.target);if(target){select(target.slideId);setEdit(true);target.element.contentEditable='true';target.element.focus?.();setTypographyTarget(target);e.preventDefault?.();return}

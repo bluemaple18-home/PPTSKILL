@@ -1,0 +1,30 @@
+✔ Core5 Reset Node 僅回復指定 slide 的 edit-start baseline，取消與 stale 不變 (8.170541ms)
+✔ Core5 Reset portable 元件增刪與標題改動整頁回復，Undo／Redo 同步 DOM (76.227584ms)
+✔ Core5 Reset UI 明列清除範圍；取消不變，確認後只重設本頁 (24.647833ms)
+✔ Core5 Recompose UI 明列取代範圍；取消不變，確認後只清明示字級 (26.140542ms)
+✔ Core5 Reset DOM replacement 後故障須回退 canonical／DOM／history／revision (19.234125ms)
+✔ Core5 Reset 成功後草稿與 export/reopen 均是 baseline (32.574333ms)
+✔ Core5 Node recompose 保留未列 overrides／content，並可 Undo／Redo (1.519583ms)
+✔ Core5 Node 只取代明示 overrides；stale／錯 deck／scope／primitive／slots／unsupported variant fail closed (1.136084ms)
+✔ Core5 portable recompose 投影 class／geometry／typography，Undo／Redo 與 export/reopen 一致 (63.075208ms)
+✔ Core5 明示清除 geometry override 會同步移除 portable 投影 (39.745042ms)
+✔ Core5 Repair1 title-points geometry-only component 清除時須拒絕，避免 DOM 留殘影 (17.742958ms)
+✔ Core5 Repair1 component-focus 非 slot 元件同樣拒絕清除；slot 元件仍可清除 (0.801834ms)
+✔ Core5 title-points 既有 CSS variant 可由 Node canonical 與 renderer 重開 (3.683125ms)
+✔ Core5 Repair2 title-points editorial-index→dense-ledger 的 live type visual 等於 fresh renderer (48.694584ms)
+✔ Core5 Repair2 標題 edit-text 後 type visual 與 fresh renderer 一致，且仍可 recompose／Undo／Redo (62.752167ms)
+✔ Core5 Repair2 標題 edit-text 的 type visual 投影故障會回退 canonical／DOM／history (13.127208ms)
+✔ Core5 Repair2 evidence-axis chart token 與 fresh renderer 相同 (20.719291ms)
+✔ Core5 Repair2 舊 type visual 更新後拋錯須完整回退 DOM／canonical／history (13.429208ms)
+✔ Core5 Repair2 Undo 移除 type visual 後拋錯須保留已提交狀態與 cursor (34.099458ms)
+✔ Core5 portable 驗證／投影故障不改 canonical、DOM、history、revision (21.005458ms)
+✔ Core5 portable 草稿恢復 recompose variant，匯出離線重開一致 (49.256167ms)
+✔ Core5 Repair2 僅改 editorial-index 標題的草稿恢復仍符合 fresh type visual (40.129917ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 753.1705

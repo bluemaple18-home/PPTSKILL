@@ -1,0 +1,24 @@
+
+> presentation-skill@0.1.0 build:dist /Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical
+> node tools/build-distribution.mjs
+
+{
+  "status": "built",
+  "archivePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/dist/PPTSKILL-0.1.0.zip",
+  "version": "0.1.0",
+  "sha256": "789815792000a6b80a1b9a77841ec926ed445bb67f65be4b696d0fe44b7141c3",
+  "manifest": {
+    "schemaVersion": "1.0",
+    "name": "PPTSKILL",
+    "version": "0.1.0",
+    "corePath": "core",
+    "adapters": [
+      "codex",
+      "claude-code",
+      "gemini"
+    ],
+    "requiresGit": false,
+    "profilePath": "~/.pptskill/profile.json",
+    "skillPath": "skill/pptskill/SKILL.md"
+  }
+}

@@ -23,7 +23,7 @@ test('Information Led 使用同一 renderer seam，輸出獨立 visual world 與
   assert.match(result.html, /data-visual-world="information-led"/);
   assert.match(result.html, /data-information-anchor/);
   assert.match(result.html, /data-semantic-source="content.keyPoints"/);
-  assert.doesNotMatch(result.html, /data-type-visual/);
+  assert.doesNotMatch(result.html, /<span\b[^>]*\bdata-type-visual\b/);
   assert.doesNotMatch(result.html, /class="type-monument"/);
   assert.deepEqual(extractDeckSpec(result.html).slides.map(contentHash), typographyDeck.slides.map(contentHash));
 });
