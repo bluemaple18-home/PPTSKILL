@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-03/browser/source.html",
+  "sourceSha256": "f50099a43201be9c9d1e84def083ea5989748505e65ec8bb4778fd7b8af7567e",
+  "deckId": "edx-core-5-browser-6cc6bc6ce9b41493",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-03/browser/1280-initial.png",
+          "sha256": "9e9270658e9cbc1bf492a0fade67d8250199f243ebfb1aa7fda867dfb171ec19",
+          "bytes": 64165
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-03/browser/1280-recomposed.png",
+          "sha256": "1048a9d9b8fa4ac1e595f7d24254893e8e8f8d05e9eed32b55a2a818c238ca22",
+          "bytes": 60740
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "Error: Error: UI 控制不可見\n    at <anonymous>:2:78\n    at <anonymous>:6:23\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:149:42)\n    at async click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:185:21)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:254:5",
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-03/browser/1600-initial.png",
+          "sha256": "90c7fc8c1951a41c29def12ff7cd5ef84b55a33dee2001c43718c477e3a4ec1f",
+          "bytes": 69630
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-03/browser/1600-recomposed.png",
+          "sha256": "6f4532b0135f4481ccb46559a013b967d4737f161a355b6c48ed37b748132199",
+          "bytes": 74170
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "Error: Error: UI 控制不可見\n    at <anonymous>:2:78\n    at <anonymous>:6:23\n    at evaluate (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:149:42)\n    at async click (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:185:21)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:254:5",
+      "draftKeyRemoved": true
+    }
+  ]
+}

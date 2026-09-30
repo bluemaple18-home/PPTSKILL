@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_PASS",
+  "date": "2026-09-30",
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  },
+  "command": [
+    "/Users/matt/ai-core/.venv/bin/python",
+    "/Users/matt/ai-core/scripts/tmp_session.py",
+    "browser",
+    "--repo-root",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical",
+    "--evidence-dir",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-01/lifecycle",
+    "--browser-executable",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "--url",
+    "about:blank",
+    "--max-bytes",
+    "67108864",
+    "--max-file-count",
+    "10000",
+    "--ttl-seconds",
+    "3600",
+    "--",
+    "/Users/matt/ai-core/.venv/bin/python",
+    "-B",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-client-core5.py",
+    "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-01"
+  ],
+  "errors": [
+    {
+      "stage": "client",
+      "type": "RuntimeError",
+      "error": "client 非 PASS"
+    }
+  ],
+  "before": {
+    "runtime/deck-editor.js": "9b538a525176d1691a20bc920c2b87ba160c26b7f4749e3fdc6fe59bf1dc0cb8",
+    "tests/edx-core-5-reset-recompose.test.mjs": "d575862b2e35d20e7e69dae135c978b3c94c3f503feeda90b34b7864fa06a327",
+    "tools/edx-core-5-reset-recompose-browser-acceptance.mjs": "5f3b0db0405950ccd73324851919f69315183166a2e1212fe4ef77cda60f47d8",
+    "dist/PPTSKILL-0.1.0.zip": "789815792000a6b80a1b9a77841ec926ed445bb67f65be4b696d0fe44b7141c3",
+    "dist/PPTSKILL-0.1.0.zip.sha256": "c6b406b04579a1e65f6864b1e5d96ff9496d8c94d8ab9474ede276445b59bc65",
+    "fixtures/full-deck.html": "e61d4f09070cf105f9dbdc231172f029a4d14a01f24d7a979c7c10761919a3d4",
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "supervisorPid": 5637,
+  "supervisorExit": 2,
+  "durationSeconds": 8.79280574999575,
+  "client": {
+    "schemaVersion": 1,
+    "status": "NOT_PASS",
+    "exit": 2,
+    "errors": [
+      {
+        "stage": "browser",
+        "type": "RuntimeError",
+        "error": "Core5 browser harness 非零退出：1"
+      }
+    ],
+    "commands": {
+      "browser": {
+        "argv": [
+          "/opt/homebrew/bin/node",
+          "tools/edx-core-5-reset-recompose-browser-acceptance.mjs",
+          "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-01/browser"
+        ],
+        "pid": 5794,
+        "timeoutSeconds": 1200,
+        "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-01/browser.log",
+        "exit": 1,
+        "durationSeconds": 1.2892294170014793
+      },
+      "browser-close": {
+        "argv": [
+          "/opt/homebrew/bin/node",
+          "-e",
+          "const ws=new WebSocket(process.argv[1]);const t=setTimeout(()=>process.exit(2),8000);ws.addEventListener('open',()=>ws.send(JSON.stringify({id:1,method:'Browser.close'})));ws.addEventListener('message',({data})=>{const m=JSON.parse(data);if(m.id===1){clearTimeout(t);process.exit(m.error?1:0)}});ws.addEventListener('error',()=>process.exit(3));",
+          "ws://127.0.0.1:56294/devtools/browser/cb567871-09f0-4ab6-a7de-a5f652e1af56"
+        ],
+        "pid": 5807,
+        "timeoutSeconds": 15,
+        "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-01/browser-close.log",
+        "exit": 0,
+        "durationSeconds": 0.13377104100072756
+      }
+    },
+    "ownedRoot": "/private/tmp/aic-b-34e617ae06624590a9b17d7fb7c044f5",
+    "pgid": 5643,
+    "pid": 5647,
+    "readinessComplete": true,
+    "firstCause": {
+      "stage": "browser",
+      "type": "RuntimeError",
+      "error": "Core5 browser harness 非零退出：1"
+    }
+  },
+  "firstCause": {
+    "stage": "client",
+    "type": "RuntimeError",
+    "error": "client 非 PASS"
+  },
+  "after": {
+    "runtime/deck-editor.js": "9b538a525176d1691a20bc920c2b87ba160c26b7f4749e3fdc6fe59bf1dc0cb8",
+    "tests/edx-core-5-reset-recompose.test.mjs": "d575862b2e35d20e7e69dae135c978b3c94c3f503feeda90b34b7864fa06a327",
+    "tools/edx-core-5-reset-recompose-browser-acceptance.mjs": "5f3b0db0405950ccd73324851919f69315183166a2e1212fe4ef77cda60f47d8",
+    "dist/PPTSKILL-0.1.0.zip": "789815792000a6b80a1b9a77841ec926ed445bb67f65be4b696d0fe44b7141c3",
+    "dist/PPTSKILL-0.1.0.zip.sha256": "c6b406b04579a1e65f6864b1e5d96ff9496d8c94d8ab9474ede276445b59bc65",
+    "fixtures/full-deck.html": "e61d4f09070cf105f9dbdc231172f029a4d14a01f24d7a979c7c10761919a3d4",
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "lifecycle": {
+    "session": {
+      "mode": "browser",
+      "root": "/private/tmp/aic-b-34e617ae06624590a9b17d7fb7c044f5",
+      "pid": 5643
+    },
+    "processes": [
+      {
+        "role": "browser",
+        "event": "starting"
+      },
+      {
+        "role": "browser",
+        "event": "started",
+        "pid": 5646,
+        "pgid": 5643
+      },
+      {
+        "role": "client",
+        "event": "starting"
+      },
+      {
+        "role": "client",
+        "event": "started",
+        "pid": 5647,
+        "pgid": 5643
+      },
+      {
+        "role": "client",
+        "event": "exited",
+        "returncode": 2
+      },
+      {
+        "role": "browser",
+        "event": "exited",
+        "returncode": 0
+      }
+    ],
+    "ownedRootAbsent": true,
+    "isolationMarkerAbsent": true,
+    "processObservation": {
+      "pgid": 5643,
+      "root": "/private/tmp/aic-b-34e617ae06624590a9b17d7fb7c044f5",
+      "matches": []
+    }
+  }
+}

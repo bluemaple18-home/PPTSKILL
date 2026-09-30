@@ -1,6 +1,6 @@
 # Core5：Reset／Recompose 與人工 override 保留
 
-Status: CODE_CANDIDATE / HOST_BLOCKED / CORE_PROGRESS_4_OF_6
+Status: CODE_CANDIDATE / HOST_NO_GO_STOP3 / CORE_PROGRESS_4_OF_6
 
 基準：Core4 本機 closure `098177a`，分支 `codex/edx-core-5-reset-recompose`。Core4 已依 Repair 3 fresh review 與 host-acceptance-05 裁決 GO，產品、ZIP、證據形成可回退 checkpoint；第6張 Final Closure 尚未開始。既有 `tasks/edx-core-six-card-closure-plan.md` 修改與四個 protected untracked 保留，不納入本卡。
 
@@ -47,3 +47,9 @@ Owner 已於互動對話明示「修」，核准上述有界 Repair2。Worker �
 Reset 已以 edit-start 單頁基準完成受限 Node／portable operation，真 UI 顯示清除範圍並確認；元件增刪、Undo／Redo、草稿、匯出與回退納入 focused tests。Recompose UI 由使用者選擇既有 variant 與明示取代範圍，確認後才執行；取消／非法選項不變。focused fresh 22/22、受影響 targeted 53/53；完整 `pnpm test` 1107/1111，四個失敗均需 Chrome DevTools port，sandbox 沒啟動該 port。產品 runtime 已重建到 ZIP，hash／protected 身分見 `evidence/edx-core-5-reset-recompose/local-candidate-receipt.md`。
 
 正式 browser／雙 viewport／四支 PGQ **尚未執行**。AI Core `tmp_session browser` 在 `CODEX_SANDBOX` 非空時規定 exit 2 並拒絕啟動；Codex IAB 亦明確拒絕 `file:` 且禁止替代繞行。因此此卡維持 **HOST_BLOCKED / 4/6**，不能把合成 VM 或舊 Core4 host 收據當作 Core5 驗收。下一步只能在允許的正式 host 跑受管瀏覽器收據、四支 PGQ 與獨立 review，完成後再裁決 5/6。
+
+## 正式 host 三輪停損（Owner 已授權）
+
+Owner 後續明示「允許」正式 host 驗收；`require_escalated` 唯讀預檢確認不在 `CODEX_SANDBOX`。沿 AI Core `tmp_session browser` 與既有 Core4 單一 PGID controller/client 製作 Core5 專用 harness，已執行 `host-acceptance-01`、`02`、`03`。三輪 supervisor 均 exit 2、browser client NOT_PASS；三輪 owned root／marker 清除且 PGID/root 觀測無殘留。`01` 的 harness 誤以 save 控制可見證明 edit mode；`02` 揭露 Recompose 按鈕被 CSS 隱藏；`03` 兩個 viewport 均通過前三項重組檢查後揭露 Undo 按鈕在 edit mode 隱藏。三輪都未進四支 PGQ，**HOST NO-GO**。
+
+目前產品另補 edit mode 下 Save／Undo／Redo／Reset／Recompose 可見性，重建 fixture／ZIP，focused+相鄰 46/46 PASS。此最新 CSS **未經 host 重驗**。依 AGENTS.md「同一 blocker 第 3 次失敗即停」，不自動執行第4輪；先封存三輪原始證據、產品身分與 CSS 修正，等待 Owner 對停損後重跑做新裁決。詳見 `evidence/edx-core-5-reset-recompose/host-stop3-receipt.md`。
