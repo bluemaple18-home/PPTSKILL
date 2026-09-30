@@ -1,0 +1,18 @@
+
+DevTools listening on ws://127.0.0.1:58866/devtools/browser/bddc4e11-8ee4-4789-a6a4-12a7c05ddbb4
+Trying to load the allocator multiple times. This is *not* supported.
+[18608:1214493:1001/002037.234358:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18608:1214493:1001/002037.235881:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18608:1214493:1001/002037.235971:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18608:1214493:1001/002037.236043:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18608:1214493:1001/002037.236110:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18608:1214493:1001/002037.236203:ERROR:ui/display/mac/cv_display_link_mac.mm:188] CVDisplayLinkCreateWithCGDisplay failed. CVReturn: -6670
+[18601:1214464:1001/002039.219757:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18601:1214464:1001/002059.803077:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18601:1214464:1001/002156.108374:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Trying to load the allocator multiple times. This is *not* supported.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1790785416.799186 1218417 environment.cc:526] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU
+I0000 00:00:1790785416.807506 1218431 environment.cc:526] Selected adapter: Apple M1, arch=metal-3, vendor=apple, backend=Metal, adapterType=Integrated GPU
+[18601:1214464:1001/002344.541063:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[18601:1214464:1001/002634.759630:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT

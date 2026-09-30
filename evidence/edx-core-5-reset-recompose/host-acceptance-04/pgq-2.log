@@ -1,0 +1,15 @@
+✔ trusted producer PASS 與 human approval 建立 deterministic immutable freeze (5.046458ms)
+✔ caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud (0.932958ms)
+✔ 舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態 (3.076292ms)
+✔ scope planner 僅接受 bounded feedback，profile 必須明示 opt-in (1.097583ms)
+✔ sample content 或 composition 只使該頁失效 (1.045875ms)
+✔ style 或 contract version 變更使全部 sample 失效 (0.666041ms)
+✔ installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate (169635.760125ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 225767.477625

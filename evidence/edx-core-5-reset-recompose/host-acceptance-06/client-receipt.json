@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_PASS",
+  "exit": 2,
+  "errors": [
+    {
+      "stage": "browser",
+      "type": "RuntimeError",
+      "error": "Core5 browser harness 非零退出：1"
+    }
+  ],
+  "commands": {
+    "browser": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "tools/edx-core-5-reset-recompose-browser-acceptance.mjs",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-06/browser"
+      ],
+      "pid": 21713,
+      "timeoutSeconds": 1200,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-06/browser.log",
+      "exit": 1,
+      "durationSeconds": 2.704891832996509
+    },
+    "browser-close": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "-e",
+        "const ws=new WebSocket(process.argv[1]);const t=setTimeout(()=>process.exit(2),8000);ws.addEventListener('open',()=>ws.send(JSON.stringify({id:1,method:'Browser.close'})));ws.addEventListener('message',({data})=>{const m=JSON.parse(data);if(m.id===1){clearTimeout(t);process.exit(m.error?1:0)}});ws.addEventListener('error',()=>process.exit(3));",
+        "ws://127.0.0.1:59660/devtools/browser/e8890fa5-b752-476d-aa7d-8b0ae0db54c3"
+      ],
+      "pid": 21736,
+      "timeoutSeconds": 15,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-06/browser-close.log",
+      "exit": 0,
+      "durationSeconds": 0.35503774999961024
+    }
+  },
+  "ownedRoot": "/private/tmp/aic-b-7c76f6d2bd93481eb099e62c05d9e738",
+  "pgid": 21685,
+  "pid": 21691,
+  "readinessComplete": true,
+  "firstCause": {
+    "stage": "browser",
+    "type": "RuntimeError",
+    "error": "Core5 browser harness 非零退出：1"
+  }
+}

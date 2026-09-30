@@ -1,6 +1,6 @@
 # Core5：Reset／Recompose 與人工 override 保留
 
-Status: CODE_CANDIDATE / HOST_NO_GO_STOP3 / CORE_PROGRESS_4_OF_6
+Status: CODE_CANDIDATE / FUNCTIONAL_PASS / VISUAL_NO_GO_STOP3 / CORE_PROGRESS_4_OF_6
 
 基準：Core4 本機 closure `098177a`，分支 `codex/edx-core-5-reset-recompose`。Core4 已依 Repair 3 fresh review 與 host-acceptance-05 裁決 GO，產品、ZIP、證據形成可回退 checkpoint；第6張 Final Closure 尚未開始。既有 `tasks/edx-core-six-card-closure-plan.md` 修改與四個 protected untracked 保留，不納入本卡。
 
@@ -52,4 +52,8 @@ Reset 已以 edit-start 單頁基準完成受限 Node／portable operation，真
 
 Owner 後續明示「允許」正式 host 驗收；`require_escalated` 唯讀預檢確認不在 `CODEX_SANDBOX`。沿 AI Core `tmp_session browser` 與既有 Core4 單一 PGID controller/client 製作 Core5 專用 harness，已執行 `host-acceptance-01`、`02`、`03`。三輪 supervisor 均 exit 2、browser client NOT_PASS；三輪 owned root／marker 清除且 PGID/root 觀測無殘留。`01` 的 harness 誤以 save 控制可見證明 edit mode；`02` 揭露 Recompose 按鈕被 CSS 隱藏；`03` 兩個 viewport 均通過前三項重組檢查後揭露 Undo 按鈕在 edit mode 隱藏。三輪都未進四支 PGQ，**HOST NO-GO**。
 
-目前產品另補 edit mode 下 Save／Undo／Redo／Reset／Recompose 可見性，重建 fixture／ZIP，focused+相鄰 46/46 PASS。此最新 CSS **未經 host 重驗**。依 AGENTS.md「同一 blocker 第 3 次失敗即停」，不自動執行第4輪；先封存三輪原始證據、產品身分與 CSS 修正，等待 Owner 對停損後重跑做新裁決。詳見 `evidence/edx-core-5-reset-recompose/host-stop3-receipt.md`。
+當時產品另補 edit mode 下 Save／Undo／Redo／Reset／Recompose 可見性，重建 fixture／ZIP，focused+相鄰 46/46 PASS。當時最新 CSS **未經 host 重驗**。依 AGENTS.md「同一 blocker 第 3 次失敗即停」，未自動執行第4輪；先封存三輪原始證據、產品身分與 CSS 修正，等待 Owner 對停損後重跑做新裁決。詳見 `evidence/edx-core-5-reset-recompose/host-stop3-receipt.md`。
+
+## 2026-10-01 正式 host 續跑與視覺停損
+
+Owner 在看過 UI stop-3 根因後明示「繼續」，主線執行 host-acceptance-04 至 06。04／05 的受管 browser、雙 viewport 各 8/8、四支 PGQ 16/16、cleanup 與身分均 PASS；產品、ZIP 未變。原圖複核發現 04 的截圖取於動效中且 fixture 文字重疊，05 的引用文字超出卡片底部；06 新增的四邊內縮 gate 又把原 variant 的合法行框當作失敗。故功能證據保留，Core5 **VISUAL NO-GO／4/6**，第 06 輪後停止此視覺驗收線，不自動重試。下一步僅是重新裁決 variant 對應的 visual gate 與負控制，詳見 `evidence/edx-core-5-reset-recompose/host-visual-stop3-20261001.md`。

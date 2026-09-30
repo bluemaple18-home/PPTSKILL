@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime
 import hashlib
 import json
 import os
@@ -10,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import time
+from zoneinfo import ZoneInfo
 
 
 HERE = Path(__file__).resolve().parent
@@ -157,7 +159,7 @@ def run() -> int:
     receipt: dict = {
         "schemaVersion": 1,
         "status": "NOT_PASS",
-        "date": "2026-09-30",
+        "date": datetime.now(ZoneInfo("Asia/Taipei")).date().isoformat(),
         "limits": LIMITS,
         "command": command(),
         "errors": [],

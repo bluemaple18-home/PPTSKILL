@@ -1,0 +1,7 @@
+{"role": "browser", "event": "starting"}
+{"role": "browser", "event": "started", "pid": 21690, "pgid": 21685}
+{"role": "client", "event": "starting"}
+{"role": "client", "event": "started", "pid": 21691, "pgid": 21685}
+{"role": "client", "event": "exited", "returncode": 2}
+{"role": "browser", "event": "ordinary-stop"}
+{"role": "browser", "event": "exited", "returncode": 0}

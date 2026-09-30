@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/source.html",
+  "sourceSha256": "c4e35c3b0d418210c0fdb434948ae64ef87e7c3a7dec4497c78aea86b7d84b0c",
+  "deckId": "edx-core-5-browser-3a74738dd6fc2922",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致",
+        "真滑鼠 Undo／Redo 還原 Recompose canonical 與 DOM",
+        "真滑鼠 Reset 影響範圍確認與取消保留",
+        "真滑鼠 Reset 僅還原指定 slide，DOM／canonical 一致",
+        "真滑鼠 Reset Undo／Redo 與草稿 canonical 一致",
+        "匯出 HTML 離線重開仍是 Reset 後同一 canonical／DOM"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1280-initial.png",
+          "sha256": "341f7ad839ee3de0e1040a4045bf6ae6ea573f3b23c19b8e7cdff7c49fd9a8fd",
+          "bytes": 66520
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1280-recomposed.png",
+          "sha256": "585ac0251ab5785b759c4b0e1d734287d5ca6d0d4906b667cd032ef978972676",
+          "bytes": 64053
+        },
+        {
+          "label": "reset",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1280-reset.png",
+          "sha256": "62f521af6acf78ad9f8fdc572cb9a2e77af830f6e05f60886df1a6202e298703",
+          "bytes": 29365
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1280-export.html",
+          "sha256": "a4f8bc11b07ac6f1803d18c8d89406e292103cc4b2cc1a6dc24683eb1646ead3",
+          "bytes": 676949
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1280-offline-reopen.png",
+          "sha256": "70b9b5d796ad05a54fa19de02dc673580731c0d144ca9d683bbd882bef437258",
+          "bytes": 53013
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致",
+        "真滑鼠 Undo／Redo 還原 Recompose canonical 與 DOM",
+        "真滑鼠 Reset 影響範圍確認與取消保留",
+        "真滑鼠 Reset 僅還原指定 slide，DOM／canonical 一致",
+        "真滑鼠 Reset Undo／Redo 與草稿 canonical 一致",
+        "匯出 HTML 離線重開仍是 Reset 後同一 canonical／DOM"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1600-initial.png",
+          "sha256": "3c5bf5ee13c087931cdfd588a268d8c9c7983f39503b6b8e30d631195c0e36f6",
+          "bytes": 63754
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1600-recomposed.png",
+          "sha256": "8200ea0ed4c3054f8c45bb0041a0df01ee11c26db23f4c62c10f3fba1caa91e9",
+          "bytes": 78931
+        },
+        {
+          "label": "reset",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1600-reset.png",
+          "sha256": "be3ef535e7c54e1772861a52dcc388121ec067a6641d7b6e87e0253151ca612f",
+          "bytes": 34978
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1600-export.html",
+          "sha256": "a4f8bc11b07ac6f1803d18c8d89406e292103cc4b2cc1a6dc24683eb1646ead3",
+          "bytes": 676949
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-04/browser/1600-offline-reopen.png",
+          "sha256": "139cd51a1495c6f96e57d6cfa6488444b87e00f716b21993584a3283f7977310",
+          "bytes": 64367
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "draftKeyRemoved": true
+    }
+  ]
+}

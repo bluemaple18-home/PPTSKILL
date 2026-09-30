@@ -1,0 +1,749 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/source.html",
+  "sourceSha256": "ffe70306a760c572c371c602f05f5baf4f80366e63be7780dbafc71951cb3172",
+  "deckId": "edx-core-5-browser-321c0430eb55608a",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致",
+        "真滑鼠 Undo／Redo 還原 Recompose canonical 與 DOM",
+        "真滑鼠 Reset 影響範圍確認與取消保留",
+        "真滑鼠 Reset 僅還原指定 slide，DOM／canonical 一致",
+        "真滑鼠 Reset Undo／Redo 與草稿 canonical 一致",
+        "匯出 HTML 離線重開仍是 Reset 後同一 canonical／DOM"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1280-initial.png",
+          "sha256": "b1e10d85cc2c462b75ebcbc5c79c012234902be88ebdbe02d7259a1fa6e01dfc",
+          "bytes": 76530
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1280-recomposed.png",
+          "sha256": "7917a97bfd60273676c00b75ca5e599815321148b1e497fd1d8378a076a10968",
+          "bytes": 82558
+        },
+        {
+          "label": "reset",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1280-reset.png",
+          "sha256": "686355d6cf1edb99272cbdd6213b338977cbb6f781748dcf3dae12f0bb90676b",
+          "bytes": 77129
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1280-export.html",
+          "sha256": "aa3906062b22603cd0fa2ad2a2d5fa5d3c57d0d4dfa89b099662db2218ecb537",
+          "bytes": 677001
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1280-offline-reopen.png",
+          "sha256": "91518c0c4fa951eb31dfe4a6a1ccb983926203a995e9f9ca772ed28b50807d91",
+          "bytes": 65555
+        }
+      ],
+      "visuals": [
+        {
+          "label": "initial",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 92.78125,
+                  "right": 275.515625,
+                  "bottom": 173.78125
+                },
+                {
+                  "left": 62.390625,
+                  "top": 159.578125,
+                  "right": 328.796875,
+                  "bottom": 240.578125
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 256.765625,
+                  "right": 414.21875,
+                  "bottom": 281.765625
+                },
+                {
+                  "left": 62.390625,
+                  "top": 283.15625,
+                  "right": 97.59375,
+                  "bottom": 308.15625
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 664,
+                  "top": 258,
+                  "right": 1121.84375,
+                  "bottom": 329
+                },
+                {
+                  "left": 664,
+                  "top": 318.40625,
+                  "right": 1099.46875,
+                  "bottom": 389.40625
+                },
+                {
+                  "left": 664,
+                  "top": 378.8125,
+                  "right": 1099.46875,
+                  "bottom": 449.8125
+                },
+                {
+                  "left": 664,
+                  "top": 439.21875,
+                  "right": 905.921875,
+                  "bottom": 510.21875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "recomposed",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 59.59375,
+                  "right": 435.359375,
+                  "bottom": 121.59375
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 139.9375,
+                  "right": 449.421875,
+                  "bottom": 164.9375
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 718,
+                  "top": 311,
+                  "right": 1056,
+                  "bottom": 360
+                },
+                {
+                  "left": 718,
+                  "top": 358.515625,
+                  "right": 1070,
+                  "bottom": 407.515625
+                },
+                {
+                  "left": 718,
+                  "top": 406.03125,
+                  "right": 1070,
+                  "bottom": 455.03125
+                },
+                {
+                  "left": 718,
+                  "top": 453.546875,
+                  "right": 823.609375,
+                  "bottom": 502.546875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "reset",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 92.78125,
+                  "right": 275.515625,
+                  "bottom": 173.78125
+                },
+                {
+                  "left": 62.390625,
+                  "top": 159.578125,
+                  "right": 328.796875,
+                  "bottom": 240.578125
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 256.765625,
+                  "right": 414.21875,
+                  "bottom": 281.765625
+                },
+                {
+                  "left": 62.390625,
+                  "top": 283.15625,
+                  "right": 97.59375,
+                  "bottom": 308.15625
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 664,
+                  "top": 258,
+                  "right": 1121.84375,
+                  "bottom": 329
+                },
+                {
+                  "left": 664,
+                  "top": 318.40625,
+                  "right": 1099.46875,
+                  "bottom": 389.40625
+                },
+                {
+                  "left": 664,
+                  "top": 378.8125,
+                  "right": 1099.46875,
+                  "bottom": 449.8125
+                },
+                {
+                  "left": 664,
+                  "top": 439.21875,
+                  "right": 905.921875,
+                  "bottom": 510.21875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "offline-reopen",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 92.78125,
+                  "right": 275.515625,
+                  "bottom": 173.78125
+                },
+                {
+                  "left": 62.390625,
+                  "top": 159.578125,
+                  "right": 328.796875,
+                  "bottom": 240.578125
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 62.390625,
+                  "top": 256.765625,
+                  "right": 414.21875,
+                  "bottom": 281.765625
+                },
+                {
+                  "left": 62.390625,
+                  "top": 283.15625,
+                  "right": 97.59375,
+                  "bottom": 308.15625
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 664,
+                  "top": 258,
+                  "right": 1121.84375,
+                  "bottom": 329
+                },
+                {
+                  "left": 664,
+                  "top": 318.40625,
+                  "right": 1099.46875,
+                  "bottom": 389.40625
+                },
+                {
+                  "left": 664,
+                  "top": 378.8125,
+                  "right": 1099.46875,
+                  "bottom": 449.8125
+                },
+                {
+                  "left": 664,
+                  "top": 439.21875,
+                  "right": 905.921875,
+                  "bottom": 510.21875
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "受管真瀏覽器載入雙頁、進入編輯模式",
+        "真滑鼠 Recompose 取消，不改 canonical/history",
+        "真滑鼠 Recompose 明示清字級，未列 geometry／content／其他頁保留；live visual 與 fresh 一致",
+        "真滑鼠 Undo／Redo 還原 Recompose canonical 與 DOM",
+        "真滑鼠 Reset 影響範圍確認與取消保留",
+        "真滑鼠 Reset 僅還原指定 slide，DOM／canonical 一致",
+        "真滑鼠 Reset Undo／Redo 與草稿 canonical 一致",
+        "匯出 HTML 離線重開仍是 Reset 後同一 canonical／DOM"
+      ],
+      "artifacts": [
+        {
+          "label": "initial",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1600-initial.png",
+          "sha256": "5693f50b098ba41f0406c1d249f248d2b6abdf5dee171d059d9a2176718a6617",
+          "bytes": 93090
+        },
+        {
+          "label": "recomposed",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1600-recomposed.png",
+          "sha256": "81ab0272f54c4b108f5e9a2ab6d5ca6f7b838b138ef5253288caa7246b962531",
+          "bytes": 99878
+        },
+        {
+          "label": "reset",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1600-reset.png",
+          "sha256": "e93279fb871eb909d3be6bc90dea7e016d972595b136df435a32469d108fbdbc",
+          "bytes": 93888
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1600-export.html",
+          "sha256": "aa3906062b22603cd0fa2ad2a2d5fa5d3c57d0d4dfa89b099662db2218ecb537",
+          "bytes": 677001
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-05/browser/1600-offline-reopen.png",
+          "sha256": "63b6b4d9a7af09522dac62c74cda3a3a6016f977d9155618f543fb8e8b1118d7",
+          "bytes": 82088
+        }
+      ],
+      "visuals": [
+        {
+          "label": "initial",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 117,
+                  "right": 344.40625,
+                  "bottom": 217
+                },
+                {
+                  "left": 78,
+                  "top": 200.515625,
+                  "right": 411.015625,
+                  "bottom": 300.515625
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 322.03125,
+                  "right": 517.78125,
+                  "bottom": 352.03125
+                },
+                {
+                  "left": 78,
+                  "top": 355.03125,
+                  "right": 122,
+                  "bottom": 385.03125
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 830,
+                  "top": 322,
+                  "right": 1402.296875,
+                  "bottom": 412
+                },
+                {
+                  "left": 830,
+                  "top": 397.515625,
+                  "right": 1374.328125,
+                  "bottom": 487.515625
+                },
+                {
+                  "left": 830,
+                  "top": 473.03125,
+                  "right": 1374.328125,
+                  "bottom": 563.03125
+                },
+                {
+                  "left": 830,
+                  "top": 548.546875,
+                  "right": 1132.40625,
+                  "bottom": 638.546875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "recomposed",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 75,
+                  "right": 544.203125,
+                  "bottom": 153
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 175.953125,
+                  "right": 561.78125,
+                  "bottom": 205.953125
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 898,
+                  "top": 388,
+                  "right": 1320.5,
+                  "bottom": 450
+                },
+                {
+                  "left": 898,
+                  "top": 447.390625,
+                  "right": 1338,
+                  "bottom": 509.390625
+                },
+                {
+                  "left": 898,
+                  "top": 506.78125,
+                  "right": 1338,
+                  "bottom": 568.78125
+                },
+                {
+                  "left": 898,
+                  "top": 566.171875,
+                  "right": 1030,
+                  "bottom": 628.171875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "reset",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 117,
+                  "right": 344.40625,
+                  "bottom": 217
+                },
+                {
+                  "left": 78,
+                  "top": 200.515625,
+                  "right": 411.015625,
+                  "bottom": 300.515625
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 322.03125,
+                  "right": 517.78125,
+                  "bottom": 352.03125
+                },
+                {
+                  "left": 78,
+                  "top": 355.03125,
+                  "right": 122,
+                  "bottom": 385.03125
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 830,
+                  "top": 322,
+                  "right": 1402.296875,
+                  "bottom": 412
+                },
+                {
+                  "left": 830,
+                  "top": 397.515625,
+                  "right": 1374.328125,
+                  "bottom": 487.515625
+                },
+                {
+                  "left": 830,
+                  "top": 473.03125,
+                  "right": 1374.328125,
+                  "bottom": 563.03125
+                },
+                {
+                  "left": 830,
+                  "top": 548.546875,
+                  "right": 1132.40625,
+                  "bottom": 638.546875
+                }
+              ]
+            }
+          }
+        },
+        {
+          "label": "offline-reopen",
+          "motionStatic": true,
+          "measured": {
+            "title": {
+              "text": "成果，不鎖在工具裡",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 117,
+                  "right": 344.40625,
+                  "bottom": 217
+                },
+                {
+                  "left": 78,
+                  "top": 200.515625,
+                  "right": 411.015625,
+                  "bottom": 300.515625
+                }
+              ]
+            },
+            "subtitle": {
+              "text": "DeckSpec 與畫面一起走，下一個人拿到就能繼續",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 78,
+                  "top": 322.03125,
+                  "right": 517.78125,
+                  "bottom": 352.03125
+                },
+                {
+                  "left": 78,
+                  "top": 355.03125,
+                  "right": 122,
+                  "bottom": 385.03125
+                }
+              ]
+            },
+            "quote": {
+              "text": "簡報不是某個 AI 的截圖，而是一份可以被理解、修改與驗證的共同成果。",
+              "display": "block",
+              "visibility": "visible",
+              "opacity": "1",
+              "clipPath": "none",
+              "rects": [
+                {
+                  "left": 830,
+                  "top": 322,
+                  "right": 1402.296875,
+                  "bottom": 412
+                },
+                {
+                  "left": 830,
+                  "top": 397.515625,
+                  "right": 1374.328125,
+                  "bottom": 487.515625
+                },
+                {
+                  "left": 830,
+                  "top": 473.03125,
+                  "right": 1374.328125,
+                  "bottom": 563.03125
+                },
+                {
+                  "left": 830,
+                  "top": 548.546875,
+                  "right": 1132.40625,
+                  "bottom": 638.546875
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "draftKeyRemoved": true
+    }
+  ]
+}

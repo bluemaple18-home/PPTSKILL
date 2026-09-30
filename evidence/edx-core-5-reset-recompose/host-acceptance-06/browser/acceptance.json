@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-5-reset-recompose/host-acceptance-06/browser/source.html",
+  "sourceSha256": "7a96f89c34e9d1805b216e2ffb7e67996aa8085bd637b71a6420d22af87a6173",
+  "deckId": "edx-core-5-browser-2f8277ea12c0c8d0",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [],
+      "artifacts": [],
+      "visuals": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "AssertionError [ERR_ASSERTION]: initial 引用文字超出卡片邊界\n    at screenshot (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:237:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:266:5",
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [],
+      "artifacts": [],
+      "visuals": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "AssertionError [ERR_ASSERTION]: initial 引用文字超出卡片邊界\n    at screenshot (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:237:14)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-5-reset-recompose-browser-acceptance.mjs:266:5",
+      "draftKeyRemoved": true
+    }
+  ]
+}

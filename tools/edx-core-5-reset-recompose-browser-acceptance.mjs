@@ -39,10 +39,10 @@ fixture.deckId = 'edx-core-5-browser-' + randomBytes(8).toString('hex');
 fixture.slides = fixture.slides.filter(slide => ['portable', 'problem'].includes(slide.id));
 fixture.slides.sort((left, right) => Number(left.id !== 'portable') - Number(right.id !== 'portable'));
 fixture.slides.find(slide => slide.id === 'portable').composition.geometryOverrides = {
-  'portable-quote': { x: 120, y: 250, width: 500, height: 180 },
+  'portable-quote': { x: 830, y: 330, width: 600, height: 380 },
 };
 fixture.slides.find(slide => slide.id === 'portable').composition.typographyOverrides = {
-  'role-title': { fontSize: 96 },
+  'role-title': { fontSize: 72 },
 };
 const rendered = renderFullDeck(fixture);
 assert.equal(rendered.status, 'pass', JSON.stringify(rendered.errors));
@@ -122,7 +122,7 @@ let failed = false;
 for (const [width, height] of [[1280, 720], [1600, 900]]) {
   const run = {
     viewport: { width, height }, status: 'running', targetClosed: false,
-    checks: [], artifacts: [], console: [], pageErrors: [], networkFailures: [], httpErrors: [], remoteRequests: [],
+    checks: [], artifacts: [], visuals: [], console: [], pageErrors: [], networkFailures: [], httpErrors: [], remoteRequests: [],
   };
   receipt.runs.push(run);
   let cdp, targetId, ownsKey = false, sourceModified = false;
@@ -200,6 +200,44 @@ for (const [width, height] of [[1280, 720], [1600, 900]]) {
       }
     };
     const screenshot = async label => {
+      // 截圖前固定既有動效，量測可見文字；瞬間動畫畫面不能充當視覺驗收。
+      assert.equal(await evaluate('typeof window.PPTSKILLMotion?.forceStatic'), 'function', '缺少既有靜態動效入口');
+      await evaluate('window.PPTSKILLMotion.forceStatic()');
+      await evaluate('new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve(true))))');
+      const visual = await evaluate(`(()=>{
+        const root=document.querySelector('.slide[data-slide-id="portable"]');
+        const selectors={title:'[data-pptskill-element-id="role-title"]',subtitle:'[data-pptskill-element-id="role-subtitle"]',quote:'[data-pptskill-element-id="component-portable-quote"]'};
+        const measured={};
+        for(const [name,selector] of Object.entries(selectors)){
+          const node=root?.querySelector(selector),style=node?getComputedStyle(node):null,range=node?document.createRange():null;
+          if(range)range.selectNodeContents(node);
+          const box=node?.getBoundingClientRect();
+          measured[name]={text:node?.textContent||'',display:style?.display,visibility:style?.visibility,
+            opacity:style?.opacity,clipPath:style?.clipPath,
+            box:box?{left:box.left,top:box.top,right:box.right,bottom:box.bottom}:null,
+            rects:range?[...range.getClientRects()].filter(rect=>rect.width>0&&rect.height>0).map(rect=>({left:rect.left,top:rect.top,right:rect.right,bottom:rect.bottom})):[]};
+        }
+        return{motionStatic:document.documentElement.classList.contains('motion-static'),measured};
+      })()`);
+      assert.equal(visual.motionStatic, true, `${label} 動效未固定`);
+      for (const [name, item] of Object.entries(visual.measured)) {
+        assert.ok(item.text && item.display !== 'none' && item.visibility === 'visible'
+          && item.opacity === '1' && item.clipPath === 'none' && item.rects.length > 0,
+        `${label} ${name} 文字不可見：${JSON.stringify(item)}`);
+        assert.ok(item.rects.every(rect => rect.left >= 0 && rect.top >= 0
+          && rect.right <= width && rect.bottom <= height), `${label} ${name} 文字出界`);
+      }
+      for (const [left, right] of [['title', 'subtitle'], ['title', 'quote'], ['subtitle', 'quote']]) {
+        assert.ok(!visual.measured[left].rects.some(a => visual.measured[right].rects.some(b =>
+          Math.min(a.right, b.right) > Math.max(a.left, b.left) + 1
+          && Math.min(a.bottom, b.bottom) > Math.max(a.top, b.top) + 1)),
+        `${label} ${left} 與 ${right} 文字相交`);
+      }
+      const quote = visual.measured.quote;
+      assert.ok(quote.rects.every(rect => rect.left >= quote.box.left + 2
+        && rect.top >= quote.box.top + 2 && rect.right <= quote.box.right - 2
+        && rect.bottom <= quote.box.bottom - 2), `${label} 引用文字超出卡片邊界`);
+      run.visuals.push({ label, ...visual });
       const result = await cdp.send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
       const bytes = Buffer.from(result.data, 'base64');
       assert.equal(bytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');

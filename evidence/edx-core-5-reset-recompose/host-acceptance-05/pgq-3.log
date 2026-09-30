@@ -1,0 +1,15 @@
+✔ trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在 (2.807959ms)
+✔ Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner (0.269792ms)
+✔ stale Owner identity 與 caller forged evidence fail loud (0.627042ms)
+✔ Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs (0.374833ms)
+✔ accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair (0.331416ms)
+✔ 單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget (78624.5035ms)
+✔ installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3 (160627.821125ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 318406.775375
