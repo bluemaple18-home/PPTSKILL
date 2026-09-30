@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="Core4 自動合併成功提交；no-op 不排程且只保存最新 canonical" time="0.003422" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 同來源重開可讀；其他初始來源隔離；損壞資料不覆寫" time="0.000441" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 quota、禁用、讀回失敗如實降級；舊草稿保留" time="0.000252" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 草稿 UI 由 runtime 補建；匯出清除本機草稿控制" time="0.006418" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 mounted 自動保存→重開→明示恢復；恢復後匯出一致" time="0.148438" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 mounted 未提交文字不被覆蓋；Undo／Redo 僅成功交易更新草稿" time="0.116144" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 mounted 結構性複製恢復 DOM 與 export 同步" time="0.107267" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 mounted gesture preview 不保存；完成後才保存且 storage 故障不回退編輯" time="0.077221" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 mounted 新增元件恢復唯一 DOM，後續仍可編輯" time="0.074924" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair1 P1-A：待恢復舊稿時新編輯不得靜默覆寫" time="0.051111" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair1 P1-B：quota 探針失敗仍可讀舊稿並明示恢復" time="0.079550" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair1 P2-A：setItem 後真正讀回異常標示結果不明" time="0.000509" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair1 P2-B：恢復後段 fault 回退後入口仍可重試" time="0.064994" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair2 P1：明示取代前保留舊稿，取代後保存目前 canonical 並可重開恢復" time="0.069689" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair2 P1：明示取代寫入失敗時保留舊稿，恢復後可由原按鈕重試" time="0.049300" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair2 P2：舊稿確定消失才解鎖保存，讀取故障仍封閉覆寫" time="0.062466" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair2 P2：恢復提交後通知 fault 不得回報原稿未動" time="0.104877" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<testcase name="Core4 Repair2 P1：主要 editor status fault 不得回滾已提交恢復" time="0.119625" classname="test" file="/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/tests/edx-core-4-local-draft.test.mjs"/>
+	<!-- tests 18 -->
+	<!-- suites 0 -->
+	<!-- pass 18 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 1441.883291 -->
+</testsuites>

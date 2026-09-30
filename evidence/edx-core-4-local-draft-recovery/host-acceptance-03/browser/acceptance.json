@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-03/browser/source.html",
+  "sourceSha256": "5b1da330e7c77b36c12a66c0990785e5a751ba19a2d39695018255c56ccaf537",
+  "alternateSourceSha256": "34f8f208997a065cc1665aff488425578db78904cc35e4149dc2967d74ad1d51",
+  "deckId": "edx-core-4-browser-010e2019f2cd76ca",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口"
+      ],
+      "artifacts": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "offeredDiagnostics": {
+        "draft": "本機草稿可用",
+        "restoreHidden": false,
+        "replaceHidden": false,
+        "restoreVisible": false,
+        "replaceVisible": false,
+        "storagePresent": true,
+        "storageMatchesSaved": true,
+        "recordSource": "f694b417-9bdca603-1325",
+        "recordDeckId": "edx-core-4-browser-010e2019f2cd76ca",
+        "recordTitle": "Core4 已保存的本機草稿",
+        "expectedDeckId": "edx-core-4-browser-010e2019f2cd76ca",
+        "expectedTitle": "Core4 已保存的本機草稿",
+        "key": "pptskill:draft:v1:edx-core-4-browser-010e2019f2cd76ca:f694b417-9bdca603-1325"
+      },
+      "error": "AssertionError [ERR_ASSERTION]: 重開同來源應顯示恢復入口：{\"draft\":\"本機草稿可用\",\"restoreHidden\":false,\"replaceHidden\":false,\"restoreVisible\":false,\"replaceVisible\":false,\"storagePresent\":true,\"storageMatchesSaved\":true,\"recordSource\":\"f694b417-9bdca603-1325\",\"recordDeckId\":\"edx-core-4-browser-010e2019f2cd76ca\",\"recordTitle\":\"Core4 已保存的本機草稿\",\"expectedDeckId\":\"edx-core-4-browser-010e2019f2cd76ca\",\"expectedTitle\":\"Core4 已保存的本機草稿\",\"key\":\"pptskill:draft:v1:edx-core-4-browser-010e2019f2cd76ca:f694b417-9bdca603-1325\"}\n\nfalse !== true\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-4-local-draft-browser-acceptance.mjs:248:12",
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口"
+      ],
+      "artifacts": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "offeredDiagnostics": {
+        "draft": "本機草稿可用",
+        "restoreHidden": false,
+        "replaceHidden": false,
+        "restoreVisible": false,
+        "replaceVisible": false,
+        "storagePresent": true,
+        "storageMatchesSaved": true,
+        "recordSource": "f694b417-9bdca603-1325",
+        "recordDeckId": "edx-core-4-browser-010e2019f2cd76ca",
+        "recordTitle": "Core4 已保存的本機草稿",
+        "expectedDeckId": "edx-core-4-browser-010e2019f2cd76ca",
+        "expectedTitle": "Core4 已保存的本機草稿",
+        "key": "pptskill:draft:v1:edx-core-4-browser-010e2019f2cd76ca:f694b417-9bdca603-1325"
+      },
+      "error": "AssertionError [ERR_ASSERTION]: 重開同來源應顯示恢復入口：{\"draft\":\"本機草稿可用\",\"restoreHidden\":false,\"replaceHidden\":false,\"restoreVisible\":false,\"replaceVisible\":false,\"storagePresent\":true,\"storageMatchesSaved\":true,\"recordSource\":\"f694b417-9bdca603-1325\",\"recordDeckId\":\"edx-core-4-browser-010e2019f2cd76ca\",\"recordTitle\":\"Core4 已保存的本機草稿\",\"expectedDeckId\":\"edx-core-4-browser-010e2019f2cd76ca\",\"expectedTitle\":\"Core4 已保存的本機草稿\",\"key\":\"pptskill:draft:v1:edx-core-4-browser-010e2019f2cd76ca:f694b417-9bdca603-1325\"}\n\nfalse !== true\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-4-local-draft-browser-acceptance.mjs:248:12",
+      "draftKeyRemoved": true
+    }
+  ]
+}

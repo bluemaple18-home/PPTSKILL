@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "exit": 0,
+  "errors": [],
+  "commands": {
+    "browser": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "tools/edx-core-4-local-draft-browser-acceptance.mjs",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser"
+      ],
+      "pid": 80569,
+      "timeoutSeconds": 1200,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser.log",
+      "exit": 0,
+      "durationSeconds": 2.3876122920000853
+    },
+    "pgq-1": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "--test",
+        "tests/pgq-wp4-s3-content-integrity.test.mjs"
+      ],
+      "pid": 80593,
+      "timeoutSeconds": 600,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/pgq-1.log",
+      "exit": 0,
+      "durationSeconds": 23.30125745799978
+    },
+    "pgq-2": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "--test",
+        "tests/pgq-wp4-s3-sample-approval.test.mjs"
+      ],
+      "pid": 80637,
+      "timeoutSeconds": 600,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/pgq-2.log",
+      "exit": 0,
+      "durationSeconds": 230.17152595799962
+    },
+    "pgq-3": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "--test",
+        "tests/pgq-wp4-s4-full-deck-qa.test.mjs"
+      ],
+      "pid": 81313,
+      "timeoutSeconds": 600,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/pgq-3.log",
+      "exit": 0,
+      "durationSeconds": 320.6967265420003
+    },
+    "pgq-4": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "--test",
+        "tests/pgq-wp4-s4-required-visibility.test.mjs"
+      ],
+      "pid": 81976,
+      "timeoutSeconds": 600,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/pgq-4.log",
+      "exit": 0,
+      "durationSeconds": 166.36863200000016
+    },
+    "browser-close": {
+      "argv": [
+        "/opt/homebrew/bin/node",
+        "-e",
+        "const ws=new WebSocket(process.argv[1]);const t=setTimeout(()=>process.exit(2),8000);ws.addEventListener('open',()=>ws.send(JSON.stringify({id:1,method:'Browser.close'})));ws.addEventListener('message',({data})=>{const m=JSON.parse(data);if(m.id===1){clearTimeout(t);process.exit(m.error?1:0)}});ws.addEventListener('error',()=>process.exit(3));",
+        "ws://127.0.0.1:53220/devtools/browser/8ebe245c-5d77-470c-9df9-63fc6d7ed024"
+      ],
+      "pid": 82271,
+      "timeoutSeconds": 15,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser-close.log",
+      "exit": 0,
+      "durationSeconds": 0.5124903329997323
+    }
+  },
+  "ownedRoot": "/private/tmp/aic-b-85a5395c13f147eebe2383c130adf422",
+  "pgid": 80548,
+  "pid": 80550,
+  "readinessComplete": true,
+  "browserAcceptance": {
+    "status": "pass",
+    "receipt": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/acceptance.json",
+    "runs": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "checks": 12,
+        "targetClosed": true,
+        "draftKeyRemoved": true,
+        "artifacts": [
+          {
+            "label": "restore-offered",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1280-restore-offered.png",
+            "sha256": "aaa7491fb208536d6dda98cd68a85ff9608c3dbfbe850e17bc422626930c286a",
+            "bytes": 80037
+          },
+          {
+            "label": "restored",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1280-restored.png",
+            "sha256": "f1ad306d22364f8ec2b8d464c3df954baabc602035aee2649cf58cc33c93daa8",
+            "bytes": 67309
+          },
+          {
+            "label": "export",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1280-export.html",
+            "sha256": "59268cd9df174e28ba8d554b42ffc2edaacf25d7ad01e173f3189d62e35360a6",
+            "bytes": 651561
+          },
+          {
+            "label": "offline-reopen",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1280-offline-reopen.png",
+            "sha256": "f1ad306d22364f8ec2b8d464c3df954baabc602035aee2649cf58cc33c93daa8",
+            "bytes": 67309
+          }
+        ]
+      },
+      {
+        "viewport": {
+          "width": 1600,
+          "height": 900
+        },
+        "checks": 12,
+        "targetClosed": true,
+        "draftKeyRemoved": true,
+        "artifacts": [
+          {
+            "label": "restore-offered",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1600-restore-offered.png",
+            "sha256": "8ea3fc3add3624962cb2d50304fd781573c166a04a850033e271b5f6c12eb687",
+            "bytes": 85433
+          },
+          {
+            "label": "restored",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1600-restored.png",
+            "sha256": "8b2f50ee5732e43e3163d4f301b23e00b43c48d4da87b6b46a6626da5ee8ad6f",
+            "bytes": 83927
+          },
+          {
+            "label": "export",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1600-export.html",
+            "sha256": "59268cd9df174e28ba8d554b42ffc2edaacf25d7ad01e173f3189d62e35360a6",
+            "bytes": 651561
+          },
+          {
+            "label": "offline-reopen",
+            "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-04/browser/1600-offline-reopen.png",
+            "sha256": "8b2f50ee5732e43e3163d4f301b23e00b43c48d4da87b6b46a6626da5ee8ad6f",
+            "bytes": 83927
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 2,
+  "date": "2026-09-30",
+  "status": "CORE4_GO",
+  "coreProgress": "4/6",
+  "branch": "codex/edx-core-4-local-draft",
+  "baseHead": "59a2a65d37df077864ddbf4d3613cf8a91577189",
+  "files": {
+    "runtime/deck-editor.js": "a16fc058d15b2e1eb48c61960e7e653724be64ab602fc3a56ef663c21459d02a",
+    "tests/edx-core-4-local-draft.test.mjs": "90fe97848aedb2d67170a2ff3e97c81abcf8cbb0607357bb4aefa60c710c8dd2",
+    "tools/edx-core-4-local-draft-browser-acceptance.mjs": "000b1d3ecee801467cdd9e0df3e90301f7e06d38998e28a3d928ce48ebc43ed4"
+  },
+  "codeReview": {
+    "status": "GO",
+    "stateContract": {
+      "reviewerA": {
+        "thread": "01a0ecce-11f3-70b1-84aa-c5538ca4e271",
+        "verdict": "FINAL CODE GO",
+        "receipt": "review-a-repair2-final.md",
+        "receiptSha256": "2333fa3f83f53ea1d0a648a529034fdd5ae6b037ca424f82e2c77a1f580c8108",
+        "originalReceiptSha256": "d8bed9d252630866cab360b484f1a92375fa7c4f407d7aad4e3543bb923d158d"
+      },
+      "reviewerB": {
+        "thread": "01a0ecd1-335a-73f1-b3b5-ec0b2c120ea7",
+        "verdict": "FINAL CODE GO",
+        "receipt": "review-b-repair2-final.md",
+        "receiptSha256": "8ed67a7d25c6682027741041edb69d6fe850a4ce183ada072cfab16ec985e3ee",
+        "originalReceiptSha256": "69a9864b238be315e3e7e7f956d6dd967493d655483ae0afc5e013183d91cb8d"
+      }
+    },
+    "hostCssR2": {
+      "reviewerA": {
+        "thread": "01a0f05a-56e2-7e93-86ac-dc98b1160dc4",
+        "verdict": "FINAL CODE GO",
+        "receipt": "review-a-host-css-r2-final.md",
+        "receiptSha256": "7ad9afb6345baf6c3e100510ff45715e1aa7c38492532fea8f206f819379bf7a"
+      },
+      "reviewerB": {
+        "thread": "01a0f05a-7c95-76e3-9989-ffb80761fbea",
+        "verdict": "FINAL CODE GO",
+        "receipt": "review-b-host-css-r2-final.md",
+        "receiptSha256": "3225c9cdf7c031bc572532750c91525400b76b78ed53e1da6c71b4e401b5cf9b"
+      }
+    }
+  },
+  "verification": {
+    "syntax": {
+      "runtime": "PASS",
+      "focusedTest": "PASS",
+      "browserHarness": "PASS"
+    },
+    "gitDiffCheck": "PASS",
+    "focused": {
+      "command": "pnpm exec node --test tests/edx-core-4-local-draft.test.mjs",
+      "tests": 18,
+      "pass": 18,
+      "fail": 0,
+      "skipped": 0,
+      "junit": "focused-hostfix-r2-final.junit.xml",
+      "junitSha256": "f1516c7db77e3248c5d5a9ecb57be37e003958803a237f9faedde1235c1fc682"
+    },
+    "nonBrowser": {
+      "testFiles": 83,
+      "tests": 1083,
+      "pass": 1083,
+      "fail": 0,
+      "skipped": 0,
+      "junit": "nonbrowser-hostfix-r2-final.junit.xml",
+      "junitSha256": "6e07b3018fc7e366ecb1b59c13f3bb31f7490b4335db3525339eaca6001d97e1",
+      "excludedFormalPgq": [
+        "tests/pgq-wp4-s3-content-integrity.test.mjs",
+        "tests/pgq-wp4-s3-sample-approval.test.mjs",
+        "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+        "tests/pgq-wp4-s4-required-visibility.test.mjs"
+      ]
+    }
+  },
+  "distribution": {
+    "status": "BUILT_AND_VERIFIED",
+    "archive": "dist/PPTSKILL-0.1.0.zip",
+    "archiveSha256": "5632dbf2f9c06e1762c3ba54f4873977a0e7b703e312663e190ae10b067aaad0",
+    "checksumFile": "dist/PPTSKILL-0.1.0.zip.sha256",
+    "checksumFileSha256": "13478e95682e0e62e385e3ececbc3791b89f1180ed74dc2441f220c890c65f61",
+    "archiveEntries": 113,
+    "runtimeByteMatch": true,
+    "distributionTests": {
+      "tests": 26,
+      "pass": 26,
+      "fail": 0
+    },
+    "temporaryBuildRootsRemaining": 0
+  },
+  "hostAcceptance": {
+    "status": "GO",
+    "root": "host-acceptance-04",
+    "controller": {
+      "status": "PASS",
+      "supervisorExit": 0,
+      "errors": [],
+      "durationSeconds": 746.0411403340004,
+      "receipt": "host-acceptance-04/controller-receipt.json",
+      "receiptSha256": "cb81c4172274b7cf47303dbfc87474bb5fb9f7e918e9073349e02ace9886fe44"
+    },
+    "client": {
+      "status": "PASS",
+      "exit": 0,
+      "errors": [],
+      "commandCount": 6,
+      "commandExitZero": 6,
+      "timeoutCount": 0,
+      "receipt": "host-acceptance-04/client-receipt.json",
+      "receiptSha256": "19f49b86e113b42dca3d7350a3e58748e909334aeefd4f5cc5fb71e8d958ae40"
+    },
+    "browser": {
+      "status": "PASS",
+      "receipt": "host-acceptance-04/browser/acceptance.json",
+      "receiptSha256": "5f3a02d69e0f3153af8a3f123a691ce1aed18da0d387c044fac9f15b1ed2f9a2",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 720,
+          "checks": 12,
+          "targetClosed": true,
+          "draftKeyRemoved": true
+        },
+        {
+          "width": 1600,
+          "height": 900,
+          "checks": 12,
+          "targetClosed": true,
+          "draftKeyRemoved": true
+        }
+      ],
+      "totalChecks": 24,
+      "trueMouseClick": true,
+      "visibilitySizeViewportHitTest": true,
+      "errorCounters": {
+        "console": 0,
+        "pageError": 0,
+        "networkFailure": 0,
+        "httpError": 0,
+        "remoteRequest": 0
+      },
+      "scenarios": [
+        "restore-offered",
+        "restore",
+        "replace",
+        "reopen",
+        "undo",
+        "redo",
+        "export",
+        "offline-reopen"
+      ]
+    },
+    "formalPgq": {
+      "status": "PASS",
+      "serial": true,
+      "tests": 16,
+      "pass": 16,
+      "fail": 0,
+      "suites": [
+        {
+          "file": "tests/pgq-wp4-s3-content-integrity.test.mjs",
+          "tests": 1,
+          "exit": 0,
+          "durationSeconds": 23.30125745799978
+        },
+        {
+          "file": "tests/pgq-wp4-s3-sample-approval.test.mjs",
+          "tests": 7,
+          "exit": 0,
+          "durationSeconds": 230.17152595799962
+        },
+        {
+          "file": "tests/pgq-wp4-s4-full-deck-qa.test.mjs",
+          "tests": 7,
+          "exit": 0,
+          "durationSeconds": 320.6967265420003
+        },
+        {
+          "file": "tests/pgq-wp4-s4-required-visibility.test.mjs",
+          "tests": 1,
+          "exit": 0,
+          "durationSeconds": 166.36863200000016
+        }
+      ]
+    },
+    "lifecycle": {
+      "outerPgid": 80548,
+      "browserPid": 80549,
+      "clientPid": 80550,
+      "browserReturnCode": 0,
+      "clientReturnCode": 0,
+      "browserCloseExit": 0,
+      "ownedRootAbsent": true,
+      "isolationMarkerAbsent": true,
+      "processObservationMatches": []
+    },
+    "identity": {
+      "count": 9,
+      "beforeAfterMatch": true,
+      "currentMatch": true
+    }
+  },
+  "hostReview": {
+    "status": "GO",
+    "thread": "01a0f06e-9e44-72a2-a014-2499ee5a2d27",
+    "verdict": "FINAL HOST GO",
+    "p1": 0,
+    "p2": 0,
+    "p3": [
+      "受管 Chrome stderr 含非致命 macOS display、GCM、Crashpad、GoogleUpdater 與 GPU 背景診斷；控制層 errors 為空且所有 commands exit 0。"
+    ],
+    "receipt": "review-host-final.md",
+    "receiptSha256": "90cd972ee62b4064aa55d1165a1806aec941232a63b6d4c0a8a6706582de59e8"
+  },
+  "visualReview": {
+    "status": "GO",
+    "thread": "01a0f06e-7022-78e2-9fca-42b1dc5c9a8d",
+    "verdict": "FINAL HOST VISUAL GO",
+    "p1": 0,
+    "p2": 0,
+    "p3": [
+      "1600-restore-offered.png 位於既有 motion 中間幀；stable 的 restored 與 offline-reopen 畫面沒有持續裁切或 layout shift。"
+    ],
+    "receipt": "review-visual-final.md",
+    "receiptSha256": "e3f5dc07a273df59a4429958ca1ff0dc1f31301409d0995f0c461d6424b0032a"
+  },
+  "protectedFiles": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "historicalEvidence": {
+    "hostAdmissionBlocked": {
+      "status": "SUPERSEDED",
+      "receipt": "host-admission-blocked.md",
+      "reason": "browser_launch_blocked_in_codex_sandbox"
+    },
+    "excludedHostCandidates": [
+      "host-acceptance-02",
+      "host-acceptance-03"
+    ],
+    "reason": "兩輪屬舊 CSS candidate 的失敗證據，不納入 final verdict。"
+  },
+  "scopeLimits": [
+    "Core4 is closed at 4/6; Core5 Reset/Recompose has not started.",
+    "No commit, push, merge, deploy, or production action was performed.",
+    "The pre-existing tasks/edx-core-six-card-closure-plan.md modification was not changed by this takeover."
+  ]
+}

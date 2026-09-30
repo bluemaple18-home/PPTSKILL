@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-4-local-draft-recovery/host-acceptance-02/browser/source.html",
+  "sourceSha256": "3881be235a635c15b9ad3251f10ad867753acab056df0812940b89a8e236dec4",
+  "alternateSourceSha256": "06af3a04e0b2f2f47e71ba635761104a25eaea9062ca1ae762c310a88b853d5a",
+  "deckId": "edx-core-4-browser-3e0d3f6ba67e606c",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口"
+      ],
+      "artifacts": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "AssertionError [ERR_ASSERTION]: 重開同來源應顯示恢復入口\n\nfalse !== true\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-4-local-draft-browser-acceptance.mjs:229:12",
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "fail",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口"
+      ],
+      "artifacts": [],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "error": "AssertionError [ERR_ASSERTION]: 重開同來源應顯示恢復入口\n\nfalse !== true\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-core-4-local-draft-browser-acceptance.mjs:229:12",
+      "draftKeyRemoved": true
+    }
+  ]
+}
