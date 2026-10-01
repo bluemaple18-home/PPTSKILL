@@ -152,7 +152,7 @@ const sanitizeComposition = (composition = {}, components = [], content = {}) =>
   const motion = sanitizeCompositionMotion(composition.motion);
   const backgroundEffect = sanitizeCompositionBackgroundEffect(composition.backgroundEffect);
   return {
-    primitive: copyText(composition.primitive, 'title-body'),
+    primitive: copyText(composition.primitive, 'title-points'),
     variant: copyText(composition.variant, 'default'),
     slots: Object.fromEntries(Object.entries(composition.slots ?? {}).filter(([, ref]) => typeof ref === 'string' && /^content\.(title|subtitle|keyPoints|components\.[a-z0-9][a-z0-9._-]{0,79})$/.test(ref))),
     ...(Array.isArray(composition.order) ? { order: copyStringArray(composition.order) } : {}),
@@ -235,7 +235,7 @@ export function migrateLegacyFixture(fixture) {
         keyPoints: [slide.body || slide.title, '待確認重點二', '待確認重點三'],
         components: [],
       },
-      composition: { primitive: 'title-body', variant: 'default', slots: { title: 'content.title', subtitle: 'content.subtitle', points: 'content.keyPoints' } },
+      composition: { primitive: 'title-points', variant: 'default', slots: { title: 'content.title', subtitle: 'content.subtitle', points: 'content.keyPoints' } },
     })),
   });
 }

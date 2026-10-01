@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "pid": 32846,
+  "pgid": 32844,
+  "root": "/private/tmp/aic-b-ebb0331fe14a4cdc816899af4aa5a384",
+  "commands": {
+    "browser-geometry": {
+      "args": [
+        "tools/browser-geometry-qa.mjs",
+        "fixtures/full-deck.html",
+        "--motion",
+        "static",
+        "--output",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/browser-geometry.json",
+        "--editor-export",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/editor-export.html",
+        "--screenshot",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/1280-full-deck.png",
+        "--montage",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/1280-montage.png"
+      ],
+      "pid": 32861,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/browser-geometry.log",
+      "exit": 0
+    },
+    "pgq-1": {
+      "args": [
+        "--test",
+        "tests/pgq-wp4-s3-content-integrity.test.mjs"
+      ],
+      "pid": 33183,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/pgq-1.log",
+      "exit": 0
+    },
+    "pgq-2": {
+      "args": [
+        "--test",
+        "tests/pgq-wp4-s3-sample-approval.test.mjs"
+      ],
+      "pid": 33867,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/pgq-2.log",
+      "exit": 0
+    },
+    "pgq-3": {
+      "args": [
+        "--test",
+        "tests/pgq-wp4-s4-full-deck-qa.test.mjs"
+      ],
+      "pid": 38884,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/pgq-3.log",
+      "exit": 0
+    },
+    "pgq-4": {
+      "args": [
+        "--test",
+        "tests/pgq-wp4-s4-required-visibility.test.mjs"
+      ],
+      "pid": 48294,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-04/pgq-4.log",
+      "exit": 0
+    }
+  },
+  "errors": [],
+  "browserStatus": "pass",
+  "browserClose": "PASS"
+}

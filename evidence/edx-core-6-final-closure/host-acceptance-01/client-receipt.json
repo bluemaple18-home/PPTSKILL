@@ -1,0 +1,14 @@
+{
+  "status": "NOT_PASS",
+  "pid": 26025,
+  "pgid": 26022,
+  "root": "/private/tmp/aic-b-00e7f0025ea84783881de53c447d508b",
+  "commands": {},
+  "errors": [
+    {
+      "name": "TypeError",
+      "message": "The argument 'stdio' is invalid. Received WriteStream {\n  fd: null,\n  path: '/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/h..."
+    }
+  ],
+  "browserClose": "PASS"
+}

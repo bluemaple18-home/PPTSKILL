@@ -584,6 +584,8 @@ const runAtViewport = async ({ width, height }) => {
       const recipientResult = await cdp.send('Runtime.evaluate', {
         expression: `(() => {
           const embedded = JSON.parse(document.querySelector('#deck-spec')?.textContent || 'null');
+          const firstSlide = embedded?.slides?.[0];
+          const firstRoot = firstSlide ? document.querySelector('.slide[data-slide-id="' + CSS.escape(firstSlide.id) + '"]') : null;
           const slide = embedded?.slides?.find((item) => item.composition?.motion);
           const root = slide ? document.querySelector('.motion-root[data-slide-id="' + CSS.escape(slide.id) + '"]') : null;
           const title = root?.querySelector('[data-pptskill-text-entrance="title"]');
@@ -591,6 +593,9 @@ const runAtViewport = async ({ width, height }) => {
           const subtitleStyle = subtitle ? getComputedStyle(subtitle) : null;
           const underlineStyle = subtitle ? getComputedStyle(subtitle, '::after') : null;
           return {
+            slideCount: embedded?.slides?.length || 0,
+            firstTitle: firstRoot?.querySelector('[data-edit-target="slides.' + CSS.escape(firstSlide.id) + '.content.title"]')?.textContent || null,
+            firstSubtitle: firstRoot?.querySelector('[data-edit-target="slides.' + CSS.escape(firstSlide.id) + '.content.subtitle"]')?.textContent || null,
             title: title?.textContent || null,
             subtitle: subtitle?.textContent || null,
             effect: root?.dataset.motionEffect || null,
@@ -605,8 +610,13 @@ const runAtViewport = async ({ width, height }) => {
       });
       if (recipientResult.exceptionDetails) throw new Error(recipientResult.exceptionDetails.text);
       const recipient = recipientResult.result.value;
-      const recipientBrowserPass = reopenedTargetIndex == null
-        ? recipient.title === reopenedSlide?.content.title
+      const recipientBrowserPass = !reopenedSlide
+        ? recipient.slideCount === reopened.slides.length
+          && recipient.firstTitle === reopened.slides[0]?.content.title
+          && recipient.firstSubtitle === reopened.slides[0]?.content.subtitle
+          && recipient.motion === null
+        : reopenedTargetIndex == null
+          ? recipient.title === reopenedSlide.content.title
           && recipient.subtitle === reopenedSlide?.content.subtitle
           && recipient.effect === reopenedSlide?.composition.motion?.effect
           && JSON.stringify(recipient.motion) === JSON.stringify(reopenedSlide?.composition.motion)
@@ -619,8 +629,10 @@ const runAtViewport = async ({ width, height }) => {
       editorExportEvidence = {
         status: motionErrors.length || !recipientBrowserPass ? 'fail' : 'pass',
         artifact: basename(editorExportPath),
-        ...(reopenedTargetIndex == null
-          ? { title: reopenedSlide?.content.title, subtitle: reopenedSlide?.content.subtitle }
+        ...(!reopenedSlide
+          ? { title: reopened.slides[0]?.content.title, subtitle: reopened.slides[0]?.content.subtitle }
+          : reopenedTargetIndex == null
+          ? { title: reopenedSlide.content.title, subtitle: reopenedSlide.content.subtitle }
           : { keyPoint: reopenedSlide?.content.keyPoints[reopenedTargetIndex] }),
         motion: reopenedSlide?.composition.motion,
         motionErrors,

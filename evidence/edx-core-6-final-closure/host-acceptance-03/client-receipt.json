@@ -1,0 +1,34 @@
+{
+  "status": "NOT_PASS",
+  "pid": 29617,
+  "pgid": 29615,
+  "root": "/private/tmp/aic-b-6c98eb92546c4d86a111969114f9a301",
+  "commands": {
+    "browser-geometry": {
+      "args": [
+        "tools/browser-geometry-qa.mjs",
+        "fixtures/full-deck.html",
+        "--motion",
+        "static",
+        "--output",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-03/browser-geometry.json",
+        "--editor-export",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-03/editor-export.html",
+        "--screenshot",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-03/1280-full-deck.png",
+        "--montage",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-03/1280-montage.png"
+      ],
+      "pid": 29642,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-6-final-closure/host-acceptance-03/browser-geometry.log",
+      "exit": 1
+    }
+  },
+  "errors": [
+    {
+      "name": "Error",
+      "message": "browser-geometry exit 1"
+    }
+  ],
+  "browserClose": "PASS"
+}
