@@ -1,6 +1,6 @@
 # Core5：Reset／Recompose 與人工 override 保留
 
-Status: CODE_CANDIDATE / HOST_PASS / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_REVIEW_PENDING / CORE_PROGRESS_4_OF_6
+Status: CORE5_ACCEPTED / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_CODE_HOST_GO / CORE_PROGRESS_5_OF_6 / NOT_MERGED
 
 基準：Core4 本機 closure `098177a`，分支 `codex/edx-core-5-reset-recompose`。Core4 已依 Repair 3 fresh review 與 host-acceptance-05 裁決 GO，產品、ZIP、證據形成可回退 checkpoint；第6張 Final Closure 尚未開始。既有 `tasks/edx-core-six-card-closure-plan.md` 修改與四個 protected untracked 保留，不納入本卡。
 
@@ -61,3 +61,7 @@ Owner 在看過 UI stop-3 根因後明示「繼續」，主線執行 host-accept
 ## 2026-10-01 host-acceptance-07
 
 Owner 在視覺 stop-3 後再次明示「繼續吧」。主線只修 browser visual gate：依 `quote-monument`／`evidence-axis` 分別驗證，並沿第 05 輪量測保留卡片溢出的 RED 負控制。第 07 輪正式受管 host：雙 viewport 各 8/8、四支 PGQ 16/16、八張實圖核對、console/pageerror/network/HTTP/remote request 空、cleanup 與十檔身分一致，產品與 ZIP 未變。主線裁決 `HOST_PASS / FUNCTIONAL_PASS / VISUAL_PASS`；依本卡第 4 項，尚待獨立 code／host／實圖 review，故進度仍為 **4/6**，不得先開 Core6。完整收據：`evidence/edx-core-5-reset-recompose/host-acceptance-07/mainline-receipt.md`。
+
+## 2026-10-01 chart patch P1 與 host-acceptance-11
+
+獨立複審發現 evidence-axis chart component patch 後 live type visual 留舊值。產品最小修復沿既有交易投影與回退；公開 API 的成功／故障回歸先 RED 後 GREEN，Core5 24/24、相關合併 82/82 PASS。正式選頁 authority 為第一頁 `currentId`；focused 受管 host 以 evidence 首頁開啟，雙 viewport 各 3/3 驗證 92→77 的 canonical、chart DOM、type visual、fresh renderer 與匯出離線重開。controller PASS、四支 PGQ 16/16、Browser.close 與 root／marker／程序清理正常，前後十檔 SHA 一致。獨立 code／host reviewer 裁決 GO，未發現阻塞問題；前述第 07 輪完整視覺驗收證據保留。主線裁決 **Core5 5/6**；commit／push 狀態以 Git 為準，本卡不授權 merge、deploy 或 Core6 產品開發。接續收據：`evidence/edx-core-5-reset-recompose/chart-patch-repair-20261001.md`；原始證據：`evidence/edx-core-5-reset-recompose/host-acceptance-11/`。

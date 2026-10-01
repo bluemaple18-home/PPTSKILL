@@ -385,6 +385,47 @@ test('Core5 Repair2 evidence-axis chart token 與 fresh renderer 相同', () => 
   assert.deepEqual(h.getSpec().slides[0].content, spec.slides[0].content);
 });
 
+const evidencePatchFixture = () => {
+  const raw = JSON.parse(readFileSync(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
+  raw.slides = raw.slides.filter(slide => slide.id === 'evidence');
+  const spec = sanitizeDeckSpec(raw), h = mountedEditor(spec), slide = h.document.querySelector('.slide');
+  h.document.querySelector('.deck').dataset.visualWorld = 'typography-hero';
+  slide.setAttribute('class', 'slide primitive-component-focus variant-evidence-axis');
+  seedWorldChrome(h, spec);
+  const chart = spec.slides[0].content.components.find(component => component.type === 'chart');
+  const series = structuredClone(chart.series);
+  series.at(-1).values[series.at(-1).values.length - 1] = 77;
+  return { spec, h, slide, chart, patch: { slideId: 'evidence', region: `content.components.${chart.id}`, value: { series } } };
+};
+
+test('Core5 component patch 同步 chart、live type visual 與 fresh renderer', () => {
+  const { h, slide, chart, patch } = evidencePatchFixture();
+  h.api.applyLocalPatch(patch);
+  const canonical = h.getSpec();
+  assert.equal(canonical.slides[0].content.components.find(component => component.id === chart.id).series.at(-1).values.at(-1), 77);
+  assert.match(slide.querySelector(`[data-edit-target="slides.evidence.content.components.${chart.id}"]`).outerHTML, /77/);
+  assert.equal(liveVisual(slide).word, '77');
+  assert.deepEqual(liveVisual(slide), freshVisual(canonical));
+});
+
+test('Core5 component patch type visual 投影失敗時完整回退', () => {
+  const { spec, h, slide, chart, patch } = evidencePatchFixture();
+  const beforeChart = slide.querySelector(`[data-edit-target="slides.evidence.content.components.${chart.id}"]`).outerHTML;
+  const beforeVisual = liveVisual(slide), beforeHistory = h.api.getHistoryState();
+  const visual = slide.querySelector('[data-type-visual]'), originalSet = visual.setAttribute;
+  let fail = true;
+  visual.setAttribute = function (key, value) {
+    originalSet.call(this, key, value);
+    if (key === 'data-word' && fail) { fail = false; throw Error('component visual projection fault'); }
+  };
+  assert.throws(() => h.api.applyLocalPatch(patch), /component visual projection fault/);
+  assert.deepEqual(h.getSpec(), spec);
+  assert.equal(slide.querySelector(`[data-edit-target="slides.evidence.content.components.${chart.id}"]`).outerHTML, beforeChart);
+  assert.deepEqual(liveVisual(slide), beforeVisual);
+  assert.equal(h.getRevision(), 0);
+  assert.deepEqual(h.api.getHistoryState(), beforeHistory);
+});
+
 test('Core5 Repair2 舊 type visual 更新後拋錯須完整回退 DOM／canonical／history', () => {
   const raw = JSON.parse(readFileSync(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
   raw.slides = raw.slides.filter(slide => slide.id === 'problem');

@@ -34,16 +34,19 @@ const draftKey = (seed, deckId) => {
     + (a >>> 0).toString(16) + '-' + (b >>> 0).toString(16) + '-' + seed.length;
 };
 
+const chartOnly = process.env.CORE5_CHART_ONLY === '1';
 const fixture = JSON.parse(await readFile(new URL('../fixtures/full-deck-spec.json', import.meta.url), 'utf8'));
 fixture.deckId = 'edx-core-5-browser-' + randomBytes(8).toString('hex');
-fixture.slides = fixture.slides.filter(slide => ['portable', 'problem'].includes(slide.id));
+fixture.slides = fixture.slides.filter(slide => chartOnly ? slide.id === 'evidence' : ['portable', 'problem'].includes(slide.id));
 fixture.slides.sort((left, right) => Number(left.id !== 'portable') - Number(right.id !== 'portable'));
-fixture.slides.find(slide => slide.id === 'portable').composition.geometryOverrides = {
-  'portable-quote': { x: 830, y: 330, width: 600, height: 380 },
-};
-fixture.slides.find(slide => slide.id === 'portable').composition.typographyOverrides = {
-  'role-title': { fontSize: 72 },
-};
+if (!chartOnly) {
+  fixture.slides.find(slide => slide.id === 'portable').composition.geometryOverrides = {
+    'portable-quote': { x: 830, y: 330, width: 600, height: 380 },
+  };
+  fixture.slides.find(slide => slide.id === 'portable').composition.typographyOverrides = {
+    'role-title': { fontSize: 72 },
+  };
+}
 const rendered = renderFullDeck(fixture);
 assert.equal(rendered.status, 'pass', JSON.stringify(rendered.errors));
 const sourcePath = resolve(outputDir, 'source.html');
@@ -253,6 +256,59 @@ for (const [width, height] of [[1280, 720], [1600, 900]]) {
       await writeFile(path, bytes);
       run.artifacts.push({ label, path, sha256: sha256(bytes), bytes: bytes.length });
     };
+
+    if (chartOnly) {
+      await navigate(sourcePath, sourceSeed);
+      assert.equal(await storageValue(), null, '本輪 key 已有資料；拒絕覆寫使用者草稿');
+      ownsKey = true;
+      const chart = fixture.slides[0].content.components.find(component => component.type === 'chart');
+      const target = `[data-edit-target="slides.evidence.content.components.${chart.id}"]`;
+      const view = () => evaluate(`(()=>{
+        const api=window.PPTSKILLEditor,slide=document.querySelector('.slide[data-slide-id="evidence"]');
+        const component=api.getDeckSpec().slides[0].content.components.find(item=>item.id===${JSON.stringify(chart.id)});
+        return {spec:api.getDeckSpec(),selected:slide?.dataset.editorSelected,variant:slide?.className,
+          value:component?.series.at(-1).values.at(-1),chart:slide?.querySelector(${JSON.stringify(target)})?.textContent,
+          word:slide?.querySelector('[data-type-visual]')?.getAttribute('data-word')};
+      })()`);
+      const before = await view();
+      assert.equal(before.spec.slides[0].id, 'evidence', '正式頁面第一頁不是 evidence');
+      assert.equal(before.selected, 'true', '初始 currentId 未選中 evidence');
+      assert.match(before.variant, /variant-evidence-axis/);
+      assert.equal(before.value, 92); assert.equal(before.word, '92');
+      assert.match(before.chart, /92/);
+      run.checks.push('正式 DeckSpec 第一頁 authority 選中 evidence-axis，chart／type visual 初值 92');
+
+      const series = structuredClone(chart.series);
+      series.at(-1).values[series.at(-1).values.length - 1] = 77;
+      await evaluate(`window.PPTSKILLEditor.applyLocalPatch(${JSON.stringify({ slideId: 'evidence', region: `content.components.${chart.id}`, value: { series } })})`);
+      const after = await view();
+      assert.equal(after.selected, 'true');
+      assert.equal(after.value, 77); assert.match(after.chart, /77/); assert.equal(after.word, '77');
+      const fresh = renderFullDeck(after.spec);
+      assert.equal(fresh.status, 'pass');
+      assert.match(fresh.html, /data-word="77"/);
+      run.checks.push('公開 chart patch 後 canonical／live chart／type visual／fresh renderer 都是 77');
+
+      const exportHtml = await evaluate('window.PPTSKILLEditor.exportHtml()');
+      assert.deepEqual(extractDeckSpec(exportHtml), after.spec, '匯出 canonical 與 live 不符');
+      const exportPath = resolve(outputDir, `${width}-chart-export.html`);
+      await writeFile(exportPath, exportHtml);
+      run.artifacts.push({ label: 'chart-export', path: exportPath, sha256: sha256(exportHtml), bytes: Buffer.byteLength(exportHtml) });
+      await cdp.send('Network.emulateNetworkConditions', { offline: true, latency: 0, downloadThroughput: 0, uploadThroughput: 0 });
+      await navigate(exportPath, seedOf(exportHtml));
+      const reopened = await view();
+      assert.deepEqual(reopened.spec, after.spec, '離線重開 canonical 不符');
+      assert.equal(reopened.value, 77); assert.match(reopened.chart, /77/); assert.equal(reopened.word, '77');
+      run.checks.push('匯出離線重開後 canonical／chart DOM／type visual 仍為 77');
+
+      assert.deepEqual(run.pageErrors, [], 'pageerror');
+      assert.deepEqual(run.console.filter(item => item.type === 'error'), [], 'console error');
+      assert.deepEqual(run.networkFailures.filter(item => !item.canceled), [], 'network failure');
+      assert.deepEqual(run.httpErrors, [], 'HTTP error');
+      assert.deepEqual(run.remoteRequests, [], 'remote request');
+      run.status = 'pass';
+      continue;
+    }
 
     await navigate(sourcePath, sourceSeed);
     assert.equal(await storageValue(), null, '本輪 key 已有資料；拒絕覆寫使用者草稿');
