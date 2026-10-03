@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "status": "pass",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/source.html",
+  "sourceSha256": "88975168324fff1804599c826979a25fa8a6e1d37469ce4adb3d554d548696ee",
+  "alternateSourceSha256": "1f4be5f5a7db3d291ecf789231f462dd98a6b69081ae5719047690a834082614",
+  "deckId": "edx-core-4-browser-022b2b8c146c3732",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口",
+        "待恢復舊稿由直接編輯保護，顯示目前編輯未保存",
+        "明示取代前舊稿 bytes 不變；取代後 current canonical 自動保存並可重開恢復",
+        "同來源重開須 click；恢復後 canonical、DOM、history 一致",
+        "恢復後可再編輯／Undo；匯出 DeckSpec 一致且無本機草稿記錄",
+        "匯出 HTML 離線重開可讀 canonical 與 DOM",
+        "另一頁清除 key 後按恢復解除待恢復鎖，後續提交重新保存",
+        "getItem 拋錯仍 fail-closed，恢復／取代入口保留且舊稿 bytes 不變",
+        "啟動時 quota 寫探針失敗，舊草稿仍能明示恢復",
+        "損壞草稿拒絕恢復，後續提交不覆寫原 key",
+        "quota truthful degrade；交易仍完成，舊草稿保留",
+        "一次讀取故障後重試恢復，後續新編輯如實自動保存"
+      ],
+      "artifacts": [
+        {
+          "label": "restore-offered",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1280-restore-offered.png",
+          "sha256": "de4eb1103b4571f8f879689174ba11b20177b3b5b9dbed542f33103c614f6689",
+          "bytes": 69332
+        },
+        {
+          "label": "restored",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1280-restored.png",
+          "sha256": "f1ad306d22364f8ec2b8d464c3df954baabc602035aee2649cf58cc33c93daa8",
+          "bytes": 67309
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1280-export.html",
+          "sha256": "ffd95ed949551a206915f3554dd907df6b803eaf88170958d99f75c21e953b45",
+          "bytes": 674485
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1280-offline-reopen.png",
+          "sha256": "f1ad306d22364f8ec2b8d464c3df954baabc602035aee2649cf58cc33c93daa8",
+          "bytes": 67309
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "offeredDiagnostics": {
+        "draft": "本機草稿可用",
+        "draftVisible": false,
+        "restoreHidden": false,
+        "replaceHidden": false,
+        "restoreVisible": true,
+        "replaceVisible": true,
+        "storagePresent": true,
+        "storageMatchesSaved": true,
+        "recordSource": "6254306b-1cd332eb-1325",
+        "recordDeckId": "edx-core-4-browser-022b2b8c146c3732",
+        "recordTitle": "Core4 已保存的本機草稿",
+        "expectedDeckId": "edx-core-4-browser-022b2b8c146c3732",
+        "expectedTitle": "Core4 已保存的本機草稿",
+        "key": "pptskill:draft:v1:edx-core-4-browser-022b2b8c146c3732:6254306b-1cd332eb-1325"
+      },
+      "draftKeyRemoved": true
+    },
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "status": "pass",
+      "targetClosed": true,
+      "checks": [
+        "真 public API 提交後自動保存，storage 讀回與 UI 一致",
+        "相同 file 路徑、不同初始來源不顯示恢復入口",
+        "待恢復舊稿由直接編輯保護，顯示目前編輯未保存",
+        "明示取代前舊稿 bytes 不變；取代後 current canonical 自動保存並可重開恢復",
+        "同來源重開須 click；恢復後 canonical、DOM、history 一致",
+        "恢復後可再編輯／Undo；匯出 DeckSpec 一致且無本機草稿記錄",
+        "匯出 HTML 離線重開可讀 canonical 與 DOM",
+        "另一頁清除 key 後按恢復解除待恢復鎖，後續提交重新保存",
+        "getItem 拋錯仍 fail-closed，恢復／取代入口保留且舊稿 bytes 不變",
+        "啟動時 quota 寫探針失敗，舊草稿仍能明示恢復",
+        "損壞草稿拒絕恢復，後續提交不覆寫原 key",
+        "quota truthful degrade；交易仍完成，舊草稿保留",
+        "一次讀取故障後重試恢復，後續新編輯如實自動保存"
+      ],
+      "artifacts": [
+        {
+          "label": "restore-offered",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1600-restore-offered.png",
+          "sha256": "8ea3fc3add3624962cb2d50304fd781573c166a04a850033e271b5f6c12eb687",
+          "bytes": 85433
+        },
+        {
+          "label": "restored",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1600-restored.png",
+          "sha256": "a21a20c353000aafbabaa779b028b40daca9a4b95087c6bbef240f0e553939d0",
+          "bytes": 84184
+        },
+        {
+          "label": "export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1600-export.html",
+          "sha256": "ffd95ed949551a206915f3554dd907df6b803eaf88170958d99f75c21e953b45",
+          "bytes": 674485
+        },
+        {
+          "label": "offline-reopen",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-04/core4-local-draft/1600-offline-reopen.png",
+          "sha256": "8b2f50ee5732e43e3163d4f301b23e00b43c48d4da87b6b46a6626da5ee8ad6f",
+          "bytes": 83927
+        }
+      ],
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "offeredDiagnostics": {
+        "draft": "本機草稿可用",
+        "draftVisible": false,
+        "restoreHidden": false,
+        "replaceHidden": false,
+        "restoreVisible": true,
+        "replaceVisible": true,
+        "storagePresent": true,
+        "storageMatchesSaved": true,
+        "recordSource": "6254306b-1cd332eb-1325",
+        "recordDeckId": "edx-core-4-browser-022b2b8c146c3732",
+        "recordTitle": "Core4 已保存的本機草稿",
+        "expectedDeckId": "edx-core-4-browser-022b2b8c146c3732",
+        "expectedTitle": "Core4 已保存的本機草稿",
+        "key": "pptskill:draft:v1:edx-core-4-browser-022b2b8c146c3732:6254306b-1cd332eb-1325"
+      },
+      "draftKeyRemoved": true
+    }
+  ]
+}

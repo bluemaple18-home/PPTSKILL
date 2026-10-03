@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "pid": 83990,
+  "pgid": 83982,
+  "root": "/private/tmp/aic-b-5cc9bfd7988b44b693249f10eb0f0d90",
+  "commands": {
+    "core1-crop": {
+      "args": [
+        "tools/edx-wp1-s4-browser-acceptance.mjs",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-03/core1-crop",
+        "--crop-regression"
+      ],
+      "pid": 84043,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-03/core1-crop.log",
+      "exit": 0,
+      "acceptance": "pass",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 720,
+          "status": "pass",
+          "targetClosed": true
+        },
+        {
+          "width": 1600,
+          "height": 900,
+          "status": "pass",
+          "targetClosed": true
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "browserClose": "PASS"
+}

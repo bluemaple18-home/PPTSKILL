@@ -1,6 +1,6 @@
 # Core6：六張核心功能的 Final Closure
 
-Status: CORE6_CLOSED_LOCAL / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_CODE_HOST_ZIP_GO / CORE_PROGRESS_6_OF_6 / UNPUSHED
+Status: CORE6_CLOSED / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_CODE_HOST_ZIP_GO / MAINLINE_INTEGRATED / TOTAL_ACCEPTANCE_GO / CORE_PROGRESS_6_OF_6
 Branch: `codex/edx-core-6-final-closure`
 Base: Core5 `eca7a2b3a9c0fb7cd567b175d5c00ae12e7b5c95`；遠端 `codex/edx-core-5-reset-recompose` 已核對同 SHA。
 Traces to: `tasks/edx-core-six-card-closure-plan.md` 第 6 項；`working-spec.md` FR-003／FR-005、SC-002／SC-004；`BACKLOG.md` EDX-WP4 compatibility。

@@ -1,6 +1,6 @@
 # Core5：Reset／Recompose 與人工 override 保留
 
-Status: CORE5_ACCEPTED / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_CODE_HOST_GO / CORE_PROGRESS_5_OF_6 / NOT_MERGED
+Status: CORE5_ACCEPTED / FUNCTIONAL_PASS / VISUAL_PASS / INDEPENDENT_CODE_HOST_GO / MAINLINE_INTEGRATED / TOTAL_ACCEPTANCE_GO
 
 基準：Core4 本機 closure `098177a`，分支 `codex/edx-core-5-reset-recompose`。Core4 已依 Repair 3 fresh review 與 host-acceptance-05 裁決 GO，產品、ZIP、證據形成可回退 checkpoint；第6張 Final Closure 尚未開始。既有 `tasks/edx-core-six-card-closure-plan.md` 修改與四個 protected untracked 保留，不納入本卡。
 

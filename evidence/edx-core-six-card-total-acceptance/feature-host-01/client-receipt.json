@@ -1,0 +1,35 @@
+{
+  "status": "NOT_PASS",
+  "pid": 70321,
+  "pgid": 70319,
+  "root": "/private/tmp/aic-b-cd1d0d0d4a864e41a0fa5ddbee2ea2c5",
+  "commands": {
+    "core1-crop": {
+      "args": [
+        "tools/edx-wp1-s4-browser-acceptance.mjs",
+        "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-01/core1-crop",
+        "--crop-regression"
+      ],
+      "pid": 70355,
+      "log": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-01/core1-crop.log",
+      "exit": 1,
+      "acceptance": "fail",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 720,
+          "status": "fail",
+          "targetClosed": true
+        }
+      ]
+    }
+  },
+  "errors": [
+    {
+      "name": "Error",
+      "message": "core1-crop browser acceptance NOT_PASS",
+      "stack": "Error: core1-crop browser acceptance NOT_PASS\n    at run (file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-client.mjs:53:11)\n    at async file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-client.mjs:78:5"
+    }
+  ],
+  "browserClose": "PASS"
+}

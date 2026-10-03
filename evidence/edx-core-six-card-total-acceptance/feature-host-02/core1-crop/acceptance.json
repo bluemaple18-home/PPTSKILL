@@ -1,0 +1,295 @@
+{
+  "status": "fail",
+  "sourcePath": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-02/core1-crop/source.html",
+  "sourceSha256": "18327fc9aac888c762b3a68c230c068bb3d91985c1350fdcd1824c89167b0f26",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "status": "fail",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [
+        "mode／single click 不寫 geometry",
+        "legacy 明示預設初始化／真 vendor handle",
+        "真 drag／preview export 只保留 committed DOM"
+      ],
+      "artifacts": [
+        {
+          "label": "legacy-selected",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-02/core1-crop/1280-legacy-selected.html",
+          "bytes": 686360,
+          "sha256": "ccaae0f76084b278e2b7df7ec14f1a6528595471bcb914be5a9f5e21b76ee56e"
+        },
+        {
+          "label": "preview-export",
+          "path": "/Users/matt/Documents/ChatGPT/skill 工廠/PPTSKILL-canonical/evidence/edx-core-six-card-total-acceptance/feature-host-02/core1-crop/1280-preview-export.html",
+          "bytes": 686647,
+          "sha256": "a8ce50ea61842650bbb2e7543f1fa529f598ead098797267a29f5c7b4581e7f4"
+        }
+      ],
+      "resizeBeforeRelease": {
+        "canonical": {
+          "x": 840,
+          "y": 300,
+          "width": 640,
+          "height": 480
+        },
+        "dom": {
+          "style": "position: absolute; inset: 300px auto auto 840px; width: 640px; height: 480px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+          "rect": {
+            "x": 672,
+            "y": 240,
+            "width": 512,
+            "height": 384,
+            "top": 240,
+            "right": 1184,
+            "bottom": 624,
+            "left": 672
+          }
+        },
+        "status": "手動版面已更新",
+        "trace": {
+          "events": [
+            {
+              "kind": "pointermove",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "mousemove",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "pointerdown",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "mousedown",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "pointermove",
+              "target": "pptskill-editor",
+              "x": 1178.6666259765625,
+              "y": 613.3333129882812
+            },
+            {
+              "kind": "mousemove",
+              "target": "pptskill-editor",
+              "x": 1178,
+              "y": 613
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1173.3333740234375,
+              "y": 602.6666870117188
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1173,
+              "y": 602
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1168,
+              "y": 592
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1168,
+              "y": 592
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1162.6666259765625,
+              "y": 581.3333129882812
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1162,
+              "y": 581
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1157.3333740234375,
+              "y": 570.6666870117188
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1157,
+              "y": 570
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            }
+          ]
+        }
+      },
+      "resizeAfterRelease": {
+        "canonical": {
+          "x": 840,
+          "y": 300,
+          "width": 640,
+          "height": 480
+        },
+        "dom": {
+          "style": "position: absolute; inset: 300px auto auto 840px; width: 640px; height: 480px; margin: 0px; min-width: 0px; max-width: none; min-height: 0px; max-height: none; box-sizing: border-box;",
+          "rect": {
+            "x": 672,
+            "y": 240,
+            "width": 512,
+            "height": 384,
+            "top": 240,
+            "right": 1184,
+            "bottom": 624,
+            "left": 672
+          }
+        },
+        "status": "手動版面已更新",
+        "trace": {
+          "events": [
+            {
+              "kind": "pointermove",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "mousemove",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "pointerdown",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "mousedown",
+              "target": "pptskill-editor",
+              "x": 1184,
+              "y": 624
+            },
+            {
+              "kind": "pointermove",
+              "target": "pptskill-editor",
+              "x": 1178.6666259765625,
+              "y": 613.3333129882812
+            },
+            {
+              "kind": "mousemove",
+              "target": "pptskill-editor",
+              "x": 1178,
+              "y": 613
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1173.3333740234375,
+              "y": 602.6666870117188
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1173,
+              "y": 602
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1168,
+              "y": 592
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1168,
+              "y": 592
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1162.6666259765625,
+              "y": 581.3333129882812
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1162,
+              "y": 581
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1157.3333740234375,
+              "y": 570.6666870117188
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1157,
+              "y": 570
+            },
+            {
+              "kind": "pointermove",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            },
+            {
+              "kind": "mousemove",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            },
+            {
+              "kind": "pointerup",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            },
+            {
+              "kind": "mouseup",
+              "target": "asset text-asset",
+              "x": 1152,
+              "y": 560
+            }
+          ]
+        }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 480,\n+   width: 640,\n-   height: 400,\n-   width: 600,\n    x: 840,\n    y: 300\n  }\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:191:14",
+      "targetClosed": true
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   height: 480,\n+   width: 640,\n-   height: 400,\n-   width: 600,\n    x: 840,\n    y: 300\n  }\n\n    at file:///Users/matt/Documents/ChatGPT/skill%20%E5%B7%A5%E5%BB%A0/PPTSKILL-canonical/tools/edx-wp1-s4-browser-acceptance.mjs:191:14"
+}

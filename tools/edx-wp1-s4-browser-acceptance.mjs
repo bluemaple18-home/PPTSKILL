@@ -182,6 +182,7 @@ try {
       await assertExport('preview-export', initialized);
       await endGesture(pointer); box = { ...box, x: 840, y: 300 };
       assert.deepEqual(await evaluate(rectExpression), box); await assertRect(box); run.checks.push('真 drag／preview export 只保留 committed DOM');
+      assert.ok(await evaluate(`(()=>{const e=document.querySelector('.moveable-se'),r=e?.getBoundingClientRect();return !!r&&!!document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.closest('.moveable-se')})()`), 'SE resize 控制點須可命中');
       pointer = await startGesture('resize', -40, -80); await endGesture(pointer); box = { ...box, width: 600, height: 400 };
       assert.deepEqual(await evaluate(rectExpression), box); await assertRect(box); run.checks.push('真 SE resize 不改 x/y');
       const committed = await evaluate(specExpression);

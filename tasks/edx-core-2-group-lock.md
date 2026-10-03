@@ -1,6 +1,6 @@
 # 核心完整版 2/6：Group/Ungroup＋Lock/Unlock
 
-Status: CLOSED / INDEPENDENT_REVIEW_GO / INTEGRATION_PENDING
+Status: CLOSED / INDEPENDENT_REVIEW_GO / MAINLINE_INTEGRATED / TOTAL_ACCEPTANCE_GO
 Base: a3fd195a4a4c5b33ccbe4cccd3c2a8f121c93889
 Branch: codex/edx-core-2-group-lock
 Parent: tasks/edx-core-six-card-closure-plan.md 第2項
