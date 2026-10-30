@@ -1,0 +1,35 @@
+{
+  "sources": {
+    "package.json": "f963a92c2b9bd0d6d2814b7c87ceb02b7eead132c823069e2b7ce028968c319e",
+    "pnpm-lock.yaml": "91460bd9d63fa91b27c5b0716217e9e08d3281a07ee92f97808f0ec4a420e850",
+    "runtime/crop-hash-vendor.js": "da80cef6b2a449a6b7f9efa2037cf210023b2f4231efcf969ea7088667d26b63",
+    "runtime/deck-editor.js": "38b14542058c14a54e5aa1d4ebad98f8299132c04756365a66afbc8a718dfd97",
+    "runtime/deck-spec.js": "f0ad57f6eb830a2cdbc7c46991310791d0769f707aa16efcda0d486c0ed89cf4",
+    "runtime/full-deck-renderer.js": "4a521dafade5f44b5e5ae38f536eda65b39a19fd14a9b50e63546c104ffa1b44",
+    "runtime/image-crop.js": "d7662812064581cd6bef9b345517c34b73d071aba291974022371df0de998015",
+    "runtime/vendor/crop-hash-2.0.1.iife.js": "851cf8fec13faa9969460cea2d0e1f3dba1caa06f5c9cac92dbc21e59aa6e963",
+    "runtime/vendor/crop-hash-LICENSE.md": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec",
+    "runtime/vendor/crop-hash-vendor.json": "efca60c5986f39cd4719e912ccbada871ffc2acf96e24082c1245107fbfadc7a",
+    "schemas/deck-spec.schema.json": "c999e0a8e827339290a1c26e7cdf6dea1d566e10e28ea97102e35e16b53311a1",
+    "tests/edx-core-crop-fixture.test.mjs": "60d2a539c45cc3a5763d213cc471d97ab0dc33217c7ed325a15c7a9aeda560a9",
+    "tests/edx-core-crop-ui.test.mjs": "8800b96599128185d8e411a844ffdb32dce385bfd52a42b673cf4ecf9b232f21",
+    "tests/edx-core-crop.test.mjs": "882a2f3907775e455f44cb66a6c9ad8b752b24dc588c5d56ca0cdd686d09d8ab",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "27a2d2fb1965335da2bc07e7b8770179c3557ad485063c96c44ece3f07a872f1",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": "2f5c726273c084e610b7c0ae2d57cdcbfa1ff92d88e37b17e433ed9aedea0820",
+    "tools/build-crop-hash-vendor.mjs": "9f2e23421973e2be66d663ed1c2c42becbbc2bc7f67fd691950c194086ac7f57",
+    "tools/edx-core-crop-browser-cases.mjs": "7b9c0e6e1c63d293ffe16347fdb8363726491176ee1b91e556f2b03d80e15aea",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "723ad3426dc01f8b3111d4bf7929e730812e3d2cbccea500363693a605f0bcb7",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "3b933c0264639a5f8d238b619d77832debe6e39e33c450a95277636305a403c0"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2315483,
+    "sha256": "0be064da1a26064a056f8f0c2c910c04a09440d578c733c19eb9c87f608709c5"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "externalToolGate": {
+    "service": "OpenAI Codex",
+    "operationLevel": "read_only",
+    "userConfirmation": "explicitly approved 2026-09-10",
+    "sandbox": "read-only",
+    "recipientWorkingDirectoryInventory": [
+      "deck.html"
+    ],
+    "model": "gpt-5.6-sol",
+    "sessionId": "01a08a88-259a-70c2-92e0-3fa8debe266b",
+    "result": "success"
+  },
+  "sourceArtifact": "editor-export/final-exported-deck.html",
+  "responseArtifact": "recipient-ai-handoff/recipient-response.json",
+  "outputArtifact": "recipient-ai-handoff/recipient-patched-deck.html",
+  "patch": {
+    "slideId": "company-content-gradient",
+    "field": "subtitle",
+    "expectedCurrent": "把分散觀察收斂成三個可行動的結論",
+    "replacement": "將分散觀察整理成三項明確結論，並為每項指定下一步行動",
+    "reason": "明確要求每項結論都對應具體下一步，使內容更容易直接執行。"
+  },
+  "checks": {
+    "onlyDeckHtmlAsRecipientInput": true,
+    "embeddedDeckSpecParsed": true,
+    "expectedCurrentMatched": true,
+    "boundedFieldPatch": true,
+    "oneTargetSlideChanged": true,
+    "compositionPreserved": true,
+    "stylePreserved": true,
+    "reopenableHtml": true
+  },
+  "beforeContentHashes": {
+    "company-agenda": "51925d3fe025754e21a04923005858e6b63d69470cc0e7f6ebef385ef87ce13b",
+    "company-cover": "7f44a3f627969540d03415b93a42bec1b2fea55a7ed23c06e4a976f0427c5316",
+    "company-chapter": "0ba90af9092c61513eb93cfd141231b406b11479ede4c51ab61ac639c2dc5a2e",
+    "company-content-gradient": "de41b4bddcfae806eb65070623a299fe08b2e1c08c8f352e30380f770fc00ea8",
+    "company-content-object": "7e4b6f62e0a3ed2377e22e7bd5828cd38d9d7a31cc01b2b5ddc1462fe3f5b299",
+    "company-content-dark": "4e13cad2d941b675c5931a04b9fb30a1a38f5d82b62f9ff04c5e4ce0bffab6ed",
+    "company-closing-light": "a06d7575a740040bb6f5fc40de975d171f67a2fca9744b8882229910b4ebb55a",
+    "editor-text": "c0ff2046b65c688f6814aba90a2be41b34bdc76264ef5b8d149f478720e19be8",
+    "editor-image": "51c13773cb3d06cc9051ecc8d4c2217455c840e8e91887cc40aff61f7ddac7d2"
+  },
+  "afterContentHashes": {
+    "company-agenda": "51925d3fe025754e21a04923005858e6b63d69470cc0e7f6ebef385ef87ce13b",
+    "company-cover": "7f44a3f627969540d03415b93a42bec1b2fea55a7ed23c06e4a976f0427c5316",
+    "company-chapter": "0ba90af9092c61513eb93cfd141231b406b11479ede4c51ab61ac639c2dc5a2e",
+    "company-content-gradient": "64724c1ddeb8db6c5119467a444fbe91226171c6861ba900dbcd654304df7d02",
+    "company-content-object": "7e4b6f62e0a3ed2377e22e7bd5828cd38d9d7a31cc01b2b5ddc1462fe3f5b299",
+    "company-content-dark": "4e13cad2d941b675c5931a04b9fb30a1a38f5d82b62f9ff04c5e4ce0bffab6ed",
+    "company-closing-light": "a06d7575a740040bb6f5fc40de975d171f67a2fca9744b8882229910b4ebb55a",
+    "editor-text": "c0ff2046b65c688f6814aba90a2be41b34bdc76264ef5b8d149f478720e19be8",
+    "editor-image": "51c13773cb3d06cc9051ecc8d4c2217455c840e8e91887cc40aff61f7ddac7d2"
+  },
+  "changedContentSlides": [
+    "company-content-gradient"
+  ],
+  "outputSha256": "63fa0dc17340e5ed13aab0ecb375461ad83d04b639d8e928b80ac318b5bb69b3"
+}

@@ -1,0 +1,204 @@
+{
+  "review": "PPTSKILL Core2 independent read-only product review",
+  "time": "2026-09-24T02:30:34.279Z",
+  "candidate": "2bb1aafcc12694fa64a972e3bb76c9b3618d1cdd",
+  "base": "a3fd195a4a4c5b33ccbe4cccd3c2a8f121c93889",
+  "observedHead": "81fd40926f2a303184e3175971b5df3d3a906943",
+  "codeVerdict": "REQUEST_CHANGES",
+  "wholeCardVerdict": "BLOCKED_BROWSER_PENDING",
+  "severityCounts": {
+    "P0": 0,
+    "P1": 1,
+    "P2": 1,
+    "P3": 0
+  },
+  "fresh": {
+    "focused": {
+      "pass": 20,
+      "fail": 0,
+      "files": [
+        "tests/edx-core-2-group-lock.test.mjs"
+      ]
+    },
+    "scoped": {
+      "uniqueFiles": [
+        "tests/edx-wp2-s8-insert-image.test.mjs",
+        "tests/edx-wp2-s9-insert-image-file.test.mjs",
+        "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+        "tests/edx-wp2-s11-image-drop.test.mjs",
+        "tests/edx-core-crop.test.mjs",
+        "tests/edx-core-crop-ui.test.mjs",
+        "tests/edx-wp2-s4-replace-asset.test.mjs",
+        "tests/edx-wp2-s14-edit-text-component.test.mjs",
+        "tests/edx-wp2-s16-edit-text-ui.test.mjs"
+      ],
+      "pass": 214,
+      "fail": 0,
+      "initial": {
+        "pass": 164,
+        "fileLoadFailures": 3,
+        "reason": "tmp archive omitted design/materials/golden-design-grammar.v1.json",
+        "log": "scoped.tap"
+      },
+      "targetedReplay": {
+        "pass": 50,
+        "fail": 0,
+        "log": "scoped-replay.tap"
+      }
+    },
+    "independent": {
+      "pass": 13,
+      "fail": 1,
+      "logs": [
+        "review-probes.tap",
+        "rollback-probe.tap"
+      ],
+      "failure": "GL-R2 synthetic after-effect refresh throw"
+    },
+    "totalResolved": {
+      "pass": 247,
+      "fail": 1,
+      "notes": "排除首輪 fixture 缺件造成的 3 個 file-load errors；原 log 保留。"
+    }
+  },
+  "hashes": [
+    {
+      "path": "runtime/group-lock.js",
+      "sha256": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
+      "matchesCandidate": true
+    },
+    {
+      "path": "runtime/component-interaction.js",
+      "sha256": "fa5b1b6c0e3269d179aa28c7c4910d12b73ed551f72655ca0b022a0e2b8e9955",
+      "matchesCandidate": true
+    },
+    {
+      "path": "runtime/deck-editor.js",
+      "sha256": "557fc38802bccfbc34bfa3f176d6dd7ddde0f1d36daa283918dcb770fd99180d",
+      "matchesCandidate": true
+    },
+    {
+      "path": "runtime/deck-spec.js",
+      "sha256": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+      "matchesCandidate": true
+    },
+    {
+      "path": "schemas/deck-spec.schema.json",
+      "sha256": "bec0b4d5f3b81c867170ee0172f6a0d019bd9124659d1c95c27edcff2c548dca",
+      "matchesCandidate": true
+    },
+    {
+      "path": "tests/edx-core-2-group-lock.test.mjs",
+      "sha256": "34de26fe7596a2e1914144ccff6a1a87c64aebfb80c896a856354c757ca168eb",
+      "matchesCandidate": true
+    }
+  ],
+  "browserEvidence": {
+    "origin": "主線提供、Reviewer 唯讀核對；非 Reviewer fresh browser",
+    "path": "evidence/edx-core-2-group-lock/host-acceptance-04/group-lock/acceptance.json",
+    "copy": "host04-acceptance-readonly-copy.json",
+    "status": "fail",
+    "viewport": [
+      1280,
+      720
+    ],
+    "diagnostic": {
+      "core2": "native gesture diagnostic",
+      "kind": "resize",
+      "dx": 124,
+      "dy": 40,
+      "hit": {
+        "tag": "DIV",
+        "classes": "moveable-line moveable-direction  "
+      },
+      "point": {
+        "x": 640,
+        "y": 424,
+        "width": 14,
+        "height": 14
+      },
+      "trace": [
+        {
+          "name": "dragGroupEnd",
+          "x": 182,
+          "y": 312,
+          "trusted": true,
+          "before": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": true
+          },
+          "after": {
+            "enabled": true,
+            "target": {
+              "slideId": "portable",
+              "elementIds": [
+                "component-group-text",
+                "component-group-image"
+              ]
+            },
+            "gesturing": false
+          }
+        }
+      ],
+      "state": {
+        "enabled": true,
+        "target": {
+          "slideId": "portable",
+          "elementIds": [
+            "component-group-text",
+            "component-group-image"
+          ]
+        },
+        "gesturing": false
+      },
+      "status": "手動版面已更新"
+    },
+    "errors": {
+      "console": 0,
+      "pageErrors": 0,
+      "networkFailures": 0,
+      "httpErrors": 0,
+      "remoteRequests": 0
+    }
+  },
+  "findings": [
+    {
+      "id": "GL-R1",
+      "severity": "P1",
+      "file": "runtime/component-interaction.js",
+      "line": 291,
+      "title": "子 Moveable 邊線遮住群組 SE handle，trusted resize 無法啟動",
+      "confidence": "high",
+      "source": "host04 shared browser evidence",
+      "suggestion": "group only 使用 pinned vendor 已有 hideChildMoveableDefaultLines:true，並以真 pointer replay 驗證，不改 geometry contract"
+    },
+    {
+      "id": "GL-R2",
+      "severity": "P2",
+      "file": "runtime/deck-editor.js",
+      "line": 599,
+      "title": "refresh 完成後拋錯只回 canonical/rect，未回互動 target/handle",
+      "confidence": "high for synthetic condition; ordinary browser trigger unproven",
+      "source": "rollback-probe.test.mjs",
+      "suggestion": "由主線決定 residual 或在 rollback 恢復 canonical 後重建互動投影；不新增 second state/history"
+    }
+  ],
+  "boundaries": [
+    "repo/source/ZIP/protected 未修改",
+    "writes 僅 reviewer tmp",
+    "未啟 browser/PGQ/full/install/merge/push",
+    "未把 synthetic fault injection 當成普通 browser 必然 trigger",
+    "既有 Crop F2 OPEN/P2 不列為本卡新 finding",
+    "不要求 group 8px snap、scene graph、第二 state/history",
+    "同一 Reviewer 原線 targeted re-review；本轮不自動轉 candidate"
+  ],
+  "codegraph": "已先 query；舊索引只回無關 symbols，bounded rg fallback，未重建",
+  "diffCheck": "git diff --check a3fd195 2bb1aaf exit 0"
+}

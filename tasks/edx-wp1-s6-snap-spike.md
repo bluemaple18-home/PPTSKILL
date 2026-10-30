@@ -1,0 +1,46 @@
+# EDX-WP1-S6 — 8px snap bounded integration spike
+
+Status: COMPLETE — architecture ADAPT for S7 / production pending
+Base: 8dd76cc；branch codex/edx-wp1-s6-snap-spike。
+traces_to: BACKLOG.md §10.1 guided direct manipulation／invisible snap grid、§10.2 prior-art-first、§10.3 WP1、§10.4 operation authority。
+Dependencies：S3/S4/S4-PERF/S3-MOTION/S5均Independent GO，無未解blocking edge。trace preflight：references存在、單一ID、無新schema、驗證見下；無Critical。無取代。
+
+## Frontier與界線
+
+先判定 pinned Moveable snappable/snapGridWidth/Height 是否存在於既有離線bundle，以及本runtime raw pointer update是否會忽略vendor修正。這是新snap實作的必要authority mapping，不直接手刻通用primitive。
+Prior Art：Moveable0.53.0 MIT（既有metadata／metafile／license）、donor8px grid reference。Classification候選ADAPT；不新增dependency、不更新版本、不吸收其他transform/history/multiselect。
+Why Custom：只容許vendor結果到canonical1600×900 bounded operation的adapter；未量測前不實作quantizer。Bundle+Portable Cost：量測既有bundle/hash/input與能力，不自行增重。why_not_less：僅打開snappable不能證明raw pointer authority會採用snap；why_not_more：不需新schema或第二套geometry authority。
+
+## 驗收
+
+1. 核對pinned vendor source/types/bundle與license，列出snap事件payload與座標語意的來源行號。
+2. 核對目前begin/update/finish、zoom換算、keyboard nudge，列出需要的唯一adapter seam。
+3. 可執行bounded probe驗證vendor包含snap能力與現行raw pointer映射，不得把static/projection冒稱真browser；若尚未取得真browser snap evidence，決策只准conditional ADAPT／implementation pending，不能說snap已可用。
+4. 決策列acceptance gaps、後續實作的測試矩陣、canonical authority、safe-area、modifier/focus/IME、gesture單次提交、export/cancel與雙viewport要求；bundle/ZIP/runtime均保持不變。
+
+## 執行
+
+standard唯讀spike；native clean Worker只唯讀查vendor能力/metadata，回報證據，禁修改repo/安裝/啟動browser/開agent。Mainline唯一writer，做control／probe／decision；派工繼承主對話模型（工具不可指定Terra，且規則禁止未經Owner自行override），不建立visible task。
+停止：同類兩次無進展或第三次同blocker停止；不merge/push/deploy；結束為研究決策，非runtime feature GO。
+
+## Decision
+
+見 `evidence/edx-wp1-s6/decision.md`。既有vendor Snappable可保留；需真browser座標映射probe才能決定production adapter。Public controller probe4組PASS，vendor驗證PASS；production/runtime/ZIP均未改，沒有snap feature GO宣稱。
+
+## Browser mapping follow-up
+
+Owner「繼續」承接fixture-only frontier；主線直接執行一次性bounded harness。固定slide1600×900、container/snapContainer=slide、rootContainer=body；viewport1280×720/1600×900，off-grid(803,283,637,477)，grid0/8、drag/SE resize、identity/scale(.8)/translateY(20px)。收真CDP pointer與vendor beforeTranslate/translate/width/height/drag payload；不假設payload單位、不修改production/runtime/ZIP，不將synthetic transform視為實際motion suite。成功為採集完整且無console/page/network/HTTP/remote錯誤；mapping不符必須寫入決策。
+
+Browser follow-up COMPLETE：24組採集PASS、errors0、cleanupPASS；直接payload映射REJECT，非runtime功能PASS。決策與限制：`evidence/edx-wp1-s6/browser-mapping/decision.md`。
+
+## 2026-09-21 direction／geometry target validation
+
+Owner明示只做mapping/architecture，不進production、不Independent GO。fixture對照default／方向限制／無transform editor-only geometry target；兩viewport、3種static transform、drag/SE共36組，requested10px且記observed值。驗證方向語意、transform隔離、固定SE anchor與presentation CSS不變；只產evidence，未證明full-deck互動／export／motion lifecycle。
+
+2026-09-21結果：方向限制單獨不足；方向＋independent geometry target在36組採集／12組proxy invariant中成立，actual delta全部10。Resize採right/bottom落格而非尺寸倍數。仍為architecture candidate、非production；詳 `evidence/edx-wp1-s6/direction-target/decision.md`。
+
+## 最終bounded gesture驗證
+
+Owner繼續：兩viewport×三static transform×drag/SE×negative/zero/multi/cancel共48組。fixture接既有controller，canonical為測試替身、preview只改proxy；確認preview0提交、release最多1筆、cancel/zero0提交、teardown無proxy/control/overlay。通過後收斂架構並開production卡，不新增泛化研究。
+
+最終：48組gesture boundary PASS，架構採用geometry target＋指定吸附邊，停止泛化研究；見 `evidence/edx-wp1-s6/gesture-boundary/decision.md`。S7另卡進production；本卡不Independent GO。

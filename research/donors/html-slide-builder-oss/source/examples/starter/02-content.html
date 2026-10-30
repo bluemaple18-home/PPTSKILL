@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1280">
+<title>內容</title>
+<style>
+  /* 起手式模板：結構完整、視覺刻意樸素。這是「拿來改」的東西，不是成品。
+     沒有 @import —— 全部走系統字體堆疊，所以這份模板完全不需要網路，
+     打包後的離線承諾從第一步就成立。 */
+  :root{
+    --display-font: ui-serif, Georgia, 'Songti TC', 'Songti SC', serif;
+    --body-font:    ui-serif, Georgia, 'Songti TC', 'Songti SC', serif;
+    --label-font:   ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --paper:#fbfaf8;
+    --ink:#16181a; --ink-soft:#4c525a; --ink-faint:#9aa1a9;
+    --accent:#2f6f6b;
+    --hairline:rgba(22,24,26,0.13);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:1280px;height:720px;overflow:hidden;}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body-font);}
+  .top-hairline,.bottom-hairline{position:absolute;left:76px;right:76px;
+    height:1px;background:var(--hairline);}
+  .top-hairline{top:22px;} .bottom-hairline{bottom:46px;}
+  .slide-header{position:absolute;top:62px;left:76px;right:76px;}
+  .overline{display:block;font-family:var(--label-font);font-size:10px;
+    font-weight:600;letter-spacing:0.24em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:14px;}
+  .page-title{font-family:var(--display-font);font-size:40px;font-weight:400;
+    line-height:1.3;color:var(--ink);}
+  .slide-footer{position:absolute;bottom:12px;left:76px;right:76px;height:20px;
+    display:flex;justify-content:space-between;align-items:center;}
+  .footer-section,.footer-page{font-family:var(--label-font);font-size:9px;
+    letter-spacing:0.22em;text-transform:uppercase;color:var(--ink-faint);}
+  .body{position:absolute;top:200px;left:76px;width:600px;
+    font-family:var(--body-font);font-size:15px;line-height:1.95;color:var(--ink-soft);}
+  .points{list-style:none;position:absolute;top:200px;right:76px;width:440px;}
+  .points li{position:relative;padding-left:22px;margin-bottom:18px;
+    font-family:var(--body-font);font-size:14px;line-height:1.85;color:var(--ink-soft);}
+  .points li::before{content:"";position:absolute;left:0;top:12px;width:12px;height:1px;
+    background:var(--ink-faint);}
+  .points li.key{color:var(--ink);font-weight:600;}
+  .points li.key::before{background:var(--accent);height:2px;}
+</style>
+</head>
+<body>
+  <div class="top-hairline"></div>
+  <header class="slide-header">
+    <span class="overline">章節 — 這一頁在講什麼</span>
+    <h1 class="page-title">標題寫成一句可以被反駁的話</h1>
+  </header>
+  <p class="body">左欄放敘述。一頁只講一件事；講不完就分頁，不要縮小字級。<br><br>
+     這一段是給你替換的，連同上面的標題與右邊的條列。</p>
+  <ul class="points">
+    <li>條列一：每一條都是完整的句子</li>
+    <li>條列二：需要強調時加 class="key"</li>
+    <li class="key">條列三：這一條是重點，用強調色</li>
+  </ul>
+
+  <div class="bottom-hairline"></div>
+  <footer class="slide-footer">
+    <span class="footer-section">起手式模板</span>
+    <span class="footer-page">02 / 03</span>
+  </footer>
+</body>
+</html>

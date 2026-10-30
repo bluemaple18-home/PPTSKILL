@@ -1,0 +1,4 @@
+{"role": "browser", "event": "starting"}
+{"role": "browser", "event": "started", "pid": 26856, "pgid": 26855}
+{"role": "client", "event": "starting"}
+{"role": "client", "event": "started", "pid": 26857, "pgid": 26855}

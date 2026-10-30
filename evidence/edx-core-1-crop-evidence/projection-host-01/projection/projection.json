@@ -1,0 +1,4040 @@
+{
+  "status": "PASS",
+  "scope": "CSS projection prototype only",
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "landscape-contain",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 2.0833333333333335,
+        "left": 24.999999999999986,
+        "top": -50
+      },
+      "checks": [
+        {
+          "px": 52,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 147,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 147,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 0,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "landscape-cover",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 4.166666666666667,
+        "left": -200.00000000000003,
+        "top": -200
+      },
+      "checks": [
+        {
+          "px": 52,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 6,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "portrait-contain",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 120,
+        "naturalHeight": 240,
+        "scale": 1.1111111111111112,
+        "left": 183.33333333333331,
+        "top": -26.666666666666668
+      },
+      "checks": [
+        {
+          "px": 52,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 124,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 0,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "name": "reset",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 1.25,
+        "left": 100,
+        "top": 0
+      },
+      "checks": [
+        {
+          "px": 52,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 52,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 188,
+          "py": 147,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 51,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 76,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 108,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 147,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 288,
+          "py": 185,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 388,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 51,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 76,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 108,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 147,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 428,
+          "py": 185,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 6,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "landscape-contain",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 2.0833333333333335,
+        "left": 24.999999999999986,
+        "top": -50
+      },
+      "checks": [
+        {
+          "px": 55,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 174,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 174,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 0,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "landscape-cover",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 4.166666666666667,
+        "left": -200.00000000000003,
+        "top": -200
+      },
+      "checks": [
+        {
+          "px": 55,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "actual": [
+            67,
+            160,
+            71,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "actual": [
+            142,
+            36,
+            170,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 6,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "portrait-contain",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 120,
+        "naturalHeight": 240,
+        "scale": 1.1111111111111112,
+        "left": 183.33333333333331,
+        "top": -26.666666666666668
+      },
+      "checks": [
+        {
+          "px": 55,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 145,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 0,
+      "sourceUnchanged": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "name": "reset",
+      "status": "PASS",
+      "setup": {
+        "srcUnchanged": true,
+        "naturalWidth": 240,
+        "naturalHeight": 160,
+        "scale": 1.25,
+        "left": 100,
+        "top": 0
+      },
+      "checks": [
+        {
+          "px": 55,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 55,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "actual": [
+            229,
+            57,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 225,
+          "py": 174,
+          "inside": true,
+          "expected": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "actual": [
+            253,
+            216,
+            53,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 54,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 86,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 126,
+          "inside": true,
+          "expected": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "actual": [
+            30,
+            136,
+            229,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 174,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 350,
+          "py": 222,
+          "inside": true,
+          "expected": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "actual": [
+            0,
+            172,
+            193,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 475,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 54,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 86,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 126,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 174,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        },
+        {
+          "px": 525,
+          "py": 222,
+          "inside": false,
+          "expected": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "actual": [
+            240,
+            240,
+            240,
+            255
+          ],
+          "pass": true
+        }
+      ],
+      "excluded": 6,
+      "sourceUnchanged": true
+    }
+  ],
+  "errors": [],
+  "targetClosed": true
+}

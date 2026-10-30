@@ -1,0 +1,58 @@
+{
+  "1280-full-deck.png": {
+    "bytes": 59503,
+    "sha256": "98bb050e12691bcaa228fbd416799a28b041ec468457ec53d1305ddca4b74ac3"
+  },
+  "1280-montage.png": {
+    "bytes": 113779,
+    "sha256": "d7f975bf5324bded21cecc7cbf1559b7343fde38fb89f24fa3b884cb966def7a"
+  },
+  "browser-geometry.json": {
+    "bytes": 166257,
+    "sha256": "c93b04d7a9b3ea9b95f98aeca1dc9e8ed6ba98198e3890137885684ab824a70c"
+  },
+  "browser-geometry.log": {
+    "bytes": 166257,
+    "sha256": "c93b04d7a9b3ea9b95f98aeca1dc9e8ed6ba98198e3890137885684ab824a70c"
+  },
+  "client-receipt.json": {
+    "bytes": 2421,
+    "sha256": "184ad59375bceef4c0718d22b087892dceec879b5b31143e839f4592ff1d11d5"
+  },
+  "editor-export.html": {
+    "bytes": 694304,
+    "sha256": "010a468bd45ed279219695df72659d7d42eea7a8f01ea4b4c53a2ed4b0745c55"
+  },
+  "lifecycle/evidence/processes.jsonl": {
+    "bytes": 329,
+    "sha256": "1792b8d1ccc101bbba4afe944e6251f060366971a58b07b717aec6fea0f1f7b6"
+  },
+  "lifecycle/evidence/session.json": {
+    "bytes": 96,
+    "sha256": "f64f968b8c51fc6b2d67fbd239a68c9894781af6f377bf564c887cec591a959e"
+  },
+  "lifecycle/evidence/stderr.log": {
+    "bytes": 12578,
+    "sha256": "dca2de73d070a5d1dbbd0a9894584ae0bf874f42d271d681626f7714b6bf46fd"
+  },
+  "lifecycle/evidence/stdout.log": {
+    "bytes": 187,
+    "sha256": "40b97d942c16b866eb93845ea56ce09e30cf80f542ab97590f1902debfd1744c"
+  },
+  "pgq-1.log": {
+    "bytes": 220,
+    "sha256": "4f4f3d3d1f72ece1f27c4cae914c191ec0224e7b59d9b94ec23feedbf2994a60"
+  },
+  "pgq-2.log": {
+    "bytes": 731,
+    "sha256": "e6f56affebb1602eb888e52e3f32dcb32ff80bf7a970100c08b324e0b8551c09"
+  },
+  "pgq-3.log": {
+    "bytes": 787,
+    "sha256": "2b18af431ffff844e70d0f089e3853ab8da6bd29b4fde90eecbdb21e8d7c39b3"
+  },
+  "pgq-4.log": {
+    "bytes": 211,
+    "sha256": "59af2edee7fbfc2d1c2326463ec66215bbc0073a9247ea69a5fd43166fe0438c"
+  }
+}

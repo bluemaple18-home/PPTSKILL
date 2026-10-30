@@ -1,0 +1,18 @@
+[
+  "package.json",
+  "pnpm-lock.yaml",
+  "runtime/component-interaction.js",
+  "runtime/moveable-vendor.js",
+  "runtime/deck-editor.js",
+  "runtime/full-deck-renderer.js",
+  "runtime/vendor/moveable-0.53.0.iife.js",
+  "runtime/vendor/moveable-LICENSE.md",
+  "runtime/vendor/moveable-metafile.json",
+  "runtime/vendor/moveable-vendor.json",
+  "runtime/vendor/moveable-licenses/css-styled-LICENSE",
+  "tools/build-moveable-vendor.mjs",
+  "tools/edx-wp1-s4-browser-acceptance.mjs",
+  "tests/edx-wp1-s4-interaction.test.mjs",
+  "tests/edx-wp1-s4-vendor.test.mjs",
+  "tests/edx-wp1-s4-managed-browser-attach.test.mjs"
+]

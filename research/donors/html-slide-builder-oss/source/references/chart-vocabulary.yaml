@@ -1,0 +1,146 @@
+# chart-vocabulary.yaml
+# 依據 FT Visual Vocabulary（Financial-Times/chart-doctor, MIT）的繁體中文版整理成
+# agent 可查的決策表。原始海報是給人看的 PDF，agent 讀不可靠，所以轉成這份結構。
+#
+# 查表方式不是「看資料長什麼樣」，而是「這頁要回答什麼問題」。
+#   問題 -> family -> 2~3 個候選 form -> 挑一個 -> 用 renderer 產 SVG
+#
+# status:  ready   已有 renderer，可直接用
+#          planned 值得做，還沒實作
+#          skip    投影片上不適合（太細、需要互動、或需要地理資料）
+# slide_fit: 在 1280x720 單頁、觀眾 5 秒內要讀懂的前提下的適用度
+
+meta:
+  source: Financial-Times/chart-doctor · visual-vocabulary (MIT)
+  poster_zh_tw: Visual-vocabulary-cn-traditional.pdf
+  palette: 使用 theme 的 validated ramp；多數情況用強調式（一個重點色 + 其餘中性）
+  rule: 標題寫結論不寫題目；副標說明編碼方式；只標重點值，不是每一點都標
+
+families:
+
+  deviation:
+    zh: 離散差異
+    ask: 這些值相對於某個基準（零、目標、長期平均）是高還是低？
+    when: 強調相對於一個固定參考值的變化（正／負值）。也能用來展現態度傾向。
+    ft_examples: 貿易收支、氣候變遷
+    forms:
+      - {zh: 分向長條圖, en: Diverging bar, note: 簡單標準，同時處理正負值, slide_fit: high, status: ready}
+      - {zh: 分向堆疊長條圖, en: Diverging stacked bar, note: 最適合態度調查（正／中立／負）, slide_fit: high, status: planned}
+      - {zh: 成對長條圖, en: Spine, note: 單一數值拆成兩組對比（男／女）, slide_fit: med, status: planned}
+      - {zh: 損益線圖, en: Surplus/deficit filled line, note: 陰影展示兩元素的平衡關係, slide_fit: med, status: planned}
+
+  correlation:
+    zh: 相關性
+    ask: 兩個變數之間有沒有關係？
+    when: 展示兩個或多個變數的關係。注意：除非特別說明，多數讀者會誤讀成因果關係。
+    ft_examples: 通膨及失業率、收入及平均壽命
+    warn: 投影片上要標註「相關不等於因果」，否則觀眾會直接讀成因果。
+    forms:
+      - {zh: 散布圖, en: Scatterplot, note: 兩個連續變數關係的標準做法, slide_fit: med, status: planned}
+      - {zh: 泡泡圖, en: Bubble, note: 散布圖加第三個變數決定大小, slide_fit: med, status: planned}
+      - {zh: 連接散布圖, en: Connected scatterplot, note: 兩變數關係如何隨時間變化, slide_fit: low, status: skip}
+      - {zh: XY熱圖, en: XY heatmap, note: 兩類別的分布，不適合看細微差異, slide_fit: med, status: planned}
+
+  ranking:
+    zh: 排序
+    ask: 誰在前面、誰在後面？順序本身比數值重要嗎？
+    when: 當項目在數列中的排序位置，比絕對或相對數值更重要時使用。
+    ft_examples: 財富、損失、比賽成績、選區選舉結果
+    forms:
+      - {zh: 排序長條圖, en: Ordered bar, note: 依序排列時比一般長條圖更容易讀出排序, slide_fit: high, status: ready}
+      - {zh: 棒棒糖圖, en: Lollipop, note: 比長條圖少很多墨水，強調端點值, slide_fit: high, status: ready}
+      - {zh: 排序柱狀圖, en: Ordered column, note: 同上，直式, slide_fit: high, status: planned}
+      - {zh: 點狀條紋圖, en: Dot strip plot, note: 圓點排在線上，省空間、可多類別排序, slide_fit: high, status: planned}
+      - {zh: 凹凸線圖, en: Bump, note: 排名隨時間交換位置, slide_fit: med, status: planned}
+      - {zh: 排序比例符號, en: Ordered proportional symbol, note: 數值差距極大時用, slide_fit: med, status: planned}
+
+  distribution:
+    zh: 分佈
+    ask: 這些值是怎麼散開的？集中還是分散？有沒有離群值？
+    when: 呈現資料中的數值及其出現頻率。分佈的形狀用來強調不一致或不平均。
+    ft_examples: 收入分配、人口（年齡／性別）分佈
+    forms:
+      - {zh: 直方圖, en: Histogram, note: 統計分散的標準呈現；縮小柱間隙以凸顯形狀, slide_fit: high, status: planned}
+      - {zh: 箱形圖, en: Boxplot, note: 用中位數與範圍概括多個數列, slide_fit: med, status: planned}
+      - {zh: 小提琴圖, en: Violin plot, note: 比箱形圖更能呈現複雜分佈, slide_fit: low, status: skip}
+      - {zh: 人口金字塔, en: Population pyramid, note: 背對背的直方圖, slide_fit: high, status: planned}
+      - {zh: 點狀條紋圖, en: Dot strip plot, note: 個別數值在數列中的分布, slide_fit: high, status: planned}
+
+  change_over_time:
+    zh: 隨時間變化
+    ask: 這件事是怎麼變的？
+    when: 強調趨勢的變化。選對時間區間很重要，否則等於在誤導。
+    ft_examples: 股價變動、經濟動態按時間序列
+    forms:
+      - {zh: 折線圖, en: Line, note: 標準做法；資料不規則時加記號標值, slide_fit: high, status: ready}
+      - {zh: 坡度圖, en: Slope, note: 只有 2~3 個時間點時最好用，敘事最乾淨, slide_fit: high, status: ready}
+      - {zh: 柱狀圖, en: Column, note: 一次只呈現一個數列較佳, slide_fit: high, status: ready}
+      - {zh: 月曆式熱圖, en: Calendar heatmap, note: 一整年逐日的節奏, slide_fit: high, status: planned}
+      - {zh: 扇形圖（預測）, en: Fan chart, note: 預測區間；必須標明不確定性, slide_fit: med, status: planned}
+      - {zh: 區域圖, en: Area chart, note: 只有一個數列時可用；多數列會互相遮蔽, slide_fit: med, status: planned}
+      - {zh: 股價, en: Stock price, note: 開收盤與高低點, slide_fit: low, status: skip}
+      - {zh: 地震震波圖, en: Seismogram, note: 高頻資料的密集呈現, slide_fit: low, status: skip}
+
+  magnitude:
+    zh: 量的比較
+    ask: 哪一個比較大？大多少？
+    when: 比較資料的規模。用來比較數量（桶、人、元），而不是比率或百分比。
+    ft_examples: 大宗物資生產量、市值
+    forms:
+      - {zh: 柱狀圖（直）, en: Column, note: 標準；軸線起始值必須為 0, slide_fit: high, status: ready}
+      - {zh: 長條圖（橫）, en: Bar, note: 沒有時間序列、類別名稱很長時用, slide_fit: high, status: ready}
+      - {zh: 成對柱狀圖, en: Paired column, note: 超過兩組就難讀, slide_fit: med, status: planned}
+      - {zh: 比例符號圖, en: Proportional symbol, note: 數值差距極大時, slide_fit: med, status: planned}
+      - {zh: 象形圖, en: Isotype (pictogram), note: 小的整數量，一個圖示代表一個單位, slide_fit: high, status: planned}
+      - {zh: 子彈圖, en: Bullet, note: 實際值 vs 目標值，很適合 KPI 頁, slide_fit: high, status: ready}
+      - {zh: 雷達圖, en: Radar, note: 面積會誤導、軸順序可任意操弄, slide_fit: low, status: skip}
+
+  part_to_whole:
+    zh: 部分和整體的關係
+    ask: 這個整體是由什麼組成的？
+    when: 顯示一個整體如何被拆解。如果讀者只想知道個別成分的大小，改用量的比較。
+    ft_examples: 財政預算、公司架構、全國選舉結果
+    warn: 圓餅／甜甜圈只在「一眼看比例」且 <=6 塊時可用；比較接近的值一律改用長條。
+    forms:
+      - {zh: 堆疊柱狀圖, en: Stacked column, note: 簡單，但組成過多會難讀, slide_fit: high, status: ready}
+      - {zh: 圓餅圖, en: Pie, note: 很難精確比較不同塊的大小, slide_fit: low, status: skip}
+      - {zh: 甜甜圈圖, en: Donut, note: 中間可放整體數值，比圓餅稍好, slide_fit: med, status: planned}
+      - {zh: 比例堆疊長條圖, en: Marimekko, note: 同時呈現大小與佔比，資料不能太複雜, slide_fit: med, status: planned}
+      - {zh: 樹狀圖, en: Treemap, note: 有階層關係的部分與整體；組成太細會難讀, slide_fit: med, status: planned}
+      - {zh: 網格, en: Gridplot, note: 百分比用 10x10 方格，比圓餅好讀, slide_fit: high, status: planned}
+      - {zh: 瀑布圖, en: Waterfall, note: 逐步拆解一個變化（預算、成本結構）, slide_fit: high, status: planned}
+      - {zh: 范恩圖, en: Venn, note: 重疊關係；超過三組即失效, slide_fit: low, status: skip}
+
+  spatial:
+    zh: 地理空間
+    ask: 位置本身是不是重點？
+    when: 當精確位置和地理分布規則比其他資訊更重要時才用地圖。
+    ft_examples: 人口密度、自然資源分布、投票結果差異
+    warn: 需要 GeoJSON，會讓單檔簡報膨脹且離線失效 —— 一律歸 rich profile。
+    forms:
+      - {zh: 基本面量圖, en: Basic choropleth, note: 呈現比值而非絕對數據, slide_fit: med, status: skip}
+      - {zh: 比例象徵地圖, en: Proportional symbol, note: 絕對數據；細微差異難呈現, slide_fit: med, status: skip}
+      - {zh: 平等化示意地圖, en: Equalised cartogram, note: 選區大小一致化, slide_fit: low, status: skip}
+      - {zh: 流向地圖, en: Flow map, note: 有明確移動方向的資料, slide_fit: low, status: skip}
+
+  flow:
+    zh: 流向
+    ask: 東西從哪裡流到哪裡？中間漏掉多少？
+    when: 展示兩個或以上狀態、情境之間的流動量或強度。
+    ft_examples: 資金、貿易、移民、訴訟的流向
+    forms:
+      - {zh: 桑基圖, en: Sankey, note: 追蹤複雜過程的最終結果, slide_fit: med, status: planned}
+      - {zh: 瀑布圖, en: Waterfall, note: 順序性的增減，最典型是預算流動, slide_fit: high, status: planned}
+      - {zh: 和弦圖, en: Chord, note: 一個矩陣中同時描繪兩種流向, slide_fit: low, status: skip}
+      - {zh: 網路圖, en: Network, note: 節點會互相遮蔽，靜態圖上幾乎不可讀, slide_fit: low, status: skip}
+
+# 廣告投放常見問題 -> 直接對應，省去查表
+shortcuts:
+  "各產品線這季比上季怎麼變":       {family: change_over_time, form: Slope}
+  "哪個版位成效最好":               {family: ranking, form: Lollipop}
+  "預算怎麼分配":                   {family: part_to_whole, form: Stacked column}
+  "轉換漏斗每一關掉多少":           {family: flow, form: Waterfall}
+  "實際打到目標的幾成":             {family: magnitude, form: Bullet}
+  "一年裡哪幾天量特別大":           {family: change_over_time, form: Calendar heatmap}
+  "受眾年齡性別分布":               {family: distribution, form: Population pyramid}
+  "花費和成效有沒有關係":           {family: correlation, form: Scatterplot, warn: 標註相關不等於因果}

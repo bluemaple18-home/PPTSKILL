@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "1.0",
+  "updatedAt": "2026-09-09",
+  "policy": "Only explicit Owner-approved PPTSKILL outputs may enter this comparison set. It is not a pixel-matching snapshot suite.",
+  "entries": [
+    {
+      "id": "p0-vq3-s1-r1-typography-hero",
+      "ownerDecision": "pass",
+      "acceptedAt": "2026-09-09",
+      "sourceStatus": "owner-approved-pptskill-output",
+      "styleId": "route-editorial-rail",
+      "visualWorld": "typography-hero",
+      "artifact": "evidence/p0-vq3/s1/typography-world-montage-1280x720.png",
+      "receipt": "evidence/p0-vq3/s1/typography-world-receipt.md",
+      "motionOwnerDecision": "pass",
+      "motionAcceptedAt": "2026-09-09",
+      "motionArtifact": "evidence/p0-vq3/s3/typography-motion-preview.gif",
+      "motionNote": "hard-cut-field 必須維持快速、克制，避免中文 clipping 看似 rendering glitch。"
+    },
+    {
+      "id": "p0-vq3-s2-information-led",
+      "ownerDecision": "pass",
+      "acceptedAt": "2026-09-09",
+      "sourceStatus": "owner-approved-pptskill-output",
+      "styleId": "route-technical-map",
+      "visualWorld": "information-led",
+      "artifact": "evidence/p0-vq3/s2/information-led-montage-1280x720.png",
+      "receipt": "evidence/p0-vq3/s2/information-led-receipt.md",
+      "motionOwnerDecision": "pass",
+      "motionAcceptedAt": "2026-09-09",
+      "motionArtifact": "evidence/p0-vq3/s3/information-motion-preview.gif"
+    }
+  ]
+}

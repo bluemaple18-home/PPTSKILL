@@ -1,0 +1,4 @@
+owner_scope=PPTSKILL Mainline only 1600x900; 1280 not rerun
+ai_core_fixed_sha=2d78d8e18d42156f43f12f0ebc6997914ec64328
+CODEX_SANDBOX=<unset>
+capacity=HostCapacity(total_bytes=494384795648, physical_available_bytes=72507080704, admission_available_bytes=83438019191, source='macos_foundation_important_usage')

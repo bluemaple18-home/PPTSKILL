@@ -1,0 +1,210 @@
+{
+  "aiCoreHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "scannerSHA256": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "scannerUnchanged": true,
+  "results": [
+    {
+      "case": "stable",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303785
+          ],
+          "statMode": 33188,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "counts": [
+        8,
+        1
+      ],
+      "result": "COMPLETE",
+      "finalEntries": [
+        ".com.google.Chrome.Network Persistent State.fixture"
+      ],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "disappeared-file",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303789
+          ],
+          "errno": 2,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "FileNotFoundError",
+        "errno": 2
+      },
+      "finalEntries": [],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "rename-commit",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303793
+          ],
+          "errno": 2,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "FileNotFoundError",
+        "errno": 2
+      },
+      "finalEntries": [
+        "Network Persistent State"
+      ],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "symlink-replacement",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303797
+          ],
+          "statMode": 41453,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (symlink or special file)",
+      "cause": {
+        "type": "NoneType",
+        "errno": null
+      },
+      "finalEntries": [
+        ".com.google.Chrome.Network Persistent State.fixture"
+      ],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "directory-before-stat",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303802
+          ],
+          "errno": 2,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "FileNotFoundError",
+        "errno": 2
+      },
+      "finalEntries": [],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "directory-before-open",
+      "events": [
+        {
+          "phase": "directory removed after stat, before nofollow open",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303806
+          ],
+          "statMode": 16877,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "FileNotFoundError",
+        "errno": 2
+      },
+      "finalEntries": [],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "read-error",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303810
+          ],
+          "errno": 5,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: resource observation unknown (I/O failure)",
+      "cause": {
+        "type": "OSError",
+        "errno": 5
+      },
+      "finalEntries": [
+        ".com.google.Chrome.Network Persistent State.fixture"
+      ],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    },
+    {
+      "case": "budget",
+      "events": [
+        {
+          "phase": "entry.stat",
+          "nofollow": true,
+          "parentIdentity": [
+            16777230,
+            135303814
+          ],
+          "statMode": 33188,
+          "parentIdentityUnchanged": true
+        }
+      ],
+      "result": "REJECTED",
+      "reason": "NO_GO: runtime budget exceeded (dimensions=max_bytes; bytes=8/4; files=1/10000; entry=profile/Default/.com.google.Chrome.Network Persistent State.fixture)",
+      "cause": {
+        "type": "NoneType",
+        "errno": null
+      },
+      "finalEntries": [
+        ".com.google.Chrome.Network Persistent State.fixture"
+      ],
+      "contractCheck": "PASS",
+      "fixtureRemoved": true
+    }
+  ],
+  "browserLaunched": false,
+  "scope": "受控fixture；不是Host04類型歸因或host修復驗收"
+}

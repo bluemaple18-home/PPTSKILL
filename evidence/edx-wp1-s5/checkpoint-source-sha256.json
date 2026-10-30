@@ -1,0 +1,7 @@
+{
+  "runtime/component-interaction.js": "8c1b2c7a87ee867516c7671b7bafd98718de929c6d5d14a37e4e63141a201e3b",
+  "tests/edx-wp1-s5-keyboard.test.mjs": "5da4af54351af29ecde755a49e0ee5b5aa95a0856ca14fb2eab612eba58174a6",
+  "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "399ff5904a30ab6f5c3fb80ced042d99f170c8677717402a6863f35a20025f33",
+  "tools/edx-wp1-s5-browser-cases.mjs": "efd9df98f361c5b86f8038203d020b9b7588168163165ddd9a6e051fa3ab6a4f",
+  "tools/edx-wp1-s4-browser-acceptance.mjs": "8773443311bc83a3cb0e70542b1505e8978acf45ea7709fde585c8daaa36fa30"
+}

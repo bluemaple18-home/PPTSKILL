@@ -1,0 +1,42 @@
+{
+  "client-receipt.json": {
+    "bytes": 1339,
+    "sha256": "9794d706404105ad0c620621652d92519ea6d654aa9bf56af00550af0d083be1"
+  },
+  "core1-crop/1280-legacy-selected.html": {
+    "bytes": 686360,
+    "sha256": "ccaae0f76084b278e2b7df7ec14f1a6528595471bcb914be5a9f5e21b76ee56e"
+  },
+  "core1-crop/1280-preview-export.html": {
+    "bytes": 686647,
+    "sha256": "a8ce50ea61842650bbb2e7543f1fa529f598ead098797267a29f5c7b4581e7f4"
+  },
+  "core1-crop/acceptance.json": {
+    "bytes": 2166,
+    "sha256": "f9735ff31eabddd7cda16a48df7beac81ca2f563b8be1279d7c0a004be947f9b"
+  },
+  "core1-crop/source.html": {
+    "bytes": 694006,
+    "sha256": "18327fc9aac888c762b3a68c230c068bb3d91985c1350fdcd1824c89167b0f26"
+  },
+  "core1-crop.log": {
+    "bytes": 179,
+    "sha256": "785675f3692ab2117b6970dfd407eaa0d2c9ebfdcc3555883b75d3794a3faab3"
+  },
+  "lifecycle/evidence/processes.jsonl": {
+    "bytes": 329,
+    "sha256": "b4b2f5a6bc652aea3063f655438dbf44fde1e35394fbae9cc6b0361c27934999"
+  },
+  "lifecycle/evidence/session.json": {
+    "bytes": 96,
+    "sha256": "a0546074d06f0e3fcd2015c669f824105f89c54e24ce2fdd7350aff2e7b41b87"
+  },
+  "lifecycle/evidence/stderr.log": {
+    "bytes": 1157,
+    "sha256": "9b8df34bfad653d137387f0abaa3ea58f41d6f1d06e2858697545a21f7188c08"
+  },
+  "lifecycle/evidence/stdout.log": {
+    "bytes": 198,
+    "sha256": "6a919dacaa6bb0c773c287403b5bf99d504eb6573ebbf7272b25aac81ef96773"
+  }
+}

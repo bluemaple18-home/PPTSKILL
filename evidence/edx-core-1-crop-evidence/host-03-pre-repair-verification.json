@@ -1,0 +1,15 @@
+{
+  "product": "b364cd8",
+  "browser": [
+    26,
+    26
+  ],
+  "pixels": [
+    705,
+    710
+  ],
+  "pgqUnique": 16,
+  "cleanup": "PASS",
+  "scanCalls": 698,
+  "notAcceptanceOfRepair": true
+}

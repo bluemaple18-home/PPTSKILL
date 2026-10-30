@@ -1,0 +1,21 @@
+{
+  "diffCheck": {
+    "exit": 0,
+    "output": ""
+  },
+  "protectedCheck": {
+    "exit": 0,
+    "output": ".DS_Store: OK\nCLAUDE.md: OK\nHANDOFF-20260914-P0-R11-R1-S3.md: OK\nHANDOFF-20260914-PGQ-WP1.md: OK\n"
+  },
+  "sourceSha256": {
+    "runtime/deck-editor.js": "34ec1dc70cc9b2c419c96eae26a1d31d1bbef2124a2f38fb6549f1fa2e06a14e",
+    "runtime/component-interaction.js": "f1347a8640da6ab1d33bc0540585c97fa08b54af883c7dbebd373a2e810036a1",
+    "tests/edx-core-2-group-lock.test.mjs": "8b0ff4bf4effaa7d64477a8f0be76f095ebb8cc68bedb5ab82b6cfc1ffb8617d",
+    "tests/edx-core-3-undo-redo.test.mjs": "5dcf80792ef862906766ae024c7ef625d145a4f23e8515c4b96d24c454d0eece",
+    "tests/edx-core-3-transaction-boundary.test.mjs": "1aeb3fa78fc2c178addd09fe68f33eac040cf145bd519aac576dcbee38c79bd9"
+  },
+  "stagedDiffCheck": {
+    "exit": 0,
+    "output": ""
+  }
+}

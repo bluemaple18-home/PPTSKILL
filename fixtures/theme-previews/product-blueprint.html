@@ -1,0 +1,28 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Product Blueprint</title><style>
+    :root { color: #e8f0e9; background: #0c1b19; font-family: Arial, 'PingFang TC', 'Noto Sans TC', sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; width: 1600px; height: 900px; overflow: hidden; background: #0c1b19; }
+    main { width: 100%; height: 100%; padding: 44px 52px 50px; position: relative; display: grid; grid-template-rows: 58px 1fr; background-image: linear-gradient(rgba(187,255,215,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(187,255,215,.055) 1px, transparent 1px); background-size: 32px 32px; }
+    main::after { content: ''; position: absolute; inset: 22px; border: 1px solid rgba(197,231,214,.18); pointer-events: none; }
+    header { z-index: 1; display: grid; grid-template-columns: 1fr auto auto; gap: 34px; align-items: center; padding: 0 18px 16px; border-bottom: 1px solid rgba(197,231,214,.3); font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
+    header .theme { color: #a9ffcb; }
+    header .status { color: #0c1b19; background: #a9ffcb; padding: 7px 9px 6px; }
+    .hero { z-index: 1; display: grid; grid-template-columns: minmax(0, 7fr) minmax(480px, 5fr); gap: 54px; min-height: 0; padding: 60px 18px 10px; }
+    .copy { display: flex; flex-direction: column; justify-content: space-between; padding: 6px 0 28px; }
+    .axis { color: #79abc1; font: 700 13px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 870px; margin: 24px 0 26px; font-size: 73px; line-height: 1.08; letter-spacing: -.05em; font-weight: 720; text-wrap: balance; }
+    .subtitle { max-width: 700px; margin: 0; color: #a9bdb5; font-size: 25px; line-height: 1.52; }
+    .legend { display: flex; gap: 28px; color: #789087; font: 600 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .legend span::before { content: ''; display: inline-block; width: 8px; height: 8px; margin-right: 9px; background: #a9ffcb; }
+    .legend span:last-child::before { background: #79abc1; }
+    .system { align-self: center; min-height: 570px; border: 1px solid rgba(197,231,214,.35); background: rgba(8,25,22,.82); padding: 28px; display: grid; grid-template-rows: auto 1fr auto; box-shadow: 12px 12px 0 rgba(121,171,193,.09); }
+    .system-title { display: flex; justify-content: space-between; color: #a9ffcb; font: 700 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .pipeline { list-style: none; padding: 34px 0 20px; margin: 0; display: grid; }
+    .pipeline li { display: grid; grid-template-columns: 64px 1fr 20px; align-items: center; gap: 17px; border-top: 1px solid rgba(197,231,214,.22); font-size: 20px; font-weight: 700; }
+    .pipeline li:last-child { border-bottom: 1px solid rgba(197,231,214,.22); }
+    .pipeline b { color: #79abc1; font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .pipeline i { width: 9px; height: 9px; border-radius: 50%; background: #a9ffcb; box-shadow: 0 0 0 5px rgba(169,255,203,.08); }
+    .output { display: grid; grid-template-columns: 1fr auto; align-items: end; padding-top: 22px; }
+    .output strong { font: 700 13px/1 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; text-transform: uppercase; }
+    .output span { color: #0c1b19; background: #a9ffcb; padding: 12px 14px; font: 800 12px/1 ui-monospace, SFMono-Regular, Menlo, monospace; }
+  </style></head><body><main><header><span>Presentation Skill · v0.1 Preview</span><span class="theme">Product Blueprint</span><span class="status">SYSTEM READY</span></header><section class="hero"><div class="copy"><div><span class="axis">Presentation architecture / 01</span><h1>讓每個人用 AI 快速完成簡報</h1><p class="subtitle">從需求釐清、風格選擇到可離線分享的單檔 HTML</p></div><div class="legend"><span>Human decision</span><span>AI execution</span></div></div><aside class="system"><div class="system-title"><span>Input → output map</span><span>v0.1</span></div><ol class="pipeline"><li><b>IN.01</b><span>釐清需求</span><i></i></li><li><b>IN.02</b><span>確認架構</span><i></i></li><li><b>IN.03</b><span>選定風格</span><i></i></li><li><b>OUT</b><span>交付 HTML</span><i></i></li></ol><div class="output"><strong>One portable artifact</strong><span>HTML</span></div></aside></section></main></body></html>

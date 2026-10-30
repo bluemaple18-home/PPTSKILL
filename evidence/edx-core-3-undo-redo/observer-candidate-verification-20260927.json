@@ -1,0 +1,17 @@
+{
+  "candidate": "c3724ce6b9e2584b9a25a41bf617edf818011e26",
+  "candidateStatus": "",
+  "candidateSources": {
+    "scripts/tmp_artifact_lifecycle.py": "e7ee4db75443813fff523a6984bc05f7f2d15ca76681a9a09f7ef62c43c5bb07",
+    "tests/test_tmp_artifact_lifecycle.py": "b36debc8542228d6db5bb4937e52459aada714e1645ca0b3460ea5f49dd1d1ac",
+    "docs/tmp-session-lifecycle.md": "fc527d195f3c5817ff02c4cc796590479ae4bd5a33e02feabc9ff1b4daf0f0ca"
+  },
+  "normalCommitHookExit": 0,
+  "normalHookSummary": "harness audit quick passed；未跳過hook",
+  "aiCoreCanonicalHEAD": "c23e46555b73a29f16319c657622acb1acc51e7a",
+  "canonicalScannerSHA": "427162d34af5be6f3269c418f141716130909ce3fea82b5e3b4431732ebfdd6c",
+  "pptskillSourceProtectedMismatch": [],
+  "zipSHA": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290",
+  "zipBytes": 2329758,
+  "activated": false
+}

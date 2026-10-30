@@ -1,0 +1,6 @@
+{
+  "scope": "僅本輪已記錄PID；唯讀ps，不signal或cleanup",
+  "knownPidCount": 28,
+  "matches": [],
+  "rootsAbsent": true
+}

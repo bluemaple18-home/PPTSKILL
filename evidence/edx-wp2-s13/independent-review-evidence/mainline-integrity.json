@@ -1,0 +1,26 @@
+{
+  "candidate": "9b7767d88411e9e9a14e72d011726d67f74371a6",
+  "handoffHead": "26d784e76f6df54dc0b281f7964719554f854293",
+  "matches": {
+    "sources": {
+      "runtime/deck-editor.js": true,
+      "tests/edx-wp2-s13-insert-text.test.mjs": true,
+      "tools/edx-wp2-s13-browser-cases.mjs": true,
+      "tools/edx-wp1-s4-browser-acceptance.mjs": true,
+      "runtime/image-insertion.js": true,
+      "tests/edx-wp2-s8-insert-image.test.mjs": true
+    },
+    "protected": {
+      ".DS_Store": true,
+      "CLAUDE.md": true,
+      "HANDOFF-20260914-P0-R11-R1-S3.md": true,
+      "HANDOFF-20260914-PGQ-WP1.md": true
+    }
+  },
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2295428,
+    "sha256": "d6ffe2e65d16280ef0eea8d62eee6f6519a9e8e2ef2d02dd1cdab5bbcd8ba3cd"
+  },
+  "deliveryDrift": false
+}

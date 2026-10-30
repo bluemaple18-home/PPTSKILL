@@ -1,0 +1,334 @@
+TAP version 13
+# Subtest: Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision
+ok 1 - Core2 Node group／ungroup 只改 metadata，clone 與 atomic revision
+  ---
+  duration_ms: 28.103916
+  type: 'test'
+  ...
+# Subtest: Core2 Node group move／resize 比例、單次提交與整批拒絕
+ok 2 - Core2 Node group move／resize 比例、單次提交與整批拒絕
+  ---
+  duration_ms: 8.240166
+  type: 'test'
+  ...
+# Subtest: Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+ok 3 - Core2 Node lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+  ---
+  duration_ms: 14.854
+  type: 'test'
+  ...
+# Subtest: Core2 Node exact own-data payload 不呼叫 getter
+ok 4 - Core2 Node exact own-data payload 不呼叫 getter
+  ---
+  duration_ms: 4.832958
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision
+ok 5 - Core2 portable VM（synthetic） group／ungroup 只改 metadata，clone 與 atomic revision
+  ---
+  duration_ms: 114.323542
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕
+ok 6 - Core2 portable VM（synthetic） group move／resize 比例、單次提交與整批拒絕
+  ---
+  duration_ms: 66.910084
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+ok 7 - Core2 portable VM（synthetic） lock 擋 patch／edit／transform／delete／部分 group，unlock 可續編
+  ---
+  duration_ms: 101.06
+  type: 'test'
+  ...
+# Subtest: Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter
+ok 8 - Core2 portable VM（synthetic） exact own-data payload 不呼叫 getter
+  ---
+  duration_ms: 31.416083
+  type: 'test'
+  ...
+# Subtest: Core2 metadata sanitizer 持久化與非法引用不得靜默清除
+ok 9 - Core2 metadata sanitizer 持久化與非法引用不得靜默清除
+  ---
+  duration_ms: 5.009833
+  type: 'test'
+  ...
+# Subtest: Core2 schema／operationDescriptors 與 portable export 保留 authority
+ok 10 - Core2 schema／operationDescriptors 與 portable export 保留 authority
+  ---
+  duration_ms: 59.675625
+  type: 'test'
+  ...
+# Subtest: Core2 mounted toolbar、原生group事件mapping、單次revision與clone
+ok 11 - Core2 mounted toolbar、原生group事件mapping、單次revision與clone
+  ---
+  duration_ms: 171.016458
+  type: 'test'
+  ...
+# Subtest: Core2 portable group resize 最後 update 有效、release 越過 minimum 時整組不提交
+ok 12 - Core2 portable group resize 最後 update 有效、release 越過 minimum 時整組不提交
+  ---
+  duration_ms: 121.339792
+  type: 'test'
+  ...
+# Subtest: Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤
+ok 13 - Core2 portable refresh 已生效後拋錯仍恢復群組互動投影與原始錯誤
+  ---
+  duration_ms: 116.495042
+  type: 'test'
+  ...
+# Subtest: Core2 portable rollback 投影再拋錯仍保留原始 operation error
+ok 14 - Core2 portable rollback 投影再拋錯仍保留原始 operation error
+  ---
+  duration_ms: 93.179167
+  type: 'test'
+  ...
+# Subtest: Core2 mounted click/marquee展開整組、Shift切換不拆散
+ok 15 - Core2 mounted click/marquee展開整組、Shift切換不拆散
+  ---
+  duration_ms: 165.478292
+  type: 'test'
+  ...
+# Subtest: Core2 mounted lock可選取解鎖，但沒有transform或image/text入口
+ok 16 - Core2 mounted lock可選取解鎖，但沒有transform或image/text入口
+  ---
+  duration_ms: 214.521375
+  type: 'test'
+  ...
+# Subtest: Core2 mounted group nudge、IME guard、Escape/pointercancel均不誤提交
+ok 17 - Core2 mounted group nudge、IME guard、Escape/pointercancel均不誤提交
+  ---
+  duration_ms: 160.304417
+  type: 'test'
+  ...
+# Subtest: Core2 mounted stale／bounds／minimum拒絕，移除任一成員取消整组
+ok 18 - Core2 mounted stale／bounds／minimum拒絕，移除任一成員取消整组
+  ---
+  duration_ms: 174.187375
+  type: 'test'
+  ...
+# Subtest: Core2 mounted export/reopen清UI並保留group lock；duplicate不共用metadata引用
+ok 19 - Core2 mounted export/reopen清UI並保留group lock；duplicate不共用metadata引用
+  ---
+  duration_ms: 360.072458
+  type: 'test'
+  ...
+# Subtest: Core2 Node locked多目標／圖片mutation入口整批拒絕
+ok 20 - Core2 Node locked多目標／圖片mutation入口整批拒絕
+  ---
+  duration_ms: 9.542375
+  type: 'test'
+  ...
+# Subtest: Core2 portable locked多目標／圖片mutation入口整批拒絕
+ok 21 - Core2 portable locked多目標／圖片mutation入口整批拒絕
+  ---
+  duration_ms: 87.390583
+  type: 'test'
+  ...
+# Subtest: Core2 portable group projection同步throw與重入，canonical/DOM/revision全回退
+ok 22 - Core2 portable group projection同步throw與重入，canonical/DOM/revision全回退
+  ---
+  duration_ms: 145.991458
+  type: 'test'
+  ...
+# Subtest: Core2 portable未完成gesture或text dialog期間group metadata拒絕
+ok 23 - Core2 portable未完成gesture或text dialog期間group metadata拒絕
+  ---
+  duration_ms: 640.910084
+  type: 'test'
+  ...
+# Subtest: Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier
+ok 24 - Core3 Node 單筆 operation、no-op、redo 分岔及 false barrier
+  ---
+  duration_ms: 23.319833
+  type: 'test'
+  ...
+# Subtest: Core3 Node 驗證失敗不動 history，20 筆 bounded
+ok 25 - Core3 Node 驗證失敗不動 history，20 筆 bounded
+  ---
+  duration_ms: 22.045541
+  type: 'test'
+  ...
+# Subtest: Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor
+ok 26 - Core3 純 history 超限 truthful degrade、失敗 replay 不移 cursor
+  ---
+  duration_ms: 1.172459
+  type: 'test'
+  ...
+# Subtest: Core3 portable slide reorder 的 after-effect DOM throw 原子回退
+ok 27 - Core3 portable slide reorder 的 after-effect DOM throw 原子回退
+  ---
+  duration_ms: 137.334083
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+ok 28 - Core3 Repair3 gesture restore after-effect throw 回退 geometry／history
+  ---
+  duration_ms: 111.128333
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+ok 29 - Core3 Repair3 gesture 收尾投影不得同步重入 Undo
+  ---
+  duration_ms: 83.837875
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 pre-commit restore setter 不得重入 Undo
+ok 30 - Core3 Repair3 pre-commit restore setter 不得重入 Undo
+  ---
+  duration_ms: 89.261167
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 post-commit restore setter 不得重入 Undo
+ok 31 - Core3 Repair3 post-commit restore setter 不得重入 Undo
+  ---
+  duration_ms: 90.274875
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 成功通知 setter 不得重入 Undo
+ok 32 - Core3 Repair3 成功通知 setter 不得重入 Undo
+  ---
+  duration_ms: 118.64875
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+ok 33 - Core3 Repair3 reorder after-effect throw 不提交 pending 文字
+  ---
+  duration_ms: 353.118166
+  type: 'test'
+  ...
+# Subtest: Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序
+ok 34 - Core3 Repair3 reorder 第二次回退呼叫失敗仍恢復 DOM 順序
+  ---
+  duration_ms: 398.09475
+  type: 'test'
+  ...
+# Subtest: Core3 portable duplicate／remove after-effect throw 不留下變更
+ok 35 - Core3 portable duplicate／remove after-effect throw 不留下變更
+  ---
+  duration_ms: 175.635625
+  type: 'test'
+  ...
+# Subtest: Core3 portable direct component patch replaceWith after-effect throw 不留下變更
+ok 36 - Core3 portable direct component patch replaceWith after-effect throw 不留下變更
+  ---
+  duration_ms: 188.955833
+  type: 'test'
+  ...
+# Subtest: Core3 portable operation undo／redo 與 false writer barrier
+ok 37 - Core3 portable operation undo／redo 與 false writer barrier
+  ---
+  duration_ms: 687.24425
+  type: 'test'
+  ...
+# Subtest: Core3 portable 成功 slide direct writer 清除歷史
+ok 38 - Core3 portable 成功 slide direct writer 清除歷史
+  ---
+  duration_ms: 2077.01775
+  type: 'test'
+  ...
+# Subtest: Core3 browser harness flag 已接線且預留正式 host 驗收
+ok 39 - Core3 browser harness flag 已接線且預留正式 host 驗收
+  ---
+  duration_ms: 83.564958
+  type: 'test'
+  ...
+# Subtest: Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership
+ok 40 - Core3 mounted toolbar、鍵盤及 input／IME／Alt ownership
+  ---
+  duration_ms: 233.242875
+  type: 'test'
+  ...
+# Subtest: Core3 portable group／lock／geometry replay 與 large-image pointer hot path
+ok 41 - Core3 portable group／lock／geometry replay 與 large-image pointer hot path
+  ---
+  duration_ms: 2175.356583
+  type: 'test'
+  ...
+# Subtest: Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade
+ok 42 - Core3 16 MiB 圖片讓單筆歷史超限時 toolbar truthful degrade
+  ---
+  duration_ms: 2737.933167
+  type: 'test'
+  ...
+# Subtest: Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor
+ok 43 - Core3 portable replay 投影 after-effect throw 保留 canonical／DOM／revision／cursor
+  ---
+  duration_ms: 60.086833
+  type: 'test'
+  ...
+# Subtest: Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history
+ok 44 - Core3 portable edit-text 提交投影 after-effect throw 保留 DOM 與 history
+  ---
+  duration_ms: 48.769166
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry
+ok 45 - Core3 Repair1 operation toolbar setter post-effect throw 不留下 entry
+  ---
+  duration_ms: 49.66625
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor
+ok 46 - Core3 Repair1 replay toolbar setter post-effect throw 不移 cursor
+  ---
+  duration_ms: 75.698292
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取
+ok 47 - Core3 Repair1 direct patch selection cleanup post-effect throw 回退 DOM 與選取
+  ---
+  duration_ms: 89.369417
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 stale component DOM patch fail closed
+ok 48 - Core3 Repair1 stale component DOM patch fail closed
+  ---
+  duration_ms: 32.1735
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable
+ok 49 - Core3 Repair1 reorder／replay fault 恢復 selection 與 Moveable
+  ---
+  duration_ms: 157.553292
+  type: 'test'
+  ...
+# Subtest: Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled
+ok 50 - Core3 Repair1 gesture begin／end／cancel 即時更新 Undo disabled
+  ---
+  duration_ms: 87.278
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作
+ok 51 - Core3 Repair2 gesture 結束控制列 after-effect throw 不提交，且可再次正常操作
+  ---
+  duration_ms: 162.58875
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字
+ok 52 - Core3 Repair2 邊界 reorder no-op 保留選取與未同步文字
+  ---
+  duration_ms: 92.967958
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交
+ok 53 - Core3 Repair2 gesture 成功通知 after-effect throw 不留下失敗提交
+  ---
+  duration_ms: 86.943917
+  type: 'test'
+  ...
+# Subtest: Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影
+ok 54 - Core3 Repair2 vendor updateRect after-effect throw 不留下提交或過期投影
+  ---
+  duration_ms: 89.367625
+  type: 'test'
+  ...
+1..54
+# tests 54
+# suites 0
+# pass 54
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 16872.451

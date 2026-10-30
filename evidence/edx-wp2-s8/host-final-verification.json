@@ -1,0 +1,102 @@
+{
+  "status": "PASS",
+  "productSha": "0b4c7bdf95211d0bb0587034cb899593e6b64d90",
+  "sources": 9,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2293334,
+    "sha256": "82a16b7d962972df28d558dbfecc1d198858f686abe49e5acf4ce19d27795cf1"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 551,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checks": 50,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "API-driven-insert": 3,
+        "decoded-image": 21,
+        "pointer-hit": 7,
+        "invalid-zero-side-effects": 5,
+        "real-pointer-geometry": 2,
+        "trusted-pointer": 1,
+        "export-offline-reopen": 1
+      },
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "checks": 50,
+      "checkRecordBreakdown": {
+        "base": 10,
+        "API-driven-insert": 3,
+        "decoded-image": 21,
+        "pointer-hit": 7,
+        "invalid-zero-side-effects": 5,
+        "real-pointer-geometry": 2,
+        "trusted-pointer": 1,
+        "export-offline-reopen": 1
+      },
+      "targetClosed": true
+    }
+  ],
+  "artifactHashesMatched": 22,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s8/host-acceptance/insert-image/1280-s8-inserted-image-controls.png",
+      "bytes": 44999,
+      "sha256": "87d9105d08b1b51438c0273d483892d3f6dc1c33b052809880a422f036b6ec17",
+      "width": 1280,
+      "height": 720,
+      "visualInspection": "已核對：新增藍黃非方形圖、selection輪廓與resize handle可見；既有fit/replace toolbar可見、無viewport clipping。fixture有明示位置與既有文字重疊，不宣稱自動避障或整頁視覺品質。"
+    },
+    {
+      "path": "evidence/edx-wp2-s8/host-acceptance/insert-image/1600-s8-inserted-image-controls.png",
+      "bytes": 53875,
+      "sha256": "0e7e0b6ccc13c5a0a1897b7e8fb89e05a2763f64b8fab31daf8f28ecbcdb8b67",
+      "width": 1600,
+      "height": 900,
+      "visualInspection": "已核對：新增藍黃非方形圖、selection輪廓與resize handle可見；既有fit/replace toolbar可見、無viewport clipping。fixture有明示位置與既有文字重疊，不宣稱自動避障或整頁視覺品質。"
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS：首輪supervisor fail-closed exit2並回收；retry Browser.close/supervisor exit0並回收",
+  "targetedEvidence": "host-acceptance",
+  "pgqEvidence": "host-pgq-retry",
+  "historicalFailuresPreserved": [
+    "Worker RED 5/18",
+    "接線工具語法失敗及重述診斷",
+    "Mainline full nonbrowser 550/551：舊變數名斷言",
+    "首輪PGQ因managed resource observation I/O fail-closed；不是scan-limit、底層errno未知"
+  ],
+  "limitations": [
+    "新插入透過API，無File/picker/drop/clipboard UI或auto-ID",
+    "3×2 PNG驗decode/geometry/computed object-fit，不宣稱crop像素或自動避障",
+    "成功insert取消gesture用mounted snap on/off × drag/resize；真browser驗invalid insert不中斷gesture",
+    "20MiB仍沿export guard，無每次insert前aggregate admission",
+    "PGQ retry PASS只能證明該輪完成，不能證明底層I/O根因已修復",
+    "Independent Review pending；Mainline acceptance非Independent GO"
+  ]
+}

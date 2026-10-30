@@ -1,0 +1,3 @@
+tests/edx-core-crop-fixture.test.mjs
+tests/edx-core-crop-ui.test.mjs
+tests/edx-core-crop.test.mjs

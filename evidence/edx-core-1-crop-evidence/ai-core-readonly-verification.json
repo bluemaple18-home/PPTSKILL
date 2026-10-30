@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "scripts/tmp_artifact_lifecycle.py": true,
+    "scripts/tmp_session.py": true,
+    "tests/test_tmp_artifact_lifecycle.py": true,
+    "tests/test_tmp_session.py": true
+  },
+  "unchanged": true
+}

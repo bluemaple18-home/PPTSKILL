@@ -1,0 +1,76 @@
+{
+  "status": "CONTROLLER_NO_GO_NOT_ACTIVATED",
+  "canonicalHEAD": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "canonicalFilesMatch": true,
+  "productSourceFilesMatch": 75,
+  "protectedFilesMatch": 4,
+  "archive": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290"
+  },
+  "manifestState": "PREPARED_PENDING_MAINLINE_FINAL",
+  "hostOutputAbsent": true,
+  "isolationMarkerAbsent": true,
+  "frozenArtifacts": {
+    "host-controller-r2-manifest.json": {
+      "sha256": "de1b49422dacb19f94b68e92d3fc3cb09deceb00eebce0298c6a5edb0c1480f9",
+      "bytes": 2409
+    },
+    "host-controller-r2-offline.log": {
+      "sha256": "98a14acfbe29009b7dd20a6a45e13d0f9cb0a6c70d45b39ac35f72fb9ceaae20",
+      "bytes": 4388
+    },
+    "host-controller-r2-review-a-probes.json": {
+      "sha256": "f8efdc1a4391a4cdd464be76c9f63fd44e1a1d343b57a2abb25d9ff35ef6519a",
+      "bytes": 1548
+    },
+    "host-controller-r2-review-a-probes.py": {
+      "sha256": "1a025831aeb714bbe3e7ec51c2ad2d0918d26f3c9b176957aa8d2949e50089de",
+      "bytes": 4935
+    },
+    "host-controller-r2-review-a-tests.log": {
+      "sha256": "1942bde45f804431ebe10d1f19bc8fc52d2fc4c80bc32b73f6752aca0ba9d644",
+      "bytes": 2945
+    },
+    "host-controller-r2-review-a.md": {
+      "sha256": "69a1565788aa62890f54453b2fe0967259bc69215df5f543a49a90bfb7070de3",
+      "bytes": 9148
+    },
+    "host-controller-r2-review-b-probes.log": {
+      "sha256": "2856165c10dba6332dbe075c386891a03ef79cf3e5fe8e3abe2a414a13a3bc3a",
+      "bytes": 376
+    },
+    "host-controller-r2-review-b-probes.py": {
+      "sha256": "6b06133f5555594a957885e8be40a5add2acc995522a26599c5273b6f0e6ea38",
+      "bytes": 5787
+    },
+    "host-controller-r2-review-b-results.json": {
+      "sha256": "1593507dfee31eb77f44d0a9aac84a98e302e9195ef7b05b8cada3a54707c025",
+      "bytes": 2557
+    },
+    "host-controller-r2-review-b-tests.log": {
+      "sha256": "d94db996622894c7822f580204a9bae63d2599a1d1d07384b8bf94418e2cc972",
+      "bytes": 2945
+    },
+    "host-controller-r2-review-b.md": {
+      "sha256": "8900c7c22dee4446fe5467f34d6f9e54441015a6991f8c6891df6891cc07c1d2",
+      "bytes": 8798
+    },
+    "host-controller-r2-test.py": {
+      "sha256": "dfd249ecdfbd762416ca53cbd0471c437d6e9921f4eb2b2adf1a061e666288ed",
+      "bytes": 22254
+    },
+    "host-controller-r2.py": {
+      "sha256": "0c2c6ad7fb102cf54fb2cad3dbfba8af71c9373c7349ce5c1fbb2f3735d47ee0",
+      "bytes": 19583
+    }
+  },
+  "mainlineOfflineTests": {
+    "tests": 21,
+    "failures": 0,
+    "exit": 0,
+    "rawReference": "host-controller-r2-offline.log",
+    "note": "Mainline fresh 重跑21/21亦通過；本欄rawReference是Worker已保存log，不冒稱Mainline raw。"
+  }
+}

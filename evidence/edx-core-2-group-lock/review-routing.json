@@ -1,0 +1,14 @@
+{
+  "role": "independent code reviewer",
+  "agentId": "01a0d138-f5af-7eb2-bc04-72203e800997",
+  "nickname": "Ramanujan",
+  "forkContext": false,
+  "model": "runtime inherited; no override",
+  "reasoningEffort": "high",
+  "thickness": "strict/core-bounded",
+  "workspace": "shared read-only; writes only owned reviewer tmp",
+  "card": "tasks/edx-core-2-group-lock-review.md",
+  "runtimeCandidate": "2bb1aafcc12694fa64a972e3bb76c9b3618d1cdd",
+  "repairGeneration": 0,
+  "mainline": "產品停筆；只跑host／寫本卡control evidence"
+}

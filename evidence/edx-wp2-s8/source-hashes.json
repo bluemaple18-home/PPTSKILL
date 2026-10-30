@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "1.0",
+  "productSha": "0b4c7bdf95211d0bb0587034cb899593e6b64d90",
+  "sources": {
+    "runtime/image-insertion.js": "20b5a1f818aa3899794db8c34f315dc7fe0bd5edebcd667f17b0067bb8b9c2dd",
+    "runtime/deck-editor.js": "a9f3a22116cc78eaa2bfad2d71830ff467001ebd50e8f27f8dab5de0c6716db4",
+    "tests/edx-wp2-s8-insert-image.test.mjs": "47dbc481f455fec8c2d56ed698a2da8b72b63ba91a1892c5bc3663253013d24d",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "edea07875dc4e4807926218e39048b45a986c320b2a41288da4eb7910f53e3f0",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": "5bc5bb9b2bf05431b33dc0851a2958e4463a9ebb7dffbfffec9bb823b0d26aa6",
+    "tests/pgq-wp3-s1-motion-numberflow.test.mjs": "793792d8d1e7eabb45a0f2bebc4c9944de15908376fbe301f272786a51712bc7",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "50ea8518c5dfb3943f95b951281a721741545fea8072123474433dc654e2d93e",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "0458bfd11596eaa4ae813128671afae45316ca997f2685cfd7dd7dd52180b514",
+    "tools/edx-wp2-s8-browser-cases.mjs": "5c413efd7470c06bd61d9d62fff1b0d4af7ecd46db2a075c6b2324e6753106a5"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2293334,
+    "sha256": "82a16b7d962972df28d558dbfecc1d198858f686abe49e5acf4ce19d27795cf1"
+  }
+}

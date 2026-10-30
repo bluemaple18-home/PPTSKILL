@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "archive": "worker-red.log.gz",
+  "archiveSha256": "444bedcc4f46b31c3a63e6114fda8670fce8cc600b7190c33141c166a03f3869",
+  "rawSha256": "3cc93f89570c2f01803ab291698ff055b63b79ac765bb5668db9559ae593c7a9",
+  "rawBytes": 25498,
+  "archiveBytes": 2906,
+  "roundTripByteMatch": true,
+  "originalLog": "/private/tmp/pptskill-s17-worker-red.log",
+  "reason": "保留原始assertion whitespace；不改寫FAIL log內容"
+}

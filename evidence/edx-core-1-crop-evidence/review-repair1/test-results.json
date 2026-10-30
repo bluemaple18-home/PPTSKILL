@@ -1,0 +1,70 @@
+[
+  {
+    "name": "focused",
+    "manifest": "evidence/edx-core-1-crop-evidence/focused-files.txt",
+    "argv": [
+      "/opt/homebrew/Cellar/node/25.9.0_3/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "tests/edx-core-crop-fixture.test.mjs",
+      "tests/edx-core-crop-ui.test.mjs",
+      "tests/edx-core-crop.test.mjs"
+    ],
+    "exitCode": 0,
+    "node": "v25.9.0",
+    "tail": [
+      "1..27",
+      "# tests 27",
+      "# suites 0",
+      "# pass 27",
+      "# fail 0",
+      "# cancelled 0",
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 1437.77475",
+      ""
+    ]
+  },
+  {
+    "name": "scoped",
+    "manifest": "evidence/edx-core-1-crop-evidence/scoped-files.txt",
+    "argv": [
+      "/opt/homebrew/Cellar/node/25.9.0_3/bin/node",
+      "--test",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "tests/edx-core-crop-fixture.test.mjs",
+      "tests/edx-core-crop-ui.test.mjs",
+      "tests/edx-core-crop.test.mjs",
+      "tests/edx-wp2-s4-replace-asset.test.mjs",
+      "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs",
+      "tests/edx-wp1-s3-bounded-geometry.test.mjs",
+      "tests/edx-wp2-s6-selected-image-ui.test.mjs",
+      "tests/edx-wp2-s7-selected-image-fit.test.mjs",
+      "tests/edx-wp2-s15-insert-text-ui.test.mjs",
+      "tests/edx-wp2-s16-edit-text-ui.test.mjs",
+      "tests/edx-wp2-s17-text-double-click.test.mjs",
+      "tests/edx-wp2-s18-delete-element.test.mjs",
+      "tests/edx-wp1-s4-perf.test.mjs",
+      "tests/edx-wp1-s1-export-cleanup.test.mjs",
+      "tests/p0-r1-deck-spec.test.mjs",
+      "tests/p0-r5-full-deck-renderer.test.mjs",
+      "tests/p0-r7-editor-export.test.mjs"
+    ],
+    "exitCode": 0,
+    "node": "v25.9.0",
+    "tail": [
+      "1..339",
+      "# tests 339",
+      "# suites 0",
+      "# pass 339",
+      "# fail 0",
+      "# cancelled 0",
+      "# skipped 0",
+      "# todo 0",
+      "# duration_ms 9476.298875",
+      ""
+    ]
+  }
+]

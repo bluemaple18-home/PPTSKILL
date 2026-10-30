@@ -1,0 +1,10 @@
+{
+  "log": "evidence/edx-core-3-undo-redo/transaction-boundary-r07-fallback-red.log.gz",
+  "uncompressedSHA256": "b469d9f109eec93dd97ecda3f560b0bff03a17bcc2f3cbe0451f6b139f99bae5",
+  "summary": {
+    "tests": 1,
+    "pass": 0,
+    "fail": 1,
+    "skipped": 0
+  }
+}

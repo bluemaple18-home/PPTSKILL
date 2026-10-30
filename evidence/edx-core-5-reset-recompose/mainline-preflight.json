@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-30",
+  "status": "CORE5_PREFLIGHT",
+  "branch": "codex/edx-core-5-reset-recompose",
+  "baseHead": "098177ac395d1dcf0d02f30c102ceb8c0f11abe5",
+  "identity": {
+    "runtime/deck-editor.js": "95d027a6ba8723f7a18bad27e5f072d51efdbf301ed798d6b538f74fa8c66790",
+    "runtime/deck-spec.js": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+    "runtime/full-deck-renderer.js": "4a521dafade5f44b5e5ae38f536eda65b39a19fd14a9b50e63546c104ffa1b44",
+    "dist/PPTSKILL-0.1.0.zip": "4afe034f3f52a31185b5193cfd68714e97475a5932a65f02698027556d8c0cf3",
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "limits": {
+    "maxBytes": 67108864,
+    "maxFileCount": 10000,
+    "ttlSeconds": 3600
+  },
+  "excludedPreexisting": [
+    "tasks/edx-core-six-card-closure-plan.md",
+    ".DS_Store",
+    "CLAUDE.md",
+    "HANDOFF-20260914-P0-R11-R1-S3.md",
+    "HANDOFF-20260914-PGQ-WP1.md"
+  ],
+  "coreProgress": "4/6"
+}

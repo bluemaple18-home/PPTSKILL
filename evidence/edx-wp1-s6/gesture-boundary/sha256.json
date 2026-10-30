@@ -1,0 +1,7 @@
+{
+  "evidence/edx-wp1-s6/gesture-boundary/probe.mjs": "17e05b660d523d94382c7bf3da25dd104a17c0483838d2dc17135522c27ed270",
+  "evidence/edx-wp1-s6/gesture-boundary/verify.mjs": "604c6a418340aad606f3b3339cf65b7d7c63cfb41bc0111df2e3aa79edecd277",
+  "evidence/edx-wp1-s6/gesture-boundary/fixture.html": "4f7274f241391d317c034c70e264c572df4ce24cbb306321a4ef1f7cb6a85748",
+  "runtime/component-interaction.js": "653fc15cacb18d91cc1eb367982b136a0e5c764501922602645941176e22b0db",
+  "runtime/vendor/moveable-0.53.0.iife.js": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053"
+}

@@ -1,0 +1,6 @@
+{
+  "artifact": "evidence/edx-wp2-s15/worker-review.patch.gz",
+  "rawSha256": "04351dce7c9515d5859827bd7566bfe62ecfbb0a8cad2ccf36c3558bffd7dc93",
+  "gzipSha256": "5243489d47e3d3c501c3f167b38f26637c8a33d5c4fb5ed52af073d7ac4142b2",
+  "reason": "原patch context空行為合法單一space，git diff --check會視為新文件trailing whitespace；以gzip原樣保存，不改patch內容。"
+}

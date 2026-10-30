@@ -1,0 +1,32 @@
+{
+  "scope": "whole-spec JSON.stringify診斷，不冒充browser frame benchmark；正式mounted hot-path gate由Worker另驗",
+  "sourceCommit": "05295d3853364157a6da0ae30459eebc26bf11c5",
+  "sourceSha256": "5cf772cff90bf3cc5b45193c9c828b90d4d7a0f606afdd59f116d3b1f41d8c0e",
+  "node": "v25.9.0",
+  "runs": [
+    {
+      "payloadMiB": 1,
+      "serializedBytes": 1054327,
+      "iterations": 80,
+      "p50Ms": 0.5988329999999991,
+      "p95Ms": 1.387999999999991,
+      "meanMs": 0.7144114000000001
+    },
+    {
+      "payloadMiB": 6,
+      "serializedBytes": 6297207,
+      "iterations": 80,
+      "p50Ms": 3.4078329999999823,
+      "p95Ms": 5.684084000000041,
+      "meanMs": 3.6900354250000027
+    },
+    {
+      "payloadMiB": 12,
+      "serializedBytes": 12588663,
+      "iterations": 80,
+      "p50Ms": 6.924375000000055,
+      "p95Ms": 10.240542000000005,
+      "meanMs": 7.162379175000008
+    }
+  ]
+}

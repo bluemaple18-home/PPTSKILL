@@ -1,0 +1,136 @@
+[
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s9-insert-image-file.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-03-verification.log",
+    "counts": [
+      "ℹ tests 35",
+      "ℹ suites 0",
+      "ℹ pass 35",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s8-insert-image.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-04-verification.log",
+    "counts": [
+      "ℹ tests 20",
+      "ℹ suites 0",
+      "ℹ pass 20",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s5-targeted-image-file.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-05-verification.log",
+    "counts": [
+      "ℹ tests 20",
+      "ℹ suites 0",
+      "ℹ pass 20",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s6-selected-image-ui.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-06-verification.log",
+    "counts": [
+      "ℹ tests 25",
+      "ℹ suites 0",
+      "ℹ pass 25",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s7-selected-image-fit.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-07-verification.log",
+    "counts": [
+      "ℹ tests 29",
+      "ℹ suites 0",
+      "ℹ pass 29",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp2-s4-replace-asset.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-08-verification.log",
+    "counts": [
+      "ℹ tests 14",
+      "ℹ suites 0",
+      "ℹ pass 14",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --test tests/edx-wp1-s1-export-cleanup.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-09-verification.log",
+    "counts": [
+      "ℹ tests 5",
+      "ℹ suites 0",
+      "ℹ pass 5",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ]
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check runtime/deck-editor.js",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-10-verification.log",
+    "counts": []
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check runtime/image-insertion.js",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-11-verification.log",
+    "counts": []
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tests/edx-wp2-s9-insert-image-file.test.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-12-verification.log",
+    "counts": []
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tools/edx-wp2-s9-browser-cases.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-13-verification.log",
+    "counts": []
+  },
+  {
+    "command": "/opt/homebrew/bin/node --check tools/edx-wp1-s4-browser-acceptance.mjs",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-14-verification.log",
+    "counts": []
+  },
+  {
+    "command": "git diff --check",
+    "exit": 0,
+    "log": "/private/tmp/pptskill-wp2-s9-15-verification.log",
+    "counts": []
+  }
+]

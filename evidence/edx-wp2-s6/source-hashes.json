@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "1.0",
+  "productSha": "2ec39715f9c8595d58f084208a91e240cb65189e",
+  "sources": {
+    "runtime/component-interaction.js": "6c7c0da2a9e869390a96a2152cdc4badd0319a1866f2bd9bdd0b1ace7435388d",
+    "runtime/deck-editor.js": "14c4f91fb05e004221bbbc9c6716aab4bad036610754a40e648ef22bcd461f35",
+    "tests/edx-wp2-s6-selected-image-ui.test.mjs": "f3dc45bedeea8f1cf003100a27227b396e1bfc53eb87133ef18aa055e989cc24",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "8cbaf7b4ed99052bd6162f327e078e157ea0e523f53722d19b733b2d2390bc7a",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "540ee613f0f04db99b56f720f944007d600ccf1fdcedb60b6d21c95e7af04417",
+    "tools/edx-wp2-s6-browser-cases.mjs": "611e05cc118bae98d595449d3c77ebe12c283e0deae091d3aabbdc7d6b527a32"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2290270,
+    "sha256": "68364d634ab96859c1a493de26deed0bec30c874134a46da37a589fc1f129ab1"
+  }
+}

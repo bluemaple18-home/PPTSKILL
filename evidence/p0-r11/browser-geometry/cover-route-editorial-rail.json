@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-10T08:18:33.941Z",
+  "artifact": "route-editorial-rail.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 71,
+          "top": 192,
+          "right": 1491,
+          "bottom": 482,
+          "width": 1420,
+          "height": 290
+        },
+        "visualAnchor": {
+          "left": 1,
+          "top": 1,
+          "right": 1599,
+          "bottom": 899,
+          "width": 1598,
+          "height": 898
+        },
+        "supportingCopy": {
+          "left": 871,
+          "top": 729,
+          "right": 1481,
+          "bottom": 804.375,
+          "width": 610,
+          "height": 75.375
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "center-edge-span",
+        "anchorRegion": "full-width-type-crop",
+        "overlap": "fused",
+        "dominantAxis": "vertical-drop",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "self-anchored-type",
+        "silhouette": "edge-type-mass"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0444,
+          "y": 0.2133,
+          "width": 0.8875,
+          "height": 0.3222
+        },
+        "anchorRegion": {
+          "x": 0.0006,
+          "y": 0.0011,
+          "width": 0.9988,
+          "height": 0.9978
+        },
+        "overlap": true,
+        "dominantAxis": "vertical",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 56.79999923706055,
+          "top": 153.60000610351562,
+          "right": 1192.7999992370605,
+          "bottom": 385.6000061035156,
+          "width": 1136,
+          "height": 232
+        },
+        "visualAnchor": {
+          "left": 0.800000011920929,
+          "top": 0.800000011920929,
+          "right": 1279.2000244259834,
+          "bottom": 719.2000244259834,
+          "width": 1278.4000244140625,
+          "height": 718.4000244140625
+        },
+        "supportingCopy": {
+          "left": 696.7999877929688,
+          "top": 583.2000122070312,
+          "right": 1184.800048828125,
+          "bottom": 643.5,
+          "width": 488.00006103515625,
+          "height": 60.29998779296875
+        }
+      },
+      "compositionContract": {
+        "titleRegion": "center-edge-span",
+        "anchorRegion": "full-width-type-crop",
+        "overlap": "fused",
+        "dominantAxis": "vertical-drop",
+        "occupiedQuadrants": "q1+q2+q3+q4",
+        "anchorCopyRelation": "self-anchored-type",
+        "silhouette": "edge-type-mass"
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0444,
+          "y": 0.2133,
+          "width": 0.8875,
+          "height": 0.3222
+        },
+        "anchorRegion": {
+          "x": 0.0006,
+          "y": 0.0011,
+          "width": 0.9988,
+          "height": 0.9978
+        },
+        "overlap": true,
+        "dominantAxis": "vertical",
+        "occupiedQuadrants": [
+          "q1",
+          "q2",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

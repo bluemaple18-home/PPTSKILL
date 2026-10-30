@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "productSha": "f07bcadc70106e2eb0068264e152c0f7fd02ae4f",
+  "sources": {
+    "runtime/deck-editor.js": "b360c988671ae2698990392bf87fb1b88c7b571b253082571f17abceb238d6fc",
+    "tests/edx-wp2-s16-edit-text-ui.test.mjs": "6e7fb06b83dc06534c2ed77878e57f47f1f9a69e8914bf16c66228b2eefda3e7",
+    "tools/edx-wp2-s16-browser-cases.mjs": "12b6cb763db44b82b97ec629ab2cbfbdb09f80295cb9d77be3718aad8b41d019",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "4e9c349d927cc84e94c380a5d73a9420901d6e767264679ee2d6546883cd17c6"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2298456,
+    "sha256": "0750c11795e19c0ec6d9653ba787a0e2cecabca84514a7ca3eb6b510cd55d6f9"
+  }
+}

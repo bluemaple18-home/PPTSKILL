@@ -1,0 +1,6 @@
+{
+  "evidence/edx-wp1-s6/direction-target/probe.mjs": "4a9f5023bc29bb0ebae05dd6c2b21adf459dc5b550f4ce3ef1f53b4b96b1462e",
+  "evidence/edx-wp1-s6/direction-target/verify.mjs": "8a26a0f6c5b26f05a09cd0635be417d8436120bfae242ef10ba46adbe1c214c8",
+  "evidence/edx-wp1-s6/direction-target/fixture.html": "5b74be9254df3bdabd4db60cc4c25f945769a28c537397cc04a7fb9b2382a23a",
+  "runtime/vendor/moveable-0.53.0.iife.js": "9d4aedaf4a7535b53b3a3c850e4372c149b1e5cc9845268f84c92649222ee053"
+}

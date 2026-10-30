@@ -1,0 +1,27 @@
+{
+  "createdAt": "2026-09-20T16:45:19.707Z",
+  "head": "4cd4540a71aa7f94cc60e4495155c572034a57a4",
+  "branch": "codex/edx-wp1-s7",
+  "sources": {
+    "runtime/component-interaction.js": "75d4ecd2f35b056676183cad34212aab2a3fe954656944e12290f19cc7e1d3a6",
+    "tools/edx-wp1-s7-browser-cases.mjs": "9118b70bfdde21a9c1818fd3cf0e5d903fdcb7eabab398a8ba7047118455d324",
+    "tests/edx-wp1-s7-first-handle.test.mjs": "644d9d233b5b9cb38550813b7a0d4c39defc7da5ecff48cc954ed50a27404825"
+  },
+  "inputAcceptanceSha256": "2cbf06605f350cb424746ffb88eabd476b9cd03e8eb6c961c5fcfe5b69363131",
+  "evidence": {
+    "evidence/edx-wp1-s7/worker-acceptance-fix.md": "ba598ff3f6f523e14728abb3cd347e0e50303d14c2bf738ba9707537f06f0e56",
+    "evidence/edx-wp1-s7/worker-acceptance-fix-red.log": "ddde60ab103b52f58ee56076d392c40db8d28a75ea817ec7403ff7500306bb92",
+    "evidence/edx-wp1-s7/worker-acceptance-fix-targeted.log": "c38deea981a2dbc63588b95d0edf62848f02cfc23ec3fec3e89e40e2d3732371",
+    "evidence/edx-wp1-s7/worker-acceptance-fix-focused.log": "f9636aa1fbbf776767ae7bba614eb81b6428f43917a769091f00a5c4cd8e9752"
+  },
+  "unchangedPriorSources": [
+    "runtime/deck-editor.js",
+    "tests/edx-wp1-s7-snap.test.mjs",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs",
+    "tools/edx-wp1-s4-browser-acceptance.mjs",
+    "tools/edx-wp1-s4-perf-mounted.mjs",
+    "tools/edx-wp1-s4-perf-probe.mjs"
+  ],
+  "protectedUntrackedUnchanged": true,
+  "vendorUnchanged": true
+}

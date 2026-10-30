@@ -1,0 +1,58 @@
+{
+  "1280-full-deck.png": {
+    "bytes": 59503,
+    "sha256": "98bb050e12691bcaa228fbd416799a28b041ec468457ec53d1305ddca4b74ac3"
+  },
+  "1280-montage.png": {
+    "bytes": 113779,
+    "sha256": "d7f975bf5324bded21cecc7cbf1559b7343fde38fb89f24fa3b884cb966def7a"
+  },
+  "browser-geometry.json": {
+    "bytes": 166257,
+    "sha256": "c856213835f818ee4b690d26046f50f69c523325122d2ee3cb28b166c1675df6"
+  },
+  "browser-geometry.log": {
+    "bytes": 166257,
+    "sha256": "c856213835f818ee4b690d26046f50f69c523325122d2ee3cb28b166c1675df6"
+  },
+  "client-receipt.json": {
+    "bytes": 2421,
+    "sha256": "7dd3d3753f32451211c1d6ea85f30d7f297beb20e0b2a48aca317e3be82f7235"
+  },
+  "editor-export.html": {
+    "bytes": 694304,
+    "sha256": "010a468bd45ed279219695df72659d7d42eea7a8f01ea4b4c53a2ed4b0745c55"
+  },
+  "lifecycle/evidence/processes.jsonl": {
+    "bytes": 329,
+    "sha256": "f03ffd5291ce84284358e58f8c7e4bac3e57ea315a408ee3434f042be97b7e2e"
+  },
+  "lifecycle/evidence/session.json": {
+    "bytes": 96,
+    "sha256": "e4e8e1561eb086de078130ca868ca08549c9a3580e278c52f0890734c5e489ef"
+  },
+  "lifecycle/evidence/stderr.log": {
+    "bytes": 1621,
+    "sha256": "b89265e485510124e54ae9d2f773a3621315386f494516d94f669f902446d3e1"
+  },
+  "lifecycle/evidence/stdout.log": {
+    "bytes": 187,
+    "sha256": "0a77c5026d576db2b0184d07ed344bcc3d242fe69762c87305e4f582b7b02935"
+  },
+  "pgq-1.log": {
+    "bytes": 220,
+    "sha256": "be64cfce3d72bb8500ec7a4b8c22f81ec37d6c6e45c4189aaf1dc95be9e77397"
+  },
+  "pgq-2.log": {
+    "bytes": 729,
+    "sha256": "129eb6694a9bdeb8fb1d940cc8a44cad3091bd68bbdadcf9869eff9cbb4604cc"
+  },
+  "pgq-3.log": {
+    "bytes": 784,
+    "sha256": "439efc404c7552a2eb285ebb521f8a1627d4e4274ff0c28673de946197841405"
+  },
+  "pgq-4.log": {
+    "bytes": 211,
+    "sha256": "f947651fecd2d20ed65c70cc2fd8d372bc6f98ead036db1ced091de36b0cf923"
+  }
+}

@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import { fixture, mountedEditor, request } from '../../tools/edx-wp1-s4-perf-mounted.mjs';
+const norm = x => JSON.parse(JSON.stringify(x));
+const control = (h, name) => { const n=h.document.querySelector(`[data-action="${name}"]`); return [n.textContent,n.getAttribute('aria-pressed'),n.hidden]; };
+const snapshot = h => norm({ spec:h.getSpec(), revision:h.getRevision(), history:h.api.getHistoryState(), selection:h.api.layout.getSelectionState(), target:h.api.layout.getState().target, bodyMode:h.document.body.dataset.editorMode, controls:['edit','layout','initialize-layout'].map(x=>control(h,x)), editable:h.document.querySelectorAll('[data-edit-kind="text"]').map(n=>[n.getAttribute('data-pptskill-element-id'),n.contentEditable]), nodes:h.document.querySelectorAll('[data-pptskill-element-id]').map(n=>[n.getAttribute('data-pptskill-element-id'),n.getAttribute('style'),n.textContent]), status:h.document.querySelector('[data-editor-status]').textContent });
+function failAt(h, expected, failure, callback=()=>{}) { const node=h.document.querySelector('[data-editor-status]'), d=Object.getOwnPropertyDescriptor(Object.getPrototypeOf(node),'textContent'); let fired=false; Object.defineProperty(node,'textContent',{configurable:true,get(){return d.get.call(this)},set(v){d.set.call(this,v);if(!fired&&v===expected){fired=true;callback();throw failure}}}); return ()=>fired; }
+function operational(h,kind='drag'){ assert.equal(h.vendor.destroyed,false); { const ts=Array.isArray(h.vendor.options.target)?h.vendor.options.target:[h.vendor.options.target]; assert.ok(ts.length>0&&ts.every(t=>t?.isConnected)); } h.begin(kind); h.update(8,0,kind); h.finish(kind); }
+let passed=0;
+for(const on of [true,false]){
+ const h=mountedEditor(fixture(0)); if(on)h.action('edit');else h.ready(); const title=h.document.querySelector('[data-pptskill-element-id="role-title"]'); if(on)title.textContent='B pending text';
+ const before=snapshot(h), failure=new Error('B mode terminal'); let nested=false; const fired=failAt(h,on?'點選元件或拖曳空白區框選多個元件':'可直接播放',failure,()=>{try{h.api.executeOperation(request('edit','nested'));}catch(e){nested=/同步交易/.test(e.message)}});
+ assert.throws(()=>h.api.layout.setMode(on),e=>e===failure); assert.equal(fired(),true); assert.equal(nested,true); assert.deepEqual(snapshot(h),before);
+ h.api.layout.setMode(on); if(on){assert.equal(h.getSpec().slides[0].content.title,'B pending text');h.click(h.component());}else{h.api.layout.setMode(true);h.click(h.component());} operational(h); assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x,808); console.log(`PASS public setMode(${on}) terminal rollback + retry`); passed++;
+}
+{
+ const spec=fixture(0),slide=spec.slides[0]; slide.content.components.push({id:'group-text',type:'text',text:'G'}); Object.assign(slide.composition.geometryOverrides,{'group-text':{x:120,y:120,width:200,height:160},'perf-image':{x:420,y:320,width:300,height:200}});
+ const h=mountedEditor(spec);h.api.layout.setMode(true);h.click(h.document.querySelector('[data-pptskill-element-id="component-group-text"]'));h.click(h.document.querySelector('[data-pptskill-element-id="component-perf-image"]'),{shiftKey:true});const before=snapshot(h),target=norm(h.api.layout.getState().target);let nested=false;const failure=Error('B group terminal');const fired=failAt(h,'已群組',failure,()=>{try{h.api.executeOperation(request('edit','nested'));}catch(e){nested=/同步交易/.test(e.message)}});
+ h.action('group-elements');assert.equal(fired(),true);assert.equal(nested,true);const after=snapshot(h);delete after.status;const expected=norm(before);delete expected.status;assert.deepEqual(after,expected);assert.match(h.document.querySelector('[data-editor-status]').textContent,/B group terminal/);assert.deepEqual(norm(h.api.layout.getState().target),target);
+ h.action('group-elements');assert.equal(h.getRevision(),before.revision+1);operational(h,'dragGroup');assert.equal(h.getRevision(),before.revision+2);console.log('PASS group terminal rollback + same target retry/drag');passed++;
+}
+for(const snap of [false,true]){
+ const h=mountedEditor(fixture(0));h.ready();if(snap)h.action('snap-layout');const before=snapshot(h), style=h.component().getAttribute('style');h.begin();h.update(32,16,'drag',snap?{left:832,top:296}:{});assert.notEqual(h.component().getAttribute('style'),style);
+ const failure=Error('B preview terminal');const fired=failAt(h,'可直接播放',failure);assert.throws(()=>h.api.layout.setMode(false),e=>e===failure);assert.equal(fired(),true);assert.deepEqual(snapshot(h),before);assert.equal(h.api.layout.getState().gesturing,false);assert.equal(h.component().getAttribute('style'),style);h.finish();assert.deepEqual(snapshot(h),before);h.begin();h.update(8,0,'drag',snap?{left:808,top:280}:{});h.finish();assert.equal(h.getSpec().slides[0].composition.geometryOverrides['portable-quote'].x,808);console.log(`PASS active preview cancellation snap=${snap}`);passed++;
+}
+console.log(`TOTAL ${passed}/5 PASS`);

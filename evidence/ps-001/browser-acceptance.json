@@ -1,0 +1,106 @@
+{
+  "card": "PS-001",
+  "type": "browser acceptance",
+  "status": "PASS",
+  "scope": "fresh-state offline deck.html presenter/edit/navigation/reorder/duplicate/delete/save",
+  "excluded": [
+    "runtime/test/fixture/spec/plan mutations"
+  ],
+  "preconditions": {
+    "viewport": "1280x720",
+    "listenersRegisteredBeforeGoto": true,
+    "staticServer": "local ephemeral"
+  },
+  "steps": [
+    {
+      "name": "fresh state: play mode",
+      "pass": true,
+      "detail": "body data-mode is play"
+    },
+    {
+      "name": "fresh state: presenter hidden",
+      "pass": true,
+      "detail": "presenter is not visible"
+    },
+    {
+      "name": "fresh state: editor hidden",
+      "pass": true,
+      "detail": "editor is not visible"
+    },
+    {
+      "name": "fresh state: three slides",
+      "pass": true,
+      "detail": "three slide elements"
+    },
+    {
+      "name": "next navigation",
+      "pass": true,
+      "detail": "progress updates to 2 / 3"
+    },
+    {
+      "name": "previous navigation",
+      "pass": true,
+      "detail": "progress returns to 1 / 3"
+    },
+    {
+      "name": "presenter visible",
+      "pass": true,
+      "detail": "presenter panel is visible"
+    },
+    {
+      "name": "presenter fields",
+      "pass": true,
+      "detail": "Presenter\n    講稿：先說明目前的阻塞，再邀請團隊確認下一步。下一頁提示：接著用三個行動降低風險。來源：內部功能測試用合成資料進度：1 / 3"
+    },
+    {
+      "name": "edit text",
+      "pass": true,
+      "detail": "contenteditable title accepted input"
+    },
+    {
+      "name": "move down",
+      "pass": true,
+      "detail": "first slide moved down"
+    },
+    {
+      "name": "move up",
+      "pass": true,
+      "detail": "slide restored upward"
+    },
+    {
+      "name": "duplicate adds one and keeps IDs unique",
+      "pass": true,
+      "detail": "sample-01,sample-01-copy-1,sample-02,sample-03"
+    },
+    {
+      "name": "delete removes current duplicate",
+      "pass": true,
+      "detail": "sample-01,sample-02,sample-03"
+    },
+    {
+      "name": "save HTML download",
+      "pass": true,
+      "detail": "download is a self-contained HTML file with edited content"
+    }
+  ],
+  "traceback": [],
+  "console": [],
+  "network": [],
+  "pageerror": [],
+  "screenshots": [
+    {
+      "path": "evidence/ps-001/ps-001-1280x720.png",
+      "viewport": "1280x720",
+      "mode": "edit"
+    }
+  ],
+  "downloads": [
+    {
+      "suggestedFilename": "deck.html",
+      "savedAs": "evidence/ps-001/saved-deck.html",
+      "singleFile": true,
+      "bytes": 7948
+    }
+  ],
+  "blocker": null
+}

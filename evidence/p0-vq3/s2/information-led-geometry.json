@@ -1,0 +1,315 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T08:54:23.742Z",
+  "artifact": "full-deck-information-led.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 10,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 932,
+          "right": 1600,
+          "bottom": 1832,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 1864,
+          "right": 1600,
+          "bottom": 2764,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 2796,
+          "right": 1600,
+          "bottom": 3696,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 3728,
+          "right": 1600,
+          "bottom": 4628,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 4660,
+          "right": 1600,
+          "bottom": 5560,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 5592,
+          "right": 1600,
+          "bottom": 6492,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 6524,
+          "right": 1600,
+          "bottom": 7424,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 7456,
+          "right": 1600,
+          "bottom": 8356,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 8388,
+          "right": 1600,
+          "bottom": 9288,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 808,
+          "top": 175,
+          "right": 1518,
+          "bottom": 333.0625,
+          "width": 710,
+          "height": 158.0625
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        },
+        "supportingCopy": {
+          "left": 958,
+          "top": 738,
+          "right": 1518,
+          "bottom": 767,
+          "width": 560,
+          "height": 29
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.505,
+          "y": 0.1944,
+          "width": 0.4437,
+          "height": 0.1756
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q2",
+          "q1",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 10,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 745.59375,
+          "right": 1280,
+          "bottom": 1465.59375,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 1491.1875,
+          "right": 1280,
+          "bottom": 2211.1875,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 2236.78125,
+          "right": 1280,
+          "bottom": 2956.78125,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 2982.375,
+          "right": 1280,
+          "bottom": 3702.375,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 3727.96875,
+          "right": 1280,
+          "bottom": 4447.96875,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 4473.5625,
+          "right": 1280,
+          "bottom": 5193.5625,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 5219.15625,
+          "right": 1280,
+          "bottom": 5939.15625,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 5964.75,
+          "right": 1280,
+          "bottom": 6684.75,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 6710.34375,
+          "right": 1280,
+          "bottom": 7430.34375,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 646.40625,
+          "top": 139.984375,
+          "right": 1214.40625,
+          "bottom": 266.421875,
+          "width": 568,
+          "height": 126.4375
+        },
+        "visualAnchor": {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        },
+        "supportingCopy": {
+          "left": 766.40625,
+          "top": 590.390625,
+          "right": 1214.40625,
+          "bottom": 613.578125,
+          "width": 448,
+          "height": 23.1875
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.505,
+          "y": 0.1944,
+          "width": 0.4437,
+          "height": 0.1756
+        },
+        "anchorRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "overlap": true,
+        "dominantAxis": "horizontal",
+        "occupiedQuadrants": [
+          "q2",
+          "q1",
+          "q3",
+          "q4"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

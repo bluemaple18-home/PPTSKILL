@@ -1,0 +1,113 @@
+{
+  "explicitFiles": 70,
+  "executedFileCount": 70,
+  "uniqueExecutedFiles": 70,
+  "sameFileSet": true,
+  "namedPasses": 734,
+  "uniqueNamedPasses": 734,
+  "duplicateNames": [],
+  "batch1": {
+    "files": 58,
+    "status": 0,
+    "signal": null,
+    "summary": [
+      "ℹ tests 641",
+      "ℹ suites 0",
+      "ℹ pass 641",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 3929.40525"
+    ],
+    "namedPasses": 641,
+    "log": "/private/tmp/pptskill-s13-independent-nonbuild.log"
+  },
+  "batch2": {
+    "files": 12,
+    "status": 0,
+    "signal": null,
+    "summary": [
+      "ℹ tests 93",
+      "ℹ suites 0",
+      "ℹ pass 93",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 9737.792458"
+    ],
+    "namedPasses": 93,
+    "log": "/private/tmp/pptskill-s13-independent-batch2.log"
+  },
+  "scoped": {
+    "files": 4,
+    "status": 0,
+    "signal": null,
+    "summary": [
+      "ℹ tests 83",
+      "ℹ suites 0",
+      "ℹ pass 83",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0",
+      "ℹ duration_ms 478.428292"
+    ],
+    "namedPasses": 83,
+    "log": "/private/tmp/pptskill-s13-independent-scoped.log"
+  },
+  "probe": 8,
+  "syntaxChecks": [
+    {
+      "file": "runtime/deck-editor.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "file": "tests/edx-wp2-s13-insert-text.test.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "file": "tools/edx-wp2-s13-browser-cases.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "file": "tools/edx-wp1-s4-browser-acceptance.mjs",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "file": "runtime/image-insertion.js",
+      "status": 0,
+      "output": ""
+    },
+    {
+      "file": "tests/edx-wp2-s8-insert-image.test.mjs",
+      "status": 0,
+      "output": ""
+    }
+  ],
+  "zipCRCStatus": 0,
+  "sourceHtmlMatches": true,
+  "evidenceOnly": {
+    "pgqNames": 16,
+    "pgqUnique": 16,
+    "priorFullNames": 734
+  },
+  "rawLogDifferences": [
+    {
+      "path": "worker-revised-attempt1.log",
+      "onlyTrailingWhitespace": true
+    },
+    {
+      "path": "worker-revised-red.log",
+      "onlyTrailingWhitespace": true
+    }
+  ],
+  "currentHead": "26d784e76f6df54dc0b281f7964719554f854293",
+  "currentRuntimeTestsToolsDistDrift": "",
+  "currentStatus": " M tasks/edx-wp2-s13-insert-text.md\n?? .DS_Store\n?? CLAUDE.md\n?? HANDOFF-20260914-P0-R11-R1-S3.md\n?? HANDOFF-20260914-PGQ-WP1.md\n"
+}

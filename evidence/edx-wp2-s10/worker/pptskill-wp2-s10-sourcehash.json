@@ -1,0 +1,35 @@
+{
+  "base": "b487af1",
+  "sources": [
+    {
+      "path": "runtime/deck-editor.js",
+      "sha256": "e680576f9b1a3b04557af0f7dccb5a0c6319671af10c5102a3f614f691d41a05",
+      "bytes": 76545
+    },
+    {
+      "path": "tests/edx-wp2-s10-insert-image-ui.test.mjs",
+      "sha256": "85bd21d612397e023027db9e34647d871557336adb34716e8ca65242f9df2246",
+      "bytes": 12097
+    },
+    {
+      "path": "tools/edx-wp2-s10-browser-cases.mjs",
+      "sha256": "ec6218b1cf76607ceab7d8a4d850752d29247e00b0d1d6f2a4e635bdbfaf98da",
+      "bytes": 13378
+    },
+    {
+      "path": "tools/edx-wp1-s4-browser-acceptance.mjs",
+      "sha256": "fdca08151ff81500d1f436e1d039ba8cde62d62e29d54d9ab1e3e7313521c106",
+      "bytes": 22079
+    },
+    {
+      "path": "runtime/component-interaction.js",
+      "sha256": "1259d0b1332305d02488aa6fde7fd3b6fe9752a4df7ab9cd6596b20a4d46ce07",
+      "bytes": 25168
+    },
+    {
+      "path": "tools/edx-wp1-s4-perf-mounted.mjs",
+      "sha256": "7bb9081e0b0d9a689eab3065acd50976a72181abd129cd94d920120972c4dfca",
+      "bytes": 14742
+    }
+  ]
+}

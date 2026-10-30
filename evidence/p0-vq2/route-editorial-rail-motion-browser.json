@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-09T03:44:59.759Z",
+  "artifact": "route-editorial-rail.html",
+  "motionMode": "normal",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 71,
+          "top": 166,
+          "right": 1301,
+          "bottom": 436,
+          "width": 1230,
+          "height": 270
+        },
+        "visualAnchor": {
+          "left": 1111,
+          "top": 471,
+          "right": 1541,
+          "bottom": 861,
+          "width": 430,
+          "height": 390
+        },
+        "supportingCopy": {
+          "left": 71,
+          "top": 703,
+          "right": 741,
+          "bottom": 740.6875,
+          "width": 670,
+          "height": 37.6875
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 56.79999923706055,
+          "top": 132.8000030517578,
+          "right": 1040.8000602722168,
+          "bottom": 348.8000183105469,
+          "width": 984.0000610351562,
+          "height": 216.00001525878906
+        },
+        "visualAnchor": {
+          "left": 888.7999877929688,
+          "top": 376.8000183105469,
+          "right": 1232.800048828125,
+          "bottom": 688.7999877929688,
+          "width": 344.00006103515625,
+          "height": 311.9999694824219
+        },
+        "supportingCopy": {
+          "left": 56.79999923706055,
+          "top": 562.4000244140625,
+          "right": 592.7999992370605,
+          "bottom": 592.5499877929688,
+          "width": 536,
+          "height": 30.14996337890625
+        }
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

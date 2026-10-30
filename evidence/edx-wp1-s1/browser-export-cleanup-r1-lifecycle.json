@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "managedBrowser": true,
+  "acceptanceExitCode": 0,
+  "lifecycleExitCode": 0,
+  "ownedRootCleaned": true,
+  "sessionEvidence": "evidence/edx-wp1-s1/r1-export-cleanup-managed-v2/evidence/session.json",
+  "acceptanceReceipt": "evidence/edx-wp1-s1/browser-export-cleanup-r1.json"
+}

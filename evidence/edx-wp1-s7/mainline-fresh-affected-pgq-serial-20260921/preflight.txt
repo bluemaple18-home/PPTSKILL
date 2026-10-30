@@ -1,0 +1,4 @@
+scope=fresh affected PGQ serial only: content-integrity + required-visibility
+ai_core_sha=2d78d8e18d42156f43f12f0ebc6997914ec64328
+node_test_concurrency=1
+CODEX_SANDBOX=None

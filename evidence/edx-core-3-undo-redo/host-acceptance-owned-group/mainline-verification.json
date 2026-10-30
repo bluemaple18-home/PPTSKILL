@@ -1,0 +1,202 @@
+{
+  "status": "HOST_ACCEPTANCE_PASS",
+  "canonicalHEAD": "71b774d31b8e7aa9e05786c8dc431c7528dabdc1",
+  "productCode": "f3d8a11865a5af25f34a08a5b65dccb3fed6914f",
+  "packagedProduct": "9ce7396a481621960f6f2c89ff7fcf352c0e515a",
+  "browser": [
+    {
+      "width": 1280,
+      "height": 720,
+      "checks": 11,
+      "status": "pass",
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "checks": 11,
+      "status": "pass",
+      "targetClosed": true
+    }
+  ],
+  "pgq": {
+    "tests": 16,
+    "pass": 16,
+    "fail": 0,
+    "skip": 0,
+    "exit": 0,
+    "durationMs": 706156.966541
+  },
+  "supervisorExit": 0,
+  "browserCloseExit": 0,
+  "cleanupVerified": true,
+  "identityUnchanged": true,
+  "untrackedPreserved": true,
+  "scans": {
+    "total": 706,
+    "runtime": 705,
+    "cleanup": 1,
+    "recovery": "RECOVERY_OBSERVED",
+    "recoveredIds": [
+      533
+    ],
+    "peakBytes": 31950380,
+    "peakFiles": 751
+  },
+  "rawArtifacts": {
+    "launcher.stdout": {
+      "bytes": 210,
+      "sha256": "ed4b6a99dda589f7410baaed8b8637ea1244f3c5f6fbf0a6a1371aa8909b355a"
+    },
+    "scan-events.jsonl": {
+      "bytes": 497705,
+      "sha256": "d169da88f09afc5881c5b657dcc424d376a8d27d519681af5a2ed6807cfd83e4"
+    },
+    "controller-receipt.json": {
+      "bytes": 493311,
+      "sha256": "4cc490070392ed1b7519af4b94e6df66091beea975d36c20e3340c43bd0bcb25"
+    },
+    "historyBrowser.log": {
+      "bytes": 176,
+      "sha256": "6762e38c904c4374ae83ff6646671a2cab57c0bea6d07182b27bae23a899a2e0"
+    },
+    "launcher.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "browser-close.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "client-receipt.json": {
+      "bytes": 664,
+      "sha256": "2e92ace56b65ecf89b99a0e74233542ae33b890eae919242c0b4fe8d15040579"
+    },
+    "resource-observation.json": {
+      "bytes": 421699,
+      "sha256": "a5e3c94d1c6a4c0ff9248c2cbd1ed6d84261161ed60534c4afd9b5a3a51e0273"
+    },
+    "pgq.log": {
+      "bytes": 1596,
+      "sha256": "76968514abfc6654f4a5eb7e382abb9c837f0aae4c22fbe8ea54de6b5e97de3c"
+    },
+    "lifecycle/evidence/stderr.log": {
+      "bytes": 1930,
+      "sha256": "aca2e1a2416f239f63aa29cfd1c00045e4c02186438c0df030454ff479ec83de"
+    },
+    "lifecycle/evidence/session.json": {
+      "bytes": 96,
+      "sha256": "806e12337dc67fa6745ba966ea6820280ab43df029b829173041690c98af658f"
+    },
+    "lifecycle/evidence/processes.jsonl": {
+      "bytes": 329,
+      "sha256": "721366f778dc82e4e5ddafb0571f5b9c4d87cbb5765cb4919bfb2b0f2a0d4c0f"
+    },
+    "lifecycle/evidence/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "undo-redo/1600-cancel.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1600-noop.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1280-invalid-resize.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1600-reopen-export.html": {
+      "bytes": 640465,
+      "sha256": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb"
+    },
+    "undo-redo/1280-reopen-export.html": {
+      "bytes": 640465,
+      "sha256": "a70f91783d6a3bf70bef603d6115c5e59916c35de7636aaeb71cc33f9347f2cb"
+    },
+    "undo-redo/acceptance.json": {
+      "bytes": 8804,
+      "sha256": "6e1831657c56e0abc0e3c7e404f7fb133972d0f38caf78a1634a0db8dfffd95b"
+    },
+    "undo-redo/1280-invalid.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1280-export.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1280-legacy-selected.html": {
+      "bytes": 640208,
+      "sha256": "68ce294b15cdcd4842929b25a6f1d9d46350744550830b671e32326333a202e7"
+    },
+    "undo-redo/1600-legacy-selected.html": {
+      "bytes": 640208,
+      "sha256": "68ce294b15cdcd4842929b25a6f1d9d46350744550830b671e32326333a202e7"
+    },
+    "undo-redo/1600-selected.png": {
+      "bytes": 60255,
+      "sha256": "c908de545c06d86a11195cbbe9a65c379922000d6d46e0ea7a1a7064c0f50e1d"
+    },
+    "undo-redo/1600-preview-export.html": {
+      "bytes": 640495,
+      "sha256": "300ea7e7bf80d15e49c2ddbabb36c3359f67a6efbcdc5e9a91db3134e93fb304"
+    },
+    "undo-redo/1280-play-mode.html": {
+      "bytes": 640495,
+      "sha256": "5586467fd726667cd8764408670426fbfd33d492d5ba877129911de73ce06696"
+    },
+    "undo-redo/1280-cancel.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1280-selected.png": {
+      "bytes": 49808,
+      "sha256": "594706e5898556ec775300b45afe02d4d23e5f0a2fe6a1077779a543ac837d7f"
+    },
+    "undo-redo/1600-play-mode.html": {
+      "bytes": 640495,
+      "sha256": "5586467fd726667cd8764408670426fbfd33d492d5ba877129911de73ce06696"
+    },
+    "undo-redo/1600-undo-redo-export.html": {
+      "bytes": 640291,
+      "sha256": "32816a1460d74a7039ed255fab627c50b75427b8e0dd06ffab3b0a21af981255"
+    },
+    "undo-redo/1280-preview-export.html": {
+      "bytes": 640495,
+      "sha256": "300ea7e7bf80d15e49c2ddbabb36c3359f67a6efbcdc5e9a91db3134e93fb304"
+    },
+    "undo-redo/1280-noop.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1600-invalid.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1600-invalid-resize.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/source.html": {
+      "bytes": 647748,
+      "sha256": "5a96091d87668d63928a73c8913089b024de1fcef7b1ad4ede0d7ca24d940f1e"
+    },
+    "undo-redo/1600-export.html": {
+      "bytes": 640465,
+      "sha256": "4acf2618b43afa1e0466b7b56c42777b912a7d7b82af8e3ce19aa650cfb82d74"
+    },
+    "undo-redo/1280-undo-redo-export.html": {
+      "bytes": 640291,
+      "sha256": "32816a1460d74a7039ed255fab627c50b75427b8e0dd06ffab3b0a21af981255"
+    }
+  },
+  "claimsLimit": [
+    "此輪705 runtime＋1 cleanup；舊 smoke 的 RECOVERY_NOT_OBSERVED 保持歷史原文。",
+    "真實 recovery 是 managed tmp 子目錄消失；不宣稱重現原 R1 Default entry，也不宣稱 hostile/compliance。",
+    "1061 nonbrowser 與產品 CODE GO 引用固定hash既有證據，不冒稱本輪fresh。",
+    "既有非阻塞mapping I/O退出碼P2及Crop F2/P2保留。"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "status": "pass",
+  "scope": "S7 motion-reset targeted browser",
+  "authorization": "Owner 明示授權一次 targeted browser；再次失敗即停。",
+  "runs": [
+    {
+      "width": 1600,
+      "height": 900,
+      "status": "pass",
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "remoteRequests": [],
+      "checks": [],
+      "modes": [
+        {
+          "mode": "normal",
+          "checks": [
+            "normal motion 起點非 identity、終點回 resting state",
+            "canonical proxy、SE handle 與 editor transform 定位一致",
+            "真 drag preview 不寫 spec、release 後 canonical snap 提交",
+            "真 SE resize preview 不寫 spec、release 固定左上角並提交 right/bottom snap",
+            "export/reopen 無 editor chrome/proxy，geometry 保持且 snap reset off"
+          ],
+          "motion": {
+            "start": {
+              "transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+              "opacity": "0",
+              "inline": "",
+              "subtitleAfter": "none",
+              "root": "slide primitive-component-focus motion-root variant-quote-monument"
+            },
+            "end": {
+              "transform": "none",
+              "opacity": "1",
+              "inline": "",
+              "subtitleAfter": "none",
+              "root": "slide primitive-component-focus motion-root variant-quote-monument is-visible"
+            }
+          },
+          "handle": {
+            "proxy": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "center": {
+              "x": 1440,
+              "y": 760
+            },
+            "visibility": "visible",
+            "hitHandle": true,
+            "controlTransform": "matrix(1, 0, 0, 1, 803, 283)"
+          }
+        },
+        {
+          "mode": "reduced",
+          "checks": [
+            "reduced presentation 與 subtitle ::after 保持 static resting state",
+            "canonical proxy、SE handle 與 editor transform 定位一致",
+            "真 drag preview 不寫 spec、release 後 canonical snap 提交",
+            "真 SE resize preview 不寫 spec、release 固定左上角並提交 right/bottom snap",
+            "export/reopen 無 editor chrome/proxy，geometry 保持且 snap reset off"
+          ],
+          "motion": {
+            "transform": "none",
+            "opacity": "1",
+            "inline": "",
+            "subtitleAfter": "none",
+            "root": "slide primitive-component-focus motion-root variant-quote-monument is-visible"
+          },
+          "handle": {
+            "proxy": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "center": {
+              "x": 1440,
+              "y": 760
+            },
+            "visibility": "visible",
+            "hitHandle": true,
+            "controlTransform": "matrix(1, 0, 0, 1, 803, 283)"
+          }
+        },
+        {
+          "mode": "static",
+          "checks": [
+            "static presentation 與 subtitle ::after 保持 static resting state",
+            "canonical proxy、SE handle 與 editor transform 定位一致",
+            "真 drag preview 不寫 spec、release 後 canonical snap 提交",
+            "真 SE resize preview 不寫 spec、release 固定左上角並提交 right/bottom snap",
+            "export/reopen 無 editor chrome/proxy，geometry 保持且 snap reset off"
+          ],
+          "motion": {
+            "transform": "none",
+            "opacity": "1",
+            "inline": "",
+            "subtitleAfter": "none",
+            "root": "slide primitive-component-focus motion-root variant-quote-monument is-visible"
+          },
+          "handle": {
+            "proxy": {
+              "x": 803,
+              "y": 283,
+              "width": 637,
+              "height": 477
+            },
+            "center": {
+              "x": 1440,
+              "y": 760
+            },
+            "visibility": "visible",
+            "hitHandle": true,
+            "controlTransform": "matrix(1, 0, 0, 1, 803, 283)"
+          }
+        }
+      ],
+      "traceback": false,
+      "targetClosed": true
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "files": 75,
+  "exit": 0,
+  "signal": null,
+  "summary": {
+    "tests": 945,
+    "pass": 945,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "sourceHashes": {
+    "runtime/deck-editor.js": "fb3f7319d612139f8951bb19a59373875d0d6a1b9dc9a57c6e842a1559a72902",
+    "runtime/component-deletion.js": "87666c77b91d9b2789dcdca8a3520c068114311f74d3112f0946558d56df5656",
+    "tests/edx-wp2-s18-delete-element.test.mjs": "b1d94bb538d46fe164e0b9df275605b70aa2d0e01732883ff87af75718258c65",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "edc5dc2fbf146ef858783fbf9bf5e65ed185392c916045ff6c64fcea89b28cfe",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": "a3077e580a52ebad92577d02f4972db6abb4e0a32cd7e278549ff0e6b411f637",
+    "tools/edx-wp2-s18-browser-cases.mjs": "cd2b3cb7b445f708ff6529f818507ff99bd7554597fbffb0773c035f83f3bd16",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "8bee4dd043e86d9a70027f075f4d41c55873238eeb48d958f15e82c161a02bde",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "e7aa3268137edc1b3861da6c0d9ca27506b64a2038bdfa50b932103de88d8ace"
+  },
+  "sourceUnchanged": true
+}

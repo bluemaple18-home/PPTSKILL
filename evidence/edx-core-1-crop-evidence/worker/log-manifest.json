@@ -1,0 +1,98 @@
+[
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-fixture.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-fixture.log.gz",
+    "bytes": 97,
+    "sha256": "591cd8ad826ac938a543d661d849871322070ec92cbffb4c8b91d1c2289af7c6"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focus-01.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focus-01.log.gz",
+    "bytes": 3272,
+    "sha256": "a5506ac0cd587907178f15e53ed5fd9f55fd07f44696ea1a038d9be47362f853"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focus-02.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focus-02.log.gz",
+    "bytes": 1805,
+    "sha256": "a807ca341fd5e48b8b0f37a441b06452c007197f827750f9582e1252e03abc43"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-03.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-03.log.gz",
+    "bytes": 4520,
+    "sha256": "621819b3421cd4eaa5faf518fd4faaaa68596495cd0db995364f63be2aba7e41"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-04.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-04.log.gz",
+    "bytes": 2605,
+    "sha256": "3fbcbf83a7447d86b44637434a80c35ff5b6f372fc7daf118098b03c13254f36"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-05.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-05.log.gz",
+    "bytes": 2601,
+    "sha256": "85c255b2601679f428be6b0f516d043ec7232430ca6484311c5bad72b71f7b12"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-06.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-06.log.gz",
+    "bytes": 4256,
+    "sha256": "c507b39c2d3d716de9973d4a0de5268251e8bfe2b10764b07650cc1e5d74638d"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-07.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-07.log.gz",
+    "bytes": 1476,
+    "sha256": "4d76f08e1e47123b13625edb4be18d42f20d6edd437cecb5ab2bb37c259f4f30"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-08.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-08.log.gz",
+    "bytes": 1743,
+    "sha256": "9e45c723cc1815b571a964488ccb472e06cabd730df5584c3ee3c83d6919a74c"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-focused-final.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-focused-final.log.gz",
+    "bytes": 1845,
+    "sha256": "e8d9f95e9d2d703505815a70e972282b5a57b02c368b893e0da7fdbdad1065eb"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-red.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-red.log.gz",
+    "bytes": 1489,
+    "sha256": "00f390d81b699dfcc4815d77045d50de613b3de17deac9a59facae66fb8cb919"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-scoped-01.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-scoped-01.log.gz",
+    "bytes": 12550,
+    "sha256": "505980edba53c73fe6104c54e6770fce52fdcd9423bdb99498390b9878bda934"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-scoped-02.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-scoped-02.log.gz",
+    "bytes": 4239,
+    "sha256": "deb6b646a021af2c6839ae5d8df5d88cb807ae2538ebae4c72cb5dc27df9c617"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-scoped-03.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-scoped-03.log.gz",
+    "bytes": 23881,
+    "sha256": "3580f8ce0d7d2ae6145213e60c5e1ba43decf1ee9378a2d5b84f8507c85c4030"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-scoped-final.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-scoped-final.log.gz",
+    "bytes": 28016,
+    "sha256": "7ef785dd126a93922e08f14047ec8a0a7f2d7844c04d14415225cd68a8d3bdf3"
+  },
+  {
+    "source": "/private/tmp/pptskill-core-crop-worker-vendor.log",
+    "archive": "evidence/edx-core-1-crop-evidence/worker/pptskill-core-crop-worker-vendor.log.gz",
+    "bytes": 1028,
+    "sha256": "31758a82d8744409fb796e52f376960e97d2e97d871da6ff7dd8fc9a264e0781"
+  }
+]

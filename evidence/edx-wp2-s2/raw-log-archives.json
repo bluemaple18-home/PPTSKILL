@@ -1,0 +1,26 @@
+[
+  {
+    "readable": "evidence/edx-wp2-s2/worker-focused-initial.log",
+    "rawGzip": "evidence/edx-wp2-s2/worker-focused-initial.log.gz",
+    "rawSha256": "1abdebd137706fbed20075f85d1f8e0f65a0865387da2f94668289933bcf0ecd",
+    "normalization": "僅移除行尾空白，原始 bytes 保存在 gzip"
+  },
+  {
+    "readable": "evidence/edx-wp2-s2/worker-red.log",
+    "rawGzip": "evidence/edx-wp2-s2/worker-red.log.gz",
+    "rawSha256": "0e8720067085fa63c2b76a026afbe2d67ed2ce8616e8b24720a20f4551fc2339",
+    "normalization": "僅移除行尾空白，原始 bytes 保存在 gzip"
+  },
+  {
+    "readable": "evidence/edx-wp2-s2/worker-expanded.log",
+    "rawGzip": "evidence/edx-wp2-s2/worker-expanded.log.gz",
+    "rawSha256": "5771f6485b9fcd0881d6b100d579c09aaa86cc4d149a5253a658857a9979583a",
+    "normalization": "僅移除行尾空白，原始 bytes 保存在 gzip"
+  },
+  {
+    "readable": "evidence/edx-wp2-s2/nonbrowser.log",
+    "rawGzip": "evidence/edx-wp2-s2/nonbrowser.log.gz",
+    "rawSha256": "93bf37cb7d532b23b54cd05b261701f684ac87d2208e37243b3433f02b503ac4",
+    "normalization": "僅移除行尾空白，原始 bytes 保存在 gzip"
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "focused": {
+    "exit": 0,
+    "files": 3,
+    "tests": 19,
+    "pass": 19,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "scoped": {
+    "exit": 0,
+    "files": 17,
+    "tests": 331,
+    "pass": 331,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "nonbrowser": {
+    "exit": 0,
+    "files": 78,
+    "tests": 964,
+    "pass": 964,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  }
+}

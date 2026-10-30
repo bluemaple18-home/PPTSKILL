@@ -1,0 +1,33 @@
+{
+  "base": "28cad2d3beaaf32de2f62d0c08396aaba789ea01",
+  "candidate": "996492481144e92775780ce932661e38779cdddc",
+  "branch": "main",
+  "candidateSourceSHA256": {
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89",
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176"
+  },
+  "unchangedSHA256": {
+    "scripts/tmp_artifact_lifecycle.py": "0e411a0c970ae17f9fac805b5d3010ebc0742a5b6b774eb15b8c06137ffe8edf",
+    "config/tmp_artifact_policy.json": "41d312e2be42ec3a66bba54cf9e2cb6b3507d1c366778b9f3805fe8f679b4567",
+    "scripts/host_capacity_sensor.py": "1d02919680653cbb2e656833953389e9308dd7914e5ea182f0284a1ab95ad892"
+  },
+  "beforeSourceSHA256": {
+    "docs/tmp-session-lifecycle.md": "bdded7bdac133b1e967365d0a19ac293fb8656f939e3a3719f259638543ba362",
+    "scripts/tmp_session.py": "96d9beb91ee4f1c39379ffbc34d3e8e07c105707f8adf1a2716689dbfeb6a37f",
+    "tests/test_tmp_session_browser_command.py": null
+  },
+  "untrackedSHA256": {
+    ".work/CARD-CODEX-WEB-GPT-RETAINED-CONTEXT-20260924/task.md": "a6a0143a32d14b542428621431fae21f130360a06548c0812ffa72629d017f2c",
+    ".work/CARD-PPTSKILL-PGQ-HOST-ROUTING-AND-OBSERVER-HANDOFF-20260924/brief.md": "aabffb71a9f6d4387fc88c4072008fb4ec27faa4461aff93b7357057f9b4abef"
+  },
+  "bundle": {
+    "file": "browser-command-ownership-repair1.bundle",
+    "sha256": "312dd9983eb3c5d7d04415e8700953164ab38811a2f1ac5674d52f382cc3c903",
+    "verify": "PASS",
+    "prerequisite": "28cad2d3beaaf32de2f62d0c08396aaba789ea01"
+  },
+  "reviewReceiptsVerified": true,
+  "productIdentityMatch": true,
+  "authorization": "2026-09-29 Owner：local canonical integration commit＋整合後測試；不含push/deploy/production；本輪不接PPT mapping或產品驗收。"
+}

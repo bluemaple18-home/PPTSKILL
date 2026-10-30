@@ -1,0 +1,22 @@
+{
+  "status": "BASELINE_VERIFIED_CORE4_OPEN",
+  "branch": "codex/edx-core-4-local-draft",
+  "baseHEAD": "59a2a65d37df077864ddbf4d3613cf8a91577189",
+  "core3RemoteVerifiedSHA": "59a2a65d37df077864ddbf4d3613cf8a91577189",
+  "productManifest": "evidence/edx-core-3-undo-redo/transaction-boundary-r07-mainline-hashes.json",
+  "productManifestSHA256": "b65aa37699ab3dd10ad7268201400003700f843d2a9c80c966693a33570a3789",
+  "sourceCount": 75,
+  "protectedCount": 4,
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2329758,
+    "sha256": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290"
+  },
+  "originalUntrackedCount": 6,
+  "limits": {
+    "max_bytes": 67108864,
+    "max_file_count": 10000,
+    "ttl_seconds": 3600
+  },
+  "next": "Candidate focused code/tests and browser evidence pending; no Core4 GO"
+}

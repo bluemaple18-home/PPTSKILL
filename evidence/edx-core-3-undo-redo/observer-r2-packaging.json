@@ -1,0 +1,23 @@
+[
+  {
+    "raw": "observer-r2-candidate.patch",
+    "stored": "observer-r2-candidate.patch.gz",
+    "rawBytes": 27489,
+    "rawSHA256": "7e6401cae7c38e693434ca2ae66dbc55d3cfe35d5add2ffe66c0807f50a0d5ad",
+    "reason": "保留 raw whitespace，避免將 patch context／原始測試輸出改寫"
+  },
+  {
+    "raw": "observer-r2-canonical-red.log",
+    "stored": "observer-r2-canonical-red.log.gz",
+    "rawBytes": 10868,
+    "rawSHA256": "53c69e9605ccefee71a3055a80487a244f0265403d12df22c619bbc78f09f9fc",
+    "reason": "保留 raw whitespace，避免將 patch context／原始測試輸出改寫"
+  },
+  {
+    "raw": "observer-r2-worker-results.txt",
+    "stored": "observer-r2-worker-results.txt.gz",
+    "rawBytes": 11309,
+    "rawSHA256": "0d1603a9e4299cf98f51367686dc256163a72f50fa20a821d5f967e85dec8d51",
+    "reason": "保留 raw whitespace，避免將 patch context／原始測試輸出改寫"
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "zip": "dist/PPTSKILL-0.1.0.zip",
+  "bytes": 2248891,
+  "sha256": "4aa7fa8a683b57b49a1d6a3ad2ea87b77f0312f1731b724abfb240d9ac47402c",
+  "warningBytes": 12582912,
+  "hardLimitBytes": 20971520,
+  "status": "pass",
+  "producerFiles": 21
+}

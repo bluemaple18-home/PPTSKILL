@@ -1,0 +1,513 @@
+{
+  "status": "PASS",
+  "productSha": "a181982396eb4f282574f70b93a6c4ef2cfa9c62",
+  "sources": 6,
+  "protected": 4,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2297769,
+    "sha256": "98a46007088d1a076f5cea6cacec4b1bc5812ad30f855bc0072a9a4b832ca239"
+  },
+  "zipRuntimeByteMatch": true,
+  "fullNonbrowserPass": 789,
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 48,
+      "groups": {
+        "base": 10,
+        "wp2s15": 38
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s15Records": [
+        {
+          "wp2s15": "play/edit 隱藏、layout 顯示",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "open 取消真 pointer preview，canonical 不提交",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "native showModal focus 與背景 inert",
+          "kind": "native browser"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-1",
+          "codepoints": 57
+        },
+        {
+          "wp2s15": "舊 roots／內容保留、HTML-like 不執行",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty inline validation 可見可 focus／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "Enter 換行不提交",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "501 codepoints invalid 保留／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-3",
+          "codepoints": 500
+        },
+        {
+          "wp2s15": "invalid→修正→500 emoji 成功",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "cancel 清 draft／selection canonical no-op",
+          "kind": "real pointer"
+        },
+        {
+          "wp2s15": "Escape 清 draft／selection canonical no-op",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-4",
+          "codepoints": 2
+        },
+        {
+          "wp2s15": "IME keydown 未 preventDefault／cancel guard／submit guard",
+          "kind": "synthetic CompositionEvent＋real Escape；非 OS IME"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-1",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty slide 可插入",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "noimage slide 可再次插入",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-4",
+          "codepoints": 6
+        },
+        {
+          "wp2s15": "first-free hole 4／跨 type namespace",
+          "kind": "API fixture＋real UI insert"
+        },
+        {
+          "wp2s15": "target stale page no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale mode no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale selection no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale removed no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale rebuilt no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale duplicate no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "showModal throw 後重開",
+          "kind": "synthetic fault＋real pointer"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-5",
+          "codepoints": 5
+        },
+        {
+          "wp2s15": "同步重入 submit 不 doubleinsert",
+          "kind": "synthetic append 重入＋real pointer submit"
+        },
+        {
+          "wp2s15": "chooser 互斥 insert-image",
+          "kind": "real pointer／CDP chooser＋synthetic cancel"
+        },
+        {
+          "wp2s15": "chooser 互斥 replace-selected-image",
+          "kind": "real pointer／CDP chooser＋synthetic cancel"
+        },
+        {
+          "wp2s15": "export draft 無洩漏／不暗中提交",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-6",
+          "codepoints": 10
+        },
+        {
+          "wp2s15": "offline UI insert/cancel 與 S14 API edit",
+          "kind": "real UI＋明列 S14 API"
+        },
+        {
+          "wp2s15": "offline 新文字真 pointer move",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "offline 新文字真 pointer resize",
+          "kind": "integer screen-pixel real pointer",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "x": 851,
+              "y": 499,
+              "trusted": true
+            },
+            {
+              "type": "pointerup",
+              "x": 883,
+              "y": 531,
+              "trusted": true
+            }
+          ],
+          "scale": 0.8,
+          "delta": 32
+        },
+        {
+          "wp2s15": "offline remount／再次匯出",
+          "kind": "real-pointer/Input.insertText"
+        }
+      ]
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 48,
+      "groups": {
+        "base": 10,
+        "wp2s15": 38
+      },
+      "errorsZero": true,
+      "targetClosed": true,
+      "s15Records": [
+        {
+          "wp2s15": "play/edit 隱藏、layout 顯示",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "open 取消真 pointer preview，canonical 不提交",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "native showModal focus 與背景 inert",
+          "kind": "native browser"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-1",
+          "codepoints": 57
+        },
+        {
+          "wp2s15": "舊 roots／內容保留、HTML-like 不執行",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty inline validation 可見可 focus／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "Enter 換行不提交",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "501 codepoints invalid 保留／no-op",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-3",
+          "codepoints": 500
+        },
+        {
+          "wp2s15": "invalid→修正→500 emoji 成功",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "cancel 清 draft／selection canonical no-op",
+          "kind": "real pointer"
+        },
+        {
+          "wp2s15": "Escape 清 draft／selection canonical no-op",
+          "kind": "real keyboard"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-4",
+          "codepoints": 2
+        },
+        {
+          "wp2s15": "IME keydown 未 preventDefault／cancel guard／submit guard",
+          "kind": "synthetic CompositionEvent＋real Escape；非 OS IME"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-1",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "empty slide 可插入",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-2",
+          "codepoints": 4
+        },
+        {
+          "wp2s15": "noimage slide 可再次插入",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "insert-empty",
+          "id": "inserted-text-4",
+          "codepoints": 6
+        },
+        {
+          "wp2s15": "first-free hole 4／跨 type namespace",
+          "kind": "API fixture＋real UI insert"
+        },
+        {
+          "wp2s15": "target stale page no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale mode no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale selection no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale removed no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale rebuilt no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "target stale duplicate no-op",
+          "kind": "synthetic target fixture＋real pointer submit（若仍 open）"
+        },
+        {
+          "wp2s15": "showModal throw 後重開",
+          "kind": "synthetic fault＋real pointer"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-5",
+          "codepoints": 5
+        },
+        {
+          "wp2s15": "同步重入 submit 不 doubleinsert",
+          "kind": "synthetic append 重入＋real pointer submit"
+        },
+        {
+          "wp2s15": "chooser 互斥 insert-image",
+          "kind": "real pointer／CDP chooser＋synthetic cancel"
+        },
+        {
+          "wp2s15": "chooser 互斥 replace-selected-image",
+          "kind": "real pointer／CDP chooser＋synthetic cancel"
+        },
+        {
+          "wp2s15": "export draft 無洩漏／不暗中提交",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "精確文字／geometry／單次新增／純文字 DOM",
+          "kind": "real-pointer/Input.insertText",
+          "slideId": "portable",
+          "id": "inserted-text-6",
+          "codepoints": 10
+        },
+        {
+          "wp2s15": "offline UI insert/cancel 與 S14 API edit",
+          "kind": "real UI＋明列 S14 API"
+        },
+        {
+          "wp2s15": "offline 新文字真 pointer move",
+          "kind": "real-pointer/Input.insertText"
+        },
+        {
+          "wp2s15": "offline 新文字真 pointer resize",
+          "kind": "integer screen-pixel real pointer",
+          "pointerEvidence": [
+            {
+              "type": "pointerdown",
+              "x": 1064,
+              "y": 624,
+              "trusted": true
+            },
+            {
+              "type": "pointerup",
+              "x": 1104,
+              "y": 664,
+              "trusted": true
+            }
+          ],
+          "scale": 1,
+          "delta": 40
+        },
+        {
+          "wp2s15": "offline remount／再次匯出",
+          "kind": "real-pointer/Input.insertText"
+        }
+      ]
+    }
+  ],
+  "artifactHashesMatched": 26,
+  "screenshots": [
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1280-s15-dialog.png",
+      "sha256": "d8db00a4ac3b67bad767d78370a57047b976ed6e2dbd2d45adbcf99626495c94",
+      "bytes": 41321,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1280-s15-toolbar.png",
+      "sha256": "00432f2260c279036f7efa566d073f7669cba04be6da77315ab5b88032987a01",
+      "bytes": 48556,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1280-selected.png",
+      "sha256": "44b54c88c3f8e67e138589e25e59a90e6b248e913f6d8cb6c24d1bb0786a7f97",
+      "bytes": 47044,
+      "dimensions": [
+        1280,
+        720
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1600-s15-dialog.png",
+      "sha256": "030496bba7b7e551511b21da15e9246bbd5c2928484cd5ee39ad7e6388869983",
+      "bytes": 51217,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1600-s15-toolbar.png",
+      "sha256": "55b7739ab9fcdf2a682d9a6ea4ca47998aeb43193fbdf35be581c0e04b45ffa7",
+      "bytes": 59058,
+      "dimensions": [
+        1600,
+        900
+      ]
+    },
+    {
+      "path": "evidence/edx-wp2-s15/host-pointer-repair/insert-text-ui/1600-selected.png",
+      "sha256": "3247191ca1f7b278e6860c1dfa8b117ea2da9bb7236a391764e2536c6946ca04",
+      "bytes": 57067,
+      "dimensions": [
+        1600,
+        900
+      ]
+    }
+  ],
+  "pgqUniqueNamedCases": [
+    "visible sample content 與 embedded DeckSpec 分歧時 trusted producer fail loud",
+    "trusted producer PASS 與 human approval 建立 deterministic immutable freeze",
+    "caller-authored evidence、非 human approval、sample 不一致與缺頁 fail loud",
+    "舊 evidence 不得以重算 fingerprint 或改寫 PASS 核准新狀態",
+    "scope planner 僅接受 bounded feedback，profile 必須明示 opt-in",
+    "sample content 或 composition 只使該頁失效",
+    "style 或 contract version 變更使全部 sample 失效",
+    "installed approve-sample CLI 自行執行 producer，拒絕 caller hard gate",
+    "trusted producer 完整覆蓋每張 canonical slide，sample shortcut 不存在",
+    "Layer-2 不可省略；完成後沒有 Layer-3 confirmation 時只能 awaiting-owner",
+    "stale Owner identity 與 caller forged evidence fail loud",
+    "Layer-2 必須是 allowlist、canonical slides 與 trusted evidence refs",
+    "accepted-risk 必須由同 identity Owner 明示涵蓋；未解 advisory 只能 repair",
+    "單頁 content mismatch 只產生該頁 issue，並沿用兩次共用 repair budget",
+    "installed qa-full-deck 先輸出 identity，再以同 identity 完成 Layer-3",
+    "每張 canonical slide 的 required title 必須有 painted visibility"
+  ],
+  "pgqSingleRunPass": 16,
+  "cleanup": "PASS",
+  "limitations": [
+    "Native dialog文字插入UI；component仍非direct contenteditable；IME為synthetic lifecycle，不宣稱OS輸入實測",
+    "固定插入geometry非自動避障；S8歷史I/O根因未知",
+    "Independent Review pending，未merge/push/deploy S15"
+  ]
+}

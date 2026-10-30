@@ -1,0 +1,335 @@
+{
+  "tests": 2,
+  "failures": 0,
+  "errors": 0,
+  "before": {
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176",
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89"
+  },
+  "after": {
+    "scripts/tmp_session.py": "6a3853ec0fec97ad5718d9a36acdea7fbfc0a4dbf94eff2bb2812b8992a5121d",
+    "tests/test_tmp_session_browser_command.py": "2c67040631fce3359bc61bd0893ac9b07be4b2e35a8396c8ec1a5e0b58324176",
+    "docs/tmp-session-lifecycle.md": "1852e379023ecf23589e31377b81cb8bec20e2650ae3591930795b2da5c79a89"
+  },
+  "candidateUnchanged": true,
+  "oldEvidenceBefore": {
+    "browser-command-ownership-review-b.md": "86f99f024d4392922cc43ca21fd6cc4820b0e72d8c372217be6764101dec0086",
+    "browser-command-ownership-review-b-tests.log": "88fed22dc193b506983ec465534839790fdf686635e4f0c775a66222e0094d66",
+    "browser-command-ownership-review-b-results.json": "5cca958a5d32a8df7c05c64e7a763f35e4a6f91ccba870299a0e524bc62e2806",
+    "browser-command-ownership-review-b-probes.py": "c1c0269bf5c6c99aa2254b62c3c07c93c42e1c50bb1d85f3578aa4bed13c1aa9"
+  },
+  "oldEvidenceAfter": {
+    "browser-command-ownership-review-b.md": "86f99f024d4392922cc43ca21fd6cc4820b0e72d8c372217be6764101dec0086",
+    "browser-command-ownership-review-b-tests.log": "88fed22dc193b506983ec465534839790fdf686635e4f0c775a66222e0094d66",
+    "browser-command-ownership-review-b-results.json": "5cca958a5d32a8df7c05c64e7a763f35e4a6f91ccba870299a0e524bc62e2806",
+    "browser-command-ownership-review-b-probes.py": "c1c0269bf5c6c99aa2254b62c3c07c93c42e1c50bb1d85f3578aa4bed13c1aa9"
+  },
+  "oldEvidenceUnchanged": true,
+  "cases": [
+    {
+      "errno": 5,
+      "clientCode": 0,
+      "browserCode": 0,
+      "returnedCode": 2,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 5] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "errno": 5,
+      "clientCode": 7,
+      "browserCode": 9,
+      "returnedCode": 7,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 5] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 9
+        }
+      ]
+    },
+    {
+      "errno": 5,
+      "clientCode": 0,
+      "browserCode": 9,
+      "returnedCode": 9,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 5] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 9
+        }
+      ]
+    },
+    {
+      "errno": 5,
+      "clientCode": -9,
+      "browserCode": 0,
+      "returnedCode": 137,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 5] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "errno": 28,
+      "clientCode": 0,
+      "browserCode": 0,
+      "returnedCode": 2,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 28] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 0
+        }
+      ]
+    },
+    {
+      "errno": 28,
+      "clientCode": 7,
+      "browserCode": 9,
+      "returnedCode": 7,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 28] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 9
+        }
+      ]
+    },
+    {
+      "errno": 28,
+      "clientCode": 0,
+      "browserCode": 9,
+      "returnedCode": 9,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 28] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 9
+        }
+      ]
+    },
+    {
+      "errno": 28,
+      "clientCode": -9,
+      "browserCode": 0,
+      "returnedCode": 137,
+      "journal": [
+        {
+          "role": "browser",
+          "event": "starting"
+        },
+        {
+          "role": "browser",
+          "event": "started",
+          "pid": 101,
+          "pgid": 28705
+        },
+        {
+          "role": "client",
+          "event": "starting"
+        },
+        {
+          "role": "client",
+          "event": "started",
+          "pid": 102,
+          "pgid": 28705
+        },
+        {
+          "role": "session",
+          "event": "error",
+          "error": "[Errno 28] B 單點 journal write 故障"
+        },
+        {
+          "role": "browser",
+          "event": "exited",
+          "returncode": 0
+        }
+      ]
+    }
+  ]
+}

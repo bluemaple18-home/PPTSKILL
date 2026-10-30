@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pptskill.local/schemas/deck-spec.schema.json",
+  "title": "PPTSKILL Portable DeckSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "deckId", "title", "language", "style", "slides"],
+  "properties": {
+    "schemaVersion": { "const": "1.0" },
+    "deckId": { "$ref": "#/$defs/id" },
+    "title": { "$ref": "#/$defs/nonEmptyText" },
+    "language": { "type": "string", "minLength": 2, "maxLength": 35 },
+    "style": { "$ref": "#/$defs/styleSpec" },
+    "claims": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "slides": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 15,
+      "items": { "$ref": "#/$defs/slide" }
+    }
+  },
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$" },
+    "nonEmptyText": { "type": "string", "minLength": 1, "maxLength": 500 },
+    "color": { "type": "string", "pattern": "^(#[0-9a-fA-F]{3,8}|rgba?\\([^)]*\\)|hsla?\\([^)]*\\)|[a-zA-Z]+)$" },
+    "styleSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "layout", "density", "typography", "palette", "spacing", "geometry", "motion", "assetTreatment"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/nonEmptyText" },
+        "layout": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["primaryMove", "compositionLanguage"],
+          "properties": {
+            "primaryMove": { "enum": ["asymmetric-grid", "split-proof", "editorial-rail", "technical-map", "full-bleed-type"] },
+            "compositionLanguage": { "enum": ["executive", "technical", "editorial", "energetic", "narrative"] }
+          }
+        },
+        "density": { "enum": ["low", "medium", "high"] },
+        "typography": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["display", "body"],
+          "properties": {
+            "display": { "$ref": "#/$defs/nonEmptyText" },
+            "body": { "$ref": "#/$defs/nonEmptyText" },
+            "mono": { "type": "string", "maxLength": 200 }
+          }
+        },
+        "palette": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["canvas", "text", "muted", "accent", "surface"],
+          "properties": {
+            "canvas": { "$ref": "#/$defs/color" },
+            "text": { "$ref": "#/$defs/color" },
+            "muted": { "$ref": "#/$defs/color" },
+            "accent": { "$ref": "#/$defs/color" },
+            "surface": { "$ref": "#/$defs/color" }
+          }
+        },
+        "spacing": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["unit", "slidePadding"],
+          "properties": {
+            "unit": { "type": "integer", "minimum": 2, "maximum": 24 },
+            "slidePadding": { "type": "integer", "minimum": 24, "maximum": 160 }
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["radius", "borderWidth"],
+          "properties": {
+            "radius": { "type": "integer", "minimum": 0, "maximum": 48 },
+            "borderWidth": { "type": "integer", "minimum": 0, "maximum": 8 }
+          }
+        },
+        "motion": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["personality", "durationMs", "easing", "reducedMotion"],
+          "properties": {
+            "personality": { "enum": ["none", "corporate", "premium", "playful", "energetic"] },
+            "durationMs": { "type": "integer", "minimum": 0, "maximum": 1200 },
+            "easing": { "type": "string", "minLength": 1, "maxLength": 100 },
+            "reducedMotion": { "const": true }
+          }
+        },
+        "assetTreatment": { "$ref": "#/$defs/nonEmptyText" }
+      }
+    },
+    "compositionSpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primitive", "variant", "slots"],
+      "properties": {
+        "elementGroups": { "type": "array", "items": { "type": "array", "minItems": 2, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } }, "description": "同頁独立text/image的stable elementIds；引用、重疊與geometry由共用契約驗證。" },
+        "lockedElementIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "typographyOverrides": {"type":"object","propertyNames":{"enum":["role-title","role-subtitle"]},"additionalProperties":{"type":"object","additionalProperties":false,"required":["fontSize"],"properties":{"fontSize":{"type":"integer","minimum":16,"maximum":160}}}},
+        "geometryOverrides": {"type":"object","propertyNames":{"$ref":"#/$defs/id"},"additionalProperties":{"type":"object","additionalProperties":false,"required":["x","y","width","height"],"properties":{"x":{"type":"integer","minimum":80},"y":{"type":"integer","minimum":80},"width":{"type":"integer","minimum":80},"height":{"type":"integer","minimum":80}},"description":"1600×900 絕對座標；safe inset 80，x+width≤1520、y+height≤820，由共用 deterministic validator 驗證。"}},
+        "primitive": { "$ref": "#/$defs/id" },
+        "variant": { "$ref": "#/$defs/id" },
+        "slots": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "type": "string", "pattern": "^(content\\.(title|subtitle|keyPoints)|content\\.components\\.[a-z0-9][a-z0-9._-]{0,79})$" }
+        },
+        "order": { "type": "array", "uniqueItems": true, "items": { "type": "string" } }
+      }
+    },
+    "sourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "label", "public", "sourceAvailableToRecipient"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "label": { "$ref": "#/$defs/nonEmptyText" },
+        "url": { "type": "string", "pattern": "^https?://" },
+        "public": { "const": true },
+        "sourceAvailableToRecipient": { "type": "boolean" }
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["operation", "baseline", "current"],
+      "properties": {
+        "operation": { "enum": ["absolute-delta", "percent-change", "percentage-point-change"] },
+        "baseline": { "type": "number" },
+        "current": { "type": "number" },
+        "scale": { "enum": ["ratio", "percent"] }
+      },
+      "if": { "properties": { "operation": { "const": "percentage-point-change" } } },
+      "then": { "required": ["scale"] }
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "summary", "slideIds", "sourceRefs"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "kind": { "enum": ["fact", "derived", "inference"] },
+        "summary": { "$ref": "#/$defs/nonEmptyText" },
+        "slideIds": { "type": "array", "minItems": 1, "maxItems": 15, "uniqueItems": true, "items": { "$ref": "#/$defs/id" } },
+        "value": { "type": "number" },
+        "metric": { "type": "string", "maxLength": 200 },
+        "period": { "type": "string", "maxLength": 200 },
+        "population": { "type": "string", "maxLength": 200 },
+        "unit": { "type": "string", "maxLength": 100 },
+        "currency": { "type": "string", "maxLength": 20 },
+        "relation": { "enum": ["causal", "correlation", "descriptive"] },
+        "evidenceRelation": { "enum": ["causal", "correlation", "descriptive", "unknown"] },
+        "derivation": { "$ref": "#/$defs/derivation" },
+        "sourceRefs": { "type": "array", "maxItems": 8, "items": { "$ref": "#/$defs/sourceRef" } }
+      }
+    },
+    "component": {
+      "oneOf": [
+        { "$ref": "#/$defs/textComponent" },
+        { "$ref": "#/$defs/imageComponent" },
+        { "$ref": "#/$defs/tableComponent" },
+        { "$ref": "#/$defs/chartComponent" },
+        { "$ref": "#/$defs/citationComponent" }
+      ]
+    },
+    "componentBase": {
+      "type": "object",
+      "required": ["id", "type"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "type": "string" } }
+    },
+    "textComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "text"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "text" }, "text": { "$ref": "#/$defs/nonEmptyText" } }
+    },
+    "cropRect": {"type":"object","additionalProperties":false,"required":["x","y","width","height"],"properties":{"x":{"type":"number","minimum":0,"maximum":1},"y":{"type":"number","minimum":0,"maximum":1},"width":{"type":"number","exclusiveMinimum":0,"maximum":1},"height":{"type":"number","exclusiveMinimum":0,"maximum":1}}},
+    "imageComponent": {"type":"object","additionalProperties":false,"required":["id","type","alt","dataUri"],"properties":{"id":{"$ref":"#/$defs/id"},"type":{"const":"image"},"alt":{"type":"string","maxLength":300},"dataUri":{"type":"string","pattern":"^data:image/(png|jpeg|webp|gif|svg\\+xml);"},"fit":{"enum":["contain","cover"]},"crop":{"$ref":"#/$defs/cropRect"},"imageSafety":{"type":"object","additionalProperties":false,"required":["classification","reviewDigest"],"properties":{"classification":{"enum":["decorative","evidence"]},"protectedRect":{"$ref":"#/$defs/cropRect"},"reviewDigest":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"allOf":[{"if":{"properties":{"classification":{"const":"evidence"}}},"then":{"required":["protectedRect"]}}]}},"dependentRequired":{"crop":["imageSafety"]},"allOf":[{"if":{"required":["imageSafety"],"properties":{"imageSafety":{"properties":{"classification":{"const":"evidence"}}}}},"then":{"properties":{"fit":{"const":"contain"}}}}]},
+    "tableComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "headers", "rows"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "table" }, "headers": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "type": "string" } }, "rows": { "type": "array", "maxItems": 30, "items": { "type": "array", "items": { "type": ["string", "number", "boolean", "null"] } } } }
+    },
+    "chartComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "chartType", "labels", "series"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "chart" }, "chartType": { "enum": ["bar", "line", "area", "pie", "donut"] }, "labels": { "type": "array", "items": { "type": "string" } }, "series": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["name", "values"], "properties": { "name": { "type": "string" }, "values": { "type": "array", "items": { "type": "number" } } } } } }
+    },
+    "citationComponent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "type", "label", "public"],
+      "properties": { "id": { "$ref": "#/$defs/id" }, "type": { "const": "citation" }, "label": { "$ref": "#/$defs/nonEmptyText" }, "url": { "type": "string", "format": "uri" }, "public": { "const": true } }
+    },
+    "slide": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "content", "composition"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "content": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "subtitle", "keyPoints", "components"],
+          "properties": {
+            "title": { "$ref": "#/$defs/nonEmptyText" },
+            "subtitle": { "$ref": "#/$defs/nonEmptyText" },
+            "keyPoints": { "type": "array", "minItems": 3, "maxItems": 5, "items": { "$ref": "#/$defs/nonEmptyText" } },
+            "components": { "type": "array", "maxItems": 12, "items": { "$ref": "#/$defs/component" } }
+          }
+        },
+        "composition": { "$ref": "#/$defs/compositionSpec" }
+      }
+    }
+  }
+}

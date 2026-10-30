@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-30",
+  "status": "CORE4_GO",
+  "coreProgress": "4/6",
+  "branch": "codex/edx-core-4-local-draft",
+  "baseHead": "59a2a65d37df077864ddbf4d3613cf8a91577189",
+  "candidate": {
+    "runtime/deck-editor.js": "95d027a6ba8723f7a18bad27e5f072d51efdbf301ed798d6b538f74fa8c66790",
+    "tests/edx-core-4-local-draft.test.mjs": "a8349e2e1a7d363b21a57aaec72e79f1ac5a7eba25efee0e687c240df9ceef2a",
+    "tools/edx-core-4-local-draft-browser-acceptance.mjs": "2cdd36d5415d8ca6d07f2aa2678743a91bbe0c8f3978b05158640baecdc3cae8",
+    "dist/PPTSKILL-0.1.0.zip": "4afe034f3f52a31185b5193cfd68714e97475a5932a65f02698027556d8c0cf3"
+  },
+  "independentReview": {
+    "provenance": "Owner 在本對話轉達 Repair 3 fresh independent review",
+    "codeVerdict": "FINAL CODE GO",
+    "hostVerdict": "FINAL HOST GO",
+    "blockingFindings": 0,
+    "scope": "read-fault 只在合法同來源、同 deckId、canonical 驗證通過後解鎖；invalid/write-unknown 保持封鎖；markRestored 不誤報 saved",
+    "secondReviewerRequiredForRepair3": false
+  },
+  "freshVerification": {
+    "focused": { "tests": 20, "pass": 20, "fail": 0 },
+    "nonBrowser": { "testFiles": 83, "tests": 1085, "pass": 1085, "fail": 0, "skipped": 0 },
+    "syntax": "PASS",
+    "gitDiffCheck": "PASS",
+    "zipRuntimeByteMatch": true,
+    "legacyJunitExcluded": "舊候選 18/1083 JUnit 與 hash 不作 Repair 3 證據"
+  },
+  "hostAcceptance": {
+    "status": "PASS",
+    "root": "host-acceptance-05",
+    "controllerReceipt": "host-acceptance-05/controller-receipt.json",
+    "controllerReceiptSha256": "c117495cf765c7bec24bf148939ba0ed20b90114d9ed227505d430c9b28fca22",
+    "clientReceipt": "host-acceptance-05/client-receipt.json",
+    "clientReceiptSha256": "8c22510f5f9e77caf448fd345daf626f83e39c93b2cf7b6625e896d82e0b5416",
+    "browserReceipt": "host-acceptance-05/browser/acceptance.json",
+    "browserReceiptSha256": "aaa278d6ad4e22d3f11700b842421c825d4d828894afc128e10542cb028a4437",
+    "viewportChecks": [13, 13],
+    "pgq": { "tests": 16, "pass": 16, "fail": 0, "skipped": 0 },
+    "errorCounts": { "console": 0, "pageerror": 0, "network": 0, "http": 0, "remoteRequest": 0 },
+    "identityBeforeAfterMatch": true,
+    "ownedRootAbsent": true,
+    "isolationMarkerAbsent": true,
+    "processObservationMatches": [],
+    "observationLimit": "複審者現場 ps/pgrep 因 sandbox operation not permitted；程序收斂採正式 controller 收據"
+  },
+  "scopeLimits": [
+    "Core5 尚未啟動。",
+    "本輪未 commit、push、merge、deploy 或 production。",
+    "Repair 2 的 18/1083 JUnit 與 host-acceptance-04 不作本候選完成證據。",
+    "本機 checkpoint 前將四個歷史 evidence 檔各移除一個末尾空白行；兩份 Repair 2 Reviewer 收據保留原 SHA 並於舊 verification 記錄正規化後 SHA。"
+  ]
+}

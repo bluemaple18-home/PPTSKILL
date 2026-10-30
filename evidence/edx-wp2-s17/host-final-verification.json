@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "productSha": "8c0781083ea21cdd365e5f9e1f91f4b7057cdc70",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 26,
+      "s17Cases": 16,
+      "errors": 0,
+      "targetClosed": true
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 26,
+      "s17Cases": 16,
+      "errors": 0,
+      "targetClosed": true
+    }
+  ],
+  "pgq": {
+    "tests": 16,
+    "pass": 16,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "sourceMatches": 4,
+  "protectedMatches": 4,
+  "zip": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2298730,
+    "sha256": "bb8ce285d7cbdf4575a8fc3828d1ec9bd8d3c2e2f2dc9c2bfab4785ce5c0bcf7"
+  },
+  "zipRuntimeByteMatch": true,
+  "readinessExit": 0,
+  "browserCloseExit": 0,
+  "supervisorExit": 0,
+  "ownedRootAbsent": true,
+  "isolationMarkerAbsent": true,
+  "main": "df584eb920292be2a517ac72721c02455ddb0505",
+  "originMain": "df584eb920292be2a517ac72721c02455ddb0505"
+}

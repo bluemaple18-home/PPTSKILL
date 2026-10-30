@@ -1,0 +1,28 @@
+{
+  "base": "a3fd195a4a4c5b33ccbe4cccd3c2a8f121c93889",
+  "sources": {
+    "runtime/group-lock.js": "7038d1d3dfded879371ca2cde30ecc78ae1798b054fe0cabdb0fc826f1189a56",
+    "runtime/component-interaction.js": "fa5b1b6c0e3269d179aa28c7c4910d12b73ed551f72655ca0b022a0e2b8e9955",
+    "runtime/deck-editor.js": "557fc38802bccfbc34bfa3f176d6dd7ddde0f1d36daa283918dcb770fd99180d",
+    "runtime/deck-spec.js": "37d533a43a0529886fcc173d2067fac50b416df312b412a97677fae31edbd216",
+    "schemas/deck-spec.schema.json": "bec0b4d5f3b81c867170ee0172f6a0d019bd9124659d1c95c27edcff2c548dca",
+    "tests/edx-core-2-group-lock.test.mjs": "34de26fe7596a2e1914144ccff6a1a87c64aebfb80c896a856354c757ca168eb",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "91b56e5d295794b4ff52ef5b20da86a27b0edbcda45635aa0021b0491926d298",
+    "tests/edx-wp1-s3-bounded-geometry.test.mjs": "3fc0fdae4d0a706020d1a1a9911ef3dcf45c02a7bebe2bf3c548cefc4e40f005",
+    "tools/edx-core-2-group-lock-browser-cases.mjs": "78678848b5debf7619fc229a76c36e97b4e34738ca25131a7161b4114cdc100a",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "9a2de56cbc7da27a8f492ee76d74351e353a0a128228bbf5f9501d01408fb570",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "ab56738fcf4984e9bf57e1f399903217ed7f275727b697b3b519e5289d79eb63"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2322319,
+    "sha256": "12f8811ae0e4a3a6ec4c4ecd27bc22ee4011f3891d48e5bd0ec067f27ad4efe6"
+  },
+  "candidate": "81fd40926f2a303184e3175971b5df3d3a906943"
+}

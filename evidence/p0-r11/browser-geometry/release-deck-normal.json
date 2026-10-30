@@ -1,0 +1,477 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-10T08:18:36.728Z",
+  "artifact": "release-company-deck.html",
+  "motionMode": "normal",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "image": {
+            "treatment": "image-zoom-settle",
+            "opacity": "0.895129",
+            "transform": "matrix(0.998427, 0, 0, 0.998427, 0, 0)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 1322,
+              "top": 40,
+              "width": 247,
+              "height": 57
+            }
+          },
+          "title": {
+            "treatment": "mask-reveal",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 0.849452)",
+            "clipPath": "inset(0px 10.4871% 0px 0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1240,
+              "height": 128
+            }
+          },
+          "supportingCopy": {
+            "treatment": "restrained-fade-rise",
+            "opacity": "0.895129",
+            "transform": "matrix(1, 0, 0, 1, 0, 1.03822)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 170,
+              "width": 900,
+              "height": 46
+            }
+          },
+          "process": {
+            "treatment": "staggered-sequence",
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 12.6)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 347,
+              "height": 230
+            }
+          }
+        },
+        "resting": {
+          "image": {
+            "treatment": "image-zoom-settle",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 1322,
+              "top": 40,
+              "width": 247,
+              "height": 57
+            }
+          },
+          "title": {
+            "treatment": "mask-reveal",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1240,
+              "height": 128
+            }
+          },
+          "supportingCopy": {
+            "treatment": "restrained-fade-rise",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 170,
+              "width": 900,
+              "height": 46
+            }
+          },
+          "process": {
+            "treatment": "staggered-sequence",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 347,
+              "height": 230
+            }
+          }
+        },
+        "changedRoles": [
+          "image",
+          "title",
+          "supportingCopy",
+          "process"
+        ],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 7,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 932,
+          "right": 1600,
+          "bottom": 1832,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 1864,
+          "right": 1600,
+          "bottom": 2764,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 2796,
+          "right": 1600,
+          "bottom": 3696,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 3728,
+          "right": 1600,
+          "bottom": 4628,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 4660,
+          "right": 1600,
+          "bottom": 5560,
+          "width": 1600,
+          "height": 900
+        },
+        {
+          "left": 0,
+          "top": 5592,
+          "right": 1600,
+          "bottom": 6492,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 97,
+          "top": 232,
+          "right": 1337,
+          "bottom": 359.828125,
+          "width": 1240,
+          "height": 127.828125
+        },
+        "visualAnchor": null,
+        "supportingCopy": {
+          "left": 97,
+          "top": 401.828125,
+          "right": 997,
+          "bottom": 448.21875,
+          "width": 900,
+          "height": 46.390625
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0606,
+          "y": 0.2578,
+          "width": 0.775,
+          "height": 0.142
+        },
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": [
+          "q1",
+          "q2"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "normal",
+        "initial": {
+          "image": {
+            "treatment": "image-zoom-settle",
+            "opacity": "0.449759",
+            "transform": "matrix(0.991746, 0, 0, 0.991746, 0, 0)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 1322,
+              "top": 40,
+              "width": 247,
+              "height": 57
+            }
+          },
+          "title": {
+            "treatment": "mask-reveal",
+            "opacity": "1",
+            "transform": "matrix(1, 0, 0, 1, 0, 4.45695)",
+            "clipPath": "inset(0px 55.0241% 0px 0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1240,
+              "height": 128
+            }
+          },
+          "supportingCopy": {
+            "treatment": "restrained-fade-rise",
+            "opacity": "0.449759",
+            "transform": "matrix(1, 0, 0, 1, 0, 5.44739)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 170,
+              "width": 900,
+              "height": 46
+            }
+          },
+          "process": {
+            "treatment": "staggered-sequence",
+            "opacity": "0",
+            "transform": "matrix(1, 0, 0, 1, 0, 12.6)",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 347,
+              "height": 230
+            }
+          }
+        },
+        "resting": {
+          "image": {
+            "treatment": "image-zoom-settle",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 1322,
+              "top": 40,
+              "width": 247,
+              "height": 57
+            }
+          },
+          "title": {
+            "treatment": "mask-reveal",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 1240,
+              "height": 128
+            }
+          },
+          "supportingCopy": {
+            "treatment": "restrained-fade-rise",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "inset(0px)",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 170,
+              "width": 900,
+              "height": 46
+            }
+          },
+          "process": {
+            "treatment": "staggered-sequence",
+            "opacity": "1",
+            "transform": "none",
+            "clipPath": "none",
+            "transitionDuration": "0.26s, 0.26s",
+            "layoutBox": {
+              "left": 0,
+              "top": 0,
+              "width": 347,
+              "height": 230
+            }
+          }
+        },
+        "changedRoles": [
+          "image",
+          "title",
+          "supportingCopy",
+          "process"
+        ],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 7,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 745.59375,
+          "right": 1280,
+          "bottom": 1465.59375,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 1491.1875,
+          "right": 1280,
+          "bottom": 2211.1875,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 2236.78125,
+          "right": 1280,
+          "bottom": 2956.78125,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 2982.375,
+          "right": 1280,
+          "bottom": 3702.375,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 3727.96875,
+          "right": 1280,
+          "bottom": 4447.96875,
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "left": 0,
+          "top": 4473.5625,
+          "right": 1280,
+          "bottom": 5193.5625,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": {
+          "left": 77.59375,
+          "top": 185.59375,
+          "right": 1069.59375,
+          "bottom": 287.84375,
+          "width": 992,
+          "height": 102.25
+        },
+        "visualAnchor": null,
+        "supportingCopy": {
+          "left": 77.59375,
+          "top": 321.4375,
+          "right": 797.59375,
+          "bottom": 358.546875,
+          "width": 720,
+          "height": 37.109375
+        }
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": {
+          "x": 0.0606,
+          "y": 0.2578,
+          "width": 0.775,
+          "height": 0.142
+        },
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": [
+          "q1",
+          "q2"
+        ]
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

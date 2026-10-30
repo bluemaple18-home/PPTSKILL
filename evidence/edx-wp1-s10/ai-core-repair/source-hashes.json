@@ -1,0 +1,5 @@
+{
+  "scripts/tmp_artifact_lifecycle.py": "72781411d5082fb1c89b64a0d7c453ff6306009dbb1304910103cc98c5b72c97",
+  "tests/test_tmp_artifact_lifecycle.py": "28151e55579c874198ae16aefbc5044cc7a0fc1ebec8c332a19e796af85ca451",
+  "docs/tmp-session-lifecycle.md": "39e4e40c7bc128cc9079f23c9c553071c51c67ce42de2b108412938c091a5be0"
+}

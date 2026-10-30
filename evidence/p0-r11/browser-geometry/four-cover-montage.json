@@ -1,0 +1,115 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-10T08:20:21.210Z",
+  "artifact": "four-cover-montage.html",
+  "motionMode": "reduce",
+  "status": "pass",
+  "runs": [
+    {
+      "viewport": {
+        "width": 1600,
+        "height": 900
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1600,
+          "bottom": 900,
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "semanticBoxes": {
+        "title": null,
+        "visualAnchor": null,
+        "supportingCopy": null
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": []
+      },
+      "issues": [],
+      "visibleTraceback": null
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "traceback": null,
+      "console": [],
+      "pageErrors": [],
+      "networkFailures": [],
+      "httpErrors": [],
+      "motionTrace": {
+        "mode": "reduce",
+        "initial": {},
+        "resting": {},
+        "changedRoles": [],
+        "layoutStable": true,
+        "restingVisible": true
+      },
+      "slideCount": 1,
+      "slideBoxes": [
+        {
+          "left": 0,
+          "top": 0,
+          "right": 1280,
+          "bottom": 720,
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "semanticBoxes": {
+        "title": null,
+        "visualAnchor": null,
+        "supportingCopy": null
+      },
+      "compositionContract": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": null,
+        "dominantAxis": null,
+        "occupiedQuadrants": null,
+        "anchorCopyRelation": null,
+        "silhouette": null
+      },
+      "computedStructure": {
+        "titleRegion": null,
+        "anchorRegion": null,
+        "overlap": false,
+        "dominantAxis": null,
+        "occupiedQuadrants": []
+      },
+      "issues": [],
+      "visibleTraceback": null
+    }
+  ]
+}

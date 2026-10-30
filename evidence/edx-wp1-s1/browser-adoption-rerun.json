@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-09-19T12:17:19+08:00",
+  "status": "fail",
+  "scope": "EDX-WP1-S1 fresh managed-browser adoption rerun",
+  "checks": {
+    "selection": true,
+    "shiftMultiSelect": true,
+    "drag": true,
+    "resize": true,
+    "snapActual": true,
+    "toolbarCollision": true,
+    "exportCanonicalStable": true,
+    "exportChromeCleanup": false,
+    "console": true,
+    "pageerror": true,
+    "network": true
+  },
+  "interactionEvidence": {
+    "shiftSelectedIds": [
+      "slide-1/evidence",
+      "slide-1/title"
+    ],
+    "moveOperation": {
+      "elementId": "slide-1/title",
+      "transform": "translate(239px, 0px)"
+    },
+    "resizeOperation": {
+      "elementId": "slide-1/title",
+      "width": 144,
+      "height": 84
+    },
+    "snapGuidelineEvents": 1,
+    "targetRect": {
+      "x": 344,
+      "y": 105,
+      "width": 144,
+      "height": 84
+    }
+  },
+  "exportEvidence": {
+    "canonicalStable": true,
+    "containsMoveableControls": true,
+    "containsSelectoSelection": true,
+    "containsContextToolbar": true,
+    "exportBytes": 87879
+  },
+  "errors": {
+    "console": [],
+    "page": [],
+    "network": [],
+    "externalRequests": []
+  },
+  "lifecycle": {
+    "exitCode": 0,
+    "profileCleaned": true,
+    "ownedRootCleaned": true
+  }
+}

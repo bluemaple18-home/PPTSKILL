@@ -1,0 +1,9 @@
+{
+  "pptskill-wp2-s3-source-hashes.log": "3bf4bcc993af643abf420c8557bfc254dccb5b133ad63f0ec81d85420045b7f1",
+  "pptskill-wp2-s3-red.log": "73df8bf06ea168bee33fbd54d1a918c8522f9921258d894c45a04570a2c6c761",
+  "pptskill-wp2-s3-diff-check.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "pptskill-wp2-s3-fixture.log": "089f92074b9a5e601f6884227f4e04a5096a3a9bdf74c9d5c56aefd3941a110b",
+  "pptskill-wp2-s3-scoped-final.log": "b9520136f1e2996a161dae470631cacb670970b194dfb01ec696c60f12b06b95",
+  "pptskill-wp2-s3-green-attempt2.log": "306d9a7cfd1ddb286cdaed2e975b2575d929df60a4bff88e9f80463123b15fc2",
+  "pptskill-wp2-s3-green-attempt1.log": "f79d788b83e4f541c02ca873a0227ff6d124b7b577ccc2ac45b6ea0044de2fef"
+}

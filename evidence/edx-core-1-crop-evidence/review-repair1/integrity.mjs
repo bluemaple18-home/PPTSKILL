@@ -1,0 +1,11 @@
+import fs from 'node:fs';import {createHash} from 'node:crypto';import {execFileSync} from 'node:child_process';import path from 'node:path';
+const out='/private/tmp/pptskill-core-crop-review-2db6185',hash=b=>createHash('sha256').update(b).digest('hex'),git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
+const recorded=JSON.parse(fs.readFileSync('evidence/edx-core-1-crop-evidence/source-hashes.json'));const audit={head:git('rev-parse','HEAD'),base:git('rev-parse','b364cd8'),runtime:git('rev-parse','2db6185'),sections:Object.keys(recorded),checks:{}};
+for(const group of ['sources','protected'])for(const [file,want] of Object.entries(recorded[group]||{})){const actual=hash(fs.readFileSync(file));audit.checks[group+':'+file]={match:actual===want,actual};}
+const d=recorded.distribution;audit.zip={bytes:fs.statSync(d.path).size,sha256:hash(fs.readFileSync(d.path)),matchesReceipt:hash(fs.readFileSync(d.path))===d.sha256,sidecar:fs.readFileSync(d.path+'.sha256','utf8').trim(),sameAsRuntimeCommit:git('rev-parse','2db6185:'+d.path)===git('rev-parse','2db6185:'+d.path)};
+audit.afterRuntimeChanges=git('diff','--name-only','b364cd8','2db6185').split('\n');
+audit.candidateDiskMismatches=git('diff','--name-only','b364cd8','2db6185').split('\n').filter(f=>git('hash-object',f)!==git('rev-parse','2db6185:'+f));
+const meta=JSON.parse(fs.readFileSync('runtime/vendor/crop-hash-vendor.json'));
+const roots=['../.tools/pptskill-crop-hash/node_modules/@noble/hashes','.tools/pptskill-crop-hash/node_modules/@noble/hashes','node_modules/@noble/hashes'];const pkgroot=roots.find(p=>fs.existsSync(p+'/package.json'));audit.vendor={pkgroot,inputs:[],bundleMatches:hash(fs.readFileSync('runtime/vendor/crop-hash-2.0.1.iife.js'))===meta.bundleSha256,licenseMatches:hash(fs.readFileSync('runtime/vendor/crop-hash-LICENSE.md'))===meta.licenseSha256};
+if(pkgroot){audit.vendor.package=JSON.parse(fs.readFileSync(pkgroot+'/package.json')).version;for(const i of meta.inputs){const b=fs.readFileSync(path.join(pkgroot,i.path));audit.vendor.inputs.push({path:i.path,match:b.length===i.bytes&&hash(b)===i.sha256});}}
+fs.writeFileSync(out+'/fresh-integrity.json',JSON.stringify(audit,null,2));console.log(JSON.stringify({...audit,checks:{count:Object.keys(audit.checks).length,mismatches:Object.entries(audit.checks).filter(([,v])=>!v.match)}}));

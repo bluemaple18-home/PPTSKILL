@@ -1,0 +1,126 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "checks": {
+    "textEdit": true,
+    "componentEdit": true,
+    "imageReplacement": true,
+    "reorder": true,
+    "duplicateDelete": true,
+    "uniqueIds": true,
+    "portableSize": true,
+    "hardLimitNoArtifact": true,
+    "sanitizer": true,
+    "offlineReopen": true,
+    "targetedContentChanges": true,
+    "runtimeClean": true
+  },
+  "interaction": {
+    "initialOrder": [
+      "company-cover",
+      "company-agenda",
+      "company-chapter",
+      "company-content-gradient",
+      "company-content-object",
+      "company-content-dark",
+      "company-closing-light",
+      "editor-text",
+      "editor-image"
+    ],
+    "orderAfterMove": [
+      "company-agenda",
+      "company-cover",
+      "company-chapter",
+      "company-content-gradient",
+      "company-content-object",
+      "company-content-dark",
+      "company-closing-light",
+      "editor-text",
+      "editor-image"
+    ],
+    "duplicateId": "company-agenda-copy-1",
+    "finalOrder": [
+      "company-agenda",
+      "company-cover",
+      "company-chapter",
+      "company-content-gradient",
+      "company-content-object",
+      "company-content-dark",
+      "company-closing-light",
+      "editor-text",
+      "editor-image"
+    ],
+    "changedContentSlides": [
+      "company-cover",
+      "editor-image",
+      "editor-text"
+    ]
+  },
+  "replacement": {
+    "optimized": true,
+    "originalBytes": 45364,
+    "outputBytes": 201660,
+    "width": 2560,
+    "height": 1440,
+    "mime": "image/jpeg"
+  },
+  "exportReport": {
+    "status": "pass",
+    "totalHtmlBytes": 3232922,
+    "embeddedAssetCount": 1,
+    "bytesByMime": {
+      "image/jpeg": 201660
+    },
+    "largestAsset": {
+      "slideId": "editor-image",
+      "componentId": "replaceable-image",
+      "mime": "image/jpeg",
+      "bytes": 201660
+    },
+    "warnings": [],
+    "limits": {
+      "warningBytes": 12582912,
+      "hardLimitBytes": 20971520
+    }
+  },
+  "reopened": {
+    "ready": true,
+    "slideCount": 9,
+    "title": "讓策略更快轉成行動",
+    "componentText": "已由直接元件編輯更新",
+    "imagePrefix": "data:image/jpeg;base64,",
+    "firstSlide": "company-agenda",
+    "size": {
+      "status": "pass",
+      "totalHtmlBytes": 3232933,
+      "embeddedAssetCount": 1,
+      "bytesByMime": {
+        "image/jpeg": 201660
+      },
+      "largestAsset": {
+        "slideId": "editor-image",
+        "componentId": "replaceable-image",
+        "mime": "image/jpeg",
+        "bytes": 201660
+      },
+      "warnings": [],
+      "limits": {
+        "warningBytes": 12582912,
+        "hardLimitBytes": 20971520
+      }
+    },
+    "externalUrls": []
+  },
+  "diagnostics": {
+    "visibleTraceback": null,
+    "console": [],
+    "pageErrors": [],
+    "networkFailures": [],
+    "httpErrors": []
+  },
+  "artifacts": {
+    "sourceDeck": "editor-functional-source.html",
+    "exportedDeck": "final-exported-deck.html",
+    "screenshot": "final-exported-deck.png"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-09-20T16:53:34.417Z",
+  "head": "4cd4540a71aa7f94cc60e4495155c572034a57a4",
+  "branch": "codex/edx-wp1-s7",
+  "files": {
+    "tools/edx-wp1-s7-browser-cases.mjs": "bea90c503ae5ca39c618fbf1a9c96d3e5bac4227b780009d1aaf0f2462d09a39",
+    "tests/edx-wp1-s7-cancel-diagnostic.test.mjs": "e9ff63e06a72684f7fffb8a45342c21fc90267d89b2e7ef9b1043a6d9cfd5412",
+    "evidence/edx-wp1-s7/worker-cancel-diagnostic.md": "db22f285dc15112286dec0f0985e0567e8355f1b13fd54812e0f9517754965cc",
+    "evidence/edx-wp1-s7/worker-cancel-diagnostic-targeted.log": "d0b9b43128d2f100cb9f23705b0fddba1c9c234c4c8ba67a084af345b1a1194c",
+    "evidence/edx-wp1-s7/worker-cancel-diagnostic-focused.log": "236d8c1db2f70974903fe52f06c3d8fb72cc42a1f1b907368be1d52006e8e2f9"
+  },
+  "inputReceiptSha256": "c22e1b674e189e815a7d4539d698ec81c8f29fc9afab459283d8f28d3c458e53",
+  "runtimeSha256": "75d4ecd2f35b056676183cad34212aab2a3fe954656944e12290f19cc7e1d3a6",
+  "runtimeUnchanged": true,
+  "protectedUntrackedUnchanged": true,
+  "status": "DIAGNOSTIC_FROZEN_NOT_PRODUCT_FIX"
+}

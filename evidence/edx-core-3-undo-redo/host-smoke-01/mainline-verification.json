@@ -1,0 +1,27 @@
+{
+  "processChecks": [
+    {
+      "pid": 77498,
+      "psExit": 1,
+      "output": ""
+    },
+    {
+      "pid": 77507,
+      "psExit": 1,
+      "output": ""
+    }
+  ],
+  "ownedRootExists": false,
+  "markerExists": false,
+  "sourceMismatches": [],
+  "protectedMismatches": [],
+  "zipBytes": 2329758,
+  "zipSHA": "862bb19f82b10fab9a244a1c334fed1f39b6edc1ad5c5ff95aebe3cc04daf290",
+  "aiCoreCandidateHEAD": "8e6094582547205db70f6dccce369d694f50154b",
+  "candidateStatus": "",
+  "harnessSHA": {
+    "host-smoke-01-observer.py": "8f80742d1caef857d176b95fed68f89da057b716a90c69cbcf8e39668ba601f9",
+    "host-smoke-01-test.py": "726e095b6eb0c15320a3f5dbd5441ded07dad775139628a815e94f3a0c3bd937",
+    "host-smoke-01-controller.py": "ee050429892f1abec2b04a9768e551cb45451de1e73d8e177b9594a03c936e52"
+  }
+}

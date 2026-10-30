@@ -1,0 +1,9 @@
+{
+  "final-evidence-verification.json": "b05b666dbaf11a25d597ca206f9a0bbd9aafc04757f97d2c1f84898c445c3d64",
+  "final-evidence-verify.py": "7f5dfae973f33f1e2f69c61b5c2050e11bbcfee64f08323268f9dd60d6ff9627",
+  "final-whole-card-addendum.md": "3a2bf89d049f9ef7201de1da4f08a02f0eed64c9409aed6dfab70ba8282d80c3",
+  "final-host04-recheck.log": "dd6b3d3bbdd492c8be68d5c838aca59428a3634b34dcfc9cae91cc21daa0b398",
+  "final-integrity.log": "df32c8e63ea49d8732f168755d4dab7829b87d540dc7e71a913dd873135fdd63",
+  "final-code-verdict.md": "b9b54ced3227a75b99bf2ee6ce39d877e26fdc71d323fceb6f944eadc508be08",
+  "final-closure-artifacts-sha256.json": "5f2a9d3788614e3066aa2026bb68b84245e033796c9b4e78f03c0444bf27c8bd"
+}

@@ -1,0 +1,25 @@
+{
+  "runs": [
+    {
+      "width": 1280,
+      "height": 720,
+      "records": 26,
+      "pixelCases": 14,
+      "pixelChecks": 705,
+      "excludedBoundarySamples": 79,
+      "sourceUnchanged": true,
+      "artifactsVerified": 26
+    },
+    {
+      "width": 1600,
+      "height": 900,
+      "records": 26,
+      "pixelCases": 14,
+      "pixelChecks": 710,
+      "excludedBoundarySamples": 74,
+      "sourceUnchanged": true,
+      "artifactsVerified": 26
+    }
+  ],
+  "scope": "fresh product screenshot pixels; PNG fixture only; edge exclusions retained"
+}

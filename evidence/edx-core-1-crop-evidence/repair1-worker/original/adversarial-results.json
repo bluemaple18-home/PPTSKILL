@@ -1,0 +1,81 @@
+[
+  {
+    "name": "F1_pagehide_persisted_loses_projection",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "before": "object-fit:fill;position:absolute;width:500px;height:333.33333333333337px;clip-path:inset(15% 30% 25% 20%);display:block;max-width:none;max-height:none;left:25px;top:-50px",
+      "after": "object-fit:contain",
+      "canonical": "active",
+      "pageshowHandlers": 0,
+      "deletionError": "delete-element image DOM 與 canonical 失配。"
+    }
+  },
+  {
+    "name": "F2_raw_patch_projection_failure_keeps_candidate_DOM",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "canonicalRestored": true,
+      "revisionRestored": true,
+      "originalImageDetached": true,
+      "liveStyle": "object-fit:contain;position:static;width:100%;height:100%;clip-path:none",
+      "liveLoadCallbacks": 0
+    }
+  },
+  {
+    "name": "F3_reset_rollback_drops_observer_and_load_lifecycle",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "canonicalRestored": true,
+      "styleRestored": true,
+      "activeObservers": 0,
+      "loadCallbacks": 0
+    }
+  },
+  {
+    "name": "F4_portable_noble_license_omitted",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "renderContainsHash": true,
+      "renderContainsNobleCopyright": false,
+      "exportContainsNobleCopyright": false
+    }
+  },
+  {
+    "name": "raw_pending_and_cover_matrix_Node",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "checks": 7
+    }
+  },
+  {
+    "name": "raw_pending_and_cover_matrix_portable",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "checks": 7
+    }
+  },
+  {
+    "name": "legacy_no_crop_styles_and_listeners_unchanged",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "loadCallbacks": 0,
+      "errorCallbacks": 0,
+      "position": ""
+    }
+  },
+  {
+    "name": "tuple_order_utf8_and_geometry_independence",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "hashCalls": 1,
+      "stateChecks": 200
+    }
+  },
+  {
+    "name": "busy_API_asset_operation_blocks_dialog_open",
+    "status": "REPRODUCED_OR_CHECKED",
+    "detail": {
+      "blocked": true
+    }
+  }
+]

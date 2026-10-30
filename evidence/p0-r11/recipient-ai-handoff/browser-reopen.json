@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0",
+  "status": "pass",
+  "checks": {
+    "runtimeReady": true,
+    "slideCountPreserved": true,
+    "boundedPatchVisible": true,
+    "offlineNoExternalAssets": true,
+    "runtimeClean": true
+  },
+  "state": {
+    "ready": true,
+    "slideCount": 9,
+    "subtitle": "將分散觀察整理成三項明確結論，並為每項指定下一步行動",
+    "externalUrls": []
+  },
+  "diagnostics": {
+    "console": [],
+    "pageErrors": [],
+    "networkFailures": [],
+    "httpErrors": []
+  },
+  "listenersRegisteredBeforeNavigation": true,
+  "screenshot": "recipient-patched-deck.png"
+}

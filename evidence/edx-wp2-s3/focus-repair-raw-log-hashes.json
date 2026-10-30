@@ -1,0 +1,14 @@
+{
+  "focus-repair-build.log": "469b2d54ec4c6611b1db7ddeac76cbe2302a6e4c15d55b384c585cf1a8adcae2",
+  "focus-repair-nonbrowser.log": "f5ac58e4a61d40c548cef2e4c25c392983dc5bed79a8806cbeb47da28334468f",
+  "focus-repair-probe.log": "f159202eb1701877a56e12920b3901c4c013c231056887952b32bd6f87af936e",
+  "focus-repair-green.log": "b1e6bb9b02bfe2df45f736b40a9fc8844b4ab63d69d03ccfdbc53f797ef56a4a",
+  "focus-repair-red.log": "a2be0a77fd2ee379a1797b4c3950db0fbfb21a716144b2b328968898c662b4d2",
+  "host-focus-repair/styleCopy.log": "e108a66f41778a5606b906e920bb29483dceaeb9e6f3baa02718d8677728d32c",
+  "host-focus-repair/browser-close.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "host-focus-repair/pgq.log": "8edeef9f8ec625044b43cdacba6a68b0c640f07b58584b0e8c5826255121fe12",
+  "host-focus-repair/lifecycle/evidence/stderr.log": "b7c04752ee59cfa133846813a44812ed310a7f71cc15889dbcb1d6155746b5ef",
+  "host-focus-repair/lifecycle/evidence/stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "host-focus-repair/launcher.stdout": "77f2d2625f4a8a75c03e1d523f3a7a9c26a6b7ecc1275e9fdb7a4d62b85fb370",
+  "host-focus-repair/launcher.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

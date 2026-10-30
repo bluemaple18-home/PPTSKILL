@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "1.0",
+  "sources": {
+    "package.json": "802b8ff673be2de9be2825ff9aa42cbd9778ae489d0a11e29250513d0026649d",
+    "pnpm-lock.yaml": "6bcf9a416d84223be4b5c62e49d79e62e1256a066dbe1f51b12486d4077c57ec",
+    "runtime/component-interaction.js": "5221419b7c7f788ac2424db05933acc11859bc212e9e6c92bc29cf1b0d7b59ad",
+    "runtime/deck-editor.js": "3202c8080e29d4f158caa146278c530e6ed676b5e34355311e2550d77ff04cb1",
+    "runtime/full-deck-renderer.js": "553172ac3319907522b2dc7f900c08491635f21447edbbe0a798704aff4d3c29",
+    "runtime/multi-selection.js": "2238b4a7ff0827992da8e2ec5084f14b6b56238c512cecfe00bcf4d2bb080755",
+    "runtime/selecto-vendor.js": "3639952638cb60afd09d26f27fd721fe1faa006d7c65956c317efde270a7184e",
+    "runtime/vendor/selecto-1.26.3.iife.js": "dd4d7afb863b1e73803325f16c9e49706ad8fd2325f245d8ca3a39bcf925e2cf",
+    "runtime/vendor/selecto-LICENSE.md": "6c7a611e1e774b3f63467f29d303a6832ef19b5c5fc05367c0925df0f1796f60",
+    "runtime/vendor/selecto-metafile.json": "3172197d5be7cb4bf4dff635cc19993c39761f79b2cf64c5f51f67a7a28fdde0",
+    "runtime/vendor/selecto-vendor.json": "08dff33e85ad21f62ba3287e17f642e7470466db7be59f11638cbe433f08ea74",
+    "tests/edx-wp1-s4-interaction.test.mjs": "72e63c44bcd0eaf2a5da0b51d155bd32f6dd4a88025e58d413db08d27e91c5e9",
+    "tests/edx-wp1-s4-managed-browser-attach.test.mjs": "5026eade523a54fc56ff1a8bccfe0c6643a100603559640750a7d46811f74a5d",
+    "tests/edx-wp1-s8-mounted-selection.test.mjs": "d44c08f2df000423b548af5984693ee62ea18ee66cd4b6f876a17a50ce62121a",
+    "tests/edx-wp1-s8-selection.test.mjs": "a6722c70a331f8694cef3b8dded004f3eb23591b7a95ca6387e2936679f7d011",
+    "tests/edx-wp1-s8-vendor.test.mjs": "5aa82b3051e7427617116f000d3220f66e6e0f3b085d24d171615b8f1a95a6a8",
+    "tools/build-selecto-vendor.mjs": "edb700a87d0ca43ff490479db6eed4e4188e806f1e794c273aae4a1108f194e8",
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "a2124c5a72482876ab2ff73b86f885f37f693325004b9000dc2e81eef34d27b5",
+    "tools/edx-wp1-s4-perf-mounted.mjs": "e544d88be0647aa3f4fecec577d4ac975e8b1e40a0ff9138eefb72b720b75ee1",
+    "tools/edx-wp1-s8-browser-cases.mjs": "e4161fd6fb6a4192d6728fbd81211fc8ec26094f6092e737a0820979874c2b01"
+  },
+  "protected": {
+    ".DS_Store": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a",
+    "CLAUDE.md": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530",
+    "HANDOFF-20260914-P0-R11-R1-S3.md": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6",
+    "HANDOFF-20260914-PGQ-WP1.md": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+  },
+  "protectedMatchesS7Baseline": true,
+  "distribution": {
+    "path": "dist/PPTSKILL-0.1.0.zip",
+    "bytes": 2280120,
+    "sha256": "2334e9b2337c718f1cdaebd12169ce629a291c670a9af506dcd8b0b859b123e0",
+    "warningThresholdBytes": 12582912,
+    "hardFailBytes": 20971520,
+    "belowWarning": true,
+    "belowHardFail": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "baseCommit": "fd626e8875f9727fde8852da4e4e46eadf1208ae",
+  "branch": "codex/edx-core-3-undo-redo",
+  "sourceSHA256": {
+    "runtime/deck-editor.js": "cfeb369886a46ddf13325a2512390535d62dadbd210830f7dec0ed5aa4e619a3",
+    "runtime/component-interaction.js": "7f75a2032ea0b6fcfa2458ffd913110c16141e7d262a345acaa379a15384e5f9",
+    "tests/edx-core-3-transaction-boundary.test.mjs": "246f9c4ecd36c5266ead9596f14c181c93f0c74803ef4280ad38adb4bb383f4e",
+    "tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": "2cc9ca774c4dab5f18b59e0af7c915985df0edfba09c752331584bfbf3e517de",
+    "tests/edx-wp2-s10-insert-image-ui.test.mjs": "17c514a9fbf60464d411988d5872cbb29349b55765ae4f59f95404460763a611",
+    "tests/edx-wp2-s9-insert-image-file.test.mjs": "ae591cf762cdc598de1a1c51f07a161094902c822cb1543ff5b93a3197cddaf7"
+  },
+  "protectedUnchanged": true,
+  "historicalUnchanged": {
+    "evidence/edx-core-3-undo-redo/transaction-boundary-mainline-nonbrowser.tap.gz": "15354dcf8b02ede94c22a7c37886903c4e0b6bb9d4ff946e9b185bddd8447d4a",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-mainline-nonbrowser.json": "c6c84807391d3f9bc7eafac27636231d316288cb328677c12b5ebbad8a65c761",
+    "evidence/edx-core-3-undo-redo/transaction-boundary-final.log": "31fe51c349caa9d7b52ff1f4f7d0835c2b274edb127b06f386d32171064cc847"
+  },
+  "diffCheck": "",
+  "scope": "兩個 runtime、直接 regression tests 與自身 evidence；不啟 browser、不跑四個 PGQ、不改 ZIP、不 merge/push/deploy"
+}

@@ -1,0 +1,21 @@
+{
+  "materialReviewed": true,
+  "knownDimensions": [
+    "desiredChange",
+    "audienceResistance",
+    "claimEvidence",
+    "cta"
+  ],
+  "asked": [
+    {
+      "dimension": "pressureTest",
+      "question": "如果觀眾只記得一句話，哪一句最值得保留，而且最容易被挑戰？",
+      "suggestion": "建議答案：用一句主張回答，並同時指出它最薄弱的假設。"
+    }
+  ],
+  "answers": {
+    "pressureTest": "如果品牌一致性無法跨頁與跨 AI 保持，整套工作流就不值得採用。"
+  },
+  "oneQuestionAtATime": true,
+  "sourcePolicy": "user-provided-only"
+}

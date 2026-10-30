@@ -1,0 +1,40 @@
+{
+  "name": "presentation-skill",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build:themes": "node tools/build-theme-previews.mjs",
+    "build:styles": "node tools/build-style-candidates.mjs",
+    "build:deck": "node tools/build-full-deck.mjs",
+    "build:motion-vendor": "node tools/build-number-flow-vendor.mjs",
+    "build:background-vendor": "node tools/build-vanta-vendor.mjs",
+    "build:dist": "node tools/build-distribution.mjs",
+    "probe:dist": "node tools/distribution-host-probe.mjs",
+    "qa:assets": "node tools/p1-r10-browser-acceptance.mjs",
+    "profile": "node tools/profile.mjs",
+    "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",
+    "test": "node --test tests/*.test.mjs",
+    "build:interaction-vendor": "node tools/build-moveable-vendor.mjs",
+    "build:selection-vendor": "node tools/build-selecto-vendor.mjs"
+  },
+  "dependencies": {
+    "moveable": "0.53.0",
+    "number-flow": "0.6.2",
+    "selecto": "1.26.3",
+    "three": "0.134.0",
+    "vanta": "0.5.24"
+  },
+  "devDependencies": {
+    "@noble/hashes": "2.0.1",
+    "esbuild": "0.28.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

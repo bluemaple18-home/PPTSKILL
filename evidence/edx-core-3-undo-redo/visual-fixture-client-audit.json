@@ -1,0 +1,29 @@
+{
+  "scope": "固定Core3 fixture修復之first-party callchain；不新增程序權限，非本輪host execution證據",
+  "files": {
+    "tools/edx-wp1-s4-browser-acceptance.mjs": "25d23a56745f6533f4d95a089592b487247d140705aa27ee7646afe4325d0c5b",
+    "tools/browser-geometry-qa.mjs": "808b8ad96188703e9c5f5fff948b0cd0571b999a41620ba7855f0ed8725aa1a1",
+    "tools/build-distribution.mjs": "cf79ed76283cd55085447061d0eff9da9ba59372532e8caa4d78dc1467ae7296",
+    "runtime/representative-qa-evidence.js": "1b81359474096a256a4b9ada664eda7820415b1f9717c6b5f0f7f98cade5eae2",
+    "runtime/workflow-cli.mjs": "f3fe6e8d4983da26e34a60762c4c2ae2dcca0c491e7aec5f6519759846b47028",
+    "distribution/install.mjs": "d81373d567c531d4511b091320caf15b46a27df0acd3775350d350a30fb2aae9",
+    "distribution/lib/lifecycle.mjs": "78bfa4815a6c585288859e18a7c5a9d2046e1c25252bb23421404c03b2a4989a",
+    "tests/pgq-wp4-s3-content-integrity.test.mjs": "e943ef83a0bb5fa3a1ab42fe411f97674e73a76a5b22a369d5203be6bb9f8d7e",
+    "tests/pgq-wp4-s3-sample-approval.test.mjs": "9199b90d6e54913ed0a30a079557bbf925d0e76670ad01f7750a9d1cf339c1b1",
+    "tests/pgq-wp4-s4-full-deck-qa.test.mjs": "44e99b3cac9ca200997204aad03c63418e1e5e540d818912bc085d3d2858b450",
+    "tests/pgq-wp4-s4-required-visibility.test.mjs": "d1aeb4b4760a8b8aec4f340514ab497e3d0b7651dc8fb5f551d40b86e548f6df",
+    "tools/edx-core-3-fixture-visual-gate.mjs": "bb9d1f0a3dfc7d102212db366803ee65af9ae02ab9efd6c45917529f94f6a909"
+  },
+  "observations": [
+    "四PGQ及trusted producer使用execFile，查閱的呼叫點未指定detached/setsid或替換掉process.env。",
+    "buildDistribution只對zip的env擴充TZ，保留managed port與TMP環境；unzip/install/CLI透過execFile繼承。",
+    "browser-geometry-qa在PPTSKILL_DEVTOOLS_ACTIVE_PORT存在時不spawnChrome；mkdtemp仍在繼承TMPDIR內。",
+    "undo-redo harness只attach受管browser，關閉自己target；未spawn瀏覽器。",
+    "新gate只讀DOM bounds/CSS可見性；harness暫態RED只改A/B top，finally恢復；無新增程序呼叫。"
+  ],
+  "limits": [
+    "這是固定first-party命令的靜態證據，非hostile containment；不涵蓋任意client主動setsid或detached。",
+    "未啟Chrome/browser/PGQ。"
+  ],
+  "decision": "候選待Mainline兩審與正式雙viewport RED/GREEN；離線PASS不代表host驗收"
+}

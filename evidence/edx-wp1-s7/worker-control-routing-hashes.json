@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-09-20T17:12:33.234Z",
+  "head": "4cd4540a71aa7f94cc60e4495155c572034a57a4",
+  "branch": "codex/edx-wp1-s7",
+  "sources": {
+    "runtime/component-interaction.js": "5760227c81bda1964621f94f01dda95995d22a6a872a519c2fd22eda8b0266b2",
+    "tools/edx-wp1-s7-browser-cases.mjs": "84680726ab1283fae7f82fc5d3eb55d70446f9184a38af38b057e208332801f6",
+    "tests/edx-wp1-s7-control-routing.test.mjs": "05dad47a12e8cb8e2c742b77942ca06956b71366099b993241fe993adbe6df2f",
+    "tests/edx-wp1-s7-cancel-diagnostic.test.mjs": "f1b2cd087f320cd9e37c9936f72690f6e846ff76c681af896786f4377e323c21"
+  },
+  "evidence": {
+    "evidence/edx-wp1-s7/worker-control-routing-fix.md": "6a5009c68b1262bc91e1c6c706a127a7d21326c0d1db5446ac34e7d73b418a79",
+    "evidence/edx-wp1-s7/worker-control-routing-red.log": "3de6a4b59dc3c6211b8f0d1aa7f090db34e57bd600ef5bb84b6278a7c0f262e5",
+    "evidence/edx-wp1-s7/worker-control-routing-green-initial.log": "1411743a9a072d18d5deab3b50f3a5e1fdd30d2209702b7b4e8b4271631ac142",
+    "evidence/edx-wp1-s7/worker-control-routing-focused-initial.log": "b831f883e9dbf42c0b25443a571dcb578e882bf3be301cc1976a2c69d2ab8c9c",
+    "evidence/edx-wp1-s7/worker-control-routing-targeted.log": "9f47ae6dd5327bbc6035d4cdc8b8b6e257ff4247a4039042f9e10e2d033d0e53",
+    "evidence/edx-wp1-s7/worker-control-routing-focused.log": "9b6be5e37c8dafc44c5d8a4b27bda19a55e80e6b2b51ee6ba1a55095e71d9de5"
+  },
+  "inputAcceptanceSha256": "04654bc16df07ab5c4c112dc1130ee8976d1fc8e3c37773dc795799737c8f693",
+  "mainlineHarnessBeforeSha256": "5e79573c5ddef464b833215489daaf8b95da7947c1c4ddb867a035691f5a1b49",
+  "mainlineDiagnosticPreserved": true,
+  "vendorUnchanged": true,
+  "protectedUntrackedUnchanged": true,
+  "status": "IMPLEMENTATION_FROZEN_PENDING_FRESH_BROWSER"
+}

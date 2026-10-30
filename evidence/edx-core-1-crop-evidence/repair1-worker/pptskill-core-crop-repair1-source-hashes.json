@@ -1,0 +1,32 @@
+[
+  {
+    "path": "runtime/crop-hash-vendor.js",
+    "bytes": 1154,
+    "sha256": "36ebd63ba38893a8e9bb075a43db36db72e3042e649dd5960a997dfed2bbea8f"
+  },
+  {
+    "path": "runtime/deck-editor.js",
+    "bytes": 104309,
+    "sha256": "b82cf245a773e4c9fb5e5fa2e06cc47304359c180c6b73b979390ea5e59fec81"
+  },
+  {
+    "path": "runtime/image-crop.js",
+    "bytes": 22497,
+    "sha256": "68cb7dca1fb4cfdee9a2f14cbb03ad0559ab036f87ac6d7df5d8183d80bf293a"
+  },
+  {
+    "path": "tests/edx-core-crop-ui.test.mjs",
+    "bytes": 10712,
+    "sha256": "9edae6ea0a56d6a0ece0b206b3d32091410332d75394424deaa2943dcd993403"
+  },
+  {
+    "path": "tests/edx-core-crop.test.mjs",
+    "bytes": 19644,
+    "sha256": "304b32400029d3bfbf7e932964d6a2d13f0990bbb63bdfa7f2a6e8ddcd83871e"
+  },
+  {
+    "path": "tools/edx-core-crop-browser-cases.mjs",
+    "bytes": 22550,
+    "sha256": "626c1df364a0daf287b8a28185bb41b7ab14df9684446c1b6e8d2e56b0cb85b6"
+  }
+]

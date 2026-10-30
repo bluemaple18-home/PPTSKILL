@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "entries": {
+    "PPTSKILL/core/runtime/deck-editor.js": "BYTE_MATCH",
+    "PPTSKILL/core/runtime/component-deletion.js": "BYTE_MATCH"
+  },
+  "bytes": 2301572,
+  "sha256": "5ccedbc43af3f23f9582ed989c635479be10065752d231fefa4bf2104ff3ec74",
+  "deltaBytes": 2842,
+  "protectedMatches": 4
+}

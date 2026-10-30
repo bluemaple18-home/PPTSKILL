@@ -1,0 +1,3 @@
+host_runtime=true
+CODEX_SANDBOX=None
+capacity=HostCapacity(total_bytes=494384795648, physical_available_bytes=74362286080, admission_available_bytes=85141513710, source='macos_foundation_important_usage')

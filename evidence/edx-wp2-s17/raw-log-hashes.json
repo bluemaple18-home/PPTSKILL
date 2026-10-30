@@ -1,0 +1,14 @@
+{
+  "worker-green.log": "b1a656a0124fc0695d97ff31c975bb7ce40d345ddda18e47537583ad05297003",
+  "worker-scoped.log": "8e991909395f5f016565f0cdb8d0f1c8ea29d8a0b529cc360f1947c071ea1810",
+  "scoped.tap": "ea1944a76bb1c7b64de549b638137c978d96b6aba588d2a6bc73618b4b1caa07",
+  "nonbrowser.tap": "891087330b7cf091ca2f1037fc515bcff9ccd96aff237e2653fb172c1f78d792",
+  "scoped-pointer-repair.tap": "4eea446fac3ea541daf3132ea8b8b5d8a95268acb9ea95645c4ded4f6afe8156",
+  "nonbrowser-pointer-repair.tap": "98aa81911b3cb7b4d2b989709ac4f91740904b40404282d10c1da9ec80024e47",
+  "host-acceptance/textDoubleClick.log": "89f162817163d57f8da0939fb409d903f522c59a01261a4517058e86ec25a9be",
+  "host-acceptance/controller-receipt.json": "86864bae7f634395c8d69d1f5750b696b3d37e61c15bdc35fe52edfb03c06220",
+  "host-pointer-repair/textDoubleClick.log": "339965d9ddca294551997a6dea2feabc44470f31e8e44028a4c01428cd64b883",
+  "host-pointer-repair/pgq.log": "e510da6b777314db560aca82cf01687beb0bb21fb90ba5a618beb0caf9ade22f",
+  "host-pointer-repair/controller-receipt.json": "b3faf7c0b87ad095fe8910c9cc2858c301c4102f347efeb5640890e999ed5573",
+  "worker-red.log.gz": "444bedcc4f46b31c3a63e6114fda8670fce8cc600b7190c33141c166a03f3869"
+}

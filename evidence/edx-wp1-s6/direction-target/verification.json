@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "observations": 36,
+  "proxyCases": 12,
+  "actualDelta": [
+    10,
+    10
+  ],
+  "viewportPairsMatch": 18,
+  "presentationUnchanged": true,
+  "proxyTransformInvariant": true,
+  "directionOnlyTransformInvariant": false,
+  "resizeSemantics": "固定左上角，right/bottom落格；不是width/height為8倍數",
+  "limits": "單一off-grid box、正向單次事件、static transform；非production整合"
+}

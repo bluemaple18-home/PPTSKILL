@@ -1,0 +1,80 @@
+[
+  {
+    "name": "F1_pagehide_persisted_loses_projection",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "before": "object-fit:fill;position:absolute;width:500px;height:333.33333333333337px;clip-path:inset(15% 30% 25% 20%);display:block;max-width:none;max-height:none;left:25px;top:-50px",
+      "after": "object-fit:fill;position:absolute;width:500px;height:333.33333333333337px;clip-path:inset(15% 30% 25% 20%);display:block;max-width:none;max-height:none;left:25px;top:-50px",
+      "canonical": "active",
+      "pageshowHandlers": 1
+    }
+  },
+  {
+    "name": "F2_raw_patch_projection_failure_keeps_candidate_DOM",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "canonicalRestored": true,
+      "revisionRestored": true,
+      "originalImageDetached": false,
+      "liveStyle": "object-fit:fill;position:absolute;width:500px;height:333.33333333333337px;clip-path:inset(15% 30% 25% 20%);display:block;max-width:none;max-height:none;left:25px;top:-50px",
+      "liveLoadCallbacks": 1
+    }
+  },
+  {
+    "name": "F3_reset_rollback_drops_observer_and_load_lifecycle",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "canonicalRestored": true,
+      "styleRestored": true,
+      "activeObservers": 1,
+      "loadCallbacks": 1
+    }
+  },
+  {
+    "name": "F4_portable_noble_license_omitted",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "renderContainsHash": true,
+      "renderContainsNobleCopyright": true,
+      "exportContainsNobleCopyright": true
+    }
+  },
+  {
+    "name": "raw_pending_and_cover_matrix_Node",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "checks": 7
+    }
+  },
+  {
+    "name": "raw_pending_and_cover_matrix_portable",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "checks": 7
+    }
+  },
+  {
+    "name": "legacy_no_crop_styles_and_listeners_unchanged",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "loadCallbacks": 0,
+      "errorCallbacks": 0,
+      "position": ""
+    }
+  },
+  {
+    "name": "tuple_order_utf8_and_geometry_independence",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "hashCalls": 1,
+      "stateChecks": 200
+    }
+  },
+  {
+    "name": "busy_API_asset_operation_blocks_dialog_open",
+    "status": "FIX_VERIFIED_OR_CHECKED",
+    "detail": {
+      "blocked": true
+    }
+  }
+]

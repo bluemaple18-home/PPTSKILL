@@ -1,0 +1,17 @@
+tests/edx-core-crop-fixture.test.mjs
+tests/edx-core-crop-ui.test.mjs
+tests/edx-core-crop.test.mjs
+tests/edx-wp2-s4-replace-asset.test.mjs
+tests/edx-wp1-s2-stable-identity-operation-path.test.mjs
+tests/edx-wp1-s3-bounded-geometry.test.mjs
+tests/edx-wp2-s6-selected-image-ui.test.mjs
+tests/edx-wp2-s7-selected-image-fit.test.mjs
+tests/edx-wp2-s15-insert-text-ui.test.mjs
+tests/edx-wp2-s16-edit-text-ui.test.mjs
+tests/edx-wp2-s17-text-double-click.test.mjs
+tests/edx-wp2-s18-delete-element.test.mjs
+tests/edx-wp1-s4-perf.test.mjs
+tests/edx-wp1-s1-export-cleanup.test.mjs
+tests/p0-r1-deck-spec.test.mjs
+tests/p0-r5-full-deck-renderer.test.mjs
+tests/p0-r7-editor-export.test.mjs

@@ -1,0 +1,123 @@
+[
+  {
+    "source": "/private/tmp/pptskill-s18-worker-red.log",
+    "archive": "worker-red.log.gz",
+    "rawBytes": 61730,
+    "rawSha256": "c9abcc7249fd7717290b85d14a60fa7bf042dbb23d6a086aff5c059c9af63caf",
+    "archiveSha256": "7d92cf569ccd0891a0a3efb9413de3849c473b2fa01c9efc6df62f22dba92871",
+    "summary": [
+      "ℹ tests 42",
+      "ℹ pass 2",
+      "ℹ fail 40",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-green.log",
+    "archive": "worker-green.log.gz",
+    "rawBytes": 3813,
+    "rawSha256": "14ee0ddba710f6d4e59527aaa27d126734d4e8d65f33380b09d3a06bc16fc5b7",
+    "archiveSha256": "f77ddb264824482af2a7d24c0ea4f42fff27994951120fb404af6e9fa7b2bd3a",
+    "summary": [
+      "ℹ tests 42",
+      "ℹ pass 42",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-green-02.log",
+    "archive": "worker-green-02.log.gz",
+    "rawBytes": 8543,
+    "rawSha256": "2100b021b93617ebce9a48cbc9b564361f22a387335e4d6a5d333ed1cfb2d241",
+    "archiveSha256": "e3ba71a1cef59bf2b30f7483de839433bea04adda90c663d57dc38fcf8166ea4",
+    "summary": [
+      "ℹ tests 61",
+      "ℹ pass 60",
+      "ℹ fail 1",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-green-03.log",
+    "archive": "worker-green-03.log.gz",
+    "rawBytes": 6608,
+    "rawSha256": "d215cf53909d0d4f076028978070a9ccc42e1d5ff8ef5c2bfafddb915ca8dbaf",
+    "archiveSha256": "dfb97851681bd16e02a1787a2e65f2570a1c603c4421d9eb65aa4afeeb38c216",
+    "summary": [
+      "ℹ tests 71",
+      "ℹ pass 71",
+      "ℹ fail 0",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-reentry-red.log",
+    "archive": "worker-reentry-red.log.gz",
+    "rawBytes": 10435,
+    "rawSha256": "fb7ce634fb56df693f3541ce78981a5feb8d44d062a3bf5df2cefaf69eef51b7",
+    "archiveSha256": "ba4e9299797601593fb2fe22306d75b439236e77af294671a93f92786f85f6cb",
+    "summary": [
+      "ℹ tests 8",
+      "ℹ pass 0",
+      "ℹ fail 8",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-reentry-red-02.log",
+    "archive": "worker-reentry-red-02.log.gz",
+    "rawBytes": 13067,
+    "rawSha256": "3a4e3ea1c5a4b3a6f20dde84a6595791c591a7f38d0cd5ffe22593f058414824",
+    "archiveSha256": "8a5d557631d668d3c995610645ad6011e711770daa38180f6d765b623363201a",
+    "summary": [
+      "ℹ tests 10",
+      "ℹ pass 0",
+      "ℹ fail 10",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-scoped.log",
+    "archive": "worker-scoped.log.gz",
+    "rawBytes": 59913,
+    "rawSha256": "314f5ea2b9a0000c184dc1821bae9e9a93c77ca81f96620128f621067374a4bd",
+    "archiveSha256": "bf587f021f5cef44b995cd1ee1bb5fbe16a37ea8ec8323db0fdd62b6bf05a031",
+    "summary": [
+      "ℹ tests 449",
+      "ℹ pass 447",
+      "ℹ fail 2",
+      "ℹ cancelled 0",
+      "ℹ skipped 0",
+      "ℹ todo 0"
+    ],
+    "roundTripByteMatch": true
+  },
+  {
+    "source": "/private/tmp/pptskill-s18-worker-static.log",
+    "archive": "worker-static.log.gz",
+    "rawBytes": 1431,
+    "rawSha256": "c11ef66a96a618b90c85a842ab8a7f05bbc72ed080798abb5a510f46d3b4c2ed",
+    "archiveSha256": "5bf3c2c9dc17227d30e3f07a2fee34dca7a21476a8124b8b375a6e2417da19c3",
+    "summary": [],
+    "roundTripByteMatch": true
+  }
+]

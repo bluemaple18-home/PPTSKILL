@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "synthetic": true,
+  "measuredFixtureFiles": 256,
+  "meanScanMs": {
+    "False": 0.564144435338676,
+    "True": 0.7044861325994134
+  },
+  "exceptionCausePreserved": true,
+  "errorMessage": "NO_GO: resource observation unknown (I/O failure)",
+  "observed": [
+    {
+      "type": "OSError",
+      "errno": 5,
+      "strerror": "synthetic-review",
+      "filename": "owned-entry",
+      "filename2": null,
+      "message": "[Errno 5] synthetic-review: 'owned-entry'",
+      "function": "visit",
+      "line": 1092,
+      "source": "with os.scandir(fd) as children:",
+      "relativeDirectory": [],
+      "entryName": null
+    }
+  ],
+  "scope": "不是browser workload、不證明production overhead或歷史I/O根因"
+}

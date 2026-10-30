@@ -1,0 +1,151 @@
+{
+  "head": "2db6185d13a6713700d0186758b1261ff23b9d85",
+  "base": "b364cd8923dcb6382e7a60432c7849dc5071af30",
+  "runtime": "2db6185d13a6713700d0186758b1261ff23b9d85",
+  "sections": [
+    "sources",
+    "protected",
+    "distribution",
+    "candidate"
+  ],
+  "checks": {
+    "sources:package.json": {
+      "match": true,
+      "actual": "f963a92c2b9bd0d6d2814b7c87ceb02b7eead132c823069e2b7ce028968c319e"
+    },
+    "sources:pnpm-lock.yaml": {
+      "match": true,
+      "actual": "91460bd9d63fa91b27c5b0716217e9e08d3281a07ee92f97808f0ec4a420e850"
+    },
+    "sources:runtime/crop-hash-vendor.js": {
+      "match": true,
+      "actual": "36ebd63ba38893a8e9bb075a43db36db72e3042e649dd5960a997dfed2bbea8f"
+    },
+    "sources:runtime/deck-editor.js": {
+      "match": true,
+      "actual": "b82cf245a773e4c9fb5e5fa2e06cc47304359c180c6b73b979390ea5e59fec81"
+    },
+    "sources:runtime/deck-spec.js": {
+      "match": true,
+      "actual": "f0ad57f6eb830a2cdbc7c46991310791d0769f707aa16efcda0d486c0ed89cf4"
+    },
+    "sources:runtime/full-deck-renderer.js": {
+      "match": true,
+      "actual": "4a521dafade5f44b5e5ae38f536eda65b39a19fd14a9b50e63546c104ffa1b44"
+    },
+    "sources:runtime/image-crop.js": {
+      "match": true,
+      "actual": "68cb7dca1fb4cfdee9a2f14cbb03ad0559ab036f87ac6d7df5d8183d80bf293a"
+    },
+    "sources:runtime/vendor/crop-hash-2.0.1.iife.js": {
+      "match": true,
+      "actual": "851cf8fec13faa9969460cea2d0e1f3dba1caa06f5c9cac92dbc21e59aa6e963"
+    },
+    "sources:runtime/vendor/crop-hash-LICENSE.md": {
+      "match": true,
+      "actual": "4f221aee6e072336700c408c68ab3b96a3fc09f6aebe6f48f1bd99e5ef13faec"
+    },
+    "sources:runtime/vendor/crop-hash-vendor.json": {
+      "match": true,
+      "actual": "efca60c5986f39cd4719e912ccbada871ffc2acf96e24082c1245107fbfadc7a"
+    },
+    "sources:schemas/deck-spec.schema.json": {
+      "match": true,
+      "actual": "c999e0a8e827339290a1c26e7cdf6dea1d566e10e28ea97102e35e16b53311a1"
+    },
+    "sources:tests/edx-core-crop-fixture.test.mjs": {
+      "match": true,
+      "actual": "60d2a539c45cc3a5763d213cc471d97ab0dc33217c7ed325a15c7a9aeda560a9"
+    },
+    "sources:tests/edx-core-crop-ui.test.mjs": {
+      "match": true,
+      "actual": "9edae6ea0a56d6a0ece0b206b3d32091410332d75394424deaa2943dcd993403"
+    },
+    "sources:tests/edx-core-crop.test.mjs": {
+      "match": true,
+      "actual": "304b32400029d3bfbf7e932964d6a2d13f0990bbb63bdfa7f2a6e8ddcd83871e"
+    },
+    "sources:tests/edx-wp1-s2-stable-identity-operation-path.test.mjs": {
+      "match": true,
+      "actual": "27a2d2fb1965335da2bc07e7b8770179c3557ad485063c96c44ece3f07a872f1"
+    },
+    "sources:tests/edx-wp1-s3-bounded-geometry.test.mjs": {
+      "match": true,
+      "actual": "2f5c726273c084e610b7c0ae2d57cdcbfa1ff92d88e37b17e433ed9aedea0820"
+    },
+    "sources:tools/build-crop-hash-vendor.mjs": {
+      "match": true,
+      "actual": "9f2e23421973e2be66d663ed1c2c42becbbc2bc7f67fd691950c194086ac7f57"
+    },
+    "sources:tools/edx-core-crop-browser-cases.mjs": {
+      "match": true,
+      "actual": "626c1df364a0daf287b8a28185bb41b7ab14df9684446c1b6e8d2e56b0cb85b6"
+    },
+    "sources:tools/edx-wp1-s4-browser-acceptance.mjs": {
+      "match": true,
+      "actual": "723ad3426dc01f8b3111d4bf7929e730812e3d2cbccea500363693a605f0bcb7"
+    },
+    "sources:tools/edx-wp1-s4-perf-mounted.mjs": {
+      "match": true,
+      "actual": "3b933c0264639a5f8d238b619d77832debe6e39e33c450a95277636305a403c0"
+    },
+    "protected:.DS_Store": {
+      "match": true,
+      "actual": "280f73c16ba83951acb28abcb9d4214a480a08f3e523ade73bedddcdc2106c0a"
+    },
+    "protected:CLAUDE.md": {
+      "match": true,
+      "actual": "4ff4e3d1825998f32fcf203152b33e0a8e2e670c505b015260740c976bf47530"
+    },
+    "protected:HANDOFF-20260914-P0-R11-R1-S3.md": {
+      "match": true,
+      "actual": "f749dde2b7f0794842906c515ee3b572f4fd6af82784980a71c8bfb4d9e2f2a6"
+    },
+    "protected:HANDOFF-20260914-PGQ-WP1.md": {
+      "match": true,
+      "actual": "e81ad796e21e1a4de78bdd6229bd748d46122b454304129ff7d9c0bf2e1c98a4"
+    }
+  },
+  "zip": {
+    "bytes": 2316286,
+    "sha256": "82eb4f571ba4283572bafa404dda6888d90dae292ccb06ac536eafe3fcba3880",
+    "matchesReceipt": true,
+    "sidecar": "82eb4f571ba4283572bafa404dda6888d90dae292ccb06ac536eafe3fcba3880  PPTSKILL-0.1.0.zip",
+    "sameAsRuntimeCommit": true
+  },
+  "afterRuntimeChanges": [
+    "dist/PPTSKILL-0.1.0.zip",
+    "dist/PPTSKILL-0.1.0.zip.sha256",
+    "runtime/crop-hash-vendor.js",
+    "runtime/deck-editor.js",
+    "runtime/image-crop.js",
+    "tests/edx-core-crop-ui.test.mjs",
+    "tests/edx-core-crop.test.mjs",
+    "tools/edx-core-crop-browser-cases.mjs"
+  ],
+  "candidateDiskMismatches": [],
+  "vendor": {
+    "pkgroot": "../.tools/pptskill-crop-hash/node_modules/@noble/hashes",
+    "inputs": [
+      {
+        "path": "_md.js",
+        "match": true
+      },
+      {
+        "path": "_u64.js",
+        "match": true
+      },
+      {
+        "path": "sha2.js",
+        "match": true
+      },
+      {
+        "path": "utils.js",
+        "match": true
+      }
+    ],
+    "bundleMatches": true,
+    "licenseMatches": true,
+    "package": "2.0.1"
+  }
+}
