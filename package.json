@@ -14,6 +14,7 @@
     "build:background-vendor": "node tools/build-vanta-vendor.mjs",
     "build:dist": "node tools/build-distribution.mjs",
     "probe:dist": "node tools/distribution-host-probe.mjs",
+    "qa:public": "node tools/publication-safety.mjs",
     "qa:assets": "node tools/p1-r10-browser-acceptance.mjs",
     "profile": "node tools/profile.mjs",
     "qa:geometry": "node tools/browser-geometry-qa.mjs fixtures/full-deck.html",

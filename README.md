@@ -70,6 +70,5 @@ pnpm test
 - `CONTRIBUTING.md`：本機開發、測試與 public-safe contribution 規則。
 - `BACKLOG.md`：**目前唯一 execution queue / current frontier**；先看這份再派工。
 - `working-spec.md`：產品與行為規格 authority；已納入 2026-09-06 owner decisions。
-- `implementation-plan.md`：原 v0.1 垂直切片計畫，保留歷史證據；不得跳過目前 visual-quality repair lane。
 - `design/visual-route-contract.md`：既有四 Theme 視覺研究，現為 reference / fallback；P0-VQ1 會把 internal tooling frontend-design 材料正式收斂成 portable PPTSKILL design-material layer。
 - `research/synthesis.md`：歷史簡報方法的研究整理。
